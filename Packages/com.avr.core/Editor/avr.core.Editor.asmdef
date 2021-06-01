@@ -1,0 +1,24 @@
+{
+    "name": "avr.core.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8dd818486f048e34496f17e7e0f5e1cf"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.avr.net",
+            "expression": "",
+            "define": "AVR_NET"
+        }
+    ],
+    "noEngineReferences": false
+}

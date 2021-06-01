@@ -1,0 +1,40 @@
+## Settings File
+# Note: Keep spaces in-between operators or the parser will fail.
+# Quotation marks are only required if there are spaces in the passed value
+
+settings = {
+	core = {
+		devConsole = {
+			toggleConsoleKey = "Tab"
+			disableConsoleKey = "Escape"
+			submitConsoleKey = "Return"
+			
+			relayLogMessages = true
+			useConsoleCommandAttribute = true
+		}
+		
+		charactercontroller = {
+			min_height = 0.5
+			max_height = 2.0
+		}
+	}
+}
+
+editor = {
+	defaultPrefabPaths = {
+		leftController = "Packages/com.avr.core/Editor/DefaultPrefabs/LeftHandController.prefab"
+		rightController = "Packages/com.avr.core/Editor/DefaultPrefabs/RightHandController.prefab"
+		
+		inputModule = "Packages/com.avr.core/Editor/DefaultPrefabs/InputManager.prefab"
+		rootObject = "Packages/com.avr.core/Editor/DefaultPrefabs/Root.prefab"
+		playerRig = "Packages/com.avr.core/Editor/DefaultPrefabs/PlayerRig.prefab"
+		
+		viveControllerVisual = "Packages/com.avr.core/Editor/DefaultPrefabs/ViveControllerVisual.prefab"
+		sphereControllerVisual = "Packages/com.avr.core/Editor/DefaultPrefabs/SphereControllerVisual.prefab"
+		cubeControllerVisual = "Packages/com.avr.core/Editor/DefaultPrefabs/CubeControllerVisual.prefab"
+	}
+	fonts = {
+		inconsolata = "Packages/com.avr.core/Runtime/Resources/Inconsolata.otf"
+		font-awesome = "Packages/com.avr.core/Runtime/Resources/fa-solid-900.ttf"
+	}
+}
