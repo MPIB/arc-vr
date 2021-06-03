@@ -11,7 +11,7 @@ namespace AVR.UEditor.Core {
         private static SettingsTreeNode root;
         Vector2 scrollPos;
 
-        [MenuItem("AVR/Settings")]
+        [MenuItem("AVR/Settings", false, 999)]
         public static void ShowWindow()
         {
             root = AVR_Settings.build_tree();
@@ -20,6 +20,8 @@ namespace AVR.UEditor.Core {
 
         void OnGUI()
         {
+            EditorGUILayout.LabelField("AVR SETTINGS");
+
             EditorGUILayout.BeginVertical();
             scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
             foreach (SettingsTreeNode n in root.get_children()) OnGUISettingsNode(n);

@@ -13,7 +13,7 @@ namespace AVR.UEditor.Core {
         private int refocus = 0;
         private int history = -1;
 
-        [MenuItem("AVR/Open DevConsole")]
+        [MenuItem("AVR/Open DevConsole", false, 100)]
         public static void ShowWindow()
         {
             EditorWindow.GetWindow(typeof(AVR_DevConsoleWindow), false, "ARC-VR Console");
@@ -25,10 +25,10 @@ namespace AVR.UEditor.Core {
 
             //// SETTINGS BUTTON
             GUIStyle sb = new GUIStyle(GUI.skin.button);
-            sb.font = AVR_Core_EditorUtility.GetFont("/editor/fonts/font-awesome");
+            sb.font = AVR_EditorUtility.GetFont("/editor/fonts/font-awesome");
             sb.fontSize = 11;
 
-            string cog_symbol = AVR_Core_EditorUtility.Unicode_to_String("f013");
+            string cog_symbol = AVR_EditorUtility.Unicode_to_String("f013");
             if (GUILayout.Button(cog_symbol, sb, GUILayout.Width(25), GUILayout.Height(25)))
             {
                 AVR_DevConsole.print("Settings Button doesnt do anything! :(");
@@ -42,7 +42,7 @@ namespace AVR.UEditor.Core {
             s0.richText = true;
             s0.alignment = TextAnchor.LowerLeft;
             s0.fontSize = 16;
-            s0.font = AVR_Core_EditorUtility.GetFont("/editor/fonts/inconsolata");
+            s0.font = AVR_EditorUtility.GetFont("/editor/fonts/inconsolata");
 
             // Output area color/bounds
             GUI.contentColor = new Color(1f, 1f, 1f, 1f);

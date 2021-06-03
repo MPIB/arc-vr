@@ -15,6 +15,31 @@
     "defineConstraints": [],
     "versionDefines": [
         {
+            "name": "com.avr.core",
+            "expression": "",
+            "define": "AVR_CORE"
+        },
+        {
+            "name": "com.avr.avatar",
+            "expression": "",
+            "define": "AVR_AVATAR"
+        },
+        {
+            "name": "com.avr.motion",
+            "expression": "",
+            "define": "AVR_MOTION"
+        },
+        {
+            "name": "com.avr.phys",
+            "expression": "",
+            "define": "AVR_PHYS"
+        },
+        {
+            "name": "com.avr.ui",
+            "expression": "",
+            "define": "AVR_UI"
+        },
+        {
             "name": "com.avr.net",
             "expression": "",
             "define": "AVR_NET"

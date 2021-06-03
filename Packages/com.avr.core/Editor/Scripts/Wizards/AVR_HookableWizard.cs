@@ -142,7 +142,7 @@ namespace AVR.UEditor.Core {
         {
             if (module && _module.Length < 1)
             {
-                AVR_Core_EditorUtility.InstantiatePrefabAsChild(targetObject.transform, prefabPathSettingsToken);
+                AVR_EditorUtility.InstantiatePrefabAsChild(targetObject.transform, prefabPathSettingsToken);
             }
             else if (!module && _module.Length > 0)
             {
@@ -180,7 +180,7 @@ namespace AVR.UEditor.Core {
         {
             if (module && _module.Length < 1)
             {
-                AVR_Core_EditorUtility.InstantiatePrefabAsChild(targetObject.transform, prefabPathSettingsToken);
+                AVR_EditorUtility.InstantiatePrefabAsChild(targetObject.transform, prefabPathSettingsToken);
             }
             else if (!module && _module.Length > 0)
             {

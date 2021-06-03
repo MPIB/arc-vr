@@ -159,5 +159,17 @@ namespace AVR.Core.Utils {
         {
             return type.GetCustomAttributes(typeof(TAttribute), true).FirstOrDefault() as TAttribute;
         }
+
+        /// <summary>
+        /// Creates a Texture2D object from a given image path
+        /// </summary>
+        /// <param name="path"> Path (relative to assembly) where the image is located. Example: "Packages/com.avr.core/Package_Resources/avr_logo_vr.png" </param>
+        /// <returns></returns>
+        public static Texture2D Image2Texture(string path) {
+            var rawData = System.IO.File.ReadAllBytes(path);
+            Texture2D tex = new Texture2D(1, 1); // Size should not matter here, as LoadImage resets it.
+            tex.LoadImage(rawData);
+            return tex;
+        }
     }
 }

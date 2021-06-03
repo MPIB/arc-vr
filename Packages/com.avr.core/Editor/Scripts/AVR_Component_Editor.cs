@@ -15,15 +15,15 @@ namespace AVR.UEditor.Core
             EditorGUILayout.BeginHorizontal();
 
             // Documentation button
-            AVR.UEditor.Core.AVR_Core_EditorUtility.Documentation_Url(docu_url);
+            AVR.UEditor.Core.AVR_EditorUtility.Documentation_Url(docu_url);
 
             // Events button
-            AVR.UEditor.Core.AVR_Core_EditorUtility.EventsSettings_Button((AVR_Component)target);
+            AVR.UEditor.Core.AVR_EditorUtility.EventsSettings_Button((AVR_Component)target);
 
             // Network button
 #if AVR_NET
             if(typeof(AVR_Component).IsAssignableFrom(target.GetType())) {
-                AVR.UEditor.Core.AVR_Core_EditorUtility.NetworkSetting_Button((AVR_Component)target);
+                AVR.UEditor.Core.AVR_EditorUtility.NetworkSetting_Button((AVR_Component)target);
             }
 #endif
             EditorGUILayout.EndHorizontal();

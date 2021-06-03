@@ -27,7 +27,7 @@ namespace AVR.UEditor.Core
             EditorGUILayout.BeginHorizontal();
 
             // Documentation button
-            AVR.UEditor.Core.AVR_Core_EditorUtility.Documentation_Url(docu_url);
+            AVR.UEditor.Core.AVR_EditorUtility.Documentation_Url(docu_url);
 
             EditorGUILayout.EndHorizontal();
         }

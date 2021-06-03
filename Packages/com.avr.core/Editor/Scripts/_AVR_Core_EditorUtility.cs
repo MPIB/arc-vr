@@ -4,8 +4,15 @@ using UnityEngine;
 using UnityEditor;
 
 namespace AVR.UEditor.Core {
-    public class AVR_Core_EditorUtility
+    [ExecuteInEditMode]
+    public static class AVR_EditorUtility
     {
+        private static Font fa_cache => _fa_cache!=null ? _fa_cache : _fa_cache = GetFont("/editor/fonts/font-awesome");
+        private static Font _fa_cache;
+
+        private static Font fab_cache => _fab_cache != null ? _fab_cache : _fab_cache = GetFont("/editor/fonts/font-awesome-brands");
+        private static Font _fab_cache;
+
         public static GameObject InstantiatePrefabAsChild(Transform parent, string settings_token) {
             Object prefab = AssetDatabase.LoadAssetAtPath(AVR.Core.AVR_Settings.get_string(settings_token), typeof(GameObject));
             if (prefab == null)
@@ -32,20 +39,30 @@ namespace AVR.UEditor.Core {
             return ((char)int.Parse(unicode, System.Globalization.NumberStyles.HexNumber)).ToString();
         }
 
+        public static bool FAButton(string unicode, bool isBrandIcon=false, int buttonSize=25) {
+            var style = new GUIStyle(GUI.skin.button);
+            style.font = isBrandIcon ? fab_cache : fa_cache;
+            style.fontSize = Mathf.Max(7, buttonSize - 12);
+            return GUILayout.Button(Unicode_to_String(unicode), style, GUILayout.Width(buttonSize), GUILayout.Height(buttonSize));
+        }
+
+        public static void FALabel(string unicode, bool isBrandIcon = false, int buttonSize = 25)
+        {
+            var style = new GUIStyle(GUI.skin.label);
+            style.font = isBrandIcon ? fab_cache : fa_cache;
+            style.fontSize = Mathf.Max(7, buttonSize - 12);
+            GUILayout.Label(Unicode_to_String(unicode), style, GUILayout.Width(buttonSize), GUILayout.Height(buttonSize));
+        }
+
         public static void Documentation_Url(string page) {
-            var style = new GUIStyle(GUI.skin.button); 
-            style.font = GetFont("/editor/fonts/font-awesome");
-            if(GUILayout.Button(Unicode_to_String("f02d"), style, GUILayout.Width(25), GUILayout.Height(25))) {
-                string path = System.IO.Path.GetFullPath("Packages/com.avr.core/Documentation/docs/html/" + page);
-                Application.OpenURL("file:///"+path);
-                
+            if(FAButton("f02d")) {
+                string path = System.IO.Path.GetFullPath(AVR.Core.AVR_Settings.get_string("/editor/documentationPath") + page);
+                Application.OpenURL("file:///"+path); 
             }
         }
 
         public static void EventsSettings_Button(AVR.Core.AVR_Component component) {
-            var style = new GUIStyle(GUI.skin.button);
-            style.font = GetFont("/editor/fonts/font-awesome");
-            if (GUILayout.Button(Unicode_to_String("f0e7"), style, GUILayout.Width(25), GUILayout.Height(25)))
+            if (FAButton("f0e7"))
             {
                 AVR_Component_EventsWizard.CreateWizard(component);
             }
@@ -53,9 +70,7 @@ namespace AVR.UEditor.Core {
 
 #if AVR_NET
         public static void NetworkSetting_Button(AVR.Core.AVR_Component component) {
-            var style = new GUIStyle(GUI.skin.button); 
-            style.font = GetFont("/editor/fonts/font-awesome");
-            if(GUILayout.Button(Unicode_to_String("f6ff"), style, GUILayout.Width(25), GUILayout.Height(25))) {
+            if(FAButton("f6ff")) {
                 AVR_Component_NetworkWizard.CreateWizard(component);
             }
         }

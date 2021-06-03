@@ -36,5 +36,7 @@ editor = {
 	fonts = {
 		inconsolata = "Packages/com.avr.core/Runtime/Resources/Inconsolata.otf"
 		font-awesome = "Packages/com.avr.core/Runtime/Resources/fa-solid-900.ttf"
+		font-awesome-brands = "Packages/com.avr.core/Runtime/Resources/fa-brands-400.ttf"
 	}
+	documentationPath = "Packages/com.avr.core/Documentation/docs/html/"
 }

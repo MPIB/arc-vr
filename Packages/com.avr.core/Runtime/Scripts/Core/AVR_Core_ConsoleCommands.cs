@@ -34,6 +34,10 @@ namespace AVR.Core {
             AVR_DevConsole.register_command("spam", (s) => { for(int i=0; i<100; i++) AVR_DevConsole.print("output"+i); }, "Outputs a bunch of console messages. Used for console testing/debugging.");
 
             AVR_DevConsole.register_command("reconfigure", (s) => { AVR_Settings.reconfigure(); }, "Re-initializes AVR_Settings.");
+
+            AVR_DevConsole.register_command("get", (s) => AVR_DevConsole.print(AVR_Settings.get_string(s[0])), 1, "Prints a setting with the given settings-token");
+
+            AVR_DevConsole.register_command("set", (s) => AVR_Settings.settings[s[0]]=s[1], 2, "Sets a setting with settings-token arg[0] to the value of arg[1]");
         }
 
         private static void toggle_obj(string[] args) {
