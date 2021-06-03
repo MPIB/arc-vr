@@ -30,17 +30,27 @@
 				float4 vertex : POSITION;
 				fixed4 color : COLOR;
 				float2 uv : TEXCOORD0;
+
+				UNITY_VERTEX_INPUT_INSTANCE_ID	// Support for single-pass instanced mode
 			};
 
 			struct v2f {
 				float4 vertex : SV_POSITION;
 				fixed4 color : COLOR;
 				float2 uv : TEXCOORD0;
+
+				UNITY_VERTEX_OUTPUT_STEREO // Support for single-pass instanced mode
 			};
 
 			v2f vert (appdata_t v)
 			{
 				v2f o;
+
+				// Support for single-pass instanced mode
+				UNITY_SETUP_INSTANCE_ID(v);
+    			UNITY_INITIALIZE_OUTPUT(v2f, o);
+    			UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.color = v.color;
 				o.uv = v.uv;
@@ -55,6 +65,8 @@
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
+				UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i); // Support for single-pass instanced mode
+
                 float d = i.uv.x;
                 d += _Time.y * _ScrollSpeed;
                 d = abs(fmod(d, _DotLen+_SpaLen));
