@@ -1,0 +1,7 @@
+editor = {
+	defaultPrefabPaths = {
+		locomotionProvider = "Packages/com.avr.motion/Editor/DefaultPrefabs/LocomotionProvider.prefab"
+		movementProvider = "Packages/com.avr.motion/Editor/DefaultPrefabs/MovementProvider.prefab"
+		turnProvider = "Packages/com.avr.motion/Editor/DefaultPrefabs/TurnProvider.prefab"
+	}
+}

@@ -1,0 +1,23 @@
+{
+  "name": "com.avr.motion",
+  "version": "1.0.0",
+  "displayName": "arc-vr-motion",
+  "description": "Motion package for the arc-vr development framework.",
+  "unity": "2020.2",
+  "unityRelease": "2f1",
+  "dependencies": {
+    "com.avr.core": "1.0.0"
+ },
+ "keywords": [
+    "vr",
+    "VR",
+    "xr",
+    "XR"
+  ],
+  "author": {
+    "name": "Benjamin Kahl",
+    "email": "benjamin@kahl.fi",
+    "url": "https://benjamin.kahl.fi"
+  },
+  "type": "library"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "avr.motion.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:9b9c4cfba10060e4b968f07cb2941f1b",
+        "GUID:547e9fd77b6c65143a5ab9b6bff8dcc8",
+        "GUID:8dd818486f048e34496f17e7e0f5e1cf"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

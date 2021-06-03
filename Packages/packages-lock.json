@@ -8,6 +8,14 @@
         "com.unity.xr.management": "4.0.5"
       }
     },
+    "com.avr.motion": {
+      "version": "file:com.avr.motion",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.avr.core": "1.0.0"
+      }
+    },
     "com.unity.collab-proxy": {
       "version": "1.3.9",
       "depth": 0,
