@@ -102,6 +102,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AVR.Motion.AVR_MovementProvider Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Provides common teleportation/movement functionality to a controller  
+ <a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for AVR.Motion.AVR_MovementProvider:</div>
 <div class="dyncontent">
@@ -121,25 +124,34 @@ Public Types</h2></td></tr>
 <a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2aabb5fed0e6709fade0ab65c15b790508">TeleportModes.DASH</a>, 
 <a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2a0eedba65fc1474a85670c28222ea1e22">TeleportModes.FADE_DASH</a>
  }</td></tr>
+<tr class="memdesc:a647776f80da0f6d907c39bf7d1aaa5b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modes of teleportation/movement. INSTANT: Instantly moves to the target position FADE_COLOR: Fades the screen to a given color, teleports to target location, then fades the color back out. DASH: Moves to target location in a linear fash with a given speed. FADE_DASH: Combination of FADE_COLOR and DASH. Fades the camera to a given color, then (while the curtains are closed) linearly translates the rig to target location. Then fades the colro back out. FADE_DASH or DASH are the modes of choice when using an avatar, as they provide a speed value.  <a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2">More...</a><br /></td></tr>
 <tr class="separator:a647776f80da0f6d907c39bf7d1aaa5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a21ae998d1915ea582a97ffe164ec8712"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2">TeleportModes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a21ae998d1915ea582a97ffe164ec8712">teleportMode</a></td></tr>
-<tr class="separator:a21ae998d1915ea582a97ffe164ec8712"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd3f19b4fe316093088ffaeff8056694"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_restrictor.html">AVR_MovementRestrictor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#afd3f19b4fe316093088ffaeff8056694">movementRestrictor</a></td></tr>
-<tr class="separator:afd3f19b4fe316093088ffaeff8056694"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a757326c56ebd1f6629e5a7cc350e179d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_ray.html">AVR_MovementRay</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">ray</a></td></tr>
-<tr class="separator:a757326c56ebd1f6629e5a7cc350e179d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f3bd9dbf6791b013a45478268858bfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a33a6a31da3de7a373deffcdc04fad274">AVR_ControllerInputManager.BoolEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a2f3bd9dbf6791b013a45478268858bfe">Enable_event</a></td></tr>
+<tr class="memdesc:a2f3bd9dbf6791b013a45478268858bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event which enables/shows the teleportation-ray.  <a href="#a2f3bd9dbf6791b013a45478268858bfe">More...</a><br /></td></tr>
 <tr class="separator:a2f3bd9dbf6791b013a45478268858bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f156bb936cd9f8b36314213089f684e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a33a6a31da3de7a373deffcdc04fad274">AVR_ControllerInputManager.BoolEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3f156bb936cd9f8b36314213089f684e">Execute_event</a></td></tr>
+<tr class="memdesc:a3f156bb936cd9f8b36314213089f684e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event which (if possible) executes the movement to target location. Can only ocurr if the ray is visible, eg if enable_event is also true.  <a href="#a3f156bb936cd9f8b36314213089f684e">More...</a><br /></td></tr>
 <tr class="separator:a3f156bb936cd9f8b36314213089f684e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21ae998d1915ea582a97ffe164ec8712"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2">TeleportModes</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a21ae998d1915ea582a97ffe164ec8712">teleportMode</a></td></tr>
+<tr class="memdesc:a21ae998d1915ea582a97ffe164ec8712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modes of teleportation/movement. INSTANT: Instantly moves to the target position FADE_COLOR: Fades the screen to a given color, teleports to target location, then fades the color back out. DASH: Moves to target location in a linear fash with a given speed. FADE_DASH: Combination of FADE_COLOR and DASH. Fades the camera to a given color, then (while the curtains are closed) linearly translates the rig to target location. Then fades the colro back out. FADE_DASH or DASH are the modes of choice when using an avatar, as they provide a speed value.  <a href="#a21ae998d1915ea582a97ffe164ec8712">More...</a><br /></td></tr>
+<tr class="separator:a21ae998d1915ea582a97ffe164ec8712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd3f19b4fe316093088ffaeff8056694"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_restrictor.html">AVR_MovementRestrictor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#afd3f19b4fe316093088ffaeff8056694">movementRestrictor</a></td></tr>
+<tr class="memdesc:afd3f19b4fe316093088ffaeff8056694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines which surface is a valid teleport-location and which is not.  <a href="#afd3f19b4fe316093088ffaeff8056694">More...</a><br /></td></tr>
+<tr class="separator:afd3f19b4fe316093088ffaeff8056694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a757326c56ebd1f6629e5a7cc350e179d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_ray.html">AVR_MovementRay</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">ray</a></td></tr>
+<tr class="memdesc:a757326c56ebd1f6629e5a7cc350e179d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ray which is displayed to target a location.  <a href="#a757326c56ebd1f6629e5a7cc350e179d">More...</a><br /></td></tr>
+<tr class="separator:a757326c56ebd1f6629e5a7cc350e179d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b2a1c0d5a354164c3833eeedd05b7b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html">AVR_Effect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">CameraFadeEffect</a></td></tr>
+<tr class="memdesc:a1b2a1c0d5a354164c3833eeedd05b7b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">CameraFadeEffect used when teleportmode is FADE_COLOR or FADE_DASH.  <a href="#a1b2a1c0d5a354164c3833eeedd05b7b1">More...</a><br /></td></tr>
 <tr class="separator:a1b2a1c0d5a354164c3833eeedd05b7b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81f78c10230bb0acabfe5ae4543eefc8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a81f78c10230bb0acabfe5ae4543eefc8">fade_pause</a> = 0.1f</td></tr>
+<tr class="memdesc:a81f78c10230bb0acabfe5ae4543eefc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">When using FADE_COLOR or FADE_DASH, this determines the amount of time between fade-in and fade-out transitions.  <a href="#a81f78c10230bb0acabfe5ae4543eefc8">More...</a><br /></td></tr>
 <tr class="separator:a81f78c10230bb0acabfe5ae4543eefc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ce8d034085879743c2d07a72f779c2b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a4ce8d034085879743c2d07a72f779c2b">dash_speed</a> = 30.0f</td></tr>
+<tr class="memdesc:a4ce8d034085879743c2d07a72f779c2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">When using DASH or FADE_DASH, this determines the speed (in units/s) we travel towards the target location. When using DASH its recommended to keep this reasonably high to avoid motion sickness.  <a href="#a4ce8d034085879743c2d07a72f779c2b">More...</a><br /></td></tr>
 <tr class="separator:a4ce8d034085879743c2d07a72f779c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR.Core.AVR_Component</a></td></tr>
 <tr class="memitem:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7fc075a7ad97ada8b9c25bf82f346aee">onAwake</a></td></tr>
@@ -170,15 +182,16 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a6c130e1abb121844277f87042693ace0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a6c130e1abb121844277f87042693ace0">FixedUpdate</a> ()</td></tr>
-<tr class="separator:a6c130e1abb121844277f87042693ace0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f9aad1e082204c5ce1327ad3229016e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a5f9aad1e082204c5ce1327ad3229016e">Update</a> ()</td></tr>
 <tr class="separator:a5f9aad1e082204c5ce1327ad3229016e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9f8dfff16cc43d17c2aa56de9a25bf3"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ae9f8dfff16cc43d17c2aa56de9a25bf3">BlinkTeleport</a> ()</td></tr>
+<tr class="memdesc:ae9f8dfff16cc43d17c2aa56de9a25bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This coroutine is exectued when a blink-movement (INSTANT) is performed.  <a href="#ae9f8dfff16cc43d17c2aa56de9a25bf3">More...</a><br /></td></tr>
 <tr class="separator:ae9f8dfff16cc43d17c2aa56de9a25bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba823a98fd545aebd86eb76cd9b547c7"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#aba823a98fd545aebd86eb76cd9b547c7">FadeDash</a> ()</td></tr>
+<tr class="memdesc:aba823a98fd545aebd86eb76cd9b547c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This coroutine is exectued when a fade-dash-movement is performed.  <a href="#aba823a98fd545aebd86eb76cd9b547c7">More...</a><br /></td></tr>
 <tr class="separator:aba823a98fd545aebd86eb76cd9b547c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7beada5396d618cb808e0d14eeb6ddca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a7beada5396d618cb808e0d14eeb6ddca">CommenceTeleport</a> (Vector3 targetLocation)</td></tr>
+<tr class="memdesc:a7beada5396d618cb808e0d14eeb6ddca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins a movement towards target location  <a href="#a7beada5396d618cb808e0d14eeb6ddca">More...</a><br /></td></tr>
 <tr class="separator:a7beada5396d618cb808e0d14eeb6ddca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a912c5de5f526edd4ddfd73a2c173f7f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">MoveRigToFeetLocation</a> (Vector3 feet)</td></tr>
 <tr class="separator:a912c5de5f526edd4ddfd73a2c173f7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,8 +214,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa1b5d10862079118499e2ee5e5e619e7 inherit properties_class_a_v_r_1_1_core_1_1_a_v_r___controller_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00009">9</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<div class="textblock"><p>Provides common teleportation/movement functionality to a controller </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00015">15</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="a647776f80da0f6d907c39bf7d1aaa5b2"></a>
 <div class="memitem">
@@ -213,6 +227,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Modes of teleportation/movement. INSTANT: Instantly moves to the target position FADE_COLOR: Fades the screen to a given color, teleports to target location, then fades the color back out. DASH: Moves to target location in a linear fash with a given speed. FADE_DASH: Combination of FADE_COLOR and DASH. Fades the camera to a given color, then (while the curtains are closed) linearly translates the rig to target location. Then fades the colro back out. FADE_DASH or DASH are the modes of choice when using an avatar, as they provide a speed value. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a647776f80da0f6d907c39bf7d1aaa5b2a0cb59bada85ae6029aac02b5c6dc7622"></a>INSTANT&#160;</td><td class="fielddoc">
 </td></tr>
@@ -224,8 +240,8 @@ Additional Inherited Members</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00011">11</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{ <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2a0cb59bada85ae6029aac02b5c6dc7622">INSTANT</a>, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2a758c8a80c20eb313b992090036a79945">FADE_COLOR</a>, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2aabb5fed0e6709fade0ab65c15b790508">DASH</a>, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2a0eedba65fc1474a85670c28222ea1e22">FADE_DASH</a> }</div>
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00036">36</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{ <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2a0cb59bada85ae6029aac02b5c6dc7622">INSTANT</a>, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2a758c8a80c20eb313b992090036a79945">FADE_COLOR</a>, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2aabb5fed0e6709fade0ab65c15b790508">DASH</a>, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2a0eedba65fc1474a85670c28222ea1e22">FADE_DASH</a> }</div>
 <div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a647776f80da0f6d907c39bf7d1aaa5b2a0eedba65fc1474a85670c28222ea1e22"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2a0eedba65fc1474a85670c28222ea1e22">AVR.Motion.AVR_MovementProvider.FADE_DASH</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a647776f80da0f6d907c39bf7d1aaa5b2aabb5fed0e6709fade0ab65c15b790508"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2aabb5fed0e6709fade0ab65c15b790508">AVR.Motion.AVR_MovementProvider.DASH</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a647776f80da0f6d907c39bf7d1aaa5b2a0cb59bada85ae6029aac02b5c6dc7622"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2a0cb59bada85ae6029aac02b5c6dc7622">AVR.Motion.AVR_MovementProvider.INSTANT</a></div></div>
@@ -255,23 +271,25 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00069">69</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> = <span class="keyword">true</span>;                                      <span class="comment">// Set active flag</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            CameraFadeEffect.StartEffect();                             <span class="comment">// Shut curtains</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitWhile(()=&gt;<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">CameraFadeEffect</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b">isBusy</a>());  <span class="comment">// </span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a81f78c10230bb0acabfe5ae4543eefc8">fade_pause</a>);                <span class="comment">// Pause</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">MoveRigToFeetLocation</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a>);                         <span class="comment">// Move rig to destination</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            CameraFadeEffect.EndEffect();                               <span class="comment">// Reopen curtains</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitWhile(() =&gt; <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">CameraFadeEffect</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b">isBusy</a>());<span class="comment">//</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> = <span class="keyword">false</span>;                                     <span class="comment">// Reset flag</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<p>This coroutine is exectued when a blink-movement (INSTANT) is performed. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00119">119</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                                    {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> = <span class="keyword">true</span>;                                      <span class="comment">// Set active flag</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            CameraFadeEffect.StartEffect();                             <span class="comment">// Shut curtains</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitWhile(()=&gt;<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">CameraFadeEffect</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b">isBusy</a>());  <span class="comment">// </span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a81f78c10230bb0acabfe5ae4543eefc8">fade_pause</a>);                <span class="comment">// Pause</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">MoveRigToFeetLocation</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a>);                         <span class="comment">// Move rig to destination</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            CameraFadeEffect.EndEffect();                               <span class="comment">// Reopen curtains</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitWhile(() =&gt; <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">CameraFadeEffect</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b">isBusy</a>());<span class="comment">//</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> = <span class="keyword">false</span>;                                     <span class="comment">// Reset flag</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___effect_html_ac5c527ad07d79b72bf446aae85da088b"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b">AVR.Core.AVR_Effect.isBusy</a></div><div class="ttdeci">abstract bool isBusy()</div><div class="ttdoc">True if the effect is starting/started or ending but not yet ended. </div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a912c5de5f526edd4ddfd73a2c173f7f3"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">AVR.Motion.AVR_MovementProvider.MoveRigToFeetLocation</a></div><div class="ttdeci">void MoveRigToFeetLocation(Vector3 feet)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00132">AVR_MovementProvider.cs:132</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a81f78c10230bb0acabfe5ae4543eefc8"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a81f78c10230bb0acabfe5ae4543eefc8">AVR.Motion.AVR_MovementProvider.fade_pause</a></div><div class="ttdeci">float fade_pause</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00026">AVR_MovementProvider.cs:26</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a1b2a1c0d5a354164c3833eeedd05b7b1"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">AVR.Motion.AVR_MovementProvider.CameraFadeEffect</a></div><div class="ttdeci">AVR_Effect CameraFadeEffect</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00025">AVR_MovementProvider.cs:25</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_ac1da26c0337d28b1c262b9f0c32fac76"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">AVR.Motion.AVR_MovementProvider.tp_in_progress</a></div><div class="ttdeci">bool tp_in_progress</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00030">AVR_MovementProvider.cs:30</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a63274ac05864573459fea296b6415bd6"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">AVR.Motion.AVR_MovementProvider.destination</a></div><div class="ttdeci">Vector3 destination</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00031">AVR_MovementProvider.cs:31</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a912c5de5f526edd4ddfd73a2c173f7f3"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">AVR.Motion.AVR_MovementProvider.MoveRigToFeetLocation</a></div><div class="ttdeci">void MoveRigToFeetLocation(Vector3 feet)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00189">AVR_MovementProvider.cs:189</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a81f78c10230bb0acabfe5ae4543eefc8"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a81f78c10230bb0acabfe5ae4543eefc8">AVR.Motion.AVR_MovementProvider.fade_pause</a></div><div class="ttdeci">float fade_pause</div><div class="ttdoc">When using FADE_COLOR or FADE_DASH, this determines the amount of time between fade-in and fade-out t...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00069">AVR_MovementProvider.cs:69</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a1b2a1c0d5a354164c3833eeedd05b7b1"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">AVR.Motion.AVR_MovementProvider.CameraFadeEffect</a></div><div class="ttdeci">AVR_Effect CameraFadeEffect</div><div class="ttdoc">CameraFadeEffect used when teleportmode is FADE_COLOR or FADE_DASH. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00064">AVR_MovementProvider.cs:64</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_ac1da26c0337d28b1c262b9f0c32fac76"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">AVR.Motion.AVR_MovementProvider.tp_in_progress</a></div><div class="ttdeci">bool tp_in_progress</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00078">AVR_MovementProvider.cs:78</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a63274ac05864573459fea296b6415bd6"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">AVR.Motion.AVR_MovementProvider.destination</a></div><div class="ttdeci">Vector3 destination</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00079">AVR_MovementProvider.cs:79</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -297,45 +315,53 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00101">101</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                                      {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a> = targetLocation;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">switch</span>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a21ae998d1915ea582a97ffe164ec8712">teleportMode</a>) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">case</span> TeleportModes.INSTANT : {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">MoveRigToFeetLocation</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordflow">case</span> TeleportModes.FADE_COLOR : {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    StartCoroutine(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ae9f8dfff16cc43d17c2aa56de9a25bf3">BlinkTeleport</a>());</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordflow">case</span> TeleportModes.DASH : {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">dash_origin</a> = AVR_PlayerRig.Instance.FeetInWorldSpace;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">dash_stime</a> = Time.time;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keywordflow">case</span> TeleportModes.FADE_DASH : {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    StartCoroutine(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#aba823a98fd545aebd86eb76cd9b547c7">FadeDash</a>());</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="keywordflow">default</span> : {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    Debug.Log(<span class="stringliteral">&quot;Not implemented TeleportMode&quot;</span>);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a912c5de5f526edd4ddfd73a2c173f7f3"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">AVR.Motion.AVR_MovementProvider.MoveRigToFeetLocation</a></div><div class="ttdeci">void MoveRigToFeetLocation(Vector3 feet)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00132">AVR_MovementProvider.cs:132</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_ae9f8dfff16cc43d17c2aa56de9a25bf3"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ae9f8dfff16cc43d17c2aa56de9a25bf3">AVR.Motion.AVR_MovementProvider.BlinkTeleport</a></div><div class="ttdeci">IEnumerator BlinkTeleport()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00069">AVR_MovementProvider.cs:69</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a3b8ba64ac3af4a2ddf40d60e83363b71"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">AVR.Motion.AVR_MovementProvider.dash_stime</a></div><div class="ttdeci">float dash_stime</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00033">AVR_MovementProvider.cs:33</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a21ae998d1915ea582a97ffe164ec8712"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a21ae998d1915ea582a97ffe164ec8712">AVR.Motion.AVR_MovementProvider.teleportMode</a></div><div class="ttdeci">TeleportModes teleportMode</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00014">AVR_MovementProvider.cs:14</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a23b57622f93855069880dedb77f28159"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">AVR.Motion.AVR_MovementProvider.dash_origin</a></div><div class="ttdeci">Vector3 dash_origin</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00032">AVR_MovementProvider.cs:32</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_aba823a98fd545aebd86eb76cd9b547c7"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#aba823a98fd545aebd86eb76cd9b547c7">AVR.Motion.AVR_MovementProvider.FadeDash</a></div><div class="ttdeci">IEnumerator FadeDash()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00080">AVR_MovementProvider.cs:80</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_ac1da26c0337d28b1c262b9f0c32fac76"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">AVR.Motion.AVR_MovementProvider.tp_in_progress</a></div><div class="ttdeci">bool tp_in_progress</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00030">AVR_MovementProvider.cs:30</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a63274ac05864573459fea296b6415bd6"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">AVR.Motion.AVR_MovementProvider.destination</a></div><div class="ttdeci">Vector3 destination</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00031">AVR_MovementProvider.cs:31</a></div></div>
+<p>Begins a movement towards target location </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">targetLocation</td><td>Feet location we teleport/move to</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00158">158</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                                      {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a> = targetLocation;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">switch</span>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a21ae998d1915ea582a97ffe164ec8712">teleportMode</a>) {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="keywordflow">case</span> TeleportModes.INSTANT : {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">MoveRigToFeetLocation</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                <span class="keywordflow">case</span> TeleportModes.FADE_COLOR : {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                    StartCoroutine(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ae9f8dfff16cc43d17c2aa56de9a25bf3">BlinkTeleport</a>());</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keywordflow">case</span> TeleportModes.DASH : {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">dash_origin</a> = AVR_PlayerRig.Instance.FeetInWorldSpace;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                    <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                    <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">dash_stime</a> = Time.time;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">case</span> TeleportModes.FADE_DASH : {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    StartCoroutine(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#aba823a98fd545aebd86eb76cd9b547c7">FadeDash</a>());</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="keywordflow">default</span> : {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                    AVR_DevConsole.cwarn(<span class="stringliteral">&quot;The given teleportMode is not valid!&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a912c5de5f526edd4ddfd73a2c173f7f3"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">AVR.Motion.AVR_MovementProvider.MoveRigToFeetLocation</a></div><div class="ttdeci">void MoveRigToFeetLocation(Vector3 feet)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00189">AVR_MovementProvider.cs:189</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_ae9f8dfff16cc43d17c2aa56de9a25bf3"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ae9f8dfff16cc43d17c2aa56de9a25bf3">AVR.Motion.AVR_MovementProvider.BlinkTeleport</a></div><div class="ttdeci">IEnumerator BlinkTeleport()</div><div class="ttdoc">This coroutine is exectued when a blink-movement (INSTANT) is performed. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00119">AVR_MovementProvider.cs:119</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a3b8ba64ac3af4a2ddf40d60e83363b71"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">AVR.Motion.AVR_MovementProvider.dash_stime</a></div><div class="ttdeci">float dash_stime</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00081">AVR_MovementProvider.cs:81</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a21ae998d1915ea582a97ffe164ec8712"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a21ae998d1915ea582a97ffe164ec8712">AVR.Motion.AVR_MovementProvider.teleportMode</a></div><div class="ttdeci">TeleportModes teleportMode</div><div class="ttdoc">Modes of teleportation/movement. INSTANT: Instantly moves to the target position FADE_COLOR: Fades th...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00048">AVR_MovementProvider.cs:48</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a23b57622f93855069880dedb77f28159"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">AVR.Motion.AVR_MovementProvider.dash_origin</a></div><div class="ttdeci">Vector3 dash_origin</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00080">AVR_MovementProvider.cs:80</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_aba823a98fd545aebd86eb76cd9b547c7"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#aba823a98fd545aebd86eb76cd9b547c7">AVR.Motion.AVR_MovementProvider.FadeDash</a></div><div class="ttdeci">IEnumerator FadeDash()</div><div class="ttdoc">This coroutine is exectued when a fade-dash-movement is performed. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00133">AVR_MovementProvider.cs:133</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_ac1da26c0337d28b1c262b9f0c32fac76"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">AVR.Motion.AVR_MovementProvider.tp_in_progress</a></div><div class="ttdeci">bool tp_in_progress</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00078">AVR_MovementProvider.cs:78</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a63274ac05864573459fea296b6415bd6"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">AVR.Motion.AVR_MovementProvider.destination</a></div><div class="ttdeci">Vector3 destination</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00079">AVR_MovementProvider.cs:79</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -360,62 +386,36 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00080">80</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">dash_origin</a> = AVR_PlayerRig.Instance.FeetInWorldSpace;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">dash_stime</a> = Time.time;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> = <span class="keyword">true</span>;                                      <span class="comment">// Set active flag</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            CameraFadeEffect.StartEffect();                             <span class="comment">// Shut curtains</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitWhile(() =&gt; <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">CameraFadeEffect</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b">isBusy</a>());  <span class="comment">// </span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordtype">float</span> inter = 0.0f;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">while</span>(inter &lt; 1.0f) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForEndOfFrame();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                inter = ((Time.time - <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">dash_stime</a>) * <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a4ce8d034085879743c2d07a72f779c2b">dash_speed</a>) / (Vector3.Distance(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">dash_origin</a>, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a>));</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">MoveRigToFeetLocation</a>(Vector3.Lerp(dash_origin, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a>, inter));</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            CameraFadeEffect.EndEffect();                               <span class="comment">// Reopen curtains</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitWhile(() =&gt; <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">CameraFadeEffect</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b">isBusy</a>());<span class="comment">//</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> = <span class="keyword">false</span>;                                     <span class="comment">// Reset flag</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___effect_html_ac5c527ad07d79b72bf446aae85da088b"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b">AVR.Core.AVR_Effect.isBusy</a></div><div class="ttdeci">abstract bool isBusy()</div><div class="ttdoc">True if the effect is starting/started or ending but not yet ended. </div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a912c5de5f526edd4ddfd73a2c173f7f3"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">AVR.Motion.AVR_MovementProvider.MoveRigToFeetLocation</a></div><div class="ttdeci">void MoveRigToFeetLocation(Vector3 feet)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00132">AVR_MovementProvider.cs:132</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a3b8ba64ac3af4a2ddf40d60e83363b71"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">AVR.Motion.AVR_MovementProvider.dash_stime</a></div><div class="ttdeci">float dash_stime</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00033">AVR_MovementProvider.cs:33</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a1b2a1c0d5a354164c3833eeedd05b7b1"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">AVR.Motion.AVR_MovementProvider.CameraFadeEffect</a></div><div class="ttdeci">AVR_Effect CameraFadeEffect</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00025">AVR_MovementProvider.cs:25</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a23b57622f93855069880dedb77f28159"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">AVR.Motion.AVR_MovementProvider.dash_origin</a></div><div class="ttdeci">Vector3 dash_origin</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00032">AVR_MovementProvider.cs:32</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a4ce8d034085879743c2d07a72f779c2b"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a4ce8d034085879743c2d07a72f779c2b">AVR.Motion.AVR_MovementProvider.dash_speed</a></div><div class="ttdeci">float dash_speed</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00028">AVR_MovementProvider.cs:28</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_ac1da26c0337d28b1c262b9f0c32fac76"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">AVR.Motion.AVR_MovementProvider.tp_in_progress</a></div><div class="ttdeci">bool tp_in_progress</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00030">AVR_MovementProvider.cs:30</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a63274ac05864573459fea296b6415bd6"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">AVR.Motion.AVR_MovementProvider.destination</a></div><div class="ttdeci">Vector3 destination</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00031">AVR_MovementProvider.cs:31</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a6c130e1abb121844277f87042693ace0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AVR.Motion.AVR_MovementProvider.FixedUpdate </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>This coroutine is exectued when a fade-dash-movement is performed. </p>
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00043">43</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                           {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00133">133</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">dash_origin</a> = AVR_PlayerRig.Instance.FeetInWorldSpace;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">dash_stime</a> = Time.time;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> = <span class="keyword">true</span>;                                      <span class="comment">// Set active flag</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            CameraFadeEffect.StartEffect();                             <span class="comment">// Shut curtains</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitWhile(() =&gt; <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">CameraFadeEffect</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b">isBusy</a>()); </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="keywordtype">float</span> inter = 0.0f;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">while</span>(inter &lt; 1.0f) {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForEndOfFrame();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                inter = ((Time.time - <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">dash_stime</a>) * <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a4ce8d034085879743c2d07a72f779c2b">dash_speed</a>) / (Vector3.Distance(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">dash_origin</a>, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a>));</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">MoveRigToFeetLocation</a>(Vector3.Lerp(dash_origin, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a>, inter));</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            CameraFadeEffect.EndEffect();                               <span class="comment">// Reopen curtains</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitWhile(() =&gt; <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">CameraFadeEffect</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b">isBusy</a>());</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> = <span class="keyword">false</span>;                                     <span class="comment">// Reset flag</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___effect_html_ac5c527ad07d79b72bf446aae85da088b"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b">AVR.Core.AVR_Effect.isBusy</a></div><div class="ttdeci">abstract bool isBusy()</div><div class="ttdoc">True if the effect is starting/started or ending but not yet ended. </div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a912c5de5f526edd4ddfd73a2c173f7f3"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">AVR.Motion.AVR_MovementProvider.MoveRigToFeetLocation</a></div><div class="ttdeci">void MoveRigToFeetLocation(Vector3 feet)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00189">AVR_MovementProvider.cs:189</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a3b8ba64ac3af4a2ddf40d60e83363b71"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">AVR.Motion.AVR_MovementProvider.dash_stime</a></div><div class="ttdeci">float dash_stime</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00081">AVR_MovementProvider.cs:81</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a1b2a1c0d5a354164c3833eeedd05b7b1"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">AVR.Motion.AVR_MovementProvider.CameraFadeEffect</a></div><div class="ttdeci">AVR_Effect CameraFadeEffect</div><div class="ttdoc">CameraFadeEffect used when teleportmode is FADE_COLOR or FADE_DASH. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00064">AVR_MovementProvider.cs:64</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a23b57622f93855069880dedb77f28159"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">AVR.Motion.AVR_MovementProvider.dash_origin</a></div><div class="ttdeci">Vector3 dash_origin</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00080">AVR_MovementProvider.cs:80</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a4ce8d034085879743c2d07a72f779c2b"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a4ce8d034085879743c2d07a72f779c2b">AVR.Motion.AVR_MovementProvider.dash_speed</a></div><div class="ttdeci">float dash_speed</div><div class="ttdoc">When using DASH or FADE_DASH, this determines the speed (in units/s) we travel towards the target loc...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00075">AVR_MovementProvider.cs:75</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_ac1da26c0337d28b1c262b9f0c32fac76"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">AVR.Motion.AVR_MovementProvider.tp_in_progress</a></div><div class="ttdeci">bool tp_in_progress</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00078">AVR_MovementProvider.cs:78</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a63274ac05864573459fea296b6415bd6"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">AVR.Motion.AVR_MovementProvider.destination</a></div><div class="ttdeci">Vector3 destination</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00079">AVR_MovementProvider.cs:79</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -441,10 +441,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00132">132</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                                 {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            AVR_PlayerRig.Instance.MoveRigToFeetPosition(feet);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00189">189</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                                 {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            AVR_PlayerRig.Instance.MoveRigToFeetPosition(feet);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -471,16 +471,16 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a9ccb9d57f9c2a601728cc59bcf86381f">AVR.Core.AVR_Component</a>.</p>
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00035">35</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                        {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            base.Start();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">CameraFadeEffect</a>) <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">CameraFadeEffect</a> = GetComponent&lt;AVR_Effect&gt;();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">ray</a>) <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">ray</a> = GetComponentInChildren&lt;AVR_MovementRay&gt;();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            ray.filter = movementRestrictor.isValidTpLocation;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            ray.hide();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a757326c56ebd1f6629e5a7cc350e179d"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">AVR.Motion.AVR_MovementProvider.ray</a></div><div class="ttdeci">AVR_MovementRay ray</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00021">AVR_MovementProvider.cs:21</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a1b2a1c0d5a354164c3833eeedd05b7b1"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">AVR.Motion.AVR_MovementProvider.CameraFadeEffect</a></div><div class="ttdeci">AVR_Effect CameraFadeEffect</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00025">AVR_MovementProvider.cs:25</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00083">83</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                        {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            base.Start();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">CameraFadeEffect</a>) <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">CameraFadeEffect</a> = GetComponent&lt;AVR_Effect&gt;();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">ray</a>) <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">ray</a> = GetComponentInChildren&lt;AVR_MovementRay&gt;();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            ray.filter = movementRestrictor.isValidTpLocation;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            ray.hide();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a757326c56ebd1f6629e5a7cc350e179d"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">AVR.Motion.AVR_MovementProvider.ray</a></div><div class="ttdeci">AVR_MovementRay ray</div><div class="ttdoc">Ray which is displayed to target a location. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00058">AVR_MovementProvider.cs:58</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a1b2a1c0d5a354164c3833eeedd05b7b1"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a1b2a1c0d5a354164c3833eeedd05b7b1">AVR.Motion.AVR_MovementProvider.CameraFadeEffect</a></div><div class="ttdeci">AVR_Effect CameraFadeEffect</div><div class="ttdoc">CameraFadeEffect used when teleportmode is FADE_COLOR or FADE_DASH. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00064">AVR_MovementProvider.cs:64</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -505,46 +505,49 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00047">47</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                      {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#ac9271951866023100ee7721803b31dcc">getEventStatus</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a2f3bd9dbf6791b013a45478268858bfe">Enable_event</a>)) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                ray.show();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                ray.hide();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">ray</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#adaace2023026fefb4769c85649a7ed7c">isVisible</a> &amp;&amp; <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">ray</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___solid_ray.html#a171dffc97eee43fd8d77a420e228eee7">objectHit</a> &amp;&amp; <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#ac9271951866023100ee7721803b31dcc">getEventStatus</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3f156bb936cd9f8b36314213089f684e">Execute_event</a>) &amp;&amp; ray.isValid) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a7beada5396d618cb808e0d14eeb6ddca">CommenceTeleport</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">ray</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___solid_ray.html#a9c88c22c25f496573fc6603c28a76850">hitPosition</a>.point);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> &amp;&amp; <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a21ae998d1915ea582a97ffe164ec8712">teleportMode</a>==<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2">TeleportModes</a>.DASH) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordtype">float</span> t = Time.time - <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">dash_stime</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordtype">float</span> inter =(t*<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a4ce8d034085879743c2d07a72f779c2b">dash_speed</a>) / (Vector3.Distance(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">dash_origin</a>, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a>));</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">MoveRigToFeetLocation</a>(Vector3.Lerp(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">dash_origin</a>, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a>, inter));</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">if</span>(inter &gt;= 1.0f) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00091">91</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                      {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="comment">// Show/hide ray depending on given enable event</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#ac9271951866023100ee7721803b31dcc">getEventStatus</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a2f3bd9dbf6791b013a45478268858bfe">Enable_event</a>)) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                ray.show();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                ray.hide();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="comment">// Begin teleport if execute event</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">ray</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#adaace2023026fefb4769c85649a7ed7c">isVisible</a> &amp;&amp; <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">ray</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___solid_ray.html#a171dffc97eee43fd8d77a420e228eee7">objectHit</a> &amp;&amp; <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#ac9271951866023100ee7721803b31dcc">getEventStatus</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3f156bb936cd9f8b36314213089f684e">Execute_event</a>) &amp;&amp; ray.isValid) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a7beada5396d618cb808e0d14eeb6ddca">CommenceTeleport</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">ray</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___solid_ray.html#a9c88c22c25f496573fc6603c28a76850">hitPosition</a>.point);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="comment">// A dash-movement should be continously updated. We do that here.</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> &amp;&amp; <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a21ae998d1915ea582a97ffe164ec8712">teleportMode</a>==<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2">TeleportModes</a>.DASH) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordtype">float</span> t = Time.time - <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">dash_stime</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keywordtype">float</span> inter =(t*<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a4ce8d034085879743c2d07a72f779c2b">dash_speed</a>) / (Vector3.Distance(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">dash_origin</a>, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a>));</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">MoveRigToFeetLocation</a>(Vector3.Lerp(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">dash_origin</a>, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">destination</a>, inter));</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordflow">if</span>(inter &gt;= 1.0f) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">tp_in_progress</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___controller_html_a0758b7f779cd90b8cbde460b87ff962b"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">AVR.Core.AVR_Controller.inputManager</a></div><div class="ttdeci">AVR_ControllerInputManager inputManager</div><div class="ttdoc">the AVR_ControllerInputManager assigned to this controller. Returns null if no inputmanager is assign...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___controller_8cs_source.html#l00017">AVR_Controller.cs:17</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a757326c56ebd1f6629e5a7cc350e179d"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">AVR.Motion.AVR_MovementProvider.ray</a></div><div class="ttdeci">AVR_MovementRay ray</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00021">AVR_MovementProvider.cs:21</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a2f3bd9dbf6791b013a45478268858bfe"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a2f3bd9dbf6791b013a45478268858bfe">AVR.Motion.AVR_MovementProvider.Enable_event</a></div><div class="ttdeci">AVR_ControllerInputManager.BoolEvent Enable_event</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00022">AVR_MovementProvider.cs:22</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a912c5de5f526edd4ddfd73a2c173f7f3"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">AVR.Motion.AVR_MovementProvider.MoveRigToFeetLocation</a></div><div class="ttdeci">void MoveRigToFeetLocation(Vector3 feet)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00132">AVR_MovementProvider.cs:132</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a647776f80da0f6d907c39bf7d1aaa5b2"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2">AVR.Motion.AVR_MovementProvider.TeleportModes</a></div><div class="ttdeci">TeleportModes</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00011">AVR_MovementProvider.cs:11</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a757326c56ebd1f6629e5a7cc350e179d"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a757326c56ebd1f6629e5a7cc350e179d">AVR.Motion.AVR_MovementProvider.ray</a></div><div class="ttdeci">AVR_MovementRay ray</div><div class="ttdoc">Ray which is displayed to target a location. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00058">AVR_MovementProvider.cs:58</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a2f3bd9dbf6791b013a45478268858bfe"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a2f3bd9dbf6791b013a45478268858bfe">AVR.Motion.AVR_MovementProvider.Enable_event</a></div><div class="ttdeci">AVR_ControllerInputManager.BoolEvent Enable_event</div><div class="ttdoc">Event which enables/shows the teleportation-ray. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00021">AVR_MovementProvider.cs:21</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a912c5de5f526edd4ddfd73a2c173f7f3"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a912c5de5f526edd4ddfd73a2c173f7f3">AVR.Motion.AVR_MovementProvider.MoveRigToFeetLocation</a></div><div class="ttdeci">void MoveRigToFeetLocation(Vector3 feet)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00189">AVR_MovementProvider.cs:189</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a647776f80da0f6d907c39bf7d1aaa5b2"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a647776f80da0f6d907c39bf7d1aaa5b2">AVR.Motion.AVR_MovementProvider.TeleportModes</a></div><div class="ttdeci">TeleportModes</div><div class="ttdoc">Modes of teleportation/movement. INSTANT: Instantly moves to the target position FADE_COLOR: Fades th...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00036">AVR_MovementProvider.cs:36</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___solid_ray_html_a171dffc97eee43fd8d77a420e228eee7"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___solid_ray.html#a171dffc97eee43fd8d77a420e228eee7">AVR.Core.AVR_SolidRay.objectHit</a></div><div class="ttdeci">bool objectHit</div><div class="ttdoc">True if the ray hit some object this frame. Use AVR_SolidRay.hitPosition to get the respective Raycas...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___solid_ray_8cs_source.html#l00031">AVR_SolidRay.cs:31</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a7beada5396d618cb808e0d14eeb6ddca"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a7beada5396d618cb808e0d14eeb6ddca">AVR.Motion.AVR_MovementProvider.CommenceTeleport</a></div><div class="ttdeci">void CommenceTeleport(Vector3 targetLocation)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00101">AVR_MovementProvider.cs:101</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a3b8ba64ac3af4a2ddf40d60e83363b71"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">AVR.Motion.AVR_MovementProvider.dash_stime</a></div><div class="ttdeci">float dash_stime</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00033">AVR_MovementProvider.cs:33</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a7beada5396d618cb808e0d14eeb6ddca"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a7beada5396d618cb808e0d14eeb6ddca">AVR.Motion.AVR_MovementProvider.CommenceTeleport</a></div><div class="ttdeci">void CommenceTeleport(Vector3 targetLocation)</div><div class="ttdoc">Begins a movement towards target location </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00158">AVR_MovementProvider.cs:158</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a3b8ba64ac3af4a2ddf40d60e83363b71"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71">AVR.Motion.AVR_MovementProvider.dash_stime</a></div><div class="ttdeci">float dash_stime</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00081">AVR_MovementProvider.cs:81</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager_html_ac9271951866023100ee7721803b31dcc"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#ac9271951866023100ee7721803b31dcc">AVR.Core.AVR_ControllerInputManager.getEventStatus</a></div><div class="ttdeci">bool getEventStatus(BoolEvent type)</div><div class="ttdoc">Returns the status of a given BoolEvent </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___controller_input_manager_8cs_source.html#l00234">AVR_ControllerInputManager.cs:234</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a21ae998d1915ea582a97ffe164ec8712"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a21ae998d1915ea582a97ffe164ec8712">AVR.Motion.AVR_MovementProvider.teleportMode</a></div><div class="ttdeci">TeleportModes teleportMode</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00014">AVR_MovementProvider.cs:14</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a23b57622f93855069880dedb77f28159"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">AVR.Motion.AVR_MovementProvider.dash_origin</a></div><div class="ttdeci">Vector3 dash_origin</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00032">AVR_MovementProvider.cs:32</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a4ce8d034085879743c2d07a72f779c2b"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a4ce8d034085879743c2d07a72f779c2b">AVR.Motion.AVR_MovementProvider.dash_speed</a></div><div class="ttdeci">float dash_speed</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00028">AVR_MovementProvider.cs:28</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a3f156bb936cd9f8b36314213089f684e"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3f156bb936cd9f8b36314213089f684e">AVR.Motion.AVR_MovementProvider.Execute_event</a></div><div class="ttdeci">AVR_ControllerInputManager.BoolEvent Execute_event</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00023">AVR_MovementProvider.cs:23</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_ac1da26c0337d28b1c262b9f0c32fac76"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">AVR.Motion.AVR_MovementProvider.tp_in_progress</a></div><div class="ttdeci">bool tp_in_progress</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00030">AVR_MovementProvider.cs:30</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a21ae998d1915ea582a97ffe164ec8712"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a21ae998d1915ea582a97ffe164ec8712">AVR.Motion.AVR_MovementProvider.teleportMode</a></div><div class="ttdeci">TeleportModes teleportMode</div><div class="ttdoc">Modes of teleportation/movement. INSTANT: Instantly moves to the target position FADE_COLOR: Fades th...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00048">AVR_MovementProvider.cs:48</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a23b57622f93855069880dedb77f28159"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159">AVR.Motion.AVR_MovementProvider.dash_origin</a></div><div class="ttdeci">Vector3 dash_origin</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00080">AVR_MovementProvider.cs:80</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a4ce8d034085879743c2d07a72f779c2b"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a4ce8d034085879743c2d07a72f779c2b">AVR.Motion.AVR_MovementProvider.dash_speed</a></div><div class="ttdeci">float dash_speed</div><div class="ttdoc">When using DASH or FADE_DASH, this determines the speed (in units/s) we travel towards the target loc...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00075">AVR_MovementProvider.cs:75</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a3f156bb936cd9f8b36314213089f684e"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3f156bb936cd9f8b36314213089f684e">AVR.Motion.AVR_MovementProvider.Execute_event</a></div><div class="ttdeci">AVR_ControllerInputManager.BoolEvent Execute_event</div><div class="ttdoc">Event which (if possible) executes the movement to target location. Can only ocurr if the ray is visi...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00026">AVR_MovementProvider.cs:26</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_ac1da26c0337d28b1c262b9f0c32fac76"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#ac1da26c0337d28b1c262b9f0c32fac76">AVR.Motion.AVR_MovementProvider.tp_in_progress</a></div><div class="ttdeci">bool tp_in_progress</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00078">AVR_MovementProvider.cs:78</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_adaace2023026fefb4769c85649a7ed7c"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#adaace2023026fefb4769c85649a7ed7c">AVR.Core.AVR_Ray.isVisible</a></div><div class="ttdeci">bool isVisible</div><div class="ttdoc">Is this ray visible </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00047">AVR_Ray.cs:47</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___controller_component_html_aa1b5d10862079118499e2ee5e5e619e7"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">AVR.Core.AVR_ControllerComponent.controller</a></div><div class="ttdeci">AVR_Controller controller</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___controller_component_8cs_source.html#l00012">AVR_ControllerComponent.cs:12</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___solid_ray_html_a9c88c22c25f496573fc6603c28a76850"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___solid_ray.html#a9c88c22c25f496573fc6603c28a76850">AVR.Core.AVR_SolidRay.hitPosition</a></div><div class="ttdeci">RaycastHit hitPosition</div><div class="ttdoc">Raycasthit where the ray hit something. Contains the last hit the ray did if AVR_SolidRay.objectHit is false. null if the ray hasn&#39;t hit a single object in its lifetime. /summary> </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___solid_ray_8cs_source.html#l00024">AVR_SolidRay.cs:24</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a63274ac05864573459fea296b6415bd6"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">AVR.Motion.AVR_MovementProvider.destination</a></div><div class="ttdeci">Vector3 destination</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00031">AVR_MovementProvider.cs:31</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_html_a63274ac05864573459fea296b6415bd6"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a63274ac05864573459fea296b6415bd6">AVR.Motion.AVR_MovementProvider.destination</a></div><div class="ttdeci">Vector3 destination</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___movement_provider_8cs_source.html#l00079">AVR_MovementProvider.cs:79</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -559,7 +562,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00025">25</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<p>CameraFadeEffect used when teleportmode is FADE_COLOR or FADE_DASH. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00064">64</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -581,7 +586,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00032">32</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00080">80</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -595,7 +600,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00028">28</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<p>When using DASH or FADE_DASH, this determines the speed (in units/s) we travel towards the target location. When using DASH its recommended to keep this reasonably high to avoid motion sickness. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00075">75</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -617,7 +624,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00033">33</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00081">81</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -639,7 +646,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00031">31</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00079">79</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -653,7 +660,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00022">22</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<p>Event which enables/shows the teleportation-ray. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00021">21</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -667,7 +676,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00023">23</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<p>Event which (if possible) executes the movement to target location. Can only ocurr if the ray is visible, eg if enable_event is also true. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00026">26</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -681,7 +692,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00026">26</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<p>When using FADE_COLOR or FADE_DASH, this determines the amount of time between fade-in and fade-out transitions. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00069">69</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -695,7 +708,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00016">16</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<p>Determines which surface is a valid teleport-location and which is not. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00053">53</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -709,7 +724,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00021">21</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<p>Ray which is displayed to target a location. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00058">58</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -723,7 +740,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00014">14</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<p>Modes of teleportation/movement. INSTANT: Instantly moves to the target position FADE_COLOR: Fades the screen to a given color, teleports to target location, then fades the color back out. DASH: Moves to target location in a linear fash with a given speed. FADE_DASH: Combination of FADE_COLOR and DASH. Fades the camera to a given color, then (while the curtains are closed) linearly translates the rig to target location. Then fades the colro back out. FADE_DASH or DASH are the modes of choice when using an avatar, as they provide a speed value. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00048">48</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -745,7 +764,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00030">30</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
+<p>Definition at line <a class="el" href="_a_v_r___movement_provider_8cs_source.html#l00078">78</a> of file <a class="el" href="_a_v_r___movement_provider_8cs_source.html">AVR_MovementProvider.cs</a>.</p>
 
 </div>
 </div>

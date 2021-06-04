@@ -13,6 +13,6 @@ var searchData=
   ['diraxes',['dirAxes',['../class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider.html#ab0acd4987735556eb6625c60b6fdc6da',1,'AVR::Motion::AVR_LocomotionProvider']]],
   ['dirtype',['dirType',['../class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider.html#a6dca462fb84cbd70265452eb9060e5f4',1,'AVR::Motion::AVR_LocomotionProvider']]],
   ['disable_5fy_5faxis',['disable_y_axis',['../class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider.html#a404845b5de83874a6787b97771a5d2f0',1,'AVR::Motion::AVR_LocomotionProvider']]],
-  ['do_5ffade_5fin',['do_fade_in',['../class_a_v_r___camera_fade.html#a941fa1ca9891932fa2841616168bbdf7',1,'AVR_CameraFade']]],
-  ['do_5ffade_5fout',['do_fade_out',['../class_a_v_r___camera_fade.html#ac02949d4faf33323a5d6c9117fa4a5c2',1,'AVR_CameraFade']]]
+  ['do_5ffade_5fin',['do_fade_in',['../class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a6afd86288fffbacd8328d21ef5e6ad4f',1,'AVR::Core::AVR_CameraFade']]],
+  ['do_5ffade_5fout',['do_fade_out',['../class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a9b766eaa90f42a3e59798e1356bf360e',1,'AVR::Core::AVR_CameraFade']]]
 ];

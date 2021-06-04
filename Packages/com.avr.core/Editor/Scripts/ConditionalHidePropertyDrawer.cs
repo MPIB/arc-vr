@@ -40,7 +40,8 @@ namespace AVR.Core.Attributes {
                     attr.ctype == ct.BIGGER && prop.floatValue > attr.compareValue ||
                     attr.ctype == ct.SMALLEREQUAL && prop.floatValue <= attr.compareValue ||
                     attr.ctype == ct.SMALLER && prop.floatValue < attr.compareValue ||
-                    attr.ctype == ct.EQUAL && prop.floatValue == attr.compareValue;
+                    attr.ctype == ct.EQUAL && prop.floatValue == attr.compareValue ||
+                    attr.ctype == ct.UNEQUAL && prop.floatValue != attr.compareValue;
             }
             else if (prop.type == "int") {
                 val =
@@ -48,7 +49,8 @@ namespace AVR.Core.Attributes {
                     attr.ctype == ct.BIGGER && prop.intValue > attr.compareValue ||
                     attr.ctype == ct.SMALLEREQUAL && prop.intValue <= attr.compareValue ||
                     attr.ctype == ct.SMALLER && prop.intValue < attr.compareValue ||
-                    attr.ctype == ct.EQUAL && prop.intValue == attr.compareValue;
+                    attr.ctype == ct.EQUAL && prop.intValue == attr.compareValue ||
+                    attr.ctype == ct.UNEQUAL && prop.intValue != attr.compareValue;
             }
             else if (prop.type == "double") {
                 val =
@@ -56,7 +58,8 @@ namespace AVR.Core.Attributes {
                     attr.ctype == ct.BIGGER && prop.doubleValue > attr.compareValue ||
                     attr.ctype == ct.SMALLEREQUAL && prop.doubleValue <= attr.compareValue ||
                     attr.ctype == ct.SMALLER && prop.doubleValue < attr.compareValue ||
-                    attr.ctype == ct.EQUAL && prop.doubleValue == attr.compareValue;
+                    attr.ctype == ct.EQUAL && prop.doubleValue == attr.compareValue ||
+                    attr.ctype == ct.UNEQUAL && prop.doubleValue != attr.compareValue;
             }
             else if (prop.type == "long") {
                 val =
@@ -64,7 +67,8 @@ namespace AVR.Core.Attributes {
                     attr.ctype == ct.BIGGER && prop.longValue > attr.compareValue ||
                     attr.ctype == ct.SMALLEREQUAL && prop.longValue <= attr.compareValue ||
                     attr.ctype == ct.SMALLER && prop.longValue < attr.compareValue ||
-                    attr.ctype == ct.EQUAL && prop.longValue == attr.compareValue;
+                    attr.ctype == ct.EQUAL && prop.longValue == attr.compareValue ||
+                    attr.ctype == ct.UNEQUAL && prop.longValue != attr.compareValue;
             }
             else if (prop.type == "Enum") {
                 val =
@@ -72,7 +76,8 @@ namespace AVR.Core.Attributes {
                     attr.ctype == ct.BIGGER && prop.enumValueIndex > attr.compareValue ||
                     attr.ctype == ct.SMALLEREQUAL && prop.enumValueIndex <= attr.compareValue ||
                     attr.ctype == ct.SMALLER && prop.enumValueIndex < attr.compareValue ||
-                    attr.ctype == ct.EQUAL && prop.enumValueIndex == attr.compareValue;
+                    attr.ctype == ct.EQUAL && prop.enumValueIndex == attr.compareValue ||
+                    attr.ctype == ct.UNEQUAL && prop.enumValueIndex != attr.compareValue;
             }
             else {
                 val = prop.objectReferenceValue != null;

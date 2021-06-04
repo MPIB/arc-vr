@@ -126,7 +126,7 @@ namespace AVR.Core.Attributes {
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = true)]
     public class ConditionalHideInInspector: PropertyAttribute
     {
-        public enum compareType { EQUAL, BIGGER, SMALLER, BIGGEREQUAL, SMALLEREQUAL };
+        public enum compareType { EQUAL, BIGGER, SMALLER, BIGGEREQUAL, SMALLEREQUAL, UNEQUAL };
 
         public compareType ctype { get; private set; }
         public string hideConditionPropertyName { get; private set; }

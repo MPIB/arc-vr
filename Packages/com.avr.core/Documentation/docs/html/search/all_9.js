@@ -15,7 +15,7 @@ var searchData=
   ['invertcondition',['invertCondition',['../class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector.html#ae7b6645ee9f12b7f58f96c02ce156b98',1,'AVR::Core::Attributes::ConditionalHideInInspector']]],
   ['is_5fidentifier',['is_identifier',['../class_a_v_r_1_1_core_1_1_a_v_r___settings_parser.html#a61fc96d3ad77092f4b219680577db5eb',1,'AVR::Core::AVR_SettingsParser']]],
   ['is_5fleaf',['is_leaf',['../class_a_v_r_1_1_core_1_1_settings_tree_node.html#af17977ad56f6b260f050acd0a675f7d5',1,'AVR::Core::SettingsTreeNode']]],
-  ['isbusy',['isBusy',['../class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b',1,'AVR.Core.AVR_Effect.isBusy()'],['../class_a_v_r___camera_fade.html#a608ae2f13fea108ee0f568087e69bdc5',1,'AVR_CameraFade.isBusy()']]],
+  ['isbusy',['isBusy',['../class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b',1,'AVR.Core.AVR_Effect.isBusy()'],['../class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a7d8bbebe9087758fe0cc1a3415f6d91e',1,'AVR.Core.AVR_CameraFade.isBusy()']]],
   ['ishidden',['isHidden',['../class_a_v_r_1_1_core_1_1_a_v_r___ray.html#af720e72ad3933da97aaf892a08cdd2d7',1,'AVR::Core::AVR_Ray']]],
   ['isvalid',['isValid',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_ray.html#adadbddccce32ba2f2a8dae6019f2dc7b',1,'AVR::Motion::AVR_MovementRay']]],
   ['isvalidtplocation',['isValidTpLocation',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_restrictor.html#a543c75ea4a0c13f4f03277763eb38f24',1,'AVR::Motion::AVR_MovementRestrictor']]],

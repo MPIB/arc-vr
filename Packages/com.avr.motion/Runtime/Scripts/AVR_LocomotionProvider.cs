@@ -8,6 +8,7 @@ namespace AVR.Motion {
     /// <summary>
     /// Provides locomotion-movement to a controller.
     /// </summary>
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider.html")]
     public class AVR_LocomotionProvider : AVR_ControllerComponent
     {
         /// <summary>

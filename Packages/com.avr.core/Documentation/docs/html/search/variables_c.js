@@ -7,5 +7,5 @@ var searchData=
   ['onenable',['onEnable',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___component___events_wizard.html#a50b7ac139e26de2ef523a960660cd58d',1,'AVR.UEditor.Core.AVR_Component_EventsWizard.onEnable()'],['../class_a_v_r_1_1_core_1_1_a_v_r___component.html#a68fc0bb54e2c18ba883e42383001c501',1,'AVR.Core.AVR_Component.onEnable()']]],
   ['onstart',['onStart',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___component___events_wizard.html#a14c2b447cff416c08514ab771c531120',1,'AVR.UEditor.Core.AVR_Component_EventsWizard.onStart()'],['../class_a_v_r_1_1_core_1_1_a_v_r___component.html#a5f39436f864be4fe5d8a6b0c469a124f',1,'AVR.Core.AVR_Component.onStart()']]],
   ['output_5fs',['output_s',['../class_a_v_r_1_1_core_1_1_a_v_r___dev_console.html#a801ddf2c36419e4458432e6cf9cc4775',1,'AVR::Core::AVR_DevConsole']]],
-  ['overlaycolor',['overlayColor',['../class_a_v_r___camera_fade.html#adb8c848a5dc6ac4e3b22fed11a928a53',1,'AVR_CameraFade']]]
+  ['overlaycolor',['overlayColor',['../class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a9e1cdb71af40fc9625d0afbf7c7a385a',1,'AVR::Core::AVR_CameraFade']]]
 ];

@@ -11,10 +11,10 @@ namespace AVR.Motion {
     /// A different color-gradient and/or reticule is displayed depending on the validity of the ray.
     /// If no object is hit, the ray always defaults to invalid.
     /// </summary>
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_motion_1_1_a_v_r___movement_ray.html")]
     [RequireComponent(typeof(LineRenderer))]
     public class AVR_MovementRay : AVR_SolidRay
     {
-
         // Filter that determine whether a hit is valid. By default always return true.
         public System.Func<RaycastHit, bool> filter = (RaycastHit h) => true;
 

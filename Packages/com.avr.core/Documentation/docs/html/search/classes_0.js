@@ -4,7 +4,7 @@ var searchData=
   ['avr_5fbasicdevconsoleui',['AVR_BasicDevConsoleUI',['../class_a_v_r_1_1_core_1_1_a_v_r___basic_dev_console_u_i.html',1,'AVR::Core']]],
   ['avr_5fbehaviour',['AVR_Behaviour',['../class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html',1,'AVR::Core']]],
   ['avr_5fbehaviour_5feditor',['AVR_Behaviour_Editor',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html',1,'AVR::UEditor::Core']]],
-  ['avr_5fcamerafade',['AVR_CameraFade',['../class_a_v_r___camera_fade.html',1,'']]],
+  ['avr_5fcamerafade',['AVR_CameraFade',['../class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html',1,'AVR::Core']]],
   ['avr_5fcomponent',['AVR_Component',['../class_a_v_r_1_1_core_1_1_a_v_r___component.html',1,'AVR::Core']]],
   ['avr_5fcomponent_5feditor',['AVR_Component_Editor',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___component___editor.html',1,'AVR::UEditor::Core']]],
   ['avr_5fcomponent_5feventswizard',['AVR_Component_EventsWizard',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___component___events_wizard.html',1,'AVR::UEditor::Core']]],

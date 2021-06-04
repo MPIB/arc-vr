@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: BasicMovementRestrictor
   m_EditorClassIdentifier: 
   limitTPLocation_byTag: 0
-  limitTPLocation_byLayer: 1
-  limitTPLocation_bySlope: 1
   validTPTag: 
+  limitTPLocation_byLayer: 1
   validTPLayers:
     serializedVersion: 2
     m_Bits: 1
+  limitTPLocation_bySlope: 1
   validTPmaxSlope: 60
