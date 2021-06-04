@@ -113,6 +113,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:af6257969e253a8b1e8d3d08f625f3ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a778ebe128e494e7040ed3d661f62dd25"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___core___menu_items.html#a778ebe128e494e7040ed3d661f62dd25">createRootObject</a> ()</td></tr>
 <tr class="separator:a778ebe128e494e7040ed3d661f62dd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5af0728a0f39dc772c2764c241054949"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___core___menu_items.html#a5af0728a0f39dc772c2764c241054949">openContextScreen</a> ()</td></tr>
+<tr class="separator:a5af0728a0f39dc772c2764c241054949"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -141,7 +143,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_a_v_r___core___menu_items_8cs_source.html#l00010">10</a> of file <a class="el" href="_a_v_r___core___menu_items_8cs_source.html">AVR_Core_MenuItems.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                             {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            AVR_Core_EditorUtility.InstantiatePrefabAsChild(null, <span class="stringliteral">&quot;/editor/defaultPrefabPaths/playerRig&quot;</span>);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            AVR_EditorUtility.InstantiatePrefabAsChild(null, <span class="stringliteral">&quot;/editor/defaultPrefabPaths/playerRig&quot;</span>);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -169,8 +171,36 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_a_v_r___core___menu_items_8cs_source.html#l00015">15</a> of file <a class="el" href="_a_v_r___core___menu_items_8cs_source.html">AVR_Core_MenuItems.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            AVR_Core_EditorUtility.InstantiatePrefabAsChild(null, <span class="stringliteral">&quot;/editor/defaultPrefabPaths/rootObject&quot;</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            AVR_EditorUtility.InstantiatePrefabAsChild(null, <span class="stringliteral">&quot;/editor/defaultPrefabPaths/rootObject&quot;</span>);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a5af0728a0f39dc772c2764c241054949"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void AVR.UEditor.Core.AVR_Core_MenuItems.openContextScreen </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_v_r___core___menu_items_8cs_source.html#l00021">21</a> of file <a class="el" href="_a_v_r___core___menu_items_8cs_source.html">AVR_Core_MenuItems.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            EditorWindow.GetWindow(typeof(AVR_ArcVRWindow), <span class="keyword">true</span>, <span class="stringliteral">&quot;ARC-VR&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

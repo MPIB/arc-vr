@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['on_5ffixedupdate',['ON_FIXEDUPDATE',['../class_a_v_r_1_1_core_1_1_a_v_r___logger.html#a058ccf9d8c3c7c277eb311808b2b6a4fac06fba26364411b5c49bd454e3db0da3',1,'AVR::Core::AVR_Logger']]],
-  ['on_5flateupdate',['ON_LATEUPDATE',['../class_a_v_r_1_1_core_1_1_a_v_r___logger.html#a058ccf9d8c3c7c277eb311808b2b6a4fa5ad2145005dddaf9949c4376c4b370d5',1,'AVR::Core::AVR_Logger']]],
-  ['on_5fupdate',['ON_UPDATE',['../class_a_v_r_1_1_core_1_1_a_v_r___logger.html#a058ccf9d8c3c7c277eb311808b2b6a4fa4a6be4c8602d150038b100a35556d3d7',1,'AVR::Core::AVR_Logger']]],
-  ['onbeforerender',['OnBeforeRender',['../class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7bacabd306390a9f789064294c2cac42fc2',1,'AVR::Core::AVR_GenericXRDevice']]],
-  ['onbeforerenderandupdate',['OnBeforeRenderAndUpdate',['../class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7ba537edf6214a9792b8f3692af11c9da8c',1,'AVR::Core::AVR_GenericXRDevice']]],
-  ['onupdate',['OnUpdate',['../class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7badad07967ee58700afec07a543d5a5e46',1,'AVR::Core::AVR_GenericXRDevice']]]
+  ['grip_5fgrip',['GRIP_GRIP',['../class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a33a6a31da3de7a373deffcdc04fad274a1407944cc45bfec039c29d19b5cb3452',1,'AVR::Core::AVR_ControllerInputManager']]],
+  ['grip_5fongripdown',['GRIP_ONGRIPDOWN',['../class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a33a6a31da3de7a373deffcdc04fad274a80fcd9f83e3e80a8451e1bdbc6145f54',1,'AVR::Core::AVR_ControllerInputManager']]],
+  ['grip_5fongripup',['GRIP_ONGRIPUP',['../class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a33a6a31da3de7a373deffcdc04fad274af9e503f6f227f10b1534c0eebb3159ca',1,'AVR::Core::AVR_ControllerInputManager']]]
 ];

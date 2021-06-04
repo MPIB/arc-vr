@@ -113,6 +113,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aa8034e568892afea64640317bb165908"><td class="memItemLeft" align="right" valign="top">static TAttribute&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_utils_1_1_misc.html#aa8034e568892afea64640317bb165908">GetAttribute&lt; TAttribute &gt;</a> (this System.Type type)</td></tr>
 <tr class="memdesc:aa8034e568892afea64640317bb165908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get custom System.Attribute from a given type  <a href="#aa8034e568892afea64640317bb165908">More...</a><br /></td></tr>
 <tr class="separator:aa8034e568892afea64640317bb165908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fc5c76e06aa8e5bee5ba21295f848c2"><td class="memItemLeft" align="right" valign="top">static Texture2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_utils_1_1_misc.html#a3fc5c76e06aa8e5bee5ba21295f848c2">Image2Texture</a> (string path)</td></tr>
+<tr class="memdesc:a3fc5c76e06aa8e5bee5ba21295f848c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Texture2D object from a given image path  <a href="#a3fc5c76e06aa8e5bee5ba21295f848c2">More...</a><br /></td></tr>
+<tr class="separator:a3fc5c76e06aa8e5bee5ba21295f848c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_a_v_r_1_1_core_1_1_utils_1_1_misc.html" title="Misc. utility functions. ">Misc</a>. utility functions. </p>
@@ -272,6 +275,47 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">return</span> null;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a3fc5c76e06aa8e5bee5ba21295f848c2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Texture2D AVR.Core.Utils.Misc.Image2Texture </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a Texture2D object from a given image path </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Path (relative to assembly) where the image is located. Example: "Packages/com.avr.core/Package_Resources/avr_logo_vr.png" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_a_v_r___utils_8cs_source.html#l00168">168</a> of file <a class="el" href="_a_v_r___utils_8cs_source.html">AVR_Utils.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                                           {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            var rawData = System.IO.File.ReadAllBytes(path);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            Texture2D tex = <span class="keyword">new</span> Texture2D(1, 1); <span class="comment">// Size should not matter here, as LoadImage resets it.</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            tex.LoadImage(rawData);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">return</span> tex;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

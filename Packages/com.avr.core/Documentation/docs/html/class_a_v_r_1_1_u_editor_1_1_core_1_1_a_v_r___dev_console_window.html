@@ -161,10 +161,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">            //// SETTINGS BUTTON</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span>            GUIStyle sb = <span class="keyword">new</span> GUIStyle(GUI.skin.button);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            sb.font = AVR_Core_EditorUtility.GetFont(<span class="stringliteral">&quot;/editor/fonts/font-awesome&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            sb.font = AVR_EditorUtility.GetFont(<span class="stringliteral">&quot;/editor/fonts/font-awesome&quot;</span>);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            sb.fontSize = 11;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordtype">string</span> cog_symbol = AVR_Core_EditorUtility.Unicode_to_String(<span class="stringliteral">&quot;f013&quot;</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordtype">string</span> cog_symbol = AVR_EditorUtility.Unicode_to_String(<span class="stringliteral">&quot;f013&quot;</span>);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (GUILayout.Button(cog_symbol, sb, GUILayout.Width(25), GUILayout.Height(25)))</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                AVR_DevConsole.print(<span class="stringliteral">&quot;Settings Button doesnt do anything! :(&quot;</span>);</div>
@@ -178,7 +178,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            s0.richText = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            s0.alignment = TextAnchor.LowerLeft;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            s0.fontSize = 16;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            s0.font = AVR_Core_EditorUtility.GetFont(<span class="stringliteral">&quot;/editor/fonts/inconsolata&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            s0.font = AVR_EditorUtility.GetFont(<span class="stringliteral">&quot;/editor/fonts/inconsolata&quot;</span>);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="comment">// Output area color/bounds</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            GUI.contentColor = <span class="keyword">new</span> Color(1f, 1f, 1f, 1f);</div>

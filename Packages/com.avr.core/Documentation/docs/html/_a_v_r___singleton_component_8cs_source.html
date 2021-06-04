@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_913e619e6f07b6712ba7554d0a547c49.html">Runtime</a></li><li class="navelem"><a class="el" href="dir_1b3ddb8075fdbbac6124da80842e9b40.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_1f34828001158e8722aa0d5b2904027e.html">Core</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_99bbfd5d1b982264d2e4d05dab923596.html">Runtime</a></li><li class="navelem"><a class="el" href="dir_0913d68aede4f3785f16ac233ae9afa6.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_c4f95f7126d9ec7b04fa4583f58fd3ee.html">Core</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -114,9 +114,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                GameObject.Destroy(Instance);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            }</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            Instance = GetComponent&lt;T&gt;();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            Instance = gameObject.GetComponent&lt;T&gt;();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span> (Instance != null)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span> (Instance == null)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                AVR_DevConsole.cerror(this.name + <span class="stringliteral">&quot; is marked as a Singleton of type &quot;</span> + typeof(T).ToString() + <span class="stringliteral">&quot; but no component of this type was found!&quot;</span>, <span class="keyword">this</span>);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>

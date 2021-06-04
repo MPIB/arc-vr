@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_913e619e6f07b6712ba7554d0a547c49.html">Runtime</a></li><li class="navelem"><a class="el" href="dir_1b3ddb8075fdbbac6124da80842e9b40.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_1f34828001158e8722aa0d5b2904027e.html">Core</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_99bbfd5d1b982264d2e4d05dab923596.html">Runtime</a></li><li class="navelem"><a class="el" href="dir_0913d68aede4f3785f16ac233ae9afa6.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_c4f95f7126d9ec7b04fa4583f58fd3ee.html">Core</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -254,9 +254,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        {</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">return</span> type.GetCustomAttributes(typeof(TAttribute), <span class="keyword">true</span>).FirstOrDefault() as TAttribute;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">        /// Creates a Texture2D object from a given image path</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">        /// &lt;param name=&quot;path&quot;&gt; Path (relative to assembly) where the image is located. Example: &quot;Packages/com.avr.core/Package_Resources/avr_logo_vr.png&quot; &lt;/param&gt;</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_utils_1_1_misc.html#a3fc5c76e06aa8e5bee5ba21295f848c2">  168</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">static</span> Texture2D <a class="code" href="class_a_v_r_1_1_core_1_1_utils_1_1_misc.html#a3fc5c76e06aa8e5bee5ba21295f848c2">Image2Texture</a>(<span class="keywordtype">string</span> path) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            var rawData = System.IO.File.ReadAllBytes(path);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            Texture2D tex = <span class="keyword">new</span> Texture2D(1, 1); <span class="comment">// Size should not matter here, as LoadImage resets it.</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            tex.LoadImage(rawData);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">return</span> tex;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_utils_1_1_misc_html_ab166de4a5e4a439e9c110ca6f76a7345"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_utils_1_1_misc.html#ab166de4a5e4a439e9c110ca6f76a7345">AVR.Core.Utils.Misc.GetHierarchyPath</a></div><div class="ttdeci">static string GetHierarchyPath(Transform self)</div><div class="ttdoc">Returns location within the hierarchy of a scene object. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___utils_8cs_source.html#l00119">AVR_Utils.cs:119</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_utils_1_1_misc_html_a3fc5c76e06aa8e5bee5ba21295f848c2"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_utils_1_1_misc.html#a3fc5c76e06aa8e5bee5ba21295f848c2">AVR.Core.Utils.Misc.Image2Texture</a></div><div class="ttdeci">static Texture2D Image2Texture(string path)</div><div class="ttdoc">Creates a Texture2D object from a given image path </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___utils_8cs_source.html#l00168">AVR_Utils.cs:168</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_utils_1_1_phys_html_aec3389eb57e0a76ac31642ebe130eddd"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_utils_1_1_phys.html#aec3389eb57e0a76ac31642ebe130eddd">AVR.Core.Utils.Phys.LineCast</a></div><div class="ttdeci">static bool LineCast(Vector3 start, Vector3 end, out RaycastHit hit, LayerMask mask)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___utils_8cs_source.html#l00099">AVR_Utils.cs:99</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_utils_1_1_phys_html_a5d81bfb381296d3ce0b4e3e6f9dc8219"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_utils_1_1_phys.html#a5d81bfb381296d3ce0b4e3e6f9dc8219">AVR.Core.Utils.Phys.PathCast</a></div><div class="ttdeci">static bool PathCast(Vector3[] positions, out RaycastHit hit, Matrix4x4 localToWorld)</div><div class="ttdoc">Perform linecasts along a spline of positions given in local space. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___utils_8cs_source.html#l00081">AVR_Utils.cs:81</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_utils_1_1_misc_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_utils_1_1_misc.html">AVR.Core.Utils.Misc</a></div><div class="ttdoc">Misc. utility functions. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___utils_8cs_source.html#l00113">AVR_Utils.cs:113</a></div></div>

@@ -104,9 +104,10 @@ Inheritance diagram for AVR.UEditor.Core.AVR_Component_Editor:</div>
  <div class="center">
   <img src="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___component___editor.png" usemap="#AVR.UEditor.Core.AVR_Component_Editor_map" alt=""/>
   <map id="AVR.UEditor.Core.AVR_Component_Editor_map" name="AVR.UEditor.Core.AVR_Component_Editor_map">
-<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html" alt="AVR.UEditor.Core.AVR_Behaviour_Editor" shape="rect" coords="132,56,387,80"/>
-<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller___editor.html" alt="AVR.UEditor.Core.AVR_Controller_Editor" shape="rect" coords="0,168,255,192"/>
-<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___player_rig___editor.html" alt="AVR.UEditor.Core.AVR_PlayerRig_Editor" shape="rect" coords="265,168,520,192"/>
+<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html" alt="AVR.UEditor.Core.AVR_Behaviour_Editor" shape="rect" coords="325,56,640,80"/>
+<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller___editor.html" alt="AVR.UEditor.Core.AVR_Controller_Editor" shape="rect" coords="0,168,315,192"/>
+<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___player_rig___editor.html" alt="AVR.UEditor.Core.AVR_PlayerRig_Editor" shape="rect" coords="325,168,640,192"/>
+<area href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor.html" alt="AVR.UEditor.Motion.AVR_LocomotionProvider_Editor" shape="rect" coords="650,168,965,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -157,15 +158,15 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            EditorGUILayout.BeginHorizontal();</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="comment">// Documentation button</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            AVR.UEditor.Core.AVR_Core_EditorUtility.Documentation_Url(docu_url);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            AVR.UEditor.Core.AVR_EditorUtility.Documentation_Url(docu_url);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="comment">// Events button</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            AVR.UEditor.Core.AVR_Core_EditorUtility.EventsSettings_Button((<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR_Component</a>)target);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            AVR.UEditor.Core.AVR_EditorUtility.EventsSettings_Button((<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR_Component</a>)target);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="comment">// Network button</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#if AVR_NET</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">if</span>(typeof(<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR_Component</a>).IsAssignableFrom(target.GetType())) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                AVR.UEditor.Core.AVR_Core_EditorUtility.NetworkSetting_Button((<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR_Component</a>)target);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                AVR.UEditor.Core.AVR_EditorUtility.NetworkSetting_Button((<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR_Component</a>)target);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            EditorGUILayout.EndHorizontal();</div>

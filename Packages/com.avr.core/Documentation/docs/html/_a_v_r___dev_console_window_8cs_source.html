@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_f91b0547088a9753c46f351182e5b2f0.html">Editor</a></li><li class="navelem"><a class="el" href="dir_91f083d2b5d71bc482a0295513ae65f0.html">Scripts</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_bc6c12a2e4309ffb6706507ff794548b.html">Editor</a></li><li class="navelem"><a class="el" href="dir_df8520302b648d180abd062df47d9092.html">Scripts</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -108,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___dev_console_window.html#a9fa974c103c4c62bf45cbad5e25ffc77">   13</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">int</span> refocus = 0;</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___dev_console_window.html#a7e886c5652dc1b1cb043ef65c84fb3db">   14</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">int</span> history = -1;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        [MenuItem(<span class="stringliteral">&quot;AVR/Open DevConsole&quot;</span>)]</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        [MenuItem(<span class="stringliteral">&quot;AVR/Open DevConsole&quot;</span>, <span class="keyword">false</span>, 100)]</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___dev_console_window.html#afa788e406e9bade5d05b3b50a515cc41">   17</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___dev_console_window.html#afa788e406e9bade5d05b3b50a515cc41">ShowWindow</a>()</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            EditorWindow.GetWindow(typeof(<a class="code" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___dev_console_window.html">AVR_DevConsoleWindow</a>), <span class="keyword">false</span>, <span class="stringliteral">&quot;ARC-VR Console&quot;</span>);</div>
@@ -120,10 +120,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">            //// SETTINGS BUTTON</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span>            GUIStyle sb = <span class="keyword">new</span> GUIStyle(GUI.skin.button);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            sb.font = AVR_Core_EditorUtility.GetFont(<span class="stringliteral">&quot;/editor/fonts/font-awesome&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            sb.font = AVR_EditorUtility.GetFont(<span class="stringliteral">&quot;/editor/fonts/font-awesome&quot;</span>);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            sb.fontSize = 11;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordtype">string</span> cog_symbol = AVR_Core_EditorUtility.Unicode_to_String(<span class="stringliteral">&quot;f013&quot;</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordtype">string</span> cog_symbol = AVR_EditorUtility.Unicode_to_String(<span class="stringliteral">&quot;f013&quot;</span>);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (GUILayout.Button(cog_symbol, sb, GUILayout.Width(25), GUILayout.Height(25)))</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                AVR_DevConsole.print(<span class="stringliteral">&quot;Settings Button doesnt do anything! :(&quot;</span>);</div>
@@ -137,7 +137,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            s0.richText = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            s0.alignment = TextAnchor.LowerLeft;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            s0.fontSize = 16;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            s0.font = AVR_Core_EditorUtility.GetFont(<span class="stringliteral">&quot;/editor/fonts/inconsolata&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            s0.font = AVR_EditorUtility.GetFont(<span class="stringliteral">&quot;/editor/fonts/inconsolata&quot;</span>);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="comment">// Output area color/bounds</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            GUI.contentColor = <span class="keyword">new</span> Color(1f, 1f, 1f, 1f);</div>

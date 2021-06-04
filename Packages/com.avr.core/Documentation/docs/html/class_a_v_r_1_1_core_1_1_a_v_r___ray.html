@@ -113,9 +113,10 @@ Inheritance diagram for AVR.Core.AVR_Ray:</div>
  <div class="center">
   <img src="class_a_v_r_1_1_core_1_1_a_v_r___ray.png" usemap="#AVR.Core.AVR_Ray_map" alt=""/>
   <map id="AVR.Core.AVR_Ray_map" name="AVR.Core.AVR_Ray_map">
-<area href="class_a_v_r_1_1_core_1_1_a_v_r___component.html" title="Base class for all arc-vr components. A component is typically a Monobehaviour that represents a virt..." alt="AVR.Core.AVR_Component" shape="rect" coords="0,112,170,136"/>
-<area href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html" title="Monobehaviour but with an added URL button to a documentation page. " alt="AVR.Core.AVR_Behaviour" shape="rect" coords="0,56,170,80"/>
-<area href="class_a_v_r_1_1_core_1_1_a_v_r___solid_ray.html" title="A more advanced type of AVR_Ray. The ray can be used to get the first object hit by it..." alt="AVR.Core.AVR_SolidRay" shape="rect" coords="0,224,170,248"/>
+<area href="class_a_v_r_1_1_core_1_1_a_v_r___component.html" title="Base class for all arc-vr components. A component is typically a Monobehaviour that represents a virt..." alt="AVR.Core.AVR_Component" shape="rect" coords="0,112,197,136"/>
+<area href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html" title="Monobehaviour but with an added URL button to a documentation page. " alt="AVR.Core.AVR_Behaviour" shape="rect" coords="0,56,197,80"/>
+<area href="class_a_v_r_1_1_core_1_1_a_v_r___solid_ray.html" title="A more advanced type of AVR_Ray. The ray can be used to get the first object hit by it..." alt="AVR.Core.AVR_SolidRay" shape="rect" coords="0,224,197,248"/>
+<area href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_ray.html" title="AVR_SolidRay but, when an object is hit, the hit is either valid or invalid. The validity of the hit ..." alt="AVR.Motion.AVR_MovementRay" shape="rect" coords="0,280,197,304"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -307,6 +308,8 @@ Private Member Functions</h2></td></tr>
 
 <p>Hides the ray. A ray is not updated while hidden. </p>
 
+<p>Reimplemented in <a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_ray.html#a13ab399d69d49cb81f39033a7460abe3">AVR.Motion.AVR_MovementRay</a>.</p>
+
 <p>Definition at line <a class="el" href="_a_v_r___ray_8cs_source.html#l00136">136</a> of file <a class="el" href="_a_v_r___ray_8cs_source.html">AVR_Ray.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                   {</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a7d9fe1e9b98281e9e2622ca104bda4fe">_hidden</a> = <span class="keyword">true</span>;</div>
@@ -452,7 +455,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Updates the ray. Called from Monobehaviour.Update() </p>
 
-<p>Reimplemented in <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___solid_ray.html#a9c15c7549e65e5284812f97485fa4476">AVR.Core.AVR_SolidRay</a>.</p>
+<p>Reimplemented in <a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_ray.html#ae03f548469dddafbe3af56fd997a4fc6">AVR.Motion.AVR_MovementRay</a>, and <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___solid_ray.html#a9c15c7549e65e5284812f97485fa4476">AVR.Core.AVR_SolidRay</a>.</p>
 
 <p>Definition at line <a class="el" href="_a_v_r___ray_8cs_source.html#l00076">76</a> of file <a class="el" href="_a_v_r___ray_8cs_source.html">AVR_Ray.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                           {</div>
