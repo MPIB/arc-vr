@@ -19,9 +19,9 @@ namespace AVR.Core {
                 GameObject.Destroy(Instance);
             }
 
-            Instance = GetComponent<T>();
+            Instance = gameObject.GetComponent<T>();
 
-            if (Instance != null)
+            if (Instance == null)
             {
                 AVR_DevConsole.cerror(this.name + " is marked as a Singleton of type " + typeof(T).ToString() + " but no component of this type was found!", this);
             }

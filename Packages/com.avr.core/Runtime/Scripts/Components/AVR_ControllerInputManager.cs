@@ -38,7 +38,9 @@ namespace AVR.Core {
             GRIP_GRIP,                          // Grip status
             GRIP_ONGRIPDOWN,                    // Grip pressed
             GRIP_ONGRIPUP,                      // Grip released
-            ANY_CANCEL                          // Any event that might cancel something (triggerdown, menubuttondown, primaryaxis click)
+            ANY_CANCEL,                         // Any event that might cancel something (triggerdown, menubuttondown, primaryaxis click)
+            ALWAYS_TRUE,                        // Is always true
+            ALWAYS_FALSE                        // Is always false
             //TODO etc.
         }
 
@@ -258,6 +260,8 @@ namespace AVR.Core {
                 case BoolEvent.GRIP_ONGRIPDOWN: { return gripDown; }
                 case BoolEvent.GRIP_ONGRIPUP: { return gripUp; }
                 case BoolEvent.ANY_CANCEL: { return menuButtonDown || triggerDown || primary2DAxisClick; }
+                case BoolEvent.ALWAYS_TRUE: { return true; }
+                case BoolEvent.ALWAYS_FALSE: { return false; }
                 default : { AVR_DevConsole.cwarn("getEventStatus does not recoginze value "+type, this); break; }
             }
             return false;

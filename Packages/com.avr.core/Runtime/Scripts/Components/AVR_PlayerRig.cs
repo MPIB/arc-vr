@@ -124,7 +124,7 @@ namespace AVR.Core {
         protected void Update() {
             if(characterController) {
                 // Set charactercontroller height based on camera height
-                characterController.height = Mathf.Clamp(AVR_PlayerRig.Instance.CameraHeightInRigSpace, AVR_Settings.get_float("settings/core/charactercontroller/min_height"), AVR_Settings.get_float("settings/core/charactercontroller/max_height"));
+                characterController.height = Mathf.Clamp(AVR_PlayerRig.Instance.CameraHeightInRigSpace, AVR_Settings.get_float("/settings/core/charactercontroller/min_height"), AVR_Settings.get_float("/settings/core/charactercontroller/max_height"));
 
                 // Set charactercontroller center to camera position in rig space. NOTE: This assumes that this.transform.pos is
                 // the same as rig.position. Eg. transform.localPosition = Vector3.zero.

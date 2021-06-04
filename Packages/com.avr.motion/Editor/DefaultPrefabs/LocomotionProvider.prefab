@@ -43,5 +43,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c3cca4de660214d86c1e394bfebe1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  moveEvent: 0
+  onAwake:
+    m_PersistentCalls:
+      m_Calls: []
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  moveEvent: 25
+  moveDirection: 0
+  dirType: 0
+  dirAxes: 1
+  speed: 2
+  use_gravity: 1
+  use_acceleration: 0
+  acceleration_constant: 0.1
