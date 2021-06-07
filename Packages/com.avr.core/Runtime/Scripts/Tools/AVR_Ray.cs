@@ -17,16 +17,14 @@ namespace AVR.Core {
 
 
         //// MEMBERS ===================================================================================================
+        
+        [Header("Shape")]
         /// <summary> What type of ray should be used </summary>
         public RayMode mode = RayMode.STRAIGHT;
-        /// <summary> Hide or show the ray immediately on Awake() </summary>
-        public bool start_hidden = true;
-        /// <summary> Maximum length of the ray </summary>
-        public float max_length = 25;
 
         // These only concern rays of mode=PROJECTILE
         /// <summary> How many vertices per unit distance to use for projectile motion ray </summary>
-        [AVR.Core.Attributes.ConditionalHideInInspector("mode", ((int)RayMode.PROJECTILE_MOTION), invertCondition:true)]
+        [AVR.Core.Attributes.ConditionalHideInInspector("mode", ((int)RayMode.PROJECTILE_MOTION), invertCondition: true)]
         public int proj_resolution = 3;
 
         /// <summary> Max. amount of vertices to use for projectile motion ray </summary>
@@ -38,10 +36,21 @@ namespace AVR.Core {
         [Range(0.5f, 6.0f)]
         public float proj_velocity = 3;
 
+        [Header("Settings")]
+        /// <summary> Hide or show the ray immediately on Awake() </summary>
+        public bool start_hidden = true;
+        /// <summary> Maximum length of the ray </summary>
+        public float max_length = 25;
+        /// <summary> Will restrict the length of the ray along the xz-Plane to a given value. </summary>
+        public float max_horizontal_distance = 10;
+        /// <summary> Will restrict the minium angle of the Ray with the y-Axis. </summary>
+        public float min_y_angle = 0;
+
         // Private / Protected:
         protected LineRenderer lr;
         protected bool _hidden;
         protected Vector3[] positions = new Vector3[0];
+        protected Vector3 RayForward = Vector3.forward;
 
         /// <summary> Is this ray visible </summary>
         public bool isVisible {
@@ -76,6 +85,24 @@ namespace AVR.Core {
         protected virtual void UpdateRay() {
             if(isHidden) return;
 
+            // This paragraph deals with the min_y_angle parameter.
+            /// An brief explanation on the math done here: 
+            /// Say alpha is the angle between RayForward and the y-axis. We want a minium alpha of 30°.
+            /// Basic trigonometry tells us, that alpha >= 30° is equivalent with RayForward.y <= cos(30°).
+            /// Consequently, RayForward.y will be clamped to exaclty cos(30°). What remains is setting the xz vector accordingly.
+            /// Since the whole vector is normalized, the hypotenuse is 1. So pythagoras => 1^2 = |RayForward.xz|^2 + Rayforward.y^2
+            /// As a result, the length of RayForward.xz is equal to |RayForward.xz| = sqrt(1-RayForward.y^2)
+            /// And since RayForward.y = cos(30°): |RayForward.xz| = sqrt(1-cos(30°)^2) = sin(30°)
+            /// And this is what we do here. If the condition is violated, we set y=0, then multiply the normalized vector with sin(alpha)
+            /// and finally set y to cos(alpha).
+            RayForward = transform.forward;
+            float ang = Mathf.Deg2Rad * min_y_angle;
+            if(RayForward.y > Mathf.Cos(ang)) {
+                RayForward.y = 0;
+                RayForward = RayForward.normalized * Mathf.Sin(ang);
+                RayForward.y = Mathf.Cos(ang);
+            }
+
             switch (mode)
             {
                 // Straight beam
@@ -101,9 +128,15 @@ namespace AVR.Core {
             // Make sure we only have 2 positions
             if (positions.Length != 2) positions = new Vector3[2];
 
+            // Se which condition determines the endpoint, max_length or max_horizontal_distance. Semi-TODO: This seems like an unelegant solution. Find a better one.
+            Vector3 dest = RayForward * max_length;
+            if(new Vector2(dest.x, dest.z).magnitude > max_horizontal_distance){
+                dest *= max_horizontal_distance / Mathf.Max(new Vector2(dest.x, dest.z).magnitude, 0.0001f);
+            }
+
             // Initialize between here & max_length
             this.positions[0] = transform.position;
-            this.positions[1] = transform.position + (transform.forward * max_length);
+            this.positions[1] = transform.position + dest;
 
             // Set line
             lr.useWorldSpace = true;
@@ -119,11 +152,15 @@ namespace AVR.Core {
             {
                 float dist = (float)i / proj_resolution;
 
+                Vector3 dest = RayForward * dist;
+
                 // Add new vertex to line
-                posl.Add(transform.position + transform.forward * dist - Vector3.up * (dist * dist) / (proj_velocity * proj_velocity));
+                posl.Add(transform.position + dest - Vector3.up * (dist * dist) / (proj_velocity * proj_velocity));
 
                 // Check if we're within distance limitations. NOTE: We are only restricting distance in the direction of transform.forward, not up or down.
                 if (dist >= max_length) break;
+
+                if (new Vector2(dest.x, dest.z).magnitude > max_horizontal_distance) break;
             }
 
             this.positions = posl.ToArray();

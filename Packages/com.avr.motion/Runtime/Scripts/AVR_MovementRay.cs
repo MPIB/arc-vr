@@ -19,10 +19,18 @@ namespace AVR.Motion {
         public System.Func<RaycastHit, bool> filter = (RaycastHit h) => true;
 
         // Public
+        [Header("HitReticules")]
+        /// <summary>
+        /// Reticule object displayed when a valid surface is hit
+        /// </summary>
         public GameObject reticule;
+        /// <summary>
+        /// Reticule object displayed when an invalid surface is hit
+        /// </summary>
         public GameObject invalid_reticule;
 
         // COLOR GRADIENTS
+        [Header("Gradients")]
         [SerializeField]
         Gradient m_ValidColorGradient = new Gradient()
         {

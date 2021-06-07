@@ -19,11 +19,13 @@ namespace AVR.Motion {
         /// </summary>
         public enum turnMode { SNAP, SMOOTH };
 
+        [Header("Mode")]
         /// <summary>
         /// Mode of turning. Snap will instantly turn by a given amount while smooth is a continous turn over time
         /// </summary>
         public turnMode mode;
 
+        [Header("Input")]
         /// <summary>
         /// Event on which a turn is performed.
         /// </summary>
@@ -34,6 +36,7 @@ namespace AVR.Motion {
         /// </summary>
         public AVR_ControllerInputManager.FloatEvent turnDirection;
 
+        [Header("Settings")]
         [ConditionalHideInInspector("mode", ((int)turnMode.SNAP), ConditionalHideInInspector.compareType.EQUAL, true)]
         /// <summary>
         /// If the mode is set to snap, the amount of rotation (in degrees) is determined by this value

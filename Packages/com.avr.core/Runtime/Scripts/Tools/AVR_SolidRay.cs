@@ -11,6 +11,7 @@ namespace AVR.Core {
     [RequireComponent(typeof(LineRenderer))]
     public class AVR_SolidRay : AVR_Ray
     {
+        [Header("Physics")]
         //// MEMBERS ===================================================================================================
         /// <summary> Layermask used to selectively ignore colliders when casting a ray. </summary>
         public LayerMask hit_layerMask;
@@ -47,12 +48,7 @@ namespace AVR.Core {
         {
             base.UpdateStraightRay();
             // If we hit something along the way, cut beam off there
-            if (AVR.Core.Utils.Phys.PathCast(positions, out RaycastHit hit, hit_layerMask))
-            {
-                this.positions[1] = hit.point;
-                _objectHit = true;
-                _hitPosition = hit;
-            }
+            checkHit(positions);
         }
 
         // Raycasting functionality for projectile rays:
@@ -65,25 +61,55 @@ namespace AVR.Core {
             {
                 float dist = (float)i / this.proj_resolution;
 
+                Vector3 dest = RayForward * dist;
+
                 // Add new vertex to line
-                posl.Add(transform.position + transform.forward * dist - Vector3.up * (dist * dist) / (proj_velocity * proj_velocity));
+                posl.Add(transform.position + dest - Vector3.up * (dist * dist) / (proj_velocity * proj_velocity));
 
                 // If we have 2 or more vertices check for collisions
-                if (posl.Count > 1 && AVR.Core.Utils.Phys.LineCast(posl[posl.Count - 2], posl[posl.Count - 1], out RaycastHit hit, hit_layerMask))
-                {
-                    _objectHit = true;
-                    _hitPosition = hit;
+                if(checkHit(posl)) break;
+
+                // Check if we're within distance limitations. NOTE: We are only restricting distance in the direction of RayForward, not up or down.
+                if (dist >= max_length) break;
+
+                // Deal with max_horizontal_distance
+                if (new Vector2(dest.x, dest.z).magnitude > max_horizontal_distance) {
+                    // We merely Linecast 100 units downward.
+                    posl.Add(posl[posl.Count-1] + Vector3.down*100);
+                    checkHit(posl);
                     break;
                 }
-
-                // Check if we're within distance limitations. NOTE: We are only restricting distance in the direction of transform.forward, not up or down.
-                if (dist >= max_length) break;
             }
 
             this.positions = posl.ToArray();
             lr.useWorldSpace = true;
             lr.positionCount = posl.Count;
             lr.SetPositions(this.positions);
+        }
+
+        // Checks if there is a hit between the last 2 positions.
+        private bool checkHit(List<Vector3> positions) {
+            if (positions.Count > 1 && AVR.Core.Utils.Phys.LineCast(positions[positions.Count - 2], positions[positions.Count - 1], out RaycastHit hit, hit_layerMask))
+            {
+                _objectHit = true;
+                _hitPosition = hit;
+                positions[positions.Count-1] = _hitPosition.point;
+                return true;
+            }
+            return false;
+        }
+
+        // Checks if there is a hit between the last 2 positions.
+        private bool checkHit(Vector3[] positions)
+        {
+            if (positions.Length > 1 && AVR.Core.Utils.Phys.LineCast(positions[positions.Length - 2], positions[positions.Length - 1], out RaycastHit hit, hit_layerMask))
+            {
+                _objectHit = true;
+                _hitPosition = hit;
+                positions[positions.Length - 1] = _hitPosition.point;
+                return true;
+            }
+            return false;
         }
     }
 }

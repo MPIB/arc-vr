@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3938096090804365495}
   - component: {fileID: 3938096090804365492}
-  - component: {fileID: 3938096090804365493}
+  - component: {fileID: 3827808369406449854}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -76,7 +76,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &3938096090804365493
+--- !u!114 &3827808369406449854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,15 +85,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 3938096090804365491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
+  m_Script: {fileID: 11500000, guid: f3556e6ec791f1a4f896498f98176c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Device: 0
-  m_PoseSource: 2
-  m_PoseProviderComponent: {fileID: 0}
-  m_TrackingType: 0
-  m_UpdateType: 0
-  m_UseRelativeTransform: 0
+  onAwake:
+    m_PersistentCalls:
+      m_Calls: []
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  controllerNode: 2
+  tracking: 1
+  updateType: 2
+  smoothing: 0
+  smoothingFidelity: 0.3
 --- !u!1 &3938096091124317167
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +116,7 @@ GameObject:
   - component: {fileID: 3938096091124317153}
   - component: {fileID: 3938096091124317152}
   m_Layer: 0
-  m_Name: XR Rig
+  m_Name: PlayerRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,6 +149,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e071a1148c8929f4981381cb054d1079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAwake:
+    m_PersistentCalls:
+      m_Calls: []
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
   MainCamera: {fileID: 3938096090804365492}
 --- !u!1 &3938096091130195902
 GameObject:
