@@ -1,7 +1,9 @@
 var searchData=
 [
   ['can_5fproceed',['can_proceed',['../class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#ae836f6a186e06bbd27717392b6b32e6b',1,'AVR::Core::AVR_TrialExperiment']]],
+  ['cancel',['Cancel',['../class_a_v_r_u_i___click_drag_wheel.html#aa40c8a3742cbc1eace92fcc5fe60665a',1,'AVRUI_ClickDragWheel']]],
   ['cerror',['cerror',['../class_a_v_r_1_1_core_1_1_a_v_r___dev_console.html#a6ab89dc7487ca313e2e70c4411e65061',1,'AVR.Core.AVR_DevConsole.cerror(string s, MonoBehaviour obj)'],['../class_a_v_r_1_1_core_1_1_a_v_r___dev_console.html#a17ea6444174cff5decc8f9d94dbce0c9',1,'AVR.Core.AVR_DevConsole.cerror(string s, GameObject obj)'],['../class_a_v_r_1_1_core_1_1_a_v_r___dev_console.html#af86ed7bb982474753af5213f4261d3cc',1,'AVR.Core.AVR_DevConsole.cerror(string s, string obj)']]],
+  ['checkhit',['checkHit',['../class_a_v_r_1_1_core_1_1_a_v_r___solid_ray.html#a50cf9e15ef338c415c4beb63400b537e',1,'AVR.Core.AVR_SolidRay.checkHit(List&lt; Vector3 &gt; positions)'],['../class_a_v_r_1_1_core_1_1_a_v_r___solid_ray.html#ad583fb8a2df8ad250bb34aa3bf51a92c',1,'AVR.Core.AVR_SolidRay.checkHit(Vector3[] positions)']]],
   ['clear',['clear',['../class_a_v_r_1_1_core_1_1_a_v_r___dev_console.html#aafe3afa4568ee9a48fecab836106dd01',1,'AVR::Core::AVR_DevConsole']]],
   ['command',['command',['../class_a_v_r_1_1_core_1_1_a_v_r___dev_console.html#a9c28b999af5d0caa1753509289fb9dfb',1,'AVR::Core::AVR_DevConsole']]],
   ['commence',['commence',['../class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#ab70cbac425f61f78b9d36ce41852aed8',1,'AVR::Core::AVR_TrialExperiment']]],

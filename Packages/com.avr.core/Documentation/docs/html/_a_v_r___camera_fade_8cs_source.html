@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_52848c9895e433680b953107257a66e5.html">com.avr.motion</a></li><li class="navelem"><a class="el" href="dir_1574560ac441f8a2afb818f65c02792d.html">Runtime</a></li><li class="navelem"><a class="el" href="dir_f9b6c044264404198e4d6aad140c21dc.html">Scripts</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_883371d55e9e371c1a7b4e3ed0756edf.html">com.avr.motion</a></li><li class="navelem"><a class="el" href="dir_8e0a1dfd8758175f9ac28b5b5ebb8902.html">Runtime</a></li><li class="navelem"><a class="el" href="dir_9231483e9471927101d793f7112ea84b.html">Scripts</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -102,140 +102,139 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">    /// Will fade-in / fade-out the screen to a given color on command.</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">    /// NOTE: The color will *only* be faded for the main camera (Camera.main). If you want it to run for *all* cameras or different ones, inherit from this object and adjust the OnPostRenderCallback function.</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">    /// &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html">   10</a></span>&#160;<span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html">AVR_CameraFade</a> : AVR.Core.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html">AVR_Effect</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {<span class="comment"></span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">        /// Material we fade to. Leave this blank for a uniform color.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a6f13f38e4c5fc2b7c297743156396e60">   15</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> Material <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a6f13f38e4c5fc2b7c297743156396e60">fadeMaterial</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">        /// Value of the &quot;_Color&quot; component of the materials shader.</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a9e1cdb71af40fc9625d0afbf7c7a385a">   20</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> Color <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a9e1cdb71af40fc9625d0afbf7c7a385a">overlayColor</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">        /// Starting alpha value of the color</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a057b426b450d04d45ad15d95baf3075c">   25</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> start_value = 0.0f;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">        /// Ending alpha value of the color</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#ab314054fc715a8e852c47aec49b83ca2">   30</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> end_value = 1.0f;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">        /// Time for fade-in effect to conclude.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a1fcbe6224c79f4facc28772e6b3bb5e5">   35</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> fade_in_duration = 0.5f;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment"></span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">        /// Time for fade-out effect to conclude.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a77d9a12374a2ee4d0691ff3cebf08f8e">   40</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> fade_out_duration = 0.5f;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a206ca533cbd9f095e82c2419834397e9">   42</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">float</span> stime = 0.0f;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a6afd86288fffbacd8328d21ef5e6ad4f">   43</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">bool</span> do_fade_in = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a9b766eaa90f42a3e59798e1356bf360e">   44</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">bool</span> do_fade_out = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a58fbe99451a78bede64a0f758a9d6f8f">   46</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a58fbe99451a78bede64a0f758a9d6f8f">Awake</a>()</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> (fadeMaterial == null) fadeMaterial = <span class="keyword">new</span> Material(Shader.Find(<span class="stringliteral">&quot;AVR/CameraFade&quot;</span>));</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            overlayColor.a = start_value;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            fadeMaterial.SetColor(<span class="stringliteral">&quot;_Color&quot;</span>, overlayColor);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#aebe46c3d7e4201521d4f29fc993616a8">   53</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#aebe46c3d7e4201521d4f29fc993616a8">OnEnable</a>() {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            Camera.onPostRender += OnPostRenderCallback;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a6c2f206483d6f54f3950d1759d2c0482">   57</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a6c2f206483d6f54f3950d1759d2c0482">Disable</a>() {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            Camera.onPostRender -= OnPostRenderCallback;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a90fc416796293e3179dc25805b05cda9">   61</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a90fc416796293e3179dc25805b05cda9">StartEffect</a>()</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            do_fade_in = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            stime = Time.time;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a0e031735e256ee5cbea778c7bbfed863">   67</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a0e031735e256ee5cbea778c7bbfed863">EndEffect</a>()</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            do_fade_out = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            stime = Time.time;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#abd7a96d7d2d8ce9d47a558c5907fd43d">   73</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#abd7a96d7d2d8ce9d47a558c5907fd43d">StartEndEffect</a>()</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            do_fade_in = do_fade_out = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            stime = Time.time;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a0f132be679ec47b41ee56c094fb1211a">   79</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a0f132be679ec47b41ee56c094fb1211a">Update</a>()</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">if</span> (do_fade_in)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordtype">float</span> t = Time.time - stime;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                overlayColor.a = Mathf.Lerp(start_value, end_value, t / fade_in_duration);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                fadeMaterial.SetColor(<span class="stringliteral">&quot;_Color&quot;</span>, overlayColor);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">if</span> (t &gt; fade_in_duration)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    do_fade_in = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    stime = Time.time;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">if</span> (do_fade_out &amp;&amp; !do_fade_in)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordtype">float</span> t = Time.time - stime;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                overlayColor.a = Mathf.Lerp(end_value, start_value, t / fade_out_duration);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                fadeMaterial.SetColor(<span class="stringliteral">&quot;_Color&quot;</span>, overlayColor);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">if</span> (t &gt; fade_out_duration)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    do_fade_out = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a7d8bbebe9087758fe0cc1a3415f6d91e">  107</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a7d8bbebe9087758fe0cc1a3415f6d91e">isBusy</a>()</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">return</span> do_fade_in || do_fade_out;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a12e13ce7a0dbcbcb52a7ebe9e6289955">  112</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a12e13ce7a0dbcbcb52a7ebe9e6289955">OnPostRenderCallback</a>(Camera cam)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">if</span> (overlayColor.a &gt; 0 &amp;&amp; cam==Camera.main)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                GL.PushMatrix();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                GL.LoadOrtho();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                fadeMaterial.SetPass(0);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                GL.Begin(GL.QUADS);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                GL.Color(overlayColor);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                GL.Vertex3(0, 0, 0);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                GL.Vertex3(1, 0, 0);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                GL.Vertex3(1, 1, 0);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                GL.Vertex3(0, 1, 0);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                GL.End();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                GL.PopMatrix();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_aebe46c3d7e4201521d4f29fc993616a8"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#aebe46c3d7e4201521d4f29fc993616a8">AVR.Core.AVR_CameraFade.OnEnable</a></div><div class="ttdeci">void OnEnable()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00053">AVR_CameraFade.cs:53</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_a12e13ce7a0dbcbcb52a7ebe9e6289955"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a12e13ce7a0dbcbcb52a7ebe9e6289955">AVR.Core.AVR_CameraFade.OnPostRenderCallback</a></div><div class="ttdeci">void OnPostRenderCallback(Camera cam)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00112">AVR_CameraFade.cs:112</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_a90fc416796293e3179dc25805b05cda9"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a90fc416796293e3179dc25805b05cda9">AVR.Core.AVR_CameraFade.StartEffect</a></div><div class="ttdeci">override void StartEffect()</div><div class="ttdoc">Start the effect </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00061">AVR_CameraFade.cs:61</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_a9e1cdb71af40fc9625d0afbf7c7a385a"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a9e1cdb71af40fc9625d0afbf7c7a385a">AVR.Core.AVR_CameraFade.overlayColor</a></div><div class="ttdeci">Color overlayColor</div><div class="ttdoc">Value of the "_Color" component of the materials shader. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00020">AVR_CameraFade.cs:20</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_a7d8bbebe9087758fe0cc1a3415f6d91e"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a7d8bbebe9087758fe0cc1a3415f6d91e">AVR.Core.AVR_CameraFade.isBusy</a></div><div class="ttdeci">override bool isBusy()</div><div class="ttdoc">True if the effect is starting/started or ending but not yet ended. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00107">AVR_CameraFade.cs:107</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_a0e031735e256ee5cbea778c7bbfed863"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a0e031735e256ee5cbea778c7bbfed863">AVR.Core.AVR_CameraFade.EndEffect</a></div><div class="ttdeci">override void EndEffect()</div><div class="ttdoc">End the effect </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00067">AVR_CameraFade.cs:67</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_a0f132be679ec47b41ee56c094fb1211a"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a0f132be679ec47b41ee56c094fb1211a">AVR.Core.AVR_CameraFade.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00079">AVR_CameraFade.cs:79</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_a6c2f206483d6f54f3950d1759d2c0482"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a6c2f206483d6f54f3950d1759d2c0482">AVR.Core.AVR_CameraFade.Disable</a></div><div class="ttdeci">void Disable()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00057">AVR_CameraFade.cs:57</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_a58fbe99451a78bede64a0f758a9d6f8f"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a58fbe99451a78bede64a0f758a9d6f8f">AVR.Core.AVR_CameraFade.Awake</a></div><div class="ttdeci">void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00046">AVR_CameraFade.cs:46</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_abd7a96d7d2d8ce9d47a558c5907fd43d"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#abd7a96d7d2d8ce9d47a558c5907fd43d">AVR.Core.AVR_CameraFade.StartEndEffect</a></div><div class="ttdeci">override void StartEndEffect()</div><div class="ttdoc">Start the effect and automatically end it right after </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00073">AVR_CameraFade.cs:73</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_a6f13f38e4c5fc2b7c297743156396e60"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a6f13f38e4c5fc2b7c297743156396e60">AVR.Core.AVR_CameraFade.fadeMaterial</a></div><div class="ttdeci">Material fadeMaterial</div><div class="ttdoc">Material we fade to. Leave this blank for a uniform color. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00015">AVR_CameraFade.cs:15</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html">AVR.Core.AVR_CameraFade</a></div><div class="ttdoc">Will fade-in / fade-out the screen to a given color on command. NOTE: The color will only be faded fo...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00010">AVR_CameraFade.cs:10</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___effect_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___effect.html">AVR.Core.AVR_Effect</a></div><div class="ttdoc">Represents a generic effect, such as fading a color on a camera. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___effect_8cs_source.html#l00010">AVR_Effect.cs:10</a></div></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"></span>    [<a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url.html">AVR.Core.Attributes.DocumentationUrl</a>(<span class="stringliteral">&quot;class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html&quot;</span>)]</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html">   11</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html">AVR_CameraFade</a> : AVR.Core.AVR_Effect</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {<span class="comment"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">        /// Material we fade to. Leave this blank for a uniform color.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a6f13f38e4c5fc2b7c297743156396e60">   16</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> Material fadeMaterial;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">        /// Value of the &quot;_Color&quot; component of the materials shader.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a9e1cdb71af40fc9625d0afbf7c7a385a">   21</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> Color overlayColor;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">        /// Starting alpha value of the color</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a057b426b450d04d45ad15d95baf3075c">   26</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> start_value = 0.0f;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">        /// Ending alpha value of the color</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#ab314054fc715a8e852c47aec49b83ca2">   31</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> end_value = 1.0f;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">        /// Time for fade-in effect to conclude.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a1fcbe6224c79f4facc28772e6b3bb5e5">   36</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> fade_in_duration = 0.5f;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">        /// Time for fade-out effect to conclude.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a77d9a12374a2ee4d0691ff3cebf08f8e">   41</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> fade_out_duration = 0.5f;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// Private</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a206ca533cbd9f095e82c2419834397e9">   44</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">float</span> stime = 0.0f;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a6afd86288fffbacd8328d21ef5e6ad4f">   45</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">bool</span> do_fade_in = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a9b766eaa90f42a3e59798e1356bf360e">   46</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">bool</span> do_fade_out = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#aad3683ad78103eece8a3324ae6ca7889">   48</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> Awake()</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (fadeMaterial == null) fadeMaterial = <span class="keyword">new</span> Material(Shader.Find(<span class="stringliteral">&quot;AVR/CameraFade&quot;</span>));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            overlayColor.a = start_value;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            fadeMaterial.SetColor(<span class="stringliteral">&quot;_Color&quot;</span>, overlayColor);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#adc16940addaa367bf0641848bdf54d60">   55</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#adc16940addaa367bf0641848bdf54d60">OnEnable</a>() {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            Camera.onPostRender += OnPostRenderCallback;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#abac5974016c53c01875efe7cf90a1724">   59</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#abac5974016c53c01875efe7cf90a1724">OnDisable</a>() {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            Camera.onPostRender -= OnPostRenderCallback;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a90fc416796293e3179dc25805b05cda9">   63</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a90fc416796293e3179dc25805b05cda9">StartEffect</a>()</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            do_fade_in = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            stime = Time.time;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a0e031735e256ee5cbea778c7bbfed863">   69</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a0e031735e256ee5cbea778c7bbfed863">EndEffect</a>()</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            do_fade_out = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            stime = Time.time;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#abd7a96d7d2d8ce9d47a558c5907fd43d">   75</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#abd7a96d7d2d8ce9d47a558c5907fd43d">StartEndEffect</a>()</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            do_fade_in = do_fade_out = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            stime = Time.time;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#aec7386b4982415531d060ca381b7b2cc">   81</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#aec7386b4982415531d060ca381b7b2cc">Update</a>()</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">if</span> (do_fade_in)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordtype">float</span> t = Time.time - stime;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                overlayColor.a = Mathf.Lerp(start_value, end_value, t / fade_in_duration);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                fadeMaterial.SetColor(<span class="stringliteral">&quot;_Color&quot;</span>, overlayColor);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">if</span> (t &gt; fade_in_duration)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    do_fade_in = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    stime = Time.time;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">if</span> (do_fade_out &amp;&amp; !do_fade_in)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordtype">float</span> t = Time.time - stime;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                overlayColor.a = Mathf.Lerp(end_value, start_value, t / fade_out_duration);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                fadeMaterial.SetColor(<span class="stringliteral">&quot;_Color&quot;</span>, overlayColor);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keywordflow">if</span> (t &gt; fade_out_duration)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    do_fade_out = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a7d8bbebe9087758fe0cc1a3415f6d91e">  109</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a7d8bbebe9087758fe0cc1a3415f6d91e">isBusy</a>()</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">return</span> do_fade_in || do_fade_out;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#ace5365ae2837d026047c0a93683c6051">  114</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#ace5365ae2837d026047c0a93683c6051">OnPostRenderCallback</a>(Camera cam)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">if</span> (overlayColor.a &gt; 0 &amp;&amp; cam==Camera.main)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                GL.PushMatrix();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                GL.LoadOrtho();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                fadeMaterial.SetPass(0);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                GL.Begin(GL.QUADS);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                GL.Color(overlayColor);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                GL.Vertex3(0, 0, 0);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                GL.Vertex3(1, 0, 0);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                GL.Vertex3(1, 1, 0);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                GL.Vertex3(0, 1, 0);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                GL.End();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                GL.PopMatrix();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_adc16940addaa367bf0641848bdf54d60"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#adc16940addaa367bf0641848bdf54d60">AVR.Core.AVR_CameraFade.OnEnable</a></div><div class="ttdeci">virtual void OnEnable()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00055">AVR_CameraFade.cs:55</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_a90fc416796293e3179dc25805b05cda9"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a90fc416796293e3179dc25805b05cda9">AVR.Core.AVR_CameraFade.StartEffect</a></div><div class="ttdeci">override void StartEffect()</div><div class="ttdoc">Start the effect </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00063">AVR_CameraFade.cs:63</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_aec7386b4982415531d060ca381b7b2cc"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#aec7386b4982415531d060ca381b7b2cc">AVR.Core.AVR_CameraFade.Update</a></div><div class="ttdeci">virtual void Update()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00081">AVR_CameraFade.cs:81</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_a7d8bbebe9087758fe0cc1a3415f6d91e"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a7d8bbebe9087758fe0cc1a3415f6d91e">AVR.Core.AVR_CameraFade.isBusy</a></div><div class="ttdeci">override bool isBusy()</div><div class="ttdoc">True if the effect is starting/started or ending but not yet ended. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00109">AVR_CameraFade.cs:109</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_a0e031735e256ee5cbea778c7bbfed863"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a0e031735e256ee5cbea778c7bbfed863">AVR.Core.AVR_CameraFade.EndEffect</a></div><div class="ttdeci">override void EndEffect()</div><div class="ttdoc">End the effect </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00069">AVR_CameraFade.cs:69</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url.html">AVR.Core.Attributes.DocumentationUrl</a></div><div class="ttdoc">Sets the documentation html file inside of Packages/com.avr.core/Documentation/html of a given class...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___attributes_8cs_source.html#l00088">AVR_Attributes.cs:88</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_abd7a96d7d2d8ce9d47a558c5907fd43d"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#abd7a96d7d2d8ce9d47a558c5907fd43d">AVR.Core.AVR_CameraFade.StartEndEffect</a></div><div class="ttdeci">override void StartEndEffect()</div><div class="ttdoc">Start the effect and automatically end it right after </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00075">AVR_CameraFade.cs:75</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_abac5974016c53c01875efe7cf90a1724"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#abac5974016c53c01875efe7cf90a1724">AVR.Core.AVR_CameraFade.OnDisable</a></div><div class="ttdeci">virtual void OnDisable()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00059">AVR_CameraFade.cs:59</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html">AVR.Core.AVR_CameraFade</a></div><div class="ttdoc">Will fade-in / fade-out the screen to a given color on command. NOTE: The color will only be faded fo...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00011">AVR_CameraFade.cs:11</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_html_ace5365ae2837d026047c0a93683c6051"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#ace5365ae2837d026047c0a93683c6051">AVR.Core.AVR_CameraFade.OnPostRenderCallback</a></div><div class="ttdeci">virtual void OnPostRenderCallback(Camera cam)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___camera_fade_8cs_source.html#l00114">AVR_CameraFade.cs:114</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

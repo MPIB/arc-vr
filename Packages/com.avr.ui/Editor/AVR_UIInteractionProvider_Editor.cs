@@ -11,25 +11,18 @@ using AVR.UI;
 namespace AVR.UEditor.UI {
     [CustomEditor(typeof(AVR_UIInteractionProvider))]
     [CanEditMultipleObjects]
-    public class AVR_UIInteractionProvider_Editor : UnityEditor.Editor
+    public class AVR_UIInteractionProvider_Editor : AVR.UEditor.Core.AVR_Component_Editor
     {
-        protected bool showInputSettings = true;
-
-        void OnEnable()
-        {
-
-        }
-
         public override void OnInspectorGUI()
         {
-            DrawDefaultInspector();
+            base.OnInspectorGUI();
 
             // There is no EventSystem
             if(FindObjectOfType<EventSystem>()==null) {
                 EditorGUILayout.HelpBox("UIInteractionProvider requires an EventSystem object to work!", MessageType.Warning);
                 if (GUILayout.Button("FIX NOW: Create EventSystem Object"))
                 {
-                    AVR_UI_EditorUtility.InstantiatePrefabAsChild(null, "editor/defaultPrefabPaths/eventSystem");
+                    AVR.UEditor.Core.AVR_EditorUtility.InstantiatePrefabAsChild(null, "editor/defaultPrefabPaths/eventSystem");
                 }
             }
             // There is an EventSystem but no VRInput object

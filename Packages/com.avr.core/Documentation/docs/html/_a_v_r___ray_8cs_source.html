@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_99bbfd5d1b982264d2e4d05dab923596.html">Runtime</a></li><li class="navelem"><a class="el" href="dir_0913d68aede4f3785f16ac233ae9afa6.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_b7dc3f886ff19c1d826319d6fc66f717.html">Tools</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_913e619e6f07b6712ba7554d0a547c49.html">Runtime</a></li><li class="navelem"><a class="el" href="dir_1b3ddb8075fdbbac6124da80842e9b40.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_d86c40b7e0b7233fca77a5b85d992018.html">Tools</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -112,147 +112,184 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">        //// MEMBERS ===================================================================================================</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">        /// &lt;summary&gt; What type of ray should be used &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a4b7a142056149a12ea35e7054483b701">   21</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a36b3a626b9bd8ad5288166df0240032d">RayMode</a> mode = RayMode.STRAIGHT;<span class="comment"></span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">        /// &lt;summary&gt; Hide or show the ray immediately on Awake() &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a3906706926abc70aa6d6c694ccfb7f91">   23</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> start_hidden = <span class="keyword">true</span>;<span class="comment"></span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">        /// &lt;summary&gt; Maximum length of the ray &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a1135a0839e1e490fa7d8771cb8ea017a">   25</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> max_length = 25;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// These only concern rays of mode=PROJECTILE</span><span class="comment"></span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">        /// &lt;summary&gt; How many vertices per unit distance to use for projectile motion ray &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"></span>        [<a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector.html">AVR.Core.Attributes.ConditionalHideInInspector</a>(<span class="stringliteral">&quot;mode&quot;</span>, ((int)<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a36b3a626b9bd8ad5288166df0240032d">RayMode</a>.PROJECTILE_MOTION), invertCondition:<span class="keyword">true</span>)]</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a992e2b5bcf166b5b8bf86c5bffeb5b0a">   30</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> proj_resolution = 3;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">        /// &lt;summary&gt; Max. amount of vertices to use for projectile motion ray &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span>        [<a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector.html">AVR.Core.Attributes.ConditionalHideInInspector</a>(<span class="stringliteral">&quot;mode&quot;</span>, ((int)<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a36b3a626b9bd8ad5288166df0240032d">RayMode</a>.PROJECTILE_MOTION), invertCondition: <span class="keyword">true</span>)]</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a59fa27f0857f9bb5557882d6e8c09284">   34</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> proj_max_verts = 150;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">        /// &lt;summary&gt; Starting velocity of the projectile motion &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span>        [<a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector.html">AVR.Core.Attributes.ConditionalHideInInspector</a>(<span class="stringliteral">&quot;mode&quot;</span>, ((int)<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a36b3a626b9bd8ad5288166df0240032d">RayMode</a>.PROJECTILE_MOTION), invertCondition: <span class="keyword">true</span>)]</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        [Range(0.5f, 6.0f)]</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#ad3204ff560642fcdef6fa3ed4de4f022">   39</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> proj_velocity = 3;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">// Private / Protected:</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abce183e10acd441fa08130015613ef97">   42</a></span>&#160;        <span class="keyword">protected</span> LineRenderer <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abce183e10acd441fa08130015613ef97">lr</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a7d9fe1e9b98281e9e2622ca104bda4fe">   43</a></span>&#160;        <span class="keyword">protected</span> <span class="keywordtype">bool</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a7d9fe1e9b98281e9e2622ca104bda4fe">_hidden</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#ab4a3c91e73116a094fda2a758fcc894e">   44</a></span>&#160;        <span class="keyword">protected</span> Vector3[] positions = <span class="keyword">new</span> Vector3[0];</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">        /// &lt;summary&gt; Is this ray visible &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#adaace2023026fefb4769c85649a7ed7c">   47</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> isVisible {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> !_hidden; }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">        /// &lt;summary&gt; Is this ray hidden &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#af720e72ad3933da97aaf892a08cdd2d7">   52</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> isHidden {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> _hidden; }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">        //// METHODS ===================================================================================================</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a48babf347d4691c97f80246f24e4185b">   59</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a48babf347d4691c97f80246f24e4185b">Awake</a>()</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            base.Awake();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">if</span>(!lr) lr = GetComponent&lt;LineRenderer&gt;();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">if</span>(!lr) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                AVR_DevConsole.error(<span class="stringliteral">&quot;AVR_Ray object &quot;</span>+gameObject.name+<span class="stringliteral">&quot; has no LineRenderer attatched!&quot;</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">if</span>(start_hidden) hide(); <span class="keywordflow">else</span> show();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            UpdateRay();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a377000b8eb69be632b82a446b1645038">   71</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a377000b8eb69be632b82a446b1645038">Update</a>() {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            UpdateRay(); <span class="comment">//This ray needs continous updating</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">        /// &lt;summary&gt; Updates the ray. Called from Monobehaviour.Update() &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a8912b69431df81889b8dfced287958cd">   76</a></span>&#160;<span class="comment"></span>        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a8912b69431df81889b8dfced287958cd">UpdateRay</a>() {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">if</span>(isHidden) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">switch</span> (mode)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="comment">// Straight beam</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">case</span> RayMode.STRAIGHT: {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        UpdateStraightRay();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="comment">// Parabolic projectile motion, affected by gravity</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">case</span> RayMode.PROJECTILE_MOTION: {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        UpdateProjectileRay();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">default</span>: {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    AVR.Core.AVR_DevConsole.warn(<span class="stringliteral">&quot;RayMode type of AVR_Ray object &quot;</span>+gameObject.name+<span class="stringliteral">&quot; has not been implemented.&quot;</span>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">        /// &lt;summary&gt; Updates a ray with mode==STRAIGHT &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#ae75e95f9e79af422096894e340edb18a">  100</a></span>&#160;<span class="comment"></span>        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#ae75e95f9e79af422096894e340edb18a">UpdateStraightRay</a>() {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="comment">// Make sure we only have 2 positions</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">if</span> (positions.Length != 2) positions = <span class="keyword">new</span> Vector3[2];</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="comment">// Initialize between here &amp; max_length</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            this.positions[0] = transform.position;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            this.positions[1] = transform.position + (transform.forward * max_length);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="comment">// Set line</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            lr.useWorldSpace = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            lr.positionCount = 2;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            lr.SetPositions(positions);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">        /// &lt;summary&gt; Updates a ray with mode==PROJECTILE &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a7d413180e9251a29b70abc8db8f1b3b0">  115</a></span>&#160;<span class="comment"></span>        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a7d413180e9251a29b70abc8db8f1b3b0">UpdateProjectileRay</a>() {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            List&lt;Vector3&gt; posl = <span class="keyword">new</span> List&lt;Vector3&gt;();</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; proj_max_verts; i++)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="keywordtype">float</span> dist = (float)i / proj_resolution;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <span class="comment">// Add new vertex to line</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                posl.Add(transform.position + transform.forward * dist - Vector3.up * (dist * dist) / (proj_velocity * proj_velocity));</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="comment">// Check if we&#39;re within distance limitations. NOTE: We are only restricting distance in the direction of transform.forward, not up or down.</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <span class="keywordflow">if</span> (dist &gt;= max_length) <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            this.positions = posl.ToArray();</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            lr.useWorldSpace = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            lr.positionCount = posl.Count;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            lr.SetPositions(this.positions);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">        /// &lt;summary&gt; Hides the ray. A ray is not updated while hidden. &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abdfebd9922a6d3a85c3b825f10b5da03">  136</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abdfebd9922a6d3a85c3b825f10b5da03">hide</a>() {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            _hidden = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            lr.enabled = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">        /// &lt;summary&gt; Shows the ray. A ray is not updated while hidden. &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a815dd0ffd18a11b296eab44eae8af2d9">  142</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a815dd0ffd18a11b296eab44eae8af2d9">show</a>() {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            _hidden = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            lr.enabled = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"></span>        </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        [Header(<span class="stringliteral">&quot;Shape&quot;</span>)]<span class="comment"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">        /// &lt;summary&gt; What type of ray should be used &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a4b7a142056149a12ea35e7054483b701">   23</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a36b3a626b9bd8ad5288166df0240032d">RayMode</a> mode = RayMode.STRAIGHT;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// These only concern rays of mode=PROJECTILE</span><span class="comment"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">        /// &lt;summary&gt; How many vertices per unit distance to use for projectile motion ray &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span>        [<a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector.html">AVR.Core.Attributes.ConditionalHideInInspector</a>(<span class="stringliteral">&quot;mode&quot;</span>, ((int)<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a36b3a626b9bd8ad5288166df0240032d">RayMode</a>.PROJECTILE_MOTION), invertCondition: <span class="keyword">true</span>)]</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a992e2b5bcf166b5b8bf86c5bffeb5b0a">   28</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> proj_resolution = 3;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">        /// &lt;summary&gt; Max. amount of vertices to use for projectile motion ray &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span>        [<a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector.html">AVR.Core.Attributes.ConditionalHideInInspector</a>(<span class="stringliteral">&quot;mode&quot;</span>, ((int)<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a36b3a626b9bd8ad5288166df0240032d">RayMode</a>.PROJECTILE_MOTION), invertCondition: <span class="keyword">true</span>)]</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a59fa27f0857f9bb5557882d6e8c09284">   32</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> proj_max_verts = 150;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">        /// &lt;summary&gt; Starting velocity of the projectile motion &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span>        [<a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector.html">AVR.Core.Attributes.ConditionalHideInInspector</a>(<span class="stringliteral">&quot;mode&quot;</span>, ((int)<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a36b3a626b9bd8ad5288166df0240032d">RayMode</a>.PROJECTILE_MOTION), invertCondition: <span class="keyword">true</span>)]</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        [Range(0.5f, 6.0f)]</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#ad3204ff560642fcdef6fa3ed4de4f022">   37</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> proj_velocity = 3;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        [Header(<span class="stringliteral">&quot;Settings&quot;</span>)]<span class="comment"></span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">        /// &lt;summary&gt; Hide or show the ray immediately on Awake() &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a3906706926abc70aa6d6c694ccfb7f91">   41</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> start_hidden = <span class="keyword">true</span>;<span class="comment"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">        /// &lt;summary&gt; Maximum length of the ray &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a1135a0839e1e490fa7d8771cb8ea017a">   43</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> max_length = 25;<span class="comment"></span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">        /// &lt;summary&gt; Will restrict the length of the ray along the xz-Plane to a given value. &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a1cac76b8a4e8ecfc41e39c34e869cade">   45</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> max_horizontal_distance = 10;<span class="comment"></span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">        /// &lt;summary&gt; Will restrict the minium angle of the Ray with the y-Axis. &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#af026d33e2456d20f7c1a8448112118f0">   47</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span> min_y_angle = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// Private / Protected:</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abce183e10acd441fa08130015613ef97">   50</a></span>&#160;        <span class="keyword">protected</span> LineRenderer <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abce183e10acd441fa08130015613ef97">lr</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a7d9fe1e9b98281e9e2622ca104bda4fe">   51</a></span>&#160;        <span class="keyword">protected</span> <span class="keywordtype">bool</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a7d9fe1e9b98281e9e2622ca104bda4fe">_hidden</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#ab4a3c91e73116a094fda2a758fcc894e">   52</a></span>&#160;        <span class="keyword">protected</span> Vector3[] positions = <span class="keyword">new</span> Vector3[0];</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#ae8604490626e210497d2181a00812fc5">   53</a></span>&#160;        <span class="keyword">protected</span> Vector3 RayForward = Vector3.forward;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">        /// &lt;summary&gt; Is this ray visible &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#adaace2023026fefb4769c85649a7ed7c">   56</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> isVisible {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> !_hidden; }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">        /// &lt;summary&gt; Is this ray hidden &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#af720e72ad3933da97aaf892a08cdd2d7">   61</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> isHidden {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">get</span> { <span class="keywordflow">return</span> _hidden; }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">        //// METHODS ===================================================================================================</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a48babf347d4691c97f80246f24e4185b">   68</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a48babf347d4691c97f80246f24e4185b">Awake</a>()</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            base.Awake();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">if</span>(!lr) lr = GetComponent&lt;LineRenderer&gt;();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">if</span>(!lr) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                AVR_DevConsole.error(<span class="stringliteral">&quot;AVR_Ray object &quot;</span>+gameObject.name+<span class="stringliteral">&quot; has no LineRenderer attatched!&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span>(start_hidden) hide(); <span class="keywordflow">else</span> show();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            UpdateRay();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a377000b8eb69be632b82a446b1645038">   80</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a377000b8eb69be632b82a446b1645038">Update</a>() {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            UpdateRay(); <span class="comment">//This ray needs continous updating</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">        /// &lt;summary&gt; Updates the ray. Called from Monobehaviour.Update() &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a8912b69431df81889b8dfced287958cd">   85</a></span>&#160;<span class="comment"></span>        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a8912b69431df81889b8dfced287958cd">UpdateRay</a>() {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">if</span>(isHidden) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="comment">// This paragraph deals with the min_y_angle parameter.</span><span class="comment"></span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">            /// An brief explanation on the math done here: </span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">            /// Say alpha is the angle between RayForward and the y-axis. We want a minium alpha of 30°.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">            /// Basic trigonometry tells us, that alpha &gt;= 30° is equivalent with RayForward.y &lt;= cos(30°).</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">            /// Consequently, RayForward.y will be clamped to exaclty cos(30°). What remains is setting the xz vector accordingly.</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">            /// Since the whole vector is normalized, the hypotenuse is 1. So pythagoras =&gt; 1^2 = |RayForward.xz|^2 + Rayforward.y^2</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">            /// As a result, the length of RayForward.xz is equal to |RayForward.xz| = sqrt(1-RayForward.y^2)</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">            /// And since RayForward.y = cos(30°): |RayForward.xz| = sqrt(1-cos(30°)^2) = sin(30°)</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">            /// And this is what we do here. If the condition is violated, we set y=0, then multiply the normalized vector with sin(alpha)</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">            /// and finally set y to cos(alpha).</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"></span>            RayForward = transform.forward;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordtype">float</span> ang = Mathf.Deg2Rad * min_y_angle;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">if</span>(RayForward.y &gt; Mathf.Cos(ang)) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                RayForward.y = 0;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                RayForward = RayForward.normalized * Mathf.Sin(ang);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                RayForward.y = Mathf.Cos(ang);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">switch</span> (mode)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="comment">// Straight beam</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">case</span> RayMode.STRAIGHT: {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                        UpdateStraightRay();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="comment">// Parabolic projectile motion, affected by gravity</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordflow">case</span> RayMode.PROJECTILE_MOTION: {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                        UpdateProjectileRay();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">default</span>: {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    AVR.Core.AVR_DevConsole.warn(<span class="stringliteral">&quot;RayMode type of AVR_Ray object &quot;</span>+gameObject.name+<span class="stringliteral">&quot; has not been implemented.&quot;</span>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">        /// &lt;summary&gt; Updates a ray with mode==STRAIGHT &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#ae75e95f9e79af422096894e340edb18a">  127</a></span>&#160;<span class="comment"></span>        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#ae75e95f9e79af422096894e340edb18a">UpdateStraightRay</a>() {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="comment">// Make sure we only have 2 positions</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span> (positions.Length != 2) positions = <span class="keyword">new</span> Vector3[2];</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="comment">// Se which condition determines the endpoint, max_length or max_horizontal_distance. Semi-TODO: This seems like an unelegant solution. Find a better one.</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            Vector3 dest = RayForward * max_length;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">if</span>(<span class="keyword">new</span> Vector2(dest.x, dest.z).magnitude &gt; max_horizontal_distance){</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                dest *= max_horizontal_distance / Mathf.Max(<span class="keyword">new</span> Vector2(dest.x, dest.z).magnitude, 0.0001f);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="comment">// Initialize between here &amp; max_length</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            this.positions[0] = transform.position;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            this.positions[1] = transform.position + dest;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="comment">// Set line</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            lr.useWorldSpace = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            lr.positionCount = 2;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            lr.SetPositions(positions);</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a48babf347d4691c97f80246f24e4185b"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a48babf347d4691c97f80246f24e4185b">AVR.Core.AVR_Ray.Awake</a></div><div class="ttdeci">override void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00059">AVR_Ray.cs:59</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a815dd0ffd18a11b296eab44eae8af2d9"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a815dd0ffd18a11b296eab44eae8af2d9">AVR.Core.AVR_Ray.show</a></div><div class="ttdeci">virtual void show()</div><div class="ttdoc">Shows the ray. A ray is not updated while hidden. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00142">AVR_Ray.cs:142</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a8912b69431df81889b8dfced287958cd"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a8912b69431df81889b8dfced287958cd">AVR.Core.AVR_Ray.UpdateRay</a></div><div class="ttdeci">virtual void UpdateRay()</div><div class="ttdoc">Updates the ray. Called from Monobehaviour.Update() </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00076">AVR_Ray.cs:76</a></div></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">        /// &lt;summary&gt; Updates a ray with mode==PROJECTILE &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a7d413180e9251a29b70abc8db8f1b3b0">  148</a></span>&#160;<span class="comment"></span>        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a7d413180e9251a29b70abc8db8f1b3b0">UpdateProjectileRay</a>() {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            List&lt;Vector3&gt; posl = <span class="keyword">new</span> List&lt;Vector3&gt;();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; proj_max_verts; i++)</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <span class="keywordtype">float</span> dist = (float)i / proj_resolution;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                Vector3 dest = RayForward * dist;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                <span class="comment">// Add new vertex to line</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                posl.Add(transform.position + dest - Vector3.up * (dist * dist) / (proj_velocity * proj_velocity));</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <span class="comment">// Check if we&#39;re within distance limitations. NOTE: We are only restricting distance in the direction of transform.forward, not up or down.</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="keywordflow">if</span> (dist &gt;= max_length) <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="keywordflow">if</span> (<span class="keyword">new</span> Vector2(dest.x, dest.z).magnitude &gt; max_horizontal_distance) <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            this.positions = posl.ToArray();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            lr.useWorldSpace = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            lr.positionCount = posl.Count;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            lr.SetPositions(this.positions);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">        /// &lt;summary&gt; Hides the ray. A ray is not updated while hidden. &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abdfebd9922a6d3a85c3b825f10b5da03">  173</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abdfebd9922a6d3a85c3b825f10b5da03">hide</a>() {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            _hidden = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            lr.enabled = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">        /// &lt;summary&gt; Shows the ray. A ray is not updated while hidden. &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a815dd0ffd18a11b296eab44eae8af2d9">  179</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a815dd0ffd18a11b296eab44eae8af2d9">show</a>() {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            _hidden = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            lr.enabled = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a48babf347d4691c97f80246f24e4185b"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a48babf347d4691c97f80246f24e4185b">AVR.Core.AVR_Ray.Awake</a></div><div class="ttdeci">override void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00068">AVR_Ray.cs:68</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a815dd0ffd18a11b296eab44eae8af2d9"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a815dd0ffd18a11b296eab44eae8af2d9">AVR.Core.AVR_Ray.show</a></div><div class="ttdeci">virtual void show()</div><div class="ttdoc">Shows the ray. A ray is not updated while hidden. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00179">AVR_Ray.cs:179</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a8912b69431df81889b8dfced287958cd"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a8912b69431df81889b8dfced287958cd">AVR.Core.AVR_Ray.UpdateRay</a></div><div class="ttdeci">virtual void UpdateRay()</div><div class="ttdoc">Updates the ray. Called from Monobehaviour.Update() </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00085">AVR_Ray.cs:85</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html">AVR.Core.AVR_Ray</a></div><div class="ttdoc">Base class for a ray. A ray is always cast in transform.forward direction of the object it is attatch...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00013">AVR_Ray.cs:13</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url.html">AVR.Core.Attributes.DocumentationUrl</a></div><div class="ttdoc">Sets the documentation html file inside of Packages/com.avr.core/Documentation/html of a given class...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___attributes_8cs_source.html#l00088">AVR_Attributes.cs:88</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_ae75e95f9e79af422096894e340edb18a"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#ae75e95f9e79af422096894e340edb18a">AVR.Core.AVR_Ray.UpdateStraightRay</a></div><div class="ttdeci">virtual void UpdateStraightRay()</div><div class="ttdoc">Updates a ray with mode==STRAIGHT </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00100">AVR_Ray.cs:100</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_abce183e10acd441fa08130015613ef97"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abce183e10acd441fa08130015613ef97">AVR.Core.AVR_Ray.lr</a></div><div class="ttdeci">LineRenderer lr</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00042">AVR_Ray.cs:42</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a377000b8eb69be632b82a446b1645038"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a377000b8eb69be632b82a446b1645038">AVR.Core.AVR_Ray.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00071">AVR_Ray.cs:71</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a7d413180e9251a29b70abc8db8f1b3b0"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a7d413180e9251a29b70abc8db8f1b3b0">AVR.Core.AVR_Ray.UpdateProjectileRay</a></div><div class="ttdeci">virtual void UpdateProjectileRay()</div><div class="ttdoc">Updates a ray with mode==PROJECTILE </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00115">AVR_Ray.cs:115</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_abdfebd9922a6d3a85c3b825f10b5da03"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abdfebd9922a6d3a85c3b825f10b5da03">AVR.Core.AVR_Ray.hide</a></div><div class="ttdeci">virtual void hide()</div><div class="ttdoc">Hides the ray. A ray is not updated while hidden. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00136">AVR_Ray.cs:136</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_ae75e95f9e79af422096894e340edb18a"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#ae75e95f9e79af422096894e340edb18a">AVR.Core.AVR_Ray.UpdateStraightRay</a></div><div class="ttdeci">virtual void UpdateStraightRay()</div><div class="ttdoc">Updates a ray with mode==STRAIGHT </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00127">AVR_Ray.cs:127</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_abce183e10acd441fa08130015613ef97"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abce183e10acd441fa08130015613ef97">AVR.Core.AVR_Ray.lr</a></div><div class="ttdeci">LineRenderer lr</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00050">AVR_Ray.cs:50</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a377000b8eb69be632b82a446b1645038"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a377000b8eb69be632b82a446b1645038">AVR.Core.AVR_Ray.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00080">AVR_Ray.cs:80</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a7d413180e9251a29b70abc8db8f1b3b0"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a7d413180e9251a29b70abc8db8f1b3b0">AVR.Core.AVR_Ray.UpdateProjectileRay</a></div><div class="ttdeci">virtual void UpdateProjectileRay()</div><div class="ttdoc">Updates a ray with mode==PROJECTILE </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00148">AVR_Ray.cs:148</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_abdfebd9922a6d3a85c3b825f10b5da03"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abdfebd9922a6d3a85c3b825f10b5da03">AVR.Core.AVR_Ray.hide</a></div><div class="ttdeci">virtual void hide()</div><div class="ttdoc">Hides the ray. A ray is not updated while hidden. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00173">AVR_Ray.cs:173</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a36b3a626b9bd8ad5288166df0240032d"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a36b3a626b9bd8ad5288166df0240032d">AVR.Core.AVR_Ray.RayMode</a></div><div class="ttdeci">RayMode</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00016">AVR_Ray.cs:16</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector.html">AVR.Core.Attributes.ConditionalHideInInspector</a></div><div class="ttdoc">Allows for simple hiding of properties in the UnityEditor depending on certain conditions. For instance, in the following example the "type" field will only be displayed in the inspector if the "tracking" field is set to true: </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___attributes_8cs_source.html#l00127">AVR_Attributes.cs:127</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a7d9fe1e9b98281e9e2622ca104bda4fe"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a7d9fe1e9b98281e9e2622ca104bda4fe">AVR.Core.AVR_Ray._hidden</a></div><div class="ttdeci">bool _hidden</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00043">AVR_Ray.cs:43</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a7d9fe1e9b98281e9e2622ca104bda4fe"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a7d9fe1e9b98281e9e2622ca104bda4fe">AVR.Core.AVR_Ray._hidden</a></div><div class="ttdeci">bool _hidden</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00051">AVR_Ray.cs:51</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR.Core.AVR_Component</a></div><div class="ttdoc">Base class for all arc-vr components. A component is typically a Monobehaviour that represents a virt...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00010">AVR_Component.cs:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

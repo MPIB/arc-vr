@@ -2,7 +2,12 @@ var searchData=
 [
   ['scrollpos',['scrollPos',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___dev_console_window.html#a0a4f87cdf70c37e8d0f9c656b63e3158',1,'AVR.UEditor.Core.AVR_DevConsoleWindow.scrollPos()'],['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___settings___editor.html#a235afd52f740006ff7b8f55baa8e0a2c',1,'AVR.UEditor.Core.AVR_Settings_Editor.scrollPos()']]],
   ['scrollposition',['scrollPosition',['../class_a_v_r_1_1_core_1_1_a_v_r___basic_dev_console_u_i.html#a2fe63788d2e7c2d5e2d549d5dc120bde',1,'AVR::Core::AVR_BasicDevConsoleUI']]],
+  ['select_5fradius',['select_radius',['../class_a_v_r_u_i___click_drag_wheel.html#af5d4f1ed2de261fd807e19ded857597f',1,'AVRUI_ClickDragWheel']]],
+  ['selectedentry',['selectedEntry',['../class_a_v_r_u_i___click_drag_wheel.html#a6505dfbaf5bce2e2a20ce3c3c6a5f72c',1,'AVRUI_ClickDragWheel']]],
+  ['selectionaxis',['selectionAxis',['../class_a_v_r_u_i___click_drag_wheel.html#aa1c8e374dd782737ca13731f9e877927',1,'AVRUI_ClickDragWheel']]],
+  ['selectionevent',['selectionEvent',['../class_a_v_r_u_i___click_drag_wheel.html#af9c86b71793fd8866ae5c9c6623cfa03',1,'AVRUI_ClickDragWheel']]],
   ['settings',['settings',['../class_a_v_r_1_1_core_1_1_a_v_r___settings.html#a07f171f70f58e842773d24b0db006f25',1,'AVR::Core::AVR_Settings']]],
+  ['show_5fray_5fonly_5fon_5fhover',['show_ray_only_on_hover',['../class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#af18d50b6672e8c6b6491c68dec6d56f8',1,'AVR::UI::AVR_UIInteractionProvider']]],
   ['showinputsettings',['showInputSettings',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___player_rig___editor.html#ae87d2d80144fbe08dc2901e1683c646d',1,'AVR::UEditor::Core::AVR_PlayerRig_Editor']]],
   ['size',['size',['../class_a_v_r_1_1_core_1_1_a_v_r___basic_dev_console_u_i.html#af7089e1877ffc9890d1b14d510a25aa6',1,'AVR::Core::AVR_BasicDevConsoleUI']]],
   ['smoothing',['smoothing',['../class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a774a8de60363c6332a776fe200d3c3f4',1,'AVR::Core::AVR_GenericXRDevice']]],
@@ -13,7 +18,7 @@ var searchData=
   ['speed',['speed',['../class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider.html#a072705b0e32a08484769a8d67e8cf0ea',1,'AVR::Motion::AVR_LocomotionProvider']]],
   ['start_5fhidden',['start_hidden',['../class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a3906706926abc70aa6d6c694ccfb7f91',1,'AVR::Core::AVR_Ray']]],
   ['start_5fvalue',['start_value',['../class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a057b426b450d04d45ad15d95baf3075c',1,'AVR::Core::AVR_CameraFade']]],
-  ['stime',['stime',['../class_a_v_r_1_1_core_1_1_a_v_r___logger.html#a8c9e62822d2ea49c6bab793503a6d6c0',1,'AVR.Core.AVR_Logger.stime()'],['../class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a206ca533cbd9f095e82c2419834397e9',1,'AVR.Core.AVR_CameraFade.stime()'],['../class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a18daabad33c650bffbfce4a48a387bd0',1,'AVR.Motion.AVR_TurnProvider.stime()']]],
+  ['stime',['stime',['../class_a_v_r_1_1_core_1_1_a_v_r___logger.html#a8c9e62822d2ea49c6bab793503a6d6c0',1,'AVR.Core.AVR_Logger.stime()'],['../class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a206ca533cbd9f095e82c2419834397e9',1,'AVR.Core.AVR_CameraFade.stime()'],['../class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a18daabad33c650bffbfce4a48a387bd0',1,'AVR.Motion.AVR_TurnProvider.stime()'],['../class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a96f05049c63033ae5a3c172cdb675852',1,'AVR.UI.AVR_UIInteractionProvider.stime()']]],
   ['style',['style',['../class_a_v_r_1_1_core_1_1_a_v_r___basic_dev_console_u_i.html#a5dcc6978eaabd60aaeb99011f2fdab5c',1,'AVR::Core::AVR_BasicDevConsoleUI']]],
   ['submitkey',['submitKey',['../class_a_v_r_1_1_core_1_1_a_v_r___basic_dev_console_u_i.html#ac731bc1237d1818ce74353b287a05433',1,'AVR.Core.AVR_BasicDevConsoleUI.submitKey()'],['../class_a_v_r_1_1_core_1_1_a_v_r___dev_console_mirror.html#a17c740183c57b5ef3840084f7048a070',1,'AVR.Core.AVR_DevConsoleMirror.submitKey()']]]
 ];
