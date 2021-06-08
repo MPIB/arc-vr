@@ -9,7 +9,6 @@ namespace AVR.UI {
     public class AVR_UIInteractionProvider : AVR_ControllerComponent
     {
         public static AVR_UIInteractionProvider currentActive;
-        public static List<AVR_Canvas> active_canvases = new List<AVR_Canvas>();
 
         [Header("Input")]
         public AVR_ControllerInputManager.BoolEvent clickButton;
@@ -72,9 +71,9 @@ namespace AVR.UI {
 
         void Update() {
             // Here we show/hide the UIRay if needed and also set the length of the ray to the distance to the canvas.
-            if(active_canvases.Count>0) {
+            if(AVR_Canvas.active_canvases.Count>0) {
                 float min_dist = float.PositiveInfinity;
-                foreach(AVR_Canvas canv in active_canvases) {
+                foreach(AVR_Canvas canv in AVR_Canvas.active_canvases) {
                     if(canv.GetPlane().Raycast(new Ray(UIRay.UICamera.transform.position, UIRay.UICamera.transform.forward), out float dist)) {
                         min_dist = Mathf.Min(dist, min_dist);
                     }
@@ -86,18 +85,6 @@ namespace AVR.UI {
                 UIRay.max_length = 30;
                 if (show_ray_only_on_hover) UIRay.hide();
             }
-        }
-
-        // Register a canvas for UI interaction
-        public static void register_UIInteraction(AVR_Canvas canvas)
-        {
-            if(!active_canvases.Contains(canvas)) active_canvases.Add(canvas);
-        }
-
-        // Un-register a canvas for UI interaction
-        public static void unregister_UIInteraction(AVR_Canvas canvas)
-        {
-            if(active_canvases.Contains(canvas)) active_canvases.Remove(canvas);
         }
     }
 }
