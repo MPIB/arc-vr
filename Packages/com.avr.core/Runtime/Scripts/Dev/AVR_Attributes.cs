@@ -177,4 +177,11 @@ namespace AVR.Core.Attributes {
         }
     }
 
+    /// <summary>
+    /// Makes a field read-only in the inspector
+    /// </summary>
+    public class ReadOnly : PropertyAttribute
+    {
+
+    }
 }

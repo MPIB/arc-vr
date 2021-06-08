@@ -10,7 +10,7 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-        "versionDefines": [
+    "versionDefines": [
         {
             "name": "com.avr.core",
             "expression": "",

@@ -21,7 +21,7 @@ namespace AVR.Core {
         }
         private AVR_ControllerInputManager _inputManager=null;
 
-
+        public float tmp_float { get; set; }
 
         protected override void Awake() {
             base.Awake();

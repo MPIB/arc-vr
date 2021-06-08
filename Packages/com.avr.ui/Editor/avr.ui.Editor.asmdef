@@ -1,0 +1,20 @@
+{
+    "name": "avr.ui.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b85819693b754514eaf963af317e7395",
+        "GUID:547e9fd77b6c65143a5ab9b6bff8dcc8",
+        "GUID:8dd818486f048e34496f17e7e0f5e1cf"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
