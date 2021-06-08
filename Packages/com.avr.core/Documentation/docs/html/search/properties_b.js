@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['validcolorgradient',['validColorGradient',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_ray.html#abbb30764fe6017c0ee3605e1128c2e1c',1,'AVR::Motion::AVR_MovementRay']]],
-  ['validtypes',['validTypes',['../class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link.html#ae8380984e6f66f74189b9e9ddc698269',1,'AVR::UI::Link::AVRUI_Link']]],
-  ['viewpos',['ViewPos',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html#ad634c5e73db9ae07ee5c82539d5161a0',1,'AVR::Core::AVR_PlayerRig']]],
-  ['viewvector',['ViewVector',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html#ac9109d10954b23ed065f991612fece0c',1,'AVR::Core::AVR_PlayerRig']]]
+  ['tmp_5ffloat',['tmp_float',['../class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a420d6419ef13b54a90aff2b0c497a604',1,'AVR::Core::AVR_Controller']]],
+  ['triggerbutton',['triggerButton',['../class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#ad653def623b59f60b38f687659dc1cfd',1,'AVR::Core::AVR_ControllerInputManager']]],
+  ['triggerdown',['triggerDown',['../class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a7d83e3084ec141ca9bf9b121c293f9f6',1,'AVR::Core::AVR_ControllerInputManager']]],
+  ['triggerup',['triggerUp',['../class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a315eca4146f319774f08051d0e24feed',1,'AVR::Core::AVR_ControllerInputManager']]]
 ];

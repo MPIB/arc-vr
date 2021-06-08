@@ -13,6 +13,6 @@ var searchData=
   ['viewvector',['ViewVector',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html#ac9109d10954b23ed065f991612fece0c',1,'AVR::Core::AVR_PlayerRig']]],
   ['visualtype',['visualType',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller_wizard___hook___controller_visual.html#a5ca4f70cec3264771eb5ade5d545b852',1,'AVR::UEditor::Core::AVR_ControllerWizard_Hook_ControllerVisual']]],
   ['vivecontroller',['ViveController',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller_wizard___hook___controller_visual.html#a5ca4f70cec3264771eb5ade5d545b852afbb47b991114409ba7346deb9a1a650f',1,'AVR::UEditor::Core::AVR_ControllerWizard_Hook_ControllerVisual']]],
-  ['vrinput',['VRInput',['../class_a_v_r_1_1_v_r_input.html',1,'AVR']]],
+  ['vrinput',['VRInput',['../class_a_v_r_1_1_u_i_1_1_v_r_input.html',1,'AVR::UI']]],
   ['vrinput_2ecs',['VRInput.cs',['../_v_r_input_8cs.html',1,'']]]
 ];

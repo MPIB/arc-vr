@@ -96,120 +96,141 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="_a_v_r___canvas_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEngine.UI;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> UnityEngine.EventSystems;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> AVR;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using</span> AVR.Core;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using</span> AVR.UI;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;[RequireComponent(typeof(Canvas))]</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html">   12</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_a_v_r___canvas.html">AVR_Canvas</a> : <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR_Behaviour</a>, IPointerEnterHandler, IPointerExitHandler</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#a4737c13d98fbdd5e65ea6ab822ebdae4">   14</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;AVR_Canvas&gt; <a class="code" href="class_a_v_r___canvas.html#a4737c13d98fbdd5e65ea6ab822ebdae4">all_canvases</a> = <span class="keyword">new</span> List&lt;AVR_Canvas&gt;();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#a80a3ce15f3d74da3d39b23871ce02e93">   16</a></span>&#160;    <span class="keyword">private</span> Plane <a class="code" href="class_a_v_r___canvas.html#a80a3ce15f3d74da3d39b23871ce02e93">canvasPlane</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#a16dc940168646b73e8c26970c67798c1">   17</a></span>&#160;    <span class="keyword">private</span> Canvas <a class="code" href="class_a_v_r___canvas.html#a16dc940168646b73e8c26970c67798c1">canvas</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#a4dacebd4d25bd1779e0a9860d57525bf">   19</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_a_v_r___canvas.html#a4dacebd4d25bd1779e0a9860d57525bf">Awake</a>() {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        all_canvases.Add(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="class_a_v_r___canvas.html#a80a3ce15f3d74da3d39b23871ce02e93">canvasPlane</a> = <span class="keyword">new</span> Plane();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        canvasPlane.Set3Points(</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            transform.position,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            transform.position + transform.right,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            transform.position + transform.up</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        );</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="class_a_v_r___canvas.html#a16dc940168646b73e8c26970c67798c1">canvas</a> = GetComponent&lt;Canvas&gt;();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#a209926913b62afc2358d12a363038d4a">   31</a></span>&#160;    <span class="keyword">public</span> Canvas <a class="code" href="class_a_v_r___canvas.html#a209926913b62afc2358d12a363038d4a">GetCanvas</a>() {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_a_v_r___canvas.html#a16dc940168646b73e8c26970c67798c1">canvas</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#a0a53ab887833d784ac97578a9e024a1f">   35</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_a_v_r___canvas.html#a0a53ab887833d784ac97578a9e024a1f">OnDisable</a>() {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        AVR_UIInteractionProvider.unregister_UIInteraction(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEngine.EventSystems;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> AVR.Core;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespace_a_v_r_1_1_u_i.html">    8</a></span>&#160;<span class="keyword">namespace </span>AVR.UI {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    [RequireComponent(typeof(Canvas))]</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    [<a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url.html">AVR.Core.Attributes.DocumentationUrl</a>(<span class="stringliteral">&quot;class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html&quot;</span>)]<span class="comment"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">    /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">    /// Represents a canvas for VR interaction purposes. Allows for interaction with the AVR_UIInteractionProvider.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">    /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html">   14</a></span>&#160;<span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">class</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html">AVR_Canvas</a> : <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR_Behaviour</a>, IPointerEnterHandler, IPointerExitHandler</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {<span class="comment"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">        /// A list of all AVR_Canvases that have at some point been active and not destroyed since</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">        /// &lt;value&gt;&lt;/value&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a15f898fd680c8d74339186b1374eab28">   20</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">static</span> List&lt;AVR_Canvas&gt; all_canvases { <span class="keyword">get</span>; <span class="keyword">private</span> set; }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">        /// A list of all AVR_Canvases that the user is currently interacting with. NOTE: This is *not* the same as all canvases that are active in the scene.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">        /// &lt;value&gt;&lt;/value&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a878e6ab6d4354902ca768704fe36b44c">   26</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">static</span> List&lt;AVR_Canvas&gt; active_canvases { <span class="keyword">get</span>; <span class="keyword">private</span> set; }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">        /// The UnityEngine.Canvas Component this object is attatched to.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a34246345c8b2ad1a2b34b24ce3ffac29">   31</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> Canvas canvas { <span class="keyword">get</span>; <span class="keyword">private</span> set; }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a621003874dbcbd66424880da10288054">   33</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a621003874dbcbd66424880da10288054">Awake</a>() {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            all_canvases = <span class="keyword">new</span> List&lt;AVR_Canvas&gt;();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            active_canvases = <span class="keyword">new</span> List&lt;AVR_Canvas&gt;();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            all_canvases.Add(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#ad8456f0cf853a89fc91011085dd0bbac">   39</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r___canvas.html#ad8456f0cf853a89fc91011085dd0bbac">OnDestroy</a>()</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        all_canvases.Remove(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#aef822d786b9799e0f1beb794d9c4337c">   44</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r___canvas.html#aef822d786b9799e0f1beb794d9c4337c">setUIInteractionProvider</a>(AVR.UI.AVR_UIInteractionProvider p) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        canvas.worldCamera = p.UIRay.UICamera;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#aacc2380d9381a34c983bf9c9b26dbacc">   48</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r___canvas.html#aacc2380d9381a34c983bf9c9b26dbacc">anchor_to_world</a>()</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="class_a_v_r___canvas.html#afa710ee7601888eb1069560680986801">anchor_to_transform</a>(null);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#a71021ed6a7fd40dfe99e25b14cefb858">   53</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r___canvas.html#a71021ed6a7fd40dfe99e25b14cefb858">anchor_to_player</a>()</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        this.transform.SetParent(Camera.main.transform, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        AVR_DevConsole.print(gameObject.name + <span class="stringliteral">&quot; anchored to player&quot;</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#a85310d63b1ccf7c6f2e9472b140e7250">   59</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r___canvas.html#a85310d63b1ccf7c6f2e9472b140e7250">anchor_to_controller</a>(<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html">AVR_ControllerInputManager</a> controller)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        this.transform.SetParent(controller.transform, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        AVR_DevConsole.print(gameObject.name + <span class="stringliteral">&quot; anchored to controller&quot;</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#afa710ee7601888eb1069560680986801">   65</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r___canvas.html#afa710ee7601888eb1069560680986801">anchor_to_transform</a>(Transform t)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span>(t==null) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">// We need to do this circus each time we parent to world because something doesnt work</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            Vector3 tmp = this.transform.position;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            this.transform.SetParent(null, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            transform.position = tmp;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            AVR_DevConsole.print(gameObject.name + <span class="stringliteral">&quot; anchored to world&quot;</span>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            this.transform.SetParent(t, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            AVR_DevConsole.print(gameObject.name + <span class="stringliteral">&quot; anchored to &quot;</span>+t.gameObject.name);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#ad5f85d07fa621cde1f7b2a55883f2f5d">   80</a></span>&#160;    <span class="keyword">public</span> Plane <a class="code" href="class_a_v_r___canvas.html#ad5f85d07fa621cde1f7b2a55883f2f5d">GetPlane</a>() {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="class_a_v_r___canvas.html#a80a3ce15f3d74da3d39b23871ce02e93">canvasPlane</a> = <span class="keyword">new</span> Plane();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        canvasPlane.Set3Points(</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            transform.position,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            transform.position + transform.right,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            transform.position + transform.up</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        );</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_a_v_r___canvas.html#a80a3ce15f3d74da3d39b23871ce02e93">canvasPlane</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#af43c5debea5c20763a098da0bb98da6c">   90</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r___canvas.html#af43c5debea5c20763a098da0bb98da6c">OnPointerEnter</a>(PointerEventData eventData)</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        AVR_UIInteractionProvider.register_UIInteraction(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_a_v_r___canvas.html#aba98f90277182388728a3cb1a7f1badf">   94</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r___canvas.html#aba98f90277182388728a3cb1a7f1badf">OnPointerExit</a>(PointerEventData eventData)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        AVR_UIInteractionProvider.unregister_UIInteraction(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            canvas = GetComponent&lt;Canvas&gt;();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span>(!canvas) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                AVR_DevConsole.cerror(<span class="stringliteral">&quot;AVR_Canvas does not have a Canvas component!&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                Destroy(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a83667ca803201d35e2e903c175a04e2d">   47</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a83667ca803201d35e2e903c175a04e2d">OnDisable</a>() {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> (active_canvases.Contains(<span class="keyword">this</span>)) active_canvases.Remove(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#aaa905c0844a3235548dc44a973c1a1dc">   51</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#aaa905c0844a3235548dc44a973c1a1dc">OnDestroy</a>()</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">if</span> (all_canvases.Contains(<span class="keyword">this</span>)) all_canvases.Remove(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span> (active_canvases.Contains(<span class="keyword">this</span>)) active_canvases.Remove(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">        /// Anchors this canvas to the world. (Sets parent to null)</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#acecf9d5f6f71b9f0050f2a8a6f045988">   60</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#acecf9d5f6f71b9f0050f2a8a6f045988">anchor_to_world</a>()</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            anchor_to_transform(null);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">        /// Anchors this canvas to the players HMD. Intended for HUD UI elements.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a73c3c066cda4585bad9ab115efb781ac">   68</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a73c3c066cda4585bad9ab115efb781ac">anchor_to_player</a>()</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            this.transform.SetParent(AVR_PlayerRig.Instance.MainCamera.transform, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            AVR_DevConsole.print(gameObject.name + <span class="stringliteral">&quot; anchored to player&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">        /// Anchors the canvas to a given vr controller.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">        /// &lt;param name=&quot;controller&quot;&gt; Controller the canvas will be parented to &lt;/param&gt;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#ac216dba9372585e8002042afb2ad5808">   78</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#ac216dba9372585e8002042afb2ad5808">anchor_to_controller</a>(<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html">AVR_ControllerInputManager</a> controller)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            this.transform.SetParent(controller.transform, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            AVR_DevConsole.print(gameObject.name + <span class="stringliteral">&quot; anchored to controller&quot;</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">        /// Anchor this canvas to a given transform. Effectively the same as calling transform.SetParent(...)</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">        /// &lt;param name=&quot;t&quot;&gt;Transform the canvas will be parented to&lt;/param&gt;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#afcfecf8e6f20e464db651a5a81f0b640">   88</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#afcfecf8e6f20e464db651a5a81f0b640">anchor_to_transform</a>(Transform t)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">if</span>(t==null) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="comment">// We need to do this circus each time we parent to world because something doesnt work. I seriously can&#39;t figure out what, but either way, performance impact should be close to nothing.</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                Vector3 tmp = this.transform.position;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                this.transform.SetParent(null, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                transform.position = tmp;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                this.transform.SetParent(t, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">        /// Returns the 3d plane this canvas lies in</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">        /// &lt;returns&gt;3d plane this canvas lies in&lt;/returns&gt;</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#afbd3e3777b491ab48de1e212eb94ce4d">  105</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> Plane <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#afbd3e3777b491ab48de1e212eb94ce4d">GetPlane</a>() {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            Plane canvasPlane = <span class="keyword">new</span> Plane();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            canvasPlane.Set3Points(</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                transform.position,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                transform.position + transform.right,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                transform.position + transform.up</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            );</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">return</span> canvasPlane;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a724cbbf0f01d8c1a862f50f594d94209">  115</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a724cbbf0f01d8c1a862f50f594d94209">OnPointerEnter</a>(PointerEventData eventData)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">if</span> (!active_canvases.Contains(<span class="keyword">this</span>)) active_canvases.Add(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a1f71d4a8aad30dc07ebdee49173d5ba6">  119</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a1f71d4a8aad30dc07ebdee49173d5ba6">OnPointerExit</a>(PointerEventData eventData)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">if</span> (active_canvases.Contains(<span class="keyword">this</span>)) active_canvases.Remove(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR.Core.AVR_Behaviour</a></div><div class="ttdoc">Monobehaviour but with an added URL button to a documentation page. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___behaviour_8cs_source.html#l00010">AVR_Behaviour.cs:10</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_a71021ed6a7fd40dfe99e25b14cefb858"><div class="ttname"><a href="class_a_v_r___canvas.html#a71021ed6a7fd40dfe99e25b14cefb858">AVR_Canvas.anchor_to_player</a></div><div class="ttdeci">void anchor_to_player()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00053">AVR_Canvas.cs:53</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_af43c5debea5c20763a098da0bb98da6c"><div class="ttname"><a href="class_a_v_r___canvas.html#af43c5debea5c20763a098da0bb98da6c">AVR_Canvas.OnPointerEnter</a></div><div class="ttdeci">void OnPointerEnter(PointerEventData eventData)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00090">AVR_Canvas.cs:90</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_a4737c13d98fbdd5e65ea6ab822ebdae4"><div class="ttname"><a href="class_a_v_r___canvas.html#a4737c13d98fbdd5e65ea6ab822ebdae4">AVR_Canvas.all_canvases</a></div><div class="ttdeci">static List&lt; AVR_Canvas &gt; all_canvases</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00014">AVR_Canvas.cs:14</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_html_ac216dba9372585e8002042afb2ad5808"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#ac216dba9372585e8002042afb2ad5808">AVR.UI.AVR_Canvas.anchor_to_controller</a></div><div class="ttdeci">void anchor_to_controller(AVR_ControllerInputManager controller)</div><div class="ttdoc">Anchors the canvas to a given vr controller. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00078">AVR_Canvas.cs:78</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html">AVR.Core.AVR_ControllerInputManager</a></div><div class="ttdoc">Manages inputs of a controller such as button presses and track-pad inputs. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___controller_input_manager_8cs_source.html#l00011">AVR_ControllerInputManager.cs:11</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_a0a53ab887833d784ac97578a9e024a1f"><div class="ttname"><a href="class_a_v_r___canvas.html#a0a53ab887833d784ac97578a9e024a1f">AVR_Canvas.OnDisable</a></div><div class="ttdeci">void OnDisable()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00035">AVR_Canvas.cs:35</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_aef822d786b9799e0f1beb794d9c4337c"><div class="ttname"><a href="class_a_v_r___canvas.html#aef822d786b9799e0f1beb794d9c4337c">AVR_Canvas.setUIInteractionProvider</a></div><div class="ttdeci">void setUIInteractionProvider(AVR.UI.AVR_UIInteractionProvider p)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00044">AVR_Canvas.cs:44</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_aba98f90277182388728a3cb1a7f1badf"><div class="ttname"><a href="class_a_v_r___canvas.html#aba98f90277182388728a3cb1a7f1badf">AVR_Canvas.OnPointerExit</a></div><div class="ttdeci">void OnPointerExit(PointerEventData eventData)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00094">AVR_Canvas.cs:94</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_a85310d63b1ccf7c6f2e9472b140e7250"><div class="ttname"><a href="class_a_v_r___canvas.html#a85310d63b1ccf7c6f2e9472b140e7250">AVR_Canvas.anchor_to_controller</a></div><div class="ttdeci">void anchor_to_controller(AVR_ControllerInputManager controller)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00059">AVR_Canvas.cs:59</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_aacc2380d9381a34c983bf9c9b26dbacc"><div class="ttname"><a href="class_a_v_r___canvas.html#aacc2380d9381a34c983bf9c9b26dbacc">AVR_Canvas.anchor_to_world</a></div><div class="ttdeci">void anchor_to_world()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00048">AVR_Canvas.cs:48</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_a80a3ce15f3d74da3d39b23871ce02e93"><div class="ttname"><a href="class_a_v_r___canvas.html#a80a3ce15f3d74da3d39b23871ce02e93">AVR_Canvas.canvasPlane</a></div><div class="ttdeci">Plane canvasPlane</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00016">AVR_Canvas.cs:16</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html"><div class="ttname"><a href="class_a_v_r___canvas.html">AVR_Canvas</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00012">AVR_Canvas.cs:12</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_afa710ee7601888eb1069560680986801"><div class="ttname"><a href="class_a_v_r___canvas.html#afa710ee7601888eb1069560680986801">AVR_Canvas.anchor_to_transform</a></div><div class="ttdeci">void anchor_to_transform(Transform t)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00065">AVR_Canvas.cs:65</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_ad5f85d07fa621cde1f7b2a55883f2f5d"><div class="ttname"><a href="class_a_v_r___canvas.html#ad5f85d07fa621cde1f7b2a55883f2f5d">AVR_Canvas.GetPlane</a></div><div class="ttdeci">Plane GetPlane()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00080">AVR_Canvas.cs:80</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_a4dacebd4d25bd1779e0a9860d57525bf"><div class="ttname"><a href="class_a_v_r___canvas.html#a4dacebd4d25bd1779e0a9860d57525bf">AVR_Canvas.Awake</a></div><div class="ttdeci">void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00019">AVR_Canvas.cs:19</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_a16dc940168646b73e8c26970c67798c1"><div class="ttname"><a href="class_a_v_r___canvas.html#a16dc940168646b73e8c26970c67798c1">AVR_Canvas.canvas</a></div><div class="ttdeci">Canvas canvas</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00017">AVR_Canvas.cs:17</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_ad8456f0cf853a89fc91011085dd0bbac"><div class="ttname"><a href="class_a_v_r___canvas.html#ad8456f0cf853a89fc91011085dd0bbac">AVR_Canvas.OnDestroy</a></div><div class="ttdeci">void OnDestroy()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00039">AVR_Canvas.cs:39</a></div></div>
-<div class="ttc" id="class_a_v_r___canvas_html_a209926913b62afc2358d12a363038d4a"><div class="ttname"><a href="class_a_v_r___canvas.html#a209926913b62afc2358d12a363038d4a">AVR_Canvas.GetCanvas</a></div><div class="ttdeci">Canvas GetCanvas()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00031">AVR_Canvas.cs:31</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_html_acecf9d5f6f71b9f0050f2a8a6f045988"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#acecf9d5f6f71b9f0050f2a8a6f045988">AVR.UI.AVR_Canvas.anchor_to_world</a></div><div class="ttdeci">void anchor_to_world()</div><div class="ttdoc">Anchors this canvas to the world. (Sets parent to null) </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00060">AVR_Canvas.cs:60</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_html_a1f71d4a8aad30dc07ebdee49173d5ba6"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a1f71d4a8aad30dc07ebdee49173d5ba6">AVR.UI.AVR_Canvas.OnPointerExit</a></div><div class="ttdeci">void OnPointerExit(PointerEventData eventData)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00119">AVR_Canvas.cs:119</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url.html">AVR.Core.Attributes.DocumentationUrl</a></div><div class="ttdoc">Sets the documentation html file inside of Packages/com.avr.core/Documentation/html of a given class...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___attributes_8cs_source.html#l00088">AVR_Attributes.cs:88</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_html_a621003874dbcbd66424880da10288054"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a621003874dbcbd66424880da10288054">AVR.UI.AVR_Canvas.Awake</a></div><div class="ttdeci">void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00033">AVR_Canvas.cs:33</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_html_afbd3e3777b491ab48de1e212eb94ce4d"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#afbd3e3777b491ab48de1e212eb94ce4d">AVR.UI.AVR_Canvas.GetPlane</a></div><div class="ttdeci">Plane GetPlane()</div><div class="ttdoc">Returns the 3d plane this canvas lies in </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00105">AVR_Canvas.cs:105</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_html_afcfecf8e6f20e464db651a5a81f0b640"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#afcfecf8e6f20e464db651a5a81f0b640">AVR.UI.AVR_Canvas.anchor_to_transform</a></div><div class="ttdeci">void anchor_to_transform(Transform t)</div><div class="ttdoc">Anchor this canvas to a given transform. Effectively the same as calling transform.SetParent(...) </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00088">AVR_Canvas.cs:88</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_html_a83667ca803201d35e2e903c175a04e2d"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a83667ca803201d35e2e903c175a04e2d">AVR.UI.AVR_Canvas.OnDisable</a></div><div class="ttdeci">void OnDisable()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00047">AVR_Canvas.cs:47</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_html_aaa905c0844a3235548dc44a973c1a1dc"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#aaa905c0844a3235548dc44a973c1a1dc">AVR.UI.AVR_Canvas.OnDestroy</a></div><div class="ttdeci">void OnDestroy()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00051">AVR_Canvas.cs:51</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_html"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html">AVR.UI.AVR_Canvas</a></div><div class="ttdoc">Represents a canvas for VR interaction purposes. Allows for interaction with the AVR_UIInteractionPro...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00014">AVR_Canvas.cs:14</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_html_a73c3c066cda4585bad9ab115efb781ac"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a73c3c066cda4585bad9ab115efb781ac">AVR.UI.AVR_Canvas.anchor_to_player</a></div><div class="ttdeci">void anchor_to_player()</div><div class="ttdoc">Anchors this canvas to the players HMD. Intended for HUD UI elements. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00068">AVR_Canvas.cs:68</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_html_a724cbbf0f01d8c1a862f50f594d94209"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#a724cbbf0f01d8c1a862f50f594d94209">AVR.UI.AVR_Canvas.OnPointerEnter</a></div><div class="ttdeci">void OnPointerEnter(PointerEventData eventData)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00115">AVR_Canvas.cs:115</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

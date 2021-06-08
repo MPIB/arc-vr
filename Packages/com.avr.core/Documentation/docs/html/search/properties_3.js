@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['hideconditionpropertyname',['hideConditionPropertyName',['../class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector.html#a0f8ddd732a625008a5406c805d3c2983',1,'AVR::Core::Attributes::ConditionalHideInInspector']]],
-  ['hitposition',['hitPosition',['../class_a_v_r_1_1_core_1_1_a_v_r___solid_ray.html#a9c88c22c25f496573fc6603c28a76850',1,'AVR::Core::AVR_SolidRay']]]
+  ['grip',['grip',['../class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#abf90b8d1c3242eb0d9d0c610a4129fd0',1,'AVR::Core::AVR_ControllerInputManager']]],
+  ['gripdown',['gripDown',['../class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a6288c39b2ccf3a1896ecbf5d156fd29e',1,'AVR::Core::AVR_ControllerInputManager']]],
+  ['gripup',['gripUp',['../class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#abc86c238dfb95ac1bab8d34bbba1a2be',1,'AVR::Core::AVR_ControllerInputManager']]]
 ];

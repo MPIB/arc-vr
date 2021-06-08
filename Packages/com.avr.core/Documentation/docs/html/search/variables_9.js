@@ -9,5 +9,5 @@ var searchData=
   ['limittplocation_5fbyslope',['limitTPLocation_bySlope',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_restrictor.html#a7ffdd7958e1aebf3023a922017864cd2',1,'AVR::Motion::AVR_MovementRestrictor']]],
   ['limittplocation_5fbytag',['limitTPLocation_byTag',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_restrictor.html#a65867038c7e4bf770ffcc6d88c235c81',1,'AVR::Motion::AVR_MovementRestrictor']]],
   ['logo',['logo',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___arc_v_r_window.html#a2ae99454d2058664ce6f02babc692d2e',1,'AVR::UEditor::Core::AVR_ArcVRWindow']]],
-  ['lr',['lr',['../class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abce183e10acd441fa08130015613ef97',1,'AVR.Core.AVR_Ray.lr()'],['../class_a_v_r_u_i___click_drag_wheel.html#aed0c27f622bf2de81cb2f7046a8d59da',1,'AVRUI_ClickDragWheel.lr()']]]
+  ['lr',['lr',['../class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abce183e10acd441fa08130015613ef97',1,'AVR.Core.AVR_Ray.lr()'],['../class_a_v_r_1_1_u_i_1_1_a_v_r_u_i___click_drag_wheel.html#a65dc164b07b2f887dbbe26351c7cffce',1,'AVR.UI.AVRUI_ClickDragWheel.lr()']]]
 ];
