@@ -14,17 +14,39 @@ namespace AVR.UI.Utils {
         public float decrease_amount = 0.1f;
 
         private InputField input;
+        private TMPro.TMP_InputField input_tmp;
 
         void Awake() {
             input = GetComponent<InputField>();
+            input_tmp = GetComponent<TMPro.TMP_InputField>();
+            if(!input && !input_tmp) {
+                AVR.Core.AVR_DevConsole.cerror("Numeric Inputfield need either a InputField or a TMP_InputField component!", this);
+                Destroy(this);
+            }
         }
         
         public void increase_value() {
-            input.text = (float.Parse(input.text) + increase_amount).ToString();
+            try {
+                if(input) {
+                    input.text = (float.Parse(input.text) + increase_amount).ToString();
+                }
+                else {
+                    input_tmp.text = (float.Parse(input_tmp.text) + increase_amount).ToString();
+                }
+            } catch(System.Exception) { }
         }
 
         public void decrease_value() {
-            input.text = (float.Parse(input.text) - decrease_amount).ToString();
+            try {
+                if (input)
+                {
+                    input.text = (float.Parse(input.text) - decrease_amount).ToString();
+                }
+                else
+                {
+                    input_tmp.text = (float.Parse(input_tmp.text) - decrease_amount).ToString();
+                }
+            } catch(System.Exception) { }
         }
     }
 }

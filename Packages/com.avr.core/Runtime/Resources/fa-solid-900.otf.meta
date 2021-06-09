@@ -12,6 +12,7 @@ TrueTypeFontImporter:
   - Font Awesome 5 Free
   fallbackFontReferences:
   - {fileID: 12800000, guid: 781b1a4596092914d8bb3d8f4ce2aeab, type: 3}
+  - {fileID: 12800000, guid: f9a87f237b9a2254f8e86b2289387e8c, type: 3}
   - {fileID: 12800000, guid: d6c86ad579a6a6f4282d98569bcc7c54, type: 3}
   customCharacters: 
   fontRenderingMode: 0
