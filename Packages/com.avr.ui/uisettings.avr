@@ -1,5 +1,7 @@
 editor = {
 	defaultPrefabPaths = {
 		uiInteractionProvider = "Packages/com.avr.ui/Editor/DefaultPrefabs/UIInteractionProvider.prefab"
+		uiRay = "Packages/com.avr.ui/Editor/DefaultPrefabs/UIRay.prefab"
+		eventSystem = "Packages/com.avr.ui/Editor/DefaultPrefabs/EventSystem.prefab"
 	}
 }

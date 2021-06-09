@@ -6,7 +6,12 @@ using System.Reflection;
 using System.Linq;
 
 namespace AVR.UI.Link {
-    public abstract class AVRUI_Link : MonoBehaviour
+    /// <summary>
+    /// Binds a given UI element (such as slider, toggle, dropdown or inputfield) with a given property or field of a given MonoBehaviour.
+    /// One intended use case would be an ingame options-screen to set, for instance, the FOV of a camera.
+    /// </summary>
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link.html")]
+    public abstract class AVRUI_Link : AVR.Core.AVR_Behaviour
     {
         public enum MemberType { FIELD, PROPERTY }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-namespace AVR.UI {
+namespace AVR.UI.Utils {
     public class AVRUI_ClickDragWheelEntryPrefab : MonoBehaviour
     {
         private RectTransform rect;

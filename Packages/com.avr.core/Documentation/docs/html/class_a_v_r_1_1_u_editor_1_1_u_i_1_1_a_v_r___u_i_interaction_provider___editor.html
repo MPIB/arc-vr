@@ -155,24 +155,37 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            base.OnInspectorGUI();</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="comment">// There is no EventSystem</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">if</span>(FindObjectOfType&lt;EventSystem&gt;()==null) {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                EditorGUILayout.HelpBox(<span class="stringliteral">&quot;UIInteractionProvider requires an EventSystem object to work!&quot;</span>, MessageType.Warning);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="keywordflow">if</span> (GUILayout.Button(<span class="stringliteral">&quot;FIX NOW: Create EventSystem Object&quot;</span>))</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                    AVR.UEditor.Core.AVR_EditorUtility.InstantiatePrefabAsChild(null, <span class="stringliteral">&quot;editor/defaultPrefabPaths/eventSystem&quot;</span>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="comment">// There is an EventSystem but no VRInput object</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(FindObjectOfType&lt;VRInput&gt;()==null) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                EditorGUILayout.HelpBox(<span class="stringliteral">&quot;UIInteractionProvider requires a VRInput object to work!&quot;</span>, MessageType.Warning);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                EventSystem sys = FindObjectOfType&lt;EventSystem&gt;();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">if</span> (GUILayout.Button(<span class="stringliteral">&quot;FIX: Add VRInput Component to &quot;</span>+sys.name))</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    sys.gameObject.AddComponent&lt;<a class="code" href="class_a_v_r_1_1_u_i_1_1_v_r_input.html">VRInput</a>&gt;();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html">AVR_UIInteractionProvider</a> prov = ((<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html">AVR_UIInteractionProvider</a>)target);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">if</span>(prov.UIRay==null) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                EditorGUILayout.HelpBox(<span class="stringliteral">&quot;UIInteractionProvider requires a UIRay to work!&quot;</span>, MessageType.Warning);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordflow">if</span> (GUILayout.Button(<span class="stringliteral">&quot;FIX NOW: Add default UIRay&quot;</span>))</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    GameObject ray = AVR.UEditor.Core.AVR_EditorUtility.InstantiatePrefabAsChild(prov.transform, <span class="stringliteral">&quot;/editor/defaultPrefabPaths/uiRay&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    prov.UIRay = ray.GetComponent&lt;<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html">AVR_UIRay</a>&gt;();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="comment">// There is no EventSystem</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span>(FindObjectOfType&lt;EventSystem&gt;()==null) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                EditorGUILayout.HelpBox(<span class="stringliteral">&quot;UIInteractionProvider requires an EventSystem object to work!&quot;</span>, MessageType.Warning);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">if</span> (GUILayout.Button(<span class="stringliteral">&quot;FIX NOW: Create EventSystem Object&quot;</span>))</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    AVR.UEditor.Core.AVR_EditorUtility.InstantiatePrefabAsChild(null, <span class="stringliteral">&quot;/editor/defaultPrefabPaths/eventSystem&quot;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="comment">// There is an EventSystem but no VRInput object</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(FindObjectOfType&lt;VRInput&gt;()==null) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                EditorGUILayout.HelpBox(<span class="stringliteral">&quot;UIInteractionProvider requires a VRInput object to work!&quot;</span>, MessageType.Warning);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                EventSystem sys = FindObjectOfType&lt;EventSystem&gt;();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">if</span> (GUILayout.Button(<span class="stringliteral">&quot;FIX: Add VRInput Component to &quot;</span>+sys.name))</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    sys.gameObject.AddComponent&lt;<a class="code" href="class_a_v_r_1_1_u_i_1_1_v_r_input.html">VRInput</a>&gt;();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray_html"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html">AVR.UI.AVR_UIRay</a></div><div class="ttdoc">Represents a UI pointer-ray. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_ray_8cs_source.html#l00012">AVR_UIRay.cs:12</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html">AVR.UI.AVR_UIInteractionProvider</a></div><div class="ttdoc">This class provides UI Interaction through a VR controller. NOTE: Often Enabling/Disabling this compo...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00013">AVR_UIInteractionProvider.cs:13</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_u_i_1_1_v_r_input_html"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_v_r_input.html">AVR.UI.VRInput</a></div><div class="ttdoc">This class overrides the base Input with Input from our VR components, thus enabling UI Interaction w...</div><div class="ttdef"><b>Definition:</b> <a href="_v_r_input_8cs_source.html#l00014">VRInput.cs:14</a></div></div>
 </div><!-- fragment -->
 </div>

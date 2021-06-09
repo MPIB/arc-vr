@@ -10,5 +10,6 @@ var searchData=
   ['ueditor',['UEditor',['../namespace_a_v_r_1_1_u_editor.html',1,'AVR']]],
   ['ui',['UI',['../namespace_a_v_r_1_1_u_editor_1_1_u_i.html',1,'AVR::UEditor']]],
   ['ui',['UI',['../namespace_a_v_r_1_1_u_i.html',1,'AVR']]],
+  ['utils',['Utils',['../namespace_a_v_r_1_1_u_i_1_1_utils.html',1,'AVR::UI']]],
   ['utils',['Utils',['../namespace_a_v_r_1_1_core_1_1_utils.html',1,'AVR::Core']]]
 ];

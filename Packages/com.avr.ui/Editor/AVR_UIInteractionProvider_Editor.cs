@@ -17,12 +17,23 @@ namespace AVR.UEditor.UI {
         {
             base.OnInspectorGUI();
 
+            AVR_UIInteractionProvider prov = ((AVR_UIInteractionProvider)target);
+
+            if(prov.UIRay==null) {
+                EditorGUILayout.HelpBox("UIInteractionProvider requires a UIRay to work!", MessageType.Warning);
+                if (GUILayout.Button("FIX NOW: Add default UIRay"))
+                {
+                    GameObject ray = AVR.UEditor.Core.AVR_EditorUtility.InstantiatePrefabAsChild(prov.transform, "/editor/defaultPrefabPaths/uiRay");
+                    prov.UIRay = ray.GetComponent<AVR_UIRay>();
+                }
+            }
+
             // There is no EventSystem
             if(FindObjectOfType<EventSystem>()==null) {
                 EditorGUILayout.HelpBox("UIInteractionProvider requires an EventSystem object to work!", MessageType.Warning);
                 if (GUILayout.Button("FIX NOW: Create EventSystem Object"))
                 {
-                    AVR.UEditor.Core.AVR_EditorUtility.InstantiatePrefabAsChild(null, "editor/defaultPrefabPaths/eventSystem");
+                    AVR.UEditor.Core.AVR_EditorUtility.InstantiatePrefabAsChild(null, "/editor/defaultPrefabPaths/eventSystem");
                 }
             }
             // There is an EventSystem but no VRInput object

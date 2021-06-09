@@ -7,35 +7,47 @@ using AVR.Core;
 using AVR;
 using AVR.UI;
 
-public class WindowHandle : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
-{
-    public AVR_Canvas canvas;
-
-    Transform og_parent = null;
-    bool clicked = false;
-
-    void Update() {
-        // Prototype to resize windows, Unfinished:
-        //if(clicked && AVR_Root.Instance.UIInteractionController.getEventStatus(AVR_ControllerInputManager.BoolEvent.PRIMARY2DAXIS_TOUCH)) {
-        //    Vector3 scale = canvas.transform.localScale;
-        //    scale *= (1.0f+AVR_Root.Instance.UIInteractionController.primary2DAxis.y);
-        //    scale.z = 1.0f;
-        //    canvas.transform.localScale = scale;
-        //}
-    }
-    
-    public void OnPointerDown(PointerEventData eventData)
+namespace AVR.UI.Utils {
+    /// <summary>
+    /// Window-Handle that allows the attatched canvas to be click and dragged in world space by a UIInteractionProvider.
+    /// </summary>
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_u_i_1_1_utils_1_1_window_handle.html")]
+    public class WindowHandle : AVR_Behaviour, IPointerDownHandler, IPointerUpHandler
     {
-        if(clicked) return;
-        clicked = true;
-        og_parent = canvas.transform.parent;
-        canvas.anchor_to_transform(AVR_UIInteractionProvider.currentActive.transform);
-    }
+        /// <summary>
+        /// Canvas that is moved by this handle
+        /// </summary>
+        public AVR_Canvas canvas;
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        if (!clicked) return;
-        clicked = false;
-        canvas.anchor_to_transform(og_parent);
+        Transform og_parent = null;
+        bool clicked = false;
+
+        void Awake() {
+            if(!canvas) {
+                canvas = GetComponentInParent<AVR_Canvas>();
+                if(!canvas) {
+                    AVR_DevConsole.cerror("WindowHandle does not have an AVR_Canvas attatched!", this);
+                }
+            }
+        }
+        
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            if(clicked) return;
+
+            clicked = true;
+
+            og_parent = canvas.transform.parent;
+            canvas.anchor_to_transform(AVR_UIInteractionProvider.currentActive.transform);
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            if (!clicked) return;
+
+            clicked = false;
+
+            canvas.anchor_to_transform(og_parent);
+        }
     }
 }

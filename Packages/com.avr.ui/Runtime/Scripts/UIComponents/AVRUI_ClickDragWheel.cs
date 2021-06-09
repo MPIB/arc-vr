@@ -7,7 +7,7 @@ using UnityEngine.Events;
 using AVR;
 using AVR.Core;
 
-namespace AVR.UI {
+namespace AVR.UI.Utils {
     [RequireComponent(typeof(LineRenderer))]
     public class AVRUI_ClickDragWheel : MonoBehaviour
     {

@@ -43,6 +43,4 @@ public class AVR_FA_GlyphHelper : MonoBehaviour
         char num = (char)int.Parse(unicode, System.Globalization.NumberStyles.HexNumber);
         t.text = num.ToString();
     }
-
-
 }

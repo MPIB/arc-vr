@@ -99,6 +99,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AVR.UI.AVR_UIRay Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents a <a class="el" href="namespace_a_v_r_1_1_u_i.html">UI</a> pointer-ray.  
+ <a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for AVR.UI.AVR_UIRay:</div>
 <div class="dyncontent">
@@ -114,6 +117,7 @@ Inheritance diagram for AVR.UI.AVR_UIRay:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ab29eb2b2b994b06013555d4e870fb9ec"><td class="memItemLeft" align="right" valign="top">Camera&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#ab29eb2b2b994b06013555d4e870fb9ec">UICamera</a></td></tr>
+<tr class="memdesc:ab29eb2b2b994b06013555d4e870fb9ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera that is the eventCamera for the underlying inputsystem. If left blank, a Camera with preset value will be added.  <a href="#ab29eb2b2b994b06013555d4e870fb9ec">More...</a><br /></td></tr>
 <tr class="separator:ab29eb2b2b994b06013555d4e870fb9ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___ray"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___ray')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html">AVR.Core.AVR_Ray</a></td></tr>
 <tr class="memitem:a4b7a142056149a12ea35e7054483b701 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___ray"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a36b3a626b9bd8ad5288166df0240032d">RayMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a4b7a142056149a12ea35e7054483b701">mode</a> = RayMode.STRAIGHT</td></tr>
@@ -208,8 +212,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:af720e72ad3933da97aaf892a08cdd2d7 inherit properties_class_a_v_r_1_1_core_1_1_a_v_r___ray"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_a_v_r___u_i_ray_8cs_source.html#l00008">8</a> of file <a class="el" href="_a_v_r___u_i_ray_8cs_source.html">AVR_UIRay.cs</a>.</p>
+<div class="textblock"><p>Represents a <a class="el" href="namespace_a_v_r_1_1_u_i.html">UI</a> pointer-ray. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___u_i_ray_8cs_source.html#l00012">12</a> of file <a class="el" href="_a_v_r___u_i_ray_8cs_source.html">AVR_UIRay.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="af2eb9a6d63a8cf676935f7b0f3c80a93"></a>
 <div class="memitem">
@@ -234,28 +239,29 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a48babf347d4691c97f80246f24e4185b">AVR.Core.AVR_Ray</a>.</p>
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_ray_8cs_source.html#l00013">13</a> of file <a class="el" href="_a_v_r___u_i_ray_8cs_source.html">AVR_UIRay.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                        {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#ab29eb2b2b994b06013555d4e870fb9ec">UICamera</a>) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#ab29eb2b2b994b06013555d4e870fb9ec">UICamera</a> = lr.gameObject.AddComponent&lt;Camera&gt;();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                UICamera.clearFlags = CameraClearFlags.Nothing;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                UICamera.cullingMask = 0;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                UICamera.fieldOfView = 0.00001f;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                UICamera.nearClipPlane = 0.01f;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                UICamera.farClipPlane = 1000f;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                UICamera.depth = 0f;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                UICamera.allowHDR = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                UICamera.allowMSAA = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                UICamera.targetDisplay = 7;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                UICamera.enabled = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a4b7a142056149a12ea35e7054483b701">mode</a>!=<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a36b3a626b9bd8ad5288166df0240032d">RayMode</a>.STRAIGHT) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                AVR_DevConsole.error(<span class="stringliteral">&quot;AVR_UIRay was initialized with a mode other than RayMode.STRAIGHT! UIRays can only be straight.&quot;</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            base.Awake();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<p>Definition at line <a class="el" href="_a_v_r___u_i_ray_8cs_source.html#l00020">20</a> of file <a class="el" href="_a_v_r___u_i_ray_8cs_source.html">AVR_UIRay.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                        {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#ab29eb2b2b994b06013555d4e870fb9ec">UICamera</a>) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#ab29eb2b2b994b06013555d4e870fb9ec">UICamera</a> = lr.gameObject.AddComponent&lt;Camera&gt;();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                UICamera.clearFlags = CameraClearFlags.Nothing;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                UICamera.cullingMask = 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                UICamera.fieldOfView = 0.00001f;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                UICamera.nearClipPlane = 0.01f;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                UICamera.farClipPlane = 1000f;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                UICamera.depth = 0f;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                UICamera.allowHDR = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                UICamera.allowMSAA = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                UICamera.targetDisplay = 7;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                UICamera.enabled = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a4b7a142056149a12ea35e7054483b701">mode</a>!=<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a36b3a626b9bd8ad5288166df0240032d">RayMode</a>.STRAIGHT) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                AVR_DevConsole.cwarn(<span class="stringliteral">&quot;AVR_UIRay was initialized with a mode other than RayMode.STRAIGHT! UIRays can only be straight.&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a4b7a142056149a12ea35e7054483b701">mode</a> = RayMode.STRAIGHT;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            base.Awake();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a4b7a142056149a12ea35e7054483b701"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a4b7a142056149a12ea35e7054483b701">AVR.Core.AVR_Ray.mode</a></div><div class="ttdeci">RayMode mode</div><div class="ttdoc">What type of ray should be used </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00023">AVR_Ray.cs:23</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray_html_ab29eb2b2b994b06013555d4e870fb9ec"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#ab29eb2b2b994b06013555d4e870fb9ec">AVR.UI.AVR_UIRay.UICamera</a></div><div class="ttdeci">Camera UICamera</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_ray_8cs_source.html#l00011">AVR_UIRay.cs:11</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray_html_ab29eb2b2b994b06013555d4e870fb9ec"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#ab29eb2b2b994b06013555d4e870fb9ec">AVR.UI.AVR_UIRay.UICamera</a></div><div class="ttdeci">Camera UICamera</div><div class="ttdoc">Camera that is the eventCamera for the underlying inputsystem. If left blank, a Camera with preset va...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_ray_8cs_source.html#l00018">AVR_UIRay.cs:18</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___ray_html_a36b3a626b9bd8ad5288166df0240032d"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___ray.html#a36b3a626b9bd8ad5288166df0240032d">AVR.Core.AVR_Ray.RayMode</a></div><div class="ttdeci">RayMode</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___ray_8cs_source.html#l00016">AVR_Ray.cs:16</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -271,7 +277,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_ray_8cs_source.html#l00011">11</a> of file <a class="el" href="_a_v_r___u_i_ray_8cs_source.html">AVR_UIRay.cs</a>.</p>
+<p>Camera that is the eventCamera for the underlying inputsystem. If left blank, a Camera with preset value will be added. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___u_i_ray_8cs_source.html#l00018">18</a> of file <a class="el" href="_a_v_r___u_i_ray_8cs_source.html">AVR_UIRay.cs</a>.</p>
 
 </div>
 </div>

@@ -3,7 +3,7 @@ var searchData=
   ['dash_5forigin',['dash_origin',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a23b57622f93855069880dedb77f28159',1,'AVR::Motion::AVR_MovementProvider']]],
   ['dash_5fspeed',['dash_speed',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a4ce8d034085879743c2d07a72f779c2b',1,'AVR::Motion::AVR_MovementProvider']]],
   ['dash_5fstime',['dash_stime',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3b8ba64ac3af4a2ddf40d60e83363b71',1,'AVR::Motion::AVR_MovementProvider']]],
-  ['decrease_5famount',['decrease_amount',['../class_a_v_r_u_i___input_field___plus_minus.html#a99e31a0bfb92d6f1b22f163be95086f0',1,'AVRUI_InputField_PlusMinus']]],
+  ['decrease_5famount',['decrease_amount',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus.html#af4cd2c81b83717019e61b7cd6c17578f',1,'AVR::UI::Utils::AVRUI_InputField_PlusMinus']]],
   ['delimeter',['delimeter',['../class_a_v_r_1_1_core_1_1_a_v_r___logger.html#af4d7847f2576d5468f81887b8e744964',1,'AVR::Core::AVR_Logger']]],
   ['delta',['delta',['../class_a_v_r_1_1_core_1_1_a_v_r___logger.html#ae97b71345716570668bf439da9c9f1a2',1,'AVR::Core::AVR_Logger']]],
   ['deltatype',['deltaType',['../class_a_v_r_1_1_core_1_1_a_v_r___logger.html#afc77e93d617826edcf616ce0bfc7f944',1,'AVR::Core::AVR_Logger']]],

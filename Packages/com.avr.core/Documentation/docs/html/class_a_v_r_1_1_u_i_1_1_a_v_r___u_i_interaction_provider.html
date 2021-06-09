@@ -102,6 +102,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AVR.UI.AVR_UIInteractionProvider Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class provides <a class="el" href="namespace_a_v_r_1_1_u_i.html">UI</a> Interaction through a VR controller. NOTE: Often Enabling/Disabling this component leads to poor performance! -&gt; TODO: implement a custom function that "enables/disables" functionality without the OnEnable/Disable hassle Requires a <a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html" title="Represents a UI pointer-ray. ">AVR_UIRay</a> to be set.  
+ <a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for AVR.UI.AVR_UIInteractionProvider:</div>
 <div class="dyncontent">
@@ -117,14 +120,19 @@ Inheritance diagram for AVR.UI.AVR_UIInteractionProvider:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aa42ef4c23ebcce44689a735bc5e42704"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a33a6a31da3de7a373deffcdc04fad274">AVR_ControllerInputManager.BoolEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aa42ef4c23ebcce44689a735bc5e42704">clickButton</a></td></tr>
+<tr class="memdesc:aa42ef4c23ebcce44689a735bc5e42704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event that would normally be LMB.  <a href="#aa42ef4c23ebcce44689a735bc5e42704">More...</a><br /></td></tr>
 <tr class="separator:aa42ef4c23ebcce44689a735bc5e42704"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9f6f28e751d61d9a7247b41f172b085"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a33a6a31da3de7a373deffcdc04fad274">AVR_ControllerInputManager.BoolEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#ad9f6f28e751d61d9a7247b41f172b085">clickButton_down</a></td></tr>
+<tr class="memdesc:ad9f6f28e751d61d9a7247b41f172b085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event that represents LMB buttondown  <a href="#ad9f6f28e751d61d9a7247b41f172b085">More...</a><br /></td></tr>
 <tr class="separator:ad9f6f28e751d61d9a7247b41f172b085"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed76bf3c0df2c74c1064fc10cf1d1ca4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a33a6a31da3de7a373deffcdc04fad274">AVR_ControllerInputManager.BoolEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aed76bf3c0df2c74c1064fc10cf1d1ca4">clickButton_up</a></td></tr>
+<tr class="memdesc:aed76bf3c0df2c74c1064fc10cf1d1ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event that represents LMB buttonup  <a href="#aed76bf3c0df2c74c1064fc10cf1d1ca4">More...</a><br /></td></tr>
 <tr class="separator:aed76bf3c0df2c74c1064fc10cf1d1ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af18d50b6672e8c6b6491c68dec6d56f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#af18d50b6672e8c6b6491c68dec6d56f8">show_ray_only_on_hover</a> = false</td></tr>
+<tr class="memdesc:af18d50b6672e8c6b6491c68dec6d56f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Only show UIRay when hovering over a canvas or always.  <a href="#af18d50b6672e8c6b6491c68dec6d56f8">More...</a><br /></td></tr>
 <tr class="separator:af18d50b6672e8c6b6491c68dec6d56f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73565b4126e142043d59eaa8d566a9a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html">AVR_UIRay</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a73565b4126e142043d59eaa8d566a9a4">UIRay</a></td></tr>
+<tr class="memdesc:a73565b4126e142043d59eaa8d566a9a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer ray of this interactionprovider. Is required for the interactionprovider to work.  <a href="#a73565b4126e142043d59eaa8d566a9a4">More...</a><br /></td></tr>
 <tr class="separator:a73565b4126e142043d59eaa8d566a9a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR.Core.AVR_Component</a></td></tr>
 <tr class="memitem:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7fc075a7ad97ada8b9c25bf82f346aee">onAwake</a></td></tr>
@@ -143,6 +151,7 @@ Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:aeeb25a957020169fcfd8b907ddfe098c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html">AVR_UIInteractionProvider</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aeeb25a957020169fcfd8b907ddfe098c">currentActive</a></td></tr>
+<tr class="memdesc:aeeb25a957020169fcfd8b907ddfe098c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The currently active interactionprovider. NOTE: only one interactionprovider will be active at a time.  <a href="#aeeb25a957020169fcfd8b907ddfe098c">More...</a><br /></td></tr>
 <tr class="separator:aeeb25a957020169fcfd8b907ddfe098c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
@@ -151,9 +160,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:ab202f42c6bf586d46a767f0637b4fc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a093c136f80d4e919362b75fb363b7136"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a093c136f80d4e919362b75fb363b7136">OnDisable</a> ()</td></tr>
 <tr class="separator:a093c136f80d4e919362b75fb363b7136"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___controller_component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___controller_component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html">AVR.Core.AVR_ControllerComponent</a></td></tr>
-<tr class="memitem:ae4ed17deabe4207cc4059c6abe466a43 inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___controller_component"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#ae4ed17deabe4207cc4059c6abe466a43">Awake</a> ()</td></tr>
-<tr class="separator:ae4ed17deabe4207cc4059c6abe466a43 inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___controller_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b6ecfa613f946597df3848b4704b7f"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a83b6ecfa613f946597df3848b4704b7f">Awake</a> ()</td></tr>
+<tr class="separator:a83b6ecfa613f946597df3848b4704b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR.Core.AVR_Component</a></td></tr>
 <tr class="memitem:a9ccb9d57f9c2a601728cc59bcf86381f inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a9ccb9d57f9c2a601728cc59bcf86381f">Start</a> ()</td></tr>
 <tr class="separator:a9ccb9d57f9c2a601728cc59bcf86381f inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,9 +187,47 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:aa1b5d10862079118499e2ee5e5e619e7 inherit properties_class_a_v_r_1_1_core_1_1_a_v_r___controller_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00009">9</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<div class="textblock"><p>This class provides <a class="el" href="namespace_a_v_r_1_1_u_i.html">UI</a> Interaction through a VR controller. NOTE: Often Enabling/Disabling this component leads to poor performance! -&gt; TODO: implement a custom function that "enables/disables" functionality without the OnEnable/Disable hassle Requires a <a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html" title="Represents a UI pointer-ray. ">AVR_UIRay</a> to be set. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00013">13</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a83b6ecfa613f946597df3848b4704b7f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void AVR.UI.AVR_UIInteractionProvider.Awake </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#ae4ed17deabe4207cc4059c6abe466a43">AVR.Core.AVR_ControllerComponent</a>.</p>
+
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00062">62</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            base.Awake();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a73565b4126e142043d59eaa8d566a9a4">UIRay</a> = GetComponentInChildren&lt;AVR_UIRay&gt;();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">if</span>(!UIRay) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                AVR_DevConsole.cerror(<span class="stringliteral">&quot;UIInteractionProvider requires an AVR_UIRay to function!&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                Destroy(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_a73565b4126e142043d59eaa8d566a9a4"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a73565b4126e142043d59eaa8d566a9a4">AVR.UI.AVR_UIInteractionProvider.UIRay</a></div><div class="ttdeci">AVR_UIRay UIRay</div><div class="ttdoc">Pointer ray of this interactionprovider. Is required for the interactionprovider to work...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00046">AVR_UIInteractionProvider.cs:46</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="a093c136f80d4e919362b75fb363b7136"></a>
 <div class="memitem">
 <div class="memproto">
@@ -205,12 +251,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#ae85b01ddcee8e524605b72773ebdf2f5">AVR.Core.AVR_Component</a>.</p>
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00032">32</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                            {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            base.OnDisable();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#af5d165ab05294548eb37fd85fe1bab37">unset</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_af5d165ab05294548eb37fd85fe1bab37"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#af5d165ab05294548eb37fd85fe1bab37">AVR.UI.AVR_UIInteractionProvider.unset</a></div><div class="ttdeci">void unset()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00066">AVR_UIInteractionProvider.cs:66</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00057">57</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                            {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            base.OnDisable();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#af5d165ab05294548eb37fd85fe1bab37">unset</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_af5d165ab05294548eb37fd85fe1bab37"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#af5d165ab05294548eb37fd85fe1bab37">AVR.UI.AVR_UIInteractionProvider.unset</a></div><div class="ttdeci">void unset()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00103">AVR_UIInteractionProvider.cs:103</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -237,14 +283,14 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7b1cb22192be27ed3ccc5f683c5c9bea">AVR.Core.AVR_Component</a>.</p>
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00026">26</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                           {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            base.OnEnable();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a96f05049c63033ae5a3c172cdb675852">stime</a> = Time.realtimeSinceStartup;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aa757a41b3784204ed8bd7ebfd07d3b0e">set</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_aa757a41b3784204ed8bd7ebfd07d3b0e"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aa757a41b3784204ed8bd7ebfd07d3b0e">AVR.UI.AVR_UIInteractionProvider.set</a></div><div class="ttdeci">void set()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00038">AVR_UIInteractionProvider.cs:38</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_a96f05049c63033ae5a3c172cdb675852"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a96f05049c63033ae5a3c172cdb675852">AVR.UI.AVR_UIInteractionProvider.stime</a></div><div class="ttdeci">float stime</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00024">AVR_UIInteractionProvider.cs:24</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00051">51</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                           {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            base.OnEnable();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a96f05049c63033ae5a3c172cdb675852">stime</a> = Time.realtimeSinceStartup;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aa757a41b3784204ed8bd7ebfd07d3b0e">set</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_aa757a41b3784204ed8bd7ebfd07d3b0e"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aa757a41b3784204ed8bd7ebfd07d3b0e">AVR.UI.AVR_UIInteractionProvider.set</a></div><div class="ttdeci">void set()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00074">AVR_UIInteractionProvider.cs:74</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_a96f05049c63033ae5a3c172cdb675852"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a96f05049c63033ae5a3c172cdb675852">AVR.UI.AVR_UIInteractionProvider.stime</a></div><div class="ttdeci">float stime</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00049">AVR_UIInteractionProvider.cs:49</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -269,39 +315,40 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00038">38</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                   {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="comment">// TODO: This is a shitty workaround. AVR_Controller.Awake() calls *after* this, so inputManager is not set on the first frame.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="comment">// We are retrying for 1 second.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span>(Time.realtimeSinceStartup - <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a96f05049c63033ae5a3c172cdb675852">stime</a> &lt; 1.0 &amp;&amp; !<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                Invoke(<span class="stringliteral">&quot;set&quot;</span>, 0.0f);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aeeb25a957020169fcfd8b907ddfe098c">currentActive</a>) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                AVR_DevConsole.warn(<span class="stringliteral">&quot;Attempted to set UIInteractionProvider \&quot;&quot;</span> + gameObject.name + <span class="stringliteral">&quot;\&quot; but another UIInteractionprovider is already active! Only one can be active at a time.&quot;</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                AVR_DevConsole.error(<span class="stringliteral">&quot;AVR_UIInteractionProvider references a controller that has no inputmanager!&quot;</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!VRInput.Instance) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                AVR_DevConsole.error(<span class="stringliteral">&quot;AVR_UIInteractionProvider can only be used with a VRInput component!&quot;</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            VRInput.Instance.clickButton = <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aa42ef4c23ebcce44689a735bc5e42704">clickButton</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            VRInput.Instance.clickButton_down = <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#ad9f6f28e751d61d9a7247b41f172b085">clickButton_down</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            VRInput.Instance.clickButton_up = <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aed76bf3c0df2c74c1064fc10cf1d1ca4">clickButton_up</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            VRInput.Instance.inputManager = controller.inputManager;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            VRInput.Instance.setEventCamera(UIRay.UICamera);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aeeb25a957020169fcfd8b907ddfe098c">currentActive</a> = <span class="keyword">this</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00074">74</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                   {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="comment">// TODO: This is a shitty workaround. AVR_Controller.Awake() calls *after* this, so inputManager is not set on the first frame.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="comment">// We are retrying for 1 second.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">if</span>(Time.realtimeSinceStartup - <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a96f05049c63033ae5a3c172cdb675852">stime</a> &lt; 1.0 &amp;&amp; !<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                Invoke(<span class="stringliteral">&quot;set&quot;</span>, 0.0f);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aeeb25a957020169fcfd8b907ddfe098c">currentActive</a>) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                AVR_DevConsole.warn(<span class="stringliteral">&quot;Attempted to set UIInteractionProvider \&quot;&quot;</span> + gameObject.name + <span class="stringliteral">&quot;\&quot; but another UIInteractionprovider is already active! Only one can be active at a time.&quot;</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                currentActive.enabled = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                AVR_DevConsole.error(<span class="stringliteral">&quot;AVR_UIInteractionProvider references a controller that has no inputmanager!&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(!VRInput.Instance) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                AVR_DevConsole.error(<span class="stringliteral">&quot;AVR_UIInteractionProvider can only be used with a VRInput component!&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            VRInput.Instance.clickButton = <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aa42ef4c23ebcce44689a735bc5e42704">clickButton</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            VRInput.Instance.clickButton_down = <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#ad9f6f28e751d61d9a7247b41f172b085">clickButton_down</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            VRInput.Instance.clickButton_up = <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aed76bf3c0df2c74c1064fc10cf1d1ca4">clickButton_up</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            VRInput.Instance.inputManager = controller.inputManager;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            VRInput.Instance.setEventCamera(UIRay.UICamera);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aeeb25a957020169fcfd8b907ddfe098c">currentActive</a> = <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___controller_html_a0758b7f779cd90b8cbde460b87ff962b"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">AVR.Core.AVR_Controller.inputManager</a></div><div class="ttdeci">AVR_ControllerInputManager inputManager</div><div class="ttdoc">the AVR_ControllerInputManager assigned to this controller. Returns null if no inputmanager is assign...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___controller_8cs_source.html#l00017">AVR_Controller.cs:17</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_aa42ef4c23ebcce44689a735bc5e42704"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aa42ef4c23ebcce44689a735bc5e42704">AVR.UI.AVR_UIInteractionProvider.clickButton</a></div><div class="ttdeci">AVR_ControllerInputManager.BoolEvent clickButton</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00014">AVR_UIInteractionProvider.cs:14</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_aeeb25a957020169fcfd8b907ddfe098c"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aeeb25a957020169fcfd8b907ddfe098c">AVR.UI.AVR_UIInteractionProvider.currentActive</a></div><div class="ttdeci">static AVR_UIInteractionProvider currentActive</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00011">AVR_UIInteractionProvider.cs:11</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_aed76bf3c0df2c74c1064fc10cf1d1ca4"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aed76bf3c0df2c74c1064fc10cf1d1ca4">AVR.UI.AVR_UIInteractionProvider.clickButton_up</a></div><div class="ttdeci">AVR_ControllerInputManager.BoolEvent clickButton_up</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00016">AVR_UIInteractionProvider.cs:16</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_ad9f6f28e751d61d9a7247b41f172b085"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#ad9f6f28e751d61d9a7247b41f172b085">AVR.UI.AVR_UIInteractionProvider.clickButton_down</a></div><div class="ttdeci">AVR_ControllerInputManager.BoolEvent clickButton_down</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00015">AVR_UIInteractionProvider.cs:15</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_a96f05049c63033ae5a3c172cdb675852"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a96f05049c63033ae5a3c172cdb675852">AVR.UI.AVR_UIInteractionProvider.stime</a></div><div class="ttdeci">float stime</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00024">AVR_UIInteractionProvider.cs:24</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_aa42ef4c23ebcce44689a735bc5e42704"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aa42ef4c23ebcce44689a735bc5e42704">AVR.UI.AVR_UIInteractionProvider.clickButton</a></div><div class="ttdeci">AVR_ControllerInputManager.BoolEvent clickButton</div><div class="ttdoc">Event that would normally be LMB. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00024">AVR_UIInteractionProvider.cs:24</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_aeeb25a957020169fcfd8b907ddfe098c"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aeeb25a957020169fcfd8b907ddfe098c">AVR.UI.AVR_UIInteractionProvider.currentActive</a></div><div class="ttdeci">static AVR_UIInteractionProvider currentActive</div><div class="ttdoc">The currently active interactionprovider. NOTE: only one interactionprovider will be active at a time...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00018">AVR_UIInteractionProvider.cs:18</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_aed76bf3c0df2c74c1064fc10cf1d1ca4"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aed76bf3c0df2c74c1064fc10cf1d1ca4">AVR.UI.AVR_UIInteractionProvider.clickButton_up</a></div><div class="ttdeci">AVR_ControllerInputManager.BoolEvent clickButton_up</div><div class="ttdoc">Event that represents LMB buttonup </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00034">AVR_UIInteractionProvider.cs:34</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_ad9f6f28e751d61d9a7247b41f172b085"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#ad9f6f28e751d61d9a7247b41f172b085">AVR.UI.AVR_UIInteractionProvider.clickButton_down</a></div><div class="ttdeci">AVR_ControllerInputManager.BoolEvent clickButton_down</div><div class="ttdoc">Event that represents LMB buttondown </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00029">AVR_UIInteractionProvider.cs:29</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_a96f05049c63033ae5a3c172cdb675852"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a96f05049c63033ae5a3c172cdb675852">AVR.UI.AVR_UIInteractionProvider.stime</a></div><div class="ttdeci">float stime</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00049">AVR_UIInteractionProvider.cs:49</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___controller_component_html_aa1b5d10862079118499e2ee5e5e619e7"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">AVR.Core.AVR_ControllerComponent.controller</a></div><div class="ttdeci">AVR_Controller controller</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___controller_component_8cs_source.html#l00012">AVR_ControllerComponent.cs:12</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -327,13 +374,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00066">66</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                     {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            VRInput.Instance.inputManager = null;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            VRInput.Instance.setEventCamera(null);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aeeb25a957020169fcfd8b907ddfe098c">currentActive</a> = null;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_aeeb25a957020169fcfd8b907ddfe098c"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aeeb25a957020169fcfd8b907ddfe098c">AVR.UI.AVR_UIInteractionProvider.currentActive</a></div><div class="ttdeci">static AVR_UIInteractionProvider currentActive</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00011">AVR_UIInteractionProvider.cs:11</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00103">103</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                     {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            VRInput.Instance.inputManager = null;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            VRInput.Instance.setEventCamera(null);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aeeb25a957020169fcfd8b907ddfe098c">currentActive</a> = null;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_aeeb25a957020169fcfd8b907ddfe098c"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#aeeb25a957020169fcfd8b907ddfe098c">AVR.UI.AVR_UIInteractionProvider.currentActive</a></div><div class="ttdeci">static AVR_UIInteractionProvider currentActive</div><div class="ttdoc">The currently active interactionprovider. NOTE: only one interactionprovider will be active at a time...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00018">AVR_UIInteractionProvider.cs:18</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -358,27 +405,27 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00072">72</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                      {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="comment">// Here we show/hide the UIRay if needed and also set the length of the ray to the distance to the canvas.</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">if</span>(AVR_Canvas.active_canvases.Count&gt;0) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordtype">float</span> min_dist = float.PositiveInfinity;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">foreach</span>(AVR_Canvas canv <span class="keywordflow">in</span> AVR_Canvas.active_canvases) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    <span class="keywordflow">if</span>(canv.GetPlane().Raycast(<span class="keyword">new</span> Ray(<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a73565b4126e142043d59eaa8d566a9a4">UIRay</a>.<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#ab29eb2b2b994b06013555d4e870fb9ec">UICamera</a>.transform.position, <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a73565b4126e142043d59eaa8d566a9a4">UIRay</a>.<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#ab29eb2b2b994b06013555d4e870fb9ec">UICamera</a>.transform.forward), out <span class="keywordtype">float</span> dist)) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        min_dist = Mathf.Min(dist, min_dist);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                UIRay.max_length = min_dist;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                UIRay.show();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                UIRay.max_length = 30;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#af18d50b6672e8c6b6491c68dec6d56f8">show_ray_only_on_hover</a>) UIRay.hide();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray_html_ab29eb2b2b994b06013555d4e870fb9ec"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#ab29eb2b2b994b06013555d4e870fb9ec">AVR.UI.AVR_UIRay.UICamera</a></div><div class="ttdeci">Camera UICamera</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_ray_8cs_source.html#l00011">AVR_UIRay.cs:11</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_af18d50b6672e8c6b6491c68dec6d56f8"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#af18d50b6672e8c6b6491c68dec6d56f8">AVR.UI.AVR_UIInteractionProvider.show_ray_only_on_hover</a></div><div class="ttdeci">bool show_ray_only_on_hover</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00019">AVR_UIInteractionProvider.cs:19</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_a73565b4126e142043d59eaa8d566a9a4"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a73565b4126e142043d59eaa8d566a9a4">AVR.UI.AVR_UIInteractionProvider.UIRay</a></div><div class="ttdeci">AVR_UIRay UIRay</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00022">AVR_UIInteractionProvider.cs:22</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00109">109</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                      {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="comment">// Here we show/hide the UIRay if needed and also set the length of the ray to the distance to the canvas.</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">if</span>(AVR_Canvas.active_canvases.Count&gt;0) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordtype">float</span> min_dist = float.PositiveInfinity;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">foreach</span>(AVR_Canvas canv <span class="keywordflow">in</span> AVR_Canvas.active_canvases) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    <span class="keywordflow">if</span>(canv.GetPlane().Raycast(<span class="keyword">new</span> Ray(<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a73565b4126e142043d59eaa8d566a9a4">UIRay</a>.<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#ab29eb2b2b994b06013555d4e870fb9ec">UICamera</a>.transform.position, <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a73565b4126e142043d59eaa8d566a9a4">UIRay</a>.<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#ab29eb2b2b994b06013555d4e870fb9ec">UICamera</a>.transform.forward), out <span class="keywordtype">float</span> dist)) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                        min_dist = Mathf.Min(dist, min_dist);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                UIRay.max_length = min_dist;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                UIRay.show();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                UIRay.max_length = 30;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#af18d50b6672e8c6b6491c68dec6d56f8">show_ray_only_on_hover</a>) UIRay.hide();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray_html_ab29eb2b2b994b06013555d4e870fb9ec"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray.html#ab29eb2b2b994b06013555d4e870fb9ec">AVR.UI.AVR_UIRay.UICamera</a></div><div class="ttdeci">Camera UICamera</div><div class="ttdoc">Camera that is the eventCamera for the underlying inputsystem. If left blank, a Camera with preset va...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_ray_8cs_source.html#l00018">AVR_UIRay.cs:18</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_af18d50b6672e8c6b6491c68dec6d56f8"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#af18d50b6672e8c6b6491c68dec6d56f8">AVR.UI.AVR_UIInteractionProvider.show_ray_only_on_hover</a></div><div class="ttdeci">bool show_ray_only_on_hover</div><div class="ttdoc">Only show UIRay when hovering over a canvas or always. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00040">AVR_UIInteractionProvider.cs:40</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_html_a73565b4126e142043d59eaa8d566a9a4"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a73565b4126e142043d59eaa8d566a9a4">AVR.UI.AVR_UIInteractionProvider.UIRay</a></div><div class="ttdeci">AVR_UIRay UIRay</div><div class="ttdoc">Pointer ray of this interactionprovider. Is required for the interactionprovider to work...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00046">AVR_UIInteractionProvider.cs:46</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -393,7 +440,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00014">14</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<p>Event that would normally be LMB. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00024">24</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -407,7 +456,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00015">15</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<p>Event that represents LMB buttondown </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00029">29</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -421,7 +472,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00016">16</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<p>Event that represents LMB buttonup </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00034">34</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -443,7 +496,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00011">11</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<p>The currently active interactionprovider. NOTE: only one interactionprovider will be active at a time. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00018">18</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -457,7 +512,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00019">19</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<p>Only show UIRay when hovering over a canvas or always. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00040">40</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -479,7 +536,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00024">24</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00049">49</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
 
 </div>
 </div>
@@ -493,7 +550,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00022">22</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
+<p>Pointer ray of this interactionprovider. Is required for the interactionprovider to work. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html#l00046">46</a> of file <a class="el" href="_a_v_r___u_i_interaction_provider_8cs_source.html">AVR_UIInteractionProvider.cs</a>.</p>
 
 </div>
 </div>

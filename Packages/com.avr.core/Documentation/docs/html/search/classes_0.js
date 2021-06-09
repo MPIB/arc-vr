@@ -61,7 +61,7 @@ var searchData=
   ['avr_5fwizardhook_5fsimpletoggle_3c_20wiz_2c_20mod_20_3e',['AVR_WizardHook_SimpleToggle&lt; Wiz, Mod &gt;',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___simple_toggle_3_01_wiz_00_01_mod_01_4.html',1,'AVR::UEditor::Core']]],
   ['avrui_5fclickdragwheel',['AVRUI_ClickDragWheel',['../class_a_v_r_1_1_u_i_1_1_a_v_r_u_i___click_drag_wheel.html',1,'AVR::UI']]],
   ['avrui_5fclickdragwheelentryprefab',['AVRUI_ClickDragWheelEntryPrefab',['../class_a_v_r_1_1_u_i_1_1_a_v_r_u_i___click_drag_wheel_entry_prefab.html',1,'AVR::UI']]],
-  ['avrui_5finputfield_5fplusminus',['AVRUI_InputField_PlusMinus',['../class_a_v_r_u_i___input_field___plus_minus.html',1,'']]],
+  ['avrui_5finputfield_5fplusminus',['AVRUI_InputField_PlusMinus',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus.html',1,'AVR::UI::Utils']]],
   ['avrui_5flink',['AVRUI_Link',['../class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link.html',1,'AVR::UI::Link']]],
   ['avrui_5flink_5fdropdown',['AVRUI_Link_Dropdown',['../class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___dropdown.html',1,'AVR::UI::Link']]],
   ['avrui_5flink_5finputfield',['AVRUI_Link_Inputfield',['../class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___inputfield.html',1,'AVR::UI::Link']]],
