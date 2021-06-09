@@ -29,7 +29,8 @@ var searchData=
   ['avr_5fdevconsolewindow',['AVR_DevConsoleWindow',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___dev_console_window.html',1,'AVR::UEditor::Core']]],
   ['avr_5feditorutility',['AVR_EditorUtility',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___editor_utility.html',1,'AVR::UEditor::Core']]],
   ['avr_5feffect',['AVR_Effect',['../class_a_v_r_1_1_core_1_1_a_v_r___effect.html',1,'AVR::Core']]],
-  ['avr_5ffa_5fglyphhelper',['AVR_FA_GlyphHelper',['../class_a_v_r___f_a___glyph_helper.html',1,'']]],
+  ['avr_5ffa_5fglyphhelper',['AVR_FA_GlyphHelper',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html',1,'AVR::UI::Utils']]],
+  ['avr_5ffa_5fglyphhelper_5feditor',['AVR_FA_GlyphHelper_Editor',['../class_a_v_r_1_1_u_editor_1_1_u_i_1_1_a_v_r___f_a___glyph_helper___editor.html',1,'AVR::UEditor::UI']]],
   ['avr_5fgenericxrdevice',['AVR_GenericXRDevice',['../class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html',1,'AVR::Core']]],
   ['avr_5fhookablewizard_3c_20t_20_3e',['AVR_HookableWizard&lt; T &gt;',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___hookable_wizard_3_01_t_01_4.html',1,'AVR::UEditor::Core']]],
   ['avr_5flocomotionprovider',['AVR_LocomotionProvider',['../class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider.html',1,'AVR::Motion']]],
@@ -59,8 +60,8 @@ var searchData=
   ['avr_5fwizardhook_3c_20wiz_20_3e',['AVR_WizardHook&lt; Wiz &gt;',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook_3_01_wiz_01_4.html',1,'AVR::UEditor::Core']]],
   ['avr_5fwizardhook_5fsimplefilteredtoggle_3c_20wiz_2c_20mod_20_3e',['AVR_WizardHook_SimpleFilteredToggle&lt; Wiz, Mod &gt;',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___simple_filtered_toggle_3_01_wiz_00_01_mod_01_4.html',1,'AVR::UEditor::Core']]],
   ['avr_5fwizardhook_5fsimpletoggle_3c_20wiz_2c_20mod_20_3e',['AVR_WizardHook_SimpleToggle&lt; Wiz, Mod &gt;',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___simple_toggle_3_01_wiz_00_01_mod_01_4.html',1,'AVR::UEditor::Core']]],
-  ['avrui_5fclickdragwheel',['AVRUI_ClickDragWheel',['../class_a_v_r_1_1_u_i_1_1_a_v_r_u_i___click_drag_wheel.html',1,'AVR::UI']]],
-  ['avrui_5fclickdragwheelentryprefab',['AVRUI_ClickDragWheelEntryPrefab',['../class_a_v_r_1_1_u_i_1_1_a_v_r_u_i___click_drag_wheel_entry_prefab.html',1,'AVR::UI']]],
+  ['avrui_5fclickdragwheel',['AVRUI_ClickDragWheel',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___click_drag_wheel.html',1,'AVR::UI::Utils']]],
+  ['avrui_5fclickdragwheelentryprefab',['AVRUI_ClickDragWheelEntryPrefab',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___click_drag_wheel_entry_prefab.html',1,'AVR::UI::Utils']]],
   ['avrui_5finputfield_5fplusminus',['AVRUI_InputField_PlusMinus',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus.html',1,'AVR::UI::Utils']]],
   ['avrui_5flink',['AVRUI_Link',['../class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link.html',1,'AVR::UI::Link']]],
   ['avrui_5flink_5fdropdown',['AVRUI_Link_Dropdown',['../class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___dropdown.html',1,'AVR::UI::Link']]],
@@ -68,5 +69,6 @@ var searchData=
   ['avrui_5flink_5fslider',['AVRUI_Link_Slider',['../class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___slider.html',1,'AVR::UI::Link']]],
   ['avrui_5flink_5ftmpdropdown',['AVRUI_Link_TMPDropdown',['../class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___t_m_p_dropdown.html',1,'AVR::UI::Link']]],
   ['avrui_5flink_5ftmpinputfield',['AVRUI_Link_TMPInputfield',['../class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___t_m_p_inputfield.html',1,'AVR::UI::Link']]],
-  ['avrui_5flink_5ftoggle',['AVRUI_Link_Toggle',['../class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle.html',1,'AVR::UI::Link']]]
+  ['avrui_5flink_5ftoggle',['AVRUI_Link_Toggle',['../class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle.html',1,'AVR::UI::Link']]],
+  ['avrui_5ftmpinputfield_5fplusminus',['AVRUI_TMPInputField_PlusMinus',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___t_m_p_input_field___plus_minus.html',1,'AVR::UI::Utils']]]
 ];

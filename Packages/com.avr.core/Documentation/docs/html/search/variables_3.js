@@ -10,7 +10,7 @@ var searchData=
   ['clicked',['clicked',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_window_handle.html#aa76124edccdf2afaead9a352092dfc9c',1,'AVR::UI::Utils::WindowHandle']]],
   ['cmd',['cmd',['../class_a_v_r_1_1_core_1_1_a_v_r___basic_dev_console_u_i.html#a06e1d33612abfe3fd959225f8504a984',1,'AVR::Core::AVR_BasicDevConsoleUI']]],
   ['cmd_5fstring',['cmd_string',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___dev_console_window.html#a4cf3ba13477ff57cf89ba529236a096a',1,'AVR::UEditor::Core::AVR_DevConsoleWindow']]],
-  ['color',['color',['../class_a_v_r_1_1_u_i_1_1_a_v_r_u_i___click_drag_wheel_1_1_click_drag_wheel_entry.html#a18e3eca9c9ce3bedc10e36fcc00e8f89',1,'AVR::UI::AVRUI_ClickDragWheel::ClickDragWheelEntry']]],
+  ['color',['color',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___click_drag_wheel_1_1_click_drag_wheel_entry.html#abe9b321e1c16e1f0cbc6a0489bc426e2',1,'AVR::UI::Utils::AVRUI_ClickDragWheel::ClickDragWheelEntry']]],
   ['columns',['columns',['../class_a_v_r_1_1_core_1_1_a_v_r___logger.html#a126dfa599d3d16b8d46d3c9e5de9cb2d',1,'AVR::Core::AVR_Logger']]],
   ['command_5fhistory',['command_history',['../class_a_v_r_1_1_core_1_1_a_v_r___dev_console.html#a99edede1175e4001cb918aceed590230',1,'AVR::Core::AVR_DevConsole']]],
   ['command_5fhistory_5flimit',['command_history_limit',['../class_a_v_r_1_1_core_1_1_a_v_r___dev_console.html#aca3d5d529cba6f226ee2ed1af2c0eb1d',1,'AVR::Core::AVR_DevConsole']]],

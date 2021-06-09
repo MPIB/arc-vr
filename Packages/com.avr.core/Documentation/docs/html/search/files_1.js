@@ -26,6 +26,7 @@ var searchData=
   ['avr_5fdevconsolewindow_2ecs',['AVR_DevConsoleWindow.cs',['../_a_v_r___dev_console_window_8cs.html',1,'']]],
   ['avr_5feffect_2ecs',['AVR_Effect.cs',['../_a_v_r___effect_8cs.html',1,'']]],
   ['avr_5ffa_5fglyphhelper_2ecs',['AVR_FA_GlyphHelper.cs',['../_a_v_r___f_a___glyph_helper_8cs.html',1,'']]],
+  ['avr_5ffa_5fglyphhelper_5feditor_2ecs',['AVR_FA_GlyphHelper_Editor.cs',['../_a_v_r___f_a___glyph_helper___editor_8cs.html',1,'']]],
   ['avr_5fgenericxrdevice_2ecs',['AVR_GenericXRDevice.cs',['../_a_v_r___generic_x_r_device_8cs.html',1,'']]],
   ['avr_5fhookablewizard_2ecs',['AVR_HookableWizard.cs',['../_a_v_r___hookable_wizard_8cs.html',1,'']]],
   ['avr_5flocomotionprovider_2ecs',['AVR_LocomotionProvider.cs',['../_a_v_r___locomotion_provider_8cs.html',1,'']]],
@@ -60,5 +61,6 @@ var searchData=
   ['avrui_5flink_5fslider_2ecs',['AVRUI_Link_Slider.cs',['../_a_v_r_u_i___link___slider_8cs.html',1,'']]],
   ['avrui_5flink_5ftmpdropdown_2ecs',['AVRUI_Link_TMPDropdown.cs',['../_a_v_r_u_i___link___t_m_p_dropdown_8cs.html',1,'']]],
   ['avrui_5flink_5ftmpinputfield_2ecs',['AVRUI_Link_TMPInputfield.cs',['../_a_v_r_u_i___link___t_m_p_inputfield_8cs.html',1,'']]],
-  ['avrui_5flink_5ftoggle_2ecs',['AVRUI_Link_Toggle.cs',['../_a_v_r_u_i___link___toggle_8cs.html',1,'']]]
+  ['avrui_5flink_5ftoggle_2ecs',['AVRUI_Link_Toggle.cs',['../_a_v_r_u_i___link___toggle_8cs.html',1,'']]],
+  ['avrui_5ftmpinputfield_5fplusminus_2ecs',['AVRUI_TMPInputField_PlusMinus.cs',['../_a_v_r_u_i___t_m_p_input_field___plus_minus_8cs.html',1,'']]]
 ];

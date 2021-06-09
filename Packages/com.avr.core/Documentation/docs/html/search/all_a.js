@@ -14,6 +14,6 @@ var searchData=
   ['localviewvector',['LocalViewVector',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html#aa15ac507422a4e7156e1f17e80b7997a',1,'AVR::Core::AVR_PlayerRig']]],
   ['logo',['logo',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___arc_v_r_window.html#a2ae99454d2058664ce6f02babc692d2e',1,'AVR::UEditor::Core::AVR_ArcVRWindow']]],
   ['logobjects',['logObjects',['../class_a_v_r_1_1_core_1_1_a_v_r___logger.html#a5cb1846a7f03b25b7a836fa874d9f89e',1,'AVR::Core::AVR_Logger']]],
-  ['lr',['lr',['../class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abce183e10acd441fa08130015613ef97',1,'AVR.Core.AVR_Ray.lr()'],['../class_a_v_r_1_1_u_i_1_1_a_v_r_u_i___click_drag_wheel.html#a65dc164b07b2f887dbbe26351c7cffce',1,'AVR.UI.AVRUI_ClickDragWheel.lr()']]],
+  ['lr',['lr',['../class_a_v_r_1_1_core_1_1_a_v_r___ray.html#abce183e10acd441fa08130015613ef97',1,'AVR.Core.AVR_Ray.lr()'],['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___click_drag_wheel.html#aa46533cb9039babd03ab3243dd28445a',1,'AVR.UI.Utils.AVRUI_ClickDragWheel.lr()']]],
   ['license',['LICENSE',['../md__c_1__users__kahl_mpib_arc-vr-opensource_arc-vr__packages_com_8avr_8core__l_i_c_e_n_s_e.html',1,'']]]
 ];
