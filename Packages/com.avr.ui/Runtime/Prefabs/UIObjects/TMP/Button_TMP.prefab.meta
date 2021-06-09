@@ -1,7 +1,9 @@
 fileFormatVersion: 2
 guid: 2dfbc364f47a22249a203b65b90dabe6
+labels:
+- Avr_Ui
 PrefabImporter:
   externalObjects: {}
   userData: 
-  assetBundleName: 
+  assetBundleName: avr_ui
   assetBundleVariant: 
