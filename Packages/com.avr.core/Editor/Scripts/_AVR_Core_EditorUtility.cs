@@ -39,6 +39,10 @@ namespace AVR.UEditor.Core {
             return ((char)int.Parse(unicode, System.Globalization.NumberStyles.HexNumber)).ToString();
         }
 
+        public static string Unicode_to_String(int unicode) {
+            return ((char)unicode).ToString();
+        }
+
         public static bool FAButton(string unicode, bool isBrandIcon=false, int buttonSize=25) {
             var style = new GUIStyle(GUI.skin.button);
             style.font = isBrandIcon ? fab_cache : fa_cache;

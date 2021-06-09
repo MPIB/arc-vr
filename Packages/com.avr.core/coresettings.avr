@@ -33,10 +33,23 @@ editor = {
 		sphereControllerVisual = "Packages/com.avr.core/Editor/DefaultPrefabs/SphereControllerVisual.prefab"
 		cubeControllerVisual = "Packages/com.avr.core/Editor/DefaultPrefabs/CubeControllerVisual.prefab"
 	}
+	# Dont use these during runtime!
+	editorfonts = {
+		font-awesome-regular = "Packages/com.avr.core/Editor/Resources/editor-fa-regular-400.otf"
+		font-awesome-solid = "Packages/com.avr.core/Editor/Resources/editor-fa-solid-900.otf"
+		font-awesome-brands = "Packages/com.avr.core/Editor/Resources/editor-fa-brands-400.otf"
+		font-awesome-regular-static = "Packages/com.avr.core/Editor/Resources/editor-fa-regular-400-static.otf"
+		font-awesome-solid-static = "Packages/com.avr.core/Editor/Resources/editor-fa-solid-900-static.otf"
+		font-awesome-brands-static = "Packages/com.avr.core/Editor/Resources/editor-fa-brands-400-static.otf"
+	}
+	# Dont use these in the editor, or the dynamic fonts will be bloated during runtime. (All the icons used in the ditor will be added)
 	fonts = {
 		inconsolata = "Packages/com.avr.core/Runtime/Resources/Inconsolata.otf"
-		font-awesome = "Packages/com.avr.core/Runtime/Resources/fa-solid-900.ttf"
-		font-awesome-brands = "Packages/com.avr.core/Runtime/Resources/fa-brands-400.ttf"
+		font-awesome = "Packages/com.avr.core/Runtime/Resources/fa-solid-900.otf"
+		
+		font-awesome-regular = "Packages/com.avr.core/Runtime/Resources/fa-regular-400.otf"
+		font-awesome-solid = "Packages/com.avr.core/Runtime/Resources/fa-solid-900.otf"
+		font-awesome-brands = "Packages/com.avr.core/Runtime/Resources/fa-brands-400.otf"
 	}
 	documentationPath = "Packages/com.avr.core/Documentation/docs/html/"
 }
