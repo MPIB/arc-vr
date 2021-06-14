@@ -18,15 +18,22 @@ namespace AVR.Core {
     {
         public string filepath = "logs/sample.log";
         public string delimeter = ";";
+
+        public bool manualLog = false;
+
         public enum deltaTypes {ON_UPDATE, ON_FIXEDUPDATE, ON_LATEUPDATE, CUSTOM}
+
+        [AVR.Core.Attributes.ConditionalHideInInspector("manualLog")]
         public deltaTypes deltaType;
+        [AVR.Core.Attributes.ConditionalHideInInspector("manualLog")]
         public float delta = 0.05f;
+
         private float stime = 0.0f;
 
         [System.Serializable]
         public class DataSource {
             public enum ValueTypes {CUSTOM, TIME};
-            public enum ReadTypes {AUTO};
+            public enum ReadTypes {AUTO, HIGH_ACCURACY_NUMERAL, HIGH_ACCURACY_VECTOR3};
 
             public string label;
             public MonoBehaviour target;
@@ -41,6 +48,8 @@ namespace AVR.Core {
         private StreamWriter file;
 
         void Update() {
+            if(manualLog) return;
+
             if(deltaType==deltaTypes.ON_UPDATE) logObjects();
             else if(deltaType == deltaTypes.CUSTOM && Time.time >= stime + delta - 0.005f) { //0.005f is a small epsilon to account for small framerates
                 logObjects();
@@ -64,7 +73,7 @@ namespace AVR.Core {
             init();
         }
 
-        void logObjects() {
+        public void logObjects() {
             string o = "";
             foreach(DataSource c in columns) {
                 o += getData(c) + delimeter;
@@ -90,6 +99,18 @@ namespace AVR.Core {
                 }
                 default : {
                     var data = getPropertyValue(src.target, src.field);
+
+                    switch(src.readType) {
+                        case DataSource.ReadTypes.HIGH_ACCURACY_NUMERAL : {
+                            return ((double) data).ToString();
+                        }
+                        case DataSource.ReadTypes.HIGH_ACCURACY_VECTOR3:
+                        {
+                            Vector3 v = (Vector3) data;
+                            return "("+v.x.ToString()+"f, "+v.y.ToString()+"f, "+v.z.ToString()+"f)";
+                        }
+                    }
+
                     if(data==null) return "null";
                     return data.ToString();
                 }

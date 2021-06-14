@@ -41,6 +41,10 @@ namespace AVR.Avatar {
         private Vector3 lastRigPos = Vector3.zero;
         private Vector3 momentum = Vector3.zero;
 
+        private NaturalizationFilter filter;
+        public AVR.Core.AVR_ControllerInputManager inp;
+        private bool fil = true;
+
         protected override void Start() {
             base.Start();
             animator = GetComponent<Animator>();
@@ -48,6 +52,8 @@ namespace AVR.Avatar {
                 AVR.Core.AVR_DevConsole.warn("AVR_PoseAssumer requires an Animator component WITH an Avatar set. " + animator.name + " has none.");
             }
             Invoke("CheckIKPass", 3.0f);
+
+            filter = new NaturalizationFilter(30, 3);
         }
 
         void CheckIKPass() {
@@ -58,6 +64,15 @@ namespace AVR.Avatar {
 
         void LateUpdate() {
             // Head linkage
+            Vector3 head_angle = headTransform.localRotation.eulerAngles;
+            
+            head_angle = new Vector3(head_angle.x%360.0f, head_angle.y%360.0f, head_angle.z%360.0f);
+            head_angle = new Vector3(Mathf.Clamp(head_angle.x, -160, 115), Mathf.Clamp(head_angle.y, -160, 160), head_angle.z);
+
+            //headTransform.localRotation = Quaternion.Euler(head_angle);
+            headTransform.LookAt(provider.leftFootTarget.position);
+
+            return;
             Vector3 headAng = headTransform.eulerAngles;
             Vector3 neckAng = neckTransform.eulerAngles;
             float ang = Mathf.DeltaAngle(360.0f, provider.eyeTransform.eulerAngles.z);
@@ -79,6 +94,8 @@ namespace AVR.Avatar {
             const float framesmoothing = 0.1f;
             momentum = Vector3.Lerp(momentum, (AVR.Core.AVR_PlayerRig.Instance.RigInWorldSpace - lastRigPos) / Time.deltaTime, framesmoothing);
             lastRigPos = AVR.Core.AVR_PlayerRig.Instance.RigInWorldSpace;
+
+            if(inp.triggerDown) fil = !fil;
         }
 
         protected void setWeights(int layerIndex) {
@@ -114,7 +131,9 @@ namespace AVR.Avatar {
             }
             if (provider.rightHandTarget != null)
             {
-                animator.SetIKPosition(AvatarIKGoal.RightHand, provider.rightHandTarget.position);
+                if(fil) animator.SetIKPosition(AvatarIKGoal.LeftHand, filter.naturalize_point(provider.rightHandTarget.position));
+                else if (!fil) animator.SetIKPosition(AvatarIKGoal.LeftHand, provider.rightHandTarget.position);
+                //animator.SetIKPosition(AvatarIKGoal.RightHand, provider.rightHandTarget.position);
                 animator.SetIKRotation(AvatarIKGoal.RightHand, provider.rightHandTarget.rotation);
             }
             if (provider.leftFootTarget != null)
