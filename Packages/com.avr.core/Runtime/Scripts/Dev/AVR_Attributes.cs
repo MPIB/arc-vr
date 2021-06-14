@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 /// <summary>
 /// Contains C#-Attributes for various uses.
@@ -183,5 +184,25 @@ namespace AVR.Core.Attributes {
     public class ReadOnly : PropertyAttribute
     {
 
+    }
+
+    /// <summary>
+    /// Assigns given attributes to a foldout group in the inspector. The way these are drawn is determined by FoldoutPropertyDrawer
+    /// NOTE: FoldoutPropertyDrawer is a very dirty way of implementing Foldouts. TODO: Find a better solution.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = true)]
+    public class FoldoutGroup : PropertyAttribute
+    {
+        // The group id of this specific object
+        public string group_id;
+
+        /// <summary>
+        /// Assigns given attributes to a foldout group in the inspector.
+        /// </summary>
+        /// <param name="group_id">string id of the given foldout group.</param>
+        public FoldoutGroup(string group_id)
+        {
+            this.group_id = group_id;
+        }
     }
 }

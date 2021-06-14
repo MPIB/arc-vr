@@ -17,6 +17,80 @@ namespace AVR.Core.Attributes {
         }
     }
 
+    [CustomPropertyDrawer(typeof(FoldoutGroup))]
+    public class FoldoutPropertyDrawer : PropertyDrawer {
+        private static bool last_foldout = false;
+
+#nullable enable
+        // Here we store the group of the last drawn FoldoutProperty
+        private static string? last_group = null;
+
+        // Here we store a string-based reference for some property. We use this as a cycle-reference to determine when to reset last_group
+        private static string? prop_reference = null;
+#nullable disable
+
+        // Here we store a reference to the last object for which we drew a FoldoutProperty. We use this to determine when to reset prop_reference
+        private static Object obj_reference = null;
+
+        private bool foldout = false;
+
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+        {
+            return 0;
+        }
+
+        private void NewGroup(string group_name, SerializedProperty prop) {
+            last_group = group_name;
+
+            // Begin foldout
+            foldout = EditorGUILayout.Foldout(foldout, group_name);
+            EditorGUI.indentLevel++;
+            if (foldout) EditorGUILayout.PropertyField(prop);
+            EditorGUI.indentLevel--;
+
+            last_foldout = foldout;
+        }
+
+        private void ContinuationGroup(SerializedProperty prop) {
+            if (last_foldout)
+            {
+                EditorGUI.indentLevel++;
+                EditorGUILayout.PropertyField(prop);
+                EditorGUI.indentLevel--;
+            }
+            foldout = last_foldout;
+        }
+
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
+            // TL;DR: If the reference object is changed (by for instance selecting a different object in the inspector, or when drawing multpile objects with foldout-groups)
+            // then we reset the prop-reference and last-group, as not to interfere with the foreign object.
+            if(obj_reference==null) obj_reference = property.serializedObject.targetObject;
+            else if(obj_reference!=property.serializedObject.targetObject) {
+                prop_reference = null;
+                last_group = null;
+                obj_reference = property.serializedObject.targetObject;
+            }
+
+            // TL;DR: prop_reference acts as a cycle reference. if prop_reference==property.name, that means we are drawing a property we have already drawn previously
+            // meaning, we are in a brand new OnGUI cycle. Respectively, we need to reset the last_group variable.
+            if(prop_reference==null) prop_reference = property.name;
+            else if(prop_reference==property.name) {
+                last_group = null;
+            }
+
+            // Get attribute
+            FoldoutGroup attr = attribute as FoldoutGroup;
+
+            if(last_group!=attr.group_id) {
+                NewGroup(attr.group_id, property);
+            } 
+            else {
+                ContinuationGroup(property);
+            }
+        }
+    }
+
     [CustomPropertyDrawer(typeof(ConditionalHideInInspector))]
     public class DrawIfPropertyDrawer : PropertyDrawer
     {

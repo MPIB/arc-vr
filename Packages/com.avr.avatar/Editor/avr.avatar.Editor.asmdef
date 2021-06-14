@@ -1,0 +1,18 @@
+{
+    "name": "avr.avatar.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a98de6db334635e4a960ef294e3082d6",
+        "GUID:547e9fd77b6c65143a5ab9b6bff8dcc8",
+        "GUID:8dd818486f048e34496f17e7e0f5e1cf"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

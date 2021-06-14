@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "com.avr.avatar": {
+      "version": "file:com.avr.avatar",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.avr.core": "1.0.0"
+      }
+    },
     "com.avr.core": {
       "version": "file:com.avr.core",
       "depth": 0,
