@@ -250,15 +250,20 @@ MonoBehaviour:
   onAwake:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   onStart:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   onEnable:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   onDisable:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
+  <controller>k__BackingField: {fileID: 0}
   record_event: 15
   logger: {fileID: 16777673}
   logPos: {x: 0, y: 0, z: 0}
@@ -575,7 +580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7524997410150194558, guid: da18d69203bf0f24b9f98d14089d0603, type: 3}
       propertyPath: controllerNode
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7524997410150194558, guid: da18d69203bf0f24b9f98d14089d0603, type: 3}
       propertyPath: onAwake.m_PersistentCalls.m_Calls.Array.size
@@ -731,15 +736,87 @@ MonoBehaviour:
   onAwake:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   onStart:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   onEnable:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   onDisable:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
+  <controller>k__BackingField: {fileID: 0}
+  refpoints:
+  - {x: 0.3130672, y: -0.8555371, z: -0.05349071}
+  - {x: 0.1875403, y: -0.1843239, z: 0.5226004}
+  - {x: 0.1297842, y: 0.3305759, z: 0.1609094}
+  - {x: 0.6633397, y: -0.188998, z: 0.2596239}
+  - {x: -0.1863071, y: -0.2506216, z: 0.2888376}
+  - {x: 0.3763097, y: 0.2223641, z: 0.3407036}
+  - {x: 0.4919417, y: -0.6919423, z: 0.1794233}
+  - {x: -0.06197758, y: -0.6310289, z: 0.3017172}
+  - {x: -0.1150279, y: 0.1570742, z: 0.3689314}
+  - {x: 0.06075469, y: -0.5881292, z: 0.4081661}
+  - {x: -0.1293586, y: -0.4548941, z: 0.3687209}
+  - {x: -0.2344741, y: -0.2135523, z: 0.3372273}
+  - {x: -0.1965994, y: 0.04493928, z: 0.3594324}
+  - {x: -0.05899038, y: 0.2399873, z: 0.357431}
+  - {x: 0.1459467, y: 0.273103, z: 0.3742191}
+  - {x: 0.3480873, y: 0.2285503, z: 0.3722088}
+  - {x: 0.4762831, y: 0.05860758, z: 0.3898822}
+  - {x: 0.5396073, y: -0.1755121, z: 0.3975164}
+  - {x: 0.5242664, y: -0.3851136, z: 0.3863374}
+  - {x: 0.4510424, y: -0.6661255, z: 0.3000682}
+  - {x: 0.2893045, y: -0.7522406, z: 0.2654127}
+  - {x: 0.2396608, y: -0.4571418, z: 0.4997253}
+  - {x: 0.009911999, y: -0.3112085, z: 0.4998798}
+  - {x: 0.02352711, y: 0.00599493, z: 0.4862583}
+  - {x: 0.2817126, y: 0.0698675, z: 0.4846259}
+  - {x: 0.3737018, y: -0.2748309, z: 0.4511977}
+  - {x: 0.1789444, y: -0.2061029, z: 0.5697523}
+  - {x: 0.5598639, y: -0.1432514, z: 0.05959378}
+  - {x: 0.3332149, y: 0.253341, z: 0.1296776}
+  - {x: 0.1210886, y: 0.4511154, z: 0.1342202}
+  - {x: 0.1417553, y: -0.1538361, z: 0.6045761}
+  - {x: -0.1915717, y: -0.255244, z: 0.2346186}
+  - {x: 0.6717821, y: -0.6318416, z: 0.1174976}
+  - {x: 0.6645142, y: -0.6774831, z: -0.01035453}
+  - {x: 0.8222181, y: -0.3584935, z: -0.04209535}
+  - {x: 0.7579225, y: 0.03175234, z: 0.0615076}
+  - {x: 0.07855002, y: -0.2243347, z: 0.2829997}
+  - {x: 0.07432391, y: -0.1835844, z: 0.2390581}
+  - {x: 0.0604629, y: -0.1005674, z: 0.2226095}
+  - {x: 0.1114236, y: -0.2708174, z: 0.1091078}
+  - {x: -0.1355885, y: -0.2771785, z: 0.07465832}
+  - {x: -0.1897227, y: -0.4594658, z: 0.2602356}
+  - {x: 0.06223706, y: -0.1716432, z: 0.2982705}
+  - {x: 0.009867656, y: -0.0385427, z: 0.4952148}
+  - {x: -0.007234326, y: 0.1460291, z: 0.3986637}
+  - {x: 0.01339677, y: -0.2846705, z: 0.5164974}
+  - {x: 0.2728412, y: -0.0150883, z: 0.3643675}
+  - {x: -0.2064285, y: -0.04086648, z: 0.3411852}
+  - {x: 0.1071309, y: 0.2709712, z: 0.2849442}
+  - {x: -0.1139413, y: 0.2537714, z: 0.2704613}
+  - {x: -0.1047982, y: -0.4392074, z: 0.4727466}
+  - {x: 0.1481976, y: -0.4856894, z: 0.5008735}
+  - {x: 0.4463902, y: 0.07595506, z: 0.4507528}
+  - {x: 0.263638, y: 0.3154329, z: 0.3439315}
+  - {x: 0.3473695, y: -0.3119796, z: 0.4499293}
+  - {x: 0.05217796, y: -0.1100652, z: 0.6295177}
+  - {x: 0.06441771, y: -0.4936383, z: 0.4601623}
+  - {x: -0.1461361, y: -0.5006831, z: 0.3856009}
+  - {x: 0.2252315, y: -0.5019503, z: 0.4179451}
+  - {x: 0.3439449, y: 0.3608203, z: 0.2712157}
+  - {x: -0.04797429, y: 0.2481471, z: 0.2394861}
+  - {x: 0.1578359, y: 0.3546618, z: 0.2871732}
+  - {x: -0.2828721, y: -0.3350565, z: 0.210703}
+  - {x: -0.299469, y: -0.1014449, z: 0.2097515}
+  - {x: -0.1493744, y: 0.2246452, z: 0.2612446}
+  outpos: {x: 0, y: 0, z: 0}
 --- !u!1001 &1269913367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -879,7 +956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3938096090804365492, guid: a6a2b45ad3abb3243bcbb8f092cb9d65, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 55
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3938096090804365495, guid: a6a2b45ad3abb3243bcbb8f092cb9d65, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1151,7 +1228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2705186763627871809, guid: c0445da19fd385947845b2e717d72d1c, type: 3}
       propertyPath: controllerNode
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5527890167047748157, guid: c0445da19fd385947845b2e717d72d1c, type: 3}
       propertyPath: m_Name
@@ -1333,6 +1410,22 @@ PrefabInstance:
       propertyPath: inp
       value: 
       objectReference: {fileID: 1446273086}
+    - target: {fileID: 5712130865458349234, guid: d13af789d9bcf294b8e8491afffde3a7, type: 3}
+      propertyPath: leftHandFilter
+      value: 
+      objectReference: {fileID: 11400000, guid: 50ec9aaea25c7e4488933ba25841d9c1, type: 2}
+    - target: {fileID: 5712130865458349234, guid: d13af789d9bcf294b8e8491afffde3a7, type: 3}
+      propertyPath: rightHandFilter
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e7852ab528cf7049a2564ce67ec972b, type: 2}
+    - target: {fileID: 5712130865458349234, guid: d13af789d9bcf294b8e8491afffde3a7, type: 3}
+      propertyPath: naturalizationFilter
+      value: 
+      objectReference: {fileID: 11400000, guid: 50ec9aaea25c7e4488933ba25841d9c1, type: 2}
+    - target: {fileID: 5712130865458349234, guid: d13af789d9bcf294b8e8491afffde3a7, type: 3}
+      propertyPath: naturalize_positions
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6409970201843709724, guid: d13af789d9bcf294b8e8491afffde3a7, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.99986863

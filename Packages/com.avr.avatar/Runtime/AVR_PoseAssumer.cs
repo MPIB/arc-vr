@@ -11,6 +11,16 @@ namespace AVR.Avatar {
     {
         public AVR_PoseProvider provider;
 
+        public Transform headTransform;
+        public Transform neckTransform;
+        public bool switchAxisXZ = true;
+
+        private Animator animator;
+        private bool IKPass_is_enabled = false;
+
+        private Vector3 lastRigPos = Vector3.zero;
+        private Vector3 momentum = Vector3.zero;
+
         [AVR.Core.Attributes.FoldoutGroup("Weights")]
         public float lookAtWeight_body = 0.0f;
         [AVR.Core.Attributes.FoldoutGroup("Weights")]
@@ -30,20 +40,10 @@ namespace AVR.Avatar {
         [AVR.Core.Attributes.FoldoutGroup("Weights")]
         public float FootRotWeight = 1.0f;
 
-
-        public Transform headTransform;
-        public Transform neckTransform;
-        public bool switchAxisXZ = true;
-
-        private Animator animator;
-        private bool IKPass_is_enabled = false;
-
-        private Vector3 lastRigPos = Vector3.zero;
-        private Vector3 momentum = Vector3.zero;
-
-        private NaturalizationFilter filter;
-        public AVR.Core.AVR_ControllerInputManager inp;
-        private bool fil = true;
+        [AVR.Core.Attributes.FoldoutGroup("Filters")]
+        public AVR_PoseNaturalizationFilter rightHandFilter;
+        [AVR.Core.Attributes.FoldoutGroup("Filters")]
+        public AVR_PoseNaturalizationFilter leftHandFilter;
 
         protected override void Start() {
             base.Start();
@@ -53,7 +53,7 @@ namespace AVR.Avatar {
             }
             Invoke("CheckIKPass", 3.0f);
 
-            filter = new NaturalizationFilter(30, 3);
+            animator.logWarnings = false; //TODO: This disables warning-spam if parameters (like "Speed") dont exist. Perhaps this should be optional based on a setting.
         }
 
         void CheckIKPass() {
@@ -94,8 +94,6 @@ namespace AVR.Avatar {
             const float framesmoothing = 0.1f;
             momentum = Vector3.Lerp(momentum, (AVR.Core.AVR_PlayerRig.Instance.RigInWorldSpace - lastRigPos) / Time.deltaTime, framesmoothing);
             lastRigPos = AVR.Core.AVR_PlayerRig.Instance.RigInWorldSpace;
-
-            if(inp.triggerDown) fil = !fil;
         }
 
         protected void setWeights(int layerIndex) {
@@ -126,14 +124,14 @@ namespace AVR.Avatar {
             }
             if (provider.leftHandTarget != null)
             {
-                animator.SetIKPosition(AvatarIKGoal.LeftHand, provider.leftHandTarget.position);
+                Vector3 pos = leftHandFilter == null ? provider.leftHandTarget.position : leftHandFilter.naturalize_point(provider.leftHandTarget.position);
+                animator.SetIKPosition(AvatarIKGoal.LeftHand, pos);
                 animator.SetIKRotation(AvatarIKGoal.LeftHand, provider.leftHandTarget.rotation);
             }
             if (provider.rightHandTarget != null)
             {
-                if(fil) animator.SetIKPosition(AvatarIKGoal.LeftHand, filter.naturalize_point(provider.rightHandTarget.position));
-                else if (!fil) animator.SetIKPosition(AvatarIKGoal.LeftHand, provider.rightHandTarget.position);
-                //animator.SetIKPosition(AvatarIKGoal.RightHand, provider.rightHandTarget.position);
+                Vector3 pos = rightHandFilter == null ? provider.rightHandTarget.position : rightHandFilter.naturalize_point(provider.rightHandTarget.position);
+                animator.SetIKPosition(AvatarIKGoal.RightHand, pos);
                 animator.SetIKRotation(AvatarIKGoal.RightHand, provider.rightHandTarget.rotation);
             }
             if (provider.leftFootTarget != null)
@@ -154,6 +152,7 @@ namespace AVR.Avatar {
 
             // This paragraph handles everything regarding basic movement animations and stuff
             transform.LookAt(transform.position + momentum, Vector3.up);
+            
             animator.SetFloat("Speed", momentum.magnitude);
             animator.SetLayerWeight(layerIndex, 1.0f - Mathf.Clamp(momentum.magnitude, 0.5f, 1.0f));
 

@@ -8,7 +8,7 @@ using AVR.Core.Attributes;
 
 namespace AVR.Motion {
     [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_motion_1_1_a_v_r___movement_restrictor.html")]
-    [CreateAssetMenu(fileName = "Data", menuName = "arc-vr/motion/MovementRestrictor", order = 1)]
+    [CreateAssetMenu(fileName = "MovementRestrictor", menuName = "arc-vr/motion/MovementRestrictor", order = 1)]
     /// <summary>
     /// When using a MovementProvider, this scriptable object allows you to set rules for which surfaces qualify as valid teleport locations and which dont.
     /// </summary>

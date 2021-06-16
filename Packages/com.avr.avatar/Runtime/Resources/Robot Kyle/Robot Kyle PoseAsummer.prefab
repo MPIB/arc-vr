@@ -415,9 +415,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1513427105114149707}
   - component: {fileID: 5799071858894534739}
-  - component: {fileID: 5799071858894534742}
-  - component: {fileID: 5799071858894534743}
-  - component: {fileID: 5799071858894534744}
   m_Layer: 6
   m_Name: Robot Kyle PoseAsummer
   m_TagString: Untagged
@@ -451,7 +448,7 @@ Animator:
   m_GameObject: {fileID: 2547801778243510616}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
-  m_Controller: {fileID: 9100000, guid: c98b4cc1b16f1da428dce601c3808fee, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -460,78 +457,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5799071858894534742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2547801778243510616}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db240c36857d67943adf3a6c2b94c27b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eyeTransform: {fileID: 0}
-  headTransform: {fileID: 5173272630846049270}
-  neckTransform: {fileID: 2775080946732264126}
-  switchAxisXZ: 1
---- !u!114 &5799071858894534743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2547801778243510616}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbe69963e58b6e045ba1f5908b3cea5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lookAtTarget: {fileID: 0}
-  bodyTarget: {fileID: 0}
-  leftHandTarget: {fileID: 0}
-  rightHandTarget: {fileID: 0}
-  leftFootTarget: {fileID: 0}
-  rightFootTarget: {fileID: 0}
-  lookAtWeight: 1
-  leftHandPosWeight: 1
-  leftHandRotWeight: 0.5
-  rightHandPosWeight: 1
-  rightHandRotWeight: 0.5
-  leftFootPosWeight: 1
-  leftFootRotWeight: 1
-  rightFootPosWeight: 1
-  rightFootRotWeight: 1
---- !u!114 &5799071858894534744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2547801778243510616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6f0d9ea54f6fb34c9ed462cab1055f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KeepOnRemote: 1
-  ChangeLayerOnRemote: 1
-  ChangeLayerOnRemote_IncludeChildren: 1
-  RemoteLayer: 0
-  provider: {fileID: 0}
-  lookAtWeight: 1
-  leftHandPosWeight: 1
-  leftHandRotWeight: 0.5
-  rightHandPosWeight: 1
-  rightHandRotWeight: 0.5
-  leftFootPosWeight: 1
-  leftFootRotWeight: 1
-  rightFootPosWeight: 1
-  rightFootRotWeight: 1
-  headTransform: {fileID: 5173272630846049270}
-  neckTransform: {fileID: 2775080946732264126}
-  switchAxisXZ: 1
 --- !u!1 &2841916983908840607
 GameObject:
   m_ObjectHideFlags: 0
