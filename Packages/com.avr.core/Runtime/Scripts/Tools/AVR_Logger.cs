@@ -66,7 +66,7 @@ namespace AVR.Core {
         }
 
         void OnDestroy() {
-            file.Close();
+            if(file!=null) file.Close();
         }
 
         void Start() {
@@ -102,7 +102,7 @@ namespace AVR.Core {
 
                     switch(src.readType) {
                         case DataSource.ReadTypes.HIGH_ACCURACY_NUMERAL : {
-                            return ((double) data).ToString();
+                            return ((float) data).ToString();
                         }
                         case DataSource.ReadTypes.HIGH_ACCURACY_VECTOR3:
                         {

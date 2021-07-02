@@ -108,6 +108,48 @@ namespace AVR.Core {
             transform.position += (pos - CameraInWorldSpace);
         }
 
+        /// <summary>
+        /// Returns true if the player is crouching / crawling. Uses the "/settings/calibration/player_height" setting to determine this.
+        /// </summary>
+        public bool isCrouching()
+        {
+            float val1 = CameraHeightInRigSpace;
+            float hf = AVR_Settings.get_float("/settings/calibration/player_height");
+
+            if (leftHandController && rightHandController)
+            {
+                float val2 = 0.5f * ((leftHandController.transform.position.y - transform.position.y) + (rightHandController.transform.position.y - transform.position.y));
+                return val1 < 0.72f * hf || val2 < 0.36f * hf;
+            }
+            return val1 < hf;
+        }
+
+        /// <summary>
+        /// Returns true if the player is leaning forwards / bowing.
+        /// </summary>
+        public bool isLeaningForwards()
+        {
+            return MainCamera.transform.rotation.eulerAngles.x > 55.0f && MainCamera.transform.rotation.eulerAngles.x < 120.0f;
+        }
+
+        /// <summary>
+        /// Returns a confidence value of how much the player is leaning forwards / bowing.
+        /// </summary>
+        public float isLeaningForwardsConfidence()
+        {
+            return Mathf.Clamp((MainCamera.transform.rotation.eulerAngles.x - 40.0f) / 30.0f, 0.0f, 1.0f);
+        }
+
+        /// <summary>
+        /// Returns the AVR_Controller that represents the left hand controller (if it exists). This value depends on the controllerNode value and is not updated if this one is changed during runtime.
+        /// </summary>
+        public AVR_Controller leftHandController => AVR_Controller.leftHandController;
+
+        /// <summary>
+        /// Returns the AVR_Controller that represents the right hand controller (if it exists). This value depends on the controllerNode value and is not updated if this one is changed during runtime.
+        /// </summary>
+        public AVR_Controller rightHandController => AVR_Controller.rightHandController;
+
         protected override void Start() {
             base.Start();
 

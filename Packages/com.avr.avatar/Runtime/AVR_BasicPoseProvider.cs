@@ -1,28 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
-using AVR.Core;
-
-namespace AVR.Avatar {
-    public class AVR_PoseProvider : AVR.Core.AVR_Component
+namespace AVR.Avatar
+{
+    public class AVR_BasicPoseProvider : AVR.Core.AVR_Component
     {
-        public Vector3 lookAtPos => AVR_PlayerRig.Instance.ViewPos;
-        public Transform eyeTransform => AVR_PlayerRig.Instance.MainCamera.transform;
-        public Transform leftHandTarget => AVR_PlayerRig.Instance.leftHandController.transform;
-        public Transform rightHandTarget => AVR_PlayerRig.Instance.rightHandController.transform;
-        public Transform leftFootTarget => _leftFootTarget;
-        public Transform rightFootTarget => _rightFootTarget;
-        public Transform pivotTransform => _pivotTransform;
-        public Transform bodyTransform => _bodyTransform;
-
-        protected Transform _leftFootTarget;
-        protected Transform _rightFootTarget;
-        protected Transform _pivotTransform;
-        protected Transform _bodyTransform;
+        [AVR.Core.Attributes.FoldoutGroup("Targets")]
+        public Transform lookAtTarget;
+        [AVR.Core.Attributes.FoldoutGroup("Targets")]
+        public Transform eyeTransform;
+        [AVR.Core.Attributes.FoldoutGroup("Targets")]
+        public Transform leftHandTarget;
+        [AVR.Core.Attributes.FoldoutGroup("Targets")]
+        public Transform rightHandTarget;
+        [AVR.Core.Attributes.FoldoutGroup("Targets")]
+        public Transform leftFootTarget;
+        [AVR.Core.Attributes.FoldoutGroup("Targets")]
+        public Transform rightFootTarget;
+        [AVR.Core.Attributes.FoldoutGroup("Targets")]
+        public Transform pivotTransform;
 
 
         public float offsetY = 0.5f;
@@ -31,24 +28,72 @@ namespace AVR.Avatar {
         public float armLength = 0.4f;
         public LayerMask collisionMask;
 
+        public Transform bodyTransform;
+
         public float foot_offset_from_pivot;
         public float foot_spring_dist;
         public float foot_follow_speed;
 
         private float lean_blend = 0.0f;
 
-        float bend_conf = 0.0f;
-
-        protected override void Awake()
+        void Update()
         {
-            base.Awake();
-            _leftFootTarget = AVR.Core.Utils.Misc.CreateEmptyGameObject("leftFootTarget", transform);
-            _rightFootTarget = AVR.Core.Utils.Misc.CreateEmptyGameObject("rightFootTarget", transform);
-            _pivotTransform = AVR.Core.Utils.Misc.CreateEmptyGameObject("pivotTarget", transform);
-            _bodyTransform = AVR.Core.Utils.Misc.CreateEmptyGameObject("bodyTarget", transform);
+            //UpdatePivot();
+            //SetBodyPosition();
+            //SetBodyRotation();
+            //TakeTwo();
+            //TakeThree();
+            TakeFour();
         }
 
-        void Update()
+        void SetBody()
+        {
+            bodyTransform.position = eyeTransform.position - Vector3.up * offsetY;
+            //bodyTransform.up = Vector3.up;
+
+            const float lean_blend_speed = 1.8f;
+
+            if (true)//(isLeaningForwards())
+            {
+                lean_blend = Mathf.Clamp(lean_blend + Time.deltaTime * lean_blend_speed, 0, 1);
+            }
+            else
+            {
+                lean_blend = Mathf.Clamp(lean_blend - Time.deltaTime * lean_blend_speed, 0, 1);
+            }
+
+            float interp = Mathf.Sqrt(lean_blend);
+
+            bodyTransform.position = Vector3.Lerp(bodyTransform.position, eyeTransform.position - eyeTransform.up * offsetY, interp);
+
+            return;
+
+            //bodyTransform.rotation = Quaternion.Euler(bodyTransform.rotation.x, eyeTransform.rotation.y, bodyTransform.rotation.z);
+
+            //bodyTransform.up = Vector3.Lerp(bodyTransform.up, eyeTransform.position - bodyTransform.position, interp);
+
+
+
+            // TODO: deal with right == up case, or forwardDir = (0,1,0)
+            Vector3 forwardDir = Vector3.Cross(eyeTransform.right, Vector3.up);
+            forwardDir.y = 0;
+            forwardDir.Normalize();
+
+            bodyTransform.forward = Vector3.Lerp(forwardDir, eyeTransform.forward, interp);
+            //bodyTransform.rotation = Quaternion.Euler(eyeTransform.rotation.eulerAngles.x, bodyTransform.rotation.y, bodyTransform.rotation.z);
+
+
+            //bodyTransform.rotation = Quaternion.AngleAxis(Mathf.Sin(forwardDir.z), Vector3.up);
+            //bodyTransform.Rotate(new Vector3(0, bodyTransform.rotation.eulerAngles.y, 0), Space.World);
+            //bodyTransform.Rotate(new Vector3(0, Mathf.Sin(forwardDir.x)*Mathf.Rad2Deg, 0), Space.World);
+            //bodyTransform.Rotate(new Vector3(0, Time.time*10, 0), Space.Self);
+
+
+            //bodyTransform.localRotation = Quaternion.Euler(bodyTransform.localRotation.x, eyeTransform.localRotation.y, bodyTransform.localRotation.z);
+            //bodyTransform.forward = eyeTransform.forward;
+        }
+
+        void TakeFour()
         {
             if (AVR.Core.AVR_PlayerRig.Instance.isLeaningForwards())
             {
@@ -110,7 +155,10 @@ namespace AVR.Avatar {
             //bodyTransform.rotation = Quaternion.Lerp(bodyTransform.rotation, ang, bend_conf);
         }
 
-        void GetStandingTransform(out Quaternion rot, out Vector3 pos) {
+        float bend_conf = 0.0f;
+
+        void GetStandingTransform(out Quaternion rot, out Vector3 pos)
+        {
             Vector3 local_eye_to_neck_offset = new Vector3(0.0f, -0.1f, -0.1f);
 
             Vector3 NeckPos = eyeTransform.position + eyeTransform.TransformVector(local_eye_to_neck_offset);
@@ -138,28 +186,59 @@ namespace AVR.Avatar {
 
             rot = Quaternion.LookRotation(eyeTransform.forward, NeckPos - pos);
         }
-        
-        void OnDrawGizmos() {
-            if(Application.isPlaying) {
-                Gizmos.color = Color.green;
-                Gizmos.DrawSphere(eyeTransform.position, 0.1f);
 
-                Gizmos.color = Color.white;
+        void OnDrawGizmos()
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawSphere(eyeTransform.position, 0.1f);
 
-                Vector3 local_eye_to_neck_offset = new Vector3(0.0f, -0.1f, -0.1f);
-                Vector3 NeckPos = eyeTransform.position + eyeTransform.TransformVector(local_eye_to_neck_offset);
-                Gizmos.DrawLine(eyeTransform.position, NeckPos);
-                Gizmos.DrawCube(NeckPos, new Vector3(0.05f, 0.05f, 0.05f));
+            Gizmos.color = Color.white;
 
-                Gizmos.DrawLine(NeckPos, bodyTransform.position);
-                Gizmos.DrawCube(bodyTransform.position, new Vector3(0.05f, 0.05f, 0.05f));
+            Vector3 local_eye_to_neck_offset = new Vector3(0.0f, -0.1f, -0.1f);
+            Vector3 NeckPos = eyeTransform.position + eyeTransform.TransformVector(local_eye_to_neck_offset);
+            Gizmos.DrawLine(eyeTransform.position, NeckPos);
+            Gizmos.DrawCube(NeckPos, new Vector3(0.05f, 0.05f, 0.05f));
 
-                Gizmos.DrawLine(bodyTransform.position, pivotTransform.position);
-                Gizmos.DrawCube(pivotTransform.position, new Vector3(0.05f, 0.05f, 0.05f));
-            }
+            Gizmos.DrawLine(NeckPos, bodyTransform.position);
+            Gizmos.DrawCube(bodyTransform.position, new Vector3(0.05f, 0.05f, 0.05f));
+
+            Gizmos.DrawLine(bodyTransform.position, pivotTransform.position);
+            Gizmos.DrawCube(pivotTransform.position, new Vector3(0.05f, 0.05f, 0.05f));
         }
 
-        void BodyNeckYawSet() {
+        void BodyPosSet(float interp)
+        {
+            Vector3 local_eye_to_neck_offset = new Vector3(0.0f, -0.1f, -0.1f);
+
+            Vector3 NeckPos = eyeTransform.position + eyeTransform.TransformVector(local_eye_to_neck_offset);
+
+            float neck_body_offset = -0.4f;
+
+            Vector3 local_down_pos = eyeTransform.up;
+
+            Vector3 global_down_pos = Vector3.up;
+
+            bodyTransform.position = NeckPos + neck_body_offset * Vector3.Lerp(global_down_pos, local_down_pos, Mathf.Pow(interp, 2.0f));
+
+            UpdatePivot();
+
+            float max_body_pivot_height = 1.1f;
+            float min_body_pivot_height = 0.2f;
+
+            bodyTransform.position = new Vector3(
+                bodyTransform.position.x,
+                pivotTransform.position.y + Mathf.Clamp(bodyTransform.position.y - pivotTransform.position.y, min_body_pivot_height, max_body_pivot_height),
+                bodyTransform.position.z
+            );
+        }
+
+        void BodyNeckPitchRollSet()
+        {
+
+        }
+
+        void BodyNeckYawSet()
+        {
             float head_yaw = eyeTransform.localRotation.eulerAngles.y + 360.0f; // is the +360 necessary?
 
             float body_yaw = bodyTransform.localRotation.eulerAngles.y + 360.0f;
@@ -168,7 +247,8 @@ namespace AVR.Avatar {
 
             float yaw_diff = Mathf.DeltaAngle(head_yaw, body_yaw);
 
-            if(Mathf.Abs(yaw_diff) > max_yaw_diff) {
+            if (Mathf.Abs(yaw_diff) > max_yaw_diff)
+            {
                 //bodyTransform.rotation.eulerAngles
 
                 //float rot = Mathf.MoveTowardsAngle(body_yaw, head_yaw, 999) - body_yaw;
@@ -184,16 +264,76 @@ namespace AVR.Avatar {
             }
         }
 
-        void HandPredicament(Transform guess) {
+        void TakeTwo()
+        {
+            UpdatePivot();
+            UpdateRightFoot();
+            UpdateLeftFoot();
+
+            //HandPredicament(showguess);
+            //NeckPredicament(showguess);
+            //GroundPredicament(showguess);
+
+            //PreviousPredicament(showguess);
+
+            //bodyTransform.position = showguess.position;
+            //bodyTransform.rotation = showguess.rotation;
+            //bodyTransform.forward = showguess.forward;
+        }
+
+        void GroundPredicament(Transform guess)
+        {
+            if (Physics.Raycast(eyeTransform.position, Vector3.down, out RaycastHit hit, 3.0f, collisionMask))
+            {
+                float dist = Vector3.Distance(hit.point, eyeTransform.position);
+
+                Vector3 upos = eyeTransform.position - Vector3.up * offsetY;
+
+                float confidence = Mathf.Max(dist - 1.3f, 0.0f) / 1.0f;
+
+                if (dist > 1.8) confidence = 1.0f;
+
+                guess.position = Vector3.Lerp(guess.position, upos, confidence);
+                guess.up = Vector3.Lerp(guess.up, Vector3.up, confidence);
+            }
+        }
+
+        void PreviousPredicament(Transform guess)
+        {
+            const float speed = 10.0f;
+            guess.position = Vector3.MoveTowards(bodyTransform.position, guess.position, Time.deltaTime * speed);
+
+            //guess.rotation = Quaternion.
+        }
+
+        void NeckPredicament(Transform guess)
+        {
+            //Vector3 local_body_dir = eyeTransform.InverseTransformPoint(guess.position).normalized;
+            Vector3 eyes_to_body = guess.position - eyeTransform.position;
+
+            float h_ang = Vector3.Angle(eyes_to_body, -eyeTransform.up);
+
+            h_ang -= 30;
+            h_ang = Mathf.Max(h_ang, 0.0f);
+            h_ang /= 15;
+
+            Vector3 targetPos = eyeTransform.position - eyeTransform.up * offsetY;
+            guess.position = Vector3.Lerp(guess.position, targetPos, h_ang);
+            guess.up = Vector3.Lerp(guess.up, eyeTransform.up, h_ang + 0.3f * Time.deltaTime);
+        }
+
+        void HandPredicament(Transform guess)
+        {
             Vector3 lhl = eyeTransform.InverseTransformPoint(leftHandTarget.position);
             Vector3 rhl = eyeTransform.InverseTransformPoint(rightHandTarget.position);
             float lhc = Vector3.Cross(Vector3.left, lhl).magnitude;
             float rhc = Vector3.Cross(Vector3.right, rhl).magnitude;
 
-            bool trigger = lhc > 0.1f && rhc > 0.1f && Mathf.Abs(lhc-rhc) < 1.2f;
+            bool trigger = lhc > 0.1f && rhc > 0.1f && Mathf.Abs(lhc - rhc) < 1.2f;
             trigger = true;
-            
-            if(trigger) {
+
+            if (trigger)
+            {
                 float confidence = Vector3.Cross(rhl.normalized, eyeTransform.right).magnitude;
 
                 //guess.position = leftHandTarget.position + 0.5f * (rightHandTarget.position - leftHandTarget.position);
@@ -206,7 +346,8 @@ namespace AVR.Avatar {
             }
         }
 
-        void UpdateLeftFoot() {
+        void UpdateLeftFoot()
+        {
             Vector3 thPos = pivotTransform.position - pivotTransform.right * foot_offset_from_pivot;
 
             leftFootTarget.forward = Vector3.Lerp(leftFootTarget.forward, pivotTransform.forward, foot_follow_speed * Time.deltaTime);
@@ -214,7 +355,8 @@ namespace AVR.Avatar {
             leftFootTarget.position = Vector3.Lerp(leftFootTarget.position, thPos, foot_follow_speed * Time.deltaTime);
         }
 
-        void UpdateRightFoot() {
+        void UpdateRightFoot()
+        {
             Vector3 thPos = pivotTransform.position + pivotTransform.right * foot_offset_from_pivot;
 
             rightFootTarget.forward = Vector3.Lerp(rightFootTarget.forward, pivotTransform.forward, foot_follow_speed * Time.deltaTime);
@@ -222,7 +364,8 @@ namespace AVR.Avatar {
             rightFootTarget.position = Vector3.Lerp(rightFootTarget.position, thPos, foot_follow_speed * Time.deltaTime);
         }
 
-        void UpdatePivot() {
+        void UpdatePivot()
+        {
             Vector3 r_origin = bodyTransform.position;//eyeTransform.position;
 
             if (Physics.Raycast(r_origin, Vector3.down, out RaycastHit hit, 3.0f, collisionMask))
@@ -233,7 +376,8 @@ namespace AVR.Avatar {
             pivotTransform.forward = eyeTransform.forward;
         }
 
-        void SetBodyPosition() {
+        void SetBodyPosition()
+        {
             Vector3 bodyPos = bodyTransform.position;
 
             // Linked with eye position.
@@ -250,7 +394,7 @@ namespace AVR.Avatar {
             bodyTransform.position = bodyPos;
         }
 
-        void SetBodyRotation ()
+        void SetBodyRotation()
         {
             // Get pivot
             Transform pivot = pivotTransform;
@@ -264,7 +408,7 @@ namespace AVR.Avatar {
             l_hand_angle = Mathf.LerpAngle(0.0f, maxTorsionAngle, l_hand_angle);
 
             // RIGHT HAND: (Repeat same steps)
-            float r_hand_angle = Mathf.LerpAngle (0.0f, -maxTorsionAngle, -pivotTransform.InverseTransformPoint (rightHandTarget.position).x / armLength);
+            float r_hand_angle = Mathf.LerpAngle(0.0f, -maxTorsionAngle, -pivotTransform.InverseTransformPoint(rightHandTarget.position).x / armLength);
 
 
 
@@ -277,24 +421,24 @@ namespace AVR.Avatar {
 
             // HEAD
             // body relative to pivot
-            Vector3 thisLocalPos = pivotTransform.InverseTransformPoint (bodyTransform.position);
+            Vector3 thisLocalPos = pivotTransform.InverseTransformPoint(bodyTransform.position);
             // eyes realtive to pivot
-            Vector3 eyeLocalPos = pivotTransform.InverseTransformPoint (eyeTransform.position);
+            Vector3 eyeLocalPos = pivotTransform.InverseTransformPoint(eyeTransform.position);
 
             float deltaY = eyeLocalPos.y - thisLocalPos.y;
             float deltaX = eyeLocalPos.x - thisLocalPos.x;
             float deltaZ = eyeLocalPos.z - thisLocalPos.z - offsetZ;
 
             // From trigonometry we know that tan(angX)=deltaY/deltaX, so this way we calculate angX.
-            float angX = Mathf.Atan2 (deltaY, deltaZ);
-            float angZ = Mathf.Atan2 (deltaY, deltaX);
+            float angX = Mathf.Atan2(deltaY, deltaZ);
+            float angZ = Mathf.Atan2(deltaY, deltaX);
 
             // We transform into degs and subtract 90
             angX = angX * Mathf.Rad2Deg - 90.0f;
             angZ = angZ * Mathf.Rad2Deg - 90.0f;
 
             // ???
-            float headLinkageAng = Mathf.DeltaAngle (0.0f, eyeTransform.localEulerAngles.y) * 0.25f;
+            float headLinkageAng = Mathf.DeltaAngle(0.0f, eyeTransform.localEulerAngles.y) * 0.25f;
 
             // Set rotation.
             Vector3 bodyAng = Vector3.zero;

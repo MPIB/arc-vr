@@ -171,5 +171,33 @@ namespace AVR.Core.Utils {
             tex.LoadImage(rawData);
             return tex;
         }
+
+        /// <summary>
+        /// Creates an empty gameobject with specifed position and rotation. Returns its transform component.
+        /// </summary>
+        /// <param name="name">Name of the gameobject</param>
+        /// <param name="parent">Parent of the gameobject (null for no parent)</param>
+        /// <param name="worldPos">World-space position to instantiate the object at</param>
+        /// <param name="worldRot">World-space rotation of the gameobject</param>
+        public static Transform CreateEmptyGameObject(string name, Transform parent, Vector3 worldPos, Quaternion worldRot) {
+            GameObject o = new GameObject(name);
+            o.transform.SetParent(parent);
+            o.transform.SetPositionAndRotation(worldPos, worldRot);
+            return o.transform;
+        }
+
+        /// <summary>
+        /// Creates an empty gameobject with a localposition and rotation of zero. Returns its transform component.
+        /// </summary>
+        /// <param name="name">Name of the gameobject</param>
+        /// <param name="parent">Parent of the gameobject (null for no parent)</param>
+        public static Transform CreateEmptyGameObject(string name = "EmptyTransform", Transform parent = null)
+        {
+            GameObject o = new GameObject(name);
+            o.transform.SetParent(parent);
+            o.transform.localPosition = Vector3.zero;
+            o.transform.localRotation = Quaternion.identity;
+            return o.transform;
+        }
     }
 }

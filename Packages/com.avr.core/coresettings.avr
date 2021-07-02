@@ -18,6 +18,9 @@ settings = {
 			max_height = 2.0
 		}
 	}
+	calibration = {
+		player_height = 1.8
+	}
 }
 
 editor = {

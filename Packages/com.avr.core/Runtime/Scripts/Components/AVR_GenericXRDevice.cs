@@ -12,6 +12,18 @@ namespace AVR.Core
     [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html")]
     public class AVR_GenericXRDevice : AVR_Component
     {
+        protected static Dictionary<XRNode, AVR_GenericXRDevice> nodeDevices = new Dictionary<XRNode, AVR_GenericXRDevice>();
+
+        /// <summary>
+        /// Returns the last AVR_GenericXRDevice enabled that has a given controllerNode value.
+        /// </summary>
+        /// <param name="node">Node of the requested device</param>
+        /// <returns>last AVR_GenericXRDevice enabled that has a given controllerNode value. Null if none exists.</returns>
+        public static AVR_GenericXRDevice getDeviceAtNode(XRNode node) {
+            nodeDevices.TryGetValue(node, out var val);
+            return val;
+        }
+
         [Header("XR Node")]
 
         /// <summary>
@@ -68,6 +80,11 @@ namespace AVR.Core
         private Quaternion prevRot = Quaternion.identity;
 
 
+        protected override void Awake()
+        {
+            nodeDevices[controllerNode] = this;
+            base.Awake();
+        }
 
         /// <summary>
         /// Updates the controller position and rotation.
@@ -121,12 +138,14 @@ namespace AVR.Core
         protected override void OnEnable()
         {
             base.OnEnable();
+            nodeDevices[controllerNode] = this;
             Application.onBeforeRender += OnBeforeRender;
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
+            if(nodeDevices[controllerNode] == this) nodeDevices.Remove(controllerNode);
             Application.onBeforeRender -= OnBeforeRender;
         }
     }

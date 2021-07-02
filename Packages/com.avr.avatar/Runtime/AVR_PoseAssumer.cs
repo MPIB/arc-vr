@@ -64,15 +64,15 @@ namespace AVR.Avatar {
 
         void LateUpdate() {
             // Head linkage
-            Vector3 head_angle = headTransform.localRotation.eulerAngles;
+            //Vector3 head_angle = headTransform.localRotation.eulerAngles;
             
-            head_angle = new Vector3(head_angle.x%360.0f, head_angle.y%360.0f, head_angle.z%360.0f);
-            head_angle = new Vector3(Mathf.Clamp(head_angle.x, -160, 115), Mathf.Clamp(head_angle.y, -160, 160), head_angle.z);
+            //head_angle = new Vector3(head_angle.x%360.0f, head_angle.y%360.0f, head_angle.z%360.0f);
+            //head_angle = new Vector3(Mathf.Clamp(head_angle.x, -160, 115), Mathf.Clamp(head_angle.y, -160, 160), head_angle.z);
 
             //headTransform.localRotation = Quaternion.Euler(head_angle);
-            headTransform.LookAt(provider.leftFootTarget.position);
+            //headTransform.LookAt(provider.leftFootTarget.position);
 
-            return;
+            //return;
             Vector3 headAng = headTransform.eulerAngles;
             Vector3 neckAng = neckTransform.eulerAngles;
             float ang = Mathf.DeltaAngle(360.0f, provider.eyeTransform.eulerAngles.z);
@@ -113,14 +113,15 @@ namespace AVR.Avatar {
         protected void setPosRot(int layerIndex) {
             float layerWeight = animator.GetLayerWeight(layerIndex);
 
-            if (provider.lookAtTarget != null)
+            if (provider.lookAtPos != null)
             {
-                animator.SetLookAtPosition(provider.lookAtTarget.position);
+                animator.SetLookAtPosition(provider.lookAtPos);
             }
             if (provider.bodyTransform != null)
             {
                 Vector3 defaultBodyPosition = AVR.Core.AVR_PlayerRig.Instance.FeetInWorldSpace + Vector3.up * 1.0f;
                 animator.bodyPosition = Vector3.Lerp(defaultBodyPosition, provider.bodyTransform.position, layerWeight);
+                animator.bodyRotation = provider.bodyTransform.rotation; //TODO: What about animation?
             }
             if (provider.leftHandTarget != null)
             {
@@ -151,10 +152,10 @@ namespace AVR.Avatar {
             IKPass_is_enabled = true;
 
             // This paragraph handles everything regarding basic movement animations and stuff
-            transform.LookAt(transform.position + momentum, Vector3.up);
+            //transform.LookAt(transform.position + momentum, Vector3.up);
             
-            animator.SetFloat("Speed", momentum.magnitude);
-            animator.SetLayerWeight(layerIndex, 1.0f - Mathf.Clamp(momentum.magnitude, 0.5f, 1.0f));
+            //animator.SetFloat("Speed", momentum.magnitude);
+            //animator.SetLayerWeight(layerIndex, 1.0f - Mathf.Clamp(momentum.magnitude, 0.5f, 1.0f));
 
             setWeights(layerIndex);
             setPosRot(layerIndex);

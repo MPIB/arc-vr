@@ -12,6 +12,16 @@ namespace AVR.Core {
     public class AVR_Controller : AVR_GenericXRDevice
     {
         /// <summary>
+        /// Returns the AVR_Controller that represents the left hand controller (if it exists). This value depends on the controllerNode value and is not updated if this one is changed during runtime.
+        /// </summary>
+        public static AVR_Controller leftHandController { get; private set; }
+
+        /// <summary>
+        /// Returns the AVR_Controller that represents the right hand controller (if it exists). This value depends on the controllerNode value and is not updated if this one is changed during runtime.
+        /// </summary>
+        public static AVR_Controller rightHandController { get; private set; }
+
+        /// <summary>
         /// the AVR_ControllerInputManager assigned to this controller. Returns null if no inputmanager is assigned
         /// </summary>
         public AVR_ControllerInputManager inputManager {
@@ -21,11 +31,12 @@ namespace AVR.Core {
         }
         private AVR_ControllerInputManager _inputManager=null;
 
-        public float tmp_float { get; set; }
-
         protected override void Awake() {
             base.Awake();
             _inputManager = GetComponentInChildren<AVR_ControllerInputManager>();
+
+            if (controllerNode==XRNode.LeftHand) leftHandController = this;
+            if (controllerNode == XRNode.RightHand) rightHandController = this;
         }
 
         /// <summary>
