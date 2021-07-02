@@ -11,35 +11,56 @@ namespace AVR.Avatar {
     public class AVR_PoseProvider : AVR.Core.AVR_Component
     {
         public Vector3 lookAtPos => _eyeTransform.position + _eyeTransform.forward;
-        public Transform eyeTransform => _eyeTransform;//AVR_PlayerRig.Instance.MainCamera.transform;
         public Transform leftHandTarget => AVR_PlayerRig.Instance.leftHandController.transform;
         public Transform rightHandTarget => AVR_PlayerRig.Instance.rightHandController.transform;
         public Transform leftFootTarget => _leftFootTarget;
         public Transform rightFootTarget => _rightFootTarget;
         public Transform pivotTransform => _pivotTransform;
         public Transform bodyTransform => _bodyTransform;
+        public Transform eyeTransform => _eyeTransform;
+
+        [Range(0.0001f, 1.0f)]
+        public float body_inertia = 0.3f;
+
+        [AVR.Core.Attributes.FoldoutGroup("Calibration")]
+        public float lean_blend_speed = 3.5f;
+
+        [AVR.Core.Attributes.FoldoutGroup("Calibration")]
+        public float max_head_yaw = 30f;
+        [AVR.Core.Attributes.FoldoutGroup("Calibration")]
+        public float max_head_pitch = 30f;
+        [AVR.Core.Attributes.FoldoutGroup("Calibration")]
+        public float max_head_roll = 30f;
+
+        [AVR.Core.Attributes.FoldoutGroup("Calibration")]
+        public float default_body_height = 0.9f;
+        [AVR.Core.Attributes.FoldoutGroup("Calibration")]
+        public float max_body_height = 1.0f;
+        [AVR.Core.Attributes.FoldoutGroup("Calibration")]
+        public float min_body_height = 0.5f;
+
+        [AVR.Core.Attributes.FoldoutGroup("Calibration")]
+        public Vector3 local_eye_to_neck_offset = new Vector3(0.0f, -0.1f, -0.05f);
+        [AVR.Core.Attributes.FoldoutGroup("Calibration")]
+        public float neck_body_distance = 0.4f;
+
+        [AVR.Core.Attributes.FoldoutGroup("Calibration")]
+        public Vector3 foot_offset_from_pivot = new Vector3(0.2f, 0.05f, 0.0f);
+
+        [AVR.Core.Attributes.FoldoutGroup("Calibration")]
+        public float foot_follow_speed = 3.0f;
 
         protected Transform _leftFootTarget;
         protected Transform _rightFootTarget;
         protected Transform _pivotTransform;
         protected Transform _bodyTransform;
-
         protected Transform _eyeTransform;
 
+        public LayerMask groundCollisionMask;
 
-        public float offsetY = 0.5f;
-        public float offsetZ = 0.0f;
-        public float maxTorsionAngle = 45.0f;
-        public float armLength = 0.4f;
-        public LayerMask collisionMask;
-
-        public float foot_offset_from_pivot;
-        public float foot_spring_dist;
-        public float foot_follow_speed;
-
-        private float lean_blend = 0.0f;
-
-        float bend_conf = 0.0f;
+        private float lean_factor = 0.0f;
+        private float lean_conf = 0.0f;
+        private float last_yaw = 0.0f;
 
         protected override void Awake()
         {
@@ -51,115 +72,104 @@ namespace AVR.Avatar {
             _eyeTransform = AVR.Core.Utils.Misc.CreateEmptyGameObject("eyeTransform", transform);
         }
 
-        int c = 0;
+        Vector3 ApplyInertia(Vector3 current, Vector3 target) {
+            float dist = Vector3.Distance(current, target);
+            float move_mult = Mathf.SmoothStep(0f, 1f, dist / body_inertia);
+            return Vector3.MoveTowards(current, target, dist*move_mult);
+        }
 
         void SetBody() {
-            if (AVR.Core.AVR_PlayerRig.Instance.isLeaningForwards())
+            // Pre-processing
             {
-                //bend_conf = Mathf.Lerp(bend_conf, 1.0f, Time.deltaTime * 5.0f);
+                // Calculation of lean_conf, which indicates our confidence of whether the palyer is leaning forwards or standing upright.
+                if (playerRig.isLeaningForwardsConfidence() > 0.5f)
+                {
+                    lean_factor = Mathf.Lerp(lean_factor, 1.0f, Time.deltaTime * lean_blend_speed);
+                }
+                else
+                {
+                    lean_factor = Mathf.Lerp(lean_factor, 0.0f, Time.deltaTime * lean_blend_speed);
+                }
+                lean_conf = lean_factor * playerRig.isLeaningForwardsConfidence();
+
+
+                // We apply inertia to the main cameras position, to avoid unnecessary micro-movement. Note: We do not apply this to the lookat-target, so the head rotation will be fully responsive.
+                _eyeTransform.position = ApplyInertia(_eyeTransform.position, playerRig.MainCamera.transform.position);
+
+                // Here we apply clamping bounds on the pitch and roll angles of the head. We deal with yaw in a separate function.
+                //NOTE / TODO: This could lead to problems, as we use localRotation of the camera here. If, say, the camera was in a child object of the GenericXRDevice object, the local rotation would be zero.
+                Quaternion r = playerRig.MainCamera.transform.localRotation;
+                r = AVR.Core.Utils.Geom.ClampQuaternionRotation(r, new Vector3(max_head_pitch, 360, max_head_roll));
+                _eyeTransform.localRotation = r;
             }
-            else
-            {
-                bend_conf = Mathf.Lerp(bend_conf, 0.0f, Time.deltaTime * 5.0f);
-            }
-
-            bend_conf *= AVR.Core.AVR_PlayerRig.Instance.isLeaningForwardsConfidence();
 
 
 
-            _eyeTransform.position = AVR_PlayerRig.Instance.MainCamera.transform.position;
-
-            float max_roll = 30.0f;
-            float max_pitch = 30.0f;
-
-            //NOTE / TODO: This could lead to problems, as we use localRotation of the camera here. If, say, the camera was in a child object of the GenericXRDevice object, the local rotation would be zero.
-            Quaternion r = playerRig.MainCamera.transform.localRotation;
-            r = AVR.Core.Utils.Geom.ClampQuaternionRotation(r, new Vector3(max_pitch, 360, max_roll));
-            _eyeTransform.localRotation = r;
-
-
-
-            // Reset pos and rot:
+            //No we get to the actual body transform. First we reset its rotation:
             bodyTransform.up = Vector3.up;
 
+            // Get the rotation and position if the player is standing upright:
             GetStandingTransform(out Quaternion stout, out Vector3 stpos);
-            GetBendTransform(out Quaternion bdout, out Vector3 bdpos);
+            // Get the rotation and position if the player is leaning forwards:
+            GetLeanTransform(out Quaternion bdout, out Vector3 bdpos);
 
-            Vector3 unsafe_pos = Vector3.Lerp(stpos, bdpos, bend_conf);
-            Quaternion unsafe_rot = Quaternion.Lerp(stout, bdout, bend_conf);
+            // We designate an "unsafe position/rotation", which corresponds to our leaning transform, depending on our leaning-confidence value.
+            Vector3 unsafe_pos = Vector3.Lerp(stpos, bdpos, lean_conf);
+            Quaternion unsafe_rot = Quaternion.Lerp(stout, bdout, lean_conf);
 
+            // The unsafe position corresponds to the position/rotation we believe the body has *based on our lean_conf value*.
+            // PROBLEM: we may end up with the players feet hovering in the air. Here we correct for this.
+            // We interpolate between our "unsafe" (the higher) position and the regular, standing-upright (lower) position, based on the distance of the body to the ground (pivot)
             {
-                float val = 1.0f;
-                float sh = stpos.y - pivotTransform.position.y;
-                float uh = unsafe_pos.y - pivotTransform.position.y;
+                float sh = stpos.y - pivotTransform.position.y;     // safe height
+                float uh = unsafe_pos.y - pivotTransform.position.y;// unsafe height
 
-                float lamb = Mathf.Clamp((val - sh) / (uh - sh), 0.0f, 1.0f);
+                float lamb = Mathf.Clamp((default_body_height - sh) / (uh - sh), 0.0f, 1.0f);
 
                 unsafe_pos = Vector3.Lerp(stpos, unsafe_pos, lamb);
                 unsafe_rot = Quaternion.Lerp(stout, unsafe_rot, lamb);
             }
 
+            // Apply pos and rot to transform
             bodyTransform.position = unsafe_pos;
             bodyTransform.rotation = unsafe_rot;
 
-
-            // Corect height
+            // Update pivot based on new body position
             UpdatePivot();
 
-            float max_body_pivot_height = 1.1f;
-            float min_body_pivot_height = 0.2f;
-
+            // Clamp the distance top the ground to be sure
             bodyTransform.position = new Vector3(
                 bodyTransform.position.x,
-                pivotTransform.position.y + Mathf.Clamp(bodyTransform.position.y - pivotTransform.position.y, min_body_pivot_height, max_body_pivot_height),
+                pivotTransform.position.y + Mathf.Clamp(bodyTransform.position.y - pivotTransform.position.y, min_body_height, max_body_height),
                 bodyTransform.position.z
             );
-
-            // Get pos
-            //BodyPosSet(bend_conf);
-
-            // Get rotation
-            //BodyNeckYawSet();
-            //Quaternion ang = asdfghRot();//Quaternion.Euler(GetSomeBodyRotation());
-
-            //bodyTransform.rotation = Quaternion.Lerp(bodyTransform.rotation, ang, bend_conf);
         }
 
         void Update()
         {
             SetBody();
+
+            // This is something we need in "CorrectBodyYawAngle".
             last_yaw = Mathf.MoveTowardsAngle(last_yaw, bodyTransform.rotation.eulerAngles.y, 9999.0f);
-            //last_yaw = bodyTransform.rotation.eulerAngles.y;
+
             UpdateLeftFoot();
             UpdateRightFoot();
-            //BodyNeckYawSet();
         }
 
         void GetStandingTransform(out Quaternion rot, out Vector3 pos) {
-            Vector3 local_eye_to_neck_offset = new Vector3(0.0f, -0.1f, -0.0f);
-
+            // Standing upright position is fairly simple. Just go to neck and straight down from there.
             Vector3 NeckPos = eyeTransform.position + eyeTransform.TransformVector(local_eye_to_neck_offset);
 
-            float neck_body_offset = -0.4f;
-
-            Vector3 global_down_pos = Vector3.up;
-
-            pos = NeckPos + neck_body_offset * global_down_pos;
+            pos = NeckPos + neck_body_distance * -Vector3.up;
 
             rot = CorrectBodyYawAngle(Quaternion.LookRotation(bodyTransform.forward, Vector3.up));
         }
 
-        void GetBendTransform(out Quaternion rot, out Vector3 pos)
-        {
-            Vector3 local_eye_to_neck_offset = new Vector3(0.0f, -0.1f, 0.0f);
-
+        void GetLeanTransform(out Quaternion rot, out Vector3 pos) {
+            //Lean position is the same as standing upright, but instead of straight down we go downwards by MainCamera.transform.down
             Vector3 NeckPos = eyeTransform.position + eyeTransform.TransformVector(local_eye_to_neck_offset);
 
-            float neck_body_offset = -0.4f;
-
-            Vector3 global_down_pos = eyeTransform.up;
-
-            pos = NeckPos + neck_body_offset * global_down_pos;
+            pos = NeckPos + neck_body_distance * -playerRig.MainCamera.transform.up;
 
             rot = CorrectBodyYawAngle(Quaternion.LookRotation(eyeTransform.forward, NeckPos - pos));
         }
@@ -183,60 +193,56 @@ namespace AVR.Avatar {
 
                 Gizmos.DrawLine(bodyTransform.position, pivotTransform.position);
                 Gizmos.DrawCube(pivotTransform.position, new Vector3(0.05f, 0.05f, 0.05f));
+
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(bodyTransform.position, leftFootTarget.position);
+                Gizmos.DrawCube(leftFootTarget.position, new Vector3(0.05f, 0.05f, 0.05f));
+                Gizmos.DrawLine(bodyTransform.position, rightFootTarget.position);
+                Gizmos.DrawCube(rightFootTarget.position, new Vector3(0.05f, 0.05f, 0.05f));
             }
         }
 
-        float last_yaw = 0.0f;
-
         Quaternion CorrectBodyYawAngle(Quaternion rot) {
-            float head_yaw = eyeTransform.localRotation.eulerAngles.y + 360.0f; // is the +360 necessary?
+            float head_yaw = eyeTransform.localRotation.eulerAngles.y;
+            float body_yaw = last_yaw;
 
-            float body_yaw = last_yaw + 360.0f;//rot.eulerAngles.y + 360.0f;
-
-            const float max_yaw_diff = 45;
-
+            // Get the difference in yaw between body and eyes/head
             float yaw_diff = Mathf.DeltaAngle(head_yaw, body_yaw);
 
-            yaw_diff = Mathf.Sign(yaw_diff) * Mathf.Max(0, Mathf.Abs(yaw_diff) - max_yaw_diff);
+            // Account for max_head_yaw
+            yaw_diff = Mathf.Sign(yaw_diff) * Mathf.Max(0, Mathf.Abs(yaw_diff) - max_head_yaw);
 
-            if(AVR_PlayerRig.Instance.MainCamera.transform.up.y <= 0.0f) yaw_diff = 0.0f;
+            // Calcualte the speed at which we'll adapt.
+            float yaw_adapt_speed = Mathf.Abs(yaw_diff) * Time.deltaTime * 2.0f;
 
-            {
-                //bodyTransform.rotation.eulerAngles
-
-                //float rot = Mathf.MoveTowardsAngle(body_yaw, head_yaw, 999) - body_yaw;
-                //bodyTransform.Rotate(0, Time.deltaTime * rot, 0, Space.Self);
-
-                float yaw_adapt_speed = Mathf.Abs(yaw_diff) * Time.deltaTime * 2.0f;
-
-                return Quaternion.Euler(
-                    bodyTransform.localRotation.eulerAngles.x,
-                    Mathf.MoveTowardsAngle(body_yaw, head_yaw, yaw_adapt_speed),
-                    bodyTransform.localRotation.eulerAngles.z
-                );
-            }
+            // Adapt the rotation to the resulting yaw
+            return Quaternion.Euler(
+                bodyTransform.localRotation.eulerAngles.x,
+                Mathf.MoveTowardsAngle(body_yaw, head_yaw, yaw_adapt_speed),
+                bodyTransform.localRotation.eulerAngles.z
+            );
         }
 
         void UpdateLeftFoot() {
-            Vector3 thPos = pivotTransform.position - pivotTransform.right * foot_offset_from_pivot;
+            Vector3 thPos = pivotTransform.position + new Vector3(-foot_offset_from_pivot.x, foot_offset_from_pivot.y, foot_offset_from_pivot.z);
 
-            leftFootTarget.forward = Vector3.Lerp(leftFootTarget.forward, pivotTransform.forward, foot_follow_speed * Time.deltaTime);
+            leftFootTarget.forward = Vector3.Lerp(leftFootTarget.forward, pivotTransform.forward - 0.5f * pivotTransform.right, foot_follow_speed * Time.deltaTime);
 
             leftFootTarget.position = Vector3.Lerp(leftFootTarget.position, thPos, foot_follow_speed * Time.deltaTime);
         }
 
         void UpdateRightFoot() {
-            Vector3 thPos = pivotTransform.position + pivotTransform.right * foot_offset_from_pivot;
+            Vector3 thPos = pivotTransform.position + foot_offset_from_pivot;
 
-            rightFootTarget.forward = Vector3.Lerp(rightFootTarget.forward, pivotTransform.forward, foot_follow_speed * Time.deltaTime);
+            rightFootTarget.forward = Vector3.Lerp(rightFootTarget.forward, pivotTransform.forward + 0.5f * pivotTransform.right, foot_follow_speed * Time.deltaTime);
 
             rightFootTarget.position = Vector3.Lerp(rightFootTarget.position, thPos, foot_follow_speed * Time.deltaTime);
         }
 
         void UpdatePivot() {
-            Vector3 r_origin = bodyTransform.position;//eyeTransform.position;
+            Vector3 r_origin = bodyTransform.position;
 
-            if (Physics.Raycast(r_origin, Vector3.down, out RaycastHit hit, 3.0f, collisionMask))
+            if (Physics.Raycast(r_origin, Vector3.down, out RaycastHit hit, 3.0f, groundCollisionMask))
             {
                 pivotTransform.position = hit.point;
             }

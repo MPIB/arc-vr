@@ -629,16 +629,21 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
-  offsetY: 0.5
-  offsetZ: 0
-  maxTorsionAngle: 45
-  armLength: 0.4
-  collisionMask:
+  body_inertia: 0.3
+  lean_blend_speed: 3.5
+  max_head_yaw: 30
+  max_head_pitch: 30
+  max_head_roll: 30
+  default_body_height: 0.9
+  max_body_height: 1.13
+  min_body_height: 0.46
+  local_eye_to_neck_offset: {x: 0, y: -0.1, z: -0.05}
+  neck_body_distance: 0.4
+  foot_offset_from_pivot: {x: 0.08, y: 0.05, z: 0}
+  foot_follow_speed: 3
+  groundCollisionMask:
     serializedVersion: 2
-    m_Bits: 1
-  foot_offset_from_pivot: 0.2
-  foot_spring_dist: 0.2
-  foot_follow_speed: 5
+    m_Bits: 0
 --- !u!1 &1105610044
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,7 +907,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3827808369406449854, guid: a6a2b45ad3abb3243bcbb8f092cb9d65, type: 3}
       propertyPath: tracking
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3827808369406449854, guid: a6a2b45ad3abb3243bcbb8f092cb9d65, type: 3}
       propertyPath: m_Enabled
