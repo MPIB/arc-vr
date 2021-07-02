@@ -10,14 +10,29 @@ using AVR.Core;
 namespace AVR.Avatar {
     public class AVR_PoseProvider : AVR.Core.AVR_Component
     {
-        public Vector3 lookAtPos => _eyeTransform.position + _eyeTransform.forward;
-        public Transform leftHandTarget => AVR_PlayerRig.Instance.leftHandController.transform;
-        public Transform rightHandTarget => AVR_PlayerRig.Instance.rightHandController.transform;
-        public Transform leftFootTarget => _leftFootTarget;
-        public Transform rightFootTarget => _rightFootTarget;
-        public Transform pivotTransform => _pivotTransform;
-        public Transform bodyTransform => _bodyTransform;
-        public Transform eyeTransform => _eyeTransform;
+        public Vector3 lookAtPos => eyeTransform.position + eyeTransform.forward;
+        public Vector3 leftHandPos => transform.InverseTransformPoint(leftHandTarget.position);
+        public Quaternion leftHandRot => leftHandTarget.rotation;
+        public Vector3 rightHandPos => transform.InverseTransformPoint(rightHandTarget.position);
+        public Quaternion rightHandRot => rightHandTarget.rotation;
+        public Vector3 leftFootPos => leftFootTarget.localPosition;
+        public Quaternion leftFootRot => leftFootTarget.rotation;
+        public Vector3 rightFootPos => rightFootTarget.localPosition;
+        public Quaternion rightFootRot => rightFootTarget.rotation;
+        public Vector3 pivotPos => pivotTransform.localPosition;
+        public Quaternion pivotRot => pivotTransform.rotation;
+        public Vector3 bodyPos => bodyTransform.localPosition;
+        public Quaternion bodyRot => bodyTransform.rotation;
+        public Vector3 eyePos => eyeTransform.localPosition;
+        public Quaternion eyeRot => eyeTransform.rotation;
+
+        protected Transform leftHandTarget => playerRig.leftHandController.transform;
+        protected Transform rightHandTarget => playerRig.rightHandController.transform;
+        protected Transform leftFootTarget;
+        protected Transform rightFootTarget;
+        protected Transform pivotTransform;
+        protected Transform bodyTransform;
+        protected Transform eyeTransform;
 
         [Range(0.0001f, 1.0f)]
         public float body_inertia = 0.3f;
@@ -50,12 +65,6 @@ namespace AVR.Avatar {
         [AVR.Core.Attributes.FoldoutGroup("Calibration")]
         public float foot_follow_speed = 3.0f;
 
-        protected Transform _leftFootTarget;
-        protected Transform _rightFootTarget;
-        protected Transform _pivotTransform;
-        protected Transform _bodyTransform;
-        protected Transform _eyeTransform;
-
         public LayerMask groundCollisionMask;
 
         private float lean_factor = 0.0f;
@@ -65,11 +74,11 @@ namespace AVR.Avatar {
         protected override void Awake()
         {
             base.Awake();
-            _leftFootTarget = AVR.Core.Utils.Misc.CreateEmptyGameObject("leftFootTarget", transform);
-            _rightFootTarget = AVR.Core.Utils.Misc.CreateEmptyGameObject("rightFootTarget", transform);
-            _pivotTransform = AVR.Core.Utils.Misc.CreateEmptyGameObject("pivotTarget", transform);
-            _bodyTransform = AVR.Core.Utils.Misc.CreateEmptyGameObject("bodyTarget", transform);
-            _eyeTransform = AVR.Core.Utils.Misc.CreateEmptyGameObject("eyeTransform", transform);
+            leftFootTarget = AVR.Core.Utils.Misc.CreateEmptyGameObject("leftFootTarget", transform);
+            rightFootTarget = AVR.Core.Utils.Misc.CreateEmptyGameObject("rightFootTarget", transform);
+            pivotTransform = AVR.Core.Utils.Misc.CreateEmptyGameObject("pivotTarget", transform);
+            bodyTransform = AVR.Core.Utils.Misc.CreateEmptyGameObject("bodyTarget", transform);
+            eyeTransform = AVR.Core.Utils.Misc.CreateEmptyGameObject("eyeTransform", transform);
         }
 
         Vector3 ApplyInertia(Vector3 current, Vector3 target) {
@@ -94,13 +103,13 @@ namespace AVR.Avatar {
 
 
                 // We apply inertia to the main cameras position, to avoid unnecessary micro-movement. Note: We do not apply this to the lookat-target, so the head rotation will be fully responsive.
-                _eyeTransform.position = ApplyInertia(_eyeTransform.position, playerRig.MainCamera.transform.position);
+                eyeTransform.position = ApplyInertia(eyeTransform.position, playerRig.MainCamera.transform.position);
 
                 // Here we apply clamping bounds on the pitch and roll angles of the head. We deal with yaw in a separate function.
                 //NOTE / TODO: This could lead to problems, as we use localRotation of the camera here. If, say, the camera was in a child object of the GenericXRDevice object, the local rotation would be zero.
                 Quaternion r = playerRig.MainCamera.transform.localRotation;
                 r = AVR.Core.Utils.Geom.ClampQuaternionRotation(r, new Vector3(max_head_pitch, 360, max_head_roll));
-                _eyeTransform.localRotation = r;
+                eyeTransform.localRotation = r;
             }
 
 

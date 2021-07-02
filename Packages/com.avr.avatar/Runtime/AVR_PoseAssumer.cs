@@ -75,7 +75,7 @@ namespace AVR.Avatar {
             //return;
             Vector3 headAng = headTransform.eulerAngles;
             Vector3 neckAng = neckTransform.eulerAngles;
-            float ang = Mathf.DeltaAngle(360.0f, provider.eyeTransform.eulerAngles.z);
+            float ang = Mathf.DeltaAngle(360.0f, provider.eyeRot.eulerAngles.z);
             if (switchAxisXZ)
             {
                 headAng.x = ang;
@@ -92,8 +92,8 @@ namespace AVR.Avatar {
 
         void Update() {
             const float framesmoothing = 0.1f;
-            momentum = Vector3.Lerp(momentum, (AVR.Core.AVR_PlayerRig.Instance.RigInWorldSpace - lastRigPos) / Time.deltaTime, framesmoothing);
-            lastRigPos = AVR.Core.AVR_PlayerRig.Instance.RigInWorldSpace;
+            momentum = Vector3.Lerp(momentum, (playerRig.RigInWorldSpace - lastRigPos) / Time.deltaTime, framesmoothing);
+            lastRigPos = playerRig.RigInWorldSpace;
         }
 
         protected void setWeights(int layerIndex) {
@@ -113,37 +113,33 @@ namespace AVR.Avatar {
         protected void setPosRot(int layerIndex) {
             float layerWeight = animator.GetLayerWeight(layerIndex);
 
-            if (provider.lookAtPos != null)
             {
                 animator.SetLookAtPosition(provider.lookAtPos);
             }
-            if (provider.bodyTransform != null)
             {
-                Vector3 defaultBodyPosition = AVR.Core.AVR_PlayerRig.Instance.FeetInWorldSpace + Vector3.up * 1.0f;
-                animator.bodyPosition = Vector3.Lerp(defaultBodyPosition, provider.bodyTransform.position, layerWeight);
-                animator.bodyRotation = provider.bodyTransform.rotation; //TODO: What about animation?
+                Vector3 defaultBodyPosition = playerRig.FeetInWorldSpace + Vector3.up * 1.0f;
+                animator.bodyPosition = Vector3.Lerp(defaultBodyPosition, provider.bodyPos, layerWeight);
+                animator.bodyRotation = provider.bodyRot; //TODO: What about animation?
             }
-            if (provider.leftHandTarget != null)
+            if(playerRig.leftHandController!=null)
             {
-                Vector3 pos = leftHandFilter == null ? provider.leftHandTarget.position : leftHandFilter.naturalize_point(provider.leftHandTarget.position);
+                Vector3 pos = leftHandFilter == null ? provider.leftHandPos : leftHandFilter.naturalize_point(provider.leftHandPos);
                 animator.SetIKPosition(AvatarIKGoal.LeftHand, pos);
-                animator.SetIKRotation(AvatarIKGoal.LeftHand, provider.leftHandTarget.rotation);
+                animator.SetIKRotation(AvatarIKGoal.LeftHand, provider.leftHandRot);
             }
-            if (provider.rightHandTarget != null)
+            if(playerRig.rightHandController != null)
             {
-                Vector3 pos = rightHandFilter == null ? provider.rightHandTarget.position : rightHandFilter.naturalize_point(provider.rightHandTarget.position);
+                Vector3 pos = rightHandFilter == null ? provider.rightHandPos : rightHandFilter.naturalize_point(provider.rightHandPos);
                 animator.SetIKPosition(AvatarIKGoal.RightHand, pos);
-                animator.SetIKRotation(AvatarIKGoal.RightHand, provider.rightHandTarget.rotation);
+                animator.SetIKRotation(AvatarIKGoal.RightHand, provider.rightHandRot);
             }
-            if (provider.leftFootTarget != null)
             {
-                animator.SetIKPosition(AvatarIKGoal.LeftFoot, provider.leftFootTarget.position + Vector3.up * 0.1f); //TODO: NOTE: we cheat a bit here to account for the offset of the foot bone
-                animator.SetIKRotation(AvatarIKGoal.LeftFoot, provider.leftFootTarget.rotation);
+                animator.SetIKPosition(AvatarIKGoal.LeftFoot, provider.leftFootPos);
+                animator.SetIKRotation(AvatarIKGoal.LeftFoot, provider.leftFootRot);
             }
-            if (provider.rightFootTarget != null)
             {
-                animator.SetIKPosition(AvatarIKGoal.RightFoot, provider.rightFootTarget.position + Vector3.up * 0.1f); //TODO: NOTE: we cheat a bit here to account for the offset of the foot bone
-                animator.SetIKRotation(AvatarIKGoal.RightFoot, provider.rightFootTarget.rotation);
+                animator.SetIKPosition(AvatarIKGoal.RightFoot, provider.rightFootPos);
+                animator.SetIKRotation(AvatarIKGoal.RightFoot, provider.rightFootRot);
             }
         }
 

@@ -70,19 +70,19 @@ namespace AVR.Motion {
                 stime = Time.time; // Restart cooldown timer
                 // Turn left
                 if (controller.inputManager.getEventStatus(turnDirection) < -0.5)
-                    AVR_PlayerRig.Instance.transform.Rotate(Vector3.up, -snp_rotationAmount, Space.Self);
+                    playerRig.transform.Rotate(Vector3.up, -snp_rotationAmount, Space.Self);
                 // Turn right
                 else if (controller.inputManager.getEventStatus(turnDirection) > 0.5)
-                    AVR_PlayerRig.Instance.transform.Rotate(Vector3.up, snp_rotationAmount, Space.Self);
+                    playerRig.transform.Rotate(Vector3.up, snp_rotationAmount, Space.Self);
             }
 
             else if(mode==turnMode.SMOOTH && controller.inputManager.getEventStatus(turnEvent)) {
                 // Turn left
                 if (controller.inputManager.getEventStatus(turnDirection) < -0.5)
-                    AVR_PlayerRig.Instance.transform.Rotate(Vector3.up, -smt_rotationSpeed * Time.deltaTime, Space.Self);
+                    playerRig.transform.Rotate(Vector3.up, -smt_rotationSpeed * Time.deltaTime, Space.Self);
                 // Turn right
                 else if (controller.inputManager.getEventStatus(turnDirection) > 0.5)
-                    AVR_PlayerRig.Instance.transform.Rotate(Vector3.up, smt_rotationSpeed * Time.deltaTime, Space.Self);
+                    playerRig.transform.Rotate(Vector3.up, smt_rotationSpeed * Time.deltaTime, Space.Self);
             }
         }
     }

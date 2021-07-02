@@ -132,7 +132,7 @@ namespace AVR.Motion {
         /// </summary>
         IEnumerator FadeDash()
         {
-            dash_origin = AVR_PlayerRig.Instance.FeetInWorldSpace;
+            dash_origin = playerRig.FeetInWorldSpace;
             dash_stime = Time.time;
             tp_in_progress = true;                                      // Set active flag
 
@@ -170,7 +170,7 @@ namespace AVR.Motion {
                     break;
                 }
                 case TeleportModes.DASH : {
-                    dash_origin = AVR_PlayerRig.Instance.FeetInWorldSpace;
+                    dash_origin = playerRig.FeetInWorldSpace;
                     tp_in_progress = true;
                     dash_stime = Time.time;
                     break;
@@ -187,7 +187,7 @@ namespace AVR.Motion {
         }
 
         void MoveRigToFeetLocation(Vector3 feet) {
-            AVR_PlayerRig.Instance.MoveRigToFeetPosition(feet);
+            playerRig.MoveRigToFeetPosition(feet);
         }
     }
 }

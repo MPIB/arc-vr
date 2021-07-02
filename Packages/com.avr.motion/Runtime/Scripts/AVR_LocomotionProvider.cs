@@ -77,7 +77,7 @@ namespace AVR.Motion {
 
         // Private vars:
         private System.Func<Vector2, Vector3> tF;
-        private CharacterController ch => AVR_PlayerRig.Instance.characterController;
+        private CharacterController ch => playerRig.characterController;
         private Vector3 movement = Vector3.zero;
 
         protected override void Awake()
@@ -110,11 +110,11 @@ namespace AVR.Motion {
                         break;
                     }
                     case DirectionType.RELATIVE_TO_RIG : {
-                        dir = AVR_PlayerRig.Instance.transform.TransformDirection(dir);
+                        dir = playerRig.transform.TransformDirection(dir);
                         break;
                     }
                     case DirectionType.RELATIVE_TO_HEADSET : {
-                        dir = AVR_PlayerRig.Instance.MainCamera.transform.TransformDirection(dir);
+                        dir = playerRig.MainCamera.transform.TransformDirection(dir);
                         break;
                     }
                 }

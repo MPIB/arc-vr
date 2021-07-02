@@ -3,3 +3,9 @@ editor = {
 		avatarModule = "Packages/com.avr.avatar/Editor/DefaultPrefabs/AvatarModule.prefab"
 	}
 }
+
+settings = {
+	calibration = {
+		player_height = 1.8
+	}
+}
