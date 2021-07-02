@@ -58,6 +58,14 @@ namespace AVR.Core {
         {
             get { return MainCamera.transform.position + MainCamera.transform.forward; }
         }
+        
+        /// <summary>
+        /// Returns a vector in the XZ plane that corresponds to the direction the player is facing with his body.
+        /// This is NOT equivalent with the facing direction of the camera. (For instance when the player bows or leans backward.)
+        /// </summary>
+        public Vector3 XZPlaneFacingDirection {
+            get { Vector3 tf = Vector3.Cross(-MainCamera.transform.right, Vector3.up); tf.y = 0; return tf; }
+        }
 
         /// <summary>
         /// Player camera in local space (relative to the AVR_PlayerRig object)

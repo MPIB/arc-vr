@@ -10,8 +10,8 @@ using AVR.Core;
 namespace AVR.Avatar {
     public class AVR_PoseProvider : AVR.Core.AVR_Component
     {
-        public Vector3 lookAtPos => AVR_PlayerRig.Instance.ViewPos;
-        public Transform eyeTransform => AVR_PlayerRig.Instance.MainCamera.transform;
+        public Vector3 lookAtPos => _eyeTransform.position + _eyeTransform.forward;
+        public Transform eyeTransform => _eyeTransform;//AVR_PlayerRig.Instance.MainCamera.transform;
         public Transform leftHandTarget => AVR_PlayerRig.Instance.leftHandController.transform;
         public Transform rightHandTarget => AVR_PlayerRig.Instance.rightHandController.transform;
         public Transform leftFootTarget => _leftFootTarget;
@@ -23,6 +23,8 @@ namespace AVR.Avatar {
         protected Transform _rightFootTarget;
         protected Transform _pivotTransform;
         protected Transform _bodyTransform;
+
+        protected Transform _eyeTransform;
 
 
         public float offsetY = 0.5f;
@@ -46,13 +48,15 @@ namespace AVR.Avatar {
             _rightFootTarget = AVR.Core.Utils.Misc.CreateEmptyGameObject("rightFootTarget", transform);
             _pivotTransform = AVR.Core.Utils.Misc.CreateEmptyGameObject("pivotTarget", transform);
             _bodyTransform = AVR.Core.Utils.Misc.CreateEmptyGameObject("bodyTarget", transform);
+            _eyeTransform = AVR.Core.Utils.Misc.CreateEmptyGameObject("eyeTransform", transform);
         }
 
-        void Update()
-        {
+        int c = 0;
+
+        void SetBody() {
             if (AVR.Core.AVR_PlayerRig.Instance.isLeaningForwards())
             {
-                bend_conf = Mathf.Lerp(bend_conf, 1.0f, Time.deltaTime * 5.0f);
+                //bend_conf = Mathf.Lerp(bend_conf, 1.0f, Time.deltaTime * 5.0f);
             }
             else
             {
@@ -60,6 +64,18 @@ namespace AVR.Avatar {
             }
 
             bend_conf *= AVR.Core.AVR_PlayerRig.Instance.isLeaningForwardsConfidence();
+
+
+
+            _eyeTransform.position = AVR_PlayerRig.Instance.MainCamera.transform.position;
+
+            float max_roll = 30.0f;
+            float max_pitch = 30.0f;
+
+            //NOTE / TODO: This could lead to problems, as we use localRotation of the camera here. If, say, the camera was in a child object of the GenericXRDevice object, the local rotation would be zero.
+            Quaternion r = playerRig.MainCamera.transform.localRotation;
+            r = AVR.Core.Utils.Geom.ClampQuaternionRotation(r, new Vector3(max_pitch, 360, max_roll));
+            _eyeTransform.localRotation = r;
 
 
 
@@ -78,7 +94,6 @@ namespace AVR.Avatar {
                 float uh = unsafe_pos.y - pivotTransform.position.y;
 
                 float lamb = Mathf.Clamp((val - sh) / (uh - sh), 0.0f, 1.0f);
-                Debug.Log(lamb + " : " + bend_conf);
 
                 unsafe_pos = Vector3.Lerp(stpos, unsafe_pos, lamb);
                 unsafe_rot = Quaternion.Lerp(stout, unsafe_rot, lamb);
@@ -110,8 +125,18 @@ namespace AVR.Avatar {
             //bodyTransform.rotation = Quaternion.Lerp(bodyTransform.rotation, ang, bend_conf);
         }
 
+        void Update()
+        {
+            SetBody();
+            last_yaw = Mathf.MoveTowardsAngle(last_yaw, bodyTransform.rotation.eulerAngles.y, 9999.0f);
+            //last_yaw = bodyTransform.rotation.eulerAngles.y;
+            UpdateLeftFoot();
+            UpdateRightFoot();
+            //BodyNeckYawSet();
+        }
+
         void GetStandingTransform(out Quaternion rot, out Vector3 pos) {
-            Vector3 local_eye_to_neck_offset = new Vector3(0.0f, -0.1f, -0.1f);
+            Vector3 local_eye_to_neck_offset = new Vector3(0.0f, -0.1f, -0.0f);
 
             Vector3 NeckPos = eyeTransform.position + eyeTransform.TransformVector(local_eye_to_neck_offset);
 
@@ -121,12 +146,12 @@ namespace AVR.Avatar {
 
             pos = NeckPos + neck_body_offset * global_down_pos;
 
-            rot = Quaternion.LookRotation(bodyTransform.forward, Vector3.up);
+            rot = CorrectBodyYawAngle(Quaternion.LookRotation(bodyTransform.forward, Vector3.up));
         }
 
         void GetBendTransform(out Quaternion rot, out Vector3 pos)
         {
-            Vector3 local_eye_to_neck_offset = new Vector3(0.0f, -0.1f, -0.1f);
+            Vector3 local_eye_to_neck_offset = new Vector3(0.0f, -0.1f, 0.0f);
 
             Vector3 NeckPos = eyeTransform.position + eyeTransform.TransformVector(local_eye_to_neck_offset);
 
@@ -136,13 +161,15 @@ namespace AVR.Avatar {
 
             pos = NeckPos + neck_body_offset * global_down_pos;
 
-            rot = Quaternion.LookRotation(eyeTransform.forward, NeckPos - pos);
+            rot = CorrectBodyYawAngle(Quaternion.LookRotation(eyeTransform.forward, NeckPos - pos));
         }
         
         void OnDrawGizmos() {
             if(Application.isPlaying) {
                 Gizmos.color = Color.green;
                 Gizmos.DrawSphere(eyeTransform.position, 0.1f);
+
+                Gizmos.DrawRay(eyeTransform.position, eyeTransform.forward);
 
                 Gizmos.color = Color.white;
 
@@ -159,16 +186,22 @@ namespace AVR.Avatar {
             }
         }
 
-        void BodyNeckYawSet() {
+        float last_yaw = 0.0f;
+
+        Quaternion CorrectBodyYawAngle(Quaternion rot) {
             float head_yaw = eyeTransform.localRotation.eulerAngles.y + 360.0f; // is the +360 necessary?
 
-            float body_yaw = bodyTransform.localRotation.eulerAngles.y + 360.0f;
+            float body_yaw = last_yaw + 360.0f;//rot.eulerAngles.y + 360.0f;
 
-            const float max_yaw_diff = 60;
+            const float max_yaw_diff = 45;
 
             float yaw_diff = Mathf.DeltaAngle(head_yaw, body_yaw);
 
-            if(Mathf.Abs(yaw_diff) > max_yaw_diff) {
+            yaw_diff = Mathf.Sign(yaw_diff) * Mathf.Max(0, Mathf.Abs(yaw_diff) - max_yaw_diff);
+
+            if(AVR_PlayerRig.Instance.MainCamera.transform.up.y <= 0.0f) yaw_diff = 0.0f;
+
+            {
                 //bodyTransform.rotation.eulerAngles
 
                 //float rot = Mathf.MoveTowardsAngle(body_yaw, head_yaw, 999) - body_yaw;
@@ -176,33 +209,11 @@ namespace AVR.Avatar {
 
                 float yaw_adapt_speed = Mathf.Abs(yaw_diff) * Time.deltaTime * 2.0f;
 
-                bodyTransform.localRotation = Quaternion.Euler(
+                return Quaternion.Euler(
                     bodyTransform.localRotation.eulerAngles.x,
                     Mathf.MoveTowardsAngle(body_yaw, head_yaw, yaw_adapt_speed),
                     bodyTransform.localRotation.eulerAngles.z
                 );
-            }
-        }
-
-        void HandPredicament(Transform guess) {
-            Vector3 lhl = eyeTransform.InverseTransformPoint(leftHandTarget.position);
-            Vector3 rhl = eyeTransform.InverseTransformPoint(rightHandTarget.position);
-            float lhc = Vector3.Cross(Vector3.left, lhl).magnitude;
-            float rhc = Vector3.Cross(Vector3.right, rhl).magnitude;
-
-            bool trigger = lhc > 0.1f && rhc > 0.1f && Mathf.Abs(lhc-rhc) < 1.2f;
-            trigger = true;
-            
-            if(trigger) {
-                float confidence = Vector3.Cross(rhl.normalized, eyeTransform.right).magnitude;
-
-                //guess.position = leftHandTarget.position + 0.5f * (rightHandTarget.position - leftHandTarget.position);
-                guess.position = Vector3.Lerp(guess.position, leftHandTarget.position + 0.5f * (rightHandTarget.position - leftHandTarget.position), confidence);
-                guess.position = new Vector3(guess.position.x, eyeTransform.position.y - offsetY, guess.position.z);
-                //guess.forward = Vector3.Lerp(guess.forward, Vector3.Lerp(leftHandTarget.forward, rightHandTarget.forward, 0.5f), confidence);
-                //guess.forward = eyeTransform.forward;
-                //guess.up = Vector3.up;
-                //guess.right = (rightHandTarget.position - leftHandTarget.position);
             }
         }
 
@@ -231,132 +242,6 @@ namespace AVR.Avatar {
             }
 
             pivotTransform.forward = eyeTransform.forward;
-        }
-
-        void SetBodyPosition() {
-            Vector3 bodyPos = bodyTransform.position;
-
-            // Linked with eye position.
-            bodyPos.y = eyeTransform.position.y - offsetY;
-            // Linked with "IK_Pivot" position.
-            bodyPos.x = pivotTransform.position.x;
-            bodyPos.z = pivotTransform.position.z;
-            // Set position.
-
-            bodyPos = eyeTransform.position - eyeTransform.up * offsetY;
-
-            //bodyTransform.rotation = eyeTransform.rotation;
-
-            bodyTransform.position = bodyPos;
-        }
-
-        void SetBodyRotation ()
-        {
-            // Get pivot
-            Transform pivot = pivotTransform;
-
-            // LEFT HAND:
-            // Get the location of the hand relative to the pivot
-            Vector3 l_hand_local = pivot.InverseTransformPoint(leftHandTarget.position);
-            // Angle between pivot.left and left hand (trigonometry)
-            float l_hand_angle = l_hand_local.x / armLength;
-            // ???
-            l_hand_angle = Mathf.LerpAngle(0.0f, maxTorsionAngle, l_hand_angle);
-
-            // RIGHT HAND: (Repeat same steps)
-            float r_hand_angle = Mathf.LerpAngle (0.0f, -maxTorsionAngle, -pivotTransform.InverseTransformPoint (rightHandTarget.position).x / armLength);
-
-
-
-
-            // ???
-            float handLinkageAng = l_hand_angle + r_hand_angle;
-
-
-
-
-            // HEAD
-            // body relative to pivot
-            Vector3 thisLocalPos = pivotTransform.InverseTransformPoint (bodyTransform.position);
-            // eyes realtive to pivot
-            Vector3 eyeLocalPos = pivotTransform.InverseTransformPoint (eyeTransform.position);
-
-            float deltaY = eyeLocalPos.y - thisLocalPos.y;
-            float deltaX = eyeLocalPos.x - thisLocalPos.x;
-            float deltaZ = eyeLocalPos.z - thisLocalPos.z - offsetZ;
-
-            // From trigonometry we know that tan(angX)=deltaY/deltaX, so this way we calculate angX.
-            float angX = Mathf.Atan2 (deltaY, deltaZ);
-            float angZ = Mathf.Atan2 (deltaY, deltaX);
-
-            // We transform into degs and subtract 90
-            angX = angX * Mathf.Rad2Deg - 90.0f;
-            angZ = angZ * Mathf.Rad2Deg - 90.0f;
-
-            // ???
-            float headLinkageAng = Mathf.DeltaAngle (0.0f, eyeTransform.localEulerAngles.y) * 0.25f;
-
-            // Set rotation.
-            Vector3 bodyAng = Vector3.zero;
-            bodyAng.x = -angX;
-            bodyAng.y = pivotTransform.localEulerAngles.y + handLinkageAng + headLinkageAng;
-            bodyAng.z = angZ;
-            bodyTransform.localEulerAngles = bodyAng;
-        }
-
-        Vector3 GetSomeBodyRotation()
-        {
-            // Get pivot
-            Transform pivot = pivotTransform;
-
-            // LEFT HAND:
-            // Get the location of the hand relative to the pivot
-            Vector3 l_hand_local = pivot.InverseTransformPoint(leftHandTarget.position);
-            // Angle between pivot.left and left hand (trigonometry)
-            float l_hand_angle = l_hand_local.x / armLength;
-            // ???
-            l_hand_angle = Mathf.LerpAngle(0.0f, maxTorsionAngle, l_hand_angle);
-
-            // RIGHT HAND: (Repeat same steps)
-            float r_hand_angle = Mathf.LerpAngle(0.0f, -maxTorsionAngle, -pivotTransform.InverseTransformPoint(rightHandTarget.position).x / armLength);
-
-
-
-
-            // ???
-            float handLinkageAng = l_hand_angle + r_hand_angle;
-
-
-
-
-            // HEAD
-            // body relative to pivot
-            Vector3 thisLocalPos = pivotTransform.InverseTransformPoint(bodyTransform.position);
-            // eyes realtive to pivot
-            Vector3 eyeLocalPos = pivotTransform.InverseTransformPoint(eyeTransform.position);
-
-            float deltaY = eyeLocalPos.y - thisLocalPos.y;
-            float deltaX = eyeLocalPos.x - thisLocalPos.x;
-            float deltaZ = eyeLocalPos.z - thisLocalPos.z - offsetZ;
-
-            // From trigonometry we know that tan(angX)=deltaY/deltaX, so this way we calculate angX.
-            float angX = Mathf.Atan2(deltaY, deltaZ);
-            float angZ = Mathf.Atan2(deltaY, deltaX);
-
-            // We transform into degs and subtract 90
-            angX = angX * Mathf.Rad2Deg - 90.0f;
-            angZ = angZ * Mathf.Rad2Deg - 90.0f;
-
-            // ???
-            float headLinkageAng = Mathf.DeltaAngle(0.0f, eyeTransform.localEulerAngles.y) * 0.25f;
-
-            // Set rotation.
-            Vector3 bodyAng = Vector3.zero;
-            bodyAng.x = -angX;
-            bodyAng.y = pivotTransform.localEulerAngles.y + handLinkageAng + headLinkageAng;
-            bodyAng.z = angZ;
-            //bodyTransform.localEulerAngles = bodyAng;
-            return bodyAng;
         }
     }
 }

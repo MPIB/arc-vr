@@ -9,16 +9,16 @@ namespace AVR.Core {
     [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_core_1_1_a_v_r___component.html")]
     public class AVR_Component : AVR_Behaviour
     {
-        /// <summar> Events called when this component awakes. </summary>
+        /// <summary> Events called when this component awakes. </summary>
         [HideInInspector] public UnityEngine.Events.UnityEvent onAwake;
 
-        /// <summar> Events called when this component starts. </summary>
+        /// <summary> Events called when this component starts. </summary>
         [HideInInspector] public UnityEngine.Events.UnityEvent onStart;
 
-        /// <summar> Events called when this component is enabled. </summary>
+        /// <summary> Events called when this component is enabled. </summary>
         [HideInInspector] public UnityEngine.Events.UnityEvent onEnable;
 
-        /// <summar> Events called when this component is disabled. </summary>
+        /// <summary> Events called when this component is disabled. </summary>
         [HideInInspector] public UnityEngine.Events.UnityEvent onDisable;
 
         protected virtual void Awake() {
@@ -39,23 +39,23 @@ namespace AVR.Core {
 
 #if AVR_NET
 
-        /// <summar> False if this component should be destroyed on a remote server. </summary>
+        /// <summary> False if this component should be destroyed on a remote server. </summary>
         [HideInInspector]
         public bool KeepOnRemote = false;
 
-        /// <summar> True if this component should have a different layer on a remote server. </summary>
+        /// <summary> True if this component should have a different layer on a remote server. </summary>
         [HideInInspector]
         public bool ChangeLayerOnRemote = false;
 
-        /// <summar> True if children should be included on a remote layer change. </summary>
+        /// <summary> True if children should be included on a remote layer change. </summary>
         [HideInInspector]
         public bool ChangeLayerOnRemote_IncludeChildren = false;
 
-        /// <summar> Layer an object should change to if on a remote server. (See ChangeLayerOnRemote) </summary>
+        /// <summary> Layer an object should change to if on a remote server. (See ChangeLayerOnRemote) </summary>
         [HideInInspector]
         public int RemoteLayer = 0;
 
-        /// <summar> Called when this component starts/spawns on a remote host. </summary>
+        /// <summary> Called when this component starts/spawns on a remote host. </summary>
         public void OnRemote() {
             if (ChangeLayerOnRemote) {
                 gameObject.layer = RemoteLayer;

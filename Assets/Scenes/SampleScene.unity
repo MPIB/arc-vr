@@ -629,11 +629,6 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
-  rig: {fileID: 0}
-  leftFootTarget: {fileID: 0}
-  rightFootTarget: {fileID: 0}
-  pivotTransform: {fileID: 0}
-  bodyTransform: {fileID: 0}
   offsetY: 0.5
   offsetZ: 0
   maxTorsionAngle: 45
