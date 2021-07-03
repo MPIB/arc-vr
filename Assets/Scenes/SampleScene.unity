@@ -2013,6 +2013,9 @@ MonoBehaviour:
   headTransform: {fileID: 3044430112826797404}
   neckTransform: {fileID: 5438031033841814548}
   switchAxisXZ: 1
+  autoLayerBlend: 1
+  speedAnimationParameter: Speed
+  layerBlend_speed: 10
   lookAtWeight_body: 0
   lookAtWeight_head: 1
   lookAtWeight_eyes: 0
@@ -2022,8 +2025,6 @@ MonoBehaviour:
   HandRotWeight: 0.5
   FootPosWeight: 1
   FootRotWeight: 1
-  rightHandFilter: {fileID: 0}
-  leftHandFilter: {fileID: 0}
 --- !u!95 &4435663154663399161
 Animator:
   serializedVersion: 3
@@ -2034,7 +2035,7 @@ Animator:
   m_GameObject: {fileID: 5669830948855695346}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
-  m_Controller: {fileID: 9100000, guid: 4293f2027a918b64bbd586bf053a47a2, type: 2}
+  m_Controller: {fileID: 9100000, guid: c98b4cc1b16f1da428dce601c3808fee, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2922,7 +2923,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5669830948855695346}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

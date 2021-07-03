@@ -37,14 +37,11 @@ namespace AVR.Avatar {
                 // Get a weighted average of reference points that are closest to this location
                 Vector3 closest = get_weighted_average_reference(cpos);
 
-                // Transform back into worlspace
-                closest = AVR.Core.AVR_PlayerRig.Instance.MainCamera.transform.TransformPoint(closest);
-
                 // Smooth over time
                 outpos = Vector3.Lerp(outpos, closest, Time.deltaTime * smoothing_speed);
 
                 // Interpolate by given value
-                return Vector3.Lerp(wpos, outpos, interp);
+                return AVR.Core.AVR_PlayerRig.Instance.MainCamera.transform.TransformPoint(Vector3.Lerp(wpos, outpos, interp));
             }
             catch(System.Exception) {
                 AVR_DevConsole.cerror("PoseNaturalizationFilter failed! Is AVR_PlayerRig.Instance set correctly?", "AVR_PoseNaturalizationFilter");

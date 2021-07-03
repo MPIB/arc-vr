@@ -219,6 +219,7 @@ namespace AVR.Avatar {
 
                 Gizmos.DrawLine(bodyTransform.position, pivotTransform.position);
                 Gizmos.DrawCube(pivotTransform.position, new Vector3(0.05f, 0.05f, 0.05f));
+                Gizmos.DrawRay(pivotTransform.position, pivotTransform.forward);
 
                 Gizmos.color = Color.red;
                 Gizmos.DrawLine(bodyTransform.position, leftFootTarget.position);
@@ -268,12 +269,12 @@ namespace AVR.Avatar {
         void UpdatePivot() {
             Vector3 r_origin = bodyTransform.position;
 
-            if (Physics.Raycast(r_origin, Vector3.down, out RaycastHit hit, 3.0f, groundCollisionMask))
+            if (Physics.Raycast(r_origin, Vector3.down, out RaycastHit hit, 2.0f, groundCollisionMask))
             {
                 pivotTransform.position = hit.point;
             }
 
-            pivotTransform.forward = eyeTransform.forward;
+            pivotTransform.forward = playerRig.XZPlaneFacingDirection;
         }
     }
 }

@@ -10,6 +10,15 @@ namespace AVR.Core {
     public class AVR_PlayerRig : AVR_SingletonComponent<AVR_PlayerRig>
     {
         /// <summary>
+        /// Average motion of the players feet over the last 0.5s.
+        /// </summary>
+        public Vector3 AvgMotion {
+            get { return _motion; }
+        }
+        private Vector3 _motion = Vector3.zero;
+        private Vector3 _lastFPos;
+
+        /// <summary>
         /// Camera that represents the HMD
         /// </summary>
         public Camera MainCamera;
@@ -64,7 +73,7 @@ namespace AVR.Core {
         /// This is NOT equivalent with the facing direction of the camera. (For instance when the player bows or leans backward.)
         /// </summary>
         public Vector3 XZPlaneFacingDirection {
-            get { Vector3 tf = Vector3.Cross(-MainCamera.transform.right, Vector3.up); tf.y = 0; return tf; }
+            get { Vector3 tf = Vector3.Cross(MainCamera.transform.right, Vector3.up); tf.y = 0; return tf; }
         }
 
         /// <summary>
@@ -98,22 +107,25 @@ namespace AVR.Core {
         /// <summary>
         /// Instantly moves the PlayerRig so that the players feet (anchor) end up at world coordinates 'pos'
         /// </summary>
-        public void MoveRigToFeetPosition(Vector3 pos) {
+        public void MoveRigToFeetPosition(Vector3 pos, bool affectMotion=true) {
             transform.position = (pos - FeetInRigSpace);
+            if(!affectMotion) _lastFPos = pos;
         }
 
         /// <summary>
         /// Instantly moves the PlayerRig to a given location
         /// </summary>
-        public void MoveRigToPosition(Vector3 pos) {
+        public void MoveRigToPosition(Vector3 pos, bool affectMotion=true) {
             transform.position = pos;
+            if(!affectMotion) _lastFPos = FeetInWorldSpace;
         }
 
         /// <summary>
         /// Instantly moves the PlayerRig so that the camera ends up at world coordinates 'pos'
         /// </summary>
-        public void MoveRigToCameraPosition(Vector3 pos) {
+        public void MoveRigToCameraPosition(Vector3 pos, bool affectMotion=true) {
             transform.position += (pos - CameraInWorldSpace);
+            if(!affectMotion) _lastFPos = FeetInWorldSpace;
         }
 
         /// <summary>
@@ -169,6 +181,11 @@ namespace AVR.Core {
 
             if(!MainCamera) MainCamera = Camera.main;
             if(!MainCamera) AVR_DevConsole.cerror("The MainCamera property is not set and there is no Camera.main component in the scene!", this);
+        }
+
+        protected void LateUpdate() {
+            Vector3.SmoothDamp(_motion, (FeetInWorldSpace - _lastFPos) / Time.deltaTime, ref _motion, 0.5f);
+            _lastFPos = FeetInWorldSpace;
         }
         
         protected void Update() {

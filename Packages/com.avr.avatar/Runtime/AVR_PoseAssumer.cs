@@ -18,8 +18,12 @@ namespace AVR.Avatar {
         private Animator animator;
         private bool IKPass_is_enabled = false;
 
-        private Vector3 lastRigPos = Vector3.zero;
-        private Vector3 momentum = Vector3.zero;
+        public bool autoLayerBlend = false;
+        [AVR.Core.Attributes.ConditionalHideInInspector("autoLayerBlend", true)]
+        public string speedAnimationParameter = "Speed";
+        [AVR.Core.Attributes.ConditionalHideInInspector("autoLayerBlend", true)]
+        public float layerBlend_speed = 5.0f;
+        private float layerBlend = 1.0f;
 
         [AVR.Core.Attributes.FoldoutGroup("Weights")]
         public float lookAtWeight_body = 0.0f;
@@ -59,15 +63,6 @@ namespace AVR.Avatar {
 
         void LateUpdate() {
             // Head linkage
-            //Vector3 head_angle = headTransform.localRotation.eulerAngles;
-            
-            //head_angle = new Vector3(head_angle.x%360.0f, head_angle.y%360.0f, head_angle.z%360.0f);
-            //head_angle = new Vector3(Mathf.Clamp(head_angle.x, -160, 115), Mathf.Clamp(head_angle.y, -160, 160), head_angle.z);
-
-            //headTransform.localRotation = Quaternion.Euler(head_angle);
-            //headTransform.LookAt(provider.leftFootTarget.position);
-
-            //return;
             Vector3 headAng = headTransform.eulerAngles;
             Vector3 neckAng = neckTransform.eulerAngles;
             float ang = Mathf.DeltaAngle(360.0f, provider.eyeRot.eulerAngles.z);
@@ -86,9 +81,9 @@ namespace AVR.Avatar {
         }
 
         void Update() {
-            const float framesmoothing = 0.1f;
-            momentum = Vector3.Lerp(momentum, (playerRig.RigInWorldSpace - lastRigPos) / Time.deltaTime, framesmoothing);
-            lastRigPos = playerRig.RigInWorldSpace;
+            if(autoLayerBlend) {
+                layerBlend = Mathf.Lerp(layerBlend, Mathf.SmoothStep(1.0f, 0.0f, playerRig.AvgMotion.magnitude), layerBlend_speed * Time.deltaTime);
+            }
         }
 
         protected void setWeights(int layerIndex) {
@@ -112,27 +107,26 @@ namespace AVR.Avatar {
                 animator.SetLookAtPosition(transform.TransformPoint(provider.lookAtPos));
             }
             {
-                //Vector3 defaultBodyPosition = playerRig.FeetInWorldSpace + Vector3.up * 1.0f;
-                animator.bodyPosition = transform.InverseTransformPoint(provider.bodyPos);//Vector3.Lerp(defaultBodyPosition, provider.bodyPos, layerWeight);
-                animator.bodyRotation = provider.bodyRot; //TODO: What about animation?
+                animator.bodyPosition = transform.TransformPoint(provider.bodyPos);
+                animator.bodyRotation = transform.rotation * provider.bodyRot;
             }
             if(playerRig.leftHandController!=null)
             {
                 animator.SetIKPosition(AvatarIKGoal.LeftHand, transform.TransformPoint(provider.leftHandPos));
-                animator.SetIKRotation(AvatarIKGoal.LeftHand, provider.leftHandRot);
+                animator.SetIKRotation(AvatarIKGoal.LeftHand, transform.rotation * provider.leftHandRot);
             }
             if(playerRig.rightHandController != null)
             {
                 animator.SetIKPosition(AvatarIKGoal.RightHand, transform.TransformPoint(provider.rightHandPos));
-                animator.SetIKRotation(AvatarIKGoal.RightHand, provider.rightHandRot);
+                animator.SetIKRotation(AvatarIKGoal.RightHand, transform.rotation * provider.rightHandRot);
             }
             {
                 animator.SetIKPosition(AvatarIKGoal.LeftFoot, transform.TransformPoint(provider.leftFootPos));
-                animator.SetIKRotation(AvatarIKGoal.LeftFoot, provider.leftFootRot);
+                animator.SetIKRotation(AvatarIKGoal.LeftFoot, transform.rotation * provider.leftFootRot);
             }
             {
                 animator.SetIKPosition(AvatarIKGoal.RightFoot, transform.TransformPoint(provider.rightFootPos));
-                animator.SetIKRotation(AvatarIKGoal.RightFoot, provider.rightFootRot);
+                animator.SetIKRotation(AvatarIKGoal.RightFoot, transform.rotation * provider.rightFootRot);
             }
         }
 
@@ -140,14 +134,23 @@ namespace AVR.Avatar {
         {
             IKPass_is_enabled = true;
 
+            setPosRot(layerIndex);
+
             // This paragraph handles everything regarding basic movement animations and stuff
-            //transform.LookAt(transform.position + momentum, Vector3.up);
-            
-            //animator.SetFloat("Speed", momentum.magnitude);
-            //animator.SetLayerWeight(layerIndex, 1.0f - Mathf.Clamp(momentum.magnitude, 0.5f, 1.0f));
+            if(autoLayerBlend) {   
+                animator.SetFloat(speedAnimationParameter, playerRig.AvgMotion.magnitude);
+                animator.SetLayerWeight(layerIndex, layerBlend);
+                Vector3 defaultBodyPos = transform.TransformPoint(provider.pivotPos + Vector3.up * 1.0f);
+                animator.bodyPosition = Vector3.Lerp(defaultBodyPos, animator.bodyPosition, layerBlend);
+                animator.bodyRotation = Quaternion.Lerp(
+                    // The 0.0001*forward is to avoid quaternion zero-look errors. These don't actually break anything, but they do spam the debug output.
+                    transform.rotation * Quaternion.LookRotation(playerRig.AvgMotion + 0.0001f*Vector3.forward, Vector3.up),
+                    animator.bodyRotation,
+                    layerBlend
+                );
+            }
 
             setWeights(layerIndex);
-            setPosRot(layerIndex);
         }
     }
 }
