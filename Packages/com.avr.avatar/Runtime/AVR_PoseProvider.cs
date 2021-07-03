@@ -10,10 +10,8 @@ using AVR.Core;
 namespace AVR.Avatar {
     public class AVR_PoseProvider : AVR.Core.AVR_Component
     {
-        public Vector3 lookAtPos => eyeTransform.position + eyeTransform.forward;
-        public Vector3 leftHandPos => transform.InverseTransformPoint(leftHandTarget.position);
+        public Vector3 lookAtPos => eyeTransform.localPosition + transform.InverseTransformDirection(eyeTransform.forward);
         public Quaternion leftHandRot => leftHandTarget.rotation;
-        public Vector3 rightHandPos => transform.InverseTransformPoint(rightHandTarget.position);
         public Quaternion rightHandRot => rightHandTarget.rotation;
         public Vector3 leftFootPos => leftFootTarget.localPosition;
         public Quaternion leftFootRot => leftFootTarget.rotation;
@@ -25,6 +23,25 @@ namespace AVR.Avatar {
         public Quaternion bodyRot => bodyTransform.rotation;
         public Vector3 eyePos => eyeTransform.localPosition;
         public Quaternion eyeRot => eyeTransform.rotation;
+        public Vector3 leftHandPos {
+            get
+            {
+                if (leftHandFilter) return transform.InverseTransformPoint(leftHandFilter.naturalize_point(leftHandTarget.position));
+                return transform.InverseTransformPoint(leftHandTarget.position);
+            }
+        }
+        public Vector3 rightHandPos {
+            get
+            {
+                if (rightHandFilter) return transform.InverseTransformPoint(rightHandFilter.naturalize_point(rightHandTarget.position));
+                return transform.InverseTransformPoint(rightHandTarget.position);
+            }
+        }
+
+        [AVR.Core.Attributes.FoldoutGroup("Filters")]
+        public AVR_PoseNaturalizationFilter leftHandFilter;
+        [AVR.Core.Attributes.FoldoutGroup("Filters")]
+        public AVR_PoseNaturalizationFilter rightHandFilter;
 
         protected Transform leftHandTarget => playerRig.leftHandController.transform;
         protected Transform rightHandTarget => playerRig.rightHandController.transform;

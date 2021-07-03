@@ -40,11 +40,6 @@ namespace AVR.Avatar {
         [AVR.Core.Attributes.FoldoutGroup("Weights")]
         public float FootRotWeight = 1.0f;
 
-        [AVR.Core.Attributes.FoldoutGroup("Filters")]
-        public AVR_PoseNaturalizationFilter rightHandFilter;
-        [AVR.Core.Attributes.FoldoutGroup("Filters")]
-        public AVR_PoseNaturalizationFilter leftHandFilter;
-
         protected override void Start() {
             base.Start();
             animator = GetComponent<Animator>();
@@ -114,31 +109,29 @@ namespace AVR.Avatar {
             float layerWeight = animator.GetLayerWeight(layerIndex);
 
             {
-                animator.SetLookAtPosition(provider.lookAtPos);
+                animator.SetLookAtPosition(transform.TransformPoint(provider.lookAtPos));
             }
             {
-                Vector3 defaultBodyPosition = playerRig.FeetInWorldSpace + Vector3.up * 1.0f;
-                animator.bodyPosition = Vector3.Lerp(defaultBodyPosition, provider.bodyPos, layerWeight);
+                //Vector3 defaultBodyPosition = playerRig.FeetInWorldSpace + Vector3.up * 1.0f;
+                animator.bodyPosition = transform.InverseTransformPoint(provider.bodyPos);//Vector3.Lerp(defaultBodyPosition, provider.bodyPos, layerWeight);
                 animator.bodyRotation = provider.bodyRot; //TODO: What about animation?
             }
             if(playerRig.leftHandController!=null)
             {
-                Vector3 pos = leftHandFilter == null ? provider.leftHandPos : leftHandFilter.naturalize_point(provider.leftHandPos);
-                animator.SetIKPosition(AvatarIKGoal.LeftHand, pos);
+                animator.SetIKPosition(AvatarIKGoal.LeftHand, transform.TransformPoint(provider.leftHandPos));
                 animator.SetIKRotation(AvatarIKGoal.LeftHand, provider.leftHandRot);
             }
             if(playerRig.rightHandController != null)
             {
-                Vector3 pos = rightHandFilter == null ? provider.rightHandPos : rightHandFilter.naturalize_point(provider.rightHandPos);
-                animator.SetIKPosition(AvatarIKGoal.RightHand, pos);
+                animator.SetIKPosition(AvatarIKGoal.RightHand, transform.TransformPoint(provider.rightHandPos));
                 animator.SetIKRotation(AvatarIKGoal.RightHand, provider.rightHandRot);
             }
             {
-                animator.SetIKPosition(AvatarIKGoal.LeftFoot, provider.leftFootPos);
+                animator.SetIKPosition(AvatarIKGoal.LeftFoot, transform.TransformPoint(provider.leftFootPos));
                 animator.SetIKRotation(AvatarIKGoal.LeftFoot, provider.leftFootRot);
             }
             {
-                animator.SetIKPosition(AvatarIKGoal.RightFoot, provider.rightFootPos);
+                animator.SetIKPosition(AvatarIKGoal.RightFoot, transform.TransformPoint(provider.rightFootPos));
                 animator.SetIKRotation(AvatarIKGoal.RightFoot, provider.rightFootRot);
             }
         }

@@ -505,6 +505,8 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
+  leftHandFilter: {fileID: 11400000, guid: 50ec9aaea25c7e4488933ba25841d9c1, type: 2}
+  rightHandFilter: {fileID: 11400000, guid: 5e7852ab528cf7049a2564ce67ec972b, type: 2}
   body_inertia: 0.3
   lean_blend_speed: 3.5
   max_head_yaw: 30
@@ -519,7 +521,7 @@ MonoBehaviour:
   foot_follow_speed: 3
   groundCollisionMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
 --- !u!1 &1105610044
 GameObject:
   m_ObjectHideFlags: 0
