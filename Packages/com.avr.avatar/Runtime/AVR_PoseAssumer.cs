@@ -7,6 +7,7 @@ using UnityEditor;
 
 namespace AVR.Avatar {
     [RequireComponent(typeof(Animator))]
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_avatar_1_1_a_v_r___pose_assumer.html")]
     public class AVR_PoseAssumer : AVR.Core.AVR_Component
     {
         public AVR_PoseProvider provider;

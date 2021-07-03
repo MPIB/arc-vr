@@ -10,8 +10,13 @@ var searchData=
   ['fields',['fields',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___click_drag_wheel.html#a432bb1bde1fa585278c2e2dc96933ba5',1,'AVR::UI::Utils::AVRUI_ClickDragWheel']]],
   ['file',['file',['../class_a_v_r_1_1_core_1_1_a_v_r___logger.html#a709f27989387e54ba979ddff58c2b574',1,'AVR::Core::AVR_Logger']]],
   ['filepath',['filepath',['../class_a_v_r_1_1_core_1_1_a_v_r___logger.html#a31b92cc1ca1525055b097ec4b3f9727d',1,'AVR::Core::AVR_Logger']]],
+  ['fillamount',['fillAmount',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html#a881c12d7a79fb9b06ab285ca72102721',1,'AVR.UI.Utils.AVR_CircularLoadingBar.fillAmount()'],['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar___t_m_p.html#ab46cb3f6fae18d52766108943c5fc53f',1,'AVR.UI.Utils.AVR_CircularLoadingBar_TMP.fillAmount()']]],
   ['filter',['filter',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___player_rig_wizard___hook___left_controller.html#affe7b135307b8bae3a14a46a63370a5a',1,'AVR.UEditor.Core.AVR_PlayerRigWizard_Hook_LeftController.filter()'],['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___player_rig_wizard___hook___right_controller.html#a66b44c79f3558ed378eb6fe39e11f168',1,'AVR.UEditor.Core.AVR_PlayerRigWizard_Hook_RightController.filter()'],['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_ray.html#a17cd3134c6a5c4438c07fffe71010d37',1,'AVR.Motion.AVR_MovementRay.filter()']]],
-  ['foldout',['foldout',['../class_a_v_r_1_1_core_1_1_settings_tree_node.html#a9dcd8c091b3bd8611360c33cc09c8cb0',1,'AVR::Core::SettingsTreeNode']]],
+  ['foldout',['foldout',['../class_a_v_r_1_1_core_1_1_attributes_1_1_foldout_property_drawer.html#a3e4bf2230e40827f192f031034fac1ad',1,'AVR.Core.Attributes.FoldoutPropertyDrawer.foldout()'],['../class_a_v_r_1_1_core_1_1_settings_tree_node.html#a9dcd8c091b3bd8611360c33cc09c8cb0',1,'AVR.Core.SettingsTreeNode.foldout()']]],
+  ['foot_5ffollow_5fspeed',['foot_follow_speed',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider.html#ac76c84ae5b0fce84277a089c0947854f',1,'AVR::Avatar::AVR_PoseProvider']]],
+  ['foot_5foffset_5ffrom_5fpivot',['foot_offset_from_pivot',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider.html#a1146e070153f7bdc3a04bae02b29dfd7',1,'AVR::Avatar::AVR_PoseProvider']]],
+  ['footposweight',['FootPosWeight',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_assumer.html#a35f275faf06830e1d88315b9ebc11cb2',1,'AVR::Avatar::AVR_PoseAssumer']]],
+  ['footrotweight',['FootRotWeight',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_assumer.html#aeaa0ee658a28efd5a59f9677e35229b7',1,'AVR::Avatar::AVR_PoseAssumer']]],
   ['fullname',['fullname',['../class_a_v_r_1_1_core_1_1_settings_tree_node.html#a167877782c06209275e5786f1011356e',1,'AVR::Core::SettingsTreeNode']]],
   ['func',['func',['../class_a_v_r_1_1_core_1_1_a_v_r___dev_console_1_1_a_v_r___console_command.html#a24b7f5128a16ee0f324ab551e0b25ce6',1,'AVR::Core::AVR_DevConsole::AVR_ConsoleCommand']]]
 ];

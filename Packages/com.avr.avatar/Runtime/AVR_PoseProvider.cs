@@ -8,6 +8,7 @@ using UnityEditor;
 using AVR.Core;
 
 namespace AVR.Avatar {
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider.html")]
     public class AVR_PoseProvider : AVR.Core.AVR_Component
     {
         public Vector3 lookAtPos => eyeTransform.localPosition + transform.InverseTransformDirection(eyeTransform.forward);

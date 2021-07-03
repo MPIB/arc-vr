@@ -10,5 +10,8 @@ var searchData=
   ['is_5fidentifier',['is_identifier',['../class_a_v_r_1_1_core_1_1_a_v_r___settings_parser.html#a61fc96d3ad77092f4b219680577db5eb',1,'AVR::Core::AVR_SettingsParser']]],
   ['is_5fleaf',['is_leaf',['../class_a_v_r_1_1_core_1_1_settings_tree_node.html#af17977ad56f6b260f050acd0a675f7d5',1,'AVR::Core::SettingsTreeNode']]],
   ['isbusy',['isBusy',['../class_a_v_r_1_1_core_1_1_a_v_r___effect.html#ac5c527ad07d79b72bf446aae85da088b',1,'AVR.Core.AVR_Effect.isBusy()'],['../class_a_v_r_1_1_core_1_1_a_v_r___camera_fade.html#a7d8bbebe9087758fe0cc1a3415f6d91e',1,'AVR.Core.AVR_CameraFade.isBusy()']]],
+  ['iscrouching',['isCrouching',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html#aeb9807f82da2da2a2339f25e50105d60',1,'AVR::Core::AVR_PlayerRig']]],
+  ['isleaningforwards',['isLeaningForwards',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html#ad61aa28080255f44cfbb92193ec5e45e',1,'AVR::Core::AVR_PlayerRig']]],
+  ['isleaningforwardsconfidence',['isLeaningForwardsConfidence',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html#a1d9bd1fa87a9bdd256b36e5955774281',1,'AVR::Core::AVR_PlayerRig']]],
   ['isvalidtplocation',['isValidTpLocation',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_restrictor.html#a543c75ea4a0c13f4f03277763eb38f24',1,'AVR::Motion::AVR_MovementRestrictor']]]
 ];

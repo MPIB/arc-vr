@@ -11,5 +11,8 @@ var searchData=
   ['eventcamera',['eventCamera',['../class_a_v_r_1_1_u_i_1_1_v_r_input.html#a2986969d113c63da093813c46ec35f11',1,'AVR::UI::VRInput']]],
   ['eventssettings_5fbutton',['EventsSettings_Button',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___editor_utility.html#af58b1e3c17ca9835b38eff9c157e70fd',1,'AVR::UEditor::Core::AVR_EditorUtility']]],
   ['execute_5fevent',['Execute_event',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html#a3f156bb936cd9f8b36314213089f684e',1,'AVR::Motion::AVR_MovementProvider']]],
-  ['experiment',['experiment',['../class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a3a57464b1c5af7a4938aa69ba8512537',1,'AVR::Core::AVR_TrialExperiment']]]
+  ['experiment',['experiment',['../class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a3a57464b1c5af7a4938aa69ba8512537',1,'AVR::Core::AVR_TrialExperiment']]],
+  ['eyepos',['eyePos',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider.html#a3b007a7fd84ccadc6a1e25bc1ea3f640',1,'AVR::Avatar::AVR_PoseProvider']]],
+  ['eyerot',['eyeRot',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider.html#a837f3c0e386cba4796cd86c47edcb7b7',1,'AVR::Avatar::AVR_PoseProvider']]],
+  ['eyetransform',['eyeTransform',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider.html#afc922c5b39eaf2fd71707ad6eeb6c40d',1,'AVR::Avatar::AVR_PoseProvider']]]
 ];
