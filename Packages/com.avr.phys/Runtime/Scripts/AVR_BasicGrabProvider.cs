@@ -8,13 +8,8 @@ namespace AVR.Phys {
     /// <summary>
     /// Simplest GrabProvider. Grabbed objects will move their center (obj.transform.position) towards the respective grabpoint.
     /// </summary>
-    public class AVR_BasicGrabProvider : MonoBehaviour
+    public class AVR_BasicGrabProvider : AVR_ControllerComponent
     {
-        /// <summary>
-        /// Controller this grabprovider belongs to. Will be set automatically to the first controller in parent transforms if null.
-        /// </summary>
-        public AVR_Controller controller;
-
         /// <summary>
         /// Event that *commences* a grab. (Such as ONTRIGGERDOWN)
         /// </summary>
@@ -69,8 +64,7 @@ namespace AVR.Phys {
             return grabbedObject.transform.TransformPoint(localGrabLocation);
         }
 
-        protected virtual void Start() {
-            controller = GetComponentInParent<AVR_Controller>();
+        protected override void Start() {
             if(grabPoint==null) grabPoint = transform;
             if(grabZone==null) grabZone = GetComponentInChildren<GrabZoneHelper>();
             if(grabZone==null) {

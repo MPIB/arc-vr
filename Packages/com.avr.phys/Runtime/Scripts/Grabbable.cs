@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 
 namespace AVR.Phys {
-    public class Grabbable : MonoBehaviour
+    public class Grabbable : AVR.Core.AVR_Behaviour
     {
         public GrabbableObjectType objectType;
         private GrabbableObjectType _objType;
