@@ -1,0 +1,46 @@
+{
+    "name": "avr.phys.Runtime",
+    "references": [
+        "GUID:8dd818486f048e34496f17e7e0f5e1cf"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.avr.core",
+            "expression": "",
+            "define": "AVR_CORE"
+        },
+        {
+            "name": "com.avr.avatar",
+            "expression": "",
+            "define": "AVR_AVATAR"
+        },
+        {
+            "name": "com.avr.motion",
+            "expression": "",
+            "define": "AVR_MOTION"
+        },
+        {
+            "name": "com.avr.phys",
+            "expression": "",
+            "define": "AVR_PHYS"
+        },
+        {
+            "name": "com.avr.ui",
+            "expression": "",
+            "define": "AVR_UI"
+        },
+        {
+            "name": "com.avr.net",
+            "expression": "",
+            "define": "AVR_NET"
+        }
+    ],
+    "noEngineReferences": false
+}

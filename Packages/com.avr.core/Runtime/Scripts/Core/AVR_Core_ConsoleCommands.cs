@@ -38,6 +38,35 @@ namespace AVR.Core {
             AVR_DevConsole.register_command("get", (s) => AVR_DevConsole.print(AVR_Settings.get_string(s[0])), 1, "Prints a setting with the given settings-token");
 
             AVR_DevConsole.register_command("set", (s) => AVR_Settings.settings[s[0]]=s[1], 2, "Sets a setting with settings-token arg[0] to the value of arg[1]");
+
+            AVR_DevConsole.register_command("start_xr", (s) => AVR_PlayerRig.Instance.StartCoroutine(StartXR()));
+
+            AVR_DevConsole.register_command("stop_xr", (s) => StopXR());
+        }
+
+        private static IEnumerator StartXR()
+        {
+            Debug.Log("Initializing XR...");
+            yield return XRGeneralSettings.Instance.Manager.InitializeLoader();
+
+            if (XRGeneralSettings.Instance.Manager.activeLoader == null)
+            {
+                Debug.LogError("Initializing XR Failed. Check Editor or Player log for details.");
+            }
+            else
+            {
+                Debug.Log("Starting XR...");
+                XRGeneralSettings.Instance.Manager.StartSubsystems();
+            }
+        }
+
+        private static void StopXR()
+        {
+            Debug.Log("Stopping XR...");
+
+            XRGeneralSettings.Instance.Manager.StopSubsystems();
+            XRGeneralSettings.Instance.Manager.DeinitializeLoader();
+            Debug.Log("XR stopped completely.");
         }
 
         private static void toggle_obj(string[] args) {

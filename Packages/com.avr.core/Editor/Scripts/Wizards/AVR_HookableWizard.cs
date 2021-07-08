@@ -188,4 +188,79 @@ namespace AVR.UEditor.Core {
             }
         }
     }
+
+    public abstract class AVR_WizardHook_DropdownChoiceToggle<Wiz, Mod> : AVR_WizardHook<Wiz> where Wiz : AVR_HookableWizard<Wiz> where Mod : MonoBehaviour
+    {
+        protected abstract string moduleName { get; }
+
+        protected abstract DDChoice[] options { get; }
+
+        protected struct DDChoice {
+            public DDChoice(string choiceName, string prefabPathSettingsToken, System.Func<Mod, bool> filter) {
+                this.choiceName = choiceName;
+                this.prefabPathSettingsToken = prefabPathSettingsToken;
+                this.filter = filter;
+            }
+
+            public string choiceName;
+            public string prefabPathSettingsToken;
+            public System.Func<Mod, bool> filter;
+        }
+
+        protected Mod[] _module;
+
+        protected DDChoice _selected;
+        protected DDChoice _prevselected;
+
+        private string [] moduleTypeList;
+
+        public bool module;
+
+        public override void on_create_wizard(GameObject targetObject)
+        {
+            _module = targetObject.GetComponentsInChildren<Mod>();
+            moduleTypeList = options.Select(t => t.choiceName).ToArray();
+
+            module = false;
+
+            foreach(var entry in options) {
+                if(_module.Any(entry.filter)) {
+                    _prevselected = _selected = entry;
+                    module = true;
+                    break;
+                }
+            }
+        }
+
+        public override void embed_GUI()
+        {
+            module = EditorGUILayout.BeginToggleGroup(moduleName, module);
+
+            int index = Mathf.Max(0, System.Array.FindIndex(moduleTypeList, w => w == _selected.choiceName));
+            index = EditorGUILayout.Popup(index, moduleTypeList);
+            _selected = options[index];
+
+            EditorGUILayout.EndToggleGroup();
+        }
+
+        public override void on_submit(GameObject targetObject)
+        {
+            if (module && _module.Length < 1)
+            {
+                AVR_EditorUtility.InstantiatePrefabAsChild(targetObject.transform, _selected.prefabPathSettingsToken);
+            }
+            else if (module && _module.Length > 0)
+            {
+                Mod first = _module[0];
+                if (!_selected.filter.Invoke(first)) {
+                    GameObject.DestroyImmediate(first.gameObject);
+                    AVR_EditorUtility.InstantiatePrefabAsChild(targetObject.transform, _selected.prefabPathSettingsToken);
+                }
+            }
+            else if (!module && _module.Length > 0)
+            {
+                foreach (Mod c in _module) GameObject.DestroyImmediate(c.gameObject);
+            }
+        }
+    }
 }
