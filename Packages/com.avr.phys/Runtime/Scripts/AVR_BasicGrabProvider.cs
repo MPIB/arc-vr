@@ -11,6 +11,11 @@ namespace AVR.Phys {
     public class AVR_BasicGrabProvider : AVR_ControllerComponent
     {
         /// <summary>
+        /// Returns true if this provider is currently grabbing an object.
+        /// </summary>
+        public bool isGrabbing => grabbedObject != null;
+
+        /// <summary>
         /// Event that *commences* a grab. (Such as ONTRIGGERDOWN)
         /// </summary>
         public AVR_ControllerInputManager.BoolEvent grabEvent;
@@ -35,7 +40,7 @@ namespace AVR.Phys {
         /// <summary>
         /// Object that is currently being grabbed. Null if no object is being grabbed
         /// </summary>
-        protected Grabbable grabbedObject;
+        protected AVR_Grabbable grabbedObject;
 
         /// <summary>
         /// Offset at which an object is being grabbed. Meaning: grab-position in local coordiantes relative to the
@@ -100,7 +105,7 @@ namespace AVR.Phys {
         /// <summary>
         /// Performs a grab. Is called when the respective "grabEvent" is true.
         /// </summary>
-        protected virtual void makeGrab() {
+        public virtual void makeGrab() {
             // Get the collider that is closest to the grabPoint
             grabZone.getPoint(grabPoint.position, out Collider c, out float d, out Vector3 p);
             makeGrab(c, d, p);
@@ -109,7 +114,7 @@ namespace AVR.Phys {
         /// <summary>
         /// Perform a grab on collider c, at distance d, at world position p. Is called when the respective "grabEvent" is true.
         /// </summary>
-        public virtual Grabbable makeGrab(Collider c, float d, Vector3 p) {
+        public virtual AVR_Grabbable makeGrab(Collider c, float d, Vector3 p) {
             // Error message, this *should* theoretically not happen ever
             if(grabbedObject!=null) {
                 AVR_DevConsole.error("Attempted to Grab object while another is already grabbed!");
@@ -118,7 +123,7 @@ namespace AVR.Phys {
 
             if (c == null) return null;
 
-            grabbedObject = c.GetComponentInParent<Grabbable>();
+            grabbedObject = c.GetComponentInParent<AVR_Grabbable>();
             if(grabbedObject != null) {
                 localGrabLocation = grabbedObject.transform.InverseTransformPoint(p);
                 grabbedObject.Grab(this);

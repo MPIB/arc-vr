@@ -49,8 +49,8 @@ namespace AVR.Phys {
             if (handVisual != null) StartCoroutine(unsetHand());
         }
 
-        public override Grabbable makeGrab(Collider c, float d, Vector3 p) {
-            Grabbable g = base.makeGrab(c, d, p);
+        public override AVR_Grabbable makeGrab(Collider c, float d, Vector3 p) {
+            AVR_Grabbable g = base.makeGrab(c, d, p);
             if(g!=null)
             {
                 // Set desired object location and rotation

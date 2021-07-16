@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "arc-vr/phys/GrabbableObjectType", order = 1)]
 public class GrabbableObjectType : ScriptableObject
 {
-    public enum FollowType { FREE, INTERACTABLE, STATIC, CONSTRAINED, HEAVY };
+    public enum FollowType { FREE, STATIC, CONSTRAINED, HEAVY };
     public FollowType followType;
 
     public bool handToObject = false;

@@ -90,12 +90,12 @@ namespace AVR.Phys {
             collider.transform.position -= collider_offset;
         }
 
-        public void SqueezeOn(Grabbable g)
+        public void SqueezeOn(AVR_Grabbable g)
         {
             foreach (AVR_Finger f in fingers) f.SqueezeOn(HandVisualTransform(), g.colliders);
         }
 
-        public void SqueezeOn(Grabbable g, Vector3 grabbable_offset)
+        public void SqueezeOn(AVR_Grabbable g, Vector3 grabbable_offset)
         {
             g.transform.position += grabbable_offset;
             SqueezeOn(g);

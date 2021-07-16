@@ -34,7 +34,14 @@ public class GrabZoneHelper : MonoBehaviour
         Collider smallest_coll = null;
         Vector3 closest_point = Vector3.zero;
 
-        foreach(Collider c in colliders) {
+        for(int i=0; i<colliders.Count; i++) {
+            if(!colliders[i]) {
+                colliders.RemoveAt(i);
+                i--;
+                continue;
+            }
+
+            Collider c = colliders[i];
             Vector3 p = c.ClosestPoint(atPos);
             if(Vector3.Distance(p, atPos) < smallest_dist) {
                 smallest_dist = Vector3.Distance(p, atPos);

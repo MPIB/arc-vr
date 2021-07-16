@@ -35,9 +35,9 @@ namespace AVR.Phys {
             virtualGrabPoint.localPosition = Vector3.zero;
         }
 
-        public override Grabbable makeGrab(Collider c, float d, Vector3 p)
+        public override AVR_Grabbable makeGrab(Collider c, float d, Vector3 p)
         {
-            Grabbable g = base.makeGrab(c, d, p);
+            AVR_Grabbable g = base.makeGrab(c, d, p);
             if (g != null)
             {
                 if(g.objectType.handToObject) {

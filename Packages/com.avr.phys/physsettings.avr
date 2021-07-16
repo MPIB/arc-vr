@@ -3,5 +3,8 @@ editor = {
 		basicGrabProvider = "Packages/com.avr.phys/Editor/DefaultPrefabs/BGrabProvider.prefab"
 		offsetGrabProvider = "Packages/com.avr.phys/Editor/DefaultPrefabs/OGrabProvider.prefab"
 		advancedOffsetGrabProvider = "Packages/com.avr.phys/Editor/DefaultPrefabs/AOGrabProvider.prefab"
+
+		leftHandInteractor = "Packages/com.avr.phys/Editor/DefaultPrefabs/HandVisual_left.prefab"
+		rightHandInteractor = "Packages/com.avr.phys/Editor/DefaultPrefabs/HandVisual_right.prefab"
 	}
 }
