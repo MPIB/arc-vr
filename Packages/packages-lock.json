@@ -24,6 +24,15 @@
         "com.avr.core": "1.0.0"
       }
     },
+    "com.avr.net": {
+      "version": "file:com.avr.net",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.avr.core": "1.0.0",
+        "com.unity.multiplayer.mlapi": "0.1.0"
+      }
+    },
     "com.avr.phys": {
       "version": "file:com.avr.phys",
       "depth": 0,
@@ -80,6 +89,22 @@
     "com.unity.inputsystem": {
       "version": "1.0.2",
       "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.multiplayer.mlapi": {
+      "version": "0.1.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.nuget.mono-cecil": "1.10.1-preview.1"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.nuget.mono-cecil": {
+      "version": "1.10.1-preview.1",
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
