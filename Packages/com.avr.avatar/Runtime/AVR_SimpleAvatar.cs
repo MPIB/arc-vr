@@ -11,6 +11,7 @@ namespace AVR.Avatar
     public class AVR_SimpleAvatar : AVR.Core.AVR_Component
     {
         private Animator animator;
+        private Vector3 lastPos = Vector3.zero;
 
         public string speedAnimationParameter = "Speed";
 
@@ -20,21 +21,27 @@ namespace AVR.Avatar
             animator = GetComponent<Animator>();
 
             animator.logWarnings = false; //TODO: This disables warning-spam if parameters (like "Speed") dont exist. Perhaps this should be optional based on a setting.
+
+            lastPos = playerRig.FeetInWorldSpace;
         }
 
         void Update()
         {
             animator.SetFloat(speedAnimationParameter, playerRig.AvgMotion.magnitude);
 
-            if(playerRig.AvgMotion.magnitude > 0.1f) {
-                transform.forward = Vector3.Lerp(transform.forward, playerRig.AvgMotion, 0.1f);
+            if(playerRig.AvgMotion.magnitude > 0.3f) {
+                transform.forward = Vector3.Lerp(transform.forward, playerRig.AvgMotion, 0.05f);
             }
             else
             {
-                transform.forward = Vector3.Lerp(transform.forward, playerRig.XZPlaneFacingDirection, 0.1f);
+                transform.forward = Vector3.Lerp(transform.forward, playerRig.XZPlaneFacingDirection, 0.05f);
             }
 
-            transform.position = playerRig.FeetInWorldSpace;
+            if(Vector3.Distance(lastPos, playerRig.FeetInWorldSpace) > 0.1f) {
+                lastPos = Vector3.Lerp(lastPos, playerRig.FeetInWorldSpace, 0.1f);
+            }
+
+            transform.position = lastPos;
         }
     }
 }
