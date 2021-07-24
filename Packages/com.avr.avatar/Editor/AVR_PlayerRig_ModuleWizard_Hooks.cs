@@ -13,12 +13,13 @@ namespace AVR.UEditor.Core
             base.on_submit(targetObject);
 
             AVR.Avatar.AVR_PoseProvider prov = targetObject.GetComponent<AVR.Avatar.AVR_PoseProvider>();
-
-            //prov.lookAtTarget = (AVR.Core.Utils.Misc.GlobalFind("LookAt", typeof(GameObject)) as GameObject).transform;
-            //prov.eyeTransform = Camera.main.transform;
-            //prov.leftHandTarget = (AVR.Core.Utils.Misc.GlobalFind("LeftHandController", typeof(GameObject)) as GameObject).transform;
-            //prov.rightHandTarget = (AVR.Core.Utils.Misc.GlobalFind("RightHandController", typeof(GameObject)) as GameObject).transform;
         }
+    }
+
+    public class AVR_PlayerRigWizard_Hook_SimpleAvatarModule : AVR_WizardHook_SimpleToggle<AVR_PlayerRig_ModuleWizard, AVR.Avatar.AVR_SimpleAvatar>
+    {
+        protected override string moduleName => "SimpleAvatar Module";
+        protected override string prefabPathSettingsToken => "/editor/defaultPrefabPaths/simpleAvatarModule";
     }
 }
 

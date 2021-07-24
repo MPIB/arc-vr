@@ -1,6 +1,7 @@
 editor = {
 	defaultPrefabPaths = {
 		avatarModule = "Packages/com.avr.avatar/Editor/DefaultPrefabs/AvatarModule.prefab"
+		simpleAvatarModule = "Packages/com.avr.avatar/Editor/DefaultPrefabs/SimpleAvatarModule.prefab"
 	}
 }
 
