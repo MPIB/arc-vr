@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6245028893344086612}
   - component: {fileID: 7940192701559905137}
   m_Layer: 10
-  m_Name: AOGrabProvider 1
+  m_Name: AOGrabProvider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,11 +45,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efbd35da15e0b8a46910f3842f3290c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  onAwake:
+    m_PersistentCalls:
+      m_Calls: []
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  KeepOnRemote: 0
+  ChangeLayerOnRemote: 0
+  ChangeLayerOnRemote_IncludeChildren: 0
+  RemoteLayer: 0
   grabEvent: 15
   releaseEvent: 17
   grabPoint: {fileID: 7980746605982361634}
-  grabZone: {fileID: 7980746606616716304}
+  grabbableFinder: {fileID: 0}
   handVisual: {fileID: 0}
 --- !u!1 &7980746605982361635
 GameObject:
@@ -91,8 +106,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7980746606616716310}
   - component: {fileID: 7980746606616716307}
-  - component: {fileID: 7980746606616716304}
   - component: {fileID: 7980746606616716305}
+  - component: {fileID: 6411403677141883609}
   m_Layer: 10
   m_Name: GrabZone
   m_TagString: Untagged
@@ -127,18 +142,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.11885166, y: 0.14014487, z: 0.33321324}
   m_Center: {x: -0.050495625, y: 0.0046020127, z: -0.12925333}
---- !u!114 &7980746606616716304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7980746606616716311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce83f25fd38d6104d87afd51c017b8f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &7980746606616716305
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -155,3 +158,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6411403677141883609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7980746606616716311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46553b355b84d734baeb7e504f5de32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GrabPoint: {fileID: 7980746605982361634}

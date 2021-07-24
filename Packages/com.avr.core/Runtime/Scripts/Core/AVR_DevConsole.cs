@@ -18,6 +18,8 @@ namespace AVR.Core {
     {
         private static string output_s;
 
+        private static List<string> output_history = new List<string>();
+
         private static List<string> command_history = new List<string>();
         private static int command_history_limit = 10;
         private static List<AVR_ConsoleCommand> commands = new List<AVR_ConsoleCommand>();
@@ -135,12 +137,20 @@ namespace AVR.Core {
             error(obj + ">> " + s);
         }
 
+        public static void raw_print(string s) {
+            // Avoid duplicate outputs
+            if(output_history.Count>0 && s==output_history.Last()) return;
+
+            output_history.Add(s);
+            output_s += s;
+        }
+
         /// <summary>
         /// Print a given string on the console.
         /// </summary>
         public static void print(string s)
         {
-            output_s += "\n# " + s;
+            raw_print("\n# " + s);
         }
 
         /// <summary>
@@ -148,7 +158,7 @@ namespace AVR.Core {
         /// </summary>
         public static void success(string s)
         {
-            output_s += "\n# <color=green><b>" + s + "</b></color>";
+            raw_print("\n# <color=green><b>" + s + "</b></color>");
         }
 
         /// <summary>
@@ -156,7 +166,7 @@ namespace AVR.Core {
         /// </summary>
         public static void error(string s)
         {
-            output_s += "\n! <color=red><b>ERR:</b> " + s + "</color>";
+            raw_print("\n! <color=red><b>ERR:</b> " + s + "</color>");
         }
 
         /// <summary>
@@ -164,12 +174,12 @@ namespace AVR.Core {
         /// </summary>
         public static void warn(string s)
         {
-            output_s += "\n! <color=yellow><b>WRN:</b> " + s + "</color>";
+            raw_print("\n! <color=yellow><b>WRN:</b> " + s + "</color>");
         }
 
         private static void echo_command(string s)
         {
-            output_s += "\n> <color=grey> " + s + "</color>";
+            raw_print("\n> <color=grey> " + s + "</color>");
         }
 
         /// <summary>

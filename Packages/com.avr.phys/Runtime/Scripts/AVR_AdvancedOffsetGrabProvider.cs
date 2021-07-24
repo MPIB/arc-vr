@@ -35,16 +35,16 @@ namespace AVR.Phys {
             virtualGrabPoint.localPosition = Vector3.zero;
         }
 
-        public override AVR_Grabbable makeGrab(Collider c, float d, Vector3 p)
+        public override void makeGrab(GrabLocation location)
         {
-            AVR_Grabbable g = base.makeGrab(c, d, p);
-            if (g != null)
+            base.makeGrab(location);
+            if (grabbedObject != null)
             {
-                if(g.objectType.handToObject) {
-                    if(handVisual!=null) handVisual.glove_transform.position += p - grabPoint.position;
+                if(grabbedObject.objectType.handToObject) {
+                    if(handVisual!=null) handVisual.glove_transform.position += grabLocation.location - grabPoint.position;
 
-                    virtualGrabPoint.position = c.transform.position; //The target position is equal to the  object position == dont move the object directly on-grab
-                    virtualGrabPoint.rotation = c.transform.rotation;
+                    virtualGrabPoint.position = grabbedObject.transform.position; //The target position is equal to the  object position == dont move the object directly on-grab
+                    virtualGrabPoint.rotation = grabbedObject.transform.rotation;
                 }
 
                 // pos_offset is equal to the local position of virtualGrabPoint == difference to base.getTargetPosition()
@@ -53,7 +53,6 @@ namespace AVR.Phys {
 
                 distance_travelled_since_grab = 0f;
             }
-            return g;
         }
 
         public override void makeRelease()

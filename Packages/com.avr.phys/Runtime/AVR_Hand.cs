@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace AVR.Phys {
-    public class AVR_Hand : AVR_HandVisual
+    public class AVR_Hand : AVR.Core.AVR_ControllerComponent
     {
         // For fingers:
-        private List<AVR_Finger> fingers = new List<AVR_Finger>();
+        public List<AVR_Finger> fingers = new List<AVR_Finger>();
         public Animator animator;
         public Transform index_tip, middle_tip, ring_tip, pinky_tip, thumb_tip;
         public float delta = 0.05f;
 
         // For hand
         public Transform glove_transform;
-        public AVR.Core.AVR_Controller controller;
         private Transform fake_parent;
         private Vector3 def_pos;
         private Quaternion def_rot;
@@ -49,10 +48,13 @@ namespace AVR.Phys {
             foreach (Collider c in colliders) c.enabled = true;
         }
 
-        void Start()
+        protected override void Start()
         {
-            if(!controller) controller = GetComponentInParent<AVR.Core.AVR_Controller>();
-
+            fingers.Add(new AVR_Finger(index_tip, 1, "Proc_IndexFinger", animator));
+            fingers.Add(new AVR_Finger(middle_tip, 2, "Proc_MiddleFinger", animator));
+            fingers.Add(new AVR_Finger(ring_tip, 3, "Proc_RingFinger", animator));
+            fingers.Add(new AVR_Finger(pinky_tip, 4, "Proc_PinkyFinger", animator));
+            fingers.Add(new AVR_Finger(thumb_tip, 5, "Proc_ThumbFinger", animator));
             colliders.AddRange(GetComponentsInChildren<Collider>());
             if(!hand_colliders) {
                 foreach(Collider c in colliders) {
@@ -71,13 +73,26 @@ namespace AVR.Phys {
             handControllerTransform.rotation = HandVisualTransform().rotation;
             def_pos = HandVisualTransform().localPosition;
             def_rot = HandVisualTransform().localRotation;
-            fingers.Add(new AVR_Finger(index_tip, 1, "Proc_IndexFinger", animator));
-            fingers.Add(new AVR_Finger(middle_tip, 2, "Proc_MiddleFinger", animator));
-            fingers.Add(new AVR_Finger(ring_tip, 3, "Proc_RingFinger", animator));
-            fingers.Add(new AVR_Finger(pinky_tip, 4, "Proc_PinkyFinger", animator));
-            fingers.Add(new AVR_Finger(thumb_tip, 5, "Proc_ThumbFinger", animator));
+            //fingers.Add(new AVR_Finger(index_tip, 1, "Proc_IndexFinger", animator));
+            //fingers.Add(new AVR_Finger(middle_tip, 2, "Proc_MiddleFinger", animator));
+            //fingers.Add(new AVR_Finger(ring_tip, 3, "Proc_RingFinger", animator));
+            //fingers.Add(new AVR_Finger(pinky_tip, 4, "Proc_PinkyFinger", animator));
+            //fingers.Add(new AVR_Finger(thumb_tip, 5, "Proc_ThumbFinger", animator));
 
             foreach (AVR_Finger f in fingers) f.Calibrate(HandVisualTransform(), delta);
+        }
+
+        public void ApplyNodePose(AVR_GrabNode node) {
+            fingers[0].setStateImmediate(node.index_pose);
+            fingers[0].setWeightImmediate(1.0f);
+            fingers[1].setStateImmediate(node.middle_pose);
+            fingers[1].setWeightImmediate(1.0f);
+            fingers[2].setStateImmediate(node.ring_pose);
+            fingers[2].setWeightImmediate(1.0f);
+            fingers[3].setStateImmediate(node.pinky_pose);
+            fingers[3].setWeightImmediate(1.0f);
+            fingers[4].setStateImmediate(node.thumb_pose);
+            fingers[4].setWeightImmediate(1.0f);
         }
 
         public void SqueezeOn(Collider collider) {
@@ -163,7 +178,7 @@ namespace AVR.Phys {
             fake_parent = null;
         }
 
-        protected class AVR_Finger
+        public class AVR_Finger
         {
             public Animator animator;
 
@@ -234,7 +249,7 @@ namespace AVR.Phys {
 
                     this.positions.Add(handVisualTransform.InverseTransformPoint(this.tip.position));
 
-                    Debug.DrawLine(handVisualTransform.position, this.tip.position, Color.white, 10.0f);
+                    //Debug.DrawLine(handVisualTransform.position, this.tip.position, Color.white, 10.0f);
                 }
                 this.setWeightImmediate(0.0f);
             }

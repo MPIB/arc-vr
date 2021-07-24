@@ -6,5 +6,7 @@ editor = {
 
 		leftHandInteractor = "Packages/com.avr.phys/Editor/DefaultPrefabs/HandVisual_left.prefab"
 		rightHandInteractor = "Packages/com.avr.phys/Editor/DefaultPrefabs/HandVisual_right.prefab"
+
+		debugHand = "Packages/com.avr.phys/Editor/DefaultPrefabs/DebugHand.prefab"
 	}
 }

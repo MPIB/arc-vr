@@ -35,19 +35,14 @@ namespace AVR.Phys {
         /// Area from which the player may grab an object.
         /// Required for the grabprovider to work.
         /// </summary>
-        public GrabZoneHelper grabZone;
+        public AVR_GrabbableFinder grabbableFinder;
 
         /// <summary>
         /// Object that is currently being grabbed. Null if no object is being grabbed
         /// </summary>
-        protected AVR_Grabbable grabbedObject;
+        protected AVR_Grabbable grabbedObject => grabLocation!=null ? grabLocation.grabbable : null;
 
-        /// <summary>
-        /// Offset at which an object is being grabbed. Meaning: grab-position in local coordiantes relative to the
-        /// grabbed object. For instance: If we grab a Pan by its handle, this value will correspond to the pans handle
-        /// in local coordiantes.
-        /// </summary>
-        protected Vector3 localGrabLocation = Vector3.zero;
+        protected GrabLocation grabLocation;
 
         /// <summary>
         /// Offset at which an object is being grabbed. Meaning: grab-position in local coordiantes relative to the
@@ -56,7 +51,7 @@ namespace AVR.Phys {
         /// If no object is grabbed, returns Vector3.zero.
         /// </summary>
         public virtual Vector3 getLocalGrabLocation() {
-            return localGrabLocation;
+            return grabbedObject ? grabLocation.localLocation : Vector3.zero;
         }
 
         /// <summary>
@@ -65,16 +60,16 @@ namespace AVR.Phys {
         /// Returns Vector3.zero if no object is being grabbed.
         /// </summary>
         public virtual Vector3 getWorldGrabLocation() {
-            if(!grabbedObject) return Vector3.zero;
-            return grabbedObject.transform.TransformPoint(localGrabLocation);
+            return grabbedObject ? grabLocation.location : Vector3.zero;
         }
 
         protected override void Start() {
             if(grabPoint==null) grabPoint = transform;
-            if(grabZone==null) grabZone = GetComponentInChildren<GrabZoneHelper>();
-            if(grabZone==null) {
-                AVR_DevConsole.error("Grabprovider "+gameObject.name+" has no grabZone assigned! Deactivating "+gameObject.name);
-                gameObject.SetActive(false);
+
+            if (grabbableFinder == null) grabbableFinder = GetComponentInChildren<AVR_GrabbableFinder>();
+            if (grabbableFinder == null) {
+                AVR_DevConsole.error("Grabprovider " + gameObject.name + " has no grabbableFinder assigned! Destroying " + gameObject.name);
+                Destroy(gameObject);
             }
         }
 
@@ -103,33 +98,20 @@ namespace AVR.Phys {
         }
 
         /// <summary>
-        /// Performs a grab. Is called when the respective "grabEvent" is true.
+        /// Performs a grab on whichever object the GrabbableFinder returns. Is called when the respective "grabEvent" is true.
         /// </summary>
         public virtual void makeGrab() {
             // Get the collider that is closest to the grabPoint
-            grabZone.getPoint(grabPoint.position, out Collider c, out float d, out Vector3 p);
-            makeGrab(c, d, p);
+            if(grabbableFinder.getGrabLocation(out GrabLocation location)) makeGrab(location);
+            else grabLocation = null;
         }
 
         /// <summary>
-        /// Perform a grab on collider c, at distance d, at world position p. Is called when the respective "grabEvent" is true.
+        /// Perform a grab on with parameters given in a GrabLocation struct
         /// </summary>
-        public virtual AVR_Grabbable makeGrab(Collider c, float d, Vector3 p) {
-            // Error message, this *should* theoretically not happen ever
-            if(grabbedObject!=null) {
-                AVR_DevConsole.error("Attempted to Grab object while another is already grabbed!");
-                return null;
-            }
-
-            if (c == null) return null;
-
-            grabbedObject = c.GetComponentInParent<AVR_Grabbable>();
-            if(grabbedObject != null) {
-                localGrabLocation = grabbedObject.transform.InverseTransformPoint(p);
-                grabbedObject.Grab(this);
-            }
-
-            return grabbedObject;
+        public virtual void makeGrab(GrabLocation location) {
+            grabLocation = location;
+            grabbedObject.Grab(this);
         }
 
         /// <summary>
@@ -138,8 +120,7 @@ namespace AVR.Phys {
         public virtual void makeRelease() {
             if(grabbedObject !=null) {
                 grabbedObject.Release(this);
-                grabbedObject = null;
-                localGrabLocation = Vector3.zero;
+                grabLocation = null;
             }
         }
 

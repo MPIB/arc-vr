@@ -20,7 +20,11 @@ namespace AVR.UEditor.Core
 
         protected void DrawToolbar(object target)
         {
-            DrawToolbar(AVR.Core.Utils.Misc.GetAttribute<AVR.Core.Attributes.DocumentationUrl>(target.GetType()).getDocumentationUrl());
+            try {
+                DrawToolbar(AVR.Core.Utils.Misc.GetAttribute<AVR.Core.Attributes.DocumentationUrl>(target.GetType()).getDocumentationUrl());
+            } catch(System.Exception) {
+                AVR_DevConsole.warn("Object does not have a DocumentationUrl set: " + target);
+            }
         }
 
         protected virtual void DrawToolbar(string docu_url) {

@@ -8,6 +8,9 @@ namespace AVR.Phys {
     {
         public GrabbableObjectType objectType;
         private GrabbableObjectType _objType;
+        private List<AVR_GrabNode> nodes = new List<AVR_GrabNode>();
+
+        public List<AVR_GrabNode> grabNodes => nodes;
 
         public Rigidbody rb;
         public List<Collider> colliders = new List<Collider>();
@@ -34,6 +37,7 @@ namespace AVR.Phys {
         {
             if (rb == null) rb = GetComponent<Rigidbody>();
             if (colliders==null || colliders.Count<1) colliders.AddRange(GetComponentsInChildren<Collider>());
+            if (nodes == null || nodes.Count < 1) nodes.AddRange(GetComponentsInChildren<AVR_GrabNode>());
         }
 
         void FixedUpdate()
@@ -55,7 +59,7 @@ namespace AVR.Phys {
                 transform.SetParent(AVR.Core.AVR_PlayerRig.Instance.transform);
             }
             else if(isGrabbed && !_objType.allowTwoHanded) {
-                // drain AttatchedHands.
+                // flush AttatchedHands.
                 while(AttachedHands.Count>0) AttachedHands[0].makeRelease();
             }
             AttachedHands.Add(hand);
@@ -66,7 +70,7 @@ namespace AVR.Phys {
             if(AttachedHands.Contains(hand)) AttachedHands.Remove(hand);
             if(AttachedHands.Count<1) {
                 transform.SetParent(old_parent);
-                rb.velocity = new Vector3(velocities.Average(v => v.x), velocities.Average(v => v.y), velocities.Average(v => v.z));
+                if(velocities.Count>0) rb.velocity = new Vector3(velocities.Average(v => v.x), velocities.Average(v => v.y), velocities.Average(v => v.z));
                 velocities.Clear();
             }
         }

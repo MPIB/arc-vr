@@ -49,30 +49,42 @@ namespace AVR.Phys {
             if (handVisual != null) StartCoroutine(unsetHand());
         }
 
-        public override AVR_Grabbable makeGrab(Collider c, float d, Vector3 p) {
-            AVR_Grabbable g = base.makeGrab(c, d, p);
-            if(g!=null)
+        public override void makeGrab(GrabLocation location) {
+            base.makeGrab(location);
+            if(grabbedObject!=null)
             {
-                // Set desired object location and rotation
-                grabbedObjectCenter.position = grabPoint.position + (c.transform.position - p);
-                grabbedObjectCenter.rotation = c.transform.rotation;
+                // Set desired rotation
+                if(location.isNode) {
+                    grabbedObjectCenter.rotation = location.node.get_target_rotation(handVisual.transform.rotation);
+
+                    // We need to find out the position offset *under the above given rotation*. For these purposes we temporarily apply the rotation to location.grabbable,
+                    // then undo it again right afterwards.
+                    Quaternion tmp = location.grabbable.transform.rotation;
+                    location.grabbable.transform.rotation = grabbedObjectCenter.rotation;
+                    grabbedObjectCenter.position = grabPoint.position + (location.grabbable.transform.position - location.location);
+                    location.grabbable.transform.rotation = tmp;
+                }
+                else
+                {
+                    grabbedObjectCenter.rotation = location.grabbable.transform.rotation;
+                    grabbedObjectCenter.position = grabPoint.position + (location.grabbable.transform.position - location.location);
+                }                
 
                 if(handVisual) StartCoroutine(setHand());
             }
-            return g;
         }
 
         protected override void Update() {
             // Pre-grab hand
-            if (grabbedObject == null && handVisual != null && grabZone.getPoint(grabPoint.position, out Collider c, out float d, out Vector3 p)) //NOTE: we run getPoint twice in 1 frame if we do makeGrab()
+            if (grabbedObject == null && handVisual != null && grabbableFinder.getGrabLocation(out GrabLocation grabLocation) && !grabLocation.isNode)
             {
-                handVisual.SqueezeOn(c, grabPoint.position - p);
+                handVisual.SqueezeOn(grabLocation.collider, grabPoint.position - grabLocation.location);
 
                 // This is a hacky/bad way of calculating the "entry-distance" (maximum distance inside the grabzone-collider in direction grabzone_p)
-                Vector3 far_away = 100.0f * (p - grabPoint.position);
-                Vector3 smth = grabZone.getTriggerCollider().ClosestPoint(far_away);
+                Vector3 far_away = 100.0f * (grabLocation.location - grabPoint.position);
+                Vector3 smth = grabbableFinder.closestPoint(far_away);
                 float entrydist = Vector3.Distance(smth, grabPoint.position);
-                float currentdist = Vector3.Distance(grabPoint.position, p);
+                float currentdist = Vector3.Distance(grabPoint.position, grabLocation.location);
 
                 float max_pregrab_adapt_factor = 0.35f; // maximum AdaptWeigth used for pregrab. (weight when grabPoint=p)
                 float max_pregrab_grace_dist = 0.03f; // Distance at which we consider "grabPoint=p" for purposes stated above
@@ -101,8 +113,14 @@ namespace AVR.Phys {
 
             //TODO: disable hand colliders if the hand is physical
 
-            handVisual.SqueezeOn(grabbedObject);
-            handVisual.SetSqueezeWeight(1.0f);
+            if(grabLocation.isNode) {
+                handVisual.ApplyNodePose(grabLocation.node);
+            }
+            else
+            {
+                handVisual.SqueezeOn(grabbedObject);
+                handVisual.SetSqueezeWeight(1.0f);
+            }
             handVisual.SetFakeParent(grabbedObject.transform);
         }
 

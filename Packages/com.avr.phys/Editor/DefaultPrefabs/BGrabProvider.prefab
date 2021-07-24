@@ -45,11 +45,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ad1b09dfeb6ba4eae0c40b754e45ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  onAwake:
+    m_PersistentCalls:
+      m_Calls: []
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  KeepOnRemote: 0
+  ChangeLayerOnRemote: 0
+  ChangeLayerOnRemote_IncludeChildren: 0
+  RemoteLayer: 0
   grabEvent: 15
   releaseEvent: 17
   grabPoint: {fileID: 3086541848731640126}
-  grabZone: {fileID: 3086541847761677580}
+  grabbableFinder: {fileID: 3033162662125396404}
+  grabZone: {fileID: 0}
 --- !u!1 &3086541847761677579
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,9 +75,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3086541847761677578}
-  - component: {fileID: 3086541847761677580}
   - component: {fileID: 3086541847761677581}
   - component: {fileID: 7030279060239390969}
+  - component: {fileID: 3033162662125396404}
   m_Layer: 10
   m_Name: GrabZone
   m_TagString: Untagged
@@ -83,18 +99,6 @@ Transform:
   m_Father: {fileID: 1350546644569846600}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -179.99998, z: 0}
---- !u!114 &3086541847761677580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3086541847761677579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce83f25fd38d6104d87afd51c017b8f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &3086541847761677581
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -124,6 +128,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: -0.03, z: -0.03}
+--- !u!114 &3033162662125396404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3086541847761677579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46553b355b84d734baeb7e504f5de32d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GrabPoint: {fileID: 3086541848731640126}
 --- !u!1 &3086541848731640127
 GameObject:
   m_ObjectHideFlags: 0
