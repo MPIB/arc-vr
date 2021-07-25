@@ -1,0 +1,6 @@
+editor = {
+	defaultPrefabPaths = {
+		networkedPlayerRig = "Packages/com.avr.net/Editor/DefaultPrefabs/NetworkedPlayerRig.prefab"
+		networkManager = "Packages/com.avr.net/Editor/DefaultPrefabs/NetworkManager.prefab"
+	}
+}

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 namespace AVR.UEditor.Core {
-    public class AVR_Core_MenuItems : MonoBehaviour
+    public class AVR_Core_MenuItems
     {
         [MenuItem("AVR/Create Player Rig", false, 1)]
         public static void createPlayerRig() {

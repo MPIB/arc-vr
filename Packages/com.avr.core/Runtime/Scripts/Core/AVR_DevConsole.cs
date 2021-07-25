@@ -195,20 +195,26 @@ namespace AVR.Core {
         /// <summary>
         /// Execute a given console command.
         /// </summary>
-        public static void command(string s) {
-            command_history.Insert(0, s);
-            while(command_history.Count>command_history_limit) command_history.RemoveAt(0);
+        public static void command(string s, bool addToHistory=true) {
+            if(addToHistory) {
+                command_history.Insert(0, s);
+                while(command_history.Count>command_history_limit) command_history.RemoveAt(0);
+                echo_command(s);
+            }
 
             s = s.Trim();
-            echo_command(s);
 
             string[] c = s.Split(' ');
-            AVR_ConsoleCommand cmd = commands.Where((cmd) => cmd.name == c[0]).FirstOrDefault();
+
+            // Find the "best fit" - meaning the command whose min_args best fit the amount of given args
+            List<AVR_ConsoleCommand> cmds = commands.Where((cmd) => cmd.name == c[0]).ToList();
+            AVR_ConsoleCommand cmd = cmds.Where((cmd) => cmd.min_args <= c.Length - 1).OrderBy((cmd) => -cmd.min_args).FirstOrDefault();
+
             if(cmd != null && c.Length > cmd.min_args) {
                 cmd.func(c.Skip(1).ToArray());
             }
-            else if(cmd != null && c.Length <= cmd.min_args) {
-                error("Command "+c[0]+" requires at least "+cmd.min_args+" arguments.");
+            else if(cmd == null && cmds.Count > 0) {
+                error("Command "+c[0]+" requires more arguments.");
             }
             else
             {
@@ -308,16 +314,18 @@ namespace AVR.Core {
 
         [AVR.Core.Attributes.ConsoleCommand("help", 1, "Provides a description for a given console command. Example: help echo")]
         private static void help_command(string arg) {
+            bool found = false;
             foreach (AVR_ConsoleCommand cmd in commands)
             {
                 if(cmd.name == arg) {
                     print("COMMAND: " + cmd.name);
                     print("MIN_ARGS: " + cmd.min_args);
                     print("DESCRIPTION: " + cmd.desc);
-                    return;
+                    print("");
+                    found = true;
                 }
             }
-            print("Command "+arg+" does not exist. Type \"commands\" to see a list of all available commands.");
+            if(!found) print("Command "+arg+" does not exist. Type \"commands\" to see a list of all available commands.");
         }
 
         [AVR.Core.Attributes.ConsoleCommand("commands", "Provides a list of all available console commands")]
