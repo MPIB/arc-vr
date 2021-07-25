@@ -380,6 +380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkedPlayerRig
       objectReference: {fileID: 0}
+    - target: {fileID: 2606667197701144438, guid: a12f474f04ea96644826013a99b561bd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2606667197701144440, guid: a12f474f04ea96644826013a99b561bd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -426,11 +430,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a12f474f04ea96644826013a99b561bd, type: 3}
---- !u!1 &3938096091156142027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2606667197701144438, guid: a12f474f04ea96644826013a99b561bd, type: 3}
-  m_PrefabInstance: {fileID: 1335972077715646653}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4551417117380137278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -457,7 +456,7 @@ PrefabInstance:
     - target: {fileID: 4551417115696338522, guid: f7892fbbb40ac9844a12866be8f0824d, type: 3}
       propertyPath: NetworkConfig.NetworkPrefabs.Array.data[0].Prefab
       value: 
-      objectReference: {fileID: 3938096091156142027}
+      objectReference: {fileID: 2606667197701144438, guid: a12f474f04ea96644826013a99b561bd, type: 3}
     - target: {fileID: 4551417115696338522, guid: f7892fbbb40ac9844a12866be8f0824d, type: 3}
       propertyPath: NetworkConfig.NetworkPrefabs.Array.data[0].PlayerPrefab
       value: 1
