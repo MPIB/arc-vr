@@ -1,4 +1,4 @@
-#if AVR_NET
+/*#if AVR_NET
 
 using UnityEditor;
 using UnityEngine;
@@ -47,3 +47,4 @@ namespace AVR.UEditor.Core {
 }
 
 #endif
+*/

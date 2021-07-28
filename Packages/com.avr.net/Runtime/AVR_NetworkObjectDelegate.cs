@@ -20,7 +20,7 @@ namespace AVR.Net {
             if(!this.IsLocalPlayer) {
                 foreach(AVR_Component c in GetComponentsInChildren<AVR_Component>())
                 {
-                    c.OnRemote();
+                    //c.OnRemote();
                 }
                 foreach (Component c in removeOnRemote)
                 {

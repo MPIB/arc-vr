@@ -13,6 +13,8 @@ namespace AVR.Core {
 
         protected override void Awake()
         {
+            base.Awake();
+
             if (Instance != null)
             {
                 AVR_DevConsole.cwarn(this.name + " is marked as Singleton but another instance was found in the scene. Destroying object: " + Instance.name, this);
@@ -27,8 +29,6 @@ namespace AVR.Core {
             }
 
             DontDestroyOnLoad(this);
-
-            base.Awake();
         }
 
         public virtual void OnApplicationQuit()

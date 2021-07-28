@@ -72,6 +72,7 @@ namespace AVR.UEditor.Core {
             }
         }
 
+/*
 #if AVR_NET
         public static void NetworkSetting_Button(AVR.Core.AVR_Component component) {
             if(FAButton("f6ff")) {
@@ -79,5 +80,6 @@ namespace AVR.UEditor.Core {
             }
         }
 #endif
+*/
     }
 }

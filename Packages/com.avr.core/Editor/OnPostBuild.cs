@@ -15,7 +15,9 @@ public static class PostBuild
         string[] files = System.IO.Directory.GetFiles(Application.dataPath + "/..", "*.avr", SearchOption.AllDirectories);
 
         foreach(string f in files) {
-            FileUtil.CopyFileOrDirectory(f, Path.GetDirectoryName(pathToBuiltProject) + "/" + Path.GetFileName(f));
+            string dest_path = Path.GetDirectoryName(pathToBuiltProject) + "/" + Path.GetFileName(f);
+            FileUtil.DeleteFileOrDirectory(dest_path);
+            FileUtil.CopyFileOrDirectory(f, dest_path);
         }
     }
 }
