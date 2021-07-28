@@ -9,6 +9,65 @@ namespace AVR.Core {
     [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_core_1_1_a_v_r___component.html")]
     public class AVR_Component : AVR_Behaviour
     {
+        /// <summary> Events called when this component awakes. </summary>
+        [HideInInspector] public UnityEngine.Events.UnityEvent onAwake;
+
+        /// <summary> Events called when this component starts. </summary>
+        [HideInInspector] public UnityEngine.Events.UnityEvent onStart;
+
+        /// <summary> Events called when this component is enabled. </summary>
+        [HideInInspector] public UnityEngine.Events.UnityEvent onEnable;
+
+        /// <summary> Events called when this component is disabled. </summary>
+        [HideInInspector] public UnityEngine.Events.UnityEvent onDisable;
+
+        protected virtual void Awake() {
+            onAwake.Invoke();
+        }
+
+        protected virtual void Start() {
+            #if AVR_NET
+            if(!networkAPI.isLocalPlayer(this)) {
+                if(destroyOnRemote) GameObject.Destroy(this);
+
+                if (changeLayerOnRemote)
+                {
+                    gameObject.layer = remoteLayer;
+                    if (changeLayerOnRemote_IncludeChildren)
+                    {
+                        foreach (Transform child in transform)
+                        {
+                            child.gameObject.layer = remoteLayer;
+                        }
+                    }
+                }
+
+                onRemoteStart.Invoke();
+            }
+            #endif
+            onStart.Invoke();
+        }
+
+        protected virtual void OnEnable() {
+            onEnable.Invoke();
+        }
+
+        protected virtual void OnDisable() {
+            onDisable.Invoke();
+        }
+
+        #if AVR_NET
+        [HideInInspector]
+        public bool destroyOnRemote = true;
+        [HideInInspector]
+        public bool changeLayerOnRemote = false;
+        [HideInInspector]
+        public bool changeLayerOnRemote_IncludeChildren = false;
+        [HideInInspector]
+        public int remoteLayer = 0;
+
+        [HideInInspector] public UnityEngine.Events.UnityEvent onRemoteStart;
+
         public abstract class ComponentNetworkAPI
         {
             public abstract int instanceId(AVR_Component comp);
@@ -37,43 +96,19 @@ namespace AVR.Core {
 
         public Object networkObject;
 
-        public static ComponentNetworkAPI networkAPI {
-            get { 
-                if(_napi==null) _napi = new DefaultNetworkAPI();
+        public static ComponentNetworkAPI networkAPI
+        {
+            get
+            {
+                if (_napi == null) _napi = new DefaultNetworkAPI();
                 return _napi;
             }
-            set {
+            set
+            {
                 _napi = value;
             }
         }
         private static ComponentNetworkAPI _napi;
-
-        /// <summary> Events called when this component awakes. </summary>
-        [HideInInspector] public UnityEngine.Events.UnityEvent onAwake;
-
-        /// <summary> Events called when this component starts. </summary>
-        [HideInInspector] public UnityEngine.Events.UnityEvent onStart;
-
-        /// <summary> Events called when this component is enabled. </summary>
-        [HideInInspector] public UnityEngine.Events.UnityEvent onEnable;
-
-        /// <summary> Events called when this component is disabled. </summary>
-        [HideInInspector] public UnityEngine.Events.UnityEvent onDisable;
-
-        protected virtual void Awake() {
-            onAwake.Invoke();
-        }
-
-        protected virtual void Start() {
-            onStart.Invoke();
-        }
-
-        protected virtual void OnEnable() {
-            onEnable.Invoke();
-        }
-
-        protected virtual void OnDisable() {
-            onDisable.Invoke();
-        }
+        #endif
     }
 }

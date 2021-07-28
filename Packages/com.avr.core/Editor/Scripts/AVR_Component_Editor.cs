@@ -21,13 +21,11 @@ namespace AVR.UEditor.Core
             AVR.UEditor.Core.AVR_EditorUtility.EventsSettings_Button((AVR_Component)target);
 
             // Network button
-            /*
 #if AVR_NET
             if(typeof(AVR_Component).IsAssignableFrom(target.GetType())) {
                 AVR.UEditor.Core.AVR_EditorUtility.NetworkSetting_Button((AVR_Component)target);
             }
 #endif
-*/
             EditorGUILayout.EndHorizontal();
         }
     }

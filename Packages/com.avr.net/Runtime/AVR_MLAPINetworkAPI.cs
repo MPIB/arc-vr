@@ -48,7 +48,7 @@ namespace AVR.Net
     }
 
     [ExecuteInEditMode]
-    public class AVR_Thingy
+    public class AVR_AutoReplaceAPI
     {
 #if UNITY_EDITOR
         [InitializeOnLoadMethod]

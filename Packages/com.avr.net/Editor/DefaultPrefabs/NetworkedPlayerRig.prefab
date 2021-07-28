@@ -100,10 +100,14 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
-  KeepOnRemote: 0
-  ChangeLayerOnRemote: 0
-  ChangeLayerOnRemote_IncludeChildren: 0
-  RemoteLayer: 0
+  destroyOnRemote: 1
+  changeLayerOnRemote: 0
+  changeLayerOnRemote_IncludeChildren: 0
+  remoteLayer: 0
+  onRemoteStart:
+    m_PersistentCalls:
+      m_Calls: []
+  networkObject: {fileID: 0}
   controllerNode: 2
   tracking: 1
   updateType: 2
@@ -171,10 +175,26 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
-  KeepOnRemote: 0
-  ChangeLayerOnRemote: 0
-  ChangeLayerOnRemote_IncludeChildren: 0
-  RemoteLayer: 0
+  destroyOnRemote: 1
+  changeLayerOnRemote: 0
+  changeLayerOnRemote_IncludeChildren: 0
+  remoteLayer: 0
+  onRemoteStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2606667197250907178}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  networkObject: {fileID: 0}
   MainCamera: {fileID: 2606667197250907181}
 --- !u!114 &1335972077755303067
 MonoBehaviour:
