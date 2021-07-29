@@ -111,7 +111,17 @@ namespace AVR.UEditor.Core {
 
         public virtual void on_submit(GameObject targetObject)
         {
+            PrefabUtility.UnpackPrefabInstance(targetObject, PrefabUnpackMode.OutermostRoot, InteractionMode.AutomatedAction);
+        }
 
+        protected virtual void safeDestroyImmediate(GameObject toDestroy, GameObject wizardTarget) {
+            try {
+                GameObject.DestroyImmediate(toDestroy);
+            }
+            catch(System.InvalidOperationException) {
+                PrefabUtility.UnpackPrefabInstance(wizardTarget, PrefabUnpackMode.OutermostRoot, InteractionMode.AutomatedAction);
+                GameObject.DestroyImmediate(toDestroy);
+            }
         }
     }
 
@@ -146,7 +156,7 @@ namespace AVR.UEditor.Core {
             }
             else if (!module && _module.Length > 0)
             {
-                foreach (Mod c in _module) GameObject.DestroyImmediate(c.gameObject);
+                foreach (Mod c in _module) safeDestroyImmediate(c.gameObject, targetObject);
             }
         }
     }
@@ -184,7 +194,7 @@ namespace AVR.UEditor.Core {
             }
             else if (!module && _module.Length > 0)
             {
-                foreach (Mod c in _module) GameObject.DestroyImmediate(c.gameObject);
+                foreach (Mod c in _module) safeDestroyImmediate(c.gameObject, targetObject);
             }
         }
     }
@@ -253,13 +263,13 @@ namespace AVR.UEditor.Core {
             {
                 Mod first = _module[0];
                 if (!_selected.filter.Invoke(first)) {
-                    GameObject.DestroyImmediate(first.gameObject);
+                    safeDestroyImmediate(first.gameObject, targetObject);
                     AVR_EditorUtility.InstantiatePrefabAsChild(targetObject.transform, _selected.prefabPathSettingsToken);
                 }
             }
             else if (!module && _module.Length > 0)
             {
-                foreach (Mod c in _module) GameObject.DestroyImmediate(c.gameObject);
+                foreach (Mod c in _module) safeDestroyImmediate(c.gameObject, targetObject);
             }
         }
     }
