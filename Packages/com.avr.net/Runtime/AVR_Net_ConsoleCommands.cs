@@ -23,6 +23,12 @@ namespace AVR.Net
                 AVR_DevConsole.command("getaddress", false);
                 AVR_DevConsole.command("getport", false);
             };
+
+            NetworkManager.Singleton.OnServerStarted += () => {
+                foreach(var c in Object.FindObjectsOfType<AVR_Component>()) {
+                    c.onNetworkStart();
+                }
+            };
         }
 
         #if UNITY_EDITOR

@@ -45,6 +45,9 @@ namespace AVR.Net
             if(comp.networkObject==null) comp.networkObject = comp.GetComponentInParent<NetworkObject>();
             return ((NetworkObject)comp.networkObject).IsSceneObject;
         }
+        public override bool isOnline(){
+            return NetworkManager.Singleton.IsClient || NetworkManager.Singleton.IsServer;
+        }
     }
 
     [ExecuteInEditMode]

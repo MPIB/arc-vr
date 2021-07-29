@@ -27,10 +27,28 @@ namespace AVR.Core {
 
         protected virtual void Start() {
             #if AVR_NET
-            if(!networkAPI.isLocalPlayer(this)) {
+            onNetworkStart();
+            #endif
+            onStart.Invoke();
+        }
+
+        protected virtual void OnEnable() {
+            onEnable.Invoke();
+        }
+
+        protected virtual void OnDisable() {
+            onDisable.Invoke();
+        }
+
+        #if AVR_NET
+        public virtual void onNetworkStart()
+        {
+            if (networkAPI.isOnline() && !networkAPI.isLocalPlayer(this))
+            {
                 onRemoteStart.Invoke();
 
-                if(destroyOnRemote) {
+                if (destroyOnRemote)
+                {
                     GameObject.Destroy(this);
                     // Under normal conditions Update() runs for 1 frame before Destroy takes place. DestroyImmediate is dangerous to use here.
                     // This is a hacky way of preventing Update from running: We set gameobject.active = false (component.enabled doesn't do the trick)
@@ -51,24 +69,8 @@ namespace AVR.Core {
                     }
                 }
             }
-            #endif
-            onStart.Invoke();
         }
 
-        public IEnumerator soon() {
-            yield return new WaitForEndOfFrame();
-            gameObject.SetActive(true);
-        }
-
-        protected virtual void OnEnable() {
-            onEnable.Invoke();
-        }
-
-        protected virtual void OnDisable() {
-            onDisable.Invoke();
-        }
-
-        #if AVR_NET
         [HideInInspector]
         public bool destroyOnRemote = true;
         [HideInInspector]
@@ -91,6 +93,7 @@ namespace AVR.Core {
             public abstract bool isOwnedByServer(AVR_Component comp);
             public abstract bool isPlayerObject(AVR_Component comp);
             public abstract bool? isSceneObject(AVR_Component comp);
+            public abstract bool isOnline();
         }
 
         public class DefaultNetworkAPI : ComponentNetworkAPI
@@ -104,6 +107,7 @@ namespace AVR.Core {
             public override bool isOwnedByServer(AVR_Component comp) => false;
             public override bool isPlayerObject(AVR_Component comp) => false;
             public override bool? isSceneObject(AVR_Component comp) => false;
+            public override bool isOnline() => false;
         }
 
         [HideInInspector]
