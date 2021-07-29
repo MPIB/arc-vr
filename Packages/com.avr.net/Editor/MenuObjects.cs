@@ -16,9 +16,15 @@ namespace AVR.UEditor.Net
         }
 
         [MenuItem("AVR/Create NetworkManager", false, 20)]
-        public static void createRootObject()
+        public static void createNetworkManager()
         {
             AVR_EditorUtility.InstantiatePrefabAsChild(null, "/editor/defaultPrefabPaths/networkManager");
+        }
+
+        [MenuItem("AVR/Create Player Spawn", false, 20)]
+        public static void createPlayerSpawn()
+        {
+            AVR_EditorUtility.InstantiatePrefabAsChild(null, "/editor/defaultPrefabPaths/playerSpawn");
         }
     }
 }

@@ -94,6 +94,7 @@ namespace AVR.Core {
             public override bool? isSceneObject(AVR_Component comp) => false;
         }
 
+        [HideInInspector]
         public Object networkObject;
 
         public static ComponentNetworkAPI networkAPI

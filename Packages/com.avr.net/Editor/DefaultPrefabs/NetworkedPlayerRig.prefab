@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &807565310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817381215639492624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SendRate: 0.1
+  m_Animator: {fileID: 7645229255183794459}
+  m_TrackedParamFlags: 1
 --- !u!1 &2606667197250907178
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +138,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2606667197701144440}
   - component: {fileID: 2606667197701144441}
-  - component: {fileID: 1335972077755303067}
   - component: {fileID: 1335972077755303066}
   - component: {fileID: 74387721732601985}
   m_Layer: 0
@@ -196,24 +210,6 @@ MonoBehaviour:
         m_CallState: 2
   networkObject: {fileID: 0}
   MainCamera: {fileID: 2606667197250907181}
---- !u!114 &1335972077755303067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2606667197701144438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 004fb629626cb534293dacbe298ec42c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  removeOnRemote: []
-  removeCamerasOnRemote: 1
-  removeXRControllersOnRemote: 1
-  removeTrackedPoseDriversOnRemote: 1
-  removeCharacterControllersOnRemote: 1
-  removeAudoListenersOnRemote: 1
 --- !u!114 &1335972077755303066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,8 +223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NetworkInstanceId: 0
-  PrefabHash: 3405355562552473584
-  PrefabHashGenerator: PlayerRig
+  PrefabHash: 13749279373534704285
+  PrefabHashGenerator: NetworkedPlayerRig
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
 --- !u!114 &74387721732601985
@@ -459,9 +455,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd6a91839fdd8a449a47780a1ca0a7be, type: 3}
+--- !u!1 &1817381215639492624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 843001135480582848, guid: bd6a91839fdd8a449a47780a1ca0a7be, type: 3}
+  m_PrefabInstance: {fileID: 1335972077852355280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3414849258598050307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4461282483203522771, guid: bd6a91839fdd8a449a47780a1ca0a7be, type: 3}
+  m_PrefabInstance: {fileID: 1335972077852355280}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7645229255183794459 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8688318920766876619, guid: bd6a91839fdd8a449a47780a1ca0a7be, type: 3}
   m_PrefabInstance: {fileID: 1335972077852355280}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1335972078638767153

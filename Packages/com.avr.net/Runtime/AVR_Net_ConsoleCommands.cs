@@ -11,6 +11,20 @@ namespace AVR.Net
     [ExecuteInEditMode]
     public class AVR_Net_ConsoleCommands
     {
+        [RuntimeInitializeOnLoadMethod]
+        static void InitCallbacks()
+        {
+            NetworkManager.Singleton.OnClientConnectedCallback += (id) => AVR_DevConsole.csuccess("Client #"+id+" connected.", "NetworkManager");
+
+            NetworkManager.Singleton.OnClientDisconnectCallback += (id) => AVR_DevConsole.cprint("Client #" + id + " disconnected.", "NetworkManager");
+
+            NetworkManager.Singleton.OnServerStarted += () => {
+                AVR_DevConsole.csuccess("Server started.", "NetworkManager");
+                AVR_DevConsole.command("getaddress", false);
+                AVR_DevConsole.command("getport", false);
+            };
+        }
+
         #if UNITY_EDITOR
         [InitializeOnLoadMethod]
         #endif
@@ -55,6 +69,33 @@ namespace AVR.Net
             AVR_DevConsole.register_command("disconnect", (s) => {
                 NetworkManager.Singleton.StopClient();
             });
+
+            AVR_DevConsole.register_command("getport", (s) =>
+            {
+                try {
+                    MLAPI.Transports.UNET.UNetTransport unetT = (MLAPI.Transports.UNET.UNetTransport)NetworkManager.Singleton.NetworkConfig.NetworkTransport;
+                    AVR_DevConsole.print("Port: " + unetT.ServerListenPort);
+                }
+                catch (System.InvalidCastException) {
+                    AVR_DevConsole.error("Could not get UNetTransport from NetworkManager. Are you using a different transport type?");
+                }
+                catch (System.Exception) {
+                    AVR_DevConsole.error("Could not set Port.");
+                }
+            }, 0, "Print NetworkManager ConnectPort.");
+
+            AVR_DevConsole.register_command("getaddress", (s) => {
+                try {
+                    MLAPI.Transports.UNET.UNetTransport unetT = (MLAPI.Transports.UNET.UNetTransport)NetworkManager.Singleton.NetworkConfig.NetworkTransport;
+                    AVR_DevConsole.print("Address: " + unetT.ConnectAddress);
+                }
+                catch (System.InvalidCastException) {
+                    AVR_DevConsole.error("Could not get UNetTransport from NetworkManager. Are you using a different transport type?");
+                }
+                catch (System.Exception) {
+                    AVR_DevConsole.error("Could not set Port.");
+                }
+            }, 0, "Print NetworkManager ConnectPort.");
 
             AVR_DevConsole.register_command("setport", (s) => {
                 try {

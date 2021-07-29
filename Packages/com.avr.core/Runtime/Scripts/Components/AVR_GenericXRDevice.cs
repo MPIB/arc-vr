@@ -145,7 +145,7 @@ namespace AVR.Core
         protected override void OnDisable()
         {
             base.OnDisable();
-            if(nodeDevices[controllerNode] == this) nodeDevices.Remove(controllerNode);
+            if(nodeDevices.ContainsKey(controllerNode) && nodeDevices[controllerNode] == this) nodeDevices.Remove(controllerNode);
             Application.onBeforeRender -= OnBeforeRender;
         }
     }

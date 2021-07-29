@@ -26,6 +26,8 @@ namespace AVR.Core {
 
         private static bool initialized = false;
 
+        private static int repeat_counter = 1;
+
         /// <summary> Initializes the DevConsole. Only the first execution will have an effect. </summary>
         #if UNITY_EDITOR
         [InitializeOnLoadMethod]
@@ -58,7 +60,7 @@ namespace AVR.Core {
         /// Get the complete output of this console as text.
         /// </summary>
         public static string get_text() {
-            return output_s;
+            return output_s + (repeat_counter > 1 ? " [x"+repeat_counter+"]" : "");
         }
 
         /// <summary> Clear console output entirely. </summary>
@@ -139,7 +141,14 @@ namespace AVR.Core {
 
         public static void raw_print(string s) {
             // Avoid duplicate outputs
-            if(output_history.Count>0 && s==output_history.Last()) return;
+            if(output_history.Count>0 && s==output_history.Last()) {
+                repeat_counter++;
+                return;
+            }
+            else {
+                if(repeat_counter>1) output_s += " [x"+repeat_counter+"]";
+                repeat_counter = 1;
+            }
 
             output_history.Add(s);
             output_s += s;
