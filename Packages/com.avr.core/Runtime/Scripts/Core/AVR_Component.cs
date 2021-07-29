@@ -28,7 +28,16 @@ namespace AVR.Core {
         protected virtual void Start() {
             #if AVR_NET
             if(!networkAPI.isLocalPlayer(this)) {
-                if(destroyOnRemote) GameObject.Destroy(this);
+                onRemoteStart.Invoke();
+
+                if(destroyOnRemote) {
+                    GameObject.Destroy(this);
+                    // Under normal conditions Update() runs for 1 frame before Destroy takes place. DestroyImmediate is dangerous to use here.
+                    // This is a hacky way of preventing Update from running: We set gameobject.active = false (component.enabled doesn't do the trick)
+                    // And then re-enable the gameobject at the end of the frame through AVR_Root.
+                    gameObject.SetActive(false);
+                    AVR_Root.Instance.ReEnableAtEndOfFrame(gameObject);
+                }
 
                 if (changeLayerOnRemote)
                 {
@@ -41,11 +50,14 @@ namespace AVR.Core {
                         }
                     }
                 }
-
-                onRemoteStart.Invoke();
             }
             #endif
             onStart.Invoke();
+        }
+
+        public IEnumerator soon() {
+            yield return new WaitForEndOfFrame();
+            gameObject.SetActive(true);
         }
 
         protected virtual void OnEnable() {

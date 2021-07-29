@@ -12,6 +12,23 @@ namespace AVR.Core {
     [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_core_1_1_a_v_r___root.html")]
     public class AVR_Root : Singleton<AVR_Root>
     {
-        // Nothing here yet.
+        [RuntimeInitializeOnLoadMethod]
+        static void Init()
+        {
+            if(Instance==null) {
+                AVR_DevConsole.cwarn("No AVR_Root component is present. Creating one at runtime.", "AVR_Root");
+                var root = AVR.Core.Utils.Misc.CreateEmptyGameObject("Root");
+                root.gameObject.AddComponent<AVR_Root>();
+            }
+        }
+
+        public void ReEnableAtEndOfFrame(GameObject obj) {
+            StartCoroutine(_ReEnableAtEndOfFrame(obj));
+        }
+
+        private IEnumerator _ReEnableAtEndOfFrame(GameObject obj) {
+            yield return new WaitForEndOfFrame();
+            obj.SetActive(true);
+        }
     }
 }

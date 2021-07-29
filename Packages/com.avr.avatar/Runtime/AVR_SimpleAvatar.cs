@@ -27,6 +27,8 @@ namespace AVR.Avatar
 
         void Update()
         {
+            if(!this.enabled) Debug.Log("????????????");
+
             animator.SetFloat(speedAnimationParameter, playerRig.AvgMotion.magnitude);
 
             if(playerRig.AvgMotion.magnitude > 0.3f) {

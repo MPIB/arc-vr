@@ -9,19 +9,39 @@ namespace AVR.Core {
     /// <typeparam name="T"> Type of the Singleton. Should correspond to the class deriving from this. Example: class Example : Singleton&lt;Example&gt; </typeparam>
     public abstract class Singleton<T> : AVR_Behaviour where T : AVR_Behaviour
     {
-        public static T Instance { get; private set;}
-
-        protected virtual void Awake()
+        public static T Instance
         {
-            if (Instance != null) {
-                AVR_DevConsole.cwarn(this.name+" is marked as Singleton but another instance was found in the scene. Destroying object: "+Instance.name, this);
-                GameObject.Destroy(Instance);
+            get
+            {
+                if (_Instance == null) _Instance = FindObjectOfType<T>();
+                return _Instance;
             }
-            
-            Instance = GetComponent<T>();
+            private set
+            {
+                _Instance = value;
+            }
+        }
 
-            if(Instance == null) {
-                AVR_DevConsole.cerror(this.name+" is marked as a Singleton of type "+typeof(T).ToString()+" but no component of this type was found!", this);
+        private static T _Instance;
+
+        void Awake()
+        {
+            SetInstance();
+        }
+
+        private void SetInstance()
+        {
+            if (_Instance != null && _Instance != this)
+            {
+                AVR_DevConsole.cwarn(this.name + " is marked as Singleton but another instance was found in the scene. Continuing to use old one.", this);
+                return;
+            }
+
+            Instance = gameObject.GetComponent<T>();
+
+            if (Instance == null)
+            {
+                AVR_DevConsole.cerror(this.name + " is marked as a Singleton of type " + typeof(T).ToString() + " but no component of this type was found!", this);
             }
 
             DontDestroyOnLoad(this);
