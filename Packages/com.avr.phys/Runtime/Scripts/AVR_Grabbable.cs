@@ -100,7 +100,7 @@ namespace AVR.Phys {
             #if AVR_NET
             if(!networkAPI.isOwner(this)) return;
             #endif
-            
+
             // NOTE: use rb.worldCenterofMass etc isntead of transform pos + rotation ?
             // TODO: Break grab if the object is too far away from hand
 

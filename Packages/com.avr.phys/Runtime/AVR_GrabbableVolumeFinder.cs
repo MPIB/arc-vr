@@ -65,6 +65,10 @@ public class AVR_GrabbableVolumeFinder : AVR_GrabbableFinder
 
         AVR_Grabbable grb = smallest_coll.GetComponentInParent<AVR_Grabbable>();
 
+        if(grb==null) {
+            AVR.Core.AVR_DevConsole.cwarn("Attempted to grab a collider without an AVR_Grabbable component. Either 1) attatch an AVR_Grabbable to the respective object, or 2), disable collisions between the volumefinder and the given object.", this);
+        }
+
         foreach(var node in grb.grabNodes) {
             if(Vector3.Distance(GrabPoint.position, node.transform.position) < node.override_radius) {
                 location = new GrabLocation(grb, closest_point, smallest_dist, node);
