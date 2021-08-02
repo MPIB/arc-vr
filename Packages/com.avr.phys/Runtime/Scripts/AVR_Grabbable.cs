@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 
 namespace AVR.Phys {
-    public class AVR_Grabbable : AVR.Core.AVR_Behaviour
+    public class AVR_Grabbable : AVR.Core.AVR_Component
     {
         public GrabbableObjectType objectType;
         private GrabbableObjectType _objType;
@@ -33,8 +33,9 @@ namespace AVR.Phys {
             get { return AttachedHands.Count>1; }
         }
 
-        void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             if (rb == null) rb = GetComponent<Rigidbody>();
             if (colliders==null || colliders.Count<1) colliders.AddRange(GetComponentsInChildren<Collider>());
             if (nodes == null || nodes.Count < 1) nodes.AddRange(GetComponentsInChildren<AVR_GrabNode>());
@@ -53,6 +54,13 @@ namespace AVR.Phys {
 
         public void Grab(AVR_BasicGrabProvider hand)
         {
+            #if AVR_NET
+            // If we are online and this object is not owned by the grabbing player or the server -> dont allow grab.
+            if(networkAPI.isOnline() && !networkAPI.isOwnedByServer(this) && !networkAPI.isOwner(this)) {
+                return;
+            }
+            #endif
+
             if(!isGrabbed) {
                 old_parent = this.transform.parent;
                 // while its being grabbed, set the rig as its parent, so that when the rig teleport we dont break the grab-joint.
@@ -67,6 +75,10 @@ namespace AVR.Phys {
 
         public void Release(AVR_BasicGrabProvider hand)
         {
+            #if AVR_NET
+            networkAPI.removeOwner(this);
+            #endif
+
             if(AttachedHands.Contains(hand)) AttachedHands.Remove(hand);
             if(AttachedHands.Count<1) {
                 transform.SetParent(old_parent);
@@ -85,6 +97,10 @@ namespace AVR.Phys {
 
         void UpdateVelocities()
         {
+            #if AVR_NET
+            if(!networkAPI.isOwner(this)) return;
+            #endif
+            
             // NOTE: use rb.worldCenterofMass etc isntead of transform pos + rotation ?
             // TODO: Break grab if the object is too far away from hand
 

@@ -9,44 +9,58 @@ using AVR.Core;
 namespace AVR.Net
 {
     public class MLAPINetworkAPI : AVR_Component.ComponentNetworkAPI {
+        protected NetworkObject GetNetworkObject(AVR_Component comp){
+            if (comp.networkObject == null) comp.networkObject = comp.GetComponentInParent<NetworkObject>();
+            return ((NetworkObject)comp.networkObject);
+        }
+
         public override int instanceId(AVR_Component comp) {
-            if(comp.networkObject==null) comp.networkObject = comp.GetComponentInParent<NetworkObject>();
-            return ((NetworkObject)comp.networkObject).GetInstanceID();
+            return GetNetworkObject(comp).GetInstanceID();
         }
         public override ulong networkId(AVR_Component comp) {
-            if(comp.networkObject==null) comp.networkObject = comp.GetComponentInParent<NetworkObject>();
-            return ((NetworkObject)comp.networkObject).NetworkInstanceId;
+            return GetNetworkObject(comp).NetworkInstanceId;
         }
         public override ulong ownerId(AVR_Component comp) {
-            if(comp.networkObject==null) comp.networkObject = comp.GetComponentInParent<NetworkObject>();
-            return ((NetworkObject)comp.networkObject).OwnerClientId;
+            return GetNetworkObject(comp).OwnerClientId;
         }
         public override bool isSpawned(AVR_Component comp) {
-            if(comp.networkObject==null) comp.networkObject = comp.GetComponentInParent<NetworkObject>();
-            return ((NetworkObject)comp.networkObject).IsSpawned;
+            return GetNetworkObject(comp).IsSpawned;
         }
         public override bool isLocalPlayer(AVR_Component comp) {
-            if(comp.networkObject==null) comp.networkObject = comp.GetComponentInParent<NetworkObject>();
-            return ((NetworkObject)comp.networkObject).IsLocalPlayer;
+            return GetNetworkObject(comp).IsLocalPlayer;
         }
         public override bool isOwner(AVR_Component comp) {
-            if(comp.networkObject==null) comp.networkObject = comp.GetComponentInParent<NetworkObject>();
-            return ((NetworkObject)comp.networkObject).IsOwner;
+            return GetNetworkObject(comp).IsOwner;
         }
         public override bool isOwnedByServer(AVR_Component comp) {
-            if(comp.networkObject==null) comp.networkObject = comp.GetComponentInParent<NetworkObject>();
-            return ((NetworkObject)comp.networkObject).IsOwnedByServer;
+            return GetNetworkObject(comp).IsOwnedByServer;
         }
         public override bool isPlayerObject(AVR_Component comp) {
-            if(comp.networkObject==null) comp.networkObject = comp.GetComponentInParent<NetworkObject>();
-            return ((NetworkObject)comp.networkObject).IsPlayerObject;
+            return GetNetworkObject(comp).IsPlayerObject;
         }
         public override bool? isSceneObject(AVR_Component comp) {
-            if(comp.networkObject==null) comp.networkObject = comp.GetComponentInParent<NetworkObject>();
-            return ((NetworkObject)comp.networkObject).IsSceneObject;
+            return GetNetworkObject(comp).IsSceneObject;
         }
         public override bool isOnline(){
             return NetworkManager.Singleton.IsClient || NetworkManager.Singleton.IsServer;
+        }
+
+        public override void setOwner(AVR_Component comp, ulong newOwnerId) {
+            setOwnership(GetNetworkObject(comp), newOwnerId);
+        }
+
+        public override void removeOwner(AVR_Component comp) {
+            removeOwnership(GetNetworkObject(comp));
+        }
+
+        [MLAPI.Messaging.ServerRpc]
+        protected void setOwnership(NetworkObject networkObject, ulong newOwnerId) {
+            networkObject.ChangeOwnership(newOwnerId);
+        }
+
+        [MLAPI.Messaging.ServerRpc]
+        protected void removeOwnership(NetworkObject networkObject) {
+            networkObject.RemoveOwnership();
         }
     }
 

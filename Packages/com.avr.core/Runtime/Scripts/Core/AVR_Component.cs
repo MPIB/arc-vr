@@ -94,6 +94,8 @@ namespace AVR.Core {
             public abstract bool isPlayerObject(AVR_Component comp);
             public abstract bool? isSceneObject(AVR_Component comp);
             public abstract bool isOnline();
+            public abstract void setOwner(AVR_Component comp, ulong newOwnerId);
+            public abstract void removeOwner(AVR_Component comp);
         }
 
         public class DefaultNetworkAPI : ComponentNetworkAPI
@@ -108,6 +110,8 @@ namespace AVR.Core {
             public override bool isPlayerObject(AVR_Component comp) => false;
             public override bool? isSceneObject(AVR_Component comp) => false;
             public override bool isOnline() => false;
+            public override void setOwner(AVR_Component comp, ulong newOwnerId) { }
+            public override void removeOwner(AVR_Component comp) { }
         }
 
         [HideInInspector]
