@@ -44,7 +44,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -63,18 +62,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
-    </ul>
-  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AVR_FA_GlyphHelper.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_a_v_r___f_a___glyph_helper_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEngine.UI;</div>
@@ -104,14 +97,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    [RequireComponent(typeof(Text))]</div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html">   10</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html">AVR_FA_GlyphHelper</a> : MonoBehaviour</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html#af2f6f83c2baf44046d8309196db4a8c7">   12</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html#af2f6f83c2baf44046d8309196db4a8c7">Awake</a>() {</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_af2f6f83c2baf44046d8309196db4a8c7.html#af2f6f83c2baf44046d8309196db4a8c7">   12</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_af2f6f83c2baf44046d8309196db4a8c7.html#af2f6f83c2baf44046d8309196db4a8c7">Awake</a>() {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordflow">if</span>(!Application.isEditor) {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                AVR.Core.AVR_DevConsole.cwarn(<span class="stringliteral">&quot;There is a redundant GlyphHelper object at: &quot;</span>+AVR.Core.Utils.Misc.GetHierarchyPath(transform)+<span class="stringliteral">&quot;. Consider removing it.&quot;</span>, <span class="keyword">this</span>);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                GameObject.Destroy(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            }</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html#a6d0dabbe0914c1a00d4ef6da5a0868fc">   19</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html#a6d0dabbe0914c1a00d4ef6da5a0868fc">setup</a>(Font font, <span class="keywordtype">int</span> unicode) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_a6d0dabbe0914c1a00d4ef6da5a0868fc.html#a6d0dabbe0914c1a00d4ef6da5a0868fc">   19</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_a6d0dabbe0914c1a00d4ef6da5a0868fc.html#a6d0dabbe0914c1a00d4ef6da5a0868fc">setup</a>(Font font, <span class="keywordtype">int</span> unicode) {</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            Text t = GetComponent&lt;Text&gt;();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            t.font = font;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            t.text = ((char)unicode).ToString();</div>
@@ -123,8 +116,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 <div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_html"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html">AVR.UI.Utils.AVR_FA_GlyphHelper</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___f_a___glyph_helper_8cs_source.html#l00010">AVR_FA_GlyphHelper.cs:10</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_html_af2f6f83c2baf44046d8309196db4a8c7"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html#af2f6f83c2baf44046d8309196db4a8c7">AVR.UI.Utils.AVR_FA_GlyphHelper.Awake</a></div><div class="ttdeci">void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___f_a___glyph_helper_8cs_source.html#l00012">AVR_FA_GlyphHelper.cs:12</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_html_a6d0dabbe0914c1a00d4ef6da5a0868fc"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html#a6d0dabbe0914c1a00d4ef6da5a0868fc">AVR.UI.Utils.AVR_FA_GlyphHelper.setup</a></div><div class="ttdeci">void setup(Font font, int unicode)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___f_a___glyph_helper_8cs_source.html#l00019">AVR_FA_GlyphHelper.cs:19</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_af2f6f83c2baf44046d8309196db4a8c7_html_af2f6f83c2baf44046d8309196db4a8c7"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_af2f6f83c2baf44046d8309196db4a8c7.html#af2f6f83c2baf44046d8309196db4a8c7">AVR.UI.Utils.AVR_FA_GlyphHelper.Awake</a></div><div class="ttdeci">void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___f_a___glyph_helper_8cs_source.html#l00012">AVR_FA_GlyphHelper.cs:12</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_a6d0dabbe0914c1a00d4ef6da5a0868fc_html_a6d0dabbe0914c1a00d4ef6da5a0868fc"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_a6d0dabbe0914c1a00d4ef6da5a0868fc.html#a6d0dabbe0914c1a00d4ef6da5a0868fc">AVR.UI.Utils.AVR_FA_GlyphHelper.setup</a></div><div class="ttdeci">void setup(Font font, int unicode)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___f_a___glyph_helper_8cs_source.html#l00019">AVR_FA_GlyphHelper.cs:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

@@ -44,7 +44,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -76,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -119,321 +118,83 @@ Inheritance diagram for AVR.Motion.AVR_TurnProvider:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a8885921ebd2e0317bb9b46abb2e96ab6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6">turnMode</a> { <a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6a9bd645c2ef58737f53ff32e6c927049a">turnMode.SNAP</a>, 
-<a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6a464948bf38663fe1c4053f72402b63d5">turnMode.SMOOTH</a>
+<tr class="memitem:a8885921ebd2e0317bb9b46abb2e96ab6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a8885921ebd2e0317bb9b46abb2e96ab6.html#a8885921ebd2e0317bb9b46abb2e96ab6">turnMode</a> { <a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a8885921ebd2e0317bb9b46abb2e96ab6.html#a8885921ebd2e0317bb9b46abb2e96ab6a9bd645c2ef58737f53ff32e6c927049a">turnMode.SNAP</a>, 
+<a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a8885921ebd2e0317bb9b46abb2e96ab6.html#a8885921ebd2e0317bb9b46abb2e96ab6a464948bf38663fe1c4053f72402b63d5">turnMode.SMOOTH</a>
  }</td></tr>
-<tr class="memdesc:a8885921ebd2e0317bb9b46abb2e96ab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of turning. Snap will instantly turn by a given amount while smooth is a continous turn over time  <a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6">More...</a><br /></td></tr>
+<tr class="memdesc:a8885921ebd2e0317bb9b46abb2e96ab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of turning. Snap will instantly turn by a given amount while smooth is a continous turn over time  <a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a8885921ebd2e0317bb9b46abb2e96ab6.html#a8885921ebd2e0317bb9b46abb2e96ab6">More...</a><br /></td></tr>
 <tr class="separator:a8885921ebd2e0317bb9b46abb2e96ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a7651f79f7db1452b4983f9a60a073266"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6">turnMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a7651f79f7db1452b4983f9a60a073266">mode</a></td></tr>
-<tr class="memdesc:a7651f79f7db1452b4983f9a60a073266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of turning. Snap will instantly turn by a given amount while smooth is a continous turn over time  <a href="#a7651f79f7db1452b4983f9a60a073266">More...</a><br /></td></tr>
+<tr class="memitem:a7651f79f7db1452b4983f9a60a073266"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a8885921ebd2e0317bb9b46abb2e96ab6.html#a8885921ebd2e0317bb9b46abb2e96ab6">turnMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a7651f79f7db1452b4983f9a60a073266.html#a7651f79f7db1452b4983f9a60a073266">mode</a></td></tr>
+<tr class="memdesc:a7651f79f7db1452b4983f9a60a073266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of turning. Snap will instantly turn by a given amount while smooth is a continous turn over time  <a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a7651f79f7db1452b4983f9a60a073266.html#a7651f79f7db1452b4983f9a60a073266">More...</a><br /></td></tr>
 <tr class="separator:a7651f79f7db1452b4983f9a60a073266"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b314bca116701090e94aabe246b031c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a33a6a31da3de7a373deffcdc04fad274">AVR_ControllerInputManager.BoolEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a1b314bca116701090e94aabe246b031c">turnEvent</a></td></tr>
-<tr class="memdesc:a1b314bca116701090e94aabe246b031c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event on which a turn is performed.  <a href="#a1b314bca116701090e94aabe246b031c">More...</a><br /></td></tr>
+<tr class="memitem:a1b314bca116701090e94aabe246b031c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager_a33a6a31da3de7a373deffcdc04fad274.html#a33a6a31da3de7a373deffcdc04fad274">AVR_ControllerInputManager.BoolEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a1b314bca116701090e94aabe246b031c.html#a1b314bca116701090e94aabe246b031c">turnEvent</a></td></tr>
+<tr class="memdesc:a1b314bca116701090e94aabe246b031c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event on which a turn is performed.  <a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a1b314bca116701090e94aabe246b031c.html#a1b314bca116701090e94aabe246b031c">More...</a><br /></td></tr>
 <tr class="separator:a1b314bca116701090e94aabe246b031c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f7a4ca11e2057dd8f8cdfb158f4152e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a865da584045d5f56094275977a622924">AVR_ControllerInputManager.FloatEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a9f7a4ca11e2057dd8f8cdfb158f4152e">turnDirection</a></td></tr>
-<tr class="memdesc:a9f7a4ca11e2057dd8f8cdfb158f4152e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Float value that determines the direction of the turn.  <a href="#a9f7a4ca11e2057dd8f8cdfb158f4152e">More...</a><br /></td></tr>
+<tr class="memitem:a9f7a4ca11e2057dd8f8cdfb158f4152e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager_a865da584045d5f56094275977a622924.html#a865da584045d5f56094275977a622924">AVR_ControllerInputManager.FloatEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a9f7a4ca11e2057dd8f8cdfb158f4152e.html#a9f7a4ca11e2057dd8f8cdfb158f4152e">turnDirection</a></td></tr>
+<tr class="memdesc:a9f7a4ca11e2057dd8f8cdfb158f4152e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Float value that determines the direction of the turn.  <a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a9f7a4ca11e2057dd8f8cdfb158f4152e.html#a9f7a4ca11e2057dd8f8cdfb158f4152e">More...</a><br /></td></tr>
 <tr class="separator:a9f7a4ca11e2057dd8f8cdfb158f4152e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b0f684e88006e9f1fb76912fe7d04ae"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a9b0f684e88006e9f1fb76912fe7d04ae">snp_rotationAmount</a> = 45</td></tr>
-<tr class="memdesc:a9b0f684e88006e9f1fb76912fe7d04ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the mode is set to snap, the amount of rotation (in degrees) is determined by this value  <a href="#a9b0f684e88006e9f1fb76912fe7d04ae">More...</a><br /></td></tr>
+<tr class="memitem:a9b0f684e88006e9f1fb76912fe7d04ae"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a9b0f684e88006e9f1fb76912fe7d04ae.html#a9b0f684e88006e9f1fb76912fe7d04ae">snp_rotationAmount</a> = 45</td></tr>
+<tr class="memdesc:a9b0f684e88006e9f1fb76912fe7d04ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the mode is set to snap, the amount of rotation (in degrees) is determined by this value  <a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a9b0f684e88006e9f1fb76912fe7d04ae.html#a9b0f684e88006e9f1fb76912fe7d04ae">More...</a><br /></td></tr>
 <tr class="separator:a9b0f684e88006e9f1fb76912fe7d04ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a677ac231b10dd5e88b363251e19057ec"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a677ac231b10dd5e88b363251e19057ec">snp_cooldown</a> = 0.5f</td></tr>
-<tr class="memdesc:a677ac231b10dd5e88b363251e19057ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the mode is set to snap, this determines the amount of time (in seconds) that has to pass between turns  <a href="#a677ac231b10dd5e88b363251e19057ec">More...</a><br /></td></tr>
+<tr class="memitem:a677ac231b10dd5e88b363251e19057ec"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a677ac231b10dd5e88b363251e19057ec.html#a677ac231b10dd5e88b363251e19057ec">snp_cooldown</a> = 0.5f</td></tr>
+<tr class="memdesc:a677ac231b10dd5e88b363251e19057ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the mode is set to snap, this determines the amount of time (in seconds) that has to pass between turns  <a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a677ac231b10dd5e88b363251e19057ec.html#a677ac231b10dd5e88b363251e19057ec">More...</a><br /></td></tr>
 <tr class="separator:a677ac231b10dd5e88b363251e19057ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d63299eaa078d65207d5c10250c7569"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a2d63299eaa078d65207d5c10250c7569">smt_rotationSpeed</a> = 45</td></tr>
-<tr class="memdesc:a2d63299eaa078d65207d5c10250c7569"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the mode is set to smooth, this determines the speed of rotation (id deg/s)  <a href="#a2d63299eaa078d65207d5c10250c7569">More...</a><br /></td></tr>
+<tr class="memitem:a2d63299eaa078d65207d5c10250c7569"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a2d63299eaa078d65207d5c10250c7569.html#a2d63299eaa078d65207d5c10250c7569">smt_rotationSpeed</a> = 45</td></tr>
+<tr class="memdesc:a2d63299eaa078d65207d5c10250c7569"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the mode is set to smooth, this determines the speed of rotation (id deg/s)  <a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a2d63299eaa078d65207d5c10250c7569.html#a2d63299eaa078d65207d5c10250c7569">More...</a><br /></td></tr>
 <tr class="separator:a2d63299eaa078d65207d5c10250c7569"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR.Core.AVR_Component</a></td></tr>
-<tr class="memitem:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7fc075a7ad97ada8b9c25bf82f346aee">onAwake</a></td></tr>
-<tr class="memdesc:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component awakes.  <a href="#a7fc075a7ad97ada8b9c25bf82f346aee">More...</a><br /></td></tr>
+<tr class="memitem:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7fc075a7ad97ada8b9c25bf82f346aee.html#a7fc075a7ad97ada8b9c25bf82f346aee">onAwake</a></td></tr>
+<tr class="memdesc:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component awakes.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7fc075a7ad97ada8b9c25bf82f346aee.html#a7fc075a7ad97ada8b9c25bf82f346aee">More...</a><br /></td></tr>
 <tr class="separator:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a5f39436f864be4fe5d8a6b0c469a124f">onStart</a></td></tr>
-<tr class="memdesc:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component starts.  <a href="#a5f39436f864be4fe5d8a6b0c469a124f">More...</a><br /></td></tr>
+<tr class="memitem:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a5f39436f864be4fe5d8a6b0c469a124f.html#a5f39436f864be4fe5d8a6b0c469a124f">onStart</a></td></tr>
+<tr class="memdesc:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component starts.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a5f39436f864be4fe5d8a6b0c469a124f.html#a5f39436f864be4fe5d8a6b0c469a124f">More...</a><br /></td></tr>
 <tr class="separator:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a68fc0bb54e2c18ba883e42383001c501">onEnable</a></td></tr>
-<tr class="memdesc:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component is enabled.  <a href="#a68fc0bb54e2c18ba883e42383001c501">More...</a><br /></td></tr>
+<tr class="memitem:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a68fc0bb54e2c18ba883e42383001c501.html#a68fc0bb54e2c18ba883e42383001c501">onEnable</a></td></tr>
+<tr class="memdesc:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component is enabled.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a68fc0bb54e2c18ba883e42383001c501.html#a68fc0bb54e2c18ba883e42383001c501">More...</a><br /></td></tr>
 <tr class="separator:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">onDisable</a></td></tr>
-<tr class="memdesc:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component is disabled.  <a href="#aacf4193cd2c2bcf37b2cbf23cf64d08a">More...</a><br /></td></tr>
+<tr class="memitem:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_aacf4193cd2c2bcf37b2cbf23cf64d08a.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">onDisable</a></td></tr>
+<tr class="memdesc:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component is disabled.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___component_aacf4193cd2c2bcf37b2cbf23cf64d08a.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">More...</a><br /></td></tr>
 <tr class="separator:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a915864d0b0282136e90e6c4d7b4cc4a0"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a915864d0b0282136e90e6c4d7b4cc4a0">Awake</a> ()</td></tr>
+<tr class="memitem:a915864d0b0282136e90e6c4d7b4cc4a0"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a915864d0b0282136e90e6c4d7b4cc4a0.html#a915864d0b0282136e90e6c4d7b4cc4a0">Awake</a> ()</td></tr>
 <tr class="separator:a915864d0b0282136e90e6c4d7b4cc4a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR.Core.AVR_Component</a></td></tr>
-<tr class="memitem:a9ccb9d57f9c2a601728cc59bcf86381f inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a9ccb9d57f9c2a601728cc59bcf86381f">Start</a> ()</td></tr>
+<tr class="memitem:a9ccb9d57f9c2a601728cc59bcf86381f inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a9ccb9d57f9c2a601728cc59bcf86381f.html#a9ccb9d57f9c2a601728cc59bcf86381f">Start</a> ()</td></tr>
 <tr class="separator:a9ccb9d57f9c2a601728cc59bcf86381f inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b1cb22192be27ed3ccc5f683c5c9bea inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7b1cb22192be27ed3ccc5f683c5c9bea">OnEnable</a> ()</td></tr>
+<tr class="memitem:a7b1cb22192be27ed3ccc5f683c5c9bea inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7b1cb22192be27ed3ccc5f683c5c9bea.html#a7b1cb22192be27ed3ccc5f683c5c9bea">OnEnable</a> ()</td></tr>
 <tr class="separator:a7b1cb22192be27ed3ccc5f683c5c9bea inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae85b01ddcee8e524605b72773ebdf2f5 inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#ae85b01ddcee8e524605b72773ebdf2f5">OnDisable</a> ()</td></tr>
+<tr class="memitem:ae85b01ddcee8e524605b72773ebdf2f5 inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_ae85b01ddcee8e524605b72773ebdf2f5.html#ae85b01ddcee8e524605b72773ebdf2f5">OnDisable</a> ()</td></tr>
 <tr class="separator:ae85b01ddcee8e524605b72773ebdf2f5 inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ace9429f86d98159a7127b4b5f2a66dd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#ace9429f86d98159a7127b4b5f2a66dd5">Update</a> ()</td></tr>
+<tr class="memitem:ace9429f86d98159a7127b4b5f2a66dd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_ace9429f86d98159a7127b4b5f2a66dd5.html#ace9429f86d98159a7127b4b5f2a66dd5">Update</a> ()</td></tr>
 <tr class="separator:ace9429f86d98159a7127b4b5f2a66dd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a18daabad33c650bffbfce4a48a387bd0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a18daabad33c650bffbfce4a48a387bd0">stime</a></td></tr>
+<tr class="memitem:a18daabad33c650bffbfce4a48a387bd0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a18daabad33c650bffbfce4a48a387bd0.html#a18daabad33c650bffbfce4a48a387bd0">stime</a></td></tr>
 <tr class="separator:a18daabad33c650bffbfce4a48a387bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR.Core.AVR_Behaviour</a></td></tr>
-<tr class="memitem:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html">AVR_PlayerRig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html#a45c80511f6416cbf280f59a93d05ba81">playerRig</a> =&gt; <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___singleton_component_3_01_t_01_4.html#a0921dd90cf053c2761c65b0710c98450">AVR_PlayerRig.Instance</a></td></tr>
-<tr class="memdesc:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html" title="Represents the players VR setup. Only one instance at a time is allowed. ">AVR_PlayerRig</a> instance in the scene  <a href="#a45c80511f6416cbf280f59a93d05ba81">More...</a><br /></td></tr>
+<tr class="memitem:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html">AVR_PlayerRig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_a45c80511f6416cbf280f59a93d05ba81.html#a45c80511f6416cbf280f59a93d05ba81">playerRig</a> =&gt; <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___singleton_component_3_01_t_01_4_a0921dd90cf053c2761c65b0710c98450.html#a0921dd90cf053c2761c65b0710c98450">AVR_PlayerRig.Instance</a></td></tr>
+<tr class="memdesc:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html" title="Represents the players VR setup. Only one instance at a time is allowed. ">AVR_PlayerRig</a> instance in the scene  <a href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_a45c80511f6416cbf280f59a93d05ba81.html#a45c80511f6416cbf280f59a93d05ba81">More...</a><br /></td></tr>
 <tr class="separator:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_class_a_v_r_1_1_core_1_1_a_v_r___controller_component"><td colspan="2" onclick="javascript:toggleInherit('properties_class_a_v_r_1_1_core_1_1_a_v_r___controller_component')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html">AVR.Core.AVR_ControllerComponent</a></td></tr>
-<tr class="memitem:aa1b5d10862079118499e2ee5e5e619e7 inherit properties_class_a_v_r_1_1_core_1_1_a_v_r___controller_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html">AVR_Controller</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a><code> [get, set]</code></td></tr>
+<tr class="memitem:aa1b5d10862079118499e2ee5e5e619e7 inherit properties_class_a_v_r_1_1_core_1_1_a_v_r___controller_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html">AVR_Controller</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component_aa1b5d10862079118499e2ee5e5e619e7.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a><code> [get, set]</code></td></tr>
 <tr class="separator:aa1b5d10862079118499e2ee5e5e619e7 inherit properties_class_a_v_r_1_1_core_1_1_a_v_r___controller_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides turning functionality to a controller. </p>
 
 <p>Definition at line <a class="el" href="_a_v_r___turn_provider_8cs_source.html#l00015">15</a> of file <a class="el" href="_a_v_r___turn_provider_8cs_source.html">AVR_TurnProvider.cs</a>.</p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a class="anchor" id="a8885921ebd2e0317bb9b46abb2e96ab6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6">AVR.Motion.AVR_TurnProvider.turnMode</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Mode of turning. Snap will instantly turn by a given amount while smooth is a continous turn over time </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="a8885921ebd2e0317bb9b46abb2e96ab6a9bd645c2ef58737f53ff32e6c927049a"></a>SNAP&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="a8885921ebd2e0317bb9b46abb2e96ab6a464948bf38663fe1c4053f72402b63d5"></a>SMOOTH&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="_a_v_r___turn_provider_8cs_source.html#l00020">20</a> of file <a class="el" href="_a_v_r___turn_provider_8cs_source.html">AVR_TurnProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{ <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6a9bd645c2ef58737f53ff32e6c927049a">SNAP</a>, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6a464948bf38663fe1c4053f72402b63d5">SMOOTH</a> };</div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_html_a8885921ebd2e0317bb9b46abb2e96ab6a464948bf38663fe1c4053f72402b63d5"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6a464948bf38663fe1c4053f72402b63d5">AVR.Motion.AVR_TurnProvider.SMOOTH</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_html_a8885921ebd2e0317bb9b46abb2e96ab6a9bd645c2ef58737f53ff32e6c927049a"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6a9bd645c2ef58737f53ff32e6c927049a">AVR.Motion.AVR_TurnProvider.SNAP</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a915864d0b0282136e90e6c4d7b4cc4a0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">override void AVR.Motion.AVR_TurnProvider.Awake </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#ae4ed17deabe4207cc4059c6abe466a43">AVR.Core.AVR_ControllerComponent</a>.</p>
-
-<p>Definition at line <a class="el" href="_a_v_r___turn_provider_8cs_source.html#l00060">60</a> of file <a class="el" href="_a_v_r___turn_provider_8cs_source.html">AVR_TurnProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            base.Awake();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a18daabad33c650bffbfce4a48a387bd0">stime</a> = Time.time;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_html_a18daabad33c650bffbfce4a48a387bd0"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a18daabad33c650bffbfce4a48a387bd0">AVR.Motion.AVR_TurnProvider.stime</a></div><div class="ttdeci">float stime</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___turn_provider_8cs_source.html#l00058">AVR_TurnProvider.cs:58</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ace9429f86d98159a7127b4b5f2a66dd5"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AVR.Motion.AVR_TurnProvider.Update </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_v_r___turn_provider_8cs_source.html#l00066">66</a> of file <a class="el" href="_a_v_r___turn_provider_8cs_source.html">AVR_TurnProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">// Snap turn triggered</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a7651f79f7db1452b4983f9a60a073266">mode</a>==<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6">turnMode</a>.SNAP &amp;&amp; <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#ac9271951866023100ee7721803b31dcc">getEventStatus</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a1b314bca116701090e94aabe246b031c">turnEvent</a>) &amp;&amp; (<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a18daabad33c650bffbfce4a48a387bd0">stime</a> + <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a677ac231b10dd5e88b363251e19057ec">snp_cooldown</a>) &lt; Time.time) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a18daabad33c650bffbfce4a48a387bd0">stime</a> = Time.time; <span class="comment">// Restart cooldown timer</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="comment">// Turn left</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#ac9271951866023100ee7721803b31dcc">getEventStatus</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a9f7a4ca11e2057dd8f8cdfb158f4152e">turnDirection</a>) &lt; -0.5)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    playerRig.transform.Rotate(Vector3.up, -<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a9b0f684e88006e9f1fb76912fe7d04ae">snp_rotationAmount</a>, Space.Self);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="comment">// Turn right</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#ac9271951866023100ee7721803b31dcc">getEventStatus</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a9f7a4ca11e2057dd8f8cdfb158f4152e">turnDirection</a>) &gt; 0.5)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    playerRig.transform.Rotate(Vector3.up, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a9b0f684e88006e9f1fb76912fe7d04ae">snp_rotationAmount</a>, Space.Self);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a7651f79f7db1452b4983f9a60a073266">mode</a>==<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6">turnMode</a>.SMOOTH &amp;&amp; <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#ac9271951866023100ee7721803b31dcc">getEventStatus</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a1b314bca116701090e94aabe246b031c">turnEvent</a>)) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="comment">// Turn left</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#ac9271951866023100ee7721803b31dcc">getEventStatus</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a9f7a4ca11e2057dd8f8cdfb158f4152e">turnDirection</a>) &lt; -0.5)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    playerRig.transform.Rotate(Vector3.up, -<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a2d63299eaa078d65207d5c10250c7569">smt_rotationSpeed</a> * Time.deltaTime, Space.Self);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="comment">// Turn right</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">inputManager</a>.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#ac9271951866023100ee7721803b31dcc">getEventStatus</a>(<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a9f7a4ca11e2057dd8f8cdfb158f4152e">turnDirection</a>) &gt; 0.5)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    playerRig.transform.Rotate(Vector3.up, <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a2d63299eaa078d65207d5c10250c7569">smt_rotationSpeed</a> * Time.deltaTime, Space.Self);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_html_a7651f79f7db1452b4983f9a60a073266"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a7651f79f7db1452b4983f9a60a073266">AVR.Motion.AVR_TurnProvider.mode</a></div><div class="ttdeci">turnMode mode</div><div class="ttdoc">Mode of turning. Snap will instantly turn by a given amount while smooth is a continous turn over tim...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___turn_provider_8cs_source.html#l00020">AVR_TurnProvider.cs:20</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___controller_html_a0758b7f779cd90b8cbde460b87ff962b"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html#a0758b7f779cd90b8cbde460b87ff962b">AVR.Core.AVR_Controller.inputManager</a></div><div class="ttdeci">AVR_ControllerInputManager inputManager</div><div class="ttdoc">the AVR_ControllerInputManager assigned to this controller. Returns null if no inputmanager is assign...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___controller_8cs_source.html#l00027">AVR_Controller.cs:27</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_html_a1b314bca116701090e94aabe246b031c"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a1b314bca116701090e94aabe246b031c">AVR.Motion.AVR_TurnProvider.turnEvent</a></div><div class="ttdeci">AVR_ControllerInputManager.BoolEvent turnEvent</div><div class="ttdoc">Event on which a turn is performed. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___turn_provider_8cs_source.html#l00032">AVR_TurnProvider.cs:32</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_html_a9f7a4ca11e2057dd8f8cdfb158f4152e"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a9f7a4ca11e2057dd8f8cdfb158f4152e">AVR.Motion.AVR_TurnProvider.turnDirection</a></div><div class="ttdeci">AVR_ControllerInputManager.FloatEvent turnDirection</div><div class="ttdoc">Float value that determines the direction of the turn. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___turn_provider_8cs_source.html#l00037">AVR_TurnProvider.cs:37</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_html_a18daabad33c650bffbfce4a48a387bd0"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a18daabad33c650bffbfce4a48a387bd0">AVR.Motion.AVR_TurnProvider.stime</a></div><div class="ttdeci">float stime</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___turn_provider_8cs_source.html#l00058">AVR_TurnProvider.cs:58</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_html_a9b0f684e88006e9f1fb76912fe7d04ae"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a9b0f684e88006e9f1fb76912fe7d04ae">AVR.Motion.AVR_TurnProvider.snp_rotationAmount</a></div><div class="ttdeci">float snp_rotationAmount</div><div class="ttdoc">If the mode is set to snap, the amount of rotation (in degrees) is determined by this value ...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___turn_provider_8cs_source.html#l00044">AVR_TurnProvider.cs:44</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_html_a2d63299eaa078d65207d5c10250c7569"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a2d63299eaa078d65207d5c10250c7569">AVR.Motion.AVR_TurnProvider.smt_rotationSpeed</a></div><div class="ttdeci">float smt_rotationSpeed</div><div class="ttdoc">If the mode is set to smooth, this determines the speed of rotation (id deg/s) </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___turn_provider_8cs_source.html#l00056">AVR_TurnProvider.cs:56</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_html_a677ac231b10dd5e88b363251e19057ec"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a677ac231b10dd5e88b363251e19057ec">AVR.Motion.AVR_TurnProvider.snp_cooldown</a></div><div class="ttdeci">float snp_cooldown</div><div class="ttdoc">If the mode is set to snap, this determines the amount of time (in seconds) that has to pass between ...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___turn_provider_8cs_source.html#l00050">AVR_TurnProvider.cs:50</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager_html_ac9271951866023100ee7721803b31dcc"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#ac9271951866023100ee7721803b31dcc">AVR.Core.AVR_ControllerInputManager.getEventStatus</a></div><div class="ttdeci">bool getEventStatus(BoolEvent type)</div><div class="ttdoc">Returns the status of a given BoolEvent </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___controller_input_manager_8cs_source.html#l00234">AVR_ControllerInputManager.cs:234</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___controller_component_html_aa1b5d10862079118499e2ee5e5e619e7"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">AVR.Core.AVR_ControllerComponent.controller</a></div><div class="ttdeci">AVR_Controller controller</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___controller_component_8cs_source.html#l00012">AVR_ControllerComponent.cs:12</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_html_a8885921ebd2e0317bb9b46abb2e96ab6"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6">AVR.Motion.AVR_TurnProvider.turnMode</a></div><div class="ttdeci">turnMode</div><div class="ttdoc">Mode of turning. Snap will instantly turn by a given amount while smooth is a continous turn over tim...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___turn_provider_8cs_source.html#l00020">AVR_TurnProvider.cs:20</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a7651f79f7db1452b4983f9a60a073266"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a8885921ebd2e0317bb9b46abb2e96ab6">turnMode</a> AVR.Motion.AVR_TurnProvider.mode</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Mode of turning. Snap will instantly turn by a given amount while smooth is a continous turn over time </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___turn_provider_8cs_source.html#l00020">20</a> of file <a class="el" href="_a_v_r___turn_provider_8cs_source.html">AVR_TurnProvider.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2d63299eaa078d65207d5c10250c7569"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float AVR.Motion.AVR_TurnProvider.smt_rotationSpeed = 45</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>If the mode is set to smooth, this determines the speed of rotation (id deg/s) </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___turn_provider_8cs_source.html#l00056">56</a> of file <a class="el" href="_a_v_r___turn_provider_8cs_source.html">AVR_TurnProvider.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a677ac231b10dd5e88b363251e19057ec"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float AVR.Motion.AVR_TurnProvider.snp_cooldown = 0.5f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>If the mode is set to snap, this determines the amount of time (in seconds) that has to pass between turns </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___turn_provider_8cs_source.html#l00050">50</a> of file <a class="el" href="_a_v_r___turn_provider_8cs_source.html">AVR_TurnProvider.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9b0f684e88006e9f1fb76912fe7d04ae"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float AVR.Motion.AVR_TurnProvider.snp_rotationAmount = 45</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>If the mode is set to snap, the amount of rotation (in degrees) is determined by this value </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___turn_provider_8cs_source.html#l00044">44</a> of file <a class="el" href="_a_v_r___turn_provider_8cs_source.html">AVR_TurnProvider.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a18daabad33c650bffbfce4a48a387bd0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float AVR.Motion.AVR_TurnProvider.stime</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_v_r___turn_provider_8cs_source.html#l00058">58</a> of file <a class="el" href="_a_v_r___turn_provider_8cs_source.html">AVR_TurnProvider.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9f7a4ca11e2057dd8f8cdfb158f4152e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a865da584045d5f56094275977a622924">AVR_ControllerInputManager.FloatEvent</a> AVR.Motion.AVR_TurnProvider.turnDirection</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Float value that determines the direction of the turn. </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___turn_provider_8cs_source.html#l00037">37</a> of file <a class="el" href="_a_v_r___turn_provider_8cs_source.html">AVR_TurnProvider.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1b314bca116701090e94aabe246b031c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html#a33a6a31da3de7a373deffcdc04fad274">AVR_ControllerInputManager.BoolEvent</a> AVR.Motion.AVR_TurnProvider.turnEvent</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Event on which a turn is performed. </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___turn_provider_8cs_source.html#l00032">32</a> of file <a class="el" href="_a_v_r___turn_provider_8cs_source.html">AVR_TurnProvider.cs</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_a_v_r___turn_provider_8cs_source.html">AVR_TurnProvider.cs</a></li>
-</ul>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

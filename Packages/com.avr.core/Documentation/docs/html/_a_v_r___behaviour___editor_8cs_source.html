@@ -44,7 +44,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -63,18 +62,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
-    </ul>
-  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AVR_Behaviour_Editor.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_a_v_r___behaviour___editor_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEditor;</div>
@@ -106,33 +99,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    [CanEditMultipleObjects]</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html">   12</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html">AVR_Behaviour_Editor</a> : UnityEditor.Editor</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html#a86460c297d38c00a3957336df7736759">   14</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html#a86460c297d38c00a3957336df7736759">OnInspectorGUI</a>()</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_a86460c297d38c00a3957336df7736759.html#a86460c297d38c00a3957336df7736759">   14</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_a86460c297d38c00a3957336df7736759.html#a86460c297d38c00a3957336df7736759">OnInspectorGUI</a>()</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            DrawToolbar(target);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            DrawDefaultInspector();</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html#aa9fdcd4bbf85d3fc37a419b85ed392b0">   21</a></span>&#160;        <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html#aa9fdcd4bbf85d3fc37a419b85ed392b0">DrawToolbar</a>(<span class="keywordtype">object</span> target)</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_aa9fdcd4bbf85d3fc37a419b85ed392b0.html#aa9fdcd4bbf85d3fc37a419b85ed392b0">   21</a></span>&#160;        <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_aa9fdcd4bbf85d3fc37a419b85ed392b0.html#aa9fdcd4bbf85d3fc37a419b85ed392b0">DrawToolbar</a>(<span class="keywordtype">object</span> target)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            DrawToolbar(AVR.Core.Utils.Misc.GetAttribute&lt;AVR.Core.Attributes.DocumentationUrl&gt;(target.GetType()).getDocumentationUrl());</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html#a68f4061da515ba68093e17d590aff98f">   26</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html#a68f4061da515ba68093e17d590aff98f">DrawToolbar</a>(<span class="keywordtype">string</span> docu_url) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            EditorGUILayout.BeginHorizontal();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="comment">// Documentation button</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            AVR.UEditor.Core.AVR_EditorUtility.Documentation_Url(docu_url);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            EditorGUILayout.EndHorizontal();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_html_a68f4061da515ba68093e17d590aff98f"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html#a68f4061da515ba68093e17d590aff98f">AVR.UEditor.Core.AVR_Behaviour_Editor.DrawToolbar</a></div><div class="ttdeci">virtual void DrawToolbar(string docu_url)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___behaviour___editor_8cs_source.html#l00026">AVR_Behaviour_Editor.cs:26</a></div></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                DrawToolbar(AVR.Core.Utils.Misc.GetAttribute&lt;AVR.Core.Attributes.DocumentationUrl&gt;(target.GetType()).getDocumentationUrl());</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            } <span class="keywordflow">catch</span>(System.Exception) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                AVR_DevConsole.warn(<span class="stringliteral">&quot;Object does not have a DocumentationUrl set: &quot;</span> + target);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_a68f4061da515ba68093e17d590aff98f.html#a68f4061da515ba68093e17d590aff98f">   30</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_a68f4061da515ba68093e17d590aff98f.html#a68f4061da515ba68093e17d590aff98f">DrawToolbar</a>(<span class="keywordtype">string</span> docu_url) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            EditorGUILayout.BeginHorizontal();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="comment">// Documentation button</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            AVR.UEditor.Core.AVR_EditorUtility.Documentation_Url(docu_url);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            EditorGUILayout.EndHorizontal();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR.Core.AVR_Behaviour</a></div><div class="ttdoc">Monobehaviour but with an added URL button to a documentation page. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___behaviour_8cs_source.html#l00010">AVR_Behaviour.cs:10</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_html_a86460c297d38c00a3957336df7736759"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html#a86460c297d38c00a3957336df7736759">AVR.UEditor.Core.AVR_Behaviour_Editor.OnInspectorGUI</a></div><div class="ttdeci">override void OnInspectorGUI()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___behaviour___editor_8cs_source.html#l00014">AVR_Behaviour_Editor.cs:14</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_html_aa9fdcd4bbf85d3fc37a419b85ed392b0"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html#aa9fdcd4bbf85d3fc37a419b85ed392b0">AVR.UEditor.Core.AVR_Behaviour_Editor.DrawToolbar</a></div><div class="ttdeci">void DrawToolbar(object target)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___behaviour___editor_8cs_source.html#l00021">AVR_Behaviour_Editor.cs:21</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_aa9fdcd4bbf85d3fc37a419b85ed392b0_html_aa9fdcd4bbf85d3fc37a419b85ed392b0"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_aa9fdcd4bbf85d3fc37a419b85ed392b0.html#aa9fdcd4bbf85d3fc37a419b85ed392b0">AVR.UEditor.Core.AVR_Behaviour_Editor.DrawToolbar</a></div><div class="ttdeci">void DrawToolbar(object target)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___behaviour___editor_8cs_source.html#l00021">AVR_Behaviour_Editor.cs:21</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_a68f4061da515ba68093e17d590aff98f_html_a68f4061da515ba68093e17d590aff98f"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_a68f4061da515ba68093e17d590aff98f.html#a68f4061da515ba68093e17d590aff98f">AVR.UEditor.Core.AVR_Behaviour_Editor.DrawToolbar</a></div><div class="ttdeci">virtual void DrawToolbar(string docu_url)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___behaviour___editor_8cs_source.html#l00030">AVR_Behaviour_Editor.cs:30</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_html"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor.html">AVR.UEditor.Core.AVR_Behaviour_Editor</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___behaviour___editor_8cs_source.html#l00012">AVR_Behaviour_Editor.cs:12</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_a86460c297d38c00a3957336df7736759_html_a86460c297d38c00a3957336df7736759"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___behaviour___editor_a86460c297d38c00a3957336df7736759.html#a86460c297d38c00a3957336df7736759">AVR.UEditor.Core.AVR_Behaviour_Editor.OnInspectorGUI</a></div><div class="ttdeci">override void OnInspectorGUI()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___behaviour___editor_8cs_source.html#l00014">AVR_Behaviour_Editor.cs:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

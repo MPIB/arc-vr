@@ -44,7 +44,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -63,18 +62,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
-    </ul>
-  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AVR_Root.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_a_v_r___root_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEngine.XR;</div>
@@ -107,10 +100,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span>    [<a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url.html">AVR.Core.Attributes.DocumentationUrl</a>(<span class="stringliteral">&quot;class_a_v_r_1_1_core_1_1_a_v_r___root.html&quot;</span>)]</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___root.html">   13</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___root.html">AVR_Root</a> : Singleton&lt;AVR_Root&gt;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="comment">// Nothing here yet.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        [RuntimeInitializeOnLoadMethod]</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___root_a9ba63989a0d7c9533aa83ed70634ec5c.html#a9ba63989a0d7c9533aa83ed70634ec5c">   16</a></span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___root_a9ba63989a0d7c9533aa83ed70634ec5c.html#a9ba63989a0d7c9533aa83ed70634ec5c">Init</a>()</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">if</span>(Instance==null) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                AVR_DevConsole.cwarn(<span class="stringliteral">&quot;No AVR_Root component is present. Creating one at runtime.&quot;</span>, <span class="stringliteral">&quot;AVR_Root&quot;</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                var root = AVR.Core.Utils.Misc.CreateEmptyGameObject(<span class="stringliteral">&quot;Root&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                root.gameObject.AddComponent&lt;<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___root.html">AVR_Root</a>&gt;();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___root_a6f23dacc9aa5d3d6cbc8d4ee3f09d0e4.html#a6f23dacc9aa5d3d6cbc8d4ee3f09d0e4">   25</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___root_a6f23dacc9aa5d3d6cbc8d4ee3f09d0e4.html#a6f23dacc9aa5d3d6cbc8d4ee3f09d0e4">ReEnableAtEndOfFrame</a>(GameObject obj) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            StartCoroutine(_ReEnableAtEndOfFrame(obj));</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___root_af03313d3bdebc3349ffd91d3281e2c1e.html#af03313d3bdebc3349ffd91d3281e2c1e">   29</a></span>&#160;        <span class="keyword">private</span> IEnumerator <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___root_af03313d3bdebc3349ffd91d3281e2c1e.html#af03313d3bdebc3349ffd91d3281e2c1e">_ReEnableAtEndOfFrame</a>(GameObject obj) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForEndOfFrame();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            obj.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___root_a9ba63989a0d7c9533aa83ed70634ec5c_html_a9ba63989a0d7c9533aa83ed70634ec5c"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___root_a9ba63989a0d7c9533aa83ed70634ec5c.html#a9ba63989a0d7c9533aa83ed70634ec5c">AVR.Core.AVR_Root.Init</a></div><div class="ttdeci">static void Init()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___root_8cs_source.html#l00016">AVR_Root.cs:16</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___root_af03313d3bdebc3349ffd91d3281e2c1e_html_af03313d3bdebc3349ffd91d3281e2c1e"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___root_af03313d3bdebc3349ffd91d3281e2c1e.html#af03313d3bdebc3349ffd91d3281e2c1e">AVR.Core.AVR_Root._ReEnableAtEndOfFrame</a></div><div class="ttdeci">IEnumerator _ReEnableAtEndOfFrame(GameObject obj)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___root_8cs_source.html#l00029">AVR_Root.cs:29</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url.html">AVR.Core.Attributes.DocumentationUrl</a></div><div class="ttdoc">Sets the documentation html file inside of Packages/com.avr.core/Documentation/html of a given class...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___attributes_8cs_source.html#l00089">AVR_Attributes.cs:89</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___root_a6f23dacc9aa5d3d6cbc8d4ee3f09d0e4_html_a6f23dacc9aa5d3d6cbc8d4ee3f09d0e4"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___root_a6f23dacc9aa5d3d6cbc8d4ee3f09d0e4.html#a6f23dacc9aa5d3d6cbc8d4ee3f09d0e4">AVR.Core.AVR_Root.ReEnableAtEndOfFrame</a></div><div class="ttdeci">void ReEnableAtEndOfFrame(GameObject obj)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___root_8cs_source.html#l00025">AVR_Root.cs:25</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___root_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___root.html">AVR.Core.AVR_Root</a></div><div class="ttdoc">Root object of the arc-vr-core library. Functions as a Singleton. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___root_8cs_source.html#l00013">AVR_Root.cs:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

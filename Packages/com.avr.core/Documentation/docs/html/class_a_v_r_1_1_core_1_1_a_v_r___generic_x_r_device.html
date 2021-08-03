@@ -44,7 +44,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -76,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -120,591 +119,99 @@ Inheritance diagram for AVR.Core.AVR_GenericXRDevice:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aa204aa208513a86e3272c6f27dbbdd7b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7b">TrackingUpdateType</a> { <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7badad07967ee58700afec07a543d5a5e46">TrackingUpdateType.OnUpdate</a>, 
-<a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7bacabd306390a9f789064294c2cac42fc2">TrackingUpdateType.OnBeforeRender</a>, 
-<a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7ba537edf6214a9792b8f3692af11c9da8c">TrackingUpdateType.OnBeforeRenderAndUpdate</a>
+<tr class="memitem:aa204aa208513a86e3272c6f27dbbdd7b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_aa204aa208513a86e3272c6f27dbbdd7b.html#aa204aa208513a86e3272c6f27dbbdd7b">TrackingUpdateType</a> { <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_aa204aa208513a86e3272c6f27dbbdd7b.html#aa204aa208513a86e3272c6f27dbbdd7badad07967ee58700afec07a543d5a5e46">TrackingUpdateType.OnUpdate</a>, 
+<a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_aa204aa208513a86e3272c6f27dbbdd7b.html#aa204aa208513a86e3272c6f27dbbdd7bacabd306390a9f789064294c2cac42fc2">TrackingUpdateType.OnBeforeRender</a>, 
+<a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_aa204aa208513a86e3272c6f27dbbdd7b.html#aa204aa208513a86e3272c6f27dbbdd7ba537edf6214a9792b8f3692af11c9da8c">TrackingUpdateType.OnBeforeRenderAndUpdate</a>
  }</td></tr>
-<tr class="memdesc:aa204aa208513a86e3272c6f27dbbdd7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines when positional tracking should take place. Recommended setting is OnBeforeRenderAndUpdate  <a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7b">More...</a><br /></td></tr>
+<tr class="memdesc:aa204aa208513a86e3272c6f27dbbdd7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines when positional tracking should take place. Recommended setting is OnBeforeRenderAndUpdate  <a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_aa204aa208513a86e3272c6f27dbbdd7b.html#aa204aa208513a86e3272c6f27dbbdd7b">More...</a><br /></td></tr>
 <tr class="separator:aa204aa208513a86e3272c6f27dbbdd7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ac432b48357602266993ccc5acb013938"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html">AVR_GenericXRDevice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#ac432b48357602266993ccc5acb013938">getDeviceAtNode</a> (XRNode node)</td></tr>
-<tr class="memdesc:ac432b48357602266993ccc5acb013938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html" title="Represents some spatially tracked XR device. Provides functionality for spacial tracking. Can be used to represent hardware trackers, game controllers or other references. ">AVR_GenericXRDevice</a> enabled that has a given controllerNode value.  <a href="#ac432b48357602266993ccc5acb013938">More...</a><br /></td></tr>
+<tr class="memitem:ac432b48357602266993ccc5acb013938"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html">AVR_GenericXRDevice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_ac432b48357602266993ccc5acb013938.html#ac432b48357602266993ccc5acb013938">getDeviceAtNode</a> (XRNode node)</td></tr>
+<tr class="memdesc:ac432b48357602266993ccc5acb013938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html" title="Represents some spatially tracked XR device. Provides functionality for spacial tracking. Can be used to represent hardware trackers, game controllers or other references. ">AVR_GenericXRDevice</a> enabled that has a given controllerNode value.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_ac432b48357602266993ccc5acb013938.html#ac432b48357602266993ccc5acb013938">More...</a><br /></td></tr>
 <tr class="separator:ac432b48357602266993ccc5acb013938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af98b9a0ac03b69e7f6fedb2ab8062671"><td class="memItemLeft" align="right" valign="top">XRNode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#af98b9a0ac03b69e7f6fedb2ab8062671">controllerNode</a></td></tr>
-<tr class="memdesc:af98b9a0ac03b69e7f6fedb2ab8062671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which XRNode this object represents.  <a href="#af98b9a0ac03b69e7f6fedb2ab8062671">More...</a><br /></td></tr>
+<tr class="memitem:af98b9a0ac03b69e7f6fedb2ab8062671"><td class="memItemLeft" align="right" valign="top">XRNode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_af98b9a0ac03b69e7f6fedb2ab8062671.html#af98b9a0ac03b69e7f6fedb2ab8062671">controllerNode</a></td></tr>
+<tr class="memdesc:af98b9a0ac03b69e7f6fedb2ab8062671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Which XRNode this object represents.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_af98b9a0ac03b69e7f6fedb2ab8062671.html#af98b9a0ac03b69e7f6fedb2ab8062671">More...</a><br /></td></tr>
 <tr class="separator:af98b9a0ac03b69e7f6fedb2ab8062671"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0faf0ef2f470a02ff6b69575702bb8af"><td class="memItemLeft" align="right" valign="top">InputDevice&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a0faf0ef2f470a02ff6b69575702bb8af">inputDevice</a> =&gt; _inputDevice.isValid ? <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#acd59ad1ef794365ac40dd7566bfbe8d1">_inputDevice</a> : <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#acd59ad1ef794365ac40dd7566bfbe8d1">_inputDevice</a> = InputDevices.GetDeviceAtXRNode(<a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#af98b9a0ac03b69e7f6fedb2ab8062671">controllerNode</a>)</td></tr>
-<tr class="memdesc:a0faf0ef2f470a02ff6b69575702bb8af"><td class="mdescLeft">&#160;</td><td class="mdescRight">XR.Inputdevice that this controller represents.  <a href="#a0faf0ef2f470a02ff6b69575702bb8af">More...</a><br /></td></tr>
+<tr class="memitem:a0faf0ef2f470a02ff6b69575702bb8af"><td class="memItemLeft" align="right" valign="top">InputDevice&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a0faf0ef2f470a02ff6b69575702bb8af.html#a0faf0ef2f470a02ff6b69575702bb8af">inputDevice</a> =&gt; _inputDevice.isValid ? <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_acd59ad1ef794365ac40dd7566bfbe8d1.html#acd59ad1ef794365ac40dd7566bfbe8d1">_inputDevice</a> : <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_acd59ad1ef794365ac40dd7566bfbe8d1.html#acd59ad1ef794365ac40dd7566bfbe8d1">_inputDevice</a> = InputDevices.GetDeviceAtXRNode(<a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_af98b9a0ac03b69e7f6fedb2ab8062671.html#af98b9a0ac03b69e7f6fedb2ab8062671">controllerNode</a>)</td></tr>
+<tr class="memdesc:a0faf0ef2f470a02ff6b69575702bb8af"><td class="mdescLeft">&#160;</td><td class="mdescRight">XR.Inputdevice that this controller represents.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a0faf0ef2f470a02ff6b69575702bb8af.html#a0faf0ef2f470a02ff6b69575702bb8af">More...</a><br /></td></tr>
 <tr class="separator:a0faf0ef2f470a02ff6b69575702bb8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b7cbf28132d71873c4eaed4548db487"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a0b7cbf28132d71873c4eaed4548db487">tracking</a> = true</td></tr>
-<tr class="memdesc:a0b7cbf28132d71873c4eaed4548db487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines if spatial tracking should be performed.  <a href="#a0b7cbf28132d71873c4eaed4548db487">More...</a><br /></td></tr>
+<tr class="memitem:a0b7cbf28132d71873c4eaed4548db487"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a0b7cbf28132d71873c4eaed4548db487.html#a0b7cbf28132d71873c4eaed4548db487">tracking</a> = true</td></tr>
+<tr class="memdesc:a0b7cbf28132d71873c4eaed4548db487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines if spatial tracking should be performed.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a0b7cbf28132d71873c4eaed4548db487.html#a0b7cbf28132d71873c4eaed4548db487">More...</a><br /></td></tr>
 <tr class="separator:a0b7cbf28132d71873c4eaed4548db487"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c9df1b178248c4223dbf1b98e998bfb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7b">TrackingUpdateType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a4c9df1b178248c4223dbf1b98e998bfb">updateType</a></td></tr>
-<tr class="memdesc:a4c9df1b178248c4223dbf1b98e998bfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines when positional tracking should take place. Recommended setting is OnBeforeRenderAndUpdate  <a href="#a4c9df1b178248c4223dbf1b98e998bfb">More...</a><br /></td></tr>
+<tr class="memitem:a4c9df1b178248c4223dbf1b98e998bfb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_aa204aa208513a86e3272c6f27dbbdd7b.html#aa204aa208513a86e3272c6f27dbbdd7b">TrackingUpdateType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a4c9df1b178248c4223dbf1b98e998bfb.html#a4c9df1b178248c4223dbf1b98e998bfb">updateType</a></td></tr>
+<tr class="memdesc:a4c9df1b178248c4223dbf1b98e998bfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines when positional tracking should take place. Recommended setting is OnBeforeRenderAndUpdate  <a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a4c9df1b178248c4223dbf1b98e998bfb.html#a4c9df1b178248c4223dbf1b98e998bfb">More...</a><br /></td></tr>
 <tr class="separator:a4c9df1b178248c4223dbf1b98e998bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a774a8de60363c6332a776fe200d3c3f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a774a8de60363c6332a776fe200d3c3f4">smoothing</a> = false</td></tr>
-<tr class="memdesc:a774a8de60363c6332a776fe200d3c3f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines if positional tracking is smoothed across several frames. Makes controllers less shaky.  <a href="#a774a8de60363c6332a776fe200d3c3f4">More...</a><br /></td></tr>
+<tr class="memitem:a774a8de60363c6332a776fe200d3c3f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a774a8de60363c6332a776fe200d3c3f4.html#a774a8de60363c6332a776fe200d3c3f4">smoothing</a> = false</td></tr>
+<tr class="memdesc:a774a8de60363c6332a776fe200d3c3f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines if positional tracking is smoothed across several frames. Makes controllers less shaky.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a774a8de60363c6332a776fe200d3c3f4.html#a774a8de60363c6332a776fe200d3c3f4">More...</a><br /></td></tr>
 <tr class="separator:a774a8de60363c6332a776fe200d3c3f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75d883f1a5207b2b91b27f867f74811a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a75d883f1a5207b2b91b27f867f74811a">smoothingFidelity</a> = 0.3f</td></tr>
-<tr class="memdesc:a75d883f1a5207b2b91b27f867f74811a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the amount of smoothing.  <a href="#a75d883f1a5207b2b91b27f867f74811a">More...</a><br /></td></tr>
+<tr class="memitem:a75d883f1a5207b2b91b27f867f74811a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a75d883f1a5207b2b91b27f867f74811a.html#a75d883f1a5207b2b91b27f867f74811a">smoothingFidelity</a> = 0.3f</td></tr>
+<tr class="memdesc:a75d883f1a5207b2b91b27f867f74811a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the amount of smoothing.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a75d883f1a5207b2b91b27f867f74811a.html#a75d883f1a5207b2b91b27f867f74811a">More...</a><br /></td></tr>
 <tr class="separator:a75d883f1a5207b2b91b27f867f74811a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR.Core.AVR_Component</a></td></tr>
-<tr class="memitem:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7fc075a7ad97ada8b9c25bf82f346aee">onAwake</a></td></tr>
-<tr class="memdesc:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component awakes.  <a href="#a7fc075a7ad97ada8b9c25bf82f346aee">More...</a><br /></td></tr>
+<tr class="memitem:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7fc075a7ad97ada8b9c25bf82f346aee.html#a7fc075a7ad97ada8b9c25bf82f346aee">onAwake</a></td></tr>
+<tr class="memdesc:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component awakes.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7fc075a7ad97ada8b9c25bf82f346aee.html#a7fc075a7ad97ada8b9c25bf82f346aee">More...</a><br /></td></tr>
 <tr class="separator:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a5f39436f864be4fe5d8a6b0c469a124f">onStart</a></td></tr>
-<tr class="memdesc:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component starts.  <a href="#a5f39436f864be4fe5d8a6b0c469a124f">More...</a><br /></td></tr>
+<tr class="memitem:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a5f39436f864be4fe5d8a6b0c469a124f.html#a5f39436f864be4fe5d8a6b0c469a124f">onStart</a></td></tr>
+<tr class="memdesc:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component starts.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a5f39436f864be4fe5d8a6b0c469a124f.html#a5f39436f864be4fe5d8a6b0c469a124f">More...</a><br /></td></tr>
 <tr class="separator:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a68fc0bb54e2c18ba883e42383001c501">onEnable</a></td></tr>
-<tr class="memdesc:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component is enabled.  <a href="#a68fc0bb54e2c18ba883e42383001c501">More...</a><br /></td></tr>
+<tr class="memitem:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a68fc0bb54e2c18ba883e42383001c501.html#a68fc0bb54e2c18ba883e42383001c501">onEnable</a></td></tr>
+<tr class="memdesc:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component is enabled.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a68fc0bb54e2c18ba883e42383001c501.html#a68fc0bb54e2c18ba883e42383001c501">More...</a><br /></td></tr>
 <tr class="separator:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">onDisable</a></td></tr>
-<tr class="memdesc:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component is disabled.  <a href="#aacf4193cd2c2bcf37b2cbf23cf64d08a">More...</a><br /></td></tr>
+<tr class="memitem:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_aacf4193cd2c2bcf37b2cbf23cf64d08a.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">onDisable</a></td></tr>
+<tr class="memdesc:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component is disabled.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___component_aacf4193cd2c2bcf37b2cbf23cf64d08a.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">More...</a><br /></td></tr>
 <tr class="separator:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a71f30c927216f5cf2b3f1205ae4a9186"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a71f30c927216f5cf2b3f1205ae4a9186">Awake</a> ()</td></tr>
+<tr class="memitem:a71f30c927216f5cf2b3f1205ae4a9186"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a71f30c927216f5cf2b3f1205ae4a9186.html#a71f30c927216f5cf2b3f1205ae4a9186">Awake</a> ()</td></tr>
 <tr class="separator:a71f30c927216f5cf2b3f1205ae4a9186"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86d1e47e8ba7b4150cf6f450f1d949a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a86d1e47e8ba7b4150cf6f450f1d949a8">UpdateTracking</a> ()</td></tr>
-<tr class="memdesc:a86d1e47e8ba7b4150cf6f450f1d949a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the controller position and rotation.  <a href="#a86d1e47e8ba7b4150cf6f450f1d949a8">More...</a><br /></td></tr>
+<tr class="memitem:a86d1e47e8ba7b4150cf6f450f1d949a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a86d1e47e8ba7b4150cf6f450f1d949a8.html#a86d1e47e8ba7b4150cf6f450f1d949a8">UpdateTracking</a> ()</td></tr>
+<tr class="memdesc:a86d1e47e8ba7b4150cf6f450f1d949a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the controller position and rotation.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a86d1e47e8ba7b4150cf6f450f1d949a8.html#a86d1e47e8ba7b4150cf6f450f1d949a8">More...</a><br /></td></tr>
 <tr class="separator:a86d1e47e8ba7b4150cf6f450f1d949a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5315d67e0026ac2e446a491efc242db2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a5315d67e0026ac2e446a491efc242db2">OnBeforeRender</a> ()</td></tr>
+<tr class="memitem:a5315d67e0026ac2e446a491efc242db2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a5315d67e0026ac2e446a491efc242db2.html#a5315d67e0026ac2e446a491efc242db2">OnBeforeRender</a> ()</td></tr>
 <tr class="separator:a5315d67e0026ac2e446a491efc242db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a596d538bf6c56442e378ac66af9f8ae4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a596d538bf6c56442e378ac66af9f8ae4">Update</a> ()</td></tr>
+<tr class="memitem:a596d538bf6c56442e378ac66af9f8ae4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a596d538bf6c56442e378ac66af9f8ae4.html#a596d538bf6c56442e378ac66af9f8ae4">Update</a> ()</td></tr>
 <tr class="separator:a596d538bf6c56442e378ac66af9f8ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8e91ceaf1bb1b3da83753a4000970ef"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#ae8e91ceaf1bb1b3da83753a4000970ef">OnEnable</a> ()</td></tr>
+<tr class="memitem:ae8e91ceaf1bb1b3da83753a4000970ef"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_ae8e91ceaf1bb1b3da83753a4000970ef.html#ae8e91ceaf1bb1b3da83753a4000970ef">OnEnable</a> ()</td></tr>
 <tr class="separator:ae8e91ceaf1bb1b3da83753a4000970ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6b20417c5531b97e6869ca3f476e789"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#ad6b20417c5531b97e6869ca3f476e789">OnDisable</a> ()</td></tr>
+<tr class="memitem:ad6b20417c5531b97e6869ca3f476e789"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_ad6b20417c5531b97e6869ca3f476e789.html#ad6b20417c5531b97e6869ca3f476e789">OnDisable</a> ()</td></tr>
 <tr class="separator:ad6b20417c5531b97e6869ca3f476e789"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR.Core.AVR_Component</a></td></tr>
-<tr class="memitem:a9ccb9d57f9c2a601728cc59bcf86381f inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a9ccb9d57f9c2a601728cc59bcf86381f">Start</a> ()</td></tr>
+<tr class="memitem:a9ccb9d57f9c2a601728cc59bcf86381f inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a9ccb9d57f9c2a601728cc59bcf86381f.html#a9ccb9d57f9c2a601728cc59bcf86381f">Start</a> ()</td></tr>
 <tr class="separator:a9ccb9d57f9c2a601728cc59bcf86381f inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
 <tr class="memitem:a7b112d2490b3ff796492168c1b83d329"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; XRNode, <br class="typebreak" />
-<a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html">AVR_GenericXRDevice</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a7b112d2490b3ff796492168c1b83d329">nodeDevices</a> = new Dictionary&lt;XRNode, <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html">AVR_GenericXRDevice</a>&gt;()</td></tr>
+<a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html">AVR_GenericXRDevice</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a7b112d2490b3ff796492168c1b83d329.html#a7b112d2490b3ff796492168c1b83d329">nodeDevices</a> = new Dictionary&lt;XRNode, <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html">AVR_GenericXRDevice</a>&gt;()</td></tr>
 <tr class="separator:a7b112d2490b3ff796492168c1b83d329"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:acd59ad1ef794365ac40dd7566bfbe8d1"><td class="memItemLeft" align="right" valign="top">InputDevice&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#acd59ad1ef794365ac40dd7566bfbe8d1">_inputDevice</a></td></tr>
+<tr class="memitem:acd59ad1ef794365ac40dd7566bfbe8d1"><td class="memItemLeft" align="right" valign="top">InputDevice&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_acd59ad1ef794365ac40dd7566bfbe8d1.html#acd59ad1ef794365ac40dd7566bfbe8d1">_inputDevice</a></td></tr>
 <tr class="separator:acd59ad1ef794365ac40dd7566bfbe8d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c20a381c88b818ce39fc15895e2cf64"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a5c20a381c88b818ce39fc15895e2cf64">prevPos</a> = Vector3.zero</td></tr>
+<tr class="memitem:a5c20a381c88b818ce39fc15895e2cf64"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a5c20a381c88b818ce39fc15895e2cf64.html#a5c20a381c88b818ce39fc15895e2cf64">prevPos</a> = Vector3.zero</td></tr>
 <tr class="separator:a5c20a381c88b818ce39fc15895e2cf64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c156218ef5cc68fce0e733cef56da75"><td class="memItemLeft" align="right" valign="top">Quaternion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a2c156218ef5cc68fce0e733cef56da75">prevRot</a> = Quaternion.identity</td></tr>
+<tr class="memitem:a2c156218ef5cc68fce0e733cef56da75"><td class="memItemLeft" align="right" valign="top">Quaternion&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a2c156218ef5cc68fce0e733cef56da75.html#a2c156218ef5cc68fce0e733cef56da75">prevRot</a> = Quaternion.identity</td></tr>
 <tr class="separator:a2c156218ef5cc68fce0e733cef56da75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR.Core.AVR_Behaviour</a></td></tr>
-<tr class="memitem:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html">AVR_PlayerRig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html#a45c80511f6416cbf280f59a93d05ba81">playerRig</a> =&gt; <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___singleton_component_3_01_t_01_4.html#a0921dd90cf053c2761c65b0710c98450">AVR_PlayerRig.Instance</a></td></tr>
-<tr class="memdesc:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html" title="Represents the players VR setup. Only one instance at a time is allowed. ">AVR_PlayerRig</a> instance in the scene  <a href="#a45c80511f6416cbf280f59a93d05ba81">More...</a><br /></td></tr>
+<tr class="memitem:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html">AVR_PlayerRig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_a45c80511f6416cbf280f59a93d05ba81.html#a45c80511f6416cbf280f59a93d05ba81">playerRig</a> =&gt; <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___singleton_component_3_01_t_01_4_a0921dd90cf053c2761c65b0710c98450.html#a0921dd90cf053c2761c65b0710c98450">AVR_PlayerRig.Instance</a></td></tr>
+<tr class="memdesc:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html" title="Represents the players VR setup. Only one instance at a time is allowed. ">AVR_PlayerRig</a> instance in the scene  <a href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_a45c80511f6416cbf280f59a93d05ba81.html#a45c80511f6416cbf280f59a93d05ba81">More...</a><br /></td></tr>
 <tr class="separator:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents some spatially tracked XR device. Provides functionality for spacial tracking. Can be used to represent hardware trackers, game controllers or other references. </p>
 
 <p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00013">13</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a class="anchor" id="aa204aa208513a86e3272c6f27dbbdd7b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7b">AVR.Core.AVR_GenericXRDevice.TrackingUpdateType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Defines when positional tracking should take place. Recommended setting is OnBeforeRenderAndUpdate </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aa204aa208513a86e3272c6f27dbbdd7badad07967ee58700afec07a543d5a5e46"></a>OnUpdate&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="aa204aa208513a86e3272c6f27dbbdd7bacabd306390a9f789064294c2cac42fc2"></a>OnBeforeRender&#160;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="aa204aa208513a86e3272c6f27dbbdd7ba537edf6214a9792b8f3692af11c9da8c"></a>OnBeforeRenderAndUpdate&#160;</td><td class="fielddoc">
-</td></tr>
-</table>
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00051">51</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7badad07967ee58700afec07a543d5a5e46">OnUpdate</a>,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a5315d67e0026ac2e446a491efc242db2">OnBeforeRender</a>,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7ba537edf6214a9792b8f3692af11c9da8c">OnBeforeRenderAndUpdate</a>,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_aa204aa208513a86e3272c6f27dbbdd7badad07967ee58700afec07a543d5a5e46"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7badad07967ee58700afec07a543d5a5e46">AVR.Core.AVR_GenericXRDevice.OnUpdate</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a5315d67e0026ac2e446a491efc242db2"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a5315d67e0026ac2e446a491efc242db2">AVR.Core.AVR_GenericXRDevice.OnBeforeRender</a></div><div class="ttdeci">void OnBeforeRender()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00122">AVR_GenericXRDevice.cs:122</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_aa204aa208513a86e3272c6f27dbbdd7ba537edf6214a9792b8f3692af11c9da8c"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7ba537edf6214a9792b8f3692af11c9da8c">AVR.Core.AVR_GenericXRDevice.OnBeforeRenderAndUpdate</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a71f30c927216f5cf2b3f1205ae4a9186"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">override void AVR.Core.AVR_GenericXRDevice.Awake </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7afa1caf50b10250c3abea47968f78ce">AVR.Core.AVR_Component</a>.</p>
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00083">83</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a7b112d2490b3ff796492168c1b83d329">nodeDevices</a>[<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#af98b9a0ac03b69e7f6fedb2ab8062671">controllerNode</a>] = <span class="keyword">this</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            base.Awake();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_af98b9a0ac03b69e7f6fedb2ab8062671"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#af98b9a0ac03b69e7f6fedb2ab8062671">AVR.Core.AVR_GenericXRDevice.controllerNode</a></div><div class="ttdeci">XRNode controllerNode</div><div class="ttdoc">Which XRNode this object represents. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00032">AVR_GenericXRDevice.cs:32</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a7b112d2490b3ff796492168c1b83d329"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a7b112d2490b3ff796492168c1b83d329">AVR.Core.AVR_GenericXRDevice.nodeDevices</a></div><div class="ttdeci">static Dictionary&lt; XRNode, AVR_GenericXRDevice &gt; nodeDevices</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00015">AVR_GenericXRDevice.cs:15</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ac432b48357602266993ccc5acb013938"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html">AVR_GenericXRDevice</a> AVR.Core.AVR_GenericXRDevice.getDeviceAtNode </td>
-          <td>(</td>
-          <td class="paramtype">XRNode&#160;</td>
-          <td class="paramname"><em>node</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the last <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html" title="Represents some spatially tracked XR device. Provides functionality for spacial tracking. Can be used to represent hardware trackers, game controllers or other references. ">AVR_GenericXRDevice</a> enabled that has a given controllerNode value. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">node</td><td>Node of the requested device</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>last <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html" title="Represents some spatially tracked XR device. Provides functionality for spacial tracking. Can be used to represent hardware trackers, game controllers or other references. ">AVR_GenericXRDevice</a> enabled that has a given controllerNode value. Null if none exists.</dd></dl>
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00022">22</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                                                       {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            nodeDevices.TryGetValue(node, out var val);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">return</span> val;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a5315d67e0026ac2e446a491efc242db2"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AVR.Core.AVR_GenericXRDevice.OnBeforeRender </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00122">122</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a0b7cbf28132d71873c4eaed4548db487">tracking</a> &amp;&amp; (<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a4c9df1b178248c4223dbf1b98e998bfb">updateType</a> == <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7b">TrackingUpdateType</a>.OnBeforeRender || <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a4c9df1b178248c4223dbf1b98e998bfb">updateType</a> == <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7b">TrackingUpdateType</a>.OnBeforeRenderAndUpdate))</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a86d1e47e8ba7b4150cf6f450f1d949a8">UpdateTracking</a>();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_aa204aa208513a86e3272c6f27dbbdd7b"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7b">AVR.Core.AVR_GenericXRDevice.TrackingUpdateType</a></div><div class="ttdeci">TrackingUpdateType</div><div class="ttdoc">Defines when positional tracking should take place. Recommended setting is OnBeforeRenderAndUpdate ...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00051">AVR_GenericXRDevice.cs:51</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a4c9df1b178248c4223dbf1b98e998bfb"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a4c9df1b178248c4223dbf1b98e998bfb">AVR.Core.AVR_GenericXRDevice.updateType</a></div><div class="ttdeci">TrackingUpdateType updateType</div><div class="ttdoc">Defines when positional tracking should take place. Recommended setting is OnBeforeRenderAndUpdate ...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00062">AVR_GenericXRDevice.cs:62</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a86d1e47e8ba7b4150cf6f450f1d949a8"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a86d1e47e8ba7b4150cf6f450f1d949a8">AVR.Core.AVR_GenericXRDevice.UpdateTracking</a></div><div class="ttdeci">void UpdateTracking()</div><div class="ttdoc">Updates the controller position and rotation. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00092">AVR_GenericXRDevice.cs:92</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a0b7cbf28132d71873c4eaed4548db487"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a0b7cbf28132d71873c4eaed4548db487">AVR.Core.AVR_GenericXRDevice.tracking</a></div><div class="ttdeci">bool tracking</div><div class="ttdoc">Defines if spatial tracking should be performed. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00046">AVR_GenericXRDevice.cs:46</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ad6b20417c5531b97e6869ca3f476e789"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">override void AVR.Core.AVR_GenericXRDevice.OnDisable </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#ae85b01ddcee8e524605b72773ebdf2f5">AVR.Core.AVR_Component</a>.</p>
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00145">145</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            base.OnDisable();</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a7b112d2490b3ff796492168c1b83d329">nodeDevices</a>[<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#af98b9a0ac03b69e7f6fedb2ab8062671">controllerNode</a>] == <span class="keyword">this</span>) nodeDevices.Remove(<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#af98b9a0ac03b69e7f6fedb2ab8062671">controllerNode</a>);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            Application.onBeforeRender -= <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a5315d67e0026ac2e446a491efc242db2">OnBeforeRender</a>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_af98b9a0ac03b69e7f6fedb2ab8062671"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#af98b9a0ac03b69e7f6fedb2ab8062671">AVR.Core.AVR_GenericXRDevice.controllerNode</a></div><div class="ttdeci">XRNode controllerNode</div><div class="ttdoc">Which XRNode this object represents. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00032">AVR_GenericXRDevice.cs:32</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a5315d67e0026ac2e446a491efc242db2"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a5315d67e0026ac2e446a491efc242db2">AVR.Core.AVR_GenericXRDevice.OnBeforeRender</a></div><div class="ttdeci">void OnBeforeRender()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00122">AVR_GenericXRDevice.cs:122</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a7b112d2490b3ff796492168c1b83d329"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a7b112d2490b3ff796492168c1b83d329">AVR.Core.AVR_GenericXRDevice.nodeDevices</a></div><div class="ttdeci">static Dictionary&lt; XRNode, AVR_GenericXRDevice &gt; nodeDevices</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00015">AVR_GenericXRDevice.cs:15</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ae8e91ceaf1bb1b3da83753a4000970ef"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">override void AVR.Core.AVR_GenericXRDevice.OnEnable </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7b1cb22192be27ed3ccc5f683c5c9bea">AVR.Core.AVR_Component</a>.</p>
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00138">138</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            base.OnEnable();</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a7b112d2490b3ff796492168c1b83d329">nodeDevices</a>[<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#af98b9a0ac03b69e7f6fedb2ab8062671">controllerNode</a>] = <span class="keyword">this</span>;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            Application.onBeforeRender += <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a5315d67e0026ac2e446a491efc242db2">OnBeforeRender</a>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_af98b9a0ac03b69e7f6fedb2ab8062671"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#af98b9a0ac03b69e7f6fedb2ab8062671">AVR.Core.AVR_GenericXRDevice.controllerNode</a></div><div class="ttdeci">XRNode controllerNode</div><div class="ttdoc">Which XRNode this object represents. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00032">AVR_GenericXRDevice.cs:32</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a5315d67e0026ac2e446a491efc242db2"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a5315d67e0026ac2e446a491efc242db2">AVR.Core.AVR_GenericXRDevice.OnBeforeRender</a></div><div class="ttdeci">void OnBeforeRender()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00122">AVR_GenericXRDevice.cs:122</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a7b112d2490b3ff796492168c1b83d329"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a7b112d2490b3ff796492168c1b83d329">AVR.Core.AVR_GenericXRDevice.nodeDevices</a></div><div class="ttdeci">static Dictionary&lt; XRNode, AVR_GenericXRDevice &gt; nodeDevices</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00015">AVR_GenericXRDevice.cs:15</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a596d538bf6c56442e378ac66af9f8ae4"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AVR.Core.AVR_GenericXRDevice.Update </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00130">130</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a0b7cbf28132d71873c4eaed4548db487">tracking</a> &amp;&amp; (<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a4c9df1b178248c4223dbf1b98e998bfb">updateType</a> == <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7b">TrackingUpdateType</a>.OnUpdate || <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a4c9df1b178248c4223dbf1b98e998bfb">updateType</a> == <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7b">TrackingUpdateType</a>.OnBeforeRenderAndUpdate))</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a86d1e47e8ba7b4150cf6f450f1d949a8">UpdateTracking</a>();</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_aa204aa208513a86e3272c6f27dbbdd7b"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7b">AVR.Core.AVR_GenericXRDevice.TrackingUpdateType</a></div><div class="ttdeci">TrackingUpdateType</div><div class="ttdoc">Defines when positional tracking should take place. Recommended setting is OnBeforeRenderAndUpdate ...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00051">AVR_GenericXRDevice.cs:51</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a4c9df1b178248c4223dbf1b98e998bfb"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a4c9df1b178248c4223dbf1b98e998bfb">AVR.Core.AVR_GenericXRDevice.updateType</a></div><div class="ttdeci">TrackingUpdateType updateType</div><div class="ttdoc">Defines when positional tracking should take place. Recommended setting is OnBeforeRenderAndUpdate ...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00062">AVR_GenericXRDevice.cs:62</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a86d1e47e8ba7b4150cf6f450f1d949a8"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a86d1e47e8ba7b4150cf6f450f1d949a8">AVR.Core.AVR_GenericXRDevice.UpdateTracking</a></div><div class="ttdeci">void UpdateTracking()</div><div class="ttdoc">Updates the controller position and rotation. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00092">AVR_GenericXRDevice.cs:92</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a0b7cbf28132d71873c4eaed4548db487"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a0b7cbf28132d71873c4eaed4548db487">AVR.Core.AVR_GenericXRDevice.tracking</a></div><div class="ttdeci">bool tracking</div><div class="ttdoc">Defines if spatial tracking should be performed. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00046">AVR_GenericXRDevice.cs:46</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a86d1e47e8ba7b4150cf6f450f1d949a8"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AVR.Core.AVR_GenericXRDevice.UpdateTracking </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Updates the controller position and rotation. </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00092">92</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a0faf0ef2f470a02ff6b69575702bb8af">inputDevice</a>.TryGetFeatureValue(CommonUsages.trackingState, out var trackingState))</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">if</span> ((trackingState &amp; InputTrackingState.Position) != 0 &amp;&amp; inputDevice.TryGetFeatureValue(CommonUsages.devicePosition, out var devicePosition))</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a774a8de60363c6332a776fe200d3c3f4">smoothing</a>)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                        transform.localPosition = Vector3.Lerp(transform.localPosition, devicePosition, Time.deltaTime * <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a75d883f1a5207b2b91b27f867f74811a">smoothingFidelity</a> * 90.0f);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                        transform.localPosition = devicePosition;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keywordflow">if</span> ((trackingState &amp; InputTrackingState.Rotation) != 0 &amp;&amp; inputDevice.TryGetFeatureValue(CommonUsages.deviceRotation, out var deviceRotation))</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a774a8de60363c6332a776fe200d3c3f4">smoothing</a>)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                        transform.localRotation = Quaternion.Lerp(transform.localRotation, deviceRotation, Time.deltaTime * <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a75d883f1a5207b2b91b27f867f74811a">smoothingFidelity</a> * 90.0f);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                        transform.localRotation = deviceRotation;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a0faf0ef2f470a02ff6b69575702bb8af"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a0faf0ef2f470a02ff6b69575702bb8af">AVR.Core.AVR_GenericXRDevice.inputDevice</a></div><div class="ttdeci">InputDevice inputDevice</div><div class="ttdoc">XR.Inputdevice that this controller represents. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00037">AVR_GenericXRDevice.cs:37</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a75d883f1a5207b2b91b27f867f74811a"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a75d883f1a5207b2b91b27f867f74811a">AVR.Core.AVR_GenericXRDevice.smoothingFidelity</a></div><div class="ttdeci">float smoothingFidelity</div><div class="ttdoc">Defines the amount of smoothing. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00076">AVR_GenericXRDevice.cs:76</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_html_a774a8de60363c6332a776fe200d3c3f4"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#a774a8de60363c6332a776fe200d3c3f4">AVR.Core.AVR_GenericXRDevice.smoothing</a></div><div class="ttdeci">bool smoothing</div><div class="ttdoc">Defines if positional tracking is smoothed across several frames. Makes controllers less shaky...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00070">AVR_GenericXRDevice.cs:70</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="acd59ad1ef794365ac40dd7566bfbe8d1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">InputDevice AVR.Core.AVR_GenericXRDevice._inputDevice</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00038">38</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af98b9a0ac03b69e7f6fedb2ab8062671"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">XRNode AVR.Core.AVR_GenericXRDevice.controllerNode</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Which XRNode this object represents. </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00032">32</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0faf0ef2f470a02ff6b69575702bb8af"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">InputDevice AVR.Core.AVR_GenericXRDevice.inputDevice =&gt; _inputDevice.isValid ? <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#acd59ad1ef794365ac40dd7566bfbe8d1">_inputDevice</a> : <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#acd59ad1ef794365ac40dd7566bfbe8d1">_inputDevice</a> = InputDevices.GetDeviceAtXRNode(<a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#af98b9a0ac03b69e7f6fedb2ab8062671">controllerNode</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>XR.Inputdevice that this controller represents. </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00037">37</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7b112d2490b3ff796492168c1b83d329"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Dictionary&lt;XRNode, <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html">AVR_GenericXRDevice</a>&gt; AVR.Core.AVR_GenericXRDevice.nodeDevices = new Dictionary&lt;XRNode, <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html">AVR_GenericXRDevice</a>&gt;()</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00015">15</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5c20a381c88b818ce39fc15895e2cf64"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Vector3 AVR.Core.AVR_GenericXRDevice.prevPos = Vector3.zero</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00079">79</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2c156218ef5cc68fce0e733cef56da75"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Quaternion AVR.Core.AVR_GenericXRDevice.prevRot = Quaternion.identity</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00080">80</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a774a8de60363c6332a776fe200d3c3f4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool AVR.Core.AVR_GenericXRDevice.smoothing = false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Defines if positional tracking is smoothed across several frames. Makes controllers less shaky. </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00070">70</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a75d883f1a5207b2b91b27f867f74811a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float AVR.Core.AVR_GenericXRDevice.smoothingFidelity = 0.3f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Defines the amount of smoothing. </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00076">76</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0b7cbf28132d71873c4eaed4548db487"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool AVR.Core.AVR_GenericXRDevice.tracking = true</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Defines if spatial tracking should be performed. </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00046">46</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4c9df1b178248c4223dbf1b98e998bfb"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device.html#aa204aa208513a86e3272c6f27dbbdd7b">TrackingUpdateType</a> AVR.Core.AVR_GenericXRDevice.updateType</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Defines when positional tracking should take place. Recommended setting is OnBeforeRenderAndUpdate </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html#l00062">62</a> of file <a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_a_v_r___generic_x_r_device_8cs_source.html">AVR_GenericXRDevice.cs</a></li>
-</ul>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

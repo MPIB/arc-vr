@@ -44,7 +44,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -76,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -115,364 +114,53 @@ Inheritance diagram for AVR.Core.AVR_TrialExperiment:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a178b0374b2e1dbd702a5c837fa6024da"><td class="memItemLeft" align="right" valign="top">abstract IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a178b0374b2e1dbd702a5c837fa6024da">trial</a> ()</td></tr>
-<tr class="memdesc:a178b0374b2e1dbd702a5c837fa6024da"><td class="mdescLeft">&#160;</td><td class="mdescRight">IEnumerator-coroutine that represents a single tiral  <a href="#a178b0374b2e1dbd702a5c837fa6024da">More...</a><br /></td></tr>
+<tr class="memitem:a178b0374b2e1dbd702a5c837fa6024da"><td class="memItemLeft" align="right" valign="top">abstract IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_a178b0374b2e1dbd702a5c837fa6024da.html#a178b0374b2e1dbd702a5c837fa6024da">trial</a> ()</td></tr>
+<tr class="memdesc:a178b0374b2e1dbd702a5c837fa6024da"><td class="mdescLeft">&#160;</td><td class="mdescRight">IEnumerator-coroutine that represents a single tiral  <a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_a178b0374b2e1dbd702a5c837fa6024da.html#a178b0374b2e1dbd702a5c837fa6024da">More...</a><br /></td></tr>
 <tr class="separator:a178b0374b2e1dbd702a5c837fa6024da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae68f296d32dc0b4a94337548fc688b71"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#ae68f296d32dc0b4a94337548fc688b71">on_start</a> ()</td></tr>
-<tr class="memdesc:ae68f296d32dc0b4a94337548fc688b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that gets called when the experiment starts  <a href="#ae68f296d32dc0b4a94337548fc688b71">More...</a><br /></td></tr>
+<tr class="memitem:ae68f296d32dc0b4a94337548fc688b71"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_ae68f296d32dc0b4a94337548fc688b71.html#ae68f296d32dc0b4a94337548fc688b71">on_start</a> ()</td></tr>
+<tr class="memdesc:ae68f296d32dc0b4a94337548fc688b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that gets called when the experiment starts  <a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_ae68f296d32dc0b4a94337548fc688b71.html#ae68f296d32dc0b4a94337548fc688b71">More...</a><br /></td></tr>
 <tr class="separator:ae68f296d32dc0b4a94337548fc688b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d1dbb90b2c0a99487491c3606742835"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a7d1dbb90b2c0a99487491c3606742835">on_end</a> ()</td></tr>
-<tr class="memdesc:a7d1dbb90b2c0a99487491c3606742835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that gets called when the experiment ends  <a href="#a7d1dbb90b2c0a99487491c3606742835">More...</a><br /></td></tr>
+<tr class="memitem:a7d1dbb90b2c0a99487491c3606742835"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_a7d1dbb90b2c0a99487491c3606742835.html#a7d1dbb90b2c0a99487491c3606742835">on_end</a> ()</td></tr>
+<tr class="memdesc:a7d1dbb90b2c0a99487491c3606742835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that gets called when the experiment ends  <a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_a7d1dbb90b2c0a99487491c3606742835.html#a7d1dbb90b2c0a99487491c3606742835">More...</a><br /></td></tr>
 <tr class="separator:a7d1dbb90b2c0a99487491c3606742835"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15d903a08733d1b50f2ac178a7f7218f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a15d903a08733d1b50f2ac178a7f7218f">on_start_trial</a> ()</td></tr>
-<tr class="memdesc:a15d903a08733d1b50f2ac178a7f7218f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that gets called when a trial starts  <a href="#a15d903a08733d1b50f2ac178a7f7218f">More...</a><br /></td></tr>
+<tr class="memitem:a15d903a08733d1b50f2ac178a7f7218f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_a15d903a08733d1b50f2ac178a7f7218f.html#a15d903a08733d1b50f2ac178a7f7218f">on_start_trial</a> ()</td></tr>
+<tr class="memdesc:a15d903a08733d1b50f2ac178a7f7218f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that gets called when a trial starts  <a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_a15d903a08733d1b50f2ac178a7f7218f.html#a15d903a08733d1b50f2ac178a7f7218f">More...</a><br /></td></tr>
 <tr class="separator:a15d903a08733d1b50f2ac178a7f7218f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cdfb9acfa269c25b5eb7564edaf65cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a8cdfb9acfa269c25b5eb7564edaf65cc">on_end_trial</a> ()</td></tr>
-<tr class="memdesc:a8cdfb9acfa269c25b5eb7564edaf65cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that gets called when a trial ends  <a href="#a8cdfb9acfa269c25b5eb7564edaf65cc">More...</a><br /></td></tr>
+<tr class="memitem:a8cdfb9acfa269c25b5eb7564edaf65cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_a8cdfb9acfa269c25b5eb7564edaf65cc.html#a8cdfb9acfa269c25b5eb7564edaf65cc">on_end_trial</a> ()</td></tr>
+<tr class="memdesc:a8cdfb9acfa269c25b5eb7564edaf65cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that gets called when a trial ends  <a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_a8cdfb9acfa269c25b5eb7564edaf65cc.html#a8cdfb9acfa269c25b5eb7564edaf65cc">More...</a><br /></td></tr>
 <tr class="separator:a8cdfb9acfa269c25b5eb7564edaf65cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae836f6a186e06bbd27717392b6b32e6b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#ae836f6a186e06bbd27717392b6b32e6b">can_proceed</a> ()</td></tr>
-<tr class="memdesc:ae836f6a186e06bbd27717392b6b32e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns true <em>once</em> after the can_proceed function has been called. Use this within the trial Coroutine like so: yield return new WaitUntil(can_proceed()). Then call the <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a25e994646ef290f081d3c300669a172d" title="Call this function externally to allow the trial to proceed. ">proceed()</a> function on certain events, such as button presses.  <a href="#ae836f6a186e06bbd27717392b6b32e6b">More...</a><br /></td></tr>
+<tr class="memitem:ae836f6a186e06bbd27717392b6b32e6b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_ae836f6a186e06bbd27717392b6b32e6b.html#ae836f6a186e06bbd27717392b6b32e6b">can_proceed</a> ()</td></tr>
+<tr class="memdesc:ae836f6a186e06bbd27717392b6b32e6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns true <em>once</em> after the can_proceed function has been called. Use this within the trial Coroutine like so: yield return new WaitUntil(can_proceed()). Then call the <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_a25e994646ef290f081d3c300669a172d.html#a25e994646ef290f081d3c300669a172d" title="Call this function externally to allow the trial to proceed. ">proceed()</a> function on certain events, such as button presses.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_ae836f6a186e06bbd27717392b6b32e6b.html#ae836f6a186e06bbd27717392b6b32e6b">More...</a><br /></td></tr>
 <tr class="separator:ae836f6a186e06bbd27717392b6b32e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25e994646ef290f081d3c300669a172d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a25e994646ef290f081d3c300669a172d">proceed</a> ()</td></tr>
-<tr class="memdesc:a25e994646ef290f081d3c300669a172d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this function externally to allow the trial to proceed.  <a href="#a25e994646ef290f081d3c300669a172d">More...</a><br /></td></tr>
+<tr class="memitem:a25e994646ef290f081d3c300669a172d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_a25e994646ef290f081d3c300669a172d.html#a25e994646ef290f081d3c300669a172d">proceed</a> ()</td></tr>
+<tr class="memdesc:a25e994646ef290f081d3c300669a172d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this function externally to allow the trial to proceed.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_a25e994646ef290f081d3c300669a172d.html#a25e994646ef290f081d3c300669a172d">More...</a><br /></td></tr>
 <tr class="separator:a25e994646ef290f081d3c300669a172d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab70cbac425f61f78b9d36ce41852aed8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#ab70cbac425f61f78b9d36ce41852aed8">commence</a> (int trial_amount=1)</td></tr>
-<tr class="memdesc:ab70cbac425f61f78b9d36ce41852aed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this function to commence an experiment with a given amount of trials.  <a href="#ab70cbac425f61f78b9d36ce41852aed8">More...</a><br /></td></tr>
+<tr class="memitem:ab70cbac425f61f78b9d36ce41852aed8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_ab70cbac425f61f78b9d36ce41852aed8.html#ab70cbac425f61f78b9d36ce41852aed8">commence</a> (int trial_amount=1)</td></tr>
+<tr class="memdesc:ab70cbac425f61f78b9d36ce41852aed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call this function to commence an experiment with a given amount of trials.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_ab70cbac425f61f78b9d36ce41852aed8.html#ab70cbac425f61f78b9d36ce41852aed8">More...</a><br /></td></tr>
 <tr class="separator:ab70cbac425f61f78b9d36ce41852aed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a3a57464b1c5af7a4938aa69ba8512537"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a3a57464b1c5af7a4938aa69ba8512537">experiment</a> (int trial_amount)</td></tr>
+<tr class="memitem:a3a57464b1c5af7a4938aa69ba8512537"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_a3a57464b1c5af7a4938aa69ba8512537.html#a3a57464b1c5af7a4938aa69ba8512537">experiment</a> (int trial_amount)</td></tr>
 <tr class="separator:a3a57464b1c5af7a4938aa69ba8512537"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aad41db8b2be57cb7e5deae320e1b99c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#aad41db8b2be57cb7e5deae320e1b99c0">_p</a> = false</td></tr>
+<tr class="memitem:aad41db8b2be57cb7e5deae320e1b99c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_aad41db8b2be57cb7e5deae320e1b99c0.html#aad41db8b2be57cb7e5deae320e1b99c0">_p</a> = false</td></tr>
 <tr class="separator:aad41db8b2be57cb7e5deae320e1b99c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR.Core.AVR_Behaviour</a></td></tr>
-<tr class="memitem:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html">AVR_PlayerRig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html#a45c80511f6416cbf280f59a93d05ba81">playerRig</a> =&gt; <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___singleton_component_3_01_t_01_4.html#a0921dd90cf053c2761c65b0710c98450">AVR_PlayerRig.Instance</a></td></tr>
-<tr class="memdesc:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html" title="Represents the players VR setup. Only one instance at a time is allowed. ">AVR_PlayerRig</a> instance in the scene  <a href="#a45c80511f6416cbf280f59a93d05ba81">More...</a><br /></td></tr>
+<tr class="memitem:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html">AVR_PlayerRig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_a45c80511f6416cbf280f59a93d05ba81.html#a45c80511f6416cbf280f59a93d05ba81">playerRig</a> =&gt; <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___singleton_component_3_01_t_01_4_a0921dd90cf053c2761c65b0710c98450.html#a0921dd90cf053c2761c65b0710c98450">AVR_PlayerRig.Instance</a></td></tr>
+<tr class="memdesc:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html" title="Represents the players VR setup. Only one instance at a time is allowed. ">AVR_PlayerRig</a> instance in the scene  <a href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_a45c80511f6416cbf280f59a93d05ba81.html#a45c80511f6416cbf280f59a93d05ba81">More...</a><br /></td></tr>
 <tr class="separator:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class to inherit from in order to create trial-based experiments. (One experiment consists of one or more trials.) </p>
 
 <p>Definition at line <a class="el" href="_a_v_r___trial_experiment_8cs_source.html#l00012">12</a> of file <a class="el" href="_a_v_r___trial_experiment_8cs_source.html">AVR_TrialExperiment.cs</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae836f6a186e06bbd27717392b6b32e6b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool AVR.Core.AVR_TrialExperiment.can_proceed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>This function returns true <em>once</em> after the can_proceed function has been called. Use this within the trial Coroutine like so: yield return new WaitUntil(can_proceed()). Then call the <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a25e994646ef290f081d3c300669a172d" title="Call this function externally to allow the trial to proceed. ">proceed()</a> function on certain events, such as button presses. </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___trial_experiment_8cs_source.html#l00042">42</a> of file <a class="el" href="_a_v_r___trial_experiment_8cs_source.html">AVR_TrialExperiment.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                  {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#aad41db8b2be57cb7e5deae320e1b99c0">_p</a>)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#aad41db8b2be57cb7e5deae320e1b99c0">_p</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_html_aad41db8b2be57cb7e5deae320e1b99c0"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#aad41db8b2be57cb7e5deae320e1b99c0">AVR.Core.AVR_TrialExperiment._p</a></div><div class="ttdeci">bool _p</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___trial_experiment_8cs_source.html#l00050">AVR_TrialExperiment.cs:50</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ab70cbac425f61f78b9d36ce41852aed8"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AVR.Core.AVR_TrialExperiment.commence </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>trial_amount</em> = <code>1</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Call this function to commence an experiment with a given amount of trials. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">trial_amount</td><td>Amount of trials to run. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_a_v_r___trial_experiment_8cs_source.html#l00075">75</a> of file <a class="el" href="_a_v_r___trial_experiment_8cs_source.html">AVR_TrialExperiment.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                                 {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            StartCoroutine(<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a3a57464b1c5af7a4938aa69ba8512537">experiment</a>(trial_amount));</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_html_a3a57464b1c5af7a4938aa69ba8512537"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a3a57464b1c5af7a4938aa69ba8512537">AVR.Core.AVR_TrialExperiment.experiment</a></div><div class="ttdeci">IEnumerator experiment(int trial_amount)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___trial_experiment_8cs_source.html#l00059">AVR_TrialExperiment.cs:59</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a3a57464b1c5af7a4938aa69ba8512537"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">IEnumerator AVR.Core.AVR_TrialExperiment.experiment </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>trial_amount</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_v_r___trial_experiment_8cs_source.html#l00059">59</a> of file <a class="el" href="_a_v_r___trial_experiment_8cs_source.html">AVR_TrialExperiment.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                         {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#ae68f296d32dc0b4a94337548fc688b71">on_start</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;trial_amount; i++) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a15d903a08733d1b50f2ac178a7f7218f">on_start_trial</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                yield <span class="keywordflow">return</span> StartCoroutine(this.<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a178b0374b2e1dbd702a5c837fa6024da">trial</a>());</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a8cdfb9acfa269c25b5eb7564edaf65cc">on_end_trial</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a7d1dbb90b2c0a99487491c3606742835">on_end</a>();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_html_a15d903a08733d1b50f2ac178a7f7218f"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a15d903a08733d1b50f2ac178a7f7218f">AVR.Core.AVR_TrialExperiment.on_start_trial</a></div><div class="ttdeci">virtual void on_start_trial()</div><div class="ttdoc">Function that gets called when a trial starts </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___trial_experiment_8cs_source.html#l00032">AVR_TrialExperiment.cs:32</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_html_a7d1dbb90b2c0a99487491c3606742835"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a7d1dbb90b2c0a99487491c3606742835">AVR.Core.AVR_TrialExperiment.on_end</a></div><div class="ttdeci">virtual void on_end()</div><div class="ttdoc">Function that gets called when the experiment ends </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___trial_experiment_8cs_source.html#l00027">AVR_TrialExperiment.cs:27</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_html_a8cdfb9acfa269c25b5eb7564edaf65cc"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a8cdfb9acfa269c25b5eb7564edaf65cc">AVR.Core.AVR_TrialExperiment.on_end_trial</a></div><div class="ttdeci">virtual void on_end_trial()</div><div class="ttdoc">Function that gets called when a trial ends </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___trial_experiment_8cs_source.html#l00037">AVR_TrialExperiment.cs:37</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_html_a178b0374b2e1dbd702a5c837fa6024da"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#a178b0374b2e1dbd702a5c837fa6024da">AVR.Core.AVR_TrialExperiment.trial</a></div><div class="ttdeci">abstract IEnumerator trial()</div><div class="ttdoc">IEnumerator-coroutine that represents a single tiral </div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_html_ae68f296d32dc0b4a94337548fc688b71"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#ae68f296d32dc0b4a94337548fc688b71">AVR.Core.AVR_TrialExperiment.on_start</a></div><div class="ttdeci">virtual void on_start()</div><div class="ttdoc">Function that gets called when the experiment starts </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___trial_experiment_8cs_source.html#l00022">AVR_TrialExperiment.cs:22</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a7d1dbb90b2c0a99487491c3606742835"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void AVR.Core.AVR_TrialExperiment.on_end </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Function that gets called when the experiment ends </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___trial_experiment_8cs_source.html#l00027">27</a> of file <a class="el" href="_a_v_r___trial_experiment_8cs_source.html">AVR_TrialExperiment.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{ }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a8cdfb9acfa269c25b5eb7564edaf65cc"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void AVR.Core.AVR_TrialExperiment.on_end_trial </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Function that gets called when a trial ends </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___trial_experiment_8cs_source.html#l00037">37</a> of file <a class="el" href="_a_v_r___trial_experiment_8cs_source.html">AVR_TrialExperiment.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{ }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ae68f296d32dc0b4a94337548fc688b71"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void AVR.Core.AVR_TrialExperiment.on_start </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Function that gets called when the experiment starts </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___trial_experiment_8cs_source.html#l00022">22</a> of file <a class="el" href="_a_v_r___trial_experiment_8cs_source.html">AVR_TrialExperiment.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{ }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a15d903a08733d1b50f2ac178a7f7218f"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void AVR.Core.AVR_TrialExperiment.on_start_trial </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Function that gets called when a trial starts </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___trial_experiment_8cs_source.html#l00032">32</a> of file <a class="el" href="_a_v_r___trial_experiment_8cs_source.html">AVR_TrialExperiment.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{ }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a25e994646ef290f081d3c300669a172d"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void AVR.Core.AVR_TrialExperiment.proceed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Call this function externally to allow the trial to proceed. </p>
-
-<p>Definition at line <a class="el" href="_a_v_r___trial_experiment_8cs_source.html#l00055">55</a> of file <a class="el" href="_a_v_r___trial_experiment_8cs_source.html">AVR_TrialExperiment.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                              {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#aad41db8b2be57cb7e5deae320e1b99c0">_p</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_html_aad41db8b2be57cb7e5deae320e1b99c0"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html#aad41db8b2be57cb7e5deae320e1b99c0">AVR.Core.AVR_TrialExperiment._p</a></div><div class="ttdeci">bool _p</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___trial_experiment_8cs_source.html#l00050">AVR_TrialExperiment.cs:50</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a178b0374b2e1dbd702a5c837fa6024da"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">abstract IEnumerator AVR.Core.AVR_TrialExperiment.trial </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>IEnumerator-coroutine that represents a single tiral </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aad41db8b2be57cb7e5deae320e1b99c0"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool AVR.Core.AVR_TrialExperiment._p = false</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_v_r___trial_experiment_8cs_source.html#l00050">50</a> of file <a class="el" href="_a_v_r___trial_experiment_8cs_source.html">AVR_TrialExperiment.cs</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_a_v_r___trial_experiment_8cs_source.html">AVR_TrialExperiment.cs</a></li>
-</ul>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

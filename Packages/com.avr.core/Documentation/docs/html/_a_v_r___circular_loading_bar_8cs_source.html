@@ -44,7 +44,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -63,18 +62,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
-    </ul>
-  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AVR_CircularLoadingBar.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_a_v_r___circular_loading_bar_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEngine.UI;</div>
@@ -102,14 +95,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    [ExecuteInEditMode]</div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html">    8</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html">AVR_CircularLoadingBar</a> : AVR.Core.AVR_Behaviour</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html#a70ebaaa2b8ff479782de05b4fc3d5805">   10</a></span>&#160;        <span class="keyword">public</span> Image <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html#a70ebaaa2b8ff479782de05b4fc3d5805">ringImage</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_a70ebaaa2b8ff479782de05b4fc3d5805.html#a70ebaaa2b8ff479782de05b4fc3d5805">   10</a></span>&#160;        <span class="keyword">public</span> Image <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_a70ebaaa2b8ff479782de05b4fc3d5805.html#a70ebaaa2b8ff479782de05b4fc3d5805">ringImage</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html#aa7661059003f3f655b637581ce04d4ed">   12</a></span>&#160;        <span class="keyword">public</span> Text <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html#aa7661059003f3f655b637581ce04d4ed">percentage_text</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_aa7661059003f3f655b637581ce04d4ed.html#aa7661059003f3f655b637581ce04d4ed">   12</a></span>&#160;        <span class="keyword">public</span> Text <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_aa7661059003f3f655b637581ce04d4ed.html#aa7661059003f3f655b637581ce04d4ed">percentage_text</a>;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        [Range(0, 1)]</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html#a881c12d7a79fb9b06ab285ca72102721">   15</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> fillAmount = 0.5f;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_a881c12d7a79fb9b06ab285ca72102721.html#a881c12d7a79fb9b06ab285ca72102721">   15</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> fillAmount = 0.5f;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html#a29ee99bd9289aecc52e83150eadd0433">   17</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html#a29ee99bd9289aecc52e83150eadd0433">Update</a>()</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_a29ee99bd9289aecc52e83150eadd0433.html#a29ee99bd9289aecc52e83150eadd0433">   17</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_a29ee99bd9289aecc52e83150eadd0433.html#a29ee99bd9289aecc52e83150eadd0433">Update</a>()</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            ringImage.fillAmount = fillAmount;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
@@ -119,9 +112,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_html_a70ebaaa2b8ff479782de05b4fc3d5805"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html#a70ebaaa2b8ff479782de05b4fc3d5805">AVR.UI.Utils.AVR_CircularLoadingBar.ringImage</a></div><div class="ttdeci">Image ringImage</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___circular_loading_bar_8cs_source.html#l00010">AVR_CircularLoadingBar.cs:10</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_html_aa7661059003f3f655b637581ce04d4ed"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html#aa7661059003f3f655b637581ce04d4ed">AVR.UI.Utils.AVR_CircularLoadingBar.percentage_text</a></div><div class="ttdeci">Text percentage_text</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___circular_loading_bar_8cs_source.html#l00012">AVR_CircularLoadingBar.cs:12</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_html_a29ee99bd9289aecc52e83150eadd0433"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html#a29ee99bd9289aecc52e83150eadd0433">AVR.UI.Utils.AVR_CircularLoadingBar.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___circular_loading_bar_8cs_source.html#l00017">AVR_CircularLoadingBar.cs:17</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_aa7661059003f3f655b637581ce04d4ed_html_aa7661059003f3f655b637581ce04d4ed"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_aa7661059003f3f655b637581ce04d4ed.html#aa7661059003f3f655b637581ce04d4ed">AVR.UI.Utils.AVR_CircularLoadingBar.percentage_text</a></div><div class="ttdeci">Text percentage_text</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___circular_loading_bar_8cs_source.html#l00012">AVR_CircularLoadingBar.cs:12</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_a29ee99bd9289aecc52e83150eadd0433_html_a29ee99bd9289aecc52e83150eadd0433"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_a29ee99bd9289aecc52e83150eadd0433.html#a29ee99bd9289aecc52e83150eadd0433">AVR.UI.Utils.AVR_CircularLoadingBar.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___circular_loading_bar_8cs_source.html#l00017">AVR_CircularLoadingBar.cs:17</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_a70ebaaa2b8ff479782de05b4fc3d5805_html_a70ebaaa2b8ff479782de05b4fc3d5805"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_a70ebaaa2b8ff479782de05b4fc3d5805.html#a70ebaaa2b8ff479782de05b4fc3d5805">AVR.UI.Utils.AVR_CircularLoadingBar.ringImage</a></div><div class="ttdeci">Image ringImage</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___circular_loading_bar_8cs_source.html#l00010">AVR_CircularLoadingBar.cs:10</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar_html"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___circular_loading_bar.html">AVR.UI.Utils.AVR_CircularLoadingBar</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___circular_loading_bar_8cs_source.html#l00008">AVR_CircularLoadingBar.cs:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -44,7 +44,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -76,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,6 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook_3_01_wiz_01_4-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -105,28 +105,35 @@ Inheritance diagram for AVR.UEditor.Core.AVR_WizardHook&lt; Wiz &gt;:</div>
  <div class="center">
   <img src="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook_3_01_wiz_01_4.png" usemap="#AVR.UEditor.Core.AVR_WizardHook&lt; Wiz &gt;_map" alt=""/>
   <map id="AVR.UEditor.Core.AVR_WizardHook&lt; Wiz &gt;_map" name="AVR.UEditor.Core.AVR_WizardHook&lt; Wiz &gt;_map">
-<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___simple_filtered_toggle_3_01_wiz_00_01_mod_01_4.html" alt="AVR.UEditor.Core.AVR_WizardHook_SimpleFilteredToggle&lt; Wiz, Mod &gt;" shape="rect" coords="216,56,639,80"/>
-<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___simple_toggle_3_01_wiz_00_01_mod_01_4.html" alt="AVR.UEditor.Core.AVR_WizardHook_SimpleToggle&lt; Wiz, Mod &gt;" shape="rect" coords="1299,56,1722,80"/>
-<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___player_rig_wizard___hook___left_controller.html" alt="AVR.UEditor.Core.AVR_PlayerRigWizard_Hook_LeftController" shape="rect" coords="0,112,423,136"/>
-<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___player_rig_wizard___hook___right_controller.html" alt="AVR.UEditor.Core.AVR_PlayerRigWizard_Hook_RightController" shape="rect" coords="433,112,856,136"/>
-<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller_wizard___hook___controller_visual.html" alt="AVR.UEditor.Core.AVR_ControllerWizard_Hook_ControllerVisual" shape="rect" coords="866,112,1289,136"/>
-<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller_wizard___hook___input_manager.html" alt="AVR.UEditor.Core.AVR_ControllerWizard_Hook_InputManager" shape="rect" coords="1299,112,1722,136"/>
-<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___player_rig_wizard___hook___avatar_module.html" alt="AVR.UEditor.Core.AVR_PlayerRigWizard_Hook_AvatarModule" shape="rect" coords="1732,112,2155,136"/>
+<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___dropdown_choice_toggle_3_01_wiz_00_01_mod_01_4.html" alt="AVR.UEditor.Core.AVR_WizardHook_DropdownChoiceToggle&lt; Wiz, Mod &gt;" shape="rect" coords="0,56,441,80"/>
+<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___simple_filtered_toggle_3_01_wiz_00_01_mod_01_4.html" alt="AVR.UEditor.Core.AVR_WizardHook_SimpleFilteredToggle&lt; Wiz, Mod &gt;" shape="rect" coords="451,56,892,80"/>
+<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___simple_toggle_3_01_wiz_00_01_mod_01_4.html" alt="AVR.UEditor.Core.AVR_WizardHook_SimpleToggle&lt; Wiz, Mod &gt;" shape="rect" coords="1804,56,2245,80"/>
+<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___player_rig_wizard___hook___left_controller.html" alt="AVR.UEditor.Core.AVR_PlayerRigWizard_Hook_LeftController" shape="rect" coords="225,112,666,136"/>
+<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___player_rig_wizard___hook___right_controller.html" alt="AVR.UEditor.Core.AVR_PlayerRigWizard_Hook_RightController" shape="rect" coords="676,112,1117,136"/>
+<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller_wizard___hook___controller_visual.html" alt="AVR.UEditor.Core.AVR_ControllerWizard_Hook_ControllerVisual" shape="rect" coords="1127,112,1568,136"/>
+<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller_wizard___hook___input_manager.html" alt="AVR.UEditor.Core.AVR_ControllerWizard_Hook_InputManager" shape="rect" coords="1578,112,2019,136"/>
+<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___player_rig_wizard___hook___avatar_module.html" alt="AVR.UEditor.Core.AVR_PlayerRigWizard_Hook_AvatarModule" shape="rect" coords="2029,112,2470,136"/>
+<area href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___player_rig_wizard___hook___simple_avatar_module.html" alt="AVR.UEditor.Core.AVR_PlayerRigWizard_Hook_SimpleAvatarModule" shape="rect" coords="2480,112,2921,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a855b3a0d6db70e37c952b5739d602796"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook_3_01_wiz_01_4.html#a855b3a0d6db70e37c952b5739d602796">on_create_wizard</a> (GameObject targetObject)</td></tr>
+<tr class="memitem:a855b3a0d6db70e37c952b5739d602796"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook_3_01_wiz_01_4_a855b3a0d6db70e37c952b5739d602796.html#a855b3a0d6db70e37c952b5739d602796">on_create_wizard</a> (GameObject targetObject)</td></tr>
 <tr class="separator:a855b3a0d6db70e37c952b5739d602796"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a358b319993faadb93eba95fc8c85d439"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook_3_01_wiz_01_4.html#a358b319993faadb93eba95fc8c85d439">embed_GUI</a> ()</td></tr>
+<tr class="memitem:a358b319993faadb93eba95fc8c85d439"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook_3_01_wiz_01_4_a358b319993faadb93eba95fc8c85d439.html#a358b319993faadb93eba95fc8c85d439">embed_GUI</a> ()</td></tr>
 <tr class="separator:a358b319993faadb93eba95fc8c85d439"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9969f986e5f7ab8d1024f605a77c2e98"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook_3_01_wiz_01_4.html#a9969f986e5f7ab8d1024f605a77c2e98">on_submit</a> (GameObject targetObject)</td></tr>
+<tr class="memitem:a9969f986e5f7ab8d1024f605a77c2e98"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook_3_01_wiz_01_4_a9969f986e5f7ab8d1024f605a77c2e98.html#a9969f986e5f7ab8d1024f605a77c2e98">on_submit</a> (GameObject targetObject)</td></tr>
 <tr class="separator:a9969f986e5f7ab8d1024f605a77c2e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ae89a32e2d9606e9eb85d4cd66a2a2ef1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook_3_01_wiz_01_4_ae89a32e2d9606e9eb85d4cd66a2a2ef1.html#ae89a32e2d9606e9eb85d4cd66a2a2ef1">safeDestroyImmediate</a> (GameObject toDestroy, GameObject wizardTarget)</td></tr>
+<tr class="separator:ae89a32e2d9606e9eb85d4cd66a2a2ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ad285041bb442514f95d664a3d321ae31"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook_3_01_wiz_01_4.html#ad285041bb442514f95d664a3d321ae31">category</a><code> [get]</code></td></tr>
+<tr class="memitem:ad285041bb442514f95d664a3d321ae31"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook_3_01_wiz_01_4_ad285041bb442514f95d664a3d321ae31.html#ad285041bb442514f95d664a3d321ae31">category</a><code> [get]</code></td></tr>
 <tr class="separator:ad285041bb442514f95d664a3d321ae31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -139,126 +146,7 @@ Properties</h2></td></tr>
 </div>
 
 <p>Definition at line <a class="el" href="_a_v_r___hookable_wizard_8cs_source.html#l00095">95</a> of file <a class="el" href="_a_v_r___hookable_wizard_8cs_source.html">AVR_HookableWizard.cs</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a358b319993faadb93eba95fc8c85d439"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void AVR.UEditor.Core.AVR_WizardHook&lt; Wiz &gt;.embed_GUI </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___simple_filtered_toggle_3_01_wiz_00_01_mod_01_4.html#af40f06267f4ac138f16d261f87efc90a">AVR.UEditor.Core.AVR_WizardHook_SimpleFilteredToggle&lt; Wiz, Mod &gt;</a>, <a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___simple_toggle_3_01_wiz_00_01_mod_01_4.html#aa0ffdd6c774e36fe2191ecc5782552ab">AVR.UEditor.Core.AVR_WizardHook_SimpleToggle&lt; Wiz, Mod &gt;</a>, and <a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller_wizard___hook___controller_visual.html#a4efb3b619741097cbe5a3eda665c2127">AVR.UEditor.Core.AVR_ControllerWizard_Hook_ControllerVisual</a>.</p>
-
-<p>Definition at line <a class="el" href="_a_v_r___hookable_wizard_8cs_source.html#l00107">107</a> of file <a class="el" href="_a_v_r___hookable_wizard_8cs_source.html">AVR_HookableWizard.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            EditorGUILayout.LabelField(<span class="stringliteral">&quot;Unnamed Module&quot;</span>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a855b3a0d6db70e37c952b5739d602796"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void AVR.UEditor.Core.AVR_WizardHook&lt; Wiz &gt;.on_create_wizard </td>
-          <td>(</td>
-          <td class="paramtype">GameObject&#160;</td>
-          <td class="paramname"><em>targetObject</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___simple_filtered_toggle_3_01_wiz_00_01_mod_01_4.html#a46d3113775c204f125f771e1bb458fea">AVR.UEditor.Core.AVR_WizardHook_SimpleFilteredToggle&lt; Wiz, Mod &gt;</a>, <a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___simple_toggle_3_01_wiz_00_01_mod_01_4.html#af9b5b91af3bc954c6a8b706a94ef44b7">AVR.UEditor.Core.AVR_WizardHook_SimpleToggle&lt; Wiz, Mod &gt;</a>, and <a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller_wizard___hook___controller_visual.html#a87249a7b6e0a176cdc822cc0f593d68b">AVR.UEditor.Core.AVR_ControllerWizard_Hook_ControllerVisual</a>.</p>
-
-<p>Definition at line <a class="el" href="_a_v_r___hookable_wizard_8cs_source.html#l00102">102</a> of file <a class="el" href="_a_v_r___hookable_wizard_8cs_source.html">AVR_HookableWizard.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a9969f986e5f7ab8d1024f605a77c2e98"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void AVR.UEditor.Core.AVR_WizardHook&lt; Wiz &gt;.on_submit </td>
-          <td>(</td>
-          <td class="paramtype">GameObject&#160;</td>
-          <td class="paramname"><em>targetObject</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___simple_filtered_toggle_3_01_wiz_00_01_mod_01_4.html#a5a6b5aee85320905e41f534039c73d2b">AVR.UEditor.Core.AVR_WizardHook_SimpleFilteredToggle&lt; Wiz, Mod &gt;</a>, <a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___simple_toggle_3_01_wiz_00_01_mod_01_4.html#ad3a2193c6f4790a73f4dd81cb35658ec">AVR.UEditor.Core.AVR_WizardHook_SimpleToggle&lt; Wiz, Mod &gt;</a>, <a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller_wizard___hook___controller_visual.html#a1cb22ab948e620faa4cd478fa52c68d8">AVR.UEditor.Core.AVR_ControllerWizard_Hook_ControllerVisual</a>, and <a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___player_rig_wizard___hook___avatar_module.html#af259f6743e3b285509fe845a169fb747">AVR.UEditor.Core.AVR_PlayerRigWizard_Hook_AvatarModule</a>.</p>
-
-<p>Definition at line <a class="el" href="_a_v_r___hookable_wizard_8cs_source.html#l00112">112</a> of file <a class="el" href="_a_v_r___hookable_wizard_8cs_source.html">AVR_HookableWizard.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="ad285041bb442514f95d664a3d321ae31"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual int AVR.UEditor.Core.AVR_WizardHook&lt; Wiz &gt;.category</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_v_r___hookable_wizard_8cs_source.html#l00098">98</a> of file <a class="el" href="_a_v_r___hookable_wizard_8cs_source.html">AVR_HookableWizard.cs</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_a_v_r___hookable_wizard_8cs_source.html">AVR_HookableWizard.cs</a></li>
-</ul>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

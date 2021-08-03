@@ -108,6 +108,16 @@ a.SelectItem:hover {
 /**               Main content              **/
 /*********************************************/
 
+div.qindex, div.navtab{
+	background-color: #55555555;
+	border: 1px solid #BABCC0;
+	text-align: left;
+}
+
+a.qindexHL {
+	background-color: #55555555;
+}
+
 /*********************************************/
 /**               Inline code               **/
 /*********************************************/

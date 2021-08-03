@@ -44,7 +44,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -63,18 +62,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
-    </ul>
-  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Singleton.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_singleton_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
@@ -104,33 +97,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">    /// &lt;typeparam name=&quot;T&quot;&gt; Type of the Singleton. Should correspond to the class deriving from this. Example: class Example : Singleton&amp;lt;Example&amp;gt; &lt;/typeparam&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4.html">   10</a></span>&#160;<span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span>Singleton&lt;T&gt; : <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR_Behaviour</a> where T : <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR_Behaviour</a></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4.html#a811e99ebef5b2d1db0812955406c9824">   12</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> T Instance { <span class="keyword">get</span>; <span class="keyword">private</span> set;}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4.html#a71e44ea7cc120b100d7142f069bbe90c">   14</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4.html#a71e44ea7cc120b100d7142f069bbe90c">Awake</a>()</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">if</span> (Instance != null) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                AVR_DevConsole.cwarn(this.name+<span class="stringliteral">&quot; is marked as Singleton but another instance was found in the scene. Destroying object: &quot;</span>+Instance.name, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                GameObject.Destroy(Instance);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            Instance = GetComponent&lt;T&gt;();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">if</span>(Instance == null) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                AVR_DevConsole.cerror(this.name+<span class="stringliteral">&quot; is marked as a Singleton of type &quot;</span>+typeof(T).ToString()+<span class="stringliteral">&quot; but no component of this type was found!&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            }</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> T Instance</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a811e99ebef5b2d1db0812955406c9824.html#a811e99ebef5b2d1db0812955406c9824">   13</a></span>&#160;        {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keyword">get</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                <span class="keywordflow">if</span> (_Instance == null) _Instance = FindObjectOfType&lt;T&gt;();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordflow">return</span> _Instance;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keyword">private</span> set</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                _Instance = value;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a3ac72bcd9462c772be5eb11df12237a0.html#a3ac72bcd9462c772be5eb11df12237a0">   25</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> T <a class="code" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a3ac72bcd9462c772be5eb11df12237a0.html#a3ac72bcd9462c772be5eb11df12237a0">_Instance</a>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            DontDestroyOnLoad(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4.html#a22d2c69ad2a9d82b3024895522a7dcd4">   30</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4.html#a22d2c69ad2a9d82b3024895522a7dcd4">OnApplicationQuit</a>()</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            Instance = null;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_abf2bfb6551ad42faa015d4f5d1803d48.html#abf2bfb6551ad42faa015d4f5d1803d48">   27</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_abf2bfb6551ad42faa015d4f5d1803d48.html#abf2bfb6551ad42faa015d4f5d1803d48">Awake</a>()</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            SetInstance();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a6e647561a19d23f0d1482e2952c1490f.html#a6e647561a19d23f0d1482e2952c1490f">   32</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a6e647561a19d23f0d1482e2952c1490f.html#a6e647561a19d23f0d1482e2952c1490f">SetInstance</a>()</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">if</span> (_Instance != null &amp;&amp; _Instance != <span class="keyword">this</span>)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                AVR_DevConsole.cwarn(this.name + <span class="stringliteral">&quot; is marked as Singleton but another instance was found in the scene. Continuing to use old one.&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            Instance = gameObject.GetComponent&lt;T&gt;();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span> (Instance == null)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                AVR_DevConsole.cerror(this.name + <span class="stringliteral">&quot; is marked as a Singleton of type &quot;</span> + typeof(T).ToString() + <span class="stringliteral">&quot; but no component of this type was found!&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            DontDestroyOnLoad(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a22d2c69ad2a9d82b3024895522a7dcd4.html#a22d2c69ad2a9d82b3024895522a7dcd4">   50</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a22d2c69ad2a9d82b3024895522a7dcd4.html#a22d2c69ad2a9d82b3024895522a7dcd4">OnApplicationQuit</a>()</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            Instance = null;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR.Core.AVR_Behaviour</a></div><div class="ttdoc">Monobehaviour but with an added URL button to a documentation page. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___behaviour_8cs_source.html#l00010">AVR_Behaviour.cs:10</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_html_a71e44ea7cc120b100d7142f069bbe90c"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4.html#a71e44ea7cc120b100d7142f069bbe90c">AVR.Core.Singleton&lt; T &gt;.Awake</a></div><div class="ttdeci">virtual void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="_singleton_8cs_source.html#l00014">Singleton.cs:14</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_html_a22d2c69ad2a9d82b3024895522a7dcd4"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4.html#a22d2c69ad2a9d82b3024895522a7dcd4">AVR.Core.Singleton&lt; T &gt;.OnApplicationQuit</a></div><div class="ttdeci">virtual void OnApplicationQuit()</div><div class="ttdef"><b>Definition:</b> <a href="_singleton_8cs_source.html#l00030">Singleton.cs:30</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a22d2c69ad2a9d82b3024895522a7dcd4_html_a22d2c69ad2a9d82b3024895522a7dcd4"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a22d2c69ad2a9d82b3024895522a7dcd4.html#a22d2c69ad2a9d82b3024895522a7dcd4">AVR.Core.Singleton&lt; T &gt;.OnApplicationQuit</a></div><div class="ttdeci">virtual void OnApplicationQuit()</div><div class="ttdef"><b>Definition:</b> <a href="_singleton_8cs_source.html#l00050">Singleton.cs:50</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_abf2bfb6551ad42faa015d4f5d1803d48_html_abf2bfb6551ad42faa015d4f5d1803d48"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_abf2bfb6551ad42faa015d4f5d1803d48.html#abf2bfb6551ad42faa015d4f5d1803d48">AVR.Core.Singleton&lt; T &gt;.Awake</a></div><div class="ttdeci">void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="_singleton_8cs_source.html#l00027">Singleton.cs:27</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a3ac72bcd9462c772be5eb11df12237a0_html_a3ac72bcd9462c772be5eb11df12237a0"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a3ac72bcd9462c772be5eb11df12237a0.html#a3ac72bcd9462c772be5eb11df12237a0">AVR.Core.Singleton&lt; T &gt;._Instance</a></div><div class="ttdeci">static T _Instance</div><div class="ttdef"><b>Definition:</b> <a href="_singleton_8cs_source.html#l00025">Singleton.cs:25</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a6e647561a19d23f0d1482e2952c1490f_html_a6e647561a19d23f0d1482e2952c1490f"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a6e647561a19d23f0d1482e2952c1490f.html#a6e647561a19d23f0d1482e2952c1490f">AVR.Core.Singleton&lt; T &gt;.SetInstance</a></div><div class="ttdeci">void SetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_singleton_8cs_source.html#l00032">Singleton.cs:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

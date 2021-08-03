@@ -44,7 +44,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -63,18 +62,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
-    </ul>
-  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AVR_Component.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_a_v_r___component_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
@@ -105,80 +98,140 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">   10</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR_Component</a> : <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR_Behaviour</a></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {<span class="comment"></span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">        /// &lt;summary&gt; Events called when this component awakes. &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7fc075a7ad97ada8b9c25bf82f346aee">   13</a></span>&#160;<span class="comment"></span>        [HideInInspector] <span class="keyword">public</span> UnityEngine.Events.UnityEvent <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7fc075a7ad97ada8b9c25bf82f346aee">onAwake</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7fc075a7ad97ada8b9c25bf82f346aee.html#a7fc075a7ad97ada8b9c25bf82f346aee">   13</a></span>&#160;<span class="comment"></span>        [HideInInspector] <span class="keyword">public</span> UnityEngine.Events.UnityEvent <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7fc075a7ad97ada8b9c25bf82f346aee.html#a7fc075a7ad97ada8b9c25bf82f346aee">onAwake</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">        /// &lt;summary&gt; Events called when this component starts. &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a5f39436f864be4fe5d8a6b0c469a124f">   16</a></span>&#160;<span class="comment"></span>        [HideInInspector] <span class="keyword">public</span> UnityEngine.Events.UnityEvent <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a5f39436f864be4fe5d8a6b0c469a124f">onStart</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a5f39436f864be4fe5d8a6b0c469a124f.html#a5f39436f864be4fe5d8a6b0c469a124f">   16</a></span>&#160;<span class="comment"></span>        [HideInInspector] <span class="keyword">public</span> UnityEngine.Events.UnityEvent <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a5f39436f864be4fe5d8a6b0c469a124f.html#a5f39436f864be4fe5d8a6b0c469a124f">onStart</a>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">        /// &lt;summary&gt; Events called when this component is enabled. &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a68fc0bb54e2c18ba883e42383001c501">   19</a></span>&#160;<span class="comment"></span>        [HideInInspector] <span class="keyword">public</span> UnityEngine.Events.UnityEvent <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a68fc0bb54e2c18ba883e42383001c501">onEnable</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a68fc0bb54e2c18ba883e42383001c501.html#a68fc0bb54e2c18ba883e42383001c501">   19</a></span>&#160;<span class="comment"></span>        [HideInInspector] <span class="keyword">public</span> UnityEngine.Events.UnityEvent <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a68fc0bb54e2c18ba883e42383001c501.html#a68fc0bb54e2c18ba883e42383001c501">onEnable</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">        /// &lt;summary&gt; Events called when this component is disabled. &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">   22</a></span>&#160;<span class="comment"></span>        [HideInInspector] <span class="keyword">public</span> UnityEngine.Events.UnityEvent <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">onDisable</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component_aacf4193cd2c2bcf37b2cbf23cf64d08a.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">   22</a></span>&#160;<span class="comment"></span>        [HideInInspector] <span class="keyword">public</span> UnityEngine.Events.UnityEvent <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component_aacf4193cd2c2bcf37b2cbf23cf64d08a.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">onDisable</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7afa1caf50b10250c3abea47968f78ce">   24</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7afa1caf50b10250c3abea47968f78ce">Awake</a>() {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7afa1caf50b10250c3abea47968f78ce.html#a7afa1caf50b10250c3abea47968f78ce">   24</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7afa1caf50b10250c3abea47968f78ce.html#a7afa1caf50b10250c3abea47968f78ce">Awake</a>() {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            onAwake.Invoke();</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a9ccb9d57f9c2a601728cc59bcf86381f">   28</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a9ccb9d57f9c2a601728cc59bcf86381f">Start</a>() {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            onStart.Invoke();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7b1cb22192be27ed3ccc5f683c5c9bea">   32</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7b1cb22192be27ed3ccc5f683c5c9bea">OnEnable</a>() {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            onEnable.Invoke();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#ae85b01ddcee8e524605b72773ebdf2f5">   36</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#ae85b01ddcee8e524605b72773ebdf2f5">OnDisable</a>() {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            onDisable.Invoke();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#if AVR_NET</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">        /// &lt;summary&gt; False if this component should be destroyed on a remote server. &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span>        [HideInInspector]</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> KeepOnRemote = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">        /// &lt;summary&gt; True if this component should have a different layer on a remote server. &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span>        [HideInInspector]</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> ChangeLayerOnRemote = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">        /// &lt;summary&gt; True if children should be included on a remote layer change. &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span>        [HideInInspector]</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> ChangeLayerOnRemote_IncludeChildren = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">        /// &lt;summary&gt; Layer an object should change to if on a remote server. (See ChangeLayerOnRemote) &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"></span>        [HideInInspector]</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> RemoteLayer = 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">        /// &lt;summary&gt; Called when this component starts/spawns on a remote host. &lt;/summary&gt;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> OnRemote() {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">if</span> (ChangeLayerOnRemote) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                gameObject.layer = RemoteLayer;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">if</span>(ChangeLayerOnRemote_IncludeChildren) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <span class="keywordflow">foreach</span>(Transform child <span class="keywordflow">in</span> transform) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        child.gameObject.layer = RemoteLayer;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">if</span>(!KeepOnRemote) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                GameObject.Destroy(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a9ccb9d57f9c2a601728cc59bcf86381f.html#a9ccb9d57f9c2a601728cc59bcf86381f">   28</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a9ccb9d57f9c2a601728cc59bcf86381f.html#a9ccb9d57f9c2a601728cc59bcf86381f">Start</a>() {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">            #if AVR_NET</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            onNetworkStart();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">            #endif</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            onStart.Invoke();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7b1cb22192be27ed3ccc5f683c5c9bea.html#a7b1cb22192be27ed3ccc5f683c5c9bea">   35</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7b1cb22192be27ed3ccc5f683c5c9bea.html#a7b1cb22192be27ed3ccc5f683c5c9bea">OnEnable</a>() {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            onEnable.Invoke();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_core_1_1_a_v_r___component_ae85b01ddcee8e524605b72773ebdf2f5.html#ae85b01ddcee8e524605b72773ebdf2f5">   39</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___component_ae85b01ddcee8e524605b72773ebdf2f5.html#ae85b01ddcee8e524605b72773ebdf2f5">OnDisable</a>() {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            onDisable.Invoke();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">        #if AVR_NET</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> onNetworkStart()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (networkAPI.isOnline() &amp;&amp; !networkAPI.isLocalPlayer(<span class="keyword">this</span>))</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                onRemoteStart.Invoke();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">if</span> (destroyOnRemote)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    GameObject.Destroy(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <span class="comment">// Under normal conditions Update() runs for 1 frame before Destroy takes place. DestroyImmediate is dangerous to use here.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    <span class="comment">// This is a hacky way of preventing Update from running: We set gameobject.active = false (component.enabled doesn&#39;t do the trick)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <span class="comment">// And then re-enable the gameobject at the end of the frame through AVR_Root.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    gameObject.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    AVR_Root.Instance.ReEnableAtEndOfFrame(gameObject);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">if</span> (changeLayerOnRemote)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    gameObject.layer = remoteLayer;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <span class="keywordflow">if</span> (changeLayerOnRemote_IncludeChildren)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        <span class="keywordflow">foreach</span> (Transform child <span class="keywordflow">in</span> transform)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                            child.gameObject.layer = remoteLayer;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        [HideInInspector]</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> destroyOnRemote = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        [HideInInspector]</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> changeLayerOnRemote = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        [HideInInspector]</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> changeLayerOnRemote_IncludeChildren = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        [HideInInspector]</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">int</span> remoteLayer = 0;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        [HideInInspector] <span class="keyword">public</span> UnityEngine.Events.UnityEvent onRemoteStart;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span>ComponentNetworkAPI</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">int</span> instanceId(AVR_Component comp);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keyword">public</span> <span class="keyword">abstract</span> ulong networkId(AVR_Component comp);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keyword">public</span> <span class="keyword">abstract</span> ulong ownerId(AVR_Component comp);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">bool</span> isSpawned(AVR_Component comp);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">bool</span> isLocalPlayer(AVR_Component comp);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">bool</span> isOwner(AVR_Component comp);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">bool</span> isOwnedByServer(AVR_Component comp);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">bool</span> isPlayerObject(AVR_Component comp);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">bool</span>? isSceneObject(AVR_Component comp);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">bool</span> isOnline();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">void</span> setOwner(AVR_Component comp, ulong newOwnerId);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">void</span> removeOwner(AVR_Component comp);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">public</span> <span class="keyword">class </span>DefaultNetworkAPI : ComponentNetworkAPI</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">int</span> instanceId(AVR_Component comp) =&gt; 0;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keyword">public</span> <span class="keyword">override</span> ulong networkId(AVR_Component comp) =&gt; 0;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keyword">public</span> <span class="keyword">override</span> ulong ownerId(AVR_Component comp) =&gt; 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> isSpawned(AVR_Component comp) =&gt; <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> isLocalPlayer(AVR_Component comp) =&gt; <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> isOwner(AVR_Component comp) =&gt; <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> isOwnedByServer(AVR_Component comp) =&gt; <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> isPlayerObject(AVR_Component comp) =&gt; <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span>? isSceneObject(AVR_Component comp) =&gt; <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">bool</span> isOnline() =&gt; <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> setOwner(AVR_Component comp, ulong newOwnerId) { }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> removeOwner(AVR_Component comp) { }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        [HideInInspector]</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keyword">public</span> Object networkObject;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> ComponentNetworkAPI networkAPI</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keyword">get</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="keywordflow">if</span> (_napi == null) _napi = <span class="keyword">new</span> DefaultNetworkAPI();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="keywordflow">return</span> _napi;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            set</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                _napi = value;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> ComponentNetworkAPI _napi;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">        #endif</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR.Core.AVR_Behaviour</a></div><div class="ttdoc">Monobehaviour but with an added URL button to a documentation page. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___behaviour_8cs_source.html#l00010">AVR_Behaviour.cs:10</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_html_a7afa1caf50b10250c3abea47968f78ce"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7afa1caf50b10250c3abea47968f78ce">AVR.Core.AVR_Component.Awake</a></div><div class="ttdeci">virtual void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00024">AVR_Component.cs:24</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_html_ae85b01ddcee8e524605b72773ebdf2f5"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#ae85b01ddcee8e524605b72773ebdf2f5">AVR.Core.AVR_Component.OnDisable</a></div><div class="ttdeci">virtual void OnDisable()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00036">AVR_Component.cs:36</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_html_a5f39436f864be4fe5d8a6b0c469a124f"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a5f39436f864be4fe5d8a6b0c469a124f">AVR.Core.AVR_Component.onStart</a></div><div class="ttdeci">UnityEngine.Events.UnityEvent onStart</div><div class="ttdoc">Events called when this component starts. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00016">AVR_Component.cs:16</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_html_a7fc075a7ad97ada8b9c25bf82f346aee"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7fc075a7ad97ada8b9c25bf82f346aee">AVR.Core.AVR_Component.onAwake</a></div><div class="ttdeci">UnityEngine.Events.UnityEvent onAwake</div><div class="ttdoc">Events called when this component awakes. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00013">AVR_Component.cs:13</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_html_a7b1cb22192be27ed3ccc5f683c5c9bea"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7b1cb22192be27ed3ccc5f683c5c9bea">AVR.Core.AVR_Component.OnEnable</a></div><div class="ttdeci">virtual void OnEnable()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00032">AVR_Component.cs:32</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_html_a68fc0bb54e2c18ba883e42383001c501"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a68fc0bb54e2c18ba883e42383001c501">AVR.Core.AVR_Component.onEnable</a></div><div class="ttdeci">UnityEngine.Events.UnityEvent onEnable</div><div class="ttdoc">Events called when this component is enabled. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00019">AVR_Component.cs:19</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_a7fc075a7ad97ada8b9c25bf82f346aee_html_a7fc075a7ad97ada8b9c25bf82f346aee"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7fc075a7ad97ada8b9c25bf82f346aee.html#a7fc075a7ad97ada8b9c25bf82f346aee">AVR.Core.AVR_Component.onAwake</a></div><div class="ttdeci">UnityEngine.Events.UnityEvent onAwake</div><div class="ttdoc">Events called when this component awakes. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00013">AVR_Component.cs:13</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_a7afa1caf50b10250c3abea47968f78ce_html_a7afa1caf50b10250c3abea47968f78ce"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7afa1caf50b10250c3abea47968f78ce.html#a7afa1caf50b10250c3abea47968f78ce">AVR.Core.AVR_Component.Awake</a></div><div class="ttdeci">virtual void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00024">AVR_Component.cs:24</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url.html">AVR.Core.Attributes.DocumentationUrl</a></div><div class="ttdoc">Sets the documentation html file inside of Packages/com.avr.core/Documentation/html of a given class...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___attributes_8cs_source.html#l00089">AVR_Attributes.cs:89</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_html_a9ccb9d57f9c2a601728cc59bcf86381f"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a9ccb9d57f9c2a601728cc59bcf86381f">AVR.Core.AVR_Component.Start</a></div><div class="ttdeci">virtual void Start()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00028">AVR_Component.cs:28</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_html_aacf4193cd2c2bcf37b2cbf23cf64d08a"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">AVR.Core.AVR_Component.onDisable</a></div><div class="ttdeci">UnityEngine.Events.UnityEvent onDisable</div><div class="ttdoc">Events called when this component is disabled. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00022">AVR_Component.cs:22</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_a9ccb9d57f9c2a601728cc59bcf86381f_html_a9ccb9d57f9c2a601728cc59bcf86381f"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a9ccb9d57f9c2a601728cc59bcf86381f.html#a9ccb9d57f9c2a601728cc59bcf86381f">AVR.Core.AVR_Component.Start</a></div><div class="ttdeci">virtual void Start()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00028">AVR_Component.cs:28</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_aacf4193cd2c2bcf37b2cbf23cf64d08a_html_aacf4193cd2c2bcf37b2cbf23cf64d08a"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component_aacf4193cd2c2bcf37b2cbf23cf64d08a.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">AVR.Core.AVR_Component.onDisable</a></div><div class="ttdeci">UnityEngine.Events.UnityEvent onDisable</div><div class="ttdoc">Events called when this component is disabled. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00022">AVR_Component.cs:22</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_ae85b01ddcee8e524605b72773ebdf2f5_html_ae85b01ddcee8e524605b72773ebdf2f5"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component_ae85b01ddcee8e524605b72773ebdf2f5.html#ae85b01ddcee8e524605b72773ebdf2f5">AVR.Core.AVR_Component.OnDisable</a></div><div class="ttdeci">virtual void OnDisable()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00039">AVR_Component.cs:39</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_a5f39436f864be4fe5d8a6b0c469a124f_html_a5f39436f864be4fe5d8a6b0c469a124f"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a5f39436f864be4fe5d8a6b0c469a124f.html#a5f39436f864be4fe5d8a6b0c469a124f">AVR.Core.AVR_Component.onStart</a></div><div class="ttdeci">UnityEngine.Events.UnityEvent onStart</div><div class="ttdoc">Events called when this component starts. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00016">AVR_Component.cs:16</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR.Core.AVR_Component</a></div><div class="ttdoc">Base class for all arc-vr components. A component is typically a Monobehaviour that represents a virt...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00010">AVR_Component.cs:10</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_a7b1cb22192be27ed3ccc5f683c5c9bea_html_a7b1cb22192be27ed3ccc5f683c5c9bea"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7b1cb22192be27ed3ccc5f683c5c9bea.html#a7b1cb22192be27ed3ccc5f683c5c9bea">AVR.Core.AVR_Component.OnEnable</a></div><div class="ttdeci">virtual void OnEnable()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00035">AVR_Component.cs:35</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___component_a68fc0bb54e2c18ba883e42383001c501_html_a68fc0bb54e2c18ba883e42383001c501"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a68fc0bb54e2c18ba883e42383001c501.html#a68fc0bb54e2c18ba883e42383001c501">AVR.Core.AVR_Component.onEnable</a></div><div class="ttdeci">UnityEngine.Events.UnityEvent onEnable</div><div class="ttdoc">Events called when this component is enabled. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___component_8cs_source.html#l00019">AVR_Component.cs:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

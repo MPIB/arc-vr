@@ -44,7 +44,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -76,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,123 +107,61 @@ Inheritance diagram for AVR.Core.AVR_ControllerComponent:</div>
  <div class="center">
   <img src="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.png" usemap="#AVR.Core.AVR_ControllerComponent_map" alt=""/>
   <map id="AVR.Core.AVR_ControllerComponent_map" name="AVR.Core.AVR_ControllerComponent_map">
-<area href="class_a_v_r_1_1_core_1_1_a_v_r___component.html" title="Base class for all arc-vr components. A component is typically a Monobehaviour that represents a virt..." alt="AVR.Core.AVR_Component" shape="rect" coords="627,112,868,136"/>
-<area href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html" title="Monobehaviour but with an added URL button to a documentation page. " alt="AVR.Core.AVR_Behaviour" shape="rect" coords="627,56,868,80"/>
-<area href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html" title="Manages inputs of a controller such as button presses and track-pad inputs. " alt="AVR.Core.AVR_ControllerInputManager" shape="rect" coords="0,224,241,248"/>
-<area href="class_a_v_r_1_1_core_1_1_a_v_r___controller_visual.html" title="Represents a visual of a controller, such as a 3d model or sprite. " alt="AVR.Core.AVR_ControllerVisual" shape="rect" coords="251,224,492,248"/>
-<area href="class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider.html" title="Provides locomotion-movement to a controller. " alt="AVR.Motion.AVR_LocomotionProvider" shape="rect" coords="502,224,743,248"/>
-<area href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html" title="Provides common teleportation/movement functionality to a controller " alt="AVR.Motion.AVR_MovementProvider" shape="rect" coords="753,224,994,248"/>
-<area href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html" title="Provides turning functionality to a controller. " alt="AVR.Motion.AVR_TurnProvider" shape="rect" coords="1004,224,1245,248"/>
-<area href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html" title="This class provides UI Interaction through a VR controller. NOTE: Often Enabling/Disabling this compo..." alt="AVR.UI.AVR_UIInteractionProvider" shape="rect" coords="1255,224,1496,248"/>
+<area href="class_a_v_r_1_1_core_1_1_a_v_r___component.html" title="Base class for all arc-vr components. A component is typically a Monobehaviour that represents a virt..." alt="AVR.Core.AVR_Component" shape="rect" coords="0,112,241,136"/>
+<area href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html" title="Monobehaviour but with an added URL button to a documentation page. " alt="AVR.Core.AVR_Behaviour" shape="rect" coords="0,56,241,80"/>
+<area href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager.html" title="Manages inputs of a controller such as button presses and track-pad inputs. " alt="AVR.Core.AVR_ControllerInputManager" shape="rect" coords="251,224,492,248"/>
+<area href="class_a_v_r_1_1_core_1_1_a_v_r___controller_visual.html" title="Represents a visual of a controller, such as a 3d model or sprite. " alt="AVR.Core.AVR_ControllerVisual" shape="rect" coords="251,280,492,304"/>
+<area href="class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider.html" title="Provides locomotion-movement to a controller. " alt="AVR.Motion.AVR_LocomotionProvider" shape="rect" coords="251,336,492,360"/>
+<area href="class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider.html" title="Provides common teleportation/movement functionality to a controller " alt="AVR.Motion.AVR_MovementProvider" shape="rect" coords="251,392,492,416"/>
+<area href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html" title="Provides turning functionality to a controller. " alt="AVR.Motion.AVR_TurnProvider" shape="rect" coords="251,448,492,472"/>
+<area href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html" title="Simplest GrabProvider. Grabbed objects will move their center (obj.transform.position) towards the re..." alt="AVR.Phys.AVR_BasicGrabProvider" shape="rect" coords="251,504,492,528"/>
+<area href="class_a_v_r_1_1_phys_1_1_a_v_r___hand.html" alt="AVR.Phys.AVR_Hand" shape="rect" coords="251,560,492,584"/>
+<area href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html" title="This class provides UI Interaction through a VR controller. NOTE: Often Enabling/Disabling this compo..." alt="AVR.UI.AVR_UIInteractionProvider" shape="rect" coords="251,616,492,640"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ae4ed17deabe4207cc4059c6abe466a43"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#ae4ed17deabe4207cc4059c6abe466a43">Awake</a> ()</td></tr>
+<tr class="memitem:ae4ed17deabe4207cc4059c6abe466a43"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component_ae4ed17deabe4207cc4059c6abe466a43.html#ae4ed17deabe4207cc4059c6abe466a43">Awake</a> ()</td></tr>
 <tr class="separator:ae4ed17deabe4207cc4059c6abe466a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR.Core.AVR_Component</a></td></tr>
-<tr class="memitem:a9ccb9d57f9c2a601728cc59bcf86381f inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a9ccb9d57f9c2a601728cc59bcf86381f">Start</a> ()</td></tr>
+<tr class="memitem:a9ccb9d57f9c2a601728cc59bcf86381f inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a9ccb9d57f9c2a601728cc59bcf86381f.html#a9ccb9d57f9c2a601728cc59bcf86381f">Start</a> ()</td></tr>
 <tr class="separator:a9ccb9d57f9c2a601728cc59bcf86381f inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b1cb22192be27ed3ccc5f683c5c9bea inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7b1cb22192be27ed3ccc5f683c5c9bea">OnEnable</a> ()</td></tr>
+<tr class="memitem:a7b1cb22192be27ed3ccc5f683c5c9bea inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7b1cb22192be27ed3ccc5f683c5c9bea.html#a7b1cb22192be27ed3ccc5f683c5c9bea">OnEnable</a> ()</td></tr>
 <tr class="separator:a7b1cb22192be27ed3ccc5f683c5c9bea inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae85b01ddcee8e524605b72773ebdf2f5 inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#ae85b01ddcee8e524605b72773ebdf2f5">OnDisable</a> ()</td></tr>
+<tr class="memitem:ae85b01ddcee8e524605b72773ebdf2f5 inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_ae85b01ddcee8e524605b72773ebdf2f5.html#ae85b01ddcee8e524605b72773ebdf2f5">OnDisable</a> ()</td></tr>
 <tr class="separator:ae85b01ddcee8e524605b72773ebdf2f5 inherit pro_methods_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:aa1b5d10862079118499e2ee5e5e619e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html">AVR_Controller</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a><code> [get, set]</code></td></tr>
+<tr class="memitem:aa1b5d10862079118499e2ee5e5e619e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html">AVR_Controller</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component_aa1b5d10862079118499e2ee5e5e619e7.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a><code> [get, set]</code></td></tr>
 <tr class="separator:aa1b5d10862079118499e2ee5e5e619e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR.Core.AVR_Component</a></td></tr>
-<tr class="memitem:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7fc075a7ad97ada8b9c25bf82f346aee">onAwake</a></td></tr>
-<tr class="memdesc:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component awakes.  <a href="#a7fc075a7ad97ada8b9c25bf82f346aee">More...</a><br /></td></tr>
+<tr class="memitem:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7fc075a7ad97ada8b9c25bf82f346aee.html#a7fc075a7ad97ada8b9c25bf82f346aee">onAwake</a></td></tr>
+<tr class="memdesc:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component awakes.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a7fc075a7ad97ada8b9c25bf82f346aee.html#a7fc075a7ad97ada8b9c25bf82f346aee">More...</a><br /></td></tr>
 <tr class="separator:a7fc075a7ad97ada8b9c25bf82f346aee inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a5f39436f864be4fe5d8a6b0c469a124f">onStart</a></td></tr>
-<tr class="memdesc:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component starts.  <a href="#a5f39436f864be4fe5d8a6b0c469a124f">More...</a><br /></td></tr>
+<tr class="memitem:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a5f39436f864be4fe5d8a6b0c469a124f.html#a5f39436f864be4fe5d8a6b0c469a124f">onStart</a></td></tr>
+<tr class="memdesc:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component starts.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a5f39436f864be4fe5d8a6b0c469a124f.html#a5f39436f864be4fe5d8a6b0c469a124f">More...</a><br /></td></tr>
 <tr class="separator:a5f39436f864be4fe5d8a6b0c469a124f inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a68fc0bb54e2c18ba883e42383001c501">onEnable</a></td></tr>
-<tr class="memdesc:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component is enabled.  <a href="#a68fc0bb54e2c18ba883e42383001c501">More...</a><br /></td></tr>
+<tr class="memitem:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_a68fc0bb54e2c18ba883e42383001c501.html#a68fc0bb54e2c18ba883e42383001c501">onEnable</a></td></tr>
+<tr class="memdesc:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component is enabled.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___component_a68fc0bb54e2c18ba883e42383001c501.html#a68fc0bb54e2c18ba883e42383001c501">More...</a><br /></td></tr>
 <tr class="separator:a68fc0bb54e2c18ba883e42383001c501 inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">onDisable</a></td></tr>
-<tr class="memdesc:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component is disabled.  <a href="#aacf4193cd2c2bcf37b2cbf23cf64d08a">More...</a><br /></td></tr>
+<tr class="memitem:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memItemLeft" align="right" valign="top">UnityEngine.Events.UnityEvent&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component_aacf4193cd2c2bcf37b2cbf23cf64d08a.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">onDisable</a></td></tr>
+<tr class="memdesc:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Events called when this component is disabled.  <a href="class_a_v_r_1_1_core_1_1_a_v_r___component_aacf4193cd2c2bcf37b2cbf23cf64d08a.html#aacf4193cd2c2bcf37b2cbf23cf64d08a">More...</a><br /></td></tr>
 <tr class="separator:aacf4193cd2c2bcf37b2cbf23cf64d08a inherit pub_attribs_class_a_v_r_1_1_core_1_1_a_v_r___component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR.Core.AVR_Behaviour</a></td></tr>
-<tr class="memitem:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html">AVR_PlayerRig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html#a45c80511f6416cbf280f59a93d05ba81">playerRig</a> =&gt; <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___singleton_component_3_01_t_01_4.html#a0921dd90cf053c2761c65b0710c98450">AVR_PlayerRig.Instance</a></td></tr>
-<tr class="memdesc:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html" title="Represents the players VR setup. Only one instance at a time is allowed. ">AVR_PlayerRig</a> instance in the scene  <a href="#a45c80511f6416cbf280f59a93d05ba81">More...</a><br /></td></tr>
+<tr class="memitem:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html">AVR_PlayerRig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_a45c80511f6416cbf280f59a93d05ba81.html#a45c80511f6416cbf280f59a93d05ba81">playerRig</a> =&gt; <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___singleton_component_3_01_t_01_4_a0921dd90cf053c2761c65b0710c98450.html#a0921dd90cf053c2761c65b0710c98450">AVR_PlayerRig.Instance</a></td></tr>
+<tr class="memdesc:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html" title="Represents the players VR setup. Only one instance at a time is allowed. ">AVR_PlayerRig</a> instance in the scene  <a href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_a45c80511f6416cbf280f59a93d05ba81.html#a45c80511f6416cbf280f59a93d05ba81">More...</a><br /></td></tr>
 <tr class="separator:a45c80511f6416cbf280f59a93d05ba81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html" title="Base class for all arc-vr components. A component is typically a Monobehaviour that represents a virt...">AVR_Component</a> specifically attatched to an <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html" title="Represents a VR controller. Provides functionality for spacial tracking and haptic feedback...">AVR_Controller</a>. Needs to have an <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html" title="Represents a VR controller. Provides functionality for spacial tracking and haptic feedback...">AVR_Controller</a> on this gameObject or one of its parents. </p>
 
 <p>Definition at line <a class="el" href="_a_v_r___controller_component_8cs_source.html#l00010">10</a> of file <a class="el" href="_a_v_r___controller_component_8cs_source.html">AVR_ControllerComponent.cs</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae4ed17deabe4207cc4059c6abe466a43"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">override void AVR.Core.AVR_ControllerComponent.Awake </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html#a7afa1caf50b10250c3abea47968f78ce">AVR.Core.AVR_Component</a>.</p>
-
-<p>Reimplemented in <a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider.html#a7e52ff5439973ca77dc25a7eaaec55fa">AVR.Motion.AVR_LocomotionProvider</a>, <a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html#a83b6ecfa613f946597df3848b4704b7f">AVR.UI.AVR_UIInteractionProvider</a>, and <a class="el" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html#a915864d0b0282136e90e6c4d7b4cc4a0">AVR.Motion.AVR_TurnProvider</a>.</p>
-
-<p>Definition at line <a class="el" href="_a_v_r___controller_component_8cs_source.html#l00014">14</a> of file <a class="el" href="_a_v_r___controller_component_8cs_source.html">AVR_ControllerComponent.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a> = GetComponentInParent&lt;AVR_Controller&gt;();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">controller</a>) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                AVR_DevConsole.cerror(<span class="stringliteral">&quot;AVR_ControllerComponent does not have an AVR_Controller in on itself or one of its parents!&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            base.Awake();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___controller_component_html_aa1b5d10862079118499e2ee5e5e619e7"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___controller_component.html#aa1b5d10862079118499e2ee5e5e619e7">AVR.Core.AVR_ControllerComponent.controller</a></div><div class="ttdeci">AVR_Controller controller</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___controller_component_8cs_source.html#l00012">AVR_ControllerComponent.cs:12</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Property Documentation</h2>
-<a class="anchor" id="aa1b5d10862079118499e2ee5e5e619e7"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___controller.html">AVR_Controller</a> AVR.Core.AVR_ControllerComponent.controller</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_v_r___controller_component_8cs_source.html#l00012">12</a> of file <a class="el" href="_a_v_r___controller_component_8cs_source.html">AVR_ControllerComponent.cs</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_a_v_r___controller_component_8cs_source.html">AVR_ControllerComponent.cs</a></li>
-</ul>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

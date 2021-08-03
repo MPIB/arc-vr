@@ -44,7 +44,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -63,18 +62,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
-    </ul>
-  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AVR_LocomotionProvider_Editor.cs</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_a_v_r___locomotion_provider___editor_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">using</span> System.Collections;</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="keyword">using</span> System.Collections.Generic;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEditor;</div>
@@ -106,13 +99,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    [CanEditMultipleObjects]</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor.html">   12</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor.html">AVR_LocomotionProvider_Editor</a> : AVR.UEditor.Core.AVR_Component_Editor</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor.html#a4e2fcb5b25ac55c56401ba32378f0c04">   14</a></span>&#160;        <span class="keyword">protected</span> <span class="keywordtype">bool</span> rigHasCharacterController = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor_a4e2fcb5b25ac55c56401ba32378f0c04.html#a4e2fcb5b25ac55c56401ba32378f0c04">   14</a></span>&#160;        <span class="keyword">protected</span> <span class="keywordtype">bool</span> rigHasCharacterController = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor.html#a278c2c2d3ce2421ccd17576fa06ab416">   16</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor.html#a278c2c2d3ce2421ccd17576fa06ab416">OnEnable</a>()</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor_a278c2c2d3ce2421ccd17576fa06ab416.html#a278c2c2d3ce2421ccd17576fa06ab416">   16</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor_a278c2c2d3ce2421ccd17576fa06ab416.html#a278c2c2d3ce2421ccd17576fa06ab416">OnEnable</a>()</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor.html#a986f3221b54f16f287121e6b7ca42e42">   20</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor.html#a986f3221b54f16f287121e6b7ca42e42">OnInspectorGUI</a>()</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor_a986f3221b54f16f287121e6b7ca42e42.html#a986f3221b54f16f287121e6b7ca42e42">   20</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor_a986f3221b54f16f287121e6b7ca42e42.html#a986f3221b54f16f287121e6b7ca42e42">OnInspectorGUI</a>()</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            DrawToolbar(target);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
@@ -131,11 +124,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor_html_a986f3221b54f16f287121e6b7ca42e42"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor.html#a986f3221b54f16f287121e6b7ca42e42">AVR.UEditor.Motion.AVR_LocomotionProvider_Editor.OnInspectorGUI</a></div><div class="ttdeci">override void OnInspectorGUI()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___locomotion_provider___editor_8cs_source.html#l00020">AVR_LocomotionProvider_Editor.cs:20</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___player_rig_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html">AVR.Core.AVR_PlayerRig</a></div><div class="ttdoc">Represents the players VR setup. Only one instance at a time is allowed. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___player_rig_8cs_source.html#l00010">AVR_PlayerRig.cs:10</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor_a986f3221b54f16f287121e6b7ca42e42_html_a986f3221b54f16f287121e6b7ca42e42"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor_a986f3221b54f16f287121e6b7ca42e42.html#a986f3221b54f16f287121e6b7ca42e42">AVR.UEditor.Motion.AVR_LocomotionProvider_Editor.OnInspectorGUI</a></div><div class="ttdeci">override void OnInspectorGUI()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___locomotion_provider___editor_8cs_source.html#l00020">AVR_LocomotionProvider_Editor.cs:20</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider_html"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider.html">AVR.Motion.AVR_LocomotionProvider</a></div><div class="ttdoc">Provides locomotion-movement to a controller. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___locomotion_provider_8cs_source.html#l00012">AVR_LocomotionProvider.cs:12</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor_html_a278c2c2d3ce2421ccd17576fa06ab416"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor.html#a278c2c2d3ce2421ccd17576fa06ab416">AVR.UEditor.Motion.AVR_LocomotionProvider_Editor.OnEnable</a></div><div class="ttdeci">void OnEnable()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___locomotion_provider___editor_8cs_source.html#l00016">AVR_LocomotionProvider_Editor.cs:16</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor_html"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor.html">AVR.UEditor.Motion.AVR_LocomotionProvider_Editor</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___locomotion_provider___editor_8cs_source.html#l00012">AVR_LocomotionProvider_Editor.cs:12</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor_a278c2c2d3ce2421ccd17576fa06ab416_html_a278c2c2d3ce2421ccd17576fa06ab416"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_motion_1_1_a_v_r___locomotion_provider___editor_a278c2c2d3ce2421ccd17576fa06ab416.html#a278c2c2d3ce2421ccd17576fa06ab416">AVR.UEditor.Motion.AVR_LocomotionProvider_Editor.OnEnable</a></div><div class="ttdeci">void OnEnable()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___locomotion_provider___editor_8cs_source.html#l00016">AVR_LocomotionProvider_Editor.cs:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
