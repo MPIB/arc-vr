@@ -25,4 +25,16 @@ public class GrabbableObjectType : ScriptableObject
 
     // This multiplier will essentially make the target objects rigidbody weight = weight * 1.0/multiplier
     public float Heavy_force_multiplier = 1.0f;
+
+    public static GrabbableObjectType defaultObjectType(){
+        GrabbableObjectType o = new GrabbableObjectType();
+        o.followType = FollowType.FREE;
+        o.handToObject = false;
+        o.allowTwoHanded = false;
+        o.changeObjectTypeOnTwoHanded = false;
+        o.Lightness = 1.0f;
+        o.Angular_Lightness = 1.0f;
+        o.Break_grab_distance = 0.5f;
+        return o;
+    }
 }

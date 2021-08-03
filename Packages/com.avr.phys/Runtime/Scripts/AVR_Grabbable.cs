@@ -33,12 +33,17 @@ namespace AVR.Phys {
             get { return AttachedHands.Count>1; }
         }
 
+        void Reset() {
+            this.destroyOnRemote = false;
+        }
+
         protected override void Awake()
         {
             base.Awake();
             if (rb == null) rb = GetComponent<Rigidbody>();
             if (colliders==null || colliders.Count<1) colliders.AddRange(GetComponentsInChildren<Collider>());
             if (nodes == null || nodes.Count < 1) nodes.AddRange(GetComponentsInChildren<AVR_GrabNode>());
+            if(objectType==null) objectType = GrabbableObjectType.defaultObjectType();
         }
 
         void FixedUpdate()
