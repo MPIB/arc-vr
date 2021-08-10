@@ -28,6 +28,9 @@ namespace AVR.Core {
 
         private static int repeat_counter = 1;
 
+        public static event System.Action<string> OnPrint = delegate { };
+        public static event System.Action<string> OnCommand = delegate { };
+
         /// <summary> Initializes the DevConsole. Only the first execution will have an effect. </summary>
         #if UNITY_EDITOR
         [InitializeOnLoadMethod]
@@ -152,6 +155,8 @@ namespace AVR.Core {
 
             output_history.Add(s);
             output_s += s;
+
+            OnPrint.Invoke(s);
         }
 
         /// <summary>
@@ -229,6 +234,8 @@ namespace AVR.Core {
             {
                 error("Could not recognize command \"" + c[0] + "\"");
             }
+
+            OnCommand.Invoke(s);
         }
 
         /// <summary> Represents a command for the AVR_Devconsole </summary>

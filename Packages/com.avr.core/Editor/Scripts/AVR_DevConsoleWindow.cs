@@ -19,6 +19,24 @@ namespace AVR.UEditor.Core {
             EditorWindow.GetWindow(typeof(AVR_DevConsoleWindow), false, "ARC-VR Console");
         }
 
+        void ScrollToBottom() {
+            //We don't wanna do this if the user is scrolling around.
+            if(mouseOverWindow == this) return;
+
+            scrollPos = new Vector2(scrollPos.x, float.PositiveInfinity); // Set scrollbar to bottom
+        }
+
+        public void OnEnable()
+        {
+            AVR_DevConsole.OnPrint -= (s) => ScrollToBottom();
+            AVR_DevConsole.OnPrint += (s) => ScrollToBottom();
+        }
+
+        void OnInspectorUpdate()
+        {
+            Repaint();
+        }
+
         void OnGUI()
         {
             GUILayout.BeginVertical();
@@ -31,7 +49,7 @@ namespace AVR.UEditor.Core {
             string cog_symbol = AVR_EditorUtility.Unicode_to_String("f013");
             if (GUILayout.Button(cog_symbol, sb, GUILayout.Width(25), GUILayout.Height(25)))
             {
-                AVR_DevConsole.print("Settings Button doesnt do anything! :(");
+                AVR_DevConsole.print("Settings Button doesnt do anything! :("); //TODO
             }
             
 
@@ -48,7 +66,7 @@ namespace AVR.UEditor.Core {
             GUI.contentColor = new Color(1f, 1f, 1f, 1f);
             GUI.backgroundColor = new Color(0.288f, 0.296f, 0.319f, 1f);
 
-            scrollPos = EditorGUILayout.BeginScrollView(scrollPos, GUILayout.Height(Screen.height - 85), GUILayout.Width(Screen.width - 10));
+            scrollPos = EditorGUILayout.BeginScrollView(scrollPos, false, true, GUILayout.Height(Screen.height - 85), GUILayout.Width(Screen.width - 10)); 
             EditorGUILayout.TextArea(AVR_DevConsole.get_text(), s0, GUILayout.ExpandHeight(true));
             EditorGUILayout.EndScrollView();
             
@@ -68,7 +86,7 @@ namespace AVR.UEditor.Core {
                 refocus = 1;
                 history = -1;
 
-                scrollPos = new Vector2(0, float.PositiveInfinity); // Set scrollbar to bottom
+                ScrollToBottom();
                 Repaint();
             }
 
