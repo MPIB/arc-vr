@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Events</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,7 +82,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ARC-VR Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><div class="image">
+<img src="../../res/images/avr_logo_bw_wide.png"  alt="Logo"/>
+</div>
+<h1><a class="anchor" id="Overview"></a>
+Overview</h1>
+<p>ARC-VR is a Unity3D framework that aims to ameliorate the development process of VR applications or games by providing any and all basic VR features, such as movement, physics-interaction and UI. Thus ensuring the development process doesn't get congested at an early stage with the implementation of redundant, basic VR functionalities.</p>
+<p>Built in-house at the <a href="https://www.mpib-berlin.mpg.de/en">Max Planck Institute for Human Development</a>, the framework is primarily intended to simplify and streamline the building process of VR-based psychological experiments and studies.</p>
+<p>This project is licensed under the <a href="https://github.com/MPIB/arc-vr/blob/main/LICENSE">GNU General Public License v3.0</a>.</p>
+<p>The framework is still work-in-progress, largely untested and prone to bugs. Feel free to report any issues you encounter!</p>
+<p>Here's a brief demonstration of the systems capabilities:</p>
+<p> <div style='text-align: center;'><iframe width='840' height='472' src='https://www.youtube.com/embed/NHDEzg9Detg' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div></p>
+<h1>Packages</h1>
+<p>ARC-VR consists of a set of packages, all of which are dependent on a central <code>arc-vr-core</code> package, but otherwise function completely independently. This allows you to pick and choose which features you need for your project and avoid unnecessary dependencies.</p>
+<p>Here's an overview of what each package provides:</p>
+<p>arc-vr-core:</p><ul>
+<li>Documentation</li>
+<li>Trackable VR Controllers</li>
+<li>Base VR PlayerRig</li>
+<li>Integrated developer's console</li>
+<li>Integrated settings system</li>
+<li>Property logger</li>
+<li>Utilities</li>
+</ul>
+<p>arc-vr-motion:</p><ul>
+<li>Movement Providers (Locomotion/Teleportation etc.)</li>
+<li>Turn Provider</li>
+<li>Customizable shaders and effects for aiming reticules</li>
+</ul>
+<p>arc-vr-ui:</p><ul>
+<li>VR UI Interaction Provider</li>
+<li>Base UI Elements</li>
+<li>Object-Propery to UI-Element Linkage</li>
+</ul>
+<p>arc-vr-avatar:</p><ul>
+<li>Player-Avatar-Integration</li>
+<li>Basic Pose-Naturalizer</li>
+</ul>
+<p>arc-vr-phys:</p><ul>
+<li>Physics Interaction Providers</li>
+</ul>
+<p>arc-vr-net:</p><ul>
+<li>Multiplayer integration through <a class="el" href="namespace_m_l_a_p_i.html">MLAPI</a></li>
+<li>Player-Spawning System</li>
+<li>Basic 3rd-Person CharacterController </li>
+</ul>
+</div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

@@ -10,6 +10,11 @@ PROJECT_NAME           = "ARC-VR"
 PROJECT_NUMBER         = 1.0.0
 PROJECT_BRIEF          = "VR Devemopment Framework"
 
+
+ALIASES += "unityversion = [2020.2.2](https://unity3d.com/unity/whats-new/2020.2.2) \n"
+ALIASES += "logo = ![Logo](../../res/images/avr_logo_bw_wide.png) \n"
+ALIASES += "youtube{1} = @htmlonly<div style='text-align: center;'><iframe width='840' height='472' src='https://www.youtube.com/embed/\1' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>@endhtmlonly \n"
+
 # Maximum height of the logo should not exceed 55 pixels and the maximum width should not exceed 200 pixels.
 PROJECT_LOGO           = "res/avr_logo_small.png"
 
@@ -73,17 +78,6 @@ INHERIT_DOCS           = YES
 SEPARATE_MEMBER_PAGES  = YES
 
 TAB_SIZE               = 4
-
-# This tag can be used to specify a number of aliases that act as commands in
-# the documentation. An alias has the form:
-# name=value
-# For example adding
-# "sideeffect=@par Side Effects:\n"
-# will allow you to put the command \sideeffect (or @sideeffect) in the
-# documentation, which will result in a user-defined paragraph with heading
-# "Side Effects:". You can put \n's in the value part of an alias to insert
-# newlines.
-ALIASES                =
 
 # Doxygen selects the parser to use depending on the extension of the files it
 # parses. With this tag you can assign which parser to use for a given
@@ -649,7 +643,7 @@ FILTER_SOURCE_PATTERNS =
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the doxygen output.
 
-USE_MDFILE_AS_MAINPAGE =
+USE_MDFILE_AS_MAINPAGE = tutorials/Overview.md
 
 #---------------------------------------------------------------------------
 # Configuration options related to source browsing

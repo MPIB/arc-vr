@@ -14,21 +14,25 @@ namespace AVR.Net
         [RuntimeInitializeOnLoadMethod]
         static void InitCallbacks()
         {
-            NetworkManager.Singleton.OnClientConnectedCallback += (id) => AVR_DevConsole.csuccess("Client #"+id+" connected.", "NetworkManager");
+            try {
+                NetworkManager.Singleton.OnClientConnectedCallback += (id) => AVR_DevConsole.csuccess("Client #"+id+" connected.", "NetworkManager");
 
-            NetworkManager.Singleton.OnClientDisconnectCallback += (id) => AVR_DevConsole.cprint("Client #" + id + " disconnected.", "NetworkManager");
+                NetworkManager.Singleton.OnClientDisconnectCallback += (id) => AVR_DevConsole.cprint("Client #" + id + " disconnected.", "NetworkManager");
 
-            NetworkManager.Singleton.OnServerStarted += () => {
-                AVR_DevConsole.csuccess("Server started.", "NetworkManager");
-                AVR_DevConsole.command("getaddress", false);
-                AVR_DevConsole.command("getport", false);
-            };
+                NetworkManager.Singleton.OnServerStarted += () => {
+                    AVR_DevConsole.csuccess("Server started.", "NetworkManager");
+                    AVR_DevConsole.command("getaddress", false);
+                    AVR_DevConsole.command("getport", false);
+                };
 
-            NetworkManager.Singleton.OnServerStarted += () => {
-                foreach(var c in Object.FindObjectsOfType<AVR_Component>()) {
-                    c.onNetworkStart();
-                }
-            };
+                NetworkManager.Singleton.OnServerStarted += () => {
+                    foreach(var c in Object.FindObjectsOfType<AVR_Component>()) {
+                        c.onNetworkStart();
+                    }
+                };
+            } catch(System.Exception) {
+                AVR_DevConsole.warn("arc-vr-net is present in the project but there is no MLAPI Networkmanager! arc-vr-net callback functions will be disabled.");
+            }
         }
 
         #if UNITY_EDITOR

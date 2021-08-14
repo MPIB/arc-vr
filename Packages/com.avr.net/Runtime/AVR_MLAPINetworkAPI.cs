@@ -42,7 +42,7 @@ namespace AVR.Net
             return GetNetworkObject(comp).IsSceneObject;
         }
         public override bool isOnline(){
-            return NetworkManager.Singleton.IsClient || NetworkManager.Singleton.IsServer;
+            return NetworkManager.Singleton? NetworkManager.Singleton.IsClient || NetworkManager.Singleton.IsServer : false;
         }
 
         public override void setOwner(AVR_Component comp, ulong newOwnerId) {

@@ -95,6 +95,11 @@ a.SelectItem:hover {
 /*********************************************/
 /**                Main menu                **/
 /*********************************************/
+.contents {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
 #nav-tree {
 	background: transparent;
 }

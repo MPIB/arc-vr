@@ -18,5 +18,7 @@ var searchData=
   ['brand_5funicodes',['brand_unicodes',['../class_a_v_r_1_1_u_editor_1_1_u_i_1_1_a_v_r___f_a___glyph_helper___editor_a06551ebf1392fcaf2a5ce5c7b3184684.html#a06551ebf1392fcaf2a5ce5c7b3184684',1,'AVR::UEditor::UI::AVR_FA_GlyphHelper_Editor']]],
   ['break_5fgrab_5fdistance',['Break_grab_distance',['../class_grabbable_object_type_adf87194ef59dce51a45a73070767022e.html#adf87194ef59dce51a45a73070767022e',1,'GrabbableObjectType']]],
   ['build_5ftree',['build_tree',['../class_a_v_r_1_1_core_1_1_a_v_r___settings_ad280384129b146fdff0f592511b6a6ba.html#ad280384129b146fdff0f592511b6a6ba',1,'AVR::Core::AVR_Settings']]],
+  ['buildpackager',['BuildPackager',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_package_builder_a437ea23ada0f850c824a0f040962a119.html#a437ea23ada0f850c824a0f040962a119',1,'AVR::UEditor::Core::PackageBuilder']]],
+  ['buildtarball',['BuildTarball',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_package_builder_afcb2793f8150016c642e2e3c2fb6449a.html#afcb2793f8150016c642e2e3c2fb6449a',1,'AVR::UEditor::Core::PackageBuilder']]],
   ['button_5fstyle',['button_style',['../class_a_v_r_1_1_u_editor_1_1_u_i_1_1_a_v_r___f_a___glyph_helper___editor_ae8e386916182a6a48c260f2888c2a66d.html#ae8e386916182a6a48c260f2888c2a66d',1,'AVR::UEditor::UI::AVR_FA_GlyphHelper_Editor']]]
 ];
