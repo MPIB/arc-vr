@@ -69,6 +69,10 @@ a.highlighted {
 	background: #32363d;
 }
 
+#projectnumber {
+	font-size: 15px;
+}
+
 
 /*********************************************/
 /**               Top search                **/

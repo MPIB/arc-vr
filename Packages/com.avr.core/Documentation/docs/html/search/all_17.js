@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['yaw_5ftest',['yaw_test',['../class_a_v_r___grab_node_a2f285d0ad998319fe268a4b1d69cc43a.html#a2f285d0ad998319fe268a4b1d69cc43a',1,'AVR_GrabNode']]],
-  ['yspeed',['yspeed',['../class_a_v_r_1_1_net_1_1_a_v_r___third_person_character_controller_ac37f83a434b187b485aeab4d91f35635.html#ac37f83a434b187b485aeab4d91f35635',1,'AVR::Net::AVR_ThirdPersonCharacterController']]],
-  ['yx',['YX',['../class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider_a52da30d0251267ab7d375ef5b709e3f5.html#a52da30d0251267ab7d375ef5b709e3f5a923db922542fbe09e7ff87bb31b2f310',1,'AVR::Motion::AVR_LocomotionProvider']]],
-  ['yz',['YZ',['../class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider_a52da30d0251267ab7d375ef5b709e3f5.html#a52da30d0251267ab7d375ef5b709e3f5affa4ba973372c3650fd0881abeca6512',1,'AVR::Motion::AVR_LocomotionProvider']]]
+  ['xy',['XY',['../class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider_a52da30d0251267ab7d375ef5b709e3f5.html#a52da30d0251267ab7d375ef5b709e3f5a74c53bcd3dcb2bb79993b2fec37d362a',1,'AVR::Motion::AVR_LocomotionProvider']]],
+  ['xz',['XZ',['../class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider_a52da30d0251267ab7d375ef5b709e3f5.html#a52da30d0251267ab7d375ef5b709e3f5a27db3b98d01e664c17a6620b222c6469',1,'AVR::Motion::AVR_LocomotionProvider']]],
+  ['xzplanefacingdirection',['XZPlaneFacingDirection',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig_a17c3c94a2a2d9054dee65006d10ddc40.html#a17c3c94a2a2d9054dee65006d10ddc40',1,'AVR::Core::AVR_PlayerRig']]]
 ];
