@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
 		<meta name="generator" content="Doxygen 1.8.7"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>ARC-VR: Main Page</title>
+		<title>ARC-VR: arc-vr-core</title>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="dynsections.js"></script>
@@ -40,8 +40,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li>
@@ -62,7 +62,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -77,56 +76,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">ARC-VR Documentation</div>  </div>
+<div class="title">arc-vr-core </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><div class="image">
 <img src="../../res/images/avr_logo_bw_wide.png"  alt="Logo"/>
 </div>
-<h1><a class="anchor" id="Overview"></a>
-Overview</h1>
-<p>ARC-VR is a Unity3D framework that aims to ameliorate the development process of VR applications or games by providing any and all basic VR features, such as movement, physics-interaction and UI. Thus ensuring the development process doesn't get congested at an early stage with the implementation of redundant, basic VR functionalities.</p>
-<p>Built in-house at the <a href="https://www.mpib-berlin.mpg.de/en">Max Planck Institute for Human Development</a>, the framework is primarily intended to simplify and streamline the building process of VR-based psychological experiments and studies.</p>
-<p>This project is licensed under the <a href="https://github.com/MPIB/arc-vr/blob/main/LICENSE">GNU General Public License v3.0</a>.</p>
-<p>The framework is still work-in-progress, largely untested and prone to bugs. Feel free to report any issues you encounter!</p>
-<p>Here's a brief demonstration of the systems capabilities:</p>
-<p> <div style='text-align: center;'><iframe width='840' height='472' src='https://www.youtube.com/embed/NHDEzg9Detg' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div></p>
-<h1>Packages</h1>
-<p>ARC-VR consists of a set of packages, all of which are dependent on a central <code>arc-vr-core</code> package, but otherwise function completely independently. This allows you to pick and choose which features you need for your project and avoid unnecessary dependencies.</p>
-<p>Here's an overview of what each package provides:</p>
-<p><a class="el" href="md_tutorials_arc-vr-core.html#arc-vr-core">arc-vr-core</a>:</p><ul>
-<li>Documentation</li>
-<li>Trackable VR Controllers</li>
-<li>Base VR PlayerRig</li>
-<li>Integrated developer's console</li>
-<li>Integrated settings system</li>
-<li>Property logger</li>
-<li>Utilities</li>
-</ul>
-<p>arc-vr-motion:</p><ul>
-<li>Movement Providers (Locomotion/Teleportation etc.)</li>
-<li>Turn Provider</li>
-<li>Customizable shaders and effects for aiming reticules</li>
-</ul>
-<p>arc-vr-ui:</p><ul>
-<li>VR UI Interaction Provider</li>
-<li>Base UI Elements</li>
-<li>Object-Propery to UI-Element Linkage</li>
-</ul>
-<p>arc-vr-avatar:</p><ul>
-<li>Player-Avatar-Integration</li>
-<li>Basic Pose-Naturalizer</li>
-</ul>
-<p>arc-vr-phys:</p><ul>
-<li>Physics Interaction Providers</li>
-</ul>
-<p>arc-vr-net:</p><ul>
-<li>Multiplayer integration through <a class="el" href="namespace_m_l_a_p_i.html">MLAPI</a></li>
-<li>Player-Spawning System</li>
-<li>Basic 3rd-Person CharacterController </li>
-</ul>
+<h1><a class="anchor" id="arc-vr-core"></a>
+arc-vr-core</h1>
+<p>Arc-vr-core is the core package of the arc-vr framework. It contains all base classes and components that the other packages make use of. These include all rudimentary VR features such as spatial tracking, controller-inputs and other utilities. In many cases, this package might be all you need for your project.</p>
+<p>Classes are intentionally built to be inherited, derived and modified. Don't shy away from taking a look into the source code and adapting it to better suit your project.</p>
+<h1>Feature List</h1>
+<h2><a class="anchor" id="Documentation"></a>
+Documentation</h2>
+<p>The documentation you are looking at right now, as well as docs for all other packages are included in arc-vr-core. If you take a look inside <code>Packages/com.avr.core/Documentation/docs</code> you will find all html, css and resource files of the docs.</p>
+<p>Each arc-vr component will have a button inside the Unity Editor that opens the respective documentation page in the browser (See (Editor Untilities)[EditorUtilities]). If you are creating your own <code>AVR_Component</code>-objects and want them to link to the proper page, take a look at the (DocumentationUrl attribute)[DocumentationUrlAttribute] to see how to set this link yourself.</p>
+<p>These files are generated using <a href="https://www.doxygen.nl/index.html">Doxygen 1.8.7</a>. Under <code>Packages/com.avr.core/Documentation</code> you will find the doxygen executable as well as the respective <a href="https://www.doxygen.nl/manual/config.html">doxygen configuration file</a> called <code>avr_dxy_config</code>.</p>
+<p>You can re-generate the whole projects documentation any time by simply running <code>.\doxygen_1_8_7.exe .\avr_dxy_config</code> inside the Documentation folder. Doxygen will automatically extract code-summaries and produce up-to-date html files.</p>
+<h2>Base classes</h2>
+<p>TODO</p>
+<h2>Custom Editor-Attributes</h2>
+<p>TODO</p>
+<h2>Utilities</h2>
+<p>TODO</p>
+<h2>Editor Utilities</h2>
+<p>TODO</p>
+<h2>Developers Console</h2>
+<p>TODO</p>
+<h2>Settings system</h2>
+<p>TODO</p>
+<h2>Package Builder</h2>
+<p>TODO</p>
+<h2>Base class for Trial-Experiments</h2>
+<p>TODO</p>
+<h2>Rig and Controller Components for tracking, input etc.</h2>
+<p>TODO </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

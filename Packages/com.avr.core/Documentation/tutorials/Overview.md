@@ -21,7 +21,7 @@ This allows you to pick and choose which features you need for your project and 
 
 Here's an overview of what each package provides:
 
-arc-vr-core:
+[arc-vr-core](@ref arc-vr-core):
 	- Documentation
 	- Trackable VR Controllers
 	- Base VR PlayerRig
