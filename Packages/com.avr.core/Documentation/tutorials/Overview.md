@@ -14,7 +14,11 @@ Here's a brief demonstration of the systems capabilities:
 
 @youtube{NHDEzg9Detg}
 
-# Packages
+# Compatibility
+
+Arc-vr has been developed and only tested on \unityversion for Windows. Using a different OS or version of Unity may well lead to errors or malfunctioning features.
+
+# Packages {#Packages}
 
 ARC-VR consists of a set of packages, all of which are dependent on a central `arc-vr-core` package, but otherwise function completely independently.
 This allows you to pick and choose which features you need for your project and avoid unnecessary dependencies.

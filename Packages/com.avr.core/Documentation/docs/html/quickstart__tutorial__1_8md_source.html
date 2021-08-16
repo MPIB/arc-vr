@@ -88,34 +88,104 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"># Intro</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;TODO</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;This quickstart tutorial should acquaint you with most arc-vr features as well as familiarize you with the intended workflow.</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"># Step 1: Setup</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;TODO</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;- project with 2020.2.2f1</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;- <span class="keyword">import</span> openXR, set it up</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;- set to Multi-Pass, SteamVR</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;- HTC Vive Controller</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;- Time.fixedTimestep to 0.011111f</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"># Step 2: Installation</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;TODO</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> arc-vr-core</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"># Step 3: Getting Familiar</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;You<span class="stringliteral">&#39;ll need to know the basics of working with Unity and C#. If you need a refresher, refer to the official [Unity tutorials](https://learn.unity.com/).</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="stringliteral">For this tutorial we&#39;</span>ll be building a simple VR experiment/game where the user will draw colored spheres from an urn after guessing which color he will draw.</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;We<span class="stringliteral">&#39;ll be targeting HTC Vive hardware and using the standard Unity rendering pipeline.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="stringliteral">Here&#39;</span>s a brief demonstration of what we<span class="stringliteral">&#39;ll be building:</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">TODO: Video</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">After reading, you should be able to:</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">- Set up a rudimentary VR PlayerRig with spatially tracked HMD and controller.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral">- Set up basic movement mechanics within the virtual environment.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="stringliteral">- Let the player grab and interact with physics-items.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="stringliteral">- Let the player interact with virtual UI elements.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="stringliteral">- (Optional) Setting up an automated trial-based experiment.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="stringliteral">- (Optional) Setting up data collection/logging.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="stringliteral">The last two bullet points are optional, as they are intended for use in VR experiments/studies. If you&#39;</span>re looking to build simple VR games, feel free to skip these.</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;open console</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    - run <span class="stringliteral">&quot;packages&quot;</span> command</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    - runs in editor, runtime AND deployed.</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    - create some 3D Plane and</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    - add some random 3d primitives <span class="keywordflow">for</span> flavour</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    - parent them under one obj</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    - toggle them on and off with console</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    - <span class="stringliteral">&quot;toggle SceneObjs&quot;</span> and <span class="stringliteral">&quot;toggle Plane&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;# Video</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;If you prefer watching a video over reading text, here<span class="stringliteral">&#39;s the complete quickstart guide in video form:</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="stringliteral">TODO: Video</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="stringliteral"># Step 1: Setup</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="stringliteral">## Creating a new Unity project</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="stringliteral">As you might expect, our first step will be to create a new Unity project. The easiest way to go about this is to use Unity Hub. If you don&#39;</span>t have already, download and install tha latest version of Unity Hub [here](https:<span class="comment">//unity3d.com/get-unity/download).</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;Arc-vr is intended to be used with \unityversion. Using a different version may very well lead to errors or malfunctioning features. You can download \unityversion <span class="keywordflow">for</span> the hub from the [Unity download archive](https:<span class="comment">//unity3d.com/get-unity/download/archive).</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;Once you<span class="stringliteral">&#39;ve downloaded \unityversion, you should be able to create a new project with that version using Unity Hub. HDRP, SRP and URP are all fully supported by arc-vr, but for the purposes of this tutorial, we&#39;</span>ll be <span class="keyword">using</span> the [Standard Rendering Pipeline](https:<span class="comment">//unity.com/srp) (select &#39;3D&#39; from Templates).</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;![img](../../res/images/qs_new_proj.jpg)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;## Preparing our project</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;With your <span class="keyword">new</span>, blank \unityversion project open, we<span class="stringliteral">&#39;ll need to perform a couple of steps before importing arc-vr packages.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="stringliteral">### Time.fixedDeltaTime</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="stringliteral">[Time.fixedDeltaTime](https://docs.unity3d.com/ScriptReference/Time-fixedDeltaTime.html) determines the frequency at which Unity conducts physics updates for rigidbodies. By default this is set to 0.02s (ie 50Hz). Since most HMDs have a refresh-rate of at least 90Hz, physics-interactions will appear jagged when a player grabs and moves objects (which we intend to do).</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="stringliteral">In order to fix this, we simply set the frequency of fixed updates to also be 90Hz. To do this, head on over to `Edit &gt; Project Settings` and under `Time &gt; Fixed Timestep` set it to `0.01111111`.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="stringliteral">## Importing OpenXR</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="stringliteral">Unfortunately, current native compatibility between SteamVR/OpenVR and Unity&#39;</span>s XR Plugin Manager is a little lackluster. We<span class="stringliteral">&#39;ll be using [OpenXR](https://docs.unity3d.com/Packages/com.unity.xr.openxr@0.1/manual/index.html) in order to enable HTC Vive hardware to be used with the XR Plugin Manager.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="stringliteral">Import and install OpenXR into your project by following these steps:</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="stringliteral">1. Open `Windows &gt; Package Manager`. Display all packages from the &#39;</span>Unity Registry<span class="stringliteral">&#39;, then find and select &#39;</span>OpenXR Plugin<span class="stringliteral">&#39;. Click &#39;</span>Install<span class="stringliteral">&#39;.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="stringliteral">2. Open the `Edit &gt; Project Settings`, and select XR Plug-in Management. Enable the &#39;</span>OpenXR<span class="stringliteral">&#39; option.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="stringliteral">3. Under &#39;</span>XR Plug-in Management<span class="stringliteral">&#39; you should now be able to select &#39;</span>OpenXR<span class="stringliteral">&#39;.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="stringliteral">4. Select &#39;</span>OpenXR &gt; Features<span class="stringliteral">&#39; and tick &#39;</span>HTC Vive Controller Profile<span class="stringliteral">&#39; to enable compatibility with HTC Vive Controllers.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="stringliteral">5. The OpenXR Plugin will likely be displayed with a red exclamation mark. Click on it to open the OpenXR Project Validation Window. Here, OpenXR will ask you to change a few project settings. You can click &#39;</span>Fix All<span class="stringliteral">&#39; or manually change these one-by-one.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="stringliteral">\note If these steps are out of date or you&#39;</span>re having trouble with OpenXR, refer to their official [<span class="stringliteral">&#39;Getting Started&#39;</span> documentation](https:<span class="comment">//docs.unity3d.com/Packages/com.unity.xr.openxr@0.1/manual/index.html).</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;\htmlonly\endhtmlonly</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;\note This is merely a SteamVR (HTV Vive / Valve Index) and Unity XR compatibility issue. OpenXR is *not* a dependency <span class="keywordflow">for</span> arc-vr. If you manage to <span class="keyword">get</span> Vive/Index to work with the Unity XR Plugin Manager some other way (including input system), or you<span class="stringliteral">&#39;re using non-SteamVR hardware, you won&#39;</span>t need to install OpenXR.</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;# Step 2: Importing arc-vr-core</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;Finally, we<span class="stringliteral">&#39;re ready to import arc-vr into our project. The arc-vr framework consists of a series of mutually-agnostic packages which you are listed [here](@ref Packages). All of them are dependent on the central `arc-vr-core` package, which provides all fundamental VR functionalities.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="stringliteral">Head on over to [github release tab](https://github.com/MPIB/arc-vr/releases) and download the .tgz of the arc-vr-core package.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="stringliteral">Once downloaded, open up the Unity Package Manager (`Windows &gt; Package Manager`) and click the plus sign in the top left. Select &#39;</span>Add <span class="keyword">package </span>from tarball&#39;, browse to the downloaded &#39;.tgz&#39; file and select it. The Unity Package Manager should automatically import and install the package.</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;![img](../../res/images/install_tarball.jpg)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;# Step 3: Getting Familiar</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;Just so we have something to look at, create a 3D plane in the center of the scene and add some geometry to it. Something like this will do just fine:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;![img](../../res/images/qs_basic_scene.jpg)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;Let&#39;s take a quick look at arc-vr&#39;s in-built developer&#39;s console:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;The menu bar of your Unity Editor should now have an additional &#39;AVR&#39; option. Click on `AVR &gt; arc-vr` to view a small arc-vr welcome window.</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;![img](../../res/images/qs_top_menu.jpg)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;It should list the arc-vr packages you have installed (only arc-vr-core) and present you with 4 buttons. Click the 4th (the right-most one) to open an &#39;ARC-VR Console&#39; window. Alternatively, you can also just click on `AVR &gt; Open DevConsole`.</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;This developer&#39;s console is a useful tool which is fully available inside the Unity Editor but also during runtime. It can also allow you to make some on-the-fly changes during runtime, should you have to. Type, for instance, `toggle Plane` and press Enter. If you have an object called &#39;Plane&#39; in your scene it should be toggled from active, to inactive. If you want to add commands of your own or get more familiar with this useful tool, take a look at the [DevConsole documentation page](https:<span class="comment">//www.TODO.com).</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;Continue in [tutorial 2](tutorials/quickstart_tutorial_2.md)</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

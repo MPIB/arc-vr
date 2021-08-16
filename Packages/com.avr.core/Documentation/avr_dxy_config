@@ -11,7 +11,7 @@ PROJECT_NUMBER         = 1.0.0
 PROJECT_BRIEF          = "VR Devemopment Framework"
 
 
-ALIASES += "unityversion = [2020.2.2](https://unity3d.com/unity/whats-new/2020.2.2) \n"
+ALIASES += "unityversion = [Unity 2020.2.2](https://unity3d.com/unity/whats-new/2020.2.2) \n"
 ALIASES += "logo = ![Logo](../../res/images/avr_logo_bw_wide.png) \n"
 ALIASES += "youtube{1} = @htmlonly<div style='text-align: center;'><iframe width='840' height='472' src='https://www.youtube.com/embed/\1' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div>@endhtmlonly \n"
 

@@ -6,7 +6,7 @@
 
 You will have to perform a couple of simple steps before getting started with arc-vr:
 
-- For your arc-vr project to run smoothly, make sure that you're using Unity version \unityversion.
+- For your arc-vr project to run smoothly, make sure that you're using \unityversion.
 
 - In addition, I highly recommend setting your fixed timestep to be 90Hz (standard refresh rate of most HMDs). To do this, head on over to `Edit > Project Settings` and under `Time > Fixed Timestep` set it to `0.01111111`.
 

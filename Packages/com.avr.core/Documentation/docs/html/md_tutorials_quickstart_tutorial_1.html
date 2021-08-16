@@ -88,29 +88,67 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="../../res/images/avr_logo_bw_wide.png"  alt="Logo"/>
 </div>
 <h1>Intro</h1>
-<p>TODO</p>
+<p>This quickstart tutorial should acquaint you with most arc-vr features as well as familiarize you with the intended workflow.</p>
+<p>You'll need to know the basics of working with Unity and C#. If you need a refresher, refer to the official <a href="https://learn.unity.com/">Unity tutorials</a>.</p>
+<p>For this tutorial we'll be building a simple VR experiment/game where the user will draw colored spheres from an urn after guessing which color he will draw. We'll be targeting HTC Vive hardware and using the standard Unity rendering pipeline. Here's a brief demonstration of what we'll be building:</p>
+<p>TODO: Video</p>
+<p>After reading, you should be able to:</p><ul>
+<li>Set up a rudimentary VR PlayerRig with spatially tracked HMD and controller.</li>
+<li>Set up basic movement mechanics within the virtual environment.</li>
+<li>Let the player grab and interact with physics-items.</li>
+<li>Let the player interact with virtual UI elements.</li>
+<li>(Optional) Setting up an automated trial-based experiment.</li>
+<li>(Optional) Setting up data collection/logging.</li>
+</ul>
+<p>The last two bullet points are optional, as they are intended for use in VR experiments/studies. If you're looking to build simple VR games, feel free to skip these.</p>
+<h1>Video</h1>
+<p>If you prefer watching a video over reading text, here's the complete quickstart guide in video form:</p>
+<p>TODO: Video</p>
 <h1>Step 1: Setup</h1>
-<p>TODO</p>
-<ul>
-<li>project with 2020.2.2f1</li>
-<li>import openXR, set it up</li>
-<li>set to Multi-Pass, SteamVR</li>
-<li>HTC Vive Controller</li>
-<li>Time.fixedTimestep to 0.011111f</li>
-</ul>
-<h1>Step 2: Installation</h1>
-<p>TODO</p>
-<p>import arc-vr-core</p>
+<h2>Creating a new Unity project</h2>
+<p>As you might expect, our first step will be to create a new Unity project. The easiest way to go about this is to use Unity Hub. If you don't have already, download and install tha latest version of Unity Hub <a href="https://unity3d.com/get-unity/download">here</a>.</p>
+<p>Arc-vr is intended to be used with <a href="https://unity3d.com/unity/whats-new/2020.2.2">Unity 2020.2.2</a> . Using a different version may very well lead to errors or malfunctioning features. You can download <a href="https://unity3d.com/unity/whats-new/2020.2.2">Unity 2020.2.2</a> for the hub from the <a href="https://unity3d.com/get-unity/download/archive">Unity download archive</a>.</p>
+<p>Once you've downloaded <a href="https://unity3d.com/unity/whats-new/2020.2.2">Unity 2020.2.2</a> , you should be able to create a new project with that version using Unity Hub. HDRP, SRP and URP are all fully supported by arc-vr, but for the purposes of this tutorial, we'll be using the <a href="https://unity.com/srp">Standard Rendering Pipeline</a> (select '3D' from Templates).</p>
+<div class="image">
+<img src="../../res/images/qs_new_proj.jpg"  alt="img"/>
+</div>
+<h2>Preparing our project</h2>
+<p>With your new, blank <a href="https://unity3d.com/unity/whats-new/2020.2.2">Unity 2020.2.2</a> project open, we'll need to perform a couple of steps before importing arc-vr packages.</p>
+<h3>Time.fixedDeltaTime</h3>
+<p><a href="https://docs.unity3d.com/ScriptReference/Time-fixedDeltaTime.html">Time.fixedDeltaTime</a> determines the frequency at which Unity conducts physics updates for rigidbodies. By default this is set to 0.02s (ie 50Hz). Since most HMDs have a refresh-rate of at least 90Hz, physics-interactions will appear jagged when a player grabs and moves objects (which we intend to do).</p>
+<p>In order to fix this, we simply set the frequency of fixed updates to also be 90Hz. To do this, head on over to <code>Edit &gt; Project Settings</code> and under <code>Time &gt; Fixed Timestep</code> set it to <code>0.01111111</code>.</p>
+<h2>Importing OpenXR</h2>
+<p>Unfortunately, current native compatibility between SteamVR/OpenVR and Unity's XR Plugin Manager is a little lackluster. We'll be using <a href="https://docs.unity3d.com/Packages/com.unity.xr.openxr@0.1/manual/index.html">OpenXR</a> in order to enable HTC Vive hardware to be used with the XR Plugin Manager.</p>
+<p>Import and install OpenXR into your project by following these steps:</p><ol type="1">
+<li>Open <code>Windows &gt; Package Manager</code>. Display all packages from the 'Unity Registry', then find and select 'OpenXR Plugin'. Click 'Install'.</li>
+<li>Open the <code>Edit &gt; Project Settings</code>, and select XR Plug-in Management. Enable the 'OpenXR' option.</li>
+<li>Under 'XR Plug-in Management' you should now be able to select 'OpenXR'.</li>
+<li>Select 'OpenXR &gt; Features' and tick 'HTC Vive Controller Profile' to enable compatibility with HTC Vive Controllers.</li>
+<li>The OpenXR Plugin will likely be displayed with a red exclamation mark. Click on it to open the OpenXR Project Validation Window. Here, OpenXR will ask you to change a few project settings. You can click 'Fix All' or manually change these one-by-one.</li>
+</ol>
+<dl class="section note"><dt>Note</dt><dd>If these steps are out of date or you're having trouble with OpenXR, refer to their official <a href="https://docs.unity3d.com/Packages/com.unity.xr.openxr@0.1/manual/index.html">'Getting Started' documentation</a>.</dd></dl>
+<p></p>
+<dl class="section note"><dt>Note</dt><dd>This is merely a SteamVR (HTV Vive / Valve Index) and Unity XR compatibility issue. OpenXR is <em>not</em> a dependency for arc-vr. If you manage to get Vive/Index to work with the Unity XR Plugin Manager some other way (including input system), or you're using non-SteamVR hardware, you won't need to install OpenXR.</dd></dl>
+<h1>Step 2: Importing arc-vr-core</h1>
+<p>Finally, we're ready to import arc-vr into our project. The arc-vr framework consists of a series of mutually-agnostic packages which you are listed <a class="el" href="index.html#Packages">here</a>. All of them are dependent on the central <code>arc-vr-core</code> package, which provides all fundamental VR functionalities.</p>
+<p>Head on over to <a href="https://github.com/MPIB/arc-vr/releases">github release tab</a> and download the .tgz of the arc-vr-core package.</p>
+<p>Once downloaded, open up the Unity Package Manager (<code>Windows &gt; Package Manager</code>) and click the plus sign in the top left. Select 'Add package from tarball', browse to the downloaded '.tgz' file and select it. The Unity Package Manager should automatically import and install the package.</p>
+<div class="image">
+<img src="../../res/images/install_tarball.jpg"  alt="img"/>
+</div>
 <h1>Step 3: Getting Familiar</h1>
-<p>open console</p><ul>
-<li>run "packages" command</li>
-<li>runs in editor, runtime AND deployed.</li>
-<li>create some 3D Plane and</li>
-<li>add some random 3d primitives for flavour</li>
-<li>parent them under one obj</li>
-<li>toggle them on and off with console</li>
-<li>"toggle SceneObjs" and "toggle Plane" </li>
-</ul>
+<p>Just so we have something to look at, create a 3D plane in the center of the scene and add some geometry to it. Something like this will do just fine:</p>
+<div class="image">
+<img src="../../res/images/qs_basic_scene.jpg"  alt="img"/>
+</div>
+<p>Let's take a quick look at arc-vr's in-built developer's console:</p>
+<p>The menu bar of your Unity Editor should now have an additional '<a class="el" href="namespace_a_v_r.html">AVR</a>' option. Click on <code><a class="el" href="namespace_a_v_r.html">AVR</a> &gt; arc-vr</code> to view a small arc-vr welcome window.</p>
+<div class="image">
+<img src="../../res/images/qs_top_menu.jpg"  alt="img"/>
+</div>
+<p>It should list the arc-vr packages you have installed (only arc-vr-core) and present you with 4 buttons. Click the 4th (the right-most one) to open an 'ARC-VR Console' window. Alternatively, you can also just click on <code><a class="el" href="namespace_a_v_r.html">AVR</a> &gt; Open DevConsole</code>.</p>
+<p>This developer's console is a useful tool which is fully available inside the Unity Editor but also during runtime. It can also allow you to make some on-the-fly changes during runtime, should you have to. Type, for instance, <code>toggle Plane</code> and press Enter. If you have an object called 'Plane' in your scene it should be toggled from active, to inactive. If you want to add commands of your own or get more familiar with this useful tool, take a look at the <a href="https://www.TODO.com">DevConsole documentation page</a>.</p>
+<p>Continue in <a class="el" href="md_tutorials_quickstart_tutorial_2.html">tutorial 2</a> </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
