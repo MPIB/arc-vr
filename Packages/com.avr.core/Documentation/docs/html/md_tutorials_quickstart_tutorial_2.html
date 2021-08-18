@@ -88,21 +88,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="../../res/images/avr_logo_bw_wide.png"  alt="Logo"/>
 </div>
 <h1>Step 4: Base VR Rig</h1>
-<p>TODO</p>
-<p>create playerrig</p><ul>
-<li>delete MainCamera</li>
-<li>got to menuitem <a class="el" href="namespace_a_v_r.html">AVR</a>&gt;Create PlayerRig</li>
-<li>start and show yay we can see things in vr</li>
-</ul>
+<p>Next up, we'll want to create a VR PlayerRig that represents the player (HMD + controllers) in our virtual space.</p>
+<p>Creating a PlayeRig with arc-vr is easy. Simply click on <code><a class="el" href="namespace_a_v_r.html">AVR</a> &gt; Create Player Rig</code> in the top menu bar. Alternatively, you can navigate to <code>Packages/arc-vr-core/Editor/DefaultPrefabs</code> and drag-&amp;-drop a PlayerRig object into your scene.</p>
+<p>The PlayerRig includes a Camera object tagged as MainCamera. In order to not get Unity confused, its best to only have one single Camera object tagged as the main camera. Thus, delete the default "MainCamera" GameObject from your scene.</p>
+<p>If you now click on 'Play', you should be able to view your scene through your VR headset.</p>
+<dl class="section note"><dt>Note</dt><dd>Make sure 'Initialize XR on Startup' is enabled, under <code>Project Settings &gt; XR Plugin Management</code>, or the scene won't launch in VR mode.</dd></dl>
 <h1>Step 5: VR Controllers</h1>
-<p>TODO</p>
-<p>add controllers to playerrig</p><ul>
-<li>ignore docu button for now</li>
-<li>add controllers to playerrig</li>
-<li>show that two controllers have been added</li>
-<li>show that in terms of modules, we can ONLY add InputManager</li>
-<li>Show DOCU button </li>
+<p>We are now able to view our scene through our tracked HMD. As a next step, we ought to include the Vive controllers, representing the left and right hands of the player.</p>
+<h2>Adding the controllers</h2>
+<p>Adding left/right controllers to our PlayerRig is simple.</p>
+<ul>
+<li>Select the 'PlayerRig' gameobject.</li>
+<li>In the inspector, click on the 'Add Module' button.</li>
+<li>In the opened dialogue window, tick 'Left Controller' and 'Right Controller'.</li>
+<li>Click on 'Update'.</li>
 </ul>
+<p>Your PlayerRig gameobject should now have three child objects: 'Camera Offset' (represents the HMD), as well as 'LeftHandController' and 'RightHandController' (represent the left/right controllers).</p>
+<dl class="section note"><dt>Note</dt><dd>This workflow pattern is common in arc-vr. An object will have a selection-wizard for a set of modules, and those modules will be added as child-objects. You can insert your own modules into these dialogue-windows. For more info, check the docs on <a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___hookable_wizard_3_01_t_01_4.html">AVR_HookableWizard</a> and <a class="el" href="class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook_3_01_wiz_01_4.html">AVR_WizardHook&lt;Wiz&gt;</a>.</dd></dl>
+<h2>Adding a controller visual and inputmanager</h2>
+<p>We now have two gameobjects that represent the tracked VR controllers. However, we can't see them in our virtual space, as they simply are empty transforms.</p>
+<p>To add a rendered mesh to make our controller visible, individually select each controller gameobject and click on 'Add Module', tick 'ControllerVisual' and 'InputManager', then click Update.</p>
+<p>If you launch the scene now, you should be able to see both controllers through your headset.</p>
+<dl class="section note"><dt>Note</dt><dd>The "InputManager" module is <em>not</em> required to make the controller visible. You only need an InputManager if you are planning to use inputs (ie the buttons on the controller). We'll be using these in future steps, so may as well add them now.</dd></dl>
+<p></p>
+<dl class="section note"><dt>Note</dt><dd>More selectable modules will appear in these dialogue windows once you import more arc-vr packages.</dd></dl>
+<p></p>
+<dl class="section note"><dt>Note</dt><dd>Each <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR_Component</a> script displays 2-3 buttons within the editor: <div class="image">
+<img src="../../res/images/core_editorButtons.jpg"  alt="img"/>
+</div>
+<ul>
+<li><em>Documentation Link</em>: Will open up the respective documentation page in your browser.</li>
+<li><em>Custom Monobehaviour Events</em>: Will let you set UnityEvents that are executed when the Monobehaviour Awake, Start, OnEnable or OnDisable are called. You can use this, for instance, to maintain two modules mutually exclusive. For example, you might not want to let the player teleport/move whilst interacting with UI. Then you would simple add an OnEnable event onto your UIInteractionProvider that disables the MovementProvider, and vice-versa for OnDisable.</li>
+<li><em>Network Behaviour</em>: This button is only present if the <a class="el" href="md_tutorials_arc-vr-net.html#arc-vr-net">arc-vr-net</a> package is included in the project. It gives you some useful tools for how components ought to behave when on a network.</li>
+</ul>
+</dd></dl>
+<p>Continue in <a class="el" href="md_tutorials_quickstart_tutorial_3.html">tutorial 3</a>. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

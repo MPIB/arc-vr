@@ -88,24 +88,57 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"># Step 4: Base VR Rig</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;TODO</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;create playerrig</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    - <span class="keyword">delete</span> MainCamera</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    - got to menuitem AVR&gt;Create PlayerRig</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    - start and show yay we can see things in vr</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"># Step 5: VR Controllers</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;TODO</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;add controllers to playerrig</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    - ignore docu button <span class="keywordflow">for</span> now</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    - add controllers to playerrig</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    - show that two controllers have been added</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    - show that in terms of modules, we can ONLY add InputManager</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    - Show DOCU button</div>
-</div><!-- fragment --></div><!-- contents -->
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;Next up, we<span class="stringliteral">&#39;ll want to create a VR PlayerRig that represents the player (HMD + controllers) in our virtual space.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">Creating a PlayeRig with arc-vr is easy. Simply click on `AVR &gt; Create Player Rig` in the top menu bar. Alternatively, you can navigate to `Packages/arc-vr-core/Editor/DefaultPrefabs` and drag-&amp;-drop a PlayerRig object into your scene.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="stringliteral">The PlayerRig includes a Camera object tagged as MainCamera. In order to not get Unity confused, its best to only have one single Camera object tagged as the main camera. Thus, delete the default &quot;MainCamera&quot; GameObject from your scene.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="stringliteral">If you now click on &#39;</span>Play<span class="stringliteral">&#39;, you should be able to view your scene through your VR headset.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">\note Make sure &#39;</span>Initialize XR on Startup<span class="stringliteral">&#39; is enabled, under `Project Settings &gt; XR Plugin Management`, or the scene won&#39;</span>t launch in VR mode.</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;# Step 5: VR Controllers</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;We are now able to view our scene through our tracked HMD. As a next step, we ought to include the Vive controllers, representing the left and right hands of the player.</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;## Adding the controllers</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;Adding left/right controllers to our PlayerRig is simple.</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;- Select the <span class="stringliteral">&#39;PlayerRig&#39;</span> gameobject.</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;- In the inspector, click on the <span class="stringliteral">&#39;Add Module&#39;</span> button.</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;- In the opened dialogue window, tick <span class="stringliteral">&#39;Left Controller&#39;</span> and <span class="stringliteral">&#39;Right Controller&#39;</span>.</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;- Click on <span class="stringliteral">&#39;Update&#39;</span>.</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;Your PlayerRig gameobject should now have three child objects: <span class="stringliteral">&#39;Camera Offset&#39;</span> (represents the HMD), as well as <span class="stringliteral">&#39;LeftHandController&#39;</span> and <span class="stringliteral">&#39;RightHandController&#39;</span> (represent the left/right controllers).</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;\note This workflow pattern is common in arc-vr. An <span class="keywordtype">object</span> will have a selection-wizard <span class="keywordflow">for</span> a set of modules, and those modules will be added as child-objects. You can insert your own modules into these dialogue-windows. For more info, check the docs on \ref AVR.UEditor.Core.AVR_HookableWizard&lt;T&gt; <span class="stringliteral">&quot;AVR_HookableWizard&quot;</span> and \ref AVR.UEditor.Core.AVR_WizardHook&lt;Wiz&gt; <span class="stringliteral">&quot;AVR_WizardHook&lt;Wiz&gt;&quot;</span>.</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;## Adding a controller visual and inputmanager</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;We now have two gameobjects that represent the tracked VR controllers. However, we can<span class="stringliteral">&#39;t see them in our virtual space, as they simply are empty transforms.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="stringliteral">To add a rendered mesh to make our controller visible, individually select each controller gameobject and click on &#39;</span>Add Module<span class="stringliteral">&#39;, tick &#39;</span>ControllerVisual<span class="stringliteral">&#39; and &#39;</span>InputManager<span class="stringliteral">&#39;, then click Update.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="stringliteral">If you launch the scene now, you should be able to see both controllers through your headset.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="stringliteral">\note The &quot;InputManager&quot; module is *not* required to make the controller visible. You only need an InputManager if you are planning to use inputs (ie the buttons on the controller). We&#39;</span>ll be <span class="keyword">using</span> these in future steps, so may as well add them now.</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;\htmlonly\endhtmlonly
+
+\note More selectable modules will appear in these dialogue windows once you <span class="keyword">import</span> more arc-vr packages.</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;\htmlonly\endhtmlonly
+
+\note Each \ref AVR.Core.AVR_Component <span class="stringliteral">&quot;AVR_Component&quot;</span> script displays 2-3 buttons within the editor:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;![img](../../res/images/core_editorButtons.jpg)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;- *Documentation Link*: Will open up the respective documentation page in your browser.</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;- *Custom Monobehaviour Events*: Will let you set UnityEvents that are executed when the Monobehaviour Awake, Start, OnEnable or OnDisable are called. You can use <span class="keyword">this</span>, <span class="keywordflow">for</span> instance, to maintain two modules mutually exclusive. For example, you might not want to let the player teleport/move whilst interacting with UI. Then you would simple add an OnEnable event onto your UIInteractionProvider that disables the MovementProvider, and vice-versa <span class="keywordflow">for</span> OnDisable.</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;- *Network Behaviour*: This button is only present <span class="keywordflow">if</span> the [arc-vr-net](@ref arc-vr-net) <span class="keyword">package </span>is included in the project. It gives you some useful tools for how components ought to behave when on a network.</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;Continue in [tutorial 3](tutorials/quickstart_tutorial_3.md).</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

@@ -88,37 +88,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"># Step 6: Importing additional packages</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">import</span> phys and motion</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    - show that console has picked that up</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;We now have a rudimentary VR rig with HMD and both controllers. As a next step we<span class="stringliteral">&#39;ll allow the player to pick up and interact with physical objects.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="stringliteral">We&#39;</span>re going to <span class="keyword">import</span> two additional packages <span class="keywordflow">for</span> <span class="keyword">this</span>: [arc-vr-motion](@ref arc-vr-motion) and [arc-vr-phys](@ref arc-vr-phys).</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"># Step 7: Adding Movement</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;Just as with arc-vr-core, download the packages from github and install them with the <span class="keyword">package </span>manager.</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;LEFT: Add modules</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    - InputManager</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    - MovementProvider</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    - HandVisual (Controller)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;RIGHT: Add modules:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    - InputManager</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    - GrabProvider (BASIC)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    - HandVisual (Controller)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;# Step 7: Adding Modules</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;## Letting the player move around</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;Theoretically, we could simply position the VR Rig in front of the table, which would make moving around unnecessary.</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;However, to keep things simple and for demonstration purposes, we&#39;ll let the player move around the scene.</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;Select the controller you want to handle movement, I&#39;d suggest the left hand controller. Click on &#39;Add Module&#39; and select &#39;MovementProvider&#39; as well as &#39;TurnProvider&#39;. These two modules essentially &#39;provide&#39; movement and turning functionality to the controller they are attatched to.</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"># Step 8: Creating the Scene</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">import</span> arc-vr-props</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    - find table model and place it</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    - find urn model and place it</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    - find 2 spheres an place them</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    - add rigidbody</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        - 0.1 mass</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        - Coll: Continuous Speculative</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    - add Grabbable</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        - VeryLightProp</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    - Duplicate them a whole lot</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;show off sphere grabbin stuff</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;You can take a gander at the newly created child-objects and play around with the settings. If you&#39;re looking for more details on these modules, look at the @ref AVR.Motion.AVR_MovementProvider &quot;MovementProvider&quot; and @ref AVR.Motion.AVR_TurnProvider &quot;TurnProvider&quot; docs.</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;## Letting the player interact with objects</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;The goal is to let the player draw colored spheres from an urn. For this we want to allow the player to grab/interact with rigidbody objects.</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;Just as with the step before, select the controller that will handle physics interactions (I&#39;d suggest the right-handed one) and add a &#39;GrabProvider&#39; module. There are several types of grab providers. For this project the &#39;Basic&#39; type will suffice.</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;If you take a quick look at the newly created &#39;BGrabProvider&#39; object, you&#39;ll see it comes with two children:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;- A &#39;GrabZone&#39;, that defines a volume from which the GrabProvider will select the nearest object when a grab is provided.</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;- As well as a &#39;GrabSpot&#39;. A grabbed object&#39;s center will be pulled towards this GrabSpot. If you want to grab an object at another location than its center (example: grabbing a stick by either end) you&#39;ll need to employ @ref AVR.Phys.AVR_OffsetGrabProvider &quot;a different type of grabprovider&quot;.</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;# Step 8: Creating the Scene</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;Our player is now able to grab and interact with objects, but we haven&#39;t given them any objects to interact with yet.</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;As a next step we&#39;ll expand our scene to include a table with an urn on top of it. You can find the 3d model of the urn [here](www.TODO.com) for download. (For the table you can just use a re-scaled cube if necessary).</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;## Filling the urn</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;Now we&#39;ve got an urn we next need to fill it with colored balls.</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;Create a 3d sphere and resize it to an adequate size (I&#39;ve used 0.1 for all three axes). Place it so that it hovers above the urn&#39;s cavity.</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;To turn the sphere into a phyiscs object, add a rigidbody component to it. Set collision detection to &#39;continuous speculative&#39;*. Additionally, whilst not actually necessary, it&#39;s generally good practice to use realistic mass values for rigidbodies, so set its&#39; mass to about 0.1 (100g).</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;\note * Any type collision detection will do, but in this particular case the balls tend to leak through the urn&#39;s walls on different collision detection methods.</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;Finally, we&#39;ll have to turn the rigidbody into a grabbable object. Simply select the gameobject that has the rigidbody attatched and add an &#39;AVR_Grabbable&#39; component. You don&#39;t need to bother with any of its&#39; properties except for &#39;Object Type&#39;. If you try to set &#39;Object Type, you&#39;ll find that there are several pre-configured scriptable objects available, which determine how the object behaves when grabbed. For a small sphere, &#39;VeryLightProp&#39; works the best. If you don&#39;t set this field, the AVR_Grabbable will default to a preset type.</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;Only step left is to give the sphere an adequate color. Create two new materials, one red the other blue and apply one of them to the sphere. Duplicate the sphere and apply the other material to that.</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;Now you&#39;ll only have to duplicate both spheres multiple times and place them above the urn.</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;## Test it out</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;If you now launch your scene, you should be able to move up to the table using the left controller, then grab a sphere out of the urn using the right controller.</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;TODO: video</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

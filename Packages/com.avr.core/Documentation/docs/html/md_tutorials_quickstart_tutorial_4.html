@@ -88,41 +88,61 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="../../res/images/avr_logo_bw_wide.png"  alt="Logo"/>
 </div>
 <h1>Step 9: Adding UI Interaction</h1>
-<p>import arc-vr-ui</p>
-<p>add UIInteractionProvider to left controller</p><ul>
-<li>select UIInteractionprovider</li>
-<li>do the FIXME thing</li>
+<p>We want the player to guess which color they'll draw <em>before</em> reaching into the urn. We'll do this by presenting the player with an in-game UI window, for which we'll need the arc-vr-ui package.</p>
+<p>The installation procedure shoule be familiar by now: download the .tgz from github, import it via the package manager.</p>
+<p>The subsequent steps should be familiar as well: select the controller you want to act as a UI pointer, click 'Add Module' and select 'UIInteractionProvider'.</p>
+<p>If you now select the UIInteractionProvider, you might notice the warning it displays. As with any Unity-related UI system, an 'EventSystem' is required. If you click the 'Fix now' button, a new EventSystem object will be created (together with an attatched VRInput component).</p>
+<p>The selected controller is now fully functional as a UI pointer, which will work with any world-space unity canvas.</p>
+<h2>Adding UI elements</h2>
+<p>The arc-vr-ui package comes with several pre-fabricated UI elements, which we'll make use of in the next steps. There are seveal options to find what we're looking for:</p>
+<ul>
+<li>Use the Project explorer to navigate to <code>Packages &gt; arc-vr-ui &gt; Runtime &gt; Prefabs</code> and find 'GenericWindow_Borderless'.</li>
+<li>Type 'window' into the project explorer search-bar, then filter only by prefabs and set the search to 'In Packages', rather than 'In Assets'. Find the GenericWindow_Borderless prefab.</li>
+<li>Run the command <code>prefabs ui window</code> in the developers console. This will set your project explorer search to look for the word 'window' inside the arc-vr-ui package. Find the GenericWindow_Borderless prefab.</li>
 </ul>
-<p>use console to find window</p><ul>
-<li>add window</li>
-<li>find button prefab</li>
-<li>add 3 buttons</li>
-<li>"Start", "Guess Blue", "Guess Red"</li>
-</ul>
+<p>Once you've found it, drag the 'GenericWindow_Borderless' into scene and place it in front of the table.</p>
+<p>Next up we'll need some buttons. Use any of the methods above to search for button. You should find a simple 'Button_large' prefab. Drag three of them onto the GenericWindow, place them one above the other and change their text to "Guess Blue", "Guess Red" and "Start" respectively.</p>
+<p>We now have all the elements of our scene ready. The buttons won't actually do anything as of right now, but they'll be clickable with a controller.</p>
 <h1>Step 10: Setting up a TrialExperiment</h1>
-<p>DIRECTOR</p>
-<p>Create new Script "UrnExperiment"</p><ul>
-<li>Have it inherit from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html" title="Base class to inherit from in order to create trial-based experiments. (One experiment consists of on...">AVR.Core.AVR_TrialExperiment</a></li>
+<p>For this next step we'll be using the <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html">TrialExperiment</a> class to create a trial-based structure to our experiment. A 'trial' will follow the following procedure:</p>
+<ul>
+<li>Hide the urn + balls, display the UI buttons</li>
+<li>If the player clicks one of the guess buttons, hide the UI and show the urn</li>
+<li>After a couple of seconds, return to step 1.</li>
 </ul>
-<p>Add following code: ``` public GameObject urn; public GameObject guess_ui;</p>
-<p>public override IEnumerator trial() { urn.SetActive(false); guess_ui.SetActive(true);</p>
-<p>yield return new WaitUntil(can_proceed);</p>
-<p>urn.SetActive(true); guess_ui.SetActive(false);</p>
-<p>yield return new WaitForSeconds(5); } ```</p>
-<p>Put this into scene</p>
+<p>The implementation is simple. Create a new script (call it something like <code>UrnExperiment</code>) and make it inherit from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment.html" title="Base class to inherit from in order to create trial-based experiments. (One experiment consists of on...">AVR.Core.AVR_TrialExperiment</a>. The TrialExperiment class is a simple one that models trials as Coroutines. We'll simply override the <code>trial()</code> function with the above listed procedure. Add this code inside your class: </p><pre class="fragment">public GameObject urn;
+public GameObject guess_ui;
+
+public override IEnumerator trial() {
+    // Disable urn, enable UI
+    urn.SetActive(false);
+    guess_ui.SetActive(true);
+
+    // Wait for next step
+    yield return new WaitUntil(can_proceed);
+
+    // Enable urn, disable UI
+    urn.SetActive(true);
+    guess_ui.SetActive(false);
+
+    // Wait a couple of seconds
+    yield return new WaitForSeconds(5);
+}
+</pre><p>Now attach this script to some fitting gameobject.</p>
 <h1>Step 11: Finishing Up</h1>
-<p>Put urn and balls under one object</p>
-<p>Put Green and Blue buttons under one object</p>
-<p>Assign both to the UrnExperiment script</p>
-<p>Assign button actions:</p><ul>
-<li>Start -&gt; UrnExperiment.commence</li>
-<li>Green and Blue -&gt; UrnExperiment.proceed()</li>
-</ul>
+<p>As a last step, we'll just have to connect all the dots.</p>
+<p>If you haven't already, parent the urn and all the balls under a single gameobject, so we can easily toggle them on and off.</p>
+<p>Then select your 'UrnExperiment' script we created in the previous step and assign the 'urn' property to be the parent object of the urn and balls. Assign the 'guess_ui' property to the GenericWindow that includes the three buttons.</p>
+<p>Select each of the buttons, and add an 'OnClick' event. For the 'Guess Blue' / 'Guess Red' buttons set the OnClick event to be <code>UrnExperiment.proceed()</code>. For the 'Start' button, set it to <code>UrnExperiment.commence</code>, with the amount of trials as the argument (eg. 10).</p>
+<p>If you now click play, the project should be complete. Once you click the 'Start' button, the urn will be hidden. It will then only show once you've guessed a color. You will then have 5 seconds to draw a sphere before the process begins again.</p>
 <h1>Step 12: Data Collection</h1>
-<p>Add AVR_Logger with 2 columns</p><ul>
-<li>Time</li>
-<li>Target: BGrabProvider, Field: grabbedObject </li>
-</ul>
+<p>If we wish to record and collect data on the experiment, we can use the provided <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___logger.html">AVR_Logger</a> class.</p>
+<p>Simply select any gameobject (for instance the same one that has the 'UrnExperiment' script) and add an AVR_Logger component to it.</p>
+<p>We're going to keep things simple, and create a basic csv-table with two columns: time and the corresponding object the player is grabbing.</p>
+<p>Add a new entry to the 'Columns' property, set the label to 'time' and select the type as 'TIME'. Add a second entry, set the label to something like 'object' and leave the type as 'CUSTOM'.</p>
+<p>The AVR_Logger uses C# reflection to extract properties from certain objects, including private or protected ones. Any value exposed in a property is thus simple to log with this. In our case, we want to know what the player is holding on to, so it seems logical to look for an appropriate field in our BasicGrabProvider script. If you look at the docs for <a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html">BasicGrabProvider</a> you'll see it has a protected field called 'grabbedObject', which corresponds to the AVR_Grabbable the player is holding.</p>
+<p>To log this field, simply drag and drop the BasicGrabProvider into the 'Target' field of the newly created column and set 'Field' to be <code>grabbedObject</code>. Leave read type as 'AUTO'.</p>
+<p>If you now launch the scene again, there'll be a <code>logs/sample.log</code> file which includes a timestamp as well as the name of the object the player is holding at that time. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

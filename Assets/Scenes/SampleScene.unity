@@ -589,6 +589,14 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
+  destroyOnRemote: 1
+  changeLayerOnRemote: 0
+  changeLayerOnRemote_IncludeChildren: 0
+  remoteLayer: 0
+  onRemoteStart:
+    m_PersistentCalls:
+      m_Calls: []
+  networkObject: {fileID: 0}
   provider: {fileID: 1094482252}
   headTransform: {fileID: 1319250515}
   neckTransform: {fileID: 915169259}
@@ -2582,6 +2590,14 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
+  destroyOnRemote: 1
+  changeLayerOnRemote: 0
+  changeLayerOnRemote_IncludeChildren: 0
+  remoteLayer: 0
+  onRemoteStart:
+    m_PersistentCalls:
+      m_Calls: []
+  networkObject: {fileID: 0}
   leftHandFilter: {fileID: 11400000, guid: 50ec9aaea25c7e4488933ba25841d9c1, type: 2}
   rightHandFilter: {fileID: 11400000, guid: 5e7852ab528cf7049a2564ce67ec972b, type: 2}
   body_inertia: 0.3
@@ -3691,6 +3707,14 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
+  destroyOnRemote: 1
+  changeLayerOnRemote: 0
+  changeLayerOnRemote_IncludeChildren: 0
+  remoteLayer: 0
+  onRemoteStart:
+    m_PersistentCalls:
+      m_Calls: []
+  networkObject: {fileID: 0}
   provider: {fileID: 1094482252}
   headTransform: {fileID: 669086425}
   neckTransform: {fileID: 1031570146}
@@ -5328,6 +5352,14 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
+  destroyOnRemote: 1
+  changeLayerOnRemote: 0
+  changeLayerOnRemote_IncludeChildren: 0
+  remoteLayer: 0
+  onRemoteStart:
+    m_PersistentCalls:
+      m_Calls: []
+  networkObject: {fileID: 0}
   provider: {fileID: 1094482252}
   headTransform: {fileID: 3044430112826797404}
   neckTransform: {fileID: 5438031033841814548}
