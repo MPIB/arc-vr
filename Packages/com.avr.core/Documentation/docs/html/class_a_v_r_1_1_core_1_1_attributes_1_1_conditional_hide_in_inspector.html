@@ -181,6 +181,11 @@ Properties</h2></td></tr>
 <div class="line"></div>
 <div class="line">[<a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector.html">AVR.Core.Attributes.ConditionalHideInInspector</a>(<span class="stringliteral">&quot;tracking&quot;</span>, <span class="keyword">true</span>)]</div>
 <div class="line"><span class="keyword">public</span> TrackingType type;</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="comment">// Hides the variable if &quot;counter&quot; is larger than 3</span></div>
+<div class="line">[<a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector.html">AVR.Core.Attributes.ConditionalHideInInspector</a>(<span class="stringliteral">&quot;counter&quot;</span>, 3, AVR.Core.Attributes.ConditionalHideInInspector.compareType.BIGGER)]</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// Hides the variable if &quot;type&quot; is equal to TypeEnum.TYPE2. Since &quot;EQUAL&quot; is the default comparison mode, the parameter is optional.</span></div>
+<div class="line">[AVR.Core.Attributes.ConditionalHideInInspector(<span class="stringliteral">&quot;type&quot;</span>, (<span class="keywordtype">int</span>)TypeEnum.TYPE2)]</div>
 </div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hideConditionPropertyName</td><td>The first parameter is always the name of the field that represents the condition. The name is case-sensitive. </td></tr>
@@ -190,12 +195,7 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><span class="comment">// Hides the variable if &quot;counter&quot; is larger than 3</span></div>
-<div class="line">[<a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector.html">AVR.Core.Attributes.ConditionalHideInInspector</a>(<span class="stringliteral">&quot;counter&quot;</span>, 3, AVR.Core.Attributes.ConditionalHideInInspector.compareType.BIGGER)]</div>
-<div class="line"></div>
-<div class="line"><span class="comment">// Hides the variable if &quot;type&quot; is equal to TypeEnum.TYPE2. Since &quot;EQUAL&quot; is the default comparison mode, the parameter is optional.</span></div>
-<div class="line">[AVR.Core.Attributes.ConditionalHideInInspector(<span class="stringliteral">&quot;type&quot;</span>, (<span class="keywordtype">int</span>)TypeEnum.TYPE2)]</div>
-</div><!-- fragment --> 
+
 <p>Definition at line <a class="el" href="_a_v_r___attributes_8cs_source.html#l00128">128</a> of file <a class="el" href="_a_v_r___attributes_8cs_source.html">AVR_Attributes.cs</a>.</p>
 </div></div><!-- contents -->
 <!-- start footer part -->

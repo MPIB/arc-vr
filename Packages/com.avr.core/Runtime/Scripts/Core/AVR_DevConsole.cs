@@ -40,7 +40,6 @@ namespace AVR.Core {
             if(initialized) return;
             if(AVR_Settings.get_bool("/settings/core/devConsole/relayLogMessages")) {
                 Application.logMessageReceived += HandleLog;
-                //Application.logMessageReceivedThreaded += HandleLog;
             }
             if (AVR_Settings.get_bool("/settings/core/devConsole/useConsoleCommandAttribute")) {
                 register_all_attribute_commands();

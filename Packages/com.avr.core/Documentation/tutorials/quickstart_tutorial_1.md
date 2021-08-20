@@ -95,7 +95,7 @@ The menu bar of your Unity Editor should now have an additional 'AVR' option. Cl
 
 It should list the arc-vr packages you have installed (only arc-vr-core) and present you with 4 buttons. Click the 4th (the right-most one) to open an 'ARC-VR Console' window. Alternatively, you can also just click on `AVR > Open DevConsole`.
 
-This developer's console is a useful tool which is fully available inside the Unity Editor but also during runtime. It can also allow you to make some on-the-fly changes during runtime, should you have to. Type, for instance, `toggle Plane` and press Enter. If you have an object called 'Plane' in your scene it should be toggled from active, to inactive. If you want to add commands of your own or get more familiar with this useful tool, take a look at the [DevConsole documentation page](https://www.TODO.com).
+This developer's console is a useful tool which is fully available inside the Unity Editor but also during runtime. It can also allow you to make some on-the-fly changes during runtime, should you have to. Type, for instance, `toggle Plane` and press Enter. If you have an object called 'Plane' in your scene it should be toggled from active, to inactive. If you want to add commands of your own or get more familiar with this useful tool, take a look at the @ref AVR.Core.AVR_DevConsole "DevConsole documentation".
 
 
 

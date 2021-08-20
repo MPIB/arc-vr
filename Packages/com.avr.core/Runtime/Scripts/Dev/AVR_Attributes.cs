@@ -112,10 +112,6 @@ namespace AVR.Core.Attributes {
     /// [AVR.Core.Attributes.ConditionalHideInInspector("tracking", true)]
     /// public TrackingType type;
     /// \endcode
-    /// <param name="hideConditionPropertyName"> The first parameter is always the name of the field that represents the condition. The name is case-sensitive. </param>
-    /// <param name="invertCondition"> Will invert the given condition. Hence why in the example above, tracking = false hides the type field. </param>
-    /// <param name="compareValue"> Optionally, one can compare the given field with some given value. The type of comparison is determined by: </param>
-    /// <param name="ctype"> Type of comparison performed if a compareValue is provided. Examples: </param>
     /// \code
     /// // Hides the variable if "counter" is larger than 3
     /// [AVR.Core.Attributes.ConditionalHideInInspector("counter", 3, AVR.Core.Attributes.ConditionalHideInInspector.compareType.BIGGER)]
@@ -123,6 +119,10 @@ namespace AVR.Core.Attributes {
     /// // Hides the variable if "type" is equal to TypeEnum.TYPE2. Since "EQUAL" is the default comparison mode, the parameter is optional.
     /// [AVR.Core.Attributes.ConditionalHideInInspector("type", (int)TypeEnum.TYPE2)]
     /// \endcode
+    /// <param name="hideConditionPropertyName"> The first parameter is always the name of the field that represents the condition. The name is case-sensitive. </param>
+    /// <param name="invertCondition"> Will invert the given condition. Hence why in the example above, tracking = false hides the type field. </param>
+    /// <param name="compareValue"> Optionally, one can compare the given field with some given value. The type of comparison is determined by: </param>
+    /// <param name="ctype"> Type of comparison performed if a compareValue is provided. Examples: </param>
     /// </summary>
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = true)]
     public class ConditionalHideInInspector: PropertyAttribute
@@ -188,8 +188,8 @@ namespace AVR.Core.Attributes {
 
     /// <summary>
     /// Assigns given attributes to a foldout group in the inspector. The way these are drawn is determined by FoldoutPropertyDrawer
-    /// NOTE: FoldoutPropertyDrawer is a very dirty way of implementing Foldouts. TODO: Find a better solution.
     /// </summary>
+    //NOTE: FoldoutPropertyDrawer is a very dirty way of implementing Foldouts. TODO: Find a better solution.
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = true)]
     public class FoldoutGroup : PropertyAttribute
     {

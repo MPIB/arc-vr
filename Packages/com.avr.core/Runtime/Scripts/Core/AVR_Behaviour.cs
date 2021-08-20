@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Namespace of the arc-vr-core package
+/// </summary>
 namespace AVR.Core {
     /// <summary>
     /// Monobehaviour but with an added URL button to a documentation page.
@@ -13,5 +16,10 @@ namespace AVR.Core {
         /// The current AVR_PlayerRig instance in the scene
         /// </summary>
         protected AVR_PlayerRig playerRig => AVR_PlayerRig.Instance;
+
+        /// <summary>
+        /// The current AVR_Root instance in the scene
+        /// </summary>
+        protected AVR_Root root => AVR_Root.Instance;
     }
 }

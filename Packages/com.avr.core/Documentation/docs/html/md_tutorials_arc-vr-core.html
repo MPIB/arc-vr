@@ -97,11 +97,83 @@ Documentation</h2>
 <p>The documentation you are looking at right now, as well as docs for all other packages are included in arc-vr-core. If you take a look inside <code>Packages/com.avr.core/Documentation/docs</code> you will find all html, css and resource files of the docs.</p>
 <p>Each arc-vr component will have a button inside the Unity Editor that opens the respective documentation page in the browser (See (Editor Untilities)[EditorUtilities]). If you are creating your own <code>AVR_Component</code>-objects and want them to link to the proper page, take a look at the (DocumentationUrl attribute)[DocumentationUrlAttribute] to see how to set this link yourself.</p>
 <p>These files are generated using <a href="https://www.doxygen.nl/index.html">Doxygen 1.8.7</a>. Under <code>Packages/com.avr.core/Documentation</code> you will find the doxygen executable as well as the respective <a href="https://www.doxygen.nl/manual/config.html">doxygen configuration file</a> called <code>avr_dxy_config</code>.</p>
+<p>Tutorials (such as this one) are located in <code>Documentation/tutorials</code>. In these markdown files you can use all default doxygen commands as well as a few custom commands that are defined in the config file.</p>
 <p>You can re-generate the whole projects documentation any time by simply running <code>.\doxygen_1_8_7.exe .\avr_dxy_config</code> inside the Documentation folder. Doxygen will automatically extract code-summaries and produce up-to-date html files.</p>
-<h2>Base classes</h2>
-<p>TODO</p>
-<h2>Custom Editor-Attributes</h2>
-<p>TODO</p>
+<h2>Attributes</h2>
+<p>arc-vr-core includes several <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/">C# Attributes</a> for various purposes. For a more detailed description head to the <a class="el" href="namespace_a_v_r_1_1_core_1_1_attributes.html">AVR.Core.Attributes</a> documentation.</p>
+<p>Here's a quick overview:</p>
+<h2>ConditionalHideInInspector</h2>
+<p>This attribute lets you hide properties in the Unity inspector based on a condition. Here's a basic example: </p><pre class="fragment">public bool tracking = false;
+
+[ConditionalHideInInspector("tracking", true)]
+public string type;
+</pre><p>The property 'type' will not be shown in the inspector unless 'tracking' is set to true.</p>
+<div class="image">
+<img src="../../res/images/core_att_condhide.jpg"  alt="img"/>
+</div>
+<p>You can also use this attribute with more sophisticated conditions than just booleans. Check the <a class="el" href="class_a_v_r_1_1_core_1_1_attributes_1_1_conditional_hide_in_inspector.html">detailed docs</a> for more.</p>
+<h2>ReadOnly</h2>
+<p>Makes a propery read-only in the Unity inspector. Example: (target can not be set in the inspector, but still viewed) </p><pre class="fragment">[ReadOnly]
+public string target="sample_target";
+</pre><div class="image">
+<img src="../../res/images/core_att_readonly.jpg"  alt="img"/>
+</div>
+<h2>FoldoutGroup</h2>
+<p>Creates a foldout group of properties in the Unity inspector using a string-based group-id.</p>
+<dl class="section note"><dt>Note</dt><dd>Even if a group-id is the same, a new group will be created unless the group-members are defined subsequently (see example below).</dd></dl>
+<p>Example: </p><pre class="fragment">[FoldoutGroup("group1")]
+public float num1 = 30f;
+[FoldoutGroup("group1")]
+public float num2 = 0.5f;
+
+[FoldoutGroup("group2")]
+public string abc = "abcdefg";
+
+[FoldoutGroup("group1")]
+public float num3 = 12f;
+</pre><div class="image">
+<img src="../../res/images/core_att_foldout.jpg"  alt="img"/>
+</div>
+<h3>ConsoleCommand</h3>
+<p>With this attribute you can declare a static, void function to act as a command for the <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___dev_console.html">AVR.Core.AVR_DevConsole</a>. The parameters of this function have to be either of type 'string', 'string[]' or none. </p><pre class="fragment">[ConsoleCommand("example_command", 2, "Replies with the second argument passed")]
+static void example_command(string[] args) {
+    print(args[1]);
+}
+</pre><p>The example above will create a command called 'example_command' with a minimum of 2 arguments that simply outputs the second argument passed.</p>
+<h3>DocumentationUrl</h3>
+<p>This attribute defines the html page that is opened when the user clicks on the documentation button of an AVR_Behaviour in the Unity Editor. The html files are located in the <code>Packages/com.avr.core/Documentation/html</code> directory.</p>
+<p>Example: </p><pre class="fragment">[DocumentationUrl("class_a_v_r_1_1_core_1_1_a_v_r___controller.html")]
+public class AVR_Example : AVR_Behaviour
+{ ... }
+</pre><h2>Base classes</h2>
+<h3>AVR_Behaviour</h3>
+<p>Most arc-vr scripts inherit from <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR_Behaviour</a>. An AVR_Behaviour is, in essence, a regular MonoBehaviour but with a DocumentationUrl button and some quick-access members such as <code>AVR_Behaviour.playerRig</code> and <code>AVR_Behaviour.root</code>.</p>
+<h3>AVR_Component</h3>
+<p>Components such as feature-providers, tracked devices or modules are represented by an AVR_Component. An AVR_Component is an adds further complexity to AVR_Behaviour. If the  arc-vr-net package is present, MLAPI-related information can be accessed through <code>AVR_Component.networkAPI</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>Each <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___component.html">AVR_Component</a> script displays 2-3 buttons within the editor: <div class="image">
+<img src="../../res/images/core_editorButtons.jpg"  alt="img"/>
+</div>
+<ul>
+<li><em>Documentation Link</em>: Will open up the respective documentation page in your browser.</li>
+<li><em>Custom Monobehaviour Events</em>: Will let you set UnityEvents that are executed when the Monobehaviour Awake, Start, OnEnable or OnDisable are called. You can use this, for instance, to maintain two modules mutually exclusive. For example, you might not want to let the player teleport/move whilst interacting with UI. Then you would simple add an OnEnable event onto your UIInteractionProvider that disables the MovementProvider, and vice-versa for OnDisable.</li>
+<li><em>Network Behaviour</em>: This button is only present if the <a class="el" href="md_tutorials_arc-vr-net.html#arc-vr-net">arc-vr-net</a> package is included in the project. It gives you some useful tools for how components ought to behave when on a network.</li>
+</ul>
+</dd></dl>
+<h3>AVR_ControllerComponent</h3>
+<p>An AVR_Component that includes convenient, quick access to an AVR_Controller that is attatched to a parent gameobject.</p>
+<p>For instance, you can easily execute an action if the trigger-button on a controller is pressed like so: </p><pre class="fragment">if(controller.inputManager.triggerButton) {
+    // do something...
+}
+</pre><h3>AVR_GenericXRDevice</h3>
+<p>Represents a tracked object, such as a HMD or controller. The track object is identified through the UnityEngine.XR.XRNode enum.</p>
+<p>Tracking can be enabled/disabled at will and smoothed to avoid jitter.</p>
+<h3>AVR_Controller</h3>
+<p>Typical handheld VR controllers, such as the HTC Vive or Vive Index controllers are represented by the AVR_Controller class.</p>
+<p>The class gives access to input data (if an inputManager is attatched) as well as haptic capabilites.</p>
+<h3>AVR_PlayerRig</h3>
+<p>The overall configuration of HMD and controllers (ie the "player") is represented by an AVR_PlayerRig.</p>
+<p>The playerRig acts as a singleton, meaning, only one can be active in a scene at any given time.</p>
+<p>The class provides a plethora of useful data and functions, all easily accessible through the AVR_Behaviour.playerRig member. For a full list, see <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html">AVR.Core.AVR_PlayerRig</a>.</p>
 <h2>Utilities</h2>
 <p>TODO</p>
 <h2>Editor Utilities</h2>

@@ -103,43 +103,155 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;These files are generated using [Doxygen 1.8.7](https:<span class="comment">//www.doxygen.nl/index.html). Under `Packages/com.avr.core/Documentation` you will find the doxygen executable as well as the respective [doxygen configuration file](https://www.doxygen.nl/manual/config.html) called `avr_dxy_config`.</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;You can re-generate the whole projects documentation any time by simply running `.\doxygen_1_8_7.exe .\avr_dxy_config` inside the Documentation folder. Doxygen will automatically extract code-summaries and produce up-to-date html files.</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;Tutorials (such as this one) are located in `Documentation/tutorials`. In these markdown files you can use all default doxygen commands as well as a few custom commands that are defined in the config file.</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;## Base classes</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;You can re-generate the whole projects documentation any time by simply running `.\doxygen_1_8_7.exe .\avr_dxy_config` inside the Documentation folder. Doxygen will automatically extract code-summaries and produce up-to-date html files.</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;TODO</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;## Attributes</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;## Custom Editor-Attributes</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;arc-vr-core includes several [C# Attributes](https:<span class="comment">//docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/attributes/) for various purposes. For a more detailed description head to the @ref AVR.Core.Attributes documentation.</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;TODO</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;Here&#39;s a quick overview:</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;## Utilities</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;## ConditionalHideInInspector</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;TODO</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;This attribute lets you hide properties in the Unity inspector based on a condition. Here&#39;s a basic example:</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;## Editor Utilities</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    public bool tracking = false;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;TODO</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;## Developers Console</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;TODO</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;## Settings system</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;TODO</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;## Package Builder</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;TODO</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;## Base class for Trial-Experiments</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    [ConditionalHideInInspector(<span class="stringliteral">&quot;tracking&quot;</span>, <span class="keyword">true</span>)]</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">public</span> <span class="keywordtype">string</span> type;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;The <span class="keyword">property</span> <span class="stringliteral">&#39;type&#39;</span> will not be shown in the inspector unless <span class="stringliteral">&#39;tracking&#39;</span> is set to <span class="keyword">true</span>.</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;![img](../../res/images/core_att_condhide.jpg)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;You can also use <span class="keyword">this</span> attribute with more sophisticated conditions than just booleans. Check the @ref AVR.Core.Attributes.ConditionalHideInInspector <span class="stringliteral">&quot;detailed docs&quot;</span> <span class="keywordflow">for</span> more.</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;## ReadOnly</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;Makes a propery read-only in the Unity inspector. Example: (target can not be set in the inspector, but still viewed)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    [ReadOnly]</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">public</span> <span class="keywordtype">string</span> target=<span class="stringliteral">&quot;sample_target&quot;</span>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;TODO</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;![img](../../res/images/core_att_readonly.jpg)</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;## Rig and Controller Components for tracking, input etc.</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;## FoldoutGroup</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;TODO</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;Creates a foldout group of properties in the Unity inspector <span class="keyword">using</span> a <span class="keywordtype">string</span>-based group-<span class="keywordtype">id</span>.</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;\note Even <span class="keywordflow">if</span> a group-<span class="keywordtype">id</span> is the same, a <span class="keyword">new</span> group will be created unless the group-members are defined subsequently (see example below).</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;Example:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    [FoldoutGroup(<span class="stringliteral">&quot;group1&quot;</span>)]</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">public</span> <span class="keywordtype">float</span> num1 = 30f;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    [FoldoutGroup(<span class="stringliteral">&quot;group1&quot;</span>)]</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">public</span> <span class="keywordtype">float</span> num2 = 0.5f;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    [FoldoutGroup(<span class="stringliteral">&quot;group2&quot;</span>)]</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">public</span> <span class="keywordtype">string</span> abc = <span class="stringliteral">&quot;abcdefg&quot;</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    [FoldoutGroup(<span class="stringliteral">&quot;group1&quot;</span>)]</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">public</span> <span class="keywordtype">float</span> num3 = 12f;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;![img](../../res/images/core_att_foldout.jpg)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;### ConsoleCommand</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;With <span class="keyword">this</span> attribute you can declare a <span class="keyword">static</span>, <span class="keywordtype">void</span> <span class="keyword">function</span> to act as a command <span class="keywordflow">for</span> the @ref AVR.Core.AVR_DevConsole. The parameters of <span class="keyword">this</span> <span class="keyword">function</span> have to be either of type <span class="stringliteral">&#39;string&#39;</span>, <span class="stringliteral">&#39;string[]&#39;</span> or none.</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    [ConsoleCommand(<span class="stringliteral">&quot;example_command&quot;</span>, 2, <span class="stringliteral">&quot;Replies with the second argument passed&quot;</span>)]</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> example_command(<span class="keywordtype">string</span>[] args) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        print(args[1]);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;The example above will create a command called <span class="stringliteral">&#39;example_command&#39;</span> with a minimum of 2 arguments that simply outputs the second argument passed.</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;### DocumentationUrl</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;This attribute defines the html page that is opened when the user clicks on the documentation button of an AVR_Behaviour in the Unity Editor. The html files are located in the `Packages/com.avr.core/Documentation/html` directory.</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;Example:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    [DocumentationUrl(<span class="stringliteral">&quot;class_a_v_r_1_1_core_1_1_a_v_r___controller.html&quot;</span>)]</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span>AVR_Example : AVR_Behaviour</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    { ... }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">## Base classes</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">### AVR_Behaviour</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;Most arc-vr scripts inherit from @ref AVR.Core.AVR_Behaviour <span class="stringliteral">&quot;AVR_Behaviour&quot;</span>. An AVR_Behaviour is, in essence, a regular MonoBehaviour but with a DocumentationUrl button and some quick-access members such as `AVR_Behaviour.playerRig` and `AVR_Behaviour.root`.</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;### AVR_Component</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;Components such as feature-providers, tracked devices or modules are represented by an AVR_Component. An AVR_Component is an adds further complexity to AVR_Behaviour. If the @red arc-vr-net <span class="keyword">package </span>is present, MLAPI-related information can be accessed through `AVR_Component.networkAPI`.</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;\note Each \ref AVR.Core.AVR_Component &quot;AVR_Component&quot; script displays 2-3 buttons within the editor:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;![img](../../res/images/core_editorButtons.jpg)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;- *Documentation Link*: Will open up the respective documentation page in your browser.</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;- *Custom Monobehaviour Events*: Will let you set UnityEvents that are executed when the Monobehaviour Awake, Start, OnEnable or OnDisable are called. You can use this, for instance, to maintain two modules mutually exclusive. For example, you might not want to let the player teleport/move whilst interacting with UI. Then you would simple add an OnEnable event onto your UIInteractionProvider that disables the MovementProvider, and vice-versa for OnDisable.</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;- *Network Behaviour*: This button is only present if the [arc-vr-net](@ref arc-vr-net) package is included in the project. It gives you some useful tools for how components ought to behave when on a network.</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;### AVR_ControllerComponent</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;An AVR_Component that includes convenient, quick access to an AVR_Controller that is attatched to a parent gameobject.</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;For instance, you can easily execute an action if the trigger-button on a controller is pressed like so:</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    if(controller.inputManager.triggerButton) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="comment">// do something...</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;### AVR_GenericXRDevice</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;Represents a tracked object, such as a HMD or controller. The track object is identified through the UnityEngine.XR.XRNode enum.</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;Tracking can be enabled/disabled at will and smoothed to avoid jitter.</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;### AVR_Controller</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;Typical handheld VR controllers, such as the HTC Vive or Vive Index controllers are represented by the AVR_Controller class.</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;The class gives access to input data (if an inputManager is attatched) as well as haptic capabilites.</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;### AVR_PlayerRig</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;The overall configuration of HMD and controllers (ie the &quot;player&quot;) is represented by an AVR_PlayerRig.</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;The playerRig acts as a singleton, meaning, only one can be active in a scene at any given time.</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;The class provides a plethora of useful data and functions, all easily accessible through the AVR_Behaviour.playerRig member. For a full list, see @ref AVR.Core.AVR_PlayerRig.</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;## Utilities</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;TODO</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;## Editor Utilities</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;TODO</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;## Developers Console</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;TODO</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;## Settings system</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;TODO</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;## Package Builder</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;TODO</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;## Base class for Trial-Experiments</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;TODO</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;## Rig and Controller Components for tracking, input etc.</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;TODO</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

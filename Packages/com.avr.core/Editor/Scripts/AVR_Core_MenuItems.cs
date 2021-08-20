@@ -17,6 +17,13 @@ namespace AVR.UEditor.Core {
             AVR_EditorUtility.InstantiatePrefabAsChild(null, "/editor/defaultPrefabPaths/rootObject");
         }
 
+        [MenuItem("AVR/Documentation", false, -100)]
+        public static void openDocumentation()
+        {
+            string path = System.IO.Path.GetFullPath(AVR.Core.AVR_Settings.get_string("/editor/documentationPath") + "index.html");
+            Application.OpenURL("file:///" + path);
+        }
+
         [MenuItem("AVR/arc-vr", false, -999)]
         public static void openContextScreen()
         {
