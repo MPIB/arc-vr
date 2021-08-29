@@ -57,4 +57,4 @@ Now you'll only have to duplicate both spheres multiple times and place them abo
 
 If you now launch your scene, you should be able to move up to the table using the left controller, then grab a sphere out of the urn using the right controller.
 
-TODO: video
+Continue in [tutorial 4](tutorials/quickstart_tutorial_4.md).
