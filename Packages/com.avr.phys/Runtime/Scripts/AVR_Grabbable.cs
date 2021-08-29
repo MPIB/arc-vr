@@ -34,7 +34,9 @@ namespace AVR.Phys {
         }
 
         void Reset() {
+            #if AVR_NET
             this.destroyOnRemote = false;
+            #endif
         }
 
         protected override void Awake()
@@ -118,9 +120,10 @@ namespace AVR.Phys {
             // Set the current objecttype to the regular object type or the nested one
             _objType = (isGrabbedByMultipleHands && objectType.changeObjectTypeOnTwoHanded) ? objectType.typeOnTwoHanded : objectType;
 
-            // Break joint if too far away. We take the average over 2 frames, to avoid breaking on unnecessary single anomalies
-            if(0.5f * (last_dist + Vector3.Distance(targetItemPosition, targetHandPosition)) > _objType.Break_grab_distance) {
-                while(AttachedHands.Count>0) AttachedHands[0].makeRelease();
+            // Break joint if the distance is too far & it is growing.
+            if (Vector3.Distance(targetItemPosition, targetHandPosition) > last_dist && last_dist > _objType.Break_grab_distance)
+            {
+                while (AttachedHands.Count > 0) AttachedHands[0].makeRelease();
                 return;
             }
             last_dist = Vector3.Distance(targetItemPosition, targetHandPosition);

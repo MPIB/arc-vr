@@ -10,7 +10,7 @@ For this tutorial we'll be building a simple VR experiment/game where the user w
 We'll be targeting HTC Vive hardware and using the standard Unity rendering pipeline.
 Here's a brief demonstration of what we'll be building:
 
-TODO: Video
+@youtube{Vl-vTb1qRkA}
 
 After reading, you should be able to:
 - Set up a rudimentary VR PlayerRig with spatially tracked HMD and controller.
@@ -26,7 +26,13 @@ The last two bullet points are optional, as they are intended for use in VR expe
 
 If you prefer watching a video over reading text, here's the complete quickstart guide in video form:
 
-TODO: Video
+@youtube{mf8UT7Bm1eM}
+
+@youtube{XwZqnJhBpKw}
+
+@youtube{VYen74Bwtsw}
+
+@youtube{ks15LOa2JRI}
 
 # Step 1: Setup
 

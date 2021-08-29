@@ -8,6 +8,7 @@ namespace AVR.Phys {
     /// Also allows the usage of an AVR_Hand.
     /// Use this if you require grabbing larger / more complex objects.
     /// </summary>
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_phys_1_1_a_v_r___offset_grab_provider.html")]
     public class AVR_OffsetGrabProvider : AVR_BasicGrabProvider
     {
         /// <summary>

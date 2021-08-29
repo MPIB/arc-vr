@@ -8,6 +8,7 @@ namespace AVR.Phys {
     /// <summary>
     /// Simplest GrabProvider. Grabbed objects will move their center (obj.transform.position) towards the respective grabpoint.
     /// </summary>
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html")]
     public class AVR_BasicGrabProvider : AVR_ControllerComponent
     {
         /// <summary>

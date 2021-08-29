@@ -141,20 +141,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___grabbable_8cs_source.html#l00215">215</a> of file <a class="el" href="_a_v_r___grabbable_8cs_source.html">AVR_Grabbable.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                                    {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a8b12d8092388ce113b9f9141fffbc455.html#a8b12d8092388ce113b9f9141fffbc455">isGrabbed</a>) {</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                <span class="keywordflow">return</span> transform.position;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            }</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>.Count==1) {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>[0].getTargetPosition();</div>
+<p>Definition at line <a class="el" href="_a_v_r___grabbable_8cs_source.html#l00218">218</a> of file <a class="el" href="_a_v_r___grabbable_8cs_source.html">AVR_Grabbable.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                                    {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a8b12d8092388ce113b9f9141fffbc455.html#a8b12d8092388ce113b9f9141fffbc455">isGrabbed</a>) {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <span class="keywordflow">return</span> transform.position;</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            }</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                Vector3 sum = Vector3.zero;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                <span class="keywordflow">foreach</span> (AVR_BasicGrabProvider h <span class="keywordflow">in</span> <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>) sum += h.getTargetPosition();</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                <span class="keywordflow">return</span> sum/AttachedHands.Count;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            }</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>.Count==1) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>[0].getTargetPosition();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            }</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                Vector3 sum = Vector3.zero;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                <span class="keywordflow">foreach</span> (AVR_BasicGrabProvider h <span class="keywordflow">in</span> <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>) sum += h.getTargetPosition();</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="keywordflow">return</span> sum/AttachedHands.Count;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        }</div>
 <div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a8b12d8092388ce113b9f9141fffbc455_html_a8b12d8092388ce113b9f9141fffbc455"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a8b12d8092388ce113b9f9141fffbc455.html#a8b12d8092388ce113b9f9141fffbc455">AVR.Phys.AVR_Grabbable.isGrabbed</a></div><div class="ttdeci">bool isGrabbed</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___grabbable_8cs_source.html#l00028">AVR_Grabbable.cs:28</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41_html_a45479e6305f58c98d5a57333edf20d41"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AVR.Phys.AVR_Grabbable.AttachedHands</a></div><div class="ttdeci">List&lt; AVR_BasicGrabProvider &gt; AttachedHands</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___grabbable_8cs_source.html#l00019">AVR_Grabbable.cs:19</a></div></div>
 </div><!-- fragment -->

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace AVR.Phys {
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_phys_1_1_a_v_r___advanced_offset_grab_provider.html")]
     public class AVR_AdvancedOffsetGrabProvider : AVR_OffsetGrabProvider
     {
         private Transform virtualGrabPoint;
