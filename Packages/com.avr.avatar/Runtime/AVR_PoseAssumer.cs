@@ -15,6 +15,7 @@ namespace AVR.Avatar {
         public Transform headTransform;
         public Transform neckTransform;
         public bool switchAxisXZ = true;
+        public bool swap_feet = false;
 
         private Animator animator;
         private bool IKPass_is_enabled = false;
@@ -63,6 +64,10 @@ namespace AVR.Avatar {
         }
 
         void LateUpdate() {
+            if(!headTransform || !neckTransform) {
+                AVR.Core.AVR_DevConsole.cwarn("headTransform and neckTransform are not set!", this);
+                return;
+            }
             // Head linkage
             Vector3 headAng = headTransform.eulerAngles;
             Vector3 neckAng = neckTransform.eulerAngles;
@@ -121,13 +126,18 @@ namespace AVR.Avatar {
                 animator.SetIKPosition(AvatarIKGoal.RightHand, transform.TransformPoint(provider.rightHandPos));
                 animator.SetIKRotation(AvatarIKGoal.RightHand, transform.rotation * provider.rightHandRot);
             }
+            if(!swap_feet)
             {
                 animator.SetIKPosition(AvatarIKGoal.LeftFoot, transform.TransformPoint(provider.leftFootPos));
                 animator.SetIKRotation(AvatarIKGoal.LeftFoot, transform.rotation * provider.leftFootRot);
-            }
-            {
                 animator.SetIKPosition(AvatarIKGoal.RightFoot, transform.TransformPoint(provider.rightFootPos));
                 animator.SetIKRotation(AvatarIKGoal.RightFoot, transform.rotation * provider.rightFootRot);
+            }
+            else {
+                animator.SetIKPosition(AvatarIKGoal.LeftFoot, transform.TransformPoint(provider.rightFootPos));
+                animator.SetIKRotation(AvatarIKGoal.LeftFoot, transform.rotation * provider.rightFootRot);
+                animator.SetIKPosition(AvatarIKGoal.RightFoot, transform.TransformPoint(provider.leftFootPos));
+                animator.SetIKRotation(AvatarIKGoal.RightFoot, transform.rotation * provider.leftFootRot);
             }
         }
 

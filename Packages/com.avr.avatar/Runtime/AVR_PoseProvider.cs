@@ -218,7 +218,7 @@ namespace AVR.Avatar {
                 Gizmos.DrawLine(NeckPos, bodyTransform.position);
                 Gizmos.DrawCube(bodyTransform.position, new Vector3(0.05f, 0.05f, 0.05f));
 
-                Gizmos.DrawLine(bodyTransform.position, pivotTransform.position);
+                Gizmos.DrawCube(bodyTransform.position, new Vector3(0.2f, 0.2f, 0.2f));
                 Gizmos.DrawCube(pivotTransform.position, new Vector3(0.05f, 0.05f, 0.05f));
                 Gizmos.DrawRay(pivotTransform.position, pivotTransform.forward);
 
@@ -227,6 +227,10 @@ namespace AVR.Avatar {
                 Gizmos.DrawCube(leftFootTarget.position, new Vector3(0.05f, 0.05f, 0.05f));
                 Gizmos.DrawLine(bodyTransform.position, rightFootTarget.position);
                 Gizmos.DrawCube(rightFootTarget.position, new Vector3(0.05f, 0.05f, 0.05f));
+
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawLine(NeckPos, leftHandPos);
+                Gizmos.DrawLine(NeckPos, rightHandPos);
             }
         }
 

@@ -261,6 +261,14 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
+  destroyOnRemote: 1
+  changeLayerOnRemote: 0
+  changeLayerOnRemote_IncludeChildren: 0
+  remoteLayer: 0
+  onRemoteStart:
+    m_PersistentCalls:
+      m_Calls: []
+  networkObject: {fileID: 0}
   provider: {fileID: 5063431094393278590}
   headTransform: {fileID: 7816866653161768046}
   neckTransform: {fileID: 951156350769423654}
@@ -1051,8 +1059,16 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
-  leftHandFilter: {fileID: 11400000, guid: 50ec9aaea25c7e4488933ba25841d9c1, type: 2}
-  rightHandFilter: {fileID: 11400000, guid: 5e7852ab528cf7049a2564ce67ec972b, type: 2}
+  destroyOnRemote: 1
+  changeLayerOnRemote: 0
+  changeLayerOnRemote_IncludeChildren: 0
+  remoteLayer: 0
+  onRemoteStart:
+    m_PersistentCalls:
+      m_Calls: []
+  networkObject: {fileID: 0}
+  leftHandFilter: {fileID: 0}
+  rightHandFilter: {fileID: 0}
   body_inertia: 0.3
   lean_blend_speed: 3.5
   max_head_yaw: 30
