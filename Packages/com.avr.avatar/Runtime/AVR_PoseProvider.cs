@@ -8,22 +8,80 @@ using UnityEditor;
 using AVR.Core;
 
 namespace AVR.Avatar {
+    /// <summary>
+    /// Estimates the pose of a player from the locations of VR controllers and HMD
+    /// </summary>
     [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider.html")]
     public class AVR_PoseProvider : AVR.Core.AVR_Component
     {
+        /// <summary>
+        /// Endpoint of the players view vector
+        /// </summary>
         public Vector3 lookAtPos => eyeTransform.localPosition + transform.InverseTransformDirection(eyeTransform.forward);
+
+        /// <summary>
+        /// Left hand rotation
+        /// </summary>
         public Quaternion leftHandRot => leftHandTarget.rotation;
+
+        /// <summary>
+        /// Right hand rotation
+        /// </summary>
         public Quaternion rightHandRot => rightHandTarget.rotation;
+
+        /// <summary>
+        /// Left foot position
+        /// </summary>
         public Vector3 leftFootPos => leftFootTarget.localPosition;
+
+        /// <summary>
+        /// Left foot rotation
+        /// </summary>
         public Quaternion leftFootRot => leftFootTarget.rotation;
+
+        /// <summary>
+        /// Right foot position
+        /// </summary>
         public Vector3 rightFootPos => rightFootTarget.localPosition;
+
+        /// <summary>
+        /// Right foot rotation
+        /// </summary>
         public Quaternion rightFootRot => rightFootTarget.rotation;
+
+        /// <summary>
+        /// Position of the rig's pivot (Point on the ground directly underneath the HMD)
+        /// </summary>
         public Vector3 pivotPos => pivotTransform.localPosition;
+
+        /// <summary>
+        /// Rotation of the pivot
+        /// </summary>
         public Quaternion pivotRot => pivotTransform.rotation;
+
+        /// <summary>
+        /// Position of the body
+        /// </summary>
         public Vector3 bodyPos => bodyTransform.localPosition;
+
+        /// <summary>
+        /// Rotation of the body
+        /// </summary>
         public Quaternion bodyRot => bodyTransform.rotation;
+
+        /// <summary>
+        /// Position of the head
+        /// </summary>
         public Vector3 eyePos => eyeTransform.localPosition;
+
+        /// <summary>
+        /// Rotation of the head
+        /// </summary>
         public Quaternion eyeRot => eyeTransform.rotation;
+
+        /// <summary>
+        /// Left hand position
+        /// </summary>
         public Vector3 leftHandPos {
             get
             {
@@ -31,6 +89,10 @@ namespace AVR.Avatar {
                 return transform.InverseTransformPoint(leftHandTarget.position);
             }
         }
+
+        /// <summary>
+        /// Right hand position
+        /// </summary>
         public Vector3 rightHandPos {
             get
             {
@@ -39,8 +101,15 @@ namespace AVR.Avatar {
             }
         }
 
+        /// <summary>
+        /// Left hand naturalization filter
+        /// </summary>
         [AVR.Core.Attributes.FoldoutGroup("Filters")]
         public AVR_PoseNaturalizationFilter leftHandFilter;
+
+        /// <summary>
+        /// Right hand naturalization filter
+        /// </summary>
         [AVR.Core.Attributes.FoldoutGroup("Filters")]
         public AVR_PoseNaturalizationFilter rightHandFilter;
 
@@ -52,37 +121,81 @@ namespace AVR.Avatar {
         protected Transform bodyTransform;
         protected Transform eyeTransform;
 
+        /// <summary>
+        /// Inertia of the body. (Increasing this will help with micromovements and stutters of the body)
+        /// </summary>
         [Range(0.0001f, 1.0f)]
         public float body_inertia = 0.3f;
 
+        /// <summary>
+        /// Blending speed between a leaning and standing position
+        /// </summary>
         [AVR.Core.Attributes.FoldoutGroup("Calibration")]
         public float lean_blend_speed = 3.5f;
 
+        /// <summary>
+        /// Maximum yaw angle of the head in relation of the body
+        /// </summary>
         [AVR.Core.Attributes.FoldoutGroup("Calibration")]
         public float max_head_yaw = 30f;
+
+        /// <summary>
+        /// Maximum pitch angle of the head in relation of the body
+        /// </summary>
         [AVR.Core.Attributes.FoldoutGroup("Calibration")]
         public float max_head_pitch = 30f;
+
+        /// <summary>
+        /// Maximum roll angle of the head in relation of the body
+        /// </summary>
         [AVR.Core.Attributes.FoldoutGroup("Calibration")]
         public float max_head_roll = 30f;
 
+        /// <summary>
+        /// Default height of the body/torso
+        /// </summary>
         [AVR.Core.Attributes.FoldoutGroup("Calibration")]
         public float default_body_height = 0.9f;
+
+        /// <summary>
+        /// Maximum height of the body/torso fromt he ground
+        /// </summary>
         [AVR.Core.Attributes.FoldoutGroup("Calibration")]
         public float max_body_height = 1.0f;
+
+        /// <summary>
+        /// Minimum height of the body/torso fromt he ground
+        /// </summary>
         [AVR.Core.Attributes.FoldoutGroup("Calibration")]
         public float min_body_height = 0.5f;
 
+        /// <summary>
+        /// Local offset vector from eyes to neck
+        /// </summary>
         [AVR.Core.Attributes.FoldoutGroup("Calibration")]
         public Vector3 local_eye_to_neck_offset = new Vector3(0.0f, -0.1f, -0.05f);
+
+        /// <summary>
+        /// Distance between neck and body/torso
+        /// </summary>
         [AVR.Core.Attributes.FoldoutGroup("Calibration")]
         public float neck_body_distance = 0.4f;
 
+        /// <summary>
+        /// Distance between the right foot and the pivot
+        /// </summary>
         [AVR.Core.Attributes.FoldoutGroup("Calibration")]
         public Vector3 foot_offset_from_pivot = new Vector3(0.2f, 0.05f, 0.0f);
 
+        /// <summary>
+        /// Speed at which feet move to their target position
+        /// </summary>
         [AVR.Core.Attributes.FoldoutGroup("Calibration")]
         public float foot_follow_speed = 3.0f;
 
+        /// <summary>
+        /// Collision mask of the ground
+        /// </summary>
         public LayerMask groundCollisionMask;
 
         private float lean_factor = 0.0f;

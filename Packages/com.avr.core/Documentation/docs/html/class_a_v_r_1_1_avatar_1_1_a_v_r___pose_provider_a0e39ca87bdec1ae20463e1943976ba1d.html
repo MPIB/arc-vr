@@ -166,30 +166,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___pose_provider_8cs_source.html#l00233">233</a> of file <a class="el" href="_a_v_r___pose_provider_8cs_source.html">AVR_PoseProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                                       {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="keywordtype">float</span> head_yaw = eyeTransform.localRotation.eulerAngles.y;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordtype">float</span> body_yaw = <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a182ee178d8d7b70541508eac530e52b8.html#a182ee178d8d7b70541508eac530e52b8">last_yaw</a>;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="comment">// Get the difference in yaw between body and eyes/head</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keywordtype">float</span> yaw_diff = Mathf.DeltaAngle(head_yaw, body_yaw);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="comment">// Account for max_head_yaw</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            yaw_diff = Mathf.Sign(yaw_diff) * Mathf.Max(0, Mathf.Abs(yaw_diff) - <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a35bccdf7fcb3d15d25b1d52bbc771498.html#a35bccdf7fcb3d15d25b1d52bbc771498">max_head_yaw</a>);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="comment">// Calcualte the speed at which we&#39;ll adapt.</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordtype">float</span> yaw_adapt_speed = Mathf.Abs(yaw_diff) * Time.deltaTime * 2.0f;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="comment">// Adapt the rotation to the resulting yaw</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">return</span> Quaternion.Euler(</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a5338a0c2e4427827558dc8c35dacbb31.html#a5338a0c2e4427827558dc8c35dacbb31">bodyTransform</a>.localRotation.eulerAngles.x,</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                Mathf.MoveTowardsAngle(body_yaw, head_yaw, yaw_adapt_speed),</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                bodyTransform.localRotation.eulerAngles.z</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            );</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a5338a0c2e4427827558dc8c35dacbb31_html_a5338a0c2e4427827558dc8c35dacbb31"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a5338a0c2e4427827558dc8c35dacbb31.html#a5338a0c2e4427827558dc8c35dacbb31">AVR.Avatar.AVR_PoseProvider.bodyTransform</a></div><div class="ttdeci">Transform bodyTransform</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___pose_provider_8cs_source.html#l00052">AVR_PoseProvider.cs:52</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a35bccdf7fcb3d15d25b1d52bbc771498_html_a35bccdf7fcb3d15d25b1d52bbc771498"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a35bccdf7fcb3d15d25b1d52bbc771498.html#a35bccdf7fcb3d15d25b1d52bbc771498">AVR.Avatar.AVR_PoseProvider.max_head_yaw</a></div><div class="ttdeci">float max_head_yaw</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___pose_provider_8cs_source.html#l00062">AVR_PoseProvider.cs:62</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a182ee178d8d7b70541508eac530e52b8_html_a182ee178d8d7b70541508eac530e52b8"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a182ee178d8d7b70541508eac530e52b8.html#a182ee178d8d7b70541508eac530e52b8">AVR.Avatar.AVR_PoseProvider.last_yaw</a></div><div class="ttdeci">float last_yaw</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___pose_provider_8cs_source.html#l00090">AVR_PoseProvider.cs:90</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___pose_provider_8cs_source.html#l00350">350</a> of file <a class="el" href="_a_v_r___pose_provider_8cs_source.html">AVR_PoseProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                                                       {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            <span class="keywordtype">float</span> head_yaw = eyeTransform.localRotation.eulerAngles.y;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            <span class="keywordtype">float</span> body_yaw = <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a182ee178d8d7b70541508eac530e52b8.html#a182ee178d8d7b70541508eac530e52b8">last_yaw</a>;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            <span class="comment">// Get the difference in yaw between body and eyes/head</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <span class="keywordtype">float</span> yaw_diff = Mathf.DeltaAngle(head_yaw, body_yaw);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            <span class="comment">// Account for max_head_yaw</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            yaw_diff = Mathf.Sign(yaw_diff) * Mathf.Max(0, Mathf.Abs(yaw_diff) - <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a35bccdf7fcb3d15d25b1d52bbc771498.html#a35bccdf7fcb3d15d25b1d52bbc771498">max_head_yaw</a>);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="comment">// Calcualte the speed at which we&#39;ll adapt.</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <span class="keywordtype">float</span> yaw_adapt_speed = Mathf.Abs(yaw_diff) * Time.deltaTime * 2.0f;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            <span class="comment">// Adapt the rotation to the resulting yaw</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <span class="keywordflow">return</span> Quaternion.Euler(</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a5338a0c2e4427827558dc8c35dacbb31.html#a5338a0c2e4427827558dc8c35dacbb31">bodyTransform</a>.localRotation.eulerAngles.x,</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                Mathf.MoveTowardsAngle(body_yaw, head_yaw, yaw_adapt_speed),</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                bodyTransform.localRotation.eulerAngles.z</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            );</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a5338a0c2e4427827558dc8c35dacbb31_html_a5338a0c2e4427827558dc8c35dacbb31"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a5338a0c2e4427827558dc8c35dacbb31.html#a5338a0c2e4427827558dc8c35dacbb31">AVR.Avatar.AVR_PoseProvider.bodyTransform</a></div><div class="ttdeci">Transform bodyTransform</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___pose_provider_8cs_source.html#l00121">AVR_PoseProvider.cs:121</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a35bccdf7fcb3d15d25b1d52bbc771498_html_a35bccdf7fcb3d15d25b1d52bbc771498"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a35bccdf7fcb3d15d25b1d52bbc771498.html#a35bccdf7fcb3d15d25b1d52bbc771498">AVR.Avatar.AVR_PoseProvider.max_head_yaw</a></div><div class="ttdeci">float max_head_yaw</div><div class="ttdoc">Maximum yaw angle of the head in relation of the body </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___pose_provider_8cs_source.html#l00140">AVR_PoseProvider.cs:140</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a182ee178d8d7b70541508eac530e52b8_html_a182ee178d8d7b70541508eac530e52b8"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a182ee178d8d7b70541508eac530e52b8.html#a182ee178d8d7b70541508eac530e52b8">AVR.Avatar.AVR_PoseProvider.last_yaw</a></div><div class="ttdeci">float last_yaw</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___pose_provider_8cs_source.html#l00203">AVR_PoseProvider.cs:203</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

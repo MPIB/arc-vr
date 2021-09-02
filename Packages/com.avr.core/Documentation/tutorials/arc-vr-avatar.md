@@ -2,4 +2,4 @@
 
 # arc-vr-avatar {#arc-vr-avatar}
 
-TODO
+@youtube{4ocPa6kvHDk}

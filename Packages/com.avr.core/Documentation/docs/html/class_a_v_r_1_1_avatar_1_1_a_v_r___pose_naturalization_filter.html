@@ -103,6 +103,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">AVR.Avatar.AVR_PoseNaturalizationFilter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A PoseNaturalizationFilter "naturalizes" a pose. For instance, when a player places the controllers on the ground or to the side, the resulting pose will look bizarre and unnatural. These filters will turn the resulting pose into one that seems more natural.  
+ <a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for AVR.Avatar.AVR_PoseNaturalizationFilter:</div>
 <div class="dyncontent">
@@ -120,14 +123,19 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a6846b390522ca171b3a2cd4b9e6c3426"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a6846b390522ca171b3a2cd4b9e6c3426.html#a6846b390522ca171b3a2cd4b9e6c3426">reference_amount</a> = 30</td></tr>
+<tr class="memdesc:a6846b390522ca171b3a2cd4b9e6c3426"><td class="mdescLeft">&#160;</td><td class="mdescRight">The amount of points from the point-cloud to use  <a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a6846b390522ca171b3a2cd4b9e6c3426.html#a6846b390522ca171b3a2cd4b9e6c3426">More...</a><br /></td></tr>
 <tr class="separator:a6846b390522ca171b3a2cd4b9e6c3426"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5993851fa77f32afbd9a0c8fbbdb4bbd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a5993851fa77f32afbd9a0c8fbbdb4bbd.html#a5993851fa77f32afbd9a0c8fbbdb4bbd">take_k</a> = 4</td></tr>
+<tr class="memdesc:a5993851fa77f32afbd9a0c8fbbdb4bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many points to incorporate into the weighted average.  <a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a5993851fa77f32afbd9a0c8fbbdb4bbd.html#a5993851fa77f32afbd9a0c8fbbdb4bbd">More...</a><br /></td></tr>
 <tr class="separator:a5993851fa77f32afbd9a0c8fbbdb4bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7150adfc01e6cc747a7002de8b6f994f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a7150adfc01e6cc747a7002de8b6f994f.html#a7150adfc01e6cc747a7002de8b6f994f">smoothing_speed</a> = 10.0f</td></tr>
+<tr class="memdesc:a7150adfc01e6cc747a7002de8b6f994f"><td class="mdescLeft">&#160;</td><td class="mdescRight">how much to smooth motion by  <a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a7150adfc01e6cc747a7002de8b6f994f.html#a7150adfc01e6cc747a7002de8b6f994f">More...</a><br /></td></tr>
 <tr class="separator:a7150adfc01e6cc747a7002de8b6f994f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbf6a6aaac70db7842935e78a8b7fa02"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_adbf6a6aaac70db7842935e78a8b7fa02.html#adbf6a6aaac70db7842935e78a8b7fa02">interp</a> = 1.0f</td></tr>
+<tr class="memdesc:adbf6a6aaac70db7842935e78a8b7fa02"><td class="mdescLeft">&#160;</td><td class="mdescRight">interp = 0 means we dont naturalize at all, interp = 0.5 means the output is 50% input and 50% naturalized position  <a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_adbf6a6aaac70db7842935e78a8b7fa02.html#adbf6a6aaac70db7842935e78a8b7fa02">More...</a><br /></td></tr>
 <tr class="separator:adbf6a6aaac70db7842935e78a8b7fa02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a068162cbe41346b1025d855e37d1febe"><td class="memItemLeft" align="right" valign="top">List&lt; Vector3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a068162cbe41346b1025d855e37d1febe.html#a068162cbe41346b1025d855e37d1febe">refpoints</a></td></tr>
+<tr class="memdesc:a068162cbe41346b1025d855e37d1febe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointcloud  <a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a068162cbe41346b1025d855e37d1febe.html#a068162cbe41346b1025d855e37d1febe">More...</a><br /></td></tr>
 <tr class="separator:a068162cbe41346b1025d855e37d1febe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -148,8 +156,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a5344cfe7706447cfb6b271f74703f524"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_a_v_r___pose_naturalization_filter_8cs_source.html#l00011">11</a> of file <a class="el" href="_a_v_r___pose_naturalization_filter_8cs_source.html">AVR_PoseNaturalizationFilter.cs</a>.</p>
+<div class="textblock"><p>A PoseNaturalizationFilter "naturalizes" a pose. For instance, when a player places the controllers on the ground or to the side, the resulting pose will look bizarre and unnatural. These filters will turn the resulting pose into one that seems more natural. </p>
+<p>The filter is based on a recorded point-cloud. The cloud consists of locations relative to the HMD that are "normal". The filter uses a simple weighted average (similar to the kNN algorithm) to produce a more natural result. </p>
+
+<p>Definition at line <a class="el" href="_a_v_r___pose_naturalization_filter_8cs_source.html#l00020">20</a> of file <a class="el" href="_a_v_r___pose_naturalization_filter_8cs_source.html">AVR_PoseNaturalizationFilter.cs</a>.</p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

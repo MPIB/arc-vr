@@ -6,18 +6,42 @@ using System.Linq;
 
 using AVR.Core;
 
+/// <summary>
+/// Namespace of the arc-vr-avatar package
+/// </summary>
 namespace AVR.Avatar {
+    /// <summary>
+    /// A PoseNaturalizationFilter "naturalizes" a pose. For instance, when a player places the controllers on the ground or to the side, the resulting pose will look bizarre and unnatural.
+    /// These filters will turn the resulting pose into one that seems more natural.
+    /// 
+    /// The filter is based on a recorded point-cloud. The cloud consists of locations relative to the HMD that are "normal". The filter uses a simple weighted average (similar to the kNN algorithm) to produce a more natural result.
+    /// </summary>
     [CreateAssetMenu(fileName = "PoseNaturalizationFilter", menuName = "arc-vr/avatar/PoseNaturalizationFilter", order = 1)]
     public class AVR_PoseNaturalizationFilter : ScriptableObject
     {
+        /// <summary>
+        /// The amount of points from the point-cloud to use
+        /// </summary>
         public int reference_amount = 30;
 
+        /// <summary>
+        /// How many points to incorporate into the weighted average.
+        /// </summary>
         public int take_k = 4;
 
+        /// <summary>
+        /// how much to smooth motion by
+        /// </summary>
         public float smoothing_speed = 10.0f;
 
+        /// <summary>
+        /// interp = 0 means we dont naturalize at all, interp = 0.5 means the output is 50% input and 50% naturalized position
+        /// </summary>
         public float interp = 1.0f;
 
+        /// <summary>
+        /// Pointcloud
+        /// </summary>
         public List<Vector3> refpoints;
 
         private List<Vector3> _refpoints;

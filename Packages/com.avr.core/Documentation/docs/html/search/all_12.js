@@ -76,5 +76,6 @@ var searchData=
   ['style',['style',['../class_a_v_r_1_1_core_1_1_a_v_r___basic_dev_console_u_i_a5dcc6978eaabd60aaeb99011f2fdab5c.html#a5dcc6978eaabd60aaeb99011f2fdab5c',1,'AVR::Core::AVR_BasicDevConsoleUI']]],
   ['submitkey',['submitKey',['../class_a_v_r_1_1_core_1_1_a_v_r___basic_dev_console_u_i_ac731bc1237d1818ce74353b287a05433.html#ac731bc1237d1818ce74353b287a05433',1,'AVR.Core.AVR_BasicDevConsoleUI.submitKey()'],['../class_a_v_r_1_1_core_1_1_a_v_r___dev_console_mirror_a17c740183c57b5ef3840084f7048a070.html#a17c740183c57b5ef3840084f7048a070',1,'AVR.Core.AVR_DevConsoleMirror.submitKey()']]],
   ['success',['success',['../class_a_v_r_1_1_core_1_1_a_v_r___dev_console_acabfa9f2ffac25ff373664f8ca661f80.html#acabfa9f2ffac25ff373664f8ca661f80',1,'AVR::Core::AVR_DevConsole']]],
+  ['swap_5ffeet',['swap_feet',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_assumer_a754c2cc60bd44593fd3b6a3de85722a7.html#a754c2cc60bd44593fd3b6a3de85722a7',1,'AVR::Avatar::AVR_PoseAssumer']]],
   ['switchaxisxz',['switchAxisXZ',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_assumer_a5fcff6b589a447eb93b5e5e4169eef88.html#a5fcff6b589a447eb93b5e5e4169eef88',1,'AVR::Avatar::AVR_PoseAssumer']]]
 ];

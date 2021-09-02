@@ -6,23 +6,55 @@ using UnityEditor;
 #endif
 
 namespace AVR.Avatar {
+    /// <summary>
+    /// Applies a pose provided by an AVR_PosePorvider to a rigged 3d model with an avatar.
+    /// </summary>
     [RequireComponent(typeof(Animator))]
     [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_avatar_1_1_a_v_r___pose_assumer.html")]
     public class AVR_PoseAssumer : AVR.Core.AVR_Component
     {
+        /// <summary>
+        /// PoseProvider to get pose information from
+        /// </summary>
         public AVR_PoseProvider provider;
 
+        /// <summary>
+        /// 3d models' transform of the head
+        /// </summary>
         public Transform headTransform;
+
+        /// <summary>
+        /// 3d models' transform of the neck
+        /// </summary>
         public Transform neckTransform;
+
+        /// <summary>
+        /// Swap the X and Y axes of the head and neck. (If the head is inverted on your avatar, toggle this)
+        /// </summary>
         public bool switchAxisXZ = true;
+
+        /// <summary>
+        /// Swap left and right feet targets. (If the avatar consistently has crossed legs, toggle this)
+        /// </summary>
         public bool swap_feet = false;
 
         private Animator animator;
         private bool IKPass_is_enabled = false;
 
+        /// <summary>
+        /// If true, we automatically blend the weight of the IK layer to inverse proportion of the playerRigs' speed
+        /// </summary>
         public bool autoLayerBlend = false;
+
+        /// <summary>
+        /// The animation parameter in the animation controller we set to the playerrigs speed when the rig is teleporting
+        /// </summary>
         [AVR.Core.Attributes.ConditionalHideInInspector("autoLayerBlend", true)]
         public string speedAnimationParameter = "Speed";
+
+        /// <summary>
+        /// Speed of how quickly we blend in and out of the IK layer (if autoLayerBlend is true)
+        /// </summary>
         [AVR.Core.Attributes.ConditionalHideInInspector("autoLayerBlend", true)]
         public float layerBlend_speed = 5.0f;
         private float layerBlend = 1.0f;

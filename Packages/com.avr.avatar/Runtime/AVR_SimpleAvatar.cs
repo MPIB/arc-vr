@@ -7,12 +7,18 @@ using UnityEditor;
 
 namespace AVR.Avatar
 {
+    /// <summary>
+    /// Avatar component that doesn't require controllers.
+    /// </summary>
     [RequireComponent(typeof(Animator))]
     public class AVR_SimpleAvatar : AVR.Core.AVR_Component
     {
         private Animator animator;
         private Vector3 lastPos = Vector3.zero;
 
+        /// <summary>
+        /// Animation parameter that corresponds to the speed the player is moving at.
+        /// </summary>
         public string speedAnimationParameter = "Speed";
 
         protected override void Start()

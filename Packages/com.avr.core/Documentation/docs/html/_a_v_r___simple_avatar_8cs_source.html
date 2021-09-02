@@ -96,51 +96,57 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>AVR.Avatar</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    [RequireComponent(typeof(Animator))]</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar.html">   11</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar.html">AVR_SimpleAvatar</a> : AVR.Core.AVR_Component</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_a78a9d0639e1802c5fcbd1101eea8087b.html#a78a9d0639e1802c5fcbd1101eea8087b">   13</a></span>&#160;        <span class="keyword">private</span> Animator <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_a78a9d0639e1802c5fcbd1101eea8087b.html#a78a9d0639e1802c5fcbd1101eea8087b">animator</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_a8a1c663b1fa9ae8ddaff438e8d9c4567.html#a8a1c663b1fa9ae8ddaff438e8d9c4567">   14</a></span>&#160;        <span class="keyword">private</span> Vector3 lastPos = Vector3.zero;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_a402feed50b4a5499be61f6eab5e8c45a.html#a402feed50b4a5499be61f6eab5e8c45a">   16</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> speedAnimationParameter = <span class="stringliteral">&quot;Speed&quot;</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ae43a0af0b76679be3d0ae00083ceb09d.html#ae43a0af0b76679be3d0ae00083ceb09d">   18</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ae43a0af0b76679be3d0ae00083ceb09d.html#ae43a0af0b76679be3d0ae00083ceb09d">Start</a>()</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            base.Start();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            animator = GetComponent&lt;Animator&gt;();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            animator.logWarnings = <span class="keyword">false</span>; <span class="comment">//TODO: This disables warning-spam if parameters (like &quot;Speed&quot;) dont exist. Perhaps this should be optional based on a setting.</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            lastPos = playerRig.FeetInWorldSpace;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ad5637917fd190026393ab86cd49d7a45.html#ad5637917fd190026393ab86cd49d7a45">   28</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ad5637917fd190026393ab86cd49d7a45.html#ad5637917fd190026393ab86cd49d7a45">Update</a>()</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">if</span>(!this.enabled) Debug.Log(<span class="stringliteral">&quot;????????????&quot;</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            animator.SetFloat(speedAnimationParameter, playerRig.AvgMotion.magnitude);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{<span class="comment"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">    /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">    /// Avatar component that doesn&#39;t require controllers.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">    /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span>    [RequireComponent(typeof(Animator))]</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar.html">   14</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar.html">AVR_SimpleAvatar</a> : AVR.Core.AVR_Component</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_a78a9d0639e1802c5fcbd1101eea8087b.html#a78a9d0639e1802c5fcbd1101eea8087b">   16</a></span>&#160;        <span class="keyword">private</span> Animator <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_a78a9d0639e1802c5fcbd1101eea8087b.html#a78a9d0639e1802c5fcbd1101eea8087b">animator</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_a8a1c663b1fa9ae8ddaff438e8d9c4567.html#a8a1c663b1fa9ae8ddaff438e8d9c4567">   17</a></span>&#160;        <span class="keyword">private</span> Vector3 lastPos = Vector3.zero;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">        /// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">        /// Animation parameter that corresponds to the speed the player is moving at.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">        /// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_a402feed50b4a5499be61f6eab5e8c45a.html#a402feed50b4a5499be61f6eab5e8c45a">   22</a></span>&#160;<span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> speedAnimationParameter = <span class="stringliteral">&quot;Speed&quot;</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ae43a0af0b76679be3d0ae00083ceb09d.html#ae43a0af0b76679be3d0ae00083ceb09d">   24</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ae43a0af0b76679be3d0ae00083ceb09d.html#ae43a0af0b76679be3d0ae00083ceb09d">Start</a>()</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            base.Start();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            animator = GetComponent&lt;Animator&gt;();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            animator.logWarnings = <span class="keyword">false</span>; <span class="comment">//TODO: This disables warning-spam if parameters (like &quot;Speed&quot;) dont exist. Perhaps this should be optional based on a setting.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            lastPos = playerRig.FeetInWorldSpace;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">if</span>(playerRig.AvgMotion.magnitude &gt; 0.3f) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                transform.forward = Vector3.Lerp(transform.forward, playerRig.AvgMotion, 0.05f);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                transform.forward = Vector3.Lerp(transform.forward, playerRig.XZPlaneFacingDirection, 0.05f);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span>(Vector3.Distance(lastPos, playerRig.FeetInWorldSpace) &gt; 0.1f) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                lastPos = Vector3.Lerp(lastPos, playerRig.FeetInWorldSpace, 0.1f);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            transform.position = lastPos;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ae43a0af0b76679be3d0ae00083ceb09d_html_ae43a0af0b76679be3d0ae00083ceb09d"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ae43a0af0b76679be3d0ae00083ceb09d.html#ae43a0af0b76679be3d0ae00083ceb09d">AVR.Avatar.AVR_SimpleAvatar.Start</a></div><div class="ttdeci">override void Start()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___simple_avatar_8cs_source.html#l00018">AVR_SimpleAvatar.cs:18</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_a78a9d0639e1802c5fcbd1101eea8087b_html_a78a9d0639e1802c5fcbd1101eea8087b"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_a78a9d0639e1802c5fcbd1101eea8087b.html#a78a9d0639e1802c5fcbd1101eea8087b">AVR.Avatar.AVR_SimpleAvatar.animator</a></div><div class="ttdeci">Animator animator</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___simple_avatar_8cs_source.html#l00013">AVR_SimpleAvatar.cs:13</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ad5637917fd190026393ab86cd49d7a45_html_ad5637917fd190026393ab86cd49d7a45"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ad5637917fd190026393ab86cd49d7a45.html#ad5637917fd190026393ab86cd49d7a45">AVR.Avatar.AVR_SimpleAvatar.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___simple_avatar_8cs_source.html#l00028">AVR_SimpleAvatar.cs:28</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_html"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar.html">AVR.Avatar.AVR_SimpleAvatar</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___simple_avatar_8cs_source.html#l00011">AVR_SimpleAvatar.cs:11</a></div></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ad5637917fd190026393ab86cd49d7a45.html#ad5637917fd190026393ab86cd49d7a45">   34</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ad5637917fd190026393ab86cd49d7a45.html#ad5637917fd190026393ab86cd49d7a45">Update</a>()</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">if</span>(!this.enabled) Debug.Log(<span class="stringliteral">&quot;????????????&quot;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            animator.SetFloat(speedAnimationParameter, playerRig.AvgMotion.magnitude);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span>(playerRig.AvgMotion.magnitude &gt; 0.3f) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                transform.forward = Vector3.Lerp(transform.forward, playerRig.AvgMotion, 0.05f);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                transform.forward = Vector3.Lerp(transform.forward, playerRig.XZPlaneFacingDirection, 0.05f);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span>(Vector3.Distance(lastPos, playerRig.FeetInWorldSpace) &gt; 0.1f) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                lastPos = Vector3.Lerp(lastPos, playerRig.FeetInWorldSpace, 0.1f);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            transform.position = lastPos;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ae43a0af0b76679be3d0ae00083ceb09d_html_ae43a0af0b76679be3d0ae00083ceb09d"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ae43a0af0b76679be3d0ae00083ceb09d.html#ae43a0af0b76679be3d0ae00083ceb09d">AVR.Avatar.AVR_SimpleAvatar.Start</a></div><div class="ttdeci">override void Start()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___simple_avatar_8cs_source.html#l00024">AVR_SimpleAvatar.cs:24</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_a78a9d0639e1802c5fcbd1101eea8087b_html_a78a9d0639e1802c5fcbd1101eea8087b"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_a78a9d0639e1802c5fcbd1101eea8087b.html#a78a9d0639e1802c5fcbd1101eea8087b">AVR.Avatar.AVR_SimpleAvatar.animator</a></div><div class="ttdeci">Animator animator</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___simple_avatar_8cs_source.html#l00016">AVR_SimpleAvatar.cs:16</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ad5637917fd190026393ab86cd49d7a45_html_ad5637917fd190026393ab86cd49d7a45"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_ad5637917fd190026393ab86cd49d7a45.html#ad5637917fd190026393ab86cd49d7a45">AVR.Avatar.AVR_SimpleAvatar.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___simple_avatar_8cs_source.html#l00034">AVR_SimpleAvatar.cs:34</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar_html"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar.html">AVR.Avatar.AVR_SimpleAvatar</a></div><div class="ttdoc">Avatar component that doesn&#39;t require controllers. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___simple_avatar_8cs_source.html#l00014">AVR_SimpleAvatar.cs:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

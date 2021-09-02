@@ -176,13 +176,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___pose_provider_8cs_source.html#l00102">102</a> of file <a class="el" href="_a_v_r___pose_provider_8cs_source.html">AVR_PoseProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                                              {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordtype">float</span> dist = Vector3.Distance(current, target);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordtype">float</span> move_mult = Mathf.SmoothStep(0f, 1f, dist / <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_ac1492a01380c0652471087fb4e449567.html#ac1492a01380c0652471087fb4e449567">body_inertia</a>);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">return</span> Vector3.MoveTowards(current, target, dist*move_mult);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_ac1492a01380c0652471087fb4e449567_html_ac1492a01380c0652471087fb4e449567"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_ac1492a01380c0652471087fb4e449567.html#ac1492a01380c0652471087fb4e449567">AVR.Avatar.AVR_PoseProvider.body_inertia</a></div><div class="ttdeci">float body_inertia</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___pose_provider_8cs_source.html#l00056">AVR_PoseProvider.cs:56</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___pose_provider_8cs_source.html#l00215">215</a> of file <a class="el" href="_a_v_r___pose_provider_8cs_source.html">AVR_PoseProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                                                              {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <span class="keywordtype">float</span> dist = Vector3.Distance(current, target);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <span class="keywordtype">float</span> move_mult = Mathf.SmoothStep(0f, 1f, dist / <a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_ac1492a01380c0652471087fb4e449567.html#ac1492a01380c0652471087fb4e449567">body_inertia</a>);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <span class="keywordflow">return</span> Vector3.MoveTowards(current, target, dist*move_mult);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_ac1492a01380c0652471087fb4e449567_html_ac1492a01380c0652471087fb4e449567"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_ac1492a01380c0652471087fb4e449567.html#ac1492a01380c0652471087fb4e449567">AVR.Avatar.AVR_PoseProvider.body_inertia</a></div><div class="ttdeci">float body_inertia</div><div class="ttdoc">Inertia of the body. (Increasing this will help with micromovements and stutters of the body) ...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___pose_provider_8cs_source.html#l00128">AVR_PoseProvider.cs:128</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
