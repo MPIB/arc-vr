@@ -132,12 +132,13 @@ namespace AVR.Motion {
         /// </summary>
         IEnumerator FadeDash()
         {
+            CameraFadeEffect.StartEffect();                             // Shut curtains
+            yield return new WaitWhile(() => CameraFadeEffect.isBusy());
+
+            // Set active flag
             dash_origin = playerRig.FeetInWorldSpace;
             dash_stime = Time.time;
-            tp_in_progress = true;                                      // Set active flag
-
-            CameraFadeEffect.StartEffect();                             // Shut curtains
-            yield return new WaitWhile(() => CameraFadeEffect.isBusy()); 
+            tp_in_progress = true;
 
             float inter = 0.0f;
             while(inter < 1.0f) {
