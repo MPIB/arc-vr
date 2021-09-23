@@ -145,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Definition at line <a class="el" href="_a_v_r___grabbable_8cs_source.html#l00083">83</a> of file <a class="el" href="_a_v_r___grabbable_8cs_source.html">AVR_Grabbable.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">            #if AVR_NET</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            networkAPI.removeOwner(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">if</span> (networkAPI.isOnline()) networkAPI.removeOwner(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">            #endif</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>.Contains(hand)) <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>.Remove(hand);</div>

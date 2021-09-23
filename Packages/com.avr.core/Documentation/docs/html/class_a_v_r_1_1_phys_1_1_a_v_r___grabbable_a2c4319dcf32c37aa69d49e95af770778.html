@@ -144,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Definition at line <a class="el" href="_a_v_r___grabbable_8cs_source.html#l00105">105</a> of file <a class="el" href="_a_v_r___grabbable_8cs_source.html">AVR_Grabbable.cs</a>.</p>
 <div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">            #if AVR_NET</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">if</span>(!networkAPI.isOwner(<span class="keyword">this</span>)) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">if</span>(networkAPI.isOnline() &amp;&amp; !networkAPI.isOwner(<span class="keyword">this</span>)) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">            #endif</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="comment">// NOTE: use rb.worldCenterofMass etc isntead of transform pos + rotation ?</span></div>

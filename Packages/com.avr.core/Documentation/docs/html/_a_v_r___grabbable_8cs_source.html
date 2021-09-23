@@ -173,7 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a3ec8ed9cf0c523aa786dec5e3a411511.html#a3ec8ed9cf0c523aa786dec5e3a411511">   83</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a3ec8ed9cf0c523aa786dec5e3a411511.html#a3ec8ed9cf0c523aa786dec5e3a411511">Release</a>(<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html">AVR_BasicGrabProvider</a> hand)</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">            #if AVR_NET</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            networkAPI.removeOwner(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">if</span> (networkAPI.isOnline()) networkAPI.removeOwner(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">            #endif</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">if</span>(AttachedHands.Contains(hand)) AttachedHands.Remove(hand);</div>
@@ -195,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a2c4319dcf32c37aa69d49e95af770778.html#a2c4319dcf32c37aa69d49e95af770778">  105</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a2c4319dcf32c37aa69d49e95af770778.html#a2c4319dcf32c37aa69d49e95af770778">UpdateVelocities</a>()</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">            #if AVR_NET</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">if</span>(!networkAPI.isOwner(<span class="keyword">this</span>)) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">if</span>(networkAPI.isOnline() &amp;&amp; !networkAPI.isOwner(<span class="keyword">this</span>)) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">            #endif</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="comment">// NOTE: use rb.worldCenterofMass etc isntead of transform pos + rotation ?</span></div>
