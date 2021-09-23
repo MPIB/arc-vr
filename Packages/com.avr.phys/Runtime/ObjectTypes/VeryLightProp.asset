@@ -19,5 +19,5 @@ MonoBehaviour:
   typeOnTwoHanded: {fileID: 0}
   Lightness: 1
   Angular_Lightness: 1
-  Break_grab_distance: 0.108
+  Break_grab_distance: 0.2
   Heavy_force_multiplier: 1

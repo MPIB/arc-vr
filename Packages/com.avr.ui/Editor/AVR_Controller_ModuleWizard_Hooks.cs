@@ -12,5 +12,6 @@ namespace AVR.UEditor.UI {
     {
         protected override string moduleName => "UIInteractionProvider";
         protected override string prefabPathSettingsToken => "/editor/defaultPrefabPaths/uiInteractionProvider";
+        protected override string[] dependencies => new string[] { "InputManager" };
     }
 }

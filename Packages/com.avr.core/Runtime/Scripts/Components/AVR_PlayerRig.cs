@@ -87,7 +87,7 @@ namespace AVR.Core {
         /// Height of the camera in local space. Equivalent to the distance between HMD from the gorund.
         /// </summary>
         public float CameraHeightInRigSpace {
-            get { return MainCamera.transform.position.y - RigInWorldSpace.y; }
+            get { return CameraInWorldSpace.y - RigInWorldSpace.y; }
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace AVR.Core {
         /// Instantly moves the PlayerRig so that the players feet (anchor) end up at world coordinates 'pos'
         /// </summary>
         public void MoveRigToFeetPosition(Vector3 pos, bool affectMotion=true) {
-            transform.position = (pos - FeetInRigSpace);
+            transform.position = (pos + (RigInWorldSpace - FeetInWorldSpace));
             if(!affectMotion) _lastFPos = pos;
         }
 

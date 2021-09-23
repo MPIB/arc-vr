@@ -31,7 +31,7 @@ public class AVR_GrabNode_Editor : AVR.UEditor.Core.AVR_Behaviour_Editor
     }
 
     void OnDisable() {
-        //GameObject.DestroyImmediate(debugHand);
+        if(debugHand) GameObject.DestroyImmediate(debugHand);
     }
 
     public void OnSceneGUI()

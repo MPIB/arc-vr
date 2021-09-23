@@ -83,7 +83,7 @@ namespace AVR.Phys {
         public void Release(AVR_BasicGrabProvider hand)
         {
             #if AVR_NET
-            networkAPI.removeOwner(this);
+            if (networkAPI.isOnline()) networkAPI.removeOwner(this);
             #endif
 
             if(AttachedHands.Contains(hand)) AttachedHands.Remove(hand);
@@ -105,7 +105,7 @@ namespace AVR.Phys {
         void UpdateVelocities()
         {
             #if AVR_NET
-            if(!networkAPI.isOwner(this)) return;
+            if(networkAPI.isOnline() && !networkAPI.isOwner(this)) return;
             #endif
 
             // NOTE: use rb.worldCenterofMass etc isntead of transform pos + rotation ?

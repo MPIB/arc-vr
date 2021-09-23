@@ -82,7 +82,7 @@ namespace AVR.UI.Link {
             }
 
             // Show available fields
-            if (show_fields)
+            if (show_fields && l.target!=null)
             {
 
                 GUIStyle bttnStyle = new GUIStyle(GUI.skin.button);

@@ -9,17 +9,20 @@ namespace AVR.UEditor.Motion {
     {
         protected override string moduleName => "LocomotionProvider";
         protected override string prefabPathSettingsToken => "/editor/defaultPrefabPaths/locomotionProvider";
+        protected override string[] dependencies => new string[] { "InputManager" };
     }
 
     public class AVR_ControllerWizard_Hook_MovementProvider : AVR_WizardHook_SimpleToggle<AVR_Controller_ModuleWizard, AVR.Motion.AVR_MovementProvider>
     {
         protected override string moduleName => "MovementProvider";
         protected override string prefabPathSettingsToken => "/editor/defaultPrefabPaths/movementProvider";
+        protected override string[] dependencies => new string[] { "InputManager" };
     }
 
     public class AVR_ControllerWizard_Hook_TurnProvider : AVR_WizardHook_SimpleToggle<AVR_Controller_ModuleWizard, AVR.Motion.AVR_TurnProvider>
     {
         protected override string moduleName => "TurnProvider";
         protected override string prefabPathSettingsToken => "/editor/defaultPrefabPaths/turnProvider";
+        protected override string[] dependencies => new string[] { "InputManager" };
     }
 }

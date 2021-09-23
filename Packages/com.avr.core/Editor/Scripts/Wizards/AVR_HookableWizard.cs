@@ -94,6 +94,9 @@ namespace AVR.UEditor.Core {
 
     public abstract class AVR_WizardHook<Wiz> where Wiz : AVR_HookableWizard<Wiz>
     {
+        // Flags can be used for WizardHooks to communicate with one another. Example: dependecies on InputManager
+        protected static Dictionary<string, bool> flags = new Dictionary<string, bool>();
+
         public virtual int category
         {
             get { return 9; }
@@ -131,6 +134,8 @@ namespace AVR.UEditor.Core {
 
         protected abstract string prefabPathSettingsToken { get; }
 
+        protected virtual string[] dependencies => new string[] {};
+
         protected Mod[] _module;
 
         public bool module;
@@ -139,6 +144,7 @@ namespace AVR.UEditor.Core {
         {
             _module = targetObject.GetComponentsInChildren<Mod>();
             module = _module.Length > 0;
+            flags[moduleName] = module;
         }
 
         public override void embed_GUI()
@@ -146,6 +152,16 @@ namespace AVR.UEditor.Core {
             module = EditorGUILayout.BeginToggleGroup(moduleName, module);
             // Nothing to see here
             EditorGUILayout.EndToggleGroup();
+
+            // See if there are any missing dependencies
+            string[] missing_d = dependencies.Where((s) => !flags[s]).ToArray();
+            // If yes, display error
+            if(module && missing_d.Length > 0) {
+                EditorGUILayout.HelpBox(moduleName + " needs " + string.Join(", ", missing_d), MessageType.Error);
+            }
+
+            // Set flag for this module
+            flags[moduleName] = module;
         }
 
         public override void on_submit(GameObject targetObject)
@@ -161,41 +177,15 @@ namespace AVR.UEditor.Core {
         }
     }
 
-    public abstract class AVR_WizardHook_SimpleFilteredToggle<Wiz, Mod> : AVR_WizardHook<Wiz> where Wiz : AVR_HookableWizard<Wiz> where Mod : MonoBehaviour
+    public abstract class AVR_WizardHook_SimpleFilteredToggle<Wiz, Mod> : AVR_WizardHook_SimpleToggle<Wiz, Mod> where Wiz : AVR_HookableWizard<Wiz> where Mod : MonoBehaviour
     {
-        protected abstract string moduleName { get; }
-
-        protected abstract string prefabPathSettingsToken { get; }
-
         protected abstract System.Func<Mod, bool> filter { get; }
-
-        protected Mod[] _module;
-
-        public bool module;
 
         public override void on_create_wizard(GameObject targetObject)
         {
             _module = targetObject.GetComponentsInChildren<Mod>().Where(filter).ToArray();
             module = _module.Length > 0;
-        }
-
-        public override void embed_GUI()
-        {
-            module = EditorGUILayout.BeginToggleGroup(moduleName, module);
-            // Nothing to see here
-            EditorGUILayout.EndToggleGroup();
-        }
-
-        public override void on_submit(GameObject targetObject)
-        {
-            if (module && _module.Length < 1)
-            {
-                AVR_EditorUtility.InstantiatePrefabAsChild(targetObject.transform, prefabPathSettingsToken);
-            }
-            else if (!module && _module.Length > 0)
-            {
-                foreach (Mod c in _module) safeDestroyImmediate(c.gameObject, targetObject);
-            }
+            flags[moduleName] = module;
         }
     }
 
@@ -204,6 +194,8 @@ namespace AVR.UEditor.Core {
         protected abstract string moduleName { get; }
 
         protected abstract DDChoice[] options { get; }
+
+        protected virtual string[] dependencies => new string[] { };
 
         protected struct DDChoice {
             public DDChoice(string choiceName, string prefabPathSettingsToken, System.Func<Mod, bool> filter) {
@@ -240,6 +232,8 @@ namespace AVR.UEditor.Core {
                     break;
                 }
             }
+
+            flags[moduleName] = module;
         }
 
         public override void embed_GUI()
@@ -251,6 +245,17 @@ namespace AVR.UEditor.Core {
             _selected = options[index];
 
             EditorGUILayout.EndToggleGroup();
+
+            // See if there are any missing dependencies
+            string[] missing_d = dependencies.Where((s) => !flags[s]).ToArray();
+            // If yes, display error
+            if (module && missing_d.Length > 0)
+            {
+                EditorGUILayout.HelpBox(moduleName + " needs " + string.Join(", ", missing_d), MessageType.Error);
+            }
+
+            // Set flag for this module
+            flags[moduleName] = module;
         }
 
         public override void on_submit(GameObject targetObject)

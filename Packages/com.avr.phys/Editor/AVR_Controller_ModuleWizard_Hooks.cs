@@ -15,6 +15,8 @@ namespace AVR.UEditor.Phys
             new DDChoice("Offset", "/editor/defaultPrefabPaths/offsetGrabProvider", (p) => p.GetType() == typeof(AVR.Phys.AVR_OffsetGrabProvider)),
             new DDChoice("Advanced-Offset", "/editor/defaultPrefabPaths/advancedOffsetGrabProvider", (p) => p.GetType() == typeof(AVR.Phys.AVR_AdvancedOffsetGrabProvider))
         };
+
+        protected override string[] dependencies => new string[] { "InputManager" };
     }
 
     public class AVR_ControllerWizard_Hook_HandInteractor : AVR_WizardHook_SimpleToggle<AVR_Controller_ModuleWizard, AVR.Phys.AVR_Hand>
@@ -32,5 +34,7 @@ namespace AVR.UEditor.Phys
             } catch (System.Exception) { }
             base.on_submit(targetObject);
         }
+
+        protected override string[] dependencies => new string[] { "InputManager" };
     }
 }
