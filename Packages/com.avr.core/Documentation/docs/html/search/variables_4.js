@@ -5,7 +5,7 @@ var searchData=
   ['dash_5fstime',['dash_stime',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_a3b8ba64ac3af4a2ddf40d60e83363b71.html#a3b8ba64ac3af4a2ddf40d60e83363b71',1,'AVR::Motion::AVR_MovementProvider']]],
   ['dccel_5fcurve',['dccel_curve',['../class_a_v_r_1_1_net_1_1_a_v_r___third_person_character_controller_ad82005797e1983f732e4e867aade9eb9.html#ad82005797e1983f732e4e867aade9eb9',1,'AVR::Net::AVR_ThirdPersonCharacterController']]],
   ['dccel_5ft',['dccel_t',['../class_a_v_r_1_1_net_1_1_a_v_r___third_person_character_controller_a9c8bb5a4f15bf98edf2c61b608f72983.html#a9c8bb5a4f15bf98edf2c61b608f72983',1,'AVR::Net::AVR_ThirdPersonCharacterController']]],
-  ['debughand',['debugHand',['../class_a_v_r___grab_node___editor_af0185a8d077ee135e68a632fe2279cbc.html#af0185a8d077ee135e68a632fe2279cbc',1,'AVR_GrabNode_Editor']]],
+  ['debughand',['debugHand',['../class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___grab_node___editor_a00e7048ede2247c3c4211dddbec907ed.html#a00e7048ede2247c3c4211dddbec907ed',1,'AVR::UEditor::Phys::AVR_GrabNode_Editor']]],
   ['decrease_5famount',['decrease_amount',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_af4cd2c81b83717019e61b7cd6c17578f.html#af4cd2c81b83717019e61b7cd6c17578f',1,'AVR.UI.Utils.AVRUI_InputField_PlusMinus.decrease_amount()'],['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___t_m_p_input_field___plus_minus_a11cde47c151dbf723a79a2caabbb922e.html#a11cde47c151dbf723a79a2caabbb922e',1,'AVR.UI.Utils.AVRUI_TMPInputField_PlusMinus.decrease_amount()']]],
   ['def_5fpos',['def_pos',['../class_a_v_r_1_1_phys_1_1_a_v_r___hand_a35c2aa6bbf95ec7e29a926c117199119.html#a35c2aa6bbf95ec7e29a926c117199119',1,'AVR::Phys::AVR_Hand']]],
   ['def_5frot',['def_rot',['../class_a_v_r_1_1_phys_1_1_a_v_r___hand_a307e7d0802ad164d71b98e6749c86e0e.html#a307e7d0802ad164d71b98e6749c86e0e',1,'AVR::Phys::AVR_Hand']]],
@@ -22,9 +22,9 @@ var searchData=
   ['dirtype',['dirType',['../class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider_a6dca462fb84cbd70265452eb9060e5f4.html#a6dca462fb84cbd70265452eb9060e5f4',1,'AVR::Motion::AVR_LocomotionProvider']]],
   ['disable_5fy_5faxis',['disable_y_axis',['../class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider_a404845b5de83874a6787b97771a5d2f0.html#a404845b5de83874a6787b97771a5d2f0',1,'AVR::Motion::AVR_LocomotionProvider']]],
   ['disconnectclientiffailed',['disconnectClientIfFailed',['../class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_a13f52b3b6456301c1bd8858282408f8d.html#a13f52b3b6456301c1bd8858282408f8d',1,'AVR::Net::AVR_PlayerSpawn']]],
-  ['distance',['distance',['../class_grab_location_ad0d8d9772ae10c635c0e4eb9c54e08d5.html#ad0d8d9772ae10c635c0e4eb9c54e08d5',1,'GrabLocation']]],
+  ['distance',['distance',['../class_a_v_r_1_1_phys_1_1_grab_location_a9047ca3d42873ef7ce851f2650ca32eb.html#a9047ca3d42873ef7ce851f2650ca32eb',1,'AVR::Phys::GrabLocation']]],
   ['distance_5ftravelled_5fsince_5fgrab',['distance_travelled_since_grab',['../class_a_v_r_1_1_phys_1_1_a_v_r___advanced_offset_grab_provider_ad31f451f174528c4b6d846086db7081a.html#ad31f451f174528c4b6d846086db7081a',1,'AVR::Phys::AVR_AdvancedOffsetGrabProvider']]],
   ['do_5ffade_5fin',['do_fade_in',['../class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_a6afd86288fffbacd8328d21ef5e6ad4f.html#a6afd86288fffbacd8328d21ef5e6ad4f',1,'AVR::Core::AVR_CameraFade']]],
   ['do_5ffade_5fout',['do_fade_out',['../class_a_v_r_1_1_core_1_1_a_v_r___camera_fade_a9b766eaa90f42a3e59798e1356bf360e.html#a9b766eaa90f42a3e59798e1356bf360e',1,'AVR::Core::AVR_CameraFade']]],
-  ['drawdebughand',['drawDebugHand',['../class_a_v_r___grab_node___editor_a821d58a63404c6c22f611cc734167c92.html#a821d58a63404c6c22f611cc734167c92',1,'AVR_GrabNode_Editor']]]
+  ['drawdebughand',['drawDebugHand',['../class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___grab_node___editor_aac049ceb837dbc2cc948126b63651fc8.html#aac049ceb837dbc2cc948126b63651fc8',1,'AVR::UEditor::Phys::AVR_GrabNode_Editor']]]
 ];

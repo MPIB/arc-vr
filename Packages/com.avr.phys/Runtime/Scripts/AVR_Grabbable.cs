@@ -4,18 +4,37 @@ using UnityEngine;
 using System.Linq;
 
 namespace AVR.Phys {
+    /// <summary>
+    /// Represents a grabbable object.
+    /// </summary>
     public class AVR_Grabbable : AVR.Core.AVR_Component
     {
+        /// <summary>
+        /// Type that describes the objects behaviour when grabbed.
+        /// </summary>
         public GrabbableObjectType objectType;
         private GrabbableObjectType _objType;
+
+        /// <summary>
+        /// List of GrabNodes that are attatched to this object
+        /// </summary>
+        public List<AVR_GrabNode> grabNodes => nodes;
         private List<AVR_GrabNode> nodes = new List<AVR_GrabNode>();
 
-        public List<AVR_GrabNode> grabNodes => nodes;
-
+        /// <summary>
+        /// Rigidbody of this grabbable object.
+        /// </summary>
         public Rigidbody rb;
+
+        /// <summary>
+        /// List of colliders that describe the outer/grabbable surface. All colliders must be convex.
+        /// </summary>
         public List<Collider> colliders = new List<Collider>();
 
         [HideInInspector]
+        /// <summary>
+        /// List of hands that are currently grabbing this object.
+        /// </summary>
         public List<AVR_BasicGrabProvider> AttachedHands = new List<AVR_BasicGrabProvider>();
 
         private Transform old_parent;
@@ -25,10 +44,16 @@ namespace AVR.Phys {
 
         private float last_dist = 0.0f;
 
+        /// <summary>
+        /// True if the object is being grabbed, otherwise false.
+        /// </summary>
         public bool isGrabbed {
             get { return AttachedHands.Count>0; }
         }
 
+        /// <summary>
+        /// True if the object is being grabbed by 2 or more hands, otherwise false.
+        /// </summary>
         public bool isGrabbedByMultipleHands {
             get { return AttachedHands.Count>1; }
         }

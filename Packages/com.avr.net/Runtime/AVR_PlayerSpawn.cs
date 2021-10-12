@@ -7,6 +7,9 @@ using AVR.Core;
 using System.Linq;
 
 namespace AVR.Net {
+    /// <summary>
+    /// Used for convenient spawning of players with respective network prefabs.
+    /// </summary>
     public class AVR_PlayerSpawn : AVR_NetworkBehaviour
     {
         public int max_players = 4;

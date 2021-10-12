@@ -144,23 +144,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___hand_8cs_source.html#l00240">240</a> of file <a class="el" href="_a_v_r___hand_8cs_source.html">AVR_Hand.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                this.delta = <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___hand_1_1_a_v_r___finger_ae3dfb539c89ed502689e84378a03c252.html#ae3dfb539c89ed502689e84378a03c252">delta</a>;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                this.setWeightImmediate(1.0f);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                animator.speed = 0.0f;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">float</span> i = 0.0f; i &lt;= 1.0f; i += <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___hand_1_1_a_v_r___finger_ae3dfb539c89ed502689e84378a03c252.html#ae3dfb539c89ed502689e84378a03c252">delta</a>)</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    this.setStateImmediate(i);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    this.positions.Add(handVisualTransform.InverseTransformPoint(this.tip.position));</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    <span class="comment">//Debug.DrawLine(handVisualTransform.position, this.tip.position, Color.white, 10.0f);</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                }</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                this.setWeightImmediate(0.0f);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            }</div>
-<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___hand_1_1_a_v_r___finger_ae3dfb539c89ed502689e84378a03c252_html_ae3dfb539c89ed502689e84378a03c252"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___hand_1_1_a_v_r___finger_ae3dfb539c89ed502689e84378a03c252.html#ae3dfb539c89ed502689e84378a03c252">AVR.Phys.AVR_Hand.AVR_Finger.delta</a></div><div class="ttdeci">float delta</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___hand_8cs_source.html#l00193">AVR_Hand.cs:193</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___hand_8cs_source.html#l00243">243</a> of file <a class="el" href="_a_v_r___hand_8cs_source.html">AVR_Hand.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                this.delta = <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___hand_1_1_a_v_r___finger_ae3dfb539c89ed502689e84378a03c252.html#ae3dfb539c89ed502689e84378a03c252">delta</a>;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                this.setWeightImmediate(1.0f);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                animator.speed = 0.0f;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">float</span> i = 0.0f; i &lt;= 1.0f; i += <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___hand_1_1_a_v_r___finger_ae3dfb539c89ed502689e84378a03c252.html#ae3dfb539c89ed502689e84378a03c252">delta</a>)</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    this.setStateImmediate(i);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                    this.positions.Add(handVisualTransform.InverseTransformPoint(this.tip.position));</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                    <span class="comment">//Debug.DrawLine(handVisualTransform.position, this.tip.position, Color.white, 10.0f);</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                this.setWeightImmediate(0.0f);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            }</div>
+<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___hand_1_1_a_v_r___finger_ae3dfb539c89ed502689e84378a03c252_html_ae3dfb539c89ed502689e84378a03c252"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___hand_1_1_a_v_r___finger_ae3dfb539c89ed502689e84378a03c252.html#ae3dfb539c89ed502689e84378a03c252">AVR.Phys.AVR_Hand.AVR_Finger.delta</a></div><div class="ttdeci">float delta</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___hand_8cs_source.html#l00196">AVR_Hand.cs:196</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

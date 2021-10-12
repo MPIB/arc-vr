@@ -5,6 +5,9 @@ using UnityEditor;
 
 using AVR.Phys;
 
+/// <summary>
+/// Namespace of the arc-vr-phys (UnityEditor) package
+/// </summary>
 namespace AVR.UEditor.Phys
 {
     [CustomEditor(typeof(AVR_BasicGrabProvider), true)]

@@ -136,18 +136,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_a_v_r___canvas_8cs_source.html#l00088">88</a> of file <a class="el" href="_a_v_r___canvas_8cs_source.html">AVR_Canvas.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">if</span>(t==null) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="comment">// We need to do this circus each time we parent to world because something doesnt work. I seriously can&#39;t figure out what, but either way, performance impact should be close to nothing.</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                Vector3 tmp = this.transform.position;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                this.transform.SetParent(null, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                transform.position = tmp;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                this.transform.SetParent(t, <span class="keyword">true</span>);</div>
+<p>Definition at line <a class="el" href="_a_v_r___canvas_8cs_source.html#l00091">91</a> of file <a class="el" href="_a_v_r___canvas_8cs_source.html">AVR_Canvas.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span>(t==null) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="comment">// We need to do this circus each time we parent to world because something doesnt work. I seriously can&#39;t figure out what, but either way, performance impact should be close to nothing.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                Vector3 tmp = this.transform.position;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                this.transform.SetParent(null, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                transform.position = tmp;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                this.transform.SetParent(t, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

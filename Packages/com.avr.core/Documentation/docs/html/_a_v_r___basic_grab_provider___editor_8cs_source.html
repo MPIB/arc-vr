@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_13cdeb9994a7b1652d805acd132b3f68.html">com.avr.phys</a></li><li class="navelem"><a class="el" href="dir_bd92250af820021474d6cde378575808.html">Editor</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_0199e4198a984d477f38c17f3e1724c1.html">com.avr.phys</a></li><li class="navelem"><a class="el" href="dir_91bc0a48e04dee914d843218c23b53d2.html">Editor</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -94,32 +94,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEditor;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> AVR.Phys;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespace_a_v_r_1_1_u_editor_1_1_phys.html">    8</a></span>&#160;<span class="keyword">namespace </span>AVR.UEditor.Phys</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    [CustomEditor(typeof(<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html">AVR_BasicGrabProvider</a>), <span class="keyword">true</span>)]</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    [CanEditMultipleObjects]</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor.html">   12</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor.html">AVR_BasicGrabProvider_Editor</a> : AVR.UEditor.Core.AVR_Component_Editor</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor_ab7b31e7ab0634e6c4fe0f12f1d4e639e.html#ab7b31e7ab0634e6c4fe0f12f1d4e639e">   14</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor_ab7b31e7ab0634e6c4fe0f12f1d4e639e.html#ab7b31e7ab0634e6c4fe0f12f1d4e639e">OnInspectorGUI</a>()</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            base.OnInspectorGUI();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">if</span>(Application.isPlaying) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="keywordflow">if</span>(GUILayout.Button(<span class="stringliteral">&quot;Debug Grab Toggle&quot;</span>)) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html">AVR_BasicGrabProvider</a> gp = (<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html">AVR_BasicGrabProvider</a>) target;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    <span class="keywordflow">if</span>(gp.<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a6fd7f72065b84d8777e61110d17b1524.html#a6fd7f72065b84d8777e61110d17b1524">isGrabbing</a>) gp.makeRelease();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    <span class="keywordflow">else</span> gp.makeGrab();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor_ab7b31e7ab0634e6c4fe0f12f1d4e639e_html_ab7b31e7ab0634e6c4fe0f12f1d4e639e"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor_ab7b31e7ab0634e6c4fe0f12f1d4e639e.html#ab7b31e7ab0634e6c4fe0f12f1d4e639e">AVR.UEditor.Phys.AVR_BasicGrabProvider_Editor.OnInspectorGUI</a></div><div class="ttdeci">override void OnInspectorGUI()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___basic_grab_provider___editor_8cs_source.html#l00014">AVR_BasicGrabProvider_Editor.cs:14</a></div></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/// Namespace of the arc-vr-phys (UnityEditor) package</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespace_a_v_r_1_1_u_editor_1_1_phys.html">   11</a></span>&#160;<span class="comment"></span><span class="keyword">namespace </span>AVR.UEditor.Phys</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    [CustomEditor(typeof(<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html">AVR_BasicGrabProvider</a>), <span class="keyword">true</span>)]</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    [CanEditMultipleObjects]</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor.html">   15</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor.html">AVR_BasicGrabProvider_Editor</a> : AVR.UEditor.Core.AVR_Component_Editor</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor_ab7b31e7ab0634e6c4fe0f12f1d4e639e.html#ab7b31e7ab0634e6c4fe0f12f1d4e639e">   17</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor_ab7b31e7ab0634e6c4fe0f12f1d4e639e.html#ab7b31e7ab0634e6c4fe0f12f1d4e639e">OnInspectorGUI</a>()</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            base.OnInspectorGUI();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">if</span>(Application.isPlaying) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <span class="keywordflow">if</span>(GUILayout.Button(<span class="stringliteral">&quot;Debug Grab Toggle&quot;</span>)) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html">AVR_BasicGrabProvider</a> gp = (<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html">AVR_BasicGrabProvider</a>) target;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    <span class="keywordflow">if</span>(gp.<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a6fd7f72065b84d8777e61110d17b1524.html#a6fd7f72065b84d8777e61110d17b1524">isGrabbing</a>) gp.makeRelease();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                    <span class="keywordflow">else</span> gp.makeGrab();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor_ab7b31e7ab0634e6c4fe0f12f1d4e639e_html_ab7b31e7ab0634e6c4fe0f12f1d4e639e"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor_ab7b31e7ab0634e6c4fe0f12f1d4e639e.html#ab7b31e7ab0634e6c4fe0f12f1d4e639e">AVR.UEditor.Phys.AVR_BasicGrabProvider_Editor.OnInspectorGUI</a></div><div class="ttdeci">override void OnInspectorGUI()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___basic_grab_provider___editor_8cs_source.html#l00017">AVR_BasicGrabProvider_Editor.cs:17</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_html"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html">AVR.Phys.AVR_BasicGrabProvider</a></div><div class="ttdoc">Simplest GrabProvider. Grabbed objects will move their center (obj.transform.position) towards the re...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___basic_grab_provider_8cs_source.html#l00012">AVR_BasicGrabProvider.cs:12</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a6fd7f72065b84d8777e61110d17b1524_html_a6fd7f72065b84d8777e61110d17b1524"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a6fd7f72065b84d8777e61110d17b1524.html#a6fd7f72065b84d8777e61110d17b1524">AVR.Phys.AVR_BasicGrabProvider.isGrabbing</a></div><div class="ttdeci">bool isGrabbing</div><div class="ttdoc">Returns true if this provider is currently grabbing an object. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___basic_grab_provider_8cs_source.html#l00017">AVR_BasicGrabProvider.cs:17</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor_html"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor.html">AVR.UEditor.Phys.AVR_BasicGrabProvider_Editor</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___basic_grab_provider___editor_8cs_source.html#l00012">AVR_BasicGrabProvider_Editor.cs:12</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor_html"><div class="ttname"><a href="class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___basic_grab_provider___editor.html">AVR.UEditor.Phys.AVR_BasicGrabProvider_Editor</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___basic_grab_provider___editor_8cs_source.html#l00015">AVR_BasicGrabProvider_Editor.cs:15</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

@@ -4,6 +4,9 @@ using UnityEngine;
 
 using AVR.Core;
 
+/// <summary>
+/// Namespace of the arc-vr-motion package
+/// </summary>
 namespace AVR.Motion {
     /// <summary>
     /// AVR_SolidRay but, when an object is hit, the hit is either valid or invalid.

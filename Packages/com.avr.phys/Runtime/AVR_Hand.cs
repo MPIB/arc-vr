@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace AVR.Phys {
+    /// <summary>
+    /// Interactive hand model that adapts itself to grabbed objects. Only works with Offset- or AdvancedOffset- GrabProviders.
+    /// </summary>
     public class AVR_Hand : AVR.Core.AVR_ControllerComponent
     {
         // For fingers:

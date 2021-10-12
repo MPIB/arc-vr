@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
 
+/// <summary>
+/// arc-vr-ui utils namespace
+/// </summary>
 namespace AVR.UI.Utils {
     [ExecuteInEditMode]
     [RequireComponent(typeof(Text))]

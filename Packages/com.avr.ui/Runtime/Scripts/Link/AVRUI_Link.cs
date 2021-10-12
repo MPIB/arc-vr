@@ -5,6 +5,9 @@ using UnityEditor;
 using System.Reflection;
 using System.Linq;
 
+/// <summary>
+/// Namespace of the arc-vr-ui Linking elements
+/// </summary>
 namespace AVR.UI.Link {
     /// <summary>
     /// Binds a given UI element (such as slider, toggle, dropdown or inputfield) with a given property or field of a given MonoBehaviour.

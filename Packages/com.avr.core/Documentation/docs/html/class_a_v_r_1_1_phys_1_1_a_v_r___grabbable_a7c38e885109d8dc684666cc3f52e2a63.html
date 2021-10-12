@@ -141,28 +141,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___grabbable_8cs_source.html#l00232">232</a> of file <a class="el" href="_a_v_r___grabbable_8cs_source.html">AVR_Grabbable.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                       {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a8b12d8092388ce113b9f9141fffbc455.html#a8b12d8092388ce113b9f9141fffbc455">isGrabbed</a>) {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <span class="keywordflow">return</span> transform.rotation;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            }</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>.Count == 1) {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>[0].getTargetRotation();</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <span class="comment">// This is the simples way to get the average of multiple quaternions:</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                <span class="keywordtype">float</span> w = 1f / AttachedHands.Count;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                Quaternion avg = Quaternion.identity;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AttachedHands.Count; i++)</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                    Quaternion q = <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>[i].getTargetRotation();</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    avg *= Quaternion.Slerp(Quaternion.identity, q, w);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                }</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <span class="keywordflow">return</span> avg;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a8b12d8092388ce113b9f9141fffbc455_html_a8b12d8092388ce113b9f9141fffbc455"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a8b12d8092388ce113b9f9141fffbc455.html#a8b12d8092388ce113b9f9141fffbc455">AVR.Phys.AVR_Grabbable.isGrabbed</a></div><div class="ttdeci">bool isGrabbed</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___grabbable_8cs_source.html#l00028">AVR_Grabbable.cs:28</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41_html_a45479e6305f58c98d5a57333edf20d41"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AVR.Phys.AVR_Grabbable.AttachedHands</a></div><div class="ttdeci">List&lt; AVR_BasicGrabProvider &gt; AttachedHands</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___grabbable_8cs_source.html#l00019">AVR_Grabbable.cs:19</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___grabbable_8cs_source.html#l00257">257</a> of file <a class="el" href="_a_v_r___grabbable_8cs_source.html">AVR_Grabbable.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                                       {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a8b12d8092388ce113b9f9141fffbc455.html#a8b12d8092388ce113b9f9141fffbc455">isGrabbed</a>) {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                <span class="keywordflow">return</span> transform.rotation;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>.Count == 1) {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>[0].getTargetRotation();</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                <span class="comment">// This is the simples way to get the average of multiple quaternions:</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <span class="keywordtype">float</span> w = 1f / AttachedHands.Count;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                Quaternion avg = Quaternion.identity;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AttachedHands.Count; i++)</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                    Quaternion q = <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AttachedHands</a>[i].getTargetRotation();</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                    avg *= Quaternion.Slerp(Quaternion.identity, q, w);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                <span class="keywordflow">return</span> avg;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a8b12d8092388ce113b9f9141fffbc455_html_a8b12d8092388ce113b9f9141fffbc455"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a8b12d8092388ce113b9f9141fffbc455.html#a8b12d8092388ce113b9f9141fffbc455">AVR.Phys.AVR_Grabbable.isGrabbed</a></div><div class="ttdeci">bool isGrabbed</div><div class="ttdoc">True if the object is being grabbed, otherwise false. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___grabbable_8cs_source.html#l00050">AVR_Grabbable.cs:50</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41_html_a45479e6305f58c98d5a57333edf20d41"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a45479e6305f58c98d5a57333edf20d41.html#a45479e6305f58c98d5a57333edf20d41">AVR.Phys.AVR_Grabbable.AttachedHands</a></div><div class="ttdeci">List&lt; AVR_BasicGrabProvider &gt; AttachedHands</div><div class="ttdoc">List of hands that are currently grabbing this object. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___grabbable_8cs_source.html#l00038">AVR_Grabbable.cs:38</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

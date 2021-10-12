@@ -34,24 +34,24 @@ Here's an overview of what each package provides:
 	- Property logger
 	- Utilities
 
-arc-vr-motion:
+[arc-vr-motion](@ref arc-vr-motion):
 	- Movement Providers (Locomotion/Teleportation etc.)
 	- Turn Provider
 	- Customizable shaders and effects for aiming reticules
 
-arc-vr-ui:
+[arc-vr-ui](@ref arc-vr-ui):
 	- VR UI Interaction Provider
 	- Base UI Elements
 	- Object-Propery to UI-Element Linkage
 
-arc-vr-avatar:
+[arc-vr-avatar](@ref arc-vr-avatar):
 	- Player-Avatar-Integration
 	- Basic Pose-Naturalizer
 
-arc-vr-phys:
+[arc-vr-phys](@ref arc-vr-phys):
 	- Physics Interaction Providers
 
-arc-vr-net:
+[arc-vr-net](@ref arc-vr-net):
 	- Multiplayer integration through MLAPI
 	- Player-Spawning System
 	- Basic 3rd-Person CharacterController

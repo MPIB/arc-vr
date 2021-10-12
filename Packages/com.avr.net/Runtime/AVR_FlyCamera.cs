@@ -5,6 +5,9 @@ using UnityEngine;
 using AVR.Core;
  
 namespace AVR.Net {
+    /// <summary>
+    /// Simple fly camera script
+    /// </summary>
     public class AVR_FlyCamera : AVR_Component {
     
         /*

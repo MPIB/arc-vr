@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace AVR.Phys {
+    /// <summary>
+    /// Equivalent to AVR_OffsetGrabProvider, but additionally allows for hand-to-object grab mode to be used.
+    /// </summary>
     [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_phys_1_1_a_v_r___advanced_offset_grab_provider.html")]
     public class AVR_AdvancedOffsetGrabProvider : AVR_OffsetGrabProvider
     {

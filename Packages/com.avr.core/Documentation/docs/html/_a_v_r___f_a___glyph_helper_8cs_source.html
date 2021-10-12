@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c27e376eecae1629bf2740667cbd7f4d.html">com.avr.ui</a></li><li class="navelem"><a class="el" href="dir_ab36b566bb289671ee117b12a15b28e9.html">Runtime</a></li><li class="navelem"><a class="el" href="dir_1a1300393856794051fc882b65973c97.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_b59767df4943d6434d1611da0f5af143.html">Dev</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_37053e1ab5571afe835a1746c4d960ef.html">com.avr.ui</a></li><li class="navelem"><a class="el" href="dir_545a8520c18d8dbf6aee9f10b2fc8b8e.html">Runtime</a></li><li class="navelem"><a class="el" href="dir_4117e8afa4e555e3f666bcc5a5f1de3e.html">Scripts</a></li><li class="navelem"><a class="el" href="dir_31d7dff6d4850d562ccd8e5a3e58e654.html">Dev</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,33 +93,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">using</span> UnityEngine;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using</span> UnityEngine.UI;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> UnityEditor;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespace_a_v_r_1_1_u_i_1_1_utils.html">    7</a></span>&#160;<span class="keyword">namespace </span>AVR.UI.Utils {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    [ExecuteInEditMode]</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    [RequireComponent(typeof(Text))]</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html">   10</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html">AVR_FA_GlyphHelper</a> : MonoBehaviour</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_af2f6f83c2baf44046d8309196db4a8c7.html#af2f6f83c2baf44046d8309196db4a8c7">   12</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_af2f6f83c2baf44046d8309196db4a8c7.html#af2f6f83c2baf44046d8309196db4a8c7">Awake</a>() {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordflow">if</span>(!Application.isEditor) {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                AVR.Core.AVR_DevConsole.cwarn(<span class="stringliteral">&quot;There is a redundant GlyphHelper object at: &quot;</span>+AVR.Core.Utils.Misc.GetHierarchyPath(transform)+<span class="stringliteral">&quot;. Consider removing it.&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                GameObject.Destroy(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_a6d0dabbe0914c1a00d4ef6da5a0868fc.html#a6d0dabbe0914c1a00d4ef6da5a0868fc">   19</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_a6d0dabbe0914c1a00d4ef6da5a0868fc.html#a6d0dabbe0914c1a00d4ef6da5a0868fc">setup</a>(Font font, <span class="keywordtype">int</span> unicode) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            Text t = GetComponent&lt;Text&gt;();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            t.font = font;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            t.text = ((char)unicode).ToString();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">            #if UNITY_EDITOR</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            EditorUtility.SetDirty(gameObject);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">            #endif</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_html"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html">AVR.UI.Utils.AVR_FA_GlyphHelper</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___f_a___glyph_helper_8cs_source.html#l00010">AVR_FA_GlyphHelper.cs:10</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_af2f6f83c2baf44046d8309196db4a8c7_html_af2f6f83c2baf44046d8309196db4a8c7"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_af2f6f83c2baf44046d8309196db4a8c7.html#af2f6f83c2baf44046d8309196db4a8c7">AVR.UI.Utils.AVR_FA_GlyphHelper.Awake</a></div><div class="ttdeci">void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___f_a___glyph_helper_8cs_source.html#l00012">AVR_FA_GlyphHelper.cs:12</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_a6d0dabbe0914c1a00d4ef6da5a0868fc_html_a6d0dabbe0914c1a00d4ef6da5a0868fc"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_a6d0dabbe0914c1a00d4ef6da5a0868fc.html#a6d0dabbe0914c1a00d4ef6da5a0868fc">AVR.UI.Utils.AVR_FA_GlyphHelper.setup</a></div><div class="ttdeci">void setup(Font font, int unicode)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___f_a___glyph_helper_8cs_source.html#l00019">AVR_FA_GlyphHelper.cs:19</a></div></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/// &lt;summary&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/// arc-vr-ui utils namespace</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/// &lt;/summary&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespace_a_v_r_1_1_u_i_1_1_utils.html">   10</a></span>&#160;<span class="comment"></span><span class="keyword">namespace </span>AVR.UI.Utils {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    [ExecuteInEditMode]</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    [RequireComponent(typeof(Text))]</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html">   13</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html">AVR_FA_GlyphHelper</a> : MonoBehaviour</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_af2f6f83c2baf44046d8309196db4a8c7.html#af2f6f83c2baf44046d8309196db4a8c7">   15</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_af2f6f83c2baf44046d8309196db4a8c7.html#af2f6f83c2baf44046d8309196db4a8c7">Awake</a>() {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">if</span>(!Application.isEditor) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                AVR.Core.AVR_DevConsole.cwarn(<span class="stringliteral">&quot;There is a redundant GlyphHelper object at: &quot;</span>+AVR.Core.Utils.Misc.GetHierarchyPath(transform)+<span class="stringliteral">&quot;. Consider removing it.&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                GameObject.Destroy(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_a6d0dabbe0914c1a00d4ef6da5a0868fc.html#a6d0dabbe0914c1a00d4ef6da5a0868fc">   22</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_a6d0dabbe0914c1a00d4ef6da5a0868fc.html#a6d0dabbe0914c1a00d4ef6da5a0868fc">setup</a>(Font font, <span class="keywordtype">int</span> unicode) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            Text t = GetComponent&lt;Text&gt;();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            t.font = font;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            t.text = ((char)unicode).ToString();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">            #if UNITY_EDITOR</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            EditorUtility.SetDirty(gameObject);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">            #endif</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_html"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper.html">AVR.UI.Utils.AVR_FA_GlyphHelper</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___f_a___glyph_helper_8cs_source.html#l00013">AVR_FA_GlyphHelper.cs:13</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_af2f6f83c2baf44046d8309196db4a8c7_html_af2f6f83c2baf44046d8309196db4a8c7"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_af2f6f83c2baf44046d8309196db4a8c7.html#af2f6f83c2baf44046d8309196db4a8c7">AVR.UI.Utils.AVR_FA_GlyphHelper.Awake</a></div><div class="ttdeci">void Awake()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___f_a___glyph_helper_8cs_source.html#l00015">AVR_FA_GlyphHelper.cs:15</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_a6d0dabbe0914c1a00d4ef6da5a0868fc_html_a6d0dabbe0914c1a00d4ef6da5a0868fc"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r___f_a___glyph_helper_a6d0dabbe0914c1a00d4ef6da5a0868fc.html#a6d0dabbe0914c1a00d4ef6da5a0868fc">AVR.UI.Utils.AVR_FA_GlyphHelper.setup</a></div><div class="ttdeci">void setup(Font font, int unicode)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___f_a___glyph_helper_8cs_source.html#l00022">AVR_FA_GlyphHelper.cs:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

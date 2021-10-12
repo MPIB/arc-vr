@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="../../res/images/avr_logo_bw_wide.png"  alt="Logo"/>
 </div>
 <h1>Step 9: Adding UI Interaction</h1>
-<p>We want the player to guess which color they'll draw <em>before</em> reaching into the urn. We'll do this by presenting the player with an in-game UI window, for which we'll need the arc-vr-ui package.</p>
+<p>We want the player to guess which color they'll draw <em>before</em> reaching into the urn. We'll do this by presenting the player with an in-game UI window, for which we'll need the <a class="el" href="md_tutorials_arc-vr-ui.html#arc-vr-ui">arc-vr-ui</a> package.</p>
 <p>The installation procedure shoule be familiar by now: download the .tgz from github, import it via the package manager.</p>
 <p>The subsequent steps should be familiar as well: select the controller you want to act as a UI pointer, click 'Add Module' and select 'UIInteractionProvider'.</p>
 <p>If you now select the UIInteractionProvider, you might notice the warning it displays. As with any Unity-related UI system, an 'EventSystem' is required. If you click the 'Fix now' button, a new EventSystem object will be created (together with an attatched VRInput component).</p>

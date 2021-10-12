@@ -137,24 +137,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="___a_v_r___core___editor_utility_8cs_source.html#l00016">16</a> of file <a class="el" href="___a_v_r___core___editor_utility_8cs_source.html">_AVR_Core_EditorUtility.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                                                                                   {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            Object prefab = AssetDatabase.LoadAssetAtPath(AVR.Core.AVR_Settings.get_string(settings_token), typeof(GameObject));</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">if</span> (prefab == null)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                AVR.Core.AVR_DevConsole.error(<span class="stringliteral">&quot;There is a prefab missing at: &quot;</span> + AVR.Core.AVR_Settings.get_string(settings_token));</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keywordflow">return</span> null;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                GameObject o = (GameObject)PrefabUtility.InstantiatePrefab(prefab);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                o.transform.SetParent(parent);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                o.transform.localPosition = Vector3.zero;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                o.transform.localRotation = Quaternion.identity;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                AVR.Core.AVR_DevConsole.success(<span class="stringliteral">&quot;Instantiated Prefab. Token: &quot;</span> + settings_token);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keywordflow">return</span> o;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<p>Definition at line <a class="el" href="___a_v_r___core___editor_utility_8cs_source.html#l00019">19</a> of file <a class="el" href="___a_v_r___core___editor_utility_8cs_source.html">_AVR_Core_EditorUtility.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                                                                   {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            Object prefab = AssetDatabase.LoadAssetAtPath(AVR.Core.AVR_Settings.get_string(settings_token), typeof(GameObject));</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">if</span> (prefab == null)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                AVR.Core.AVR_DevConsole.error(<span class="stringliteral">&quot;There is a prefab missing at: &quot;</span> + AVR.Core.AVR_Settings.get_string(settings_token));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordflow">return</span> null;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                GameObject o = (GameObject)PrefabUtility.InstantiatePrefab(prefab);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                o.transform.SetParent(parent);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                o.transform.localPosition = Vector3.zero;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                o.transform.localRotation = Quaternion.identity;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                AVR.Core.AVR_DevConsole.success(<span class="stringliteral">&quot;Instantiated Prefab. Token: &quot;</span> + settings_token);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">return</span> o;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

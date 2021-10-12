@@ -5,6 +5,9 @@ using UnityEngine;
 using AVR.Core;
 
 namespace AVR.Net {
+    /// <summary>
+    /// Simple 3rd person character controller script.
+    /// </summary>
     public class AVR_ThirdPersonCharacterController : AVR_Component
     {
         public Animator anim;

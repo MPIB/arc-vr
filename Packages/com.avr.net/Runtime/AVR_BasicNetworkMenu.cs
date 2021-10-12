@@ -4,6 +4,9 @@ using UnityEngine;
 using MLAPI;
 
 namespace AVR.Net {
+    /// <summary>
+    /// Lets you run the start_host, start_client and start_server commands through a very simple UI.
+    /// </summary>
     public class AVR_BasicNetworkMenu : MonoBehaviour
     {
         void OnGUI()

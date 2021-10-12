@@ -2,39 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace AVR.Phys {
+    /// <summary>
+    /// Defines how an object behaves whilst grabbed.
+    /// </summary>
+    [CreateAssetMenu(fileName = "Data", menuName = "arc-vr/phys/GrabbableObjectType", order = 1)]
+    public class GrabbableObjectType : ScriptableObject
+    {
+        public enum FollowType { FREE, STATIC, CONSTRAINED, HEAVY };
+        public FollowType followType;
 
-[CreateAssetMenu(fileName = "Data", menuName = "arc-vr/phys/GrabbableObjectType", order = 1)]
-public class GrabbableObjectType : ScriptableObject
-{
-    public enum FollowType { FREE, STATIC, CONSTRAINED, HEAVY };
-    public FollowType followType;
+        public bool handToObject = false;
 
-    public bool handToObject = false;
+        public bool allowTwoHanded = false;
+        public bool changeObjectTypeOnTwoHanded;
+        public GrabbableObjectType typeOnTwoHanded;
 
-    public bool allowTwoHanded = false;
-    public bool changeObjectTypeOnTwoHanded;
-    public GrabbableObjectType typeOnTwoHanded;
+        [Range(0.0f, 1.0f)]
+        public float Lightness = 1.0f;
+        [Range(0.0f, 1.0f)]
+        public float Angular_Lightness = 1.0f;
 
-    [Range(0.0f, 1.0f)]
-    public float Lightness = 1.0f;
-    [Range(0.0f, 1.0f)]
-    public float Angular_Lightness = 1.0f;
+        [Range(0.05f, 2.0f)]
+        public float Break_grab_distance = 0.5f;
 
-    [Range(0.05f, 2.0f)]
-    public float Break_grab_distance = 0.5f;
+        // This multiplier will essentially make the target objects rigidbody weight = weight * 1.0/multiplier
+        public float Heavy_force_multiplier = 1.0f;
 
-    // This multiplier will essentially make the target objects rigidbody weight = weight * 1.0/multiplier
-    public float Heavy_force_multiplier = 1.0f;
-
-    public static GrabbableObjectType defaultObjectType(){
-        GrabbableObjectType o = new GrabbableObjectType();
-        o.followType = FollowType.FREE;
-        o.handToObject = false;
-        o.allowTwoHanded = false;
-        o.changeObjectTypeOnTwoHanded = false;
-        o.Lightness = 1.0f;
-        o.Angular_Lightness = 1.0f;
-        o.Break_grab_distance = 0.5f;
-        return o;
+        public static GrabbableObjectType defaultObjectType(){
+            GrabbableObjectType o = new GrabbableObjectType();
+            o.followType = FollowType.FREE;
+            o.handToObject = false;
+            o.allowTwoHanded = false;
+            o.changeObjectTypeOnTwoHanded = false;
+            o.Lightness = 1.0f;
+            o.Angular_Lightness = 1.0f;
+            o.Break_grab_distance = 0.5f;
+            return o;
+        }
     }
 }

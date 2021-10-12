@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace AVR.Phys
 {
+    /// <summary>
+    /// In-editor drawn hand for setting up GrabNodes.
+    /// </summary>
     [ExecuteInEditMode]
     public class AVR_DebugHand : AVR.Core.AVR_Behaviour
     {

@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 
 using AVR.Core;
 
+/// <summary>
+/// Namespace of the arc-vr-ui package
+/// </summary>
 namespace AVR.UI {
     [RequireComponent(typeof(Canvas))]
     [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html")]

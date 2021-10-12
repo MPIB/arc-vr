@@ -133,55 +133,55 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___player_spawn_8cs_source.html#l00041">41</a> of file <a class="el" href="_a_v_r___player_spawn_8cs_source.html">AVR_PlayerSpawn.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            AVR_DevConsole.cprint(<span class="stringliteral">&quot;Client #&quot;</span>+clientId+<span class="stringliteral">&quot; requested spawn with playerPrefabHashGenerator &quot;</span>+playerPrefabHashGenerator, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span>(NetworkManager.ConnectedClientsList.Count + 1 &gt; <a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae886f29cb0c58d8b6421e71b3574623d.html#ae886f29cb0c58d8b6421e71b3574623d">max_players</a>) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                AVR_DevConsole.cerror(<span class="stringliteral">&quot;Connected client would exceed the maximum number of allowed players (&quot;</span>+<a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae886f29cb0c58d8b6421e71b3574623d.html#ae886f29cb0c58d8b6421e71b3574623d">max_players</a>+<span class="stringliteral">&quot;). Disconnecting client.&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                NetworkManager.DisconnectClient(clientId);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            Transform spawnLocation = transform;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f.html#ae9b52947352e36a8501575fc0d6c0d5f">spawnLocations</a>.Count&gt;0) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                spawnLocation = <a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f.html#ae9b52947352e36a8501575fc0d6c0d5f">spawnLocations</a>[(int)clientId % <a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f.html#ae9b52947352e36a8501575fc0d6c0d5f">spawnLocations</a>.Count];</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="comment">// If the client already has a playerobject, destroy it before creating a new one.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">if</span> (MLAPI.Spawning.NetworkSpawnManager.GetPlayerNetworkObject(clientId) != null)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    AVR_DevConsole.cprint(<span class="stringliteral">&quot;Client #&quot;</span>+clientId+<span class="stringliteral">&quot; already has a playerNetworkObject! Despawning.&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    MLAPI.Spawning.NetworkSpawnManager.GetPlayerNetworkObject(clientId).Despawn(destroy: <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="comment">// Retrieve the prefab with the respective prefabHashGenerator</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                ulong hash = MLAPI.Spawning.NetworkSpawnManager.GetPrefabHashFromGenerator(playerPrefabHashGenerator);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordtype">int</span> index = MLAPI.Spawning.NetworkSpawnManager.GetNetworkPrefabIndexOfHash(hash);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">if</span>(index &lt; 0) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    AVR_DevConsole.cerror(<span class="stringliteral">&quot;PlayerSpawn failed: There is no playerPrefab with hashGenerator &quot;</span> + playerPrefabHashGenerator + <span class="stringliteral">&quot;!&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    <span class="keywordflow">throw</span> <span class="keyword">new</span> System.IndexOutOfRangeException();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                GameObject prefab = NetworkManager.Singleton.NetworkConfig.NetworkPrefabs[index].Prefab;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="comment">// Instantiate and spawn the object</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                AVR_DevConsole.cprint(<span class="stringliteral">&quot;Instantiating playerPrefab as playerObject for client #&quot;</span>+clientId, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                GameObject obj = Instantiate(prefab, spawnLocation.position, spawnLocation.rotation);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                obj.GetComponent&lt;NetworkObject&gt;().SpawnAsPlayerObject(clientId);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="comment">// Deal with errors</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">catch</span>(System.Exception e) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                AVR_DevConsole.cerror(<span class="stringliteral">&quot;PlayerSpawn failed with following exception: &quot;</span>+e.Message, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_a13f52b3b6456301c1bd8858282408f8d.html#a13f52b3b6456301c1bd8858282408f8d">disconnectClientIfFailed</a>) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    AVR_DevConsole.cerror(<span class="stringliteral">&quot;Disconnecting client due to failed spawn.&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    NetworkManager.DisconnectClient(clientId);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_a13f52b3b6456301c1bd8858282408f8d_html_a13f52b3b6456301c1bd8858282408f8d"><div class="ttname"><a href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_a13f52b3b6456301c1bd8858282408f8d.html#a13f52b3b6456301c1bd8858282408f8d">AVR.Net.AVR_PlayerSpawn.disconnectClientIfFailed</a></div><div class="ttdeci">bool disconnectClientIfFailed</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___player_spawn_8cs_source.html#l00016">AVR_PlayerSpawn.cs:16</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f_html_ae9b52947352e36a8501575fc0d6c0d5f"><div class="ttname"><a href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f.html#ae9b52947352e36a8501575fc0d6c0d5f">AVR.Net.AVR_PlayerSpawn.spawnLocations</a></div><div class="ttdeci">List&lt; Transform &gt; spawnLocations</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___player_spawn_8cs_source.html#l00014">AVR_PlayerSpawn.cs:14</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae886f29cb0c58d8b6421e71b3574623d_html_ae886f29cb0c58d8b6421e71b3574623d"><div class="ttname"><a href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae886f29cb0c58d8b6421e71b3574623d.html#ae886f29cb0c58d8b6421e71b3574623d">AVR.Net.AVR_PlayerSpawn.max_players</a></div><div class="ttdeci">int max_players</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___player_spawn_8cs_source.html#l00012">AVR_PlayerSpawn.cs:12</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___player_spawn_8cs_source.html#l00044">44</a> of file <a class="el" href="_a_v_r___player_spawn_8cs_source.html">AVR_PlayerSpawn.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            AVR_DevConsole.cprint(<span class="stringliteral">&quot;Client #&quot;</span>+clientId+<span class="stringliteral">&quot; requested spawn with playerPrefabHashGenerator &quot;</span>+playerPrefabHashGenerator, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span>(NetworkManager.ConnectedClientsList.Count + 1 &gt; <a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae886f29cb0c58d8b6421e71b3574623d.html#ae886f29cb0c58d8b6421e71b3574623d">max_players</a>) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                AVR_DevConsole.cerror(<span class="stringliteral">&quot;Connected client would exceed the maximum number of allowed players (&quot;</span>+<a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae886f29cb0c58d8b6421e71b3574623d.html#ae886f29cb0c58d8b6421e71b3574623d">max_players</a>+<span class="stringliteral">&quot;). Disconnecting client.&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                NetworkManager.DisconnectClient(clientId);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            Transform spawnLocation = transform;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f.html#ae9b52947352e36a8501575fc0d6c0d5f">spawnLocations</a>.Count&gt;0) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                spawnLocation = <a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f.html#ae9b52947352e36a8501575fc0d6c0d5f">spawnLocations</a>[(int)clientId % <a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f.html#ae9b52947352e36a8501575fc0d6c0d5f">spawnLocations</a>.Count];</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="comment">// If the client already has a playerobject, destroy it before creating a new one.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">if</span> (MLAPI.Spawning.NetworkSpawnManager.GetPlayerNetworkObject(clientId) != null)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    AVR_DevConsole.cprint(<span class="stringliteral">&quot;Client #&quot;</span>+clientId+<span class="stringliteral">&quot; already has a playerNetworkObject! Despawning.&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    MLAPI.Spawning.NetworkSpawnManager.GetPlayerNetworkObject(clientId).Despawn(destroy: <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="comment">// Retrieve the prefab with the respective prefabHashGenerator</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                ulong hash = MLAPI.Spawning.NetworkSpawnManager.GetPrefabHashFromGenerator(playerPrefabHashGenerator);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordtype">int</span> index = MLAPI.Spawning.NetworkSpawnManager.GetNetworkPrefabIndexOfHash(hash);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">if</span>(index &lt; 0) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    AVR_DevConsole.cerror(<span class="stringliteral">&quot;PlayerSpawn failed: There is no playerPrefab with hashGenerator &quot;</span> + playerPrefabHashGenerator + <span class="stringliteral">&quot;!&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <span class="keywordflow">throw</span> <span class="keyword">new</span> System.IndexOutOfRangeException();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                GameObject prefab = NetworkManager.Singleton.NetworkConfig.NetworkPrefabs[index].Prefab;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="comment">// Instantiate and spawn the object</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                AVR_DevConsole.cprint(<span class="stringliteral">&quot;Instantiating playerPrefab as playerObject for client #&quot;</span>+clientId, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                GameObject obj = Instantiate(prefab, spawnLocation.position, spawnLocation.rotation);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                obj.GetComponent&lt;NetworkObject&gt;().SpawnAsPlayerObject(clientId);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="comment">// Deal with errors</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">catch</span>(System.Exception e) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                AVR_DevConsole.cerror(<span class="stringliteral">&quot;PlayerSpawn failed with following exception: &quot;</span>+e.Message, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_a13f52b3b6456301c1bd8858282408f8d.html#a13f52b3b6456301c1bd8858282408f8d">disconnectClientIfFailed</a>) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    AVR_DevConsole.cerror(<span class="stringliteral">&quot;Disconnecting client due to failed spawn.&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    NetworkManager.DisconnectClient(clientId);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_a13f52b3b6456301c1bd8858282408f8d_html_a13f52b3b6456301c1bd8858282408f8d"><div class="ttname"><a href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_a13f52b3b6456301c1bd8858282408f8d.html#a13f52b3b6456301c1bd8858282408f8d">AVR.Net.AVR_PlayerSpawn.disconnectClientIfFailed</a></div><div class="ttdeci">bool disconnectClientIfFailed</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___player_spawn_8cs_source.html#l00019">AVR_PlayerSpawn.cs:19</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f_html_ae9b52947352e36a8501575fc0d6c0d5f"><div class="ttname"><a href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f.html#ae9b52947352e36a8501575fc0d6c0d5f">AVR.Net.AVR_PlayerSpawn.spawnLocations</a></div><div class="ttdeci">List&lt; Transform &gt; spawnLocations</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___player_spawn_8cs_source.html#l00017">AVR_PlayerSpawn.cs:17</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae886f29cb0c58d8b6421e71b3574623d_html_ae886f29cb0c58d8b6421e71b3574623d"><div class="ttname"><a href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae886f29cb0c58d8b6421e71b3574623d.html#ae886f29cb0c58d8b6421e71b3574623d">AVR.Net.AVR_PlayerSpawn.max_players</a></div><div class="ttdeci">int max_players</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___player_spawn_8cs_source.html#l00015">AVR_PlayerSpawn.cs:15</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

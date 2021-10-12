@@ -95,25 +95,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Package AVR.Phys</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Namespace of the arc-vr-phys package  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___advanced_offset_grab_provider.html">AVR_AdvancedOffsetGrabProvider</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalent to <a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___offset_grab_provider.html" title="Same as BasicGrabProvider but additionally allows grabbing objects at an offset. (Eg. you may grab a pan by its handle instead of just its center) Also allows the usage of an AVR_Hand. Use this if you require grabbing larger / more complex objects. ">AVR_OffsetGrabProvider</a>, but additionally allows for hand-to-object grab mode to be used.  <a href="class_a_v_r_1_1_phys_1_1_a_v_r___advanced_offset_grab_provider.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html">AVR_BasicGrabProvider</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplest GrabProvider. Grabbed objects will move their center (obj.transform.position) towards the respective grabpoint.  <a href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand.html">AVR_DebugHand</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">In-editor drawn hand for setting up GrabNodes.  <a href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable.html">AVR_Grabbable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a grabbable object.  <a href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_finder.html">AVR_GrabbableFinder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to retrieve a Grabbable object from a location, volume or similar.  <a href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_finder.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder.html">AVR_GrabbableVolumeFinder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an <a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable.html" title="Represents a grabbable object. ">AVR_Grabbable</a> from a given volume (convex collider). The object closest to the given GrabPoint takes priority.  <a href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___grab_node.html">AVR_GrabNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a grabbable node on an <a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable.html" title="Represents a grabbable object. ">AVR_Grabbable</a>. Nodes have preset poses/constraints for the hand that are applied when grabbed.  <a href="class_a_v_r_1_1_phys_1_1_a_v_r___grab_node.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___hand.html">AVR_Hand</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interactive hand model that adapts itself to grabbed objects. Only works with Offset- or AdvancedOffset- GrabProviders.  <a href="class_a_v_r_1_1_phys_1_1_a_v_r___hand.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___offset_grab_provider.html">AVR_OffsetGrabProvider</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as BasicGrabProvider but additionally allows grabbing objects at an offset. (Eg. you may grab a pan by its handle instead of just its center) Also allows the usage of an <a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___hand.html">AVR_Hand</a>. Use this if you require grabbing larger / more complex objects.  <a href="class_a_v_r_1_1_phys_1_1_a_v_r___offset_grab_provider.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Same as BasicGrabProvider but additionally allows grabbing objects at an offset. (Eg. you may grab a pan by its handle instead of just its center) Also allows the usage of an <a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___hand.html" title="Interactive hand model that adapts itself to grabbed objects. Only works with Offset- or AdvancedOffs...">AVR_Hand</a>. Use this if you require grabbing larger / more complex objects.  <a href="class_a_v_r_1_1_phys_1_1_a_v_r___offset_grab_provider.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_phys_1_1_grabbable_object_type.html">GrabbableObjectType</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines how an object behaves whilst grabbed.  <a href="class_a_v_r_1_1_phys_1_1_grabbable_object_type.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_phys_1_1_grab_location.html">GrabLocation</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an (attempted) grab at a given location of an object.  <a href="class_a_v_r_1_1_phys_1_1_grab_location.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Namespace of the arc-vr-phys package </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
 	</body>

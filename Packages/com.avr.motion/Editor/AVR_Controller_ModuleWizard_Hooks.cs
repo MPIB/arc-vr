@@ -4,6 +4,9 @@ using UnityEngine;
 
 using AVR.UEditor.Core;
 
+/// <summary>
+/// Namespace of the arc-vr-motion (UnityEditor) package
+/// </summary>
 namespace AVR.UEditor.Motion {
     public class AVR_ControllerWizard_Hook_LocomotionProvider : AVR_WizardHook_SimpleToggle<AVR_Controller_ModuleWizard, AVR.Motion.AVR_LocomotionProvider>
     {

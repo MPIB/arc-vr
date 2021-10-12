@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+/// <summary>
+/// Namespace of the arc-vr-core (UnityEditor) package
+/// </summary>
 namespace AVR.UEditor.Core {
     [ExecuteInEditMode]
     public static class AVR_EditorUtility

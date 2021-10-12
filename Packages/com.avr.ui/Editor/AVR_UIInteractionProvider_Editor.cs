@@ -8,6 +8,9 @@ using UnityEngine.EventSystems;
 using AVR;
 using AVR.UI;
 
+/// <summary>
+/// Namespace of the arc-vr-ui (UnityEditor) package
+/// </summary>
 namespace AVR.UEditor.UI {
     [CustomEditor(typeof(AVR_UIInteractionProvider))]
     [CanEditMultipleObjects]

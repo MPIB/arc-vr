@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEditor;
 using AVR.UEditor.Core;
 
+/// <summary>
+/// Namespace of the arc-vr-net (UnityEditor) package
+/// </summary>
 namespace AVR.UEditor.Net
 {
     [CustomEditor(typeof(AVR.Net.AVR_FlyCamera))]

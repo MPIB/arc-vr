@@ -27,15 +27,15 @@ var searchData=
   ['lefthandpos',['leftHandPos',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a2cb31503e9b86e118bfef43b2480d680.html#a2cb31503e9b86e118bfef43b2480d680',1,'AVR::Avatar::AVR_PoseProvider']]],
   ['lefthandrot',['leftHandRot',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_a65aa01fc5353628673bf1d1116042a13.html#a65aa01fc5353628673bf1d1116042a13',1,'AVR::Avatar::AVR_PoseProvider']]],
   ['lefthandtarget',['leftHandTarget',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_af5e8aa270ad81aab279b688a7031af55.html#af5e8aa270ad81aab279b688a7031af55',1,'AVR::Avatar::AVR_PoseProvider']]],
-  ['lightness',['Lightness',['../class_grabbable_object_type_adc306a83b1cd6bb5f0221329b0e8ce11.html#adc306a83b1cd6bb5f0221329b0e8ce11',1,'GrabbableObjectType']]],
+  ['lightness',['Lightness',['../class_a_v_r_1_1_phys_1_1_grabbable_object_type_a843f479971adfc850152a37a5fc07352.html#a843f479971adfc850152a37a5fc07352',1,'AVR::Phys::GrabbableObjectType']]],
   ['limittplocation_5fbylayer',['limitTPLocation_byLayer',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_restrictor_afcfd8187005fe6d73ccc0bf20e98a971.html#afcfd8187005fe6d73ccc0bf20e98a971',1,'AVR::Motion::AVR_MovementRestrictor']]],
   ['limittplocation_5fbyslope',['limitTPLocation_bySlope',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_restrictor_a7ffdd7958e1aebf3023a922017864cd2.html#a7ffdd7958e1aebf3023a922017864cd2',1,'AVR::Motion::AVR_MovementRestrictor']]],
   ['limittplocation_5fbytag',['limitTPLocation_byTag',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_restrictor_a65867038c7e4bf770ffcc6d88c235c81.html#a65867038c7e4bf770ffcc6d88c235c81',1,'AVR::Motion::AVR_MovementRestrictor']]],
   ['linecast',['LineCast',['../class_a_v_r_1_1_core_1_1_utils_1_1_phys_ac68e532f7696db8971836ab24deca5a0.html#ac68e532f7696db8971836ab24deca5a0',1,'AVR.Core.Utils.Phys.LineCast(Vector3 start, Vector3 end, out RaycastHit hit)'],['../class_a_v_r_1_1_core_1_1_utils_1_1_phys_aec3389eb57e0a76ac31642ebe130eddd.html#aec3389eb57e0a76ac31642ebe130eddd',1,'AVR.Core.Utils.Phys.LineCast(Vector3 start, Vector3 end, out RaycastHit hit, LayerMask mask)'],['../class_a_v_r_1_1_core_1_1_utils_1_1_phys_a87bfb9328c9672e9322b8db2355c8e94.html#a87bfb9328c9672e9322b8db2355c8e94',1,'AVR.Core.Utils.Phys.LineCast(Vector3 start, Vector3 end, out RaycastHit hit, Matrix4x4 localToWorld)']]],
   ['local_5feye_5fto_5fneck_5foffset',['local_eye_to_neck_offset',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_abb3a5b7b29a62e7c90b682f2b167ebac.html#abb3a5b7b29a62e7c90b682f2b167ebac',1,'AVR::Avatar::AVR_PoseProvider']]],
-  ['locallocation',['localLocation',['../class_grab_location_a9e0b8e96d3cf3e8ad6b649df3540520e.html#a9e0b8e96d3cf3e8ad6b649df3540520e',1,'GrabLocation']]],
+  ['locallocation',['localLocation',['../class_a_v_r_1_1_phys_1_1_grab_location_a804dccf3909a2a6d9c1533d9a015b9ea.html#a804dccf3909a2a6d9c1533d9a015b9ea',1,'AVR::Phys::GrabLocation']]],
   ['localviewvector',['LocalViewVector',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig_aa15ac507422a4e7156e1f17e80b7997a.html#aa15ac507422a4e7156e1f17e80b7997a',1,'AVR::Core::AVR_PlayerRig']]],
-  ['location',['location',['../class_grab_location_abd166620d0498b3ea2407478b50c6062.html#abd166620d0498b3ea2407478b50c6062',1,'GrabLocation']]],
+  ['location',['location',['../class_a_v_r_1_1_phys_1_1_grab_location_ac1d9f3f3ba004ae071a3c22db74b98e6.html#ac1d9f3f3ba004ae071a3c22db74b98e6',1,'AVR::Phys::GrabLocation']]],
   ['logo',['logo',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___arc_v_r_window_a2ae99454d2058664ce6f02babc692d2e.html#a2ae99454d2058664ce6f02babc692d2e',1,'AVR::UEditor::Core::AVR_ArcVRWindow']]],
   ['logobjects',['logObjects',['../class_a_v_r_1_1_core_1_1_a_v_r___logger_a5cb1846a7f03b25b7a836fa874d9f89e.html#a5cb1846a7f03b25b7a836fa874d9f89e',1,'AVR::Core::AVR_Logger']]],
   ['lookatpos',['lookAtPos',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_provider_ac7659d03c80935674ec92114115089ae.html#ac7659d03c80935674ec92114115089ae',1,'AVR::Avatar::AVR_PoseProvider']]],
@@ -45,5 +45,5 @@ var searchData=
   ['lookatweight_5feyes',['lookAtWeight_eyes',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_assumer_a0d575e48faa8b6bdff70b6e8ec1f8f03.html#a0d575e48faa8b6bdff70b6e8ec1f8f03',1,'AVR::Avatar::AVR_PoseAssumer']]],
   ['lookatweight_5fhead',['lookAtWeight_head',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_assumer_a48717599f7f56a2492f61cde9e8c4dcd.html#a48717599f7f56a2492f61cde9e8c4dcd',1,'AVR::Avatar::AVR_PoseAssumer']]],
   ['lr',['lr',['../class_a_v_r_1_1_core_1_1_a_v_r___ray_abce183e10acd441fa08130015613ef97.html#abce183e10acd441fa08130015613ef97',1,'AVR.Core.AVR_Ray.lr()'],['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___click_drag_wheel_aa46533cb9039babd03ab3243dd28445a.html#aa46533cb9039babd03ab3243dd28445a',1,'AVR.UI.Utils.AVRUI_ClickDragWheel.lr()']]],
-  ['license',['LICENSE',['../md__c_1__users__kahl_mpib_arc-vr-opensource_arc-vr__packages_com_8avr_8core__l_i_c_e_n_s_e.html',1,'']]]
+  ['license',['LICENSE',['../md__c_1__users_kahl__unity_projects_arc-vr__packages_com_8avr_8core__l_i_c_e_n_s_e.html',1,'']]]
 ];

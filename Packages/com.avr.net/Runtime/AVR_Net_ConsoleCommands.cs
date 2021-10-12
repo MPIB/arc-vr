@@ -8,6 +8,9 @@ using AVR.Core;
 
 namespace AVR.Net
 {
+    /// <summary>
+    /// arc-vr-net console commands.
+    /// </summary>
     [ExecuteInEditMode]
     public class AVR_Net_ConsoleCommands
     {
