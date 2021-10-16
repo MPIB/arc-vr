@@ -45,5 +45,5 @@ var searchData=
   ['lookatweight_5feyes',['lookAtWeight_eyes',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_assumer_a0d575e48faa8b6bdff70b6e8ec1f8f03.html#a0d575e48faa8b6bdff70b6e8ec1f8f03',1,'AVR::Avatar::AVR_PoseAssumer']]],
   ['lookatweight_5fhead',['lookAtWeight_head',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_assumer_a48717599f7f56a2492f61cde9e8c4dcd.html#a48717599f7f56a2492f61cde9e8c4dcd',1,'AVR::Avatar::AVR_PoseAssumer']]],
   ['lr',['lr',['../class_a_v_r_1_1_core_1_1_a_v_r___ray_abce183e10acd441fa08130015613ef97.html#abce183e10acd441fa08130015613ef97',1,'AVR.Core.AVR_Ray.lr()'],['../class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___click_drag_wheel_aa46533cb9039babd03ab3243dd28445a.html#aa46533cb9039babd03ab3243dd28445a',1,'AVR.UI.Utils.AVRUI_ClickDragWheel.lr()']]],
-  ['license',['LICENSE',['../md__c_1__users_kahl__unity_projects_arc-vr__packages_com_8avr_8core__l_i_c_e_n_s_e.html',1,'']]]
+  ['license',['LICENSE',['../md__c_1__users__kahl_mpib_arc-vr-opensource_arc-vr__packages_com_8avr_8core__l_i_c_e_n_s_e.html',1,'']]]
 ];

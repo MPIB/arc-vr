@@ -48,5 +48,5 @@ var searchData=
   ['isvalid',['isValid',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_ray_adadbddccce32ba2f2a8dae6019f2dc7b.html#adadbddccce32ba2f2a8dae6019f2dc7b',1,'AVR::Motion::AVR_MovementRay']]],
   ['isvalidtplocation',['isValidTpLocation',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_restrictor_a543c75ea4a0c13f4f03277763eb38f24.html#a543c75ea4a0c13f4f03277763eb38f24',1,'AVR::Motion::AVR_MovementRestrictor']]],
   ['isvisible',['isVisible',['../class_a_v_r_1_1_core_1_1_a_v_r___ray_adaace2023026fefb4769c85649a7ed7c.html#adaace2023026fefb4769c85649a7ed7c',1,'AVR::Core::AVR_Ray']]],
-  ['installation',['installation',['../md_tutorials_installation.html',1,'']]]
+  ['installation',['Installation',['../md_tutorials__installation.html',1,'']]]
 ];
