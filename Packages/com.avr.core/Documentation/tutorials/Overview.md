@@ -55,3 +55,9 @@ Here's an overview of what each package provides:
 	- Multiplayer integration through MLAPI
 	- Player-Spawning System
 	- Basic 3rd-Person CharacterController
+
+# Playlist
+
+Here's a playlist of all our overviews and tutorials:
+
+[Playlist](https://www.youtube.com/playlist?list=PLh6z44emfoZ3ztXtrFRipGGQKSisaUAyD)
