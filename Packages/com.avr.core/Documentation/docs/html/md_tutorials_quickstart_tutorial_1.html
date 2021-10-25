@@ -110,13 +110,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>Step 1: Setup</h1>
 <h2>Creating a new Unity project</h2>
 <p>As you might expect, our first step will be to create a new Unity project. The easiest way to go about this is to use Unity Hub. If you don't have already, download and install tha latest version of Unity Hub <a href="https://unity3d.com/get-unity/download">here</a>.</p>
-<p>Arc-vr is intended to be used with <a href="https://unity3d.com/unity/whats-new/2020.2.2">Unity 2020.2.2</a> . Using a different version may very well lead to errors or malfunctioning features. You can download <a href="https://unity3d.com/unity/whats-new/2020.2.2">Unity 2020.2.2</a> for the hub from the <a href="https://unity3d.com/get-unity/download/archive">Unity download archive</a>.</p>
-<p>Once you've downloaded <a href="https://unity3d.com/unity/whats-new/2020.2.2">Unity 2020.2.2</a> , you should be able to create a new project with that version using Unity Hub. HDRP, SRP and URP are all fully supported by arc-vr, but for the purposes of this tutorial, we'll be using the <a href="https://unity.com/srp">Standard Rendering Pipeline</a> (select '3D' from Templates).</p>
+<p>Arc-vr is intended to be used with <a href="https://unity3d.com/unity/whats-new/2020.3.21">Unity 2020.3.21f</a> . Using a different version may very well lead to errors or malfunctioning features. You can download <a href="https://unity3d.com/unity/whats-new/2020.3.21">Unity 2020.3.21f</a> for the hub from the <a href="https://unity3d.com/get-unity/download/archive">Unity download archive</a>.</p>
+<p>Once you've downloaded <a href="https://unity3d.com/unity/whats-new/2020.3.21">Unity 2020.3.21f</a> , you should be able to create a new project with that version using Unity Hub. HDRP, SRP and URP are all fully supported by arc-vr, but for the purposes of this tutorial, we'll be using the <a href="https://unity.com/srp">Standard Rendering Pipeline</a> (select '3D' from Templates).</p>
 <div class="image">
 <img src="../../res/images/qs_new_proj.jpg"  alt="img"/>
 </div>
 <h2>Preparing our project</h2>
-<p>With your new, blank <a href="https://unity3d.com/unity/whats-new/2020.2.2">Unity 2020.2.2</a> project open, we'll need to perform a couple of steps before importing arc-vr packages.</p>
+<p>With your new, blank <a href="https://unity3d.com/unity/whats-new/2020.3.21">Unity 2020.3.21f</a> project open, we'll need to perform a couple of steps before importing arc-vr packages.</p>
 <h3>Time.fixedDeltaTime</h3>
 <p><a href="https://docs.unity3d.com/ScriptReference/Time-fixedDeltaTime.html">Time.fixedDeltaTime</a> determines the frequency at which Unity conducts physics updates for rigidbodies. By default this is set to 0.02s (ie 50Hz). Since most HMDs have a refresh-rate of at least 90Hz, physics-interactions will appear jagged when a player grabs and moves objects (which we intend to do).</p>
 <p>In order to fix this, we simply set the frequency of fixed updates to also be 90Hz. To do this, head on over to <code>Edit &gt; Project Settings</code> and under <code>Time &gt; Fixed Timestep</code> set it to <code>0.01111111</code>.</p>
