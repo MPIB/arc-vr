@@ -141,49 +141,63 @@ The class provides a plethora of useful data and functions, all easily accessibl
 
 ## Developers Console
 
-arc-vr-core comes with a built-in developers console.
+arc-vr-core comes with a built-in developers console. It provides a useful interface for printing logs, running functions and debugging code.
 
-accessing the console
-    - in the editor
-    - through default Root object
-    - making your own mirror
+The console is accessible both in the editor as well as in the built project.
 
-Relay Debug.Log etc.
+### Accessing the DevConsole
 
-printing to Console
-    - what commands are There
-    - context info
+You can access the console in the following ways:
+- Inside the editor click on `AVR > Open DevConsole` to bring up an in-editor console.
+- Click on `AVR > Create Root Object` to create a default root object with an attached default console. Alternatively, attach an `AVR_BasicDevConsoleUI` script to a gameobject. Once the game is running you can press the console button (Tab by default, but you can change this in the settings under `setting > core > devConsole`) to bring up a simple devconsole ingame.
+- If the default `AVR_BasicDevConsoleUI` is not to your liking, you can make easily create your own mirror. You can use the included 'AVR_DevConsoleMirror' script or use the Console API. For instance, `AVR_DevConsole.get_text()` will give you a string of the output, `AVR_DevConsole.command(s)` will execute a command and `AVR_DevConsole.history(t)` will give you commands executed in the past.
 
-commands
-    - what is There
-    - "commands" command
-    - "help" command
-    - how to create more
+### Printing to the console
 
+The most basic way of printing to the console is to call `AVR_DevConsole.print("...")`. You can use the `print, success, error, warn, raw_print` methods to log errors, warnings or success-messages respectively.
 
+It is often useful to print contextual information on the caller of the logging function. You can pass an additional parameter when using the `cprint, csuccess, cerror, cwarn` functions, as in `AVR_DevConsole.cerror("I did a booboo", this)` or `AVR_DevConsole.cerror("He did a booboo", SomeOtherObject)`.
 
+### Commands
 
+Each arc-vr package comes with an additional set of commands you can run. You can use the `commands` command to print a list of all available commands there are. You can also use the `help [command]` command to print information on any given command.
 
-## Utilities
+Creating a new command is simple and can be done in one of the following ways:
 
-TODO
+#### Call `AVR_DevConsole.register_command`
 
-## Editor Utilities
+    AVR_DevConsole.register_command("say_hello", (s) => AVR_DevConsole.print("Hello"), 0, "Prints a hello message to the console");
 
-TODO
+The code above will create a new command `say_hello` that takes no parameters and prints a message when executed.
+
+#### Use the `ConsoleCommand` Attribute
+
+With this attribute you can declare a static, void function to act as a command. The attribute is located in the `AVR.Core.Attributes` namespace. The parameters of this function have to be either of type 'string', 'string[]' or none.
+
+    [ConsoleCommand("example_command", 2, "Replies with the second argument passed")]
+    static void example_command(string[] args) {
+        print(args[1]);
+    }
+
+The example above will create a command called 'example_command' with a minimum of 2 arguments that simply outputs the second argument passed.
 
 ## Settings system
 
-TODO
+The program scans all files with the `.avr` suffix for settings. Each package comes with its own .avr-settings file. The content of these files follows as JSON-similar syntax. Here's a simple example:
+
+    settings = {
+    	category = {
+            option1 = true
+    		subcategory = {
+    			option2 = "SomeString"
+    			option3 = 19.0f
+    		}
+    }
+
+You can access these values anywhere in you code by calling, for example, `AVR_Settings.get_float("/settings/category/subcategory/option3")`.
+
+You can also edit settings anytime in the Editor by going to `AVR > Settings`. Any changes made here will be written into the `~overridesettings.avr` file, which will always be scanned last (and thus will overwrite any previous entries).
 
 ## Package Builder
 
-TODO
-
-## Base class for Trial-Experiments
-
-TODO
-
-## Rig and Controller Components for tracking, input etc.
-
-TODO
+You can automatically build the packages into tarball files by running `AVR > Build Tarballs`. The built files will be placed into a `/tarballs` directory next to the project directory.

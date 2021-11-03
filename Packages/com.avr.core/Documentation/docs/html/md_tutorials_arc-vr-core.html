@@ -175,35 +175,42 @@ public class AVR_Example : AVR_Behaviour
 <p>The playerRig acts as a singleton, meaning, only one can be active in a scene at any given time.</p>
 <p>The class provides a plethora of useful data and functions, all easily accessible through the AVR_Behaviour.playerRig member. For a full list, see <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html">AVR.Core.AVR_PlayerRig</a>.</p>
 <h2>Developers Console</h2>
-<p>arc-vr-core comes with a built-in developers console.</p>
-<p>accessing the console</p><ul>
-<li>in the editor</li>
-<li>through default Root object</li>
-<li>making your own mirror</li>
+<p>arc-vr-core comes with a built-in developers console. It provides a useful interface for printing logs, running functions and debugging code.</p>
+<p>The console is accessible both in the editor as well as in the built project.</p>
+<h3>Accessing the DevConsole</h3>
+<p>You can access the console in the following ways:</p><ul>
+<li>Inside the editor click on <code><a class="el" href="namespace_a_v_r.html">AVR</a> &gt; Open DevConsole</code> to bring up an in-editor console.</li>
+<li>Click on <code><a class="el" href="namespace_a_v_r.html">AVR</a> &gt; Create Root Object</code> to create a default root object with an attached default console. Alternatively, attach an <code>AVR_BasicDevConsoleUI</code> script to a gameobject. Once the game is running you can press the console button (Tab by default, but you can change this in the settings under <code>setting &gt; core &gt; devConsole</code>) to bring up a simple devconsole ingame.</li>
+<li>If the default <code>AVR_BasicDevConsoleUI</code> is not to your liking, you can make easily create your own mirror. You can use the included 'AVR_DevConsoleMirror' script or use the Console API. For instance, <code>AVR_DevConsole.get_text()</code> will give you a string of the output, <code>AVR_DevConsole.command(s)</code> will execute a command and <code>AVR_DevConsole.history(t)</code> will give you commands executed in the past.</li>
 </ul>
-<p>Relay Debug.Log etc.</p>
-<p>printing to Console</p><ul>
-<li>what commands are There</li>
-<li>context info</li>
-</ul>
-<p>commands</p><ul>
-<li>what is There</li>
-<li>"commands" command</li>
-<li>"help" command</li>
-<li>how to create more</li>
-</ul>
-<h2>Utilities</h2>
-<p>TODO</p>
-<h2>Editor Utilities</h2>
-<p>TODO</p>
+<h3>Printing to the console</h3>
+<p>The most basic way of printing to the console is to call <code>AVR_DevConsole.print("...")</code>. You can use the <code>print, success, error, warn, raw_print</code> methods to log errors, warnings or success-messages respectively.</p>
+<p>It is often useful to print contextual information on the caller of the logging function. You can pass an additional parameter when using the <code>cprint, csuccess, cerror, cwarn</code> functions, as in <code>AVR_DevConsole.cerror("I did a booboo", this)</code> or <code>AVR_DevConsole.cerror("He did a booboo", SomeOtherObject)</code>.</p>
+<h3>Commands</h3>
+<p>Each arc-vr package comes with an additional set of commands you can run. You can use the <code>commands</code> command to print a list of all available commands there are. You can also use the <code>help [command]</code> command to print information on any given command.</p>
+<p>Creating a new command is simple and can be done in one of the following ways:</p>
+<h4>Call <code>AVR_DevConsole.register_command</code></h4>
+<pre class="fragment">AVR_DevConsole.register_command("say_hello", (s) =&gt; AVR_DevConsole.print("Hello"), 0, "Prints a hello message to the console");
+</pre><p>The code above will create a new command <code>say_hello</code> that takes no parameters and prints a message when executed.</p>
+<h4>Use the <code>ConsoleCommand</code> Attribute</h4>
+<p>With this attribute you can declare a static, void function to act as a command. The attribute is located in the <code><a class="el" href="namespace_a_v_r_1_1_core_1_1_attributes.html" title="Contains C#-Attributes for various uses. ">AVR.Core.Attributes</a></code> namespace. The parameters of this function have to be either of type 'string', 'string[]' or none. </p><pre class="fragment">[ConsoleCommand("example_command", 2, "Replies with the second argument passed")]
+static void example_command(string[] args) {
+    print(args[1]);
+}
+</pre><p>The example above will create a command called 'example_command' with a minimum of 2 arguments that simply outputs the second argument passed.</p>
 <h2>Settings system</h2>
-<p>TODO</p>
+<p>The program scans all files with the <code>.avr</code> suffix for settings. Each package comes with its own .avr-settings file. The content of these files follows as JSON-similar syntax. Here's a simple example: </p><pre class="fragment">settings = {
+    category = {
+        option1 = true
+        subcategory = {
+            option2 = "SomeString"
+            option3 = 19.0f
+        }
+}
+</pre><p>You can access these values anywhere in you code by calling, for example, <code>AVR_Settings.get_float("/settings/category/subcategory/option3")</code>.</p>
+<p>You can also edit settings anytime in the Editor by going to <code><a class="el" href="namespace_a_v_r.html">AVR</a> &gt; Settings</code>. Any changes made here will be written into the <code>~overridesettings.avr</code> file, which will always be scanned last (and thus will overwrite any previous entries).</p>
 <h2>Package Builder</h2>
-<p>TODO</p>
-<h2>Base class for Trial-Experiments</h2>
-<p>TODO</p>
-<h2>Rig and Controller Components for tracking, input etc.</h2>
-<p>TODO </p>
+<p>You can automatically build the packages into tarball files by running <code><a class="el" href="namespace_a_v_r.html">AVR</a> &gt; Build Tarballs</code>. The built files will be placed into a <code>/tarballs</code> directory next to the project directory. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>
