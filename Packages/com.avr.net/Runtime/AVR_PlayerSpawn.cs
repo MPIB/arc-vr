@@ -18,15 +18,21 @@ namespace AVR.Net {
 
         public bool disconnectClientIfFailed = true;
 
-        public bool getHashGeneratorFromSettings = true;
+        public string prefabHashGenerator {
+            get { return _prefabHashGenerator; }
+            set { 
+                AVR_Settings.set("/net/playerPrefabHashGenerator", value);
+                _prefabHashGenerator = value;
+            }
+        }
 
-        [AVR.Core.Attributes.ConditionalHideInInspector("getHashGeneratorFromSettings")]
-        public string prefabHashGenerator = "NetworkedPlayerRig";
+        [SerializeField]
+        private string _prefabHashGenerator = "NetworkedPlayerRig";
 
         public override void NetworkStart()
         {
             base.NetworkStart();
-            if(getHashGeneratorFromSettings) prefabHashGenerator = AVR_Settings.get_string("/net/playerPrefabHashGenerator");
+            prefabHashGenerator = AVR_Settings.get_string("/net/playerPrefabHashGenerator");
             AVR.Core.AVR_DevConsole.print("Requesting playerSpawn from server... (HashGenerator="+prefabHashGenerator+")");
             spawnServerRpc(NetworkManager.Singleton.LocalClientId, prefabHashGenerator);
         }

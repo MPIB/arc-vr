@@ -83,6 +83,11 @@ namespace AVR.Net
                 NetworkManager.Singleton.StopClient();
             });
 
+            AVR_DevConsole.register_command("spawnas", (s) => {
+                AVR_Settings.set("/net/playerPrefabHashGenerator", s[0]);
+                AVR_DevConsole.cprint("Set /net/playerPrefabHashGenerator to "+s[0], "AVR_Settings");
+            }, 1, "Sets the /net/playerPrefabHashGenerator setting to the given argument to be used by a playerSpawn object.");
+
             AVR_DevConsole.register_command("getport", (s) =>
             {
                 try {

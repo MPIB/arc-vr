@@ -298,7 +298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4551417115696338522, guid: f7892fbbb40ac9844a12866be8f0824d, type: 3}
       propertyPath: NetworkConfig.NetworkPrefabs.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4551417115696338522, guid: f7892fbbb40ac9844a12866be8f0824d, type: 3}
       propertyPath: NetworkConfig.RegisteredScenes.Array.size
@@ -306,11 +306,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4551417115696338522, guid: f7892fbbb40ac9844a12866be8f0824d, type: 3}
       propertyPath: NetworkConfig.RegisteredScenes.Array.data[0]
-      value: TutoScene
+      value: CapsureMPDemo
       objectReference: {fileID: 0}
     - target: {fileID: 4551417115696338522, guid: f7892fbbb40ac9844a12866be8f0824d, type: 3}
       propertyPath: NetworkConfig.RegisteredScenes.Array.data[1]
-      value: TutoScene
+      value: CapsureMPDemo
       objectReference: {fileID: 0}
     - target: {fileID: 4551417115696338522, guid: f7892fbbb40ac9844a12866be8f0824d, type: 3}
       propertyPath: NetworkConfig.NetworkPrefabs.Array.data[0].Prefab
@@ -318,6 +318,10 @@ PrefabInstance:
       objectReference: {fileID: 825635272376247838, guid: d23b0296aff5eb44396c8722f0e799f9, type: 3}
     - target: {fileID: 4551417115696338522, guid: f7892fbbb40ac9844a12866be8f0824d, type: 3}
       propertyPath: NetworkConfig.NetworkPrefabs.Array.data[1].Prefab
+      value: 
+      objectReference: {fileID: 825635272376247838, guid: 7cd01e6def125e948b98f8505757d458, type: 3}
+    - target: {fileID: 4551417115696338522, guid: f7892fbbb40ac9844a12866be8f0824d, type: 3}
+      propertyPath: NetworkConfig.NetworkPrefabs.Array.data[2].Prefab
       value: 
       objectReference: {fileID: 1841814144}
     - target: {fileID: 4551417115696338522, guid: f7892fbbb40ac9844a12866be8f0824d, type: 3}
@@ -1034,6 +1038,26 @@ PrefabInstance:
     - target: {fileID: 3664583225326994436, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664583225326994437, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
+      propertyPath: prefabHashGenerator
+      value: CapsuleMPPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664583225326994437, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
+      propertyPath: _prefabHashGenerator
+      value: CapsuleMPPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664583225326994437, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
+      propertyPath: getHashGeneratorFromSettings
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664583225326994439, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
+      propertyPath: PrefabHash
+      value: 16009072021328089370
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664583225326994439, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
+      propertyPath: PrefabHashGenerator
+      value: CapsulePlayerSpawn
       objectReference: {fileID: 0}
     - target: {fileID: 3664583225326994442, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
       propertyPath: m_Name

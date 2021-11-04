@@ -40,22 +40,12 @@ namespace AVR.Core {
             onDisable.Invoke();
         }
 
-        #if AVR_NET
+#if AVR_NET
         public virtual void onNetworkStart()
         {
             if (networkAPI.isOnline() && !networkAPI.isLocalPlayer(this))
             {
                 onRemoteStart.Invoke();
-
-                if (destroyOnRemote)
-                {
-                    GameObject.Destroy(this);
-                    // Under normal conditions Update() runs for 1 frame before Destroy takes place. DestroyImmediate is dangerous to use here.
-                    // This is a hacky way of preventing Update from running: We set gameobject.active = false (component.enabled doesn't do the trick)
-                    // And then re-enable the gameobject at the end of the frame through AVR_Root.
-                    gameObject.SetActive(false);
-                    AVR_Root.Instance.ReEnableAtEndOfFrame(gameObject);
-                }
 
                 if (changeLayerOnRemote)
                 {
@@ -67,6 +57,16 @@ namespace AVR.Core {
                             child.gameObject.layer = remoteLayer;
                         }
                     }
+                }
+
+                if (destroyOnRemote)
+                {
+                    GameObject.Destroy(this);
+                    // Under normal conditions Update() runs for 1 frame before Destroy takes place. DestroyImmediate is dangerous to use here.
+                    // This is a hacky way of preventing Update from running: We set gameobject.active = false (component.enabled doesn't do the trick)
+                    // And then re-enable the gameobject at the end of the frame through AVR_Root.
+                    gameObject.SetActive(false);
+                    AVR_Root.Instance.ReEnableAtEndOfFrame(gameObject);
                 }
             }
         }
@@ -130,6 +130,6 @@ namespace AVR.Core {
             }
         }
         private static ComponentNetworkAPI _napi;
-        #endif
+#endif
     }
 }

@@ -153,6 +153,13 @@ namespace AVR.Core {
         }
 
         /// <summary>
+        /// Set a setting with a specific token to a specific value.
+        /// </summary>
+        public static void set(string token, object value) {
+            settings[token] = value.ToString();
+        }
+
+        /// <summary>
         /// Builds a tree-structure that contains all settings. Note: This may take a while to complete.
         /// </summary>
         /// <returns> Root node of the tree </returns>

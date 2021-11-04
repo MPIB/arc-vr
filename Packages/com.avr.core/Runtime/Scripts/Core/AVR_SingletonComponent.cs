@@ -29,7 +29,7 @@ namespace AVR.Core {
         }
 
         private void SetInstance() {
-            if (Instance != null)
+            if (_Instance != null)
             {
                 AVR_DevConsole.cwarn(this.name + " is marked as Singleton but another instance was found in the scene. Continuing to use old one.", this);
                 return;
