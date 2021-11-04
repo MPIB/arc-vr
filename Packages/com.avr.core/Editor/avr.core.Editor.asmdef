@@ -2,7 +2,8 @@
     "name": "avr.core.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:8dd818486f048e34496f17e7e0f5e1cf"
+        "GUID:8dd818486f048e34496f17e7e0f5e1cf",
+        "GUID:1491147abca9d7d4bb7105af628b223e"
     ],
     "includePlatforms": [
         "Editor"

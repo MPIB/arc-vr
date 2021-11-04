@@ -1,8 +1,9 @@
 {
     "name": "avr.core.Runtime",
-    "rootNamespace": "",
+    "rootNamespace": "AVR",
     "references": [
-        "GUID:e40ba710768534012815d3193fa296cb"
+        "GUID:e40ba710768534012815d3193fa296cb",
+        "GUID:1491147abca9d7d4bb7105af628b223e"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
