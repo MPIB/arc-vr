@@ -30,7 +30,7 @@ namespace AVR.Net
 
                 NetworkManager.Singleton.OnServerStarted += () => {
                     foreach(var c in Object.FindObjectsOfType<AVR_Component>()) {
-                        c.onNetworkStart();
+                        //c.onNetworkStart();
                     }
                 };
             } catch(System.Exception) {

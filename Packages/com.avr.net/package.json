@@ -6,7 +6,6 @@
   "unity": "2020.2",
   "unityRelease": "2f1",
   "dependencies": {
-    "com.unity.netcode.gameobjects": "1.0.0-pre.3",
     "com.avr.core": "1.0.0"
   },
   "keywords": [

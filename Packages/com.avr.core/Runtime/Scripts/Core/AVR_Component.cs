@@ -26,9 +26,6 @@ namespace AVR.Core {
         }
 
         protected virtual void Start() {
-            #if AVR_NET
-            onNetworkStart();
-            #endif
             onStart.Invoke();
         }
 
@@ -41,9 +38,10 @@ namespace AVR.Core {
         }
 
 #if AVR_NET
-        public virtual void onNetworkStart()
+        public override void OnNetworkSpawn()
         {
-            if (networkAPI.isOnline() && !networkAPI.isLocalPlayer(this))
+            base.OnNetworkSpawn();
+            if(!IsLocalPlayer)
             {
                 onRemoteStart.Invoke();
 
