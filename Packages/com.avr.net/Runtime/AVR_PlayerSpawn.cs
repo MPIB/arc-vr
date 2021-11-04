@@ -28,10 +28,10 @@ namespace AVR.Net {
         [SerializeField]
         private string _prefabHashGenerator = "NetworkedPlayerRig";
 
-        public override void NetworkStart()
+        public override void OnNetworkSpawn()
         {
-            base.NetworkStart();
-            AVR.Core.AVR_DevConsole.print("Requesting playerSpawn from server... (HashGenerator="+prefabHashGenerator+")");
+            base.OnNetworkSpawn();
+            AVR_DevConsole.print("Requesting playerSpawn from server... (HashGenerator="+prefabHashGenerator+")");
             spawnServerRpc(NetworkManager.Singleton.LocalClientId, prefabHashGenerator);
         }
 
@@ -60,6 +60,7 @@ namespace AVR.Net {
                 spawnLocation = spawnLocations[(int)clientId % spawnLocations.Count];
             }
 
+            /* TODO: FIX
             try {
                 // If the client already has a playerobject, destroy it before creating a new one.
                 if (MLAPI.Spawning.NetworkSpawnManager.GetPlayerNetworkObject(clientId) != null)
@@ -90,6 +91,7 @@ namespace AVR.Net {
                     NetworkManager.DisconnectClient(clientId);
                 }
             }
+            */
         }
     }
 }
