@@ -26,7 +26,7 @@ namespace AVR.Net {
         private float dccel_t = 0.0f;
 
         // Start is called before the first frame update
-        void Start()
+        protected override void Start()
         {
             anim = GetComponent<Animator>();
             cc = GetComponent<CharacterController>();

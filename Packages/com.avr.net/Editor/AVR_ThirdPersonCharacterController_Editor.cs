@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-using UnityEditor;
 using AVR.UEditor.Core;
 
 namespace AVR.UEditor.Net
