@@ -26,5 +26,9 @@ namespace AVR.Core {
         /// The current AVR_Root instance in the scene
         /// </summary>
         protected AVR_Root root => AVR_Root.Instance;
+
+#if AVR_NET
+        protected bool isOnline => IsServer || IsClient;
+#endif
     }
 }
