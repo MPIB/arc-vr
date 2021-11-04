@@ -32,7 +32,6 @@ namespace AVR.Net {
         public override void NetworkStart()
         {
             base.NetworkStart();
-            prefabHashGenerator = AVR_Settings.get_string("/net/playerPrefabHashGenerator");
             AVR.Core.AVR_DevConsole.print("Requesting playerSpawn from server... (HashGenerator="+prefabHashGenerator+")");
             spawnServerRpc(NetworkManager.Singleton.LocalClientId, prefabHashGenerator);
         }

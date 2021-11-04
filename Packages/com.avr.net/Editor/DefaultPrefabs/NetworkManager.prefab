@@ -51,7 +51,8 @@ MonoBehaviour:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 4551417115696338525}
     RegisteredScenes:
-    - NetScene
+    - SampleScene
+    - AvatarMPDemo
     AllowRuntimeSceneChanges: 0
     NetworkPrefabs: []
     PlayerPrefabHash:
