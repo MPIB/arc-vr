@@ -65,7 +65,7 @@ namespace AVR.Core {
             if (deltaType == deltaTypes.ON_LATEUPDATE) logObjects();
         }
 
-        void OnDestroy() {
+        public override void OnDestroy() {
             if(file!=null) file.Close();
         }
 
