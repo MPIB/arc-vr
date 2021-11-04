@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using MLAPI;
+using Unity.Netcode;
 
 using AVR.Core;
 
@@ -18,7 +18,7 @@ namespace AVR.Net
             return GetNetworkObject(comp).GetInstanceID();
         }
         public override ulong networkId(AVR_Component comp) {
-            return GetNetworkObject(comp).NetworkInstanceId;
+            return GetNetworkObject(comp).NetworkObjectId;
         }
         public override ulong ownerId(AVR_Component comp) {
             return GetNetworkObject(comp).OwnerClientId;
@@ -53,12 +53,12 @@ namespace AVR.Net
             removeOwnership(GetNetworkObject(comp));
         }
 
-        [MLAPI.Messaging.ServerRpc]
+        [ServerRpc]
         protected void setOwnership(NetworkObject networkObject, ulong newOwnerId) {
             networkObject.ChangeOwnership(newOwnerId);
         }
 
-        [MLAPI.Messaging.ServerRpc]
+        [ServerRpc]
         protected void removeOwnership(NetworkObject networkObject) {
             networkObject.RemoveOwnership();
         }
