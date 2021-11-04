@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using MLAPI;
+using Unity.Netcode;
 
 namespace AVR.Net {
     /// <summary>
@@ -42,15 +42,15 @@ namespace AVR.Net {
 
             if(NetworkManager.Singleton.IsServer)
             {
-                if (GUILayout.Button("Shutdown Server")) NetworkManager.Singleton.StopServer();
+                if (GUILayout.Button("Shutdown Server")) NetworkManager.Singleton.Shutdown();
             }
             else if (NetworkManager.Singleton.IsHost)
             {
-                if (GUILayout.Button("Stop Host")) NetworkManager.Singleton.StopHost();
+                if (GUILayout.Button("Stop Host")) NetworkManager.Singleton.Shutdown();
             }
             else if (NetworkManager.Singleton.IsClient)
             {
-                if (GUILayout.Button("Disconnect")) NetworkManager.Singleton.StopClient();
+                if (GUILayout.Button("Disconnect")) NetworkManager.Singleton.Shutdown();
             }
         }
     }
