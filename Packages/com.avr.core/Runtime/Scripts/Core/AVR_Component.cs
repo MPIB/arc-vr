@@ -50,7 +50,7 @@ namespace AVR.Core {
                     gameObject.layer = remoteLayer;
                     if (changeLayerOnRemote_IncludeChildren)
                     {
-                        foreach (Transform child in transform)
+                        foreach (Transform child in GetComponentsInChildren<Transform>())
                         {
                             child.gameObject.layer = remoteLayer;
                         }
