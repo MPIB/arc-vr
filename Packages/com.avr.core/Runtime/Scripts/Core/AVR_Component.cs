@@ -79,55 +79,6 @@ namespace AVR.Core {
         public int remoteLayer = 0;
 
         [HideInInspector] public UnityEngine.Events.UnityEvent onRemoteStart;
-
-        public abstract class ComponentNetworkAPI
-        {
-            public abstract int instanceId(AVR_Component comp);
-            public abstract ulong networkId(AVR_Component comp);
-            public abstract ulong ownerId(AVR_Component comp);
-            public abstract bool isSpawned(AVR_Component comp);
-            public abstract bool isLocalPlayer(AVR_Component comp);
-            public abstract bool isOwner(AVR_Component comp);
-            public abstract bool isOwnedByServer(AVR_Component comp);
-            public abstract bool isPlayerObject(AVR_Component comp);
-            public abstract bool? isSceneObject(AVR_Component comp);
-            public abstract bool isOnline();
-            public abstract void setOwner(AVR_Component comp, ulong newOwnerId);
-            public abstract void removeOwner(AVR_Component comp);
-        }
-
-        public class DefaultNetworkAPI : ComponentNetworkAPI
-        {
-            public override int instanceId(AVR_Component comp) => 0;
-            public override ulong networkId(AVR_Component comp) => 0;
-            public override ulong ownerId(AVR_Component comp) => 0;
-            public override bool isSpawned(AVR_Component comp) => false;
-            public override bool isLocalPlayer(AVR_Component comp) => false;
-            public override bool isOwner(AVR_Component comp) => false;
-            public override bool isOwnedByServer(AVR_Component comp) => false;
-            public override bool isPlayerObject(AVR_Component comp) => false;
-            public override bool? isSceneObject(AVR_Component comp) => false;
-            public override bool isOnline() => false;
-            public override void setOwner(AVR_Component comp, ulong newOwnerId) { }
-            public override void removeOwner(AVR_Component comp) { }
-        }
-
-        [HideInInspector]
-        public Object networkObject;
-
-        public static ComponentNetworkAPI networkAPI
-        {
-            get
-            {
-                if (_napi == null) _napi = new DefaultNetworkAPI();
-                return _napi;
-            }
-            set
-            {
-                _napi = value;
-            }
-        }
-        private static ComponentNetworkAPI _napi;
 #endif
     }
 }

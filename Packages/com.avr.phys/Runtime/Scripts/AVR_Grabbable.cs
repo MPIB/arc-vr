@@ -88,7 +88,8 @@ namespace AVR.Phys {
         {
             #if AVR_NET
             // If we are online and this object is not owned by the grabbing player or the server -> dont allow grab.
-            if(networkAPI.isOnline() && !networkAPI.isOwnedByServer(this) && !networkAPI.isOwner(this)) {
+            if(isOnline && !IsOwnedByServer && !IsOwner)
+            {
                 return;
             }
             #endif
@@ -108,7 +109,7 @@ namespace AVR.Phys {
         public void Release(AVR_BasicGrabProvider hand)
         {
             #if AVR_NET
-            if (networkAPI.isOnline()) networkAPI.removeOwner(this);
+            if (isOnline) NetworkObject.RemoveOwnership();
             #endif
 
             if(AttachedHands.Contains(hand)) AttachedHands.Remove(hand);
@@ -130,7 +131,7 @@ namespace AVR.Phys {
         void UpdateVelocities()
         {
             #if AVR_NET
-            if(networkAPI.isOnline() && !networkAPI.isOwner(this)) return;
+            if(isOnline && !IsOwner) return;
             #endif
 
             // NOTE: use rb.worldCenterofMass etc isntead of transform pos + rotation ?
