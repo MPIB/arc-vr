@@ -17,22 +17,12 @@ namespace AVR.Net {
 
         public bool disconnectClientIfFailed = true;
 
-        public string prefabHashGenerator {
-            get { return _prefabHashGenerator; }
-            set { 
-                AVR_Settings.set("/net/playerPrefabHashGenerator", value);
-                _prefabHashGenerator = value;
-            }
-        }
-
-        [SerializeField]
-        private string _prefabHashGenerator = "NetworkedPlayerRig";
+        public NetworkObject prefab;
 
         public override void OnNetworkSpawn()
         {
             base.OnNetworkSpawn();
-            AVR_DevConsole.print("Requesting playerSpawn from server... (HashGenerator="+prefabHashGenerator+")");
-            spawnServerRpc(NetworkManager.Singleton.LocalClientId, prefabHashGenerator);
+            spawnServerRpc(NetworkManager.Singleton.LocalClientId);
         }
 
         void OnDrawGizmos() {
@@ -45,9 +35,9 @@ namespace AVR.Net {
         }
 
         [ServerRpc(RequireOwnership = false)]
-        protected virtual void spawnServerRpc(ulong clientId, string playerPrefabHashGenerator)
+        protected virtual void spawnServerRpc(ulong clientId)
         {
-            AVR_DevConsole.cprint("Client #"+clientId+" requested spawn with playerPrefabHashGenerator "+playerPrefabHashGenerator, this);
+            AVR_DevConsole.cprint("Client #"+clientId+" requested spawn", this);
 
             if(NetworkManager.ConnectedClientsList.Count + 1 > max_players) {
                 AVR_DevConsole.cerror("Connected client would exceed the maximum number of allowed players ("+max_players+"). Disconnecting client.", this);
@@ -60,27 +50,17 @@ namespace AVR.Net {
                 spawnLocation = spawnLocations[(int)clientId % spawnLocations.Count];
             }
 
-            /* TODO: FIX
             try {
                 // If the client already has a playerobject, destroy it before creating a new one.
-                if (MLAPI.Spawning.NetworkSpawnManager.GetPlayerNetworkObject(clientId) != null)
+                if (NetworkManager.Singleton.SpawnManager.GetPlayerNetworkObject(clientId) != null)
                 {
                     AVR_DevConsole.cprint("Client #"+clientId+" already has a playerNetworkObject! Despawning.", this);
-                    MLAPI.Spawning.NetworkSpawnManager.GetPlayerNetworkObject(clientId).Despawn(destroy: true);
+                    NetworkManager.Singleton.SpawnManager.GetPlayerNetworkObject(clientId).Despawn(destroy: true);
                 }
-
-                // Retrieve the prefab with the respective prefabHashGenerator
-                ulong hash = MLAPI.Spawning.NetworkSpawnManager.GetPrefabHashFromGenerator(playerPrefabHashGenerator);
-                int index = MLAPI.Spawning.NetworkSpawnManager.GetNetworkPrefabIndexOfHash(hash);
-                if(index < 0) {
-                    AVR_DevConsole.cerror("PlayerSpawn failed: There is no playerPrefab with hashGenerator " + playerPrefabHashGenerator + "!", this);
-                    throw new System.IndexOutOfRangeException();
-                }
-                GameObject prefab = NetworkManager.Singleton.NetworkConfig.NetworkPrefabs[index].Prefab;
 
                 // Instantiate and spawn the object
                 AVR_DevConsole.cprint("Instantiating playerPrefab as playerObject for client #"+clientId, this);
-                GameObject obj = Instantiate(prefab, spawnLocation.position, spawnLocation.rotation);
+                GameObject obj = Instantiate(prefab.gameObject, spawnLocation.position, spawnLocation.rotation);
                 obj.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId);
             }
             // Deal with errors
@@ -91,7 +71,6 @@ namespace AVR.Net {
                     NetworkManager.DisconnectClient(clientId);
                 }
             }
-            */
         }
     }
 }

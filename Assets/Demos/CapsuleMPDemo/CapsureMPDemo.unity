@@ -1114,6 +1114,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3664583225326994437, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 4455136866992479730, guid: 7cd01e6def125e948b98f8505757d458, type: 3}
+    - target: {fileID: 3664583225326994437, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
       propertyPath: prefabHashGenerator
       value: CapsuleMPPlayer
       objectReference: {fileID: 0}
@@ -1128,6 +1132,10 @@ PrefabInstance:
     - target: {fileID: 3664583225326994439, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
       propertyPath: PrefabHash
       value: 16009072021328089370
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664583225326994439, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 798145066
       objectReference: {fileID: 0}
     - target: {fileID: 3664583225326994439, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
       propertyPath: PrefabHashGenerator

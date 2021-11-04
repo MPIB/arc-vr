@@ -10,7 +10,7 @@ public class asdasdaaswrt :
 #if AVR_NET
     MonoBehaviour
 #else
-    MonoBehaviour
+    NetworkBehaviour
 #endif
 {
     // Start is called before the first frame update
