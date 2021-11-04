@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/NetScene.unity
     guid: 183bac77293164d4394aa63e22ce9efb
   - enabled: 1
-    path: Assets/Scenes/TutoScene.unity
+    path: Assets/Demos/CapsuleMPDemo/CapsureMPDemo.unity
     guid: 44254829fb8c25047b4b27f5939cface
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b08b27ebbc267e84fae16373fe546ec2, type: 2}
