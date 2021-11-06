@@ -35,8 +35,8 @@ namespace AVR.Core {
             base.Awake();
             _inputManager = GetComponentInChildren<AVR_ControllerInputManager>();
 
-            if (controllerNode==XRNode.LeftHand) leftHandController = this;
-            if (controllerNode == XRNode.RightHand) rightHandController = this;
+            if (controllerNode==XRNode.LeftHand && !leftHandController) leftHandController = this;
+            if (controllerNode == XRNode.RightHand && !rightHandController) rightHandController = this;
         }
 
         /// <summary>

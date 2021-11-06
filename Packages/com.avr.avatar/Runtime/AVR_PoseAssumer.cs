@@ -119,6 +119,11 @@ namespace AVR.Avatar {
         }
 
         void Update() {
+            #if AVR_NET
+            if (!playerRig) return; // Sometimes this happens on MP for 1 frame.
+            #endif
+
+
             if(autoLayerBlend) {
                 layerBlend = Mathf.Lerp(layerBlend, Mathf.SmoothStep(1.0f, 0.0f, playerRig.AvgMotion.magnitude), layerBlend_speed * Time.deltaTime);
             }
@@ -176,6 +181,10 @@ namespace AVR.Avatar {
         void OnAnimatorIK(int layerIndex)
         {
             IKPass_is_enabled = true;
+
+            #if AVR_NET
+            if (!playerRig) return; // Sometimes this happens on MP for one frame.
+            #endif
 
             setPosRot(layerIndex);
 
