@@ -356,7 +356,7 @@ namespace AVR.Avatar {
         {
             #if AVR_NET
             if (!IsOwner) return;
-            else
+            else if(synchronizePose)
             {
                 PoseProviderState state;
                 state.lookAtPos = lookAtPos;
@@ -497,6 +497,10 @@ namespace AVR.Avatar {
         }
 
 #if AVR_NET
+        [HideInInspector]
+        [AVR.Core.Attributes.ShowInNetPrompt]
+        public bool synchronizePose = true;
+
         private readonly NetworkVariable<PoseProviderState> m_ReplicatedState = new NetworkVariable<PoseProviderState>(NetworkVariableReadPermission.Everyone, new PoseProviderState());
 
         internal struct PoseProviderState : INetworkSerializable
