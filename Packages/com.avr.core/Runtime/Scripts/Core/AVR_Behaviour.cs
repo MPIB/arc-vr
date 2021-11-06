@@ -27,7 +27,15 @@ namespace AVR.Core {
         /// </summary>
         protected AVR_Root root => AVR_Root.Instance;
 
+        /// <summary>
+        /// True if the application is running as a VR/XR application
+        /// </summary>
+        protected bool vrEnabled => UnityEngine.XR.XRSettings.enabled;
+
 #if AVR_NET
+        /// <summary>
+        /// True if we are hosting or connected to a network
+        /// </summary>
         protected bool isOnline => IsServer || IsClient;
 #endif
     }

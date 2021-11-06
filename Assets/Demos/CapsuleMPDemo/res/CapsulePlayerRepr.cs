@@ -10,7 +10,7 @@ namespace AVR.Demos.CapsuleMPDemo {
     {
         void Update()
         {
-            if(playerRig) {
+            if(vrEnabled && playerRig) {
                 this.transform.position = new Vector3(playerRig.CameraInWorldSpace.x, 0f, playerRig.CameraInWorldSpace.z);
                 this.transform.forward = playerRig.XZPlaneFacingDirection;
             }
