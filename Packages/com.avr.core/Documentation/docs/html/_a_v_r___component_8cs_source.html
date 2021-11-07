@@ -130,33 +130,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            onDisable.Invoke();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">        #if AVR_NET</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#if AVR_NET</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> onNetworkStart()</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (networkAPI.isOnline() &amp;&amp; !networkAPI.isLocalPlayer(<span class="keyword">this</span>))</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                onRemoteStart.Invoke();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">if</span> (destroyOnRemote)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">if</span> (changeLayerOnRemote)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    GameObject.Destroy(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <span class="comment">// Under normal conditions Update() runs for 1 frame before Destroy takes place. DestroyImmediate is dangerous to use here.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    <span class="comment">// This is a hacky way of preventing Update from running: We set gameobject.active = false (component.enabled doesn&#39;t do the trick)</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <span class="comment">// And then re-enable the gameobject at the end of the frame through AVR_Root.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    gameObject.SetActive(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    AVR_Root.Instance.ReEnableAtEndOfFrame(gameObject);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">if</span> (changeLayerOnRemote)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    gameObject.layer = remoteLayer;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <span class="keywordflow">if</span> (changeLayerOnRemote_IncludeChildren)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        <span class="keywordflow">foreach</span> (Transform child <span class="keywordflow">in</span> transform)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                            child.gameObject.layer = remoteLayer;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    gameObject.layer = remoteLayer;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <span class="keywordflow">if</span> (changeLayerOnRemote_IncludeChildren)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        <span class="keywordflow">foreach</span> (Transform child <span class="keywordflow">in</span> transform)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                            child.gameObject.layer = remoteLayer;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">if</span> (destroyOnRemote)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    GameObject.Destroy(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <span class="comment">// Under normal conditions Update() runs for 1 frame before Destroy takes place. DestroyImmediate is dangerous to use here.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    <span class="comment">// This is a hacky way of preventing Update from running: We set gameobject.active = false (component.enabled doesn&#39;t do the trick)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <span class="comment">// And then re-enable the gameobject at the end of the frame through AVR_Root.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    gameObject.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    AVR_Root.Instance.ReEnableAtEndOfFrame(gameObject);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
@@ -220,7 +220,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keyword">private</span> <span class="keyword">static</span> ComponentNetworkAPI _napi;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">        #endif</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour.html">AVR.Core.AVR_Behaviour</a></div><div class="ttdoc">Monobehaviour but with an added URL button to a documentation page. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___behaviour_8cs_source.html#l00013">AVR_Behaviour.cs:13</a></div></div>

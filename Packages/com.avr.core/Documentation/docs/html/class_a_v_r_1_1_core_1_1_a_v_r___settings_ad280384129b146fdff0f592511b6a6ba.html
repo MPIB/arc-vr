@@ -99,6 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_core_1_1_a_v_r___settings_aba2d1743ec2c91a4e6632eaca7528128.html#aba2d1743ec2c91a4e6632eaca7528128">initialize</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_core_1_1_a_v_r___settings_ae89987ae5d76c37830bc1396c8d1c7f5.html#ae89987ae5d76c37830bc1396c8d1c7f5">initialized</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_core_1_1_a_v_r___settings_a643ffeade4c425c4d9b5256c545980e8.html#a643ffeade4c425c4d9b5256c545980e8">reconfigure</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_core_1_1_a_v_r___settings_a1739c5b657c9648a236905e4807e01b6.html#a1739c5b657c9648a236905e4807e01b6">set</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_core_1_1_a_v_r___settings_a07f171f70f58e842773d24b0db006f25.html#a07f171f70f58e842773d24b0db006f25">settings</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_core_1_1_a_v_r___settings_a588bd2617827138c2ba8cd853f7cddec.html#a588bd2617827138c2ba8cd853f7cddec">token_exists</a></td></tr>
         </table>
@@ -129,19 +130,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Builds a tree-structure that contains all settings. Note: This may take a while to complete. </p>
 <dl class="section return"><dt>Returns</dt><dd>Root node of the tree </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_v_r___settings_8cs_source.html#l00159">159</a> of file <a class="el" href="_a_v_r___settings_8cs_source.html">AVR_Settings.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                                    {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            AVR.Core.AVR_DevConsole.print(<span class="stringliteral">&quot;Building SettingsTree...&quot;</span>);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            SettingsTreeNode root = <span class="keyword">new</span> SettingsTreeNode(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">foreach</span>(<span class="keywordtype">string</span> key <span class="keywordflow">in</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___settings_a07f171f70f58e842773d24b0db006f25.html#a07f171f70f58e842773d24b0db006f25">settings</a>.Keys) {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="keywordtype">string</span>[] dir = key.Split(<span class="charliteral">&#39;/&#39;</span>).Skip(1).ToArray();</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___settings_a48fe17e89db46c6869b3d75d590e6a31.html#a48fe17e89db46c6869b3d75d590e6a31">add_node</a>(dir, root, <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___settings_a07f171f70f58e842773d24b0db006f25.html#a07f171f70f58e842773d24b0db006f25">settings</a>[key]);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            }</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">return</span> root;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___settings_a48fe17e89db46c6869b3d75d590e6a31_html_a48fe17e89db46c6869b3d75d590e6a31"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___settings_a48fe17e89db46c6869b3d75d590e6a31.html#a48fe17e89db46c6869b3d75d590e6a31">AVR.Core.AVR_Settings.add_node</a></div><div class="ttdeci">static void add_node(string[] dir, SettingsTreeNode node, string value)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___settings_8cs_source.html#l00171">AVR_Settings.cs:171</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___settings_8cs_source.html#l00166">166</a> of file <a class="el" href="_a_v_r___settings_8cs_source.html">AVR_Settings.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                                    {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            AVR.Core.AVR_DevConsole.print(<span class="stringliteral">&quot;Building SettingsTree...&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            SettingsTreeNode root = <span class="keyword">new</span> SettingsTreeNode(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keywordflow">foreach</span>(<span class="keywordtype">string</span> key <span class="keywordflow">in</span> <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___settings_a07f171f70f58e842773d24b0db006f25.html#a07f171f70f58e842773d24b0db006f25">settings</a>.Keys) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="keywordtype">string</span>[] dir = key.Split(<span class="charliteral">&#39;/&#39;</span>).Skip(1).ToArray();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___settings_a48fe17e89db46c6869b3d75d590e6a31.html#a48fe17e89db46c6869b3d75d590e6a31">add_node</a>(dir, root, <a class="code" href="class_a_v_r_1_1_core_1_1_a_v_r___settings_a07f171f70f58e842773d24b0db006f25.html#a07f171f70f58e842773d24b0db006f25">settings</a>[key]);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">return</span> root;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___settings_a48fe17e89db46c6869b3d75d590e6a31_html_a48fe17e89db46c6869b3d75d590e6a31"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___settings_a48fe17e89db46c6869b3d75d590e6a31.html#a48fe17e89db46c6869b3d75d590e6a31">AVR.Core.AVR_Settings.add_node</a></div><div class="ttdeci">static void add_node(string[] dir, SettingsTreeNode node, string value)</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___settings_8cs_source.html#l00178">AVR_Settings.cs:178</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___settings_a07f171f70f58e842773d24b0db006f25_html_a07f171f70f58e842773d24b0db006f25"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___settings_a07f171f70f58e842773d24b0db006f25.html#a07f171f70f58e842773d24b0db006f25">AVR.Core.AVR_Settings.settings</a></div><div class="ttdeci">static Dictionary&lt; string, string &gt; settings</div><div class="ttdoc">Dictionary containing all settings by their key. A setting declared as domain = { setting = true } wi...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___settings_8cs_source.html#l00042">AVR_Settings.cs:42</a></div></div>
 </div><!-- fragment -->
 </div>
