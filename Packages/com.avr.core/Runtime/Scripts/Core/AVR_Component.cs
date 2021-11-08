@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace AVR.Core {
@@ -79,6 +80,12 @@ namespace AVR.Core {
         public int remoteLayer = 0;
 
         [HideInInspector] public UnityEngine.Events.UnityEvent onRemoteStart;
+
+        protected interface IInternalState<T> : Unity.Netcode.INetworkSerializable where T : AVR_Component
+        {
+            public void From(T reference);
+            public void Apply(T reference);
+        }
 #endif
     }
 }

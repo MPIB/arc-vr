@@ -355,27 +355,7 @@ namespace AVR.Avatar {
         void Update()
         {
             #if AVR_NET
-            if (!IsOwner) return;
-            else if(synchronizePose)
-            {
-                PoseProviderState state;
-                state.lookAtPos = lookAtPos;
-                state.leftHandRot = leftHandRot;
-                state.rightHandRot = rightHandRot;
-                state.leftFootPos = leftFootPos;
-                state.leftFootRot = leftFootRot;
-                state.rightFootPos = rightFootPos;
-                state.rightFootRot = rightFootRot;
-                state.pivotPos = pivotPos;
-                state.pivotRot = pivotRot;
-                state.bodyPos = bodyPos;
-                state.bodyRot = bodyRot;
-                state.eyePos = eyePos;
-                state.eyeRot = eyeRot;
-                state.leftHandPos = leftHandPos;
-                state.rightHandPos = rightHandPos;
-                UpdateToClientsServerRpc(state);
-            }
+            if(synchronizePose) sync();
             #endif
 
             SetBody();
@@ -385,12 +365,6 @@ namespace AVR.Avatar {
 
             UpdateLeftFoot();
             UpdateRightFoot();
-        }
-
-        [ServerRpc(RequireOwnership = false)]
-        void UpdateToClientsServerRpc(PoseProviderState state)
-        {
-            m_ReplicatedState.Value = state;
         }
 
         void GetStandingTransform(out Quaternion rot, out Vector3 pos) {
@@ -499,11 +473,30 @@ namespace AVR.Avatar {
 #if AVR_NET
         [HideInInspector]
         [AVR.Core.Attributes.ShowInNetPrompt]
-        public bool synchronizePose = true;
+        public bool synchronizePose = false;
 
-        private readonly NetworkVariable<PoseProviderState> m_ReplicatedState = new NetworkVariable<PoseProviderState>(NetworkVariableReadPermission.Everyone, new PoseProviderState());
+        [ServerRpc(RequireOwnership = false)]
+        private void syncServerRpc(InternalState state)
+        {
+            m_ReplicatedState.Value = state;
+        }
 
-        internal struct PoseProviderState : INetworkSerializable
+        private void sync()
+        {
+            if (IsOwner)
+            {
+                InternalState state = new InternalState();
+                state.From(this);
+            }
+            else
+            {
+                m_ReplicatedState.Value.Apply(this);
+            }
+        }
+
+        private readonly NetworkVariable<InternalState> m_ReplicatedState = new NetworkVariable<InternalState>(NetworkVariableReadPermission.Everyone, new InternalState());
+
+        private struct InternalState : IInternalState<AVR_PoseProvider>
         {
             public Vector3 lookAtPos;
             public Quaternion leftHandRot;
@@ -520,7 +513,30 @@ namespace AVR.Avatar {
             public Quaternion eyeRot;
             public Vector3 leftHandPos;
             public Vector3 rightHandPos;
-           
+
+            public void From(AVR_PoseProvider reference)
+            {
+                // We retrieve the values manually, nothing to do here
+            }
+
+            public void Apply(AVR_PoseProvider reference)
+            {
+                this.lookAtPos = reference.lookAtPos;
+                this.leftHandRot = reference.leftHandRot;
+                this.rightHandRot = reference.rightHandRot;
+                this.leftFootPos = reference.leftFootPos;
+                this.leftFootRot = reference.leftFootRot;
+                this.rightFootPos = reference.rightFootPos;
+                this.rightFootRot = reference.rightFootRot;
+                this.pivotPos = reference.pivotPos;
+                this.pivotRot = reference.pivotRot;
+                this.bodyPos = reference.bodyPos;
+                this.bodyRot =reference.bodyRot;
+                this.eyePos = reference.eyePos;
+                this.eyeRot = reference.eyeRot;
+                this.leftHandPos = reference.leftHandPos;
+                this.rightHandPos = reference.rightHandPos;
+            }
 
             public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
             {
