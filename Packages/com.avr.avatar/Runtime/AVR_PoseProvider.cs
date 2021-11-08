@@ -486,11 +486,11 @@ namespace AVR.Avatar {
             if (IsOwner)
             {
                 InternalState state = new InternalState();
-                state.From(this);
+                state.FromReference(this);
             }
             else
             {
-                m_ReplicatedState.Value.Apply(this);
+                m_ReplicatedState.Value.ApplyState(this);
             }
         }
 
@@ -514,12 +514,7 @@ namespace AVR.Avatar {
             public Vector3 leftHandPos;
             public Vector3 rightHandPos;
 
-            public void From(AVR_PoseProvider reference)
-            {
-                // We retrieve the values manually, nothing to do here
-            }
-
-            public void Apply(AVR_PoseProvider reference)
+            public void FromReference(AVR_PoseProvider reference)
             {
                 this.lookAtPos = reference.lookAtPos;
                 this.leftHandRot = reference.leftHandRot;
@@ -531,11 +526,16 @@ namespace AVR.Avatar {
                 this.pivotPos = reference.pivotPos;
                 this.pivotRot = reference.pivotRot;
                 this.bodyPos = reference.bodyPos;
-                this.bodyRot =reference.bodyRot;
+                this.bodyRot = reference.bodyRot;
                 this.eyePos = reference.eyePos;
                 this.eyeRot = reference.eyeRot;
                 this.leftHandPos = reference.leftHandPos;
                 this.rightHandPos = reference.rightHandPos;
+            }
+
+            public void ApplyState(AVR_PoseProvider reference)
+            {
+                // Nothing to do here
             }
 
             public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
