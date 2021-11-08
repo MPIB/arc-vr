@@ -83,8 +83,8 @@ namespace AVR.Core {
 
         protected interface IInternalState<T> : Unity.Netcode.INetworkSerializable where T : AVR_Component
         {
-            public void From(T reference);
-            public void Apply(T reference);
+            public void FromReference(T reference);
+            public void ApplyState(T reference);
         }
 #endif
     }
