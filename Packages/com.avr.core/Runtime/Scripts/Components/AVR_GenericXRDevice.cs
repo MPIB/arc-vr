@@ -121,6 +121,13 @@ namespace AVR.Core
 
         protected void OnBeforeRender()
         {
+#if AVR_NET
+            if (isOnline)
+            {
+                sync();
+                if (!IsOwner) return;
+            }
+#endif
             if (tracking && (updateType == TrackingUpdateType.OnBeforeRender || updateType == TrackingUpdateType.OnBeforeRenderAndUpdate))
             {
                 UpdateTracking();
@@ -129,6 +136,14 @@ namespace AVR.Core
 
         protected void Update()
         {
+#if AVR_NET
+            if (isOnline)
+            {
+                sync();
+                if (!IsOwner) return;
+            }
+#endif
+
             if (tracking && (updateType == TrackingUpdateType.OnUpdate || updateType == TrackingUpdateType.OnBeforeRenderAndUpdate))
             {
                 UpdateTracking();
@@ -148,5 +163,57 @@ namespace AVR.Core
             if(nodeDevices.ContainsKey(controllerNode) && nodeDevices[controllerNode] == this) nodeDevices.Remove(controllerNode);
             Application.onBeforeRender -= OnBeforeRender;
         }
+
+#if AVR_NET
+        [HideInInspector]
+        [AVR.Core.Attributes.ShowInNetPrompt]
+        public bool synchronizeTransform = false;
+
+        [Unity.Netcode.ServerRpc(RequireOwnership = false)]
+        private void syncServerRpc(InternalState state)
+        {
+            m_ReplicatedState.Value = state;
+        }
+
+        private void sync()
+        {
+            if (!synchronizeTransform) return;
+            if (IsOwner)
+            {
+                InternalState state = new InternalState();
+                state.FromReference(this);
+            }
+            else
+            {
+                m_ReplicatedState.Value.ApplyState(this);
+            }
+        }
+
+        private readonly Unity.Netcode.NetworkVariable<InternalState> m_ReplicatedState = new Unity.Netcode.NetworkVariable<InternalState>(Unity.Netcode.NetworkVariableReadPermission.Everyone, new InternalState());
+
+        private struct InternalState : IInternalState<AVR_GenericXRDevice>
+        {
+            public Vector3 trackingPos;
+            public Quaternion trackingRot;
+
+            public void FromReference(AVR_GenericXRDevice reference)
+            {
+                trackingPos = reference.transform.position;
+                trackingRot = reference.transform.rotation;
+            }
+
+            public void ApplyState(AVR_GenericXRDevice reference)
+            {
+                reference.transform.position = trackingPos;
+                reference.transform.rotation = trackingRot;
+            }
+
+            public void NetworkSerialize<T>(Unity.Netcode.BufferSerializer<T> serializer) where T : Unity.Netcode.IReaderWriter
+            {
+                serializer.SerializeValue(ref trackingPos);
+                serializer.SerializeValue(ref trackingRot);
+            }
+        }
+#endif
     }
 }

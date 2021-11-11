@@ -233,6 +233,9 @@ namespace AVR.Core {
         /// </summary>
         public bool getEventStatus(BoolEvent type)
         {
+#if AVR_NET
+            if(!IsOwner) return false;
+#endif
             switch (type)
             {
                 case BoolEvent.PRIMARY2DAXIS_CLICK : { return primary2DAxisClick; }
