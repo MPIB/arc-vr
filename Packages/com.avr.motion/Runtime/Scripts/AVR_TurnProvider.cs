@@ -65,6 +65,10 @@ namespace AVR.Motion {
 
         void Update()
         {
+#if AVR_NET
+            if (isOnline && !IsOwner) return;
+#endif
+
             // Snap turn triggered
             if(mode==turnMode.SNAP && controller.inputManager.getEventStatus(turnEvent) && (stime + snp_cooldown) < Time.time) {
                 stime = Time.time; // Restart cooldown timer
