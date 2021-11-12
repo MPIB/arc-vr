@@ -7,6 +7,7 @@ namespace AVR.Phys {
     /// Retrieves an AVR_Grabbable from a given volume (convex collider). The object closest to the given GrabPoint takes priority.
     /// </summary>
     [RequireComponent(typeof(Collider))]
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder.html")]
     public class AVR_GrabbableVolumeFinder : AVR_GrabbableFinder
     {
         public Transform GrabPoint;
@@ -14,7 +15,7 @@ namespace AVR.Phys {
 
         private Collider col;
 
-        void Start()
+        protected override void Start()
         {
             if (!col) col = GetComponent<Collider>();
             if (!GrabPoint) GrabPoint = GetComponentInParent<AVR_BasicGrabProvider>().grabPoint;
@@ -27,12 +28,18 @@ namespace AVR.Phys {
 
         private void OnTriggerEnter(Collider other)
         {
+#if AVR_NET
+            if (isOnline && !IsOwner) return;
+#endif
             if (other.GetType() == typeof(MeshCollider) && !((MeshCollider)other).convex) return; //Dont add non-convex colliders
             if (!colliders.Contains(other)) colliders.Add(other);
         }
 
         private void OnTriggerExit(Collider other)
         {
+#if AVR_NET
+            if (isOnline && !IsOwner) return;
+#endif
             if (colliders.Contains(other)) colliders.Remove(other);
         }
 

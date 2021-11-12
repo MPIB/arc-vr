@@ -104,6 +104,9 @@ namespace AVR.Phys {
                 while(AttachedHands.Count>0) AttachedHands[0].makeRelease();
             }
             AttachedHands.Add(hand);
+#if AVR_NET
+            NetworkObject.ChangeOwnership(this.OwnerClientId);
+#endif
         }
 
         public void Release(AVR_BasicGrabProvider hand)

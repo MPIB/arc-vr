@@ -129,18 +129,27 @@ namespace AVR.Phys {
         }
 
         void Update() {
+#if AVR_NET
+            if (isOnline && !IsOwner) return;
+#endif
             foreach (AVR_Finger f in fingers) f.Update();
         }
 
         void LateUpdate() {
-            if(fake_parent!=null) {
+#if AVR_NET
+            if (isOnline && !IsOwner) return;
+#endif
+            if (fake_parent!=null) {
                 HandVisualTransform().position = fake_parent.position;
                 HandVisualTransform().rotation = fake_parent.rotation;
             }
         }
 
         void FixedUpdate() {
-            if(fake_parent==null && physical_hand) {
+#if AVR_NET
+            if (isOnline && !IsOwner) return;
+#endif
+            if (fake_parent==null && physical_hand) {
                 //TODO: Make HandVisualTransform() follow ControllerTransform() as if it was a grabbed object
                 //pos
                 Vector3 pDelta = (HandControllerTransform().position - HandVisualTransform().position);

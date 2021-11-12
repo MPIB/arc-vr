@@ -70,6 +70,9 @@ namespace AVR.Phys {
         }
 
         protected override void Update() {
+#if AVR_NET
+            if (isOnline && !IsOwner) return;
+#endif
             base.Update();
 
             if(grabbedObject!=null) {
