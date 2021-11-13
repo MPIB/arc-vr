@@ -122,7 +122,7 @@ namespace AVR.UI {
             if(AVR_Canvas.active_canvases.Count>0) {
                 float min_dist = float.PositiveInfinity;
                 foreach(AVR_Canvas canv in AVR_Canvas.active_canvases) {
-                    if(canv.GetPlane().Raycast(new Ray(UIRay.UICamera.transform.position, UIRay.UICamera.transform.forward), out float dist)) {
+                    if(canv.isInteractible && canv.GetPlane().Raycast(new Ray(UIRay.UICamera.transform.position, UIRay.UICamera.transform.forward), out float dist)) {
                         min_dist = Mathf.Min(dist, min_dist);
                     }
                 }

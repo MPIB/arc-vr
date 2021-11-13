@@ -17,6 +17,11 @@ namespace AVR.UI {
     public class AVR_Canvas : AVR_Behaviour, IPointerEnterHandler, IPointerExitHandler
     {
         /// <summary>
+        /// If set to false, the UIInteractionprovider will disregard this canvas entirely.
+        /// </summary>
+        public bool isInteractible = true;
+
+        /// <summary>
         /// A list of all AVR_Canvases that have at some point been active and not destroyed since
         /// </summary>
         /// <value></value>
@@ -34,8 +39,8 @@ namespace AVR.UI {
         public Canvas canvas { get; private set; }
 
         void Awake() {
-            all_canvases = new List<AVR_Canvas>();
-            active_canvases = new List<AVR_Canvas>();
+            if(all_canvases==null) all_canvases = new List<AVR_Canvas>();
+            if(active_canvases==null) active_canvases = new List<AVR_Canvas>();
 
             all_canvases.Add(this);
 
@@ -117,7 +122,7 @@ namespace AVR.UI {
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (!active_canvases.Contains(this)) active_canvases.Add(this);
+            if (isInteractible && !active_canvases.Contains(this)) active_canvases.Add(this);
         }
         public void OnPointerExit(PointerEventData eventData)
         {
