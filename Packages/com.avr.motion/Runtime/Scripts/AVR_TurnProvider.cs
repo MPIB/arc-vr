@@ -66,7 +66,7 @@ namespace AVR.Motion {
         void Update()
         {
 #if AVR_NET
-            if (isOnline && !IsOwner) return;
+            if (IsOnline && !IsOwner) return;
 #endif
 
             // Snap turn triggered

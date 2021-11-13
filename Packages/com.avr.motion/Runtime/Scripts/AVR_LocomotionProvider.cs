@@ -101,7 +101,7 @@ namespace AVR.Motion {
         void LateUpdate()
         {
 #if AVR_NET
-            if (isOnline)
+            if (IsOnline)
             {
                 sync();
                 if (!IsOwner) return;

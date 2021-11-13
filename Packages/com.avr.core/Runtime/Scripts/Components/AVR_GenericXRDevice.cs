@@ -122,7 +122,7 @@ namespace AVR.Core
         protected void OnBeforeRender()
         {
 #if AVR_NET
-            if (isOnline)
+            if (IsOnline)
             {
                 sync();
                 if (!IsOwner) return;
@@ -137,7 +137,7 @@ namespace AVR.Core
         protected void Update()
         {
 #if AVR_NET
-            if (isOnline)
+            if (IsOnline)
             {
                 sync();
                 if (!IsOwner) return;
