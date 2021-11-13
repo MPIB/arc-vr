@@ -205,4 +205,18 @@ namespace AVR.Core.Attributes {
             this.group_id = group_id;
         }
     }
+
+    /// <summary>
+    /// Makes a property of an object only show in the Network-behaviour window. Also works for private/protected attributes.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = true)]
+    public class ShowInNetPrompt : PropertyAttribute
+    {
+        /// <summary>
+        /// Makes a property of an object only show in the Network-behaviour window
+        /// </summary>
+        public ShowInNetPrompt()
+        {
+        }
+    }
 }

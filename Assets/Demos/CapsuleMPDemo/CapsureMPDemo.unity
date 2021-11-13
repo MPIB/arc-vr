@@ -281,6 +281,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4551417115696338522, guid: f7892fbbb40ac9844a12866be8f0824d, type: 3}
+      propertyPath: NetworkConfig.PlayerPrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551417115696338522, guid: f7892fbbb40ac9844a12866be8f0824d, type: 3}
       propertyPath: NetworkConfig.UsePrefabSync
       value: 1
       objectReference: {fileID: 0}
@@ -1114,6 +1118,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3664583225326994437, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 4455136866992479730, guid: 7cd01e6def125e948b98f8505757d458, type: 3}
+    - target: {fileID: 3664583225326994437, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
       propertyPath: prefabHashGenerator
       value: CapsuleMPPlayer
       objectReference: {fileID: 0}
@@ -1130,12 +1138,20 @@ PrefabInstance:
       value: 16009072021328089370
       objectReference: {fileID: 0}
     - target: {fileID: 3664583225326994439, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 798145066
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664583225326994439, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
       propertyPath: PrefabHashGenerator
       value: CapsulePlayerSpawn
       objectReference: {fileID: 0}
     - target: {fileID: 3664583225326994442, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
       propertyPath: m_Name
       value: SpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 3664583225326994442, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3664583225468338063, guid: be7583eb9eeef6845b2636e880ffd84e, type: 3}
       propertyPath: m_LocalPosition.x

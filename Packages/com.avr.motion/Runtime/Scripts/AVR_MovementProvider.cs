@@ -89,6 +89,9 @@ namespace AVR.Motion {
         }
 
         void Update() {
+#if AVR_NET
+            if (IsOnline && !IsOwner) return;
+#endif
             // Show/hide ray depending on given enable event
             if(controller.inputManager.getEventStatus(Enable_event)) {
                 ray.show();

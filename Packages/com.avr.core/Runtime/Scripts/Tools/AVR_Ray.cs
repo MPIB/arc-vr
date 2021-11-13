@@ -171,14 +171,68 @@ namespace AVR.Core {
 
         /// <summary> Hides the ray. A ray is not updated while hidden. </summary>
         public virtual void hide() {
-            _hidden = true;
-            lr.enabled = false;
+            setHidden(false);
         }
 
         /// <summary> Shows the ray. A ray is not updated while hidden. </summary>
         public virtual void show() {
-            _hidden = false;
-            lr.enabled = true;
+            setHidden(true);
         }
+
+        /// <summary>
+        /// Set the hidden status of the ray
+        /// </summary>
+        /// <param name="hidden">True to hide, false to show</param>
+        public virtual void setHidden(bool hidden) {
+            _hidden = hidden;
+            lr.enabled = !hidden;
+        }
+#if AVR_NET
+        [HideInInspector]
+        [AVR.Core.Attributes.ShowInNetPrompt]
+        public bool synchronizeHidden = false;
+
+        [Unity.Netcode.ServerRpc(RequireOwnership = false)]
+        private void syncServerRpc(InternalState state)
+        {
+            m_ReplicatedState.Value = state;
+        }
+
+        private void sync()
+        {
+            if (!synchronizeHidden) return;
+            if (IsOwner)
+            {
+                InternalState state = new InternalState();
+                state.FromReference(this);
+            }
+            else
+            {
+                m_ReplicatedState.Value.ApplyState(this);
+            }
+        }
+
+        private readonly Unity.Netcode.NetworkVariable<InternalState> m_ReplicatedState = new Unity.Netcode.NetworkVariable<InternalState>(Unity.Netcode.NetworkVariableReadPermission.Everyone, new InternalState());
+
+        private struct InternalState : IInternalState<AVR_Ray>
+        {
+            public bool Hidden;
+
+            public void FromReference(AVR_Ray reference)
+            {
+                Hidden = reference.isHidden;
+            }
+
+            public void ApplyState(AVR_Ray reference)
+            {
+                reference.setHidden(Hidden);
+            }
+
+            public void NetworkSerialize<T>(Unity.Netcode.BufferSerializer<T> serializer) where T : Unity.Netcode.IReaderWriter
+            {
+                serializer.SerializeValue(ref Hidden);
+            }
+        }
+#endif
     }
 }

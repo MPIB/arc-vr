@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -17,67 +18,119 @@ namespace AVR.Avatar {
         /// <summary>
         /// Endpoint of the players view vector
         /// </summary>
-        public Vector3 lookAtPos => eyeTransform.localPosition + transform.InverseTransformDirection(eyeTransform.forward);
+        public Vector3 lookAtPos =>
+            #if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.lookAtPos :
+            #endif
+            eyeTransform.localPosition + transform.InverseTransformDirection(eyeTransform.forward);
 
         /// <summary>
         /// Left hand rotation
         /// </summary>
-        public Quaternion leftHandRot => leftHandTarget.rotation;
+        public Quaternion leftHandRot =>
+            #if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.leftHandRot :
+            #endif
+            leftHandTarget.rotation;
 
         /// <summary>
         /// Right hand rotation
         /// </summary>
-        public Quaternion rightHandRot => rightHandTarget.rotation;
+        public Quaternion rightHandRot => 
+            #if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.rightHandRot :
+            #endif
+            rightHandTarget.rotation;
 
         /// <summary>
         /// Left foot position
         /// </summary>
-        public Vector3 leftFootPos => leftFootTarget.localPosition;
+        public Vector3 leftFootPos => 
+            #if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.leftFootPos :
+            #endif
+            leftFootTarget.localPosition;
 
         /// <summary>
         /// Left foot rotation
         /// </summary>
-        public Quaternion leftFootRot => leftFootTarget.rotation;
+        public Quaternion leftFootRot => 
+            #if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.leftFootRot :
+            #endif
+            leftFootTarget.rotation;
 
         /// <summary>
         /// Right foot position
         /// </summary>
-        public Vector3 rightFootPos => rightFootTarget.localPosition;
+        public Vector3 rightFootPos => 
+            #if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.rightFootPos :
+            #endif
+            rightFootTarget.localPosition;
 
         /// <summary>
         /// Right foot rotation
         /// </summary>
-        public Quaternion rightFootRot => rightFootTarget.rotation;
+        public Quaternion rightFootRot => 
+            #if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.rightFootRot :
+            #endif
+            rightFootTarget.rotation;
 
         /// <summary>
         /// Position of the rig's pivot (Point on the ground directly underneath the HMD)
         /// </summary>
-        public Vector3 pivotPos => pivotTransform.localPosition;
+        public Vector3 pivotPos => 
+            #if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.pivotPos :
+            #endif
+            pivotTransform.localPosition;
 
         /// <summary>
         /// Rotation of the pivot
         /// </summary>
-        public Quaternion pivotRot => pivotTransform.rotation;
+        public Quaternion pivotRot => 
+            #if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.pivotRot :
+            #endif
+            pivotTransform.rotation;
 
         /// <summary>
         /// Position of the body
         /// </summary>
-        public Vector3 bodyPos => bodyTransform.localPosition;
+        public Vector3 bodyPos => 
+            #if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.bodyPos :
+            #endif
+            bodyTransform.localPosition;
 
         /// <summary>
         /// Rotation of the body
         /// </summary>
-        public Quaternion bodyRot => bodyTransform.rotation;
+        public Quaternion bodyRot => 
+            #if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.bodyRot :
+            #endif
+            bodyTransform.rotation;
 
         /// <summary>
         /// Position of the head
         /// </summary>
-        public Vector3 eyePos => eyeTransform.localPosition;
+        public Vector3 eyePos => 
+            #if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.eyePos :
+            #endif
+            eyeTransform.localPosition;
 
         /// <summary>
         /// Rotation of the head
         /// </summary>
-        public Quaternion eyeRot => eyeTransform.rotation;
+        public Quaternion eyeRot => 
+            #if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.eyeRot :
+#endif
+            eyeTransform.rotation;
 
         /// <summary>
         /// Left hand position
@@ -85,6 +138,13 @@ namespace AVR.Avatar {
         public Vector3 leftHandPos {
             get
             {
+                #if AVR_NET
+                if(!IsOwner)
+                {
+                    return m_ReplicatedState.Value.leftHandPos;
+                }
+                #endif
+
                 if (leftHandFilter) return transform.InverseTransformPoint(leftHandFilter.naturalize_point(leftHandTarget.position));
                 return transform.InverseTransformPoint(leftHandTarget.position);
             }
@@ -96,6 +156,13 @@ namespace AVR.Avatar {
         public Vector3 rightHandPos {
             get
             {
+                #if AVR_NET
+                if (!IsOwner)
+                {
+                    return m_ReplicatedState.Value.rightHandPos;
+                }
+                #endif
+
                 if (rightHandFilter) return transform.InverseTransformPoint(rightHandFilter.naturalize_point(rightHandTarget.position));
                 return transform.InverseTransformPoint(rightHandTarget.position);
             }
@@ -113,8 +180,8 @@ namespace AVR.Avatar {
         [AVR.Core.Attributes.FoldoutGroup("Filters")]
         public AVR_PoseNaturalizationFilter rightHandFilter;
 
-        protected Transform leftHandTarget => playerRig.leftHandController.transform;
-        protected Transform rightHandTarget => playerRig.rightHandController.transform;
+        protected Transform leftHandTarget => playerRig.leftHandController ? playerRig.leftHandController.transform : pivotTransform;
+        protected Transform rightHandTarget => playerRig.rightHandController ? playerRig.rightHandController.transform : pivotTransform;
         protected Transform leftFootTarget;
         protected Transform rightFootTarget;
         protected Transform pivotTransform;
@@ -287,6 +354,10 @@ namespace AVR.Avatar {
 
         void Update()
         {
+            #if AVR_NET
+            if(synchronizePose) sync();
+            #endif
+
             SetBody();
 
             // This is something we need in "CorrectBodyYawAngle".
@@ -316,6 +387,10 @@ namespace AVR.Avatar {
         
         void OnDrawGizmos() {
             if(Application.isPlaying) {
+                #if AVR_NET
+                if (!IsOwner) return;
+                #endif
+
                 Gizmos.color = Color.green;
                 Gizmos.DrawSphere(eyeTransform.position, 0.1f);
 
@@ -394,5 +469,94 @@ namespace AVR.Avatar {
 
             pivotTransform.forward = playerRig.XZPlaneFacingDirection;
         }
+
+#if AVR_NET
+        [HideInInspector]
+        [AVR.Core.Attributes.ShowInNetPrompt]
+        public bool synchronizePose = false;
+
+        [ServerRpc(RequireOwnership = false)]
+        private void syncServerRpc(InternalState state)
+        {
+            m_ReplicatedState.Value = state;
+        }
+
+        private void sync()
+        {
+            if (IsOwner)
+            {
+                InternalState state = new InternalState();
+                state.FromReference(this);
+            }
+            else
+            {
+                m_ReplicatedState.Value.ApplyState(this);
+            }
+        }
+
+        private readonly NetworkVariable<InternalState> m_ReplicatedState = new NetworkVariable<InternalState>(NetworkVariableReadPermission.Everyone, new InternalState());
+
+        private struct InternalState : IInternalState<AVR_PoseProvider>
+        {
+            public Vector3 lookAtPos;
+            public Quaternion leftHandRot;
+            public Quaternion rightHandRot;
+            public Vector3 leftFootPos;
+            public Quaternion leftFootRot;
+            public Vector3 rightFootPos;
+            public Quaternion rightFootRot;
+            public Vector3 pivotPos;
+            public Quaternion pivotRot;
+            public Vector3 bodyPos;
+            public Quaternion bodyRot;
+            public Vector3 eyePos;
+            public Quaternion eyeRot;
+            public Vector3 leftHandPos;
+            public Vector3 rightHandPos;
+
+            public void FromReference(AVR_PoseProvider reference)
+            {
+                this.lookAtPos = reference.lookAtPos;
+                this.leftHandRot = reference.leftHandRot;
+                this.rightHandRot = reference.rightHandRot;
+                this.leftFootPos = reference.leftFootPos;
+                this.leftFootRot = reference.leftFootRot;
+                this.rightFootPos = reference.rightFootPos;
+                this.rightFootRot = reference.rightFootRot;
+                this.pivotPos = reference.pivotPos;
+                this.pivotRot = reference.pivotRot;
+                this.bodyPos = reference.bodyPos;
+                this.bodyRot = reference.bodyRot;
+                this.eyePos = reference.eyePos;
+                this.eyeRot = reference.eyeRot;
+                this.leftHandPos = reference.leftHandPos;
+                this.rightHandPos = reference.rightHandPos;
+            }
+
+            public void ApplyState(AVR_PoseProvider reference)
+            {
+                // Nothing to do here
+            }
+
+            public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+            {
+                serializer.SerializeValue(ref lookAtPos);
+                serializer.SerializeValue(ref leftHandRot);
+                serializer.SerializeValue(ref rightHandRot);
+                serializer.SerializeValue(ref leftFootPos);
+                serializer.SerializeValue(ref leftFootRot);
+                serializer.SerializeValue(ref rightFootPos);
+                serializer.SerializeValue(ref rightFootRot);
+                serializer.SerializeValue(ref pivotPos);
+                serializer.SerializeValue(ref pivotRot);
+                serializer.SerializeValue(ref bodyPos);
+                serializer.SerializeValue(ref bodyRot);
+                serializer.SerializeValue(ref eyePos);
+                serializer.SerializeValue(ref eyeRot);
+                serializer.SerializeValue(ref leftHandPos);
+                serializer.SerializeValue(ref rightHandPos);
+            }
+        }
+#endif
     }
 }

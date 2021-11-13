@@ -6,7 +6,8 @@
   "unity": "2020.2",
   "unityRelease": "2f1",
   "dependencies": {
-    "com.unity.xr.management": "4.0.5"
+    "com.unity.xr.management": "4.0.5",
+    "com.unity.netcode.gameobjects": "1.0.0-pre.3"
   },
   "keywords": [
     "vr",

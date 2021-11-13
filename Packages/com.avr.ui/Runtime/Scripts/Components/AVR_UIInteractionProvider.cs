@@ -72,9 +72,13 @@ namespace AVR.UI {
 
         // Sets this UIPorvider as the currently active one.
         void set() {
+#if AVR_NET
+            if (IsOnline && !IsOwner) return;
+#endif
+
             // TODO: This is a shitty workaround. AVR_Controller.Awake() calls *after* this, so inputManager is not set on the first frame.
             // We are retrying for 1 second.
-            if(Time.realtimeSinceStartup - stime < 1.0 && !controller.inputManager) {
+            if (Time.realtimeSinceStartup - stime < 1.0 && !controller.inputManager) {
                 Invoke("set", 0.0f);
                 return;
             }
@@ -101,12 +105,19 @@ namespace AVR.UI {
 
         // Un-Sets this UIPorvider as the currently active one.
         void unset() {
+#if AVR_NET
+            if (IsOnline && !IsOwner) return;
+#endif
+
             VRInput.Instance.inputManager = null;
             VRInput.Instance.setEventCamera(null);
             currentActive = null;
         }
 
         void Update() {
+#if AVR_NET
+            if (IsOnline && !IsOwner) return;
+#endif
             // Here we show/hide the UIRay if needed and also set the length of the ray to the distance to the canvas.
             if(AVR_Canvas.active_canvases.Count>0) {
                 float min_dist = float.PositiveInfinity;

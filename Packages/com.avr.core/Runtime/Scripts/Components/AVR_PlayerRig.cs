@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+#if AVR_NET
+using Unity.Netcode;
+#endif
+
 namespace AVR.Core {
     /// <summary>
     /// Represents the players VR setup. Only one instance at a time is allowed.
@@ -9,6 +13,30 @@ namespace AVR.Core {
     [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_core_1_1_a_v_r___player_rig.html")]
     public class AVR_PlayerRig : AVR_SingletonComponent<AVR_PlayerRig>
     {
+        private Vector3 _RigPosInWorldSpace =>
+#if AVR_NET
+            !IsOwner? m_ReplicatedState.Value.rigPos :
+#endif
+            this.transform.position;
+
+        private Quaternion _RigRotInWorldSpace =>
+#if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.rigRot :
+#endif
+            this.transform.rotation;
+
+        private Vector3 _CameraPosInWorldSpace =>
+#if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.camPos :
+#endif
+            this.MainCamera.transform.position;
+
+        private Quaternion _CameraRotInWorldSpace =>
+#if AVR_NET
+            !IsOwner ? m_ReplicatedState.Value.camRot :
+#endif
+            this.MainCamera.transform.rotation;
+
         /// <summary>
         /// Average motion of the players feet over the last 0.5s.
         /// </summary>
@@ -36,14 +64,30 @@ namespace AVR.Core {
         /// Player Rig location in world space
         /// </summary>
         public Vector3 RigInWorldSpace {
-            get { return transform.position; }
+            get { return _RigPosInWorldSpace; }
+        }
+
+        /// <summary>
+        /// Player rig rotation in world space
+        /// </summary>
+        public Quaternion RigRotationInWorldSpace
+        {
+            get { return _RigRotInWorldSpace; }
         }
 
         /// <summary>
         /// Player camera in world space
         /// </summary>
         public Vector3 CameraInWorldSpace {
-            get { return MainCamera.transform.position; }
+            get { return _CameraPosInWorldSpace; }
+        }
+
+        /// <summary>
+        /// Camera rotation in world space
+        /// </summary>
+        public Quaternion CameraRotationInWorldSpace
+        {
+            get { return _CameraRotInWorldSpace; }
         }
 
         /// <summary>
@@ -200,5 +244,61 @@ namespace AVR.Core {
                 characterController.center = center;
             }
         }
+
+#if AVR_NET
+        [HideInInspector]
+        [AVR.Core.Attributes.ShowInNetPrompt]
+        public bool synchronizeRigPositions = false;
+
+        [ServerRpc(RequireOwnership = false)]
+        private void syncServerRpc(InternalState state)
+        {
+            m_ReplicatedState.Value = state;
+        }
+
+        private void sync()
+        {
+            if (IsOwner)
+            {
+                InternalState state = new InternalState();
+                state.FromReference(this);
+            }
+            else
+            {
+                m_ReplicatedState.Value.ApplyState(this);
+            }
+        }
+
+        private readonly NetworkVariable<InternalState> m_ReplicatedState = new NetworkVariable<InternalState>(NetworkVariableReadPermission.Everyone, new InternalState());
+
+        private struct InternalState : IInternalState<AVR_PlayerRig>
+        {
+            public Vector3 rigPos;
+            public Quaternion rigRot;
+            public Vector3 camPos;
+            public Quaternion camRot;
+
+            public void FromReference(AVR_PlayerRig reference)
+            {
+                rigPos = reference.RigInWorldSpace;
+                rigRot = reference.RigRotationInWorldSpace;
+                camPos = reference.CameraInWorldSpace;
+                camRot = reference.CameraRotationInWorldSpace;
+            }
+
+            public void ApplyState(AVR_PlayerRig reference)
+            {
+                
+            }
+
+            public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+            {
+                serializer.SerializeValue(ref rigPos);
+                serializer.SerializeValue(ref rigRot);
+                serializer.SerializeValue(ref camPos);
+                serializer.SerializeValue(ref camRot);
+            }
+        }
+#endif
     }
 }

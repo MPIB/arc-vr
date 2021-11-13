@@ -126,6 +126,9 @@ namespace AVR.Phys {
         }
 
         protected virtual void Update() {
+#if AVR_NET
+            if (IsOnline && !IsOwner) return;
+#endif
             // Make Grab
             if(controller.inputManager.getEventStatus(grabEvent)) {
                 makeGrab();

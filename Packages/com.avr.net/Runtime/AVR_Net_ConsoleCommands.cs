@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using MLAPI;
+using Unity.Netcode;
 
 using AVR.Core;
 
@@ -30,7 +30,7 @@ namespace AVR.Net
 
                 NetworkManager.Singleton.OnServerStarted += () => {
                     foreach(var c in Object.FindObjectsOfType<AVR_Component>()) {
-                        c.onNetworkStart();
+                        //c.onNetworkStart();
                     }
                 };
             } catch(System.Exception) {
@@ -68,19 +68,19 @@ namespace AVR.Net
             });
 
             AVR_DevConsole.register_command("stop_host", (s) => {
-                NetworkManager.Singleton.StopHost();
+                NetworkManager.Singleton.Shutdown();
             });
 
             AVR_DevConsole.register_command("stop_server", (s) => {
-                NetworkManager.Singleton.StopServer();
+                NetworkManager.Singleton.Shutdown();
             });
 
             AVR_DevConsole.register_command("stop_client", (s) => {
-                NetworkManager.Singleton.StopClient();
+                NetworkManager.Singleton.Shutdown();
             });
 
             AVR_DevConsole.register_command("disconnect", (s) => {
-                NetworkManager.Singleton.StopClient();
+                NetworkManager.Singleton.Shutdown();
             });
 
             AVR_DevConsole.register_command("spawnas", (s) => {
@@ -90,6 +90,7 @@ namespace AVR.Net
 
             AVR_DevConsole.register_command("getport", (s) =>
             {
+                /* TODO
                 try {
                     MLAPI.Transports.UNET.UNetTransport unetT = (MLAPI.Transports.UNET.UNetTransport)NetworkManager.Singleton.NetworkConfig.NetworkTransport;
                     AVR_DevConsole.print("Port: " + unetT.ServerListenPort);
@@ -100,9 +101,11 @@ namespace AVR.Net
                 catch (System.Exception) {
                     AVR_DevConsole.error("Could not set Port.");
                 }
+                */
             }, 0, "Print NetworkManager ConnectPort.");
 
             AVR_DevConsole.register_command("getaddress", (s) => {
+                /*
                 try {
                     MLAPI.Transports.UNET.UNetTransport unetT = (MLAPI.Transports.UNET.UNetTransport)NetworkManager.Singleton.NetworkConfig.NetworkTransport;
                     AVR_DevConsole.print("Address: " + unetT.ConnectAddress);
@@ -113,9 +116,11 @@ namespace AVR.Net
                 catch (System.Exception) {
                     AVR_DevConsole.error("Could not set Port.");
                 }
+                */
             }, 0, "Print NetworkManager ConnectPort.");
 
             AVR_DevConsole.register_command("setport", (s) => {
+                /*
                 try {
                     MLAPI.Transports.UNET.UNetTransport unetT = (MLAPI.Transports.UNET.UNetTransport) NetworkManager.Singleton.NetworkConfig.NetworkTransport;
                     unetT.ConnectPort = unetT.ServerListenPort = int.Parse(s[0]);
@@ -126,10 +131,12 @@ namespace AVR.Net
                 catch(System.Exception) {
                     AVR_DevConsole.error("Could not set Port.");
                 }
+                */
             }, 1, "Set NetworkManager ConnectPort and ServerListenPort to given parameter.");
 
             AVR_DevConsole.register_command("setaddress", (s) =>
             {
+                /*
                 try
                 {
                     MLAPI.Transports.UNET.UNetTransport unetT = (MLAPI.Transports.UNET.UNetTransport)NetworkManager.Singleton.NetworkConfig.NetworkTransport;
@@ -143,10 +150,12 @@ namespace AVR.Net
                 {
                     AVR_DevConsole.error("Could not set Address.");
                 }
+                */
             }, 1, "Set NetworkManager ConnectAddress to given parameter.");
 
             AVR_DevConsole.register_command("getaddress", (s) =>
             {
+                /*
                 try {
                     MLAPI.Transports.UNET.UNetTransport unetT = (MLAPI.Transports.UNET.UNetTransport)NetworkManager.Singleton.NetworkConfig.NetworkTransport;
                     AVR_DevConsole.print("Current Transport Address: " + unetT.ConnectAddress + ":" + unetT.ConnectPort);
@@ -159,6 +168,7 @@ namespace AVR.Net
                 {
                     AVR_DevConsole.error("Could not gat Address.");
                 }
+                */
             });
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace AVR.Core {
@@ -26,9 +27,6 @@ namespace AVR.Core {
         }
 
         protected virtual void Start() {
-            #if AVR_NET
-            onNetworkStart();
-            #endif
             onStart.Invoke();
         }
 
@@ -41,9 +39,10 @@ namespace AVR.Core {
         }
 
 #if AVR_NET
-        public virtual void onNetworkStart()
+        public override void OnNetworkSpawn()
         {
-            if (networkAPI.isOnline() && !networkAPI.isLocalPlayer(this))
+            base.OnNetworkSpawn();
+            if(!IsLocalPlayer)
             {
                 onRemoteStart.Invoke();
 
@@ -52,7 +51,7 @@ namespace AVR.Core {
                     gameObject.layer = remoteLayer;
                     if (changeLayerOnRemote_IncludeChildren)
                     {
-                        foreach (Transform child in transform)
+                        foreach (Transform child in GetComponentsInChildren<Transform>())
                         {
                             child.gameObject.layer = remoteLayer;
                         }
@@ -82,54 +81,11 @@ namespace AVR.Core {
 
         [HideInInspector] public UnityEngine.Events.UnityEvent onRemoteStart;
 
-        public abstract class ComponentNetworkAPI
+        protected interface IInternalState<T> : Unity.Netcode.INetworkSerializable where T : AVR_Component
         {
-            public abstract int instanceId(AVR_Component comp);
-            public abstract ulong networkId(AVR_Component comp);
-            public abstract ulong ownerId(AVR_Component comp);
-            public abstract bool isSpawned(AVR_Component comp);
-            public abstract bool isLocalPlayer(AVR_Component comp);
-            public abstract bool isOwner(AVR_Component comp);
-            public abstract bool isOwnedByServer(AVR_Component comp);
-            public abstract bool isPlayerObject(AVR_Component comp);
-            public abstract bool? isSceneObject(AVR_Component comp);
-            public abstract bool isOnline();
-            public abstract void setOwner(AVR_Component comp, ulong newOwnerId);
-            public abstract void removeOwner(AVR_Component comp);
+            public void FromReference(T reference);
+            public void ApplyState(T reference);
         }
-
-        public class DefaultNetworkAPI : ComponentNetworkAPI
-        {
-            public override int instanceId(AVR_Component comp) => 0;
-            public override ulong networkId(AVR_Component comp) => 0;
-            public override ulong ownerId(AVR_Component comp) => 0;
-            public override bool isSpawned(AVR_Component comp) => false;
-            public override bool isLocalPlayer(AVR_Component comp) => false;
-            public override bool isOwner(AVR_Component comp) => false;
-            public override bool isOwnedByServer(AVR_Component comp) => false;
-            public override bool isPlayerObject(AVR_Component comp) => false;
-            public override bool? isSceneObject(AVR_Component comp) => false;
-            public override bool isOnline() => false;
-            public override void setOwner(AVR_Component comp, ulong newOwnerId) { }
-            public override void removeOwner(AVR_Component comp) { }
-        }
-
-        [HideInInspector]
-        public Object networkObject;
-
-        public static ComponentNetworkAPI networkAPI
-        {
-            get
-            {
-                if (_napi == null) _napi = new DefaultNetworkAPI();
-                return _napi;
-            }
-            set
-            {
-                _napi = value;
-            }
-        }
-        private static ComponentNetworkAPI _napi;
 #endif
     }
 }

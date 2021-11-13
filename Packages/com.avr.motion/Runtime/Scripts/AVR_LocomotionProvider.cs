@@ -100,7 +100,15 @@ namespace AVR.Motion {
         // This needs to be in LateUpdate because AVR_CharacterController.Update() NEEDS to run first.
         void LateUpdate()
         {
-            if(controller.inputManager.getEventStatus(moveEvent)) {
+#if AVR_NET
+            if (IsOnline)
+            {
+                sync();
+                if (!IsOwner) return;
+            }
+#endif
+
+            if (controller.inputManager.getEventStatus(moveEvent)) {
                 Vector2 md = controller.inputManager.getEventStatus(moveDirection);
                 Vector3 dir = tF(md);
 
@@ -136,5 +144,57 @@ namespace AVR.Motion {
                 }
             }
         }
+
+#if AVR_NET
+        [HideInInspector]
+        [AVR.Core.Attributes.ShowInNetPrompt]
+        public bool synchronizeCharacterController = false;
+
+        [Unity.Netcode.ServerRpc(RequireOwnership = false)]
+        private void syncServerRpc(InternalState state)
+        {
+            m_ReplicatedState.Value = state;
+        }
+
+        private void sync()
+        {
+            if (!synchronizeCharacterController) return;
+            if (IsOwner)
+            {
+                InternalState state = new InternalState();
+                state.FromReference(this);
+            }
+            else
+            {
+                m_ReplicatedState.Value.ApplyState(this);
+            }
+        }
+
+        private readonly Unity.Netcode.NetworkVariable<InternalState> m_ReplicatedState = new Unity.Netcode.NetworkVariable<InternalState>(Unity.Netcode.NetworkVariableReadPermission.Everyone, new InternalState());
+
+        private struct InternalState : IInternalState<AVR_LocomotionProvider>
+        {
+            public Vector3 chCenter;
+            public float chHeight;
+
+            public void FromReference(AVR_LocomotionProvider reference)
+            {
+                chCenter = reference.ch.center;
+                chHeight = reference.ch.height;
+            }
+
+            public void ApplyState(AVR_LocomotionProvider reference)
+            {
+                reference.ch.center = chCenter;
+                reference.ch.height = chHeight;
+            }
+
+            public void NetworkSerialize<T>(Unity.Netcode.BufferSerializer<T> serializer) where T : Unity.Netcode.IReaderWriter
+            {
+                serializer.SerializeValue(ref chCenter);
+                serializer.SerializeValue(ref chHeight);
+            }
+        }
+#endif
     }
 }

@@ -51,7 +51,7 @@ namespace AVR.UI {
             if (active_canvases.Contains(this)) active_canvases.Remove(this);
         }
 
-        public void OnDestroy()
+        public override void OnDestroy()
         {
             if (all_canvases.Contains(this)) all_canvases.Remove(this);
             if (active_canvases.Contains(this)) active_canvases.Remove(this);
