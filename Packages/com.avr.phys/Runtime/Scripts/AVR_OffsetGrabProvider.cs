@@ -77,7 +77,7 @@ namespace AVR.Phys {
 
         protected override void Update() {
 #if AVR_NET
-            if (isOnline && !IsOwner) return;
+            if (IsOnline && !IsOwner) return;
 #endif
             // Pre-grab hand
             if (grabbedObject == null && handVisual != null && grabbableFinder.getGrabLocation(out GrabLocation grabLocation) && !grabLocation.isNode)

@@ -29,7 +29,7 @@ namespace AVR.Phys {
         private void OnTriggerEnter(Collider other)
         {
 #if AVR_NET
-            if (isOnline && !IsOwner) return;
+            if (IsOnline && !IsOwner) return;
 #endif
             if (other.GetType() == typeof(MeshCollider) && !((MeshCollider)other).convex) return; //Dont add non-convex colliders
             if (!colliders.Contains(other)) colliders.Add(other);
@@ -38,7 +38,7 @@ namespace AVR.Phys {
         private void OnTriggerExit(Collider other)
         {
 #if AVR_NET
-            if (isOnline && !IsOwner) return;
+            if (IsOnline && !IsOwner) return;
 #endif
             if (colliders.Contains(other)) colliders.Remove(other);
         }

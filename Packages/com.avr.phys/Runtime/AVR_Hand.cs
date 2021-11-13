@@ -130,14 +130,14 @@ namespace AVR.Phys {
 
         void Update() {
 #if AVR_NET
-            if (isOnline && !IsOwner) return;
+            if (IsOnline && !IsOwner) return;
 #endif
             foreach (AVR_Finger f in fingers) f.Update();
         }
 
         void LateUpdate() {
 #if AVR_NET
-            if (isOnline && !IsOwner) return;
+            if (IsOnline && !IsOwner) return;
 #endif
             if (fake_parent!=null) {
                 HandVisualTransform().position = fake_parent.position;
@@ -147,7 +147,7 @@ namespace AVR.Phys {
 
         void FixedUpdate() {
 #if AVR_NET
-            if (isOnline && !IsOwner) return;
+            if (IsOnline && !IsOwner) return;
 #endif
             if (fake_parent==null && physical_hand) {
                 //TODO: Make HandVisualTransform() follow ControllerTransform() as if it was a grabbed object
