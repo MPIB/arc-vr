@@ -105,7 +105,10 @@ namespace AVR.Phys {
             }
             AttachedHands.Add(hand);
 #if AVR_NET
-            NetworkObject.ChangeOwnership(this.OwnerClientId);
+            if (IsOnline)
+            {
+                NetworkObject.ChangeOwnership(this.OwnerClientId);
+            }
 #endif
         }
 

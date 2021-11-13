@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 using AVR.Core;
 
@@ -11,6 +12,16 @@ namespace AVR.Phys {
     [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider.html")]
     public class AVR_BasicGrabProvider : AVR_ControllerComponent
     {
+        /// <summary>
+        /// Executed when an object is (successfully) grabbed.
+        /// </summary>
+        public UnityEvent OnGrab;
+
+        /// <summary>
+        /// Executed when a grabbed object is released.
+        /// </summary>
+        public UnityEvent OnRelease;
+
         /// <summary>
         /// Returns true if this provider is currently grabbing an object.
         /// </summary>
@@ -42,6 +53,11 @@ namespace AVR.Phys {
         /// Object that is currently being grabbed. Null if no object is being grabbed
         /// </summary>
         protected AVR_Grabbable grabbedObject => grabLocation!=null ? grabLocation.grabbable : null;
+
+        /// <summary>
+        /// Object that is currently being grabbed. Null if no object is being grabbed
+        /// </summary>
+        public AVR_Grabbable getGrabbedObject() => grabbedObject;
 
         protected GrabLocation grabLocation;
 
@@ -111,6 +127,7 @@ namespace AVR.Phys {
         /// Perform a grab on with parameters given in a GrabLocation struct
         /// </summary>
         public virtual void makeGrab(GrabLocation location) {
+            OnGrab.Invoke();
             grabLocation = location;
             grabbedObject.Grab(this);
         }
@@ -120,6 +137,7 @@ namespace AVR.Phys {
         /// </summary>
         public virtual void makeRelease() {
             if(grabbedObject !=null) {
+                OnRelease.Invoke();
                 grabbedObject.Release(this);
                 grabLocation = null;
             }

@@ -6,6 +6,6 @@ public class UrnBallDespawn : MonoBehaviour
 {
     void Update()
     {
-        if (transform.localPosition.magnitude > 1.5f) Destroy(this.gameObject);
+        if (transform.localPosition.magnitude > 5.0f) Destroy(this.gameObject);
     }
 }

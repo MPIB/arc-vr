@@ -70,7 +70,7 @@ namespace AVR.UEditor.Core {
                     }
                 }
             }
-            catch(System.Exception e)
+            catch(System.Exception)
             {
                 return false;
             }

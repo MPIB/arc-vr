@@ -171,12 +171,12 @@ namespace AVR.Core {
 
         /// <summary> Hides the ray. A ray is not updated while hidden. </summary>
         public virtual void hide() {
-            setHidden(false);
+            setHidden(true);
         }
 
         /// <summary> Shows the ray. A ray is not updated while hidden. </summary>
         public virtual void show() {
-            setHidden(true);
+            setHidden(false);
         }
 
         /// <summary>
