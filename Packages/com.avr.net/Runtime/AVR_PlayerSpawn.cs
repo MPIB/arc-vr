@@ -9,7 +9,7 @@ namespace AVR.Net {
     /// <summary>
     /// Used for convenient spawning of players with respective network prefabs.
     /// </summary>
-    public class AVR_PlayerSpawn : AVR_NetworkBehaviour
+    public class AVR_PlayerSpawn : AVR_Behaviour
     {
         public int max_players = 4;
 
@@ -18,6 +18,8 @@ namespace AVR.Net {
         public bool disconnectClientIfFailed = true;
 
         public NetworkObject prefab;
+
+        protected virtual NetworkObject getPrefab() => prefab;
 
         public override void OnNetworkSpawn()
         {
@@ -60,7 +62,7 @@ namespace AVR.Net {
 
                 // Instantiate and spawn the object
                 AVR_DevConsole.cprint("Instantiating playerPrefab as playerObject for client #"+clientId, this);
-                GameObject obj = Instantiate(prefab.gameObject, spawnLocation.position, spawnLocation.rotation);
+                GameObject obj = Instantiate(getPrefab().gameObject, spawnLocation.position, spawnLocation.rotation);
                 obj.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientId);
             }
             // Deal with errors
