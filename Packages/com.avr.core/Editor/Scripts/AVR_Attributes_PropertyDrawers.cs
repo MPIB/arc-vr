@@ -183,7 +183,7 @@ namespace AVR.Core.Attributes {
             {
                 // draw
                 propertyHeight = base.GetPropertyHeight(property, label);
-                EditorGUI.PropertyField(position, property);
+                EditorGUI.PropertyField(position, property, new GUIContent(property.displayName));
             }
         }
     }

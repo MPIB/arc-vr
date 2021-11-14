@@ -12,6 +12,7 @@ namespace AVR.UI.Utils {
     {
         public float increase_amount = 0.1f;
         public float decrease_amount = 0.1f;
+        public bool allowNegative = true;
 
         private InputField input;
         private TMPro.TMP_InputField input_tmp;
@@ -28,10 +29,16 @@ namespace AVR.UI.Utils {
         public void increase_value() {
             try {
                 if(input) {
-                    input.text = (float.Parse(input.text) + increase_amount).ToString();
+                    input.text = allowNegative ? 
+                        (float.Parse(input.text) + increase_amount).ToString()
+                        :
+                        (Mathf.Max(0, float.Parse(input.text) + increase_amount)).ToString();
                 }
                 else {
-                    input_tmp.text = (float.Parse(input_tmp.text) + increase_amount).ToString();
+                    input_tmp.text = allowNegative ?
+                        (float.Parse(input.text) + increase_amount).ToString()
+                        :
+                        (Mathf.Max(0, float.Parse(input.text) + increase_amount)).ToString();
                 }
             } catch(System.Exception) { }
         }
@@ -40,11 +47,17 @@ namespace AVR.UI.Utils {
             try {
                 if (input)
                 {
-                    input.text = (float.Parse(input.text) - decrease_amount).ToString();
+                    input.text = allowNegative ?
+                        (float.Parse(input.text) - decrease_amount).ToString()
+                        :
+                        (Mathf.Max(0, float.Parse(input.text) - decrease_amount)).ToString();
                 }
                 else
                 {
-                    input_tmp.text = (float.Parse(input_tmp.text) - decrease_amount).ToString();
+                    input_tmp.text = allowNegative ?
+                        (float.Parse(input.text) - decrease_amount).ToString()
+                        :
+                        (Mathf.Max(0, float.Parse(input.text) - decrease_amount)).ToString();
                 }
             } catch(System.Exception) { }
         }
