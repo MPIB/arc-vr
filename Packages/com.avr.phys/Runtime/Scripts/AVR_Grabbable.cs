@@ -40,7 +40,7 @@ namespace AVR.Phys {
         private Transform old_parent;
 
         private List<Vector3> velocities = new List<Vector3>();
-        int velocity_count = 2;
+        const int velocity_count = 3;
 
         private float last_dist = 0.0f;
 

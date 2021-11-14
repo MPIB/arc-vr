@@ -8,10 +8,13 @@ public class TurnTowardsPlayer : AVR_Behaviour
 {
     void Update()
     {
-        transform.forward = Vector3.Lerp(
-            transform.forward,
-            -(playerRig.CameraInWorldSpace - transform.position),
-            Time.deltaTime
-        );
+        if (playerRig)
+        {
+            transform.forward = Vector3.Lerp(
+                transform.forward,
+                -(playerRig.CameraInWorldSpace - transform.position),
+                Time.deltaTime
+            );
+        }
     }
 }
