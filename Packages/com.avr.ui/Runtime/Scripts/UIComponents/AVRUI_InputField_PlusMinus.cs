@@ -36,11 +36,11 @@ namespace AVR.UI.Utils {
                 }
                 else {
                     input_tmp.text = allowNegative ?
-                        (float.Parse(input.text) + increase_amount).ToString()
+                        (float.Parse(input_tmp.text) + increase_amount).ToString()
                         :
-                        (Mathf.Max(0, float.Parse(input.text) + increase_amount)).ToString();
+                        (Mathf.Max(0, float.Parse(input_tmp.text) + increase_amount)).ToString();
                 }
-            } catch(System.Exception) { }
+            } catch(System.Exception ) { }
         }
 
         public void decrease_value() {
@@ -55,9 +55,9 @@ namespace AVR.UI.Utils {
                 else
                 {
                     input_tmp.text = allowNegative ?
-                        (float.Parse(input.text) - decrease_amount).ToString()
+                        (float.Parse(input_tmp.text) - decrease_amount).ToString()
                         :
-                        (Mathf.Max(0, float.Parse(input.text) - decrease_amount)).ToString();
+                        (Mathf.Max(0, float.Parse(input_tmp.text) - decrease_amount)).ToString();
                 }
             } catch(System.Exception) { }
         }
