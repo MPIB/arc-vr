@@ -55,6 +55,12 @@ namespace AVR.Core {
         /// Returns true if we are the network owner of this script or of we are not online.
         /// </summary>
         new public bool IsOwner => !this.IsOnline || base.IsOwner;
+#else
+        // We define OnDestroy here to keep consistency with Networkbehaviour
+        public virtual void OnDestroy()
+        {
+
+        }
 #endif
     }
 }
