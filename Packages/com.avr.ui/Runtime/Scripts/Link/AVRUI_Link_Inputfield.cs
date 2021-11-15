@@ -35,6 +35,8 @@ namespace AVR.UI.Link {
 
         public override void init() {
             if(!input) input = GetComponent<InputField>();
+
+            if (input) old_value = input.text.ToString();
         }
 
         public override void updateValue()
@@ -98,7 +100,7 @@ namespace AVR.UI.Link {
                 input.text = current_value.ToString();
 
                 #if UNITY_EDITOR
-                if(old_value!=current_value.ToString()) {
+                if(old_value!=current_value.ToString() && !Application.isPlaying) {
                     EditorUtility.SetDirty(input);
                     old_value = current_value.ToString();
                 }

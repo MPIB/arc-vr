@@ -32,6 +32,8 @@ namespace AVR.UI.Link {
 
         public override void init() {
             if(!input) input = GetComponent<Toggle>();
+
+            if (input) old_value = input.isOn.ToString();
         }
 
         public override void updateValue()
@@ -86,7 +88,7 @@ namespace AVR.UI.Link {
             input.isOn = current_value;
 
 #if UNITY_EDITOR
-            if (old_value != current_value.ToString())
+            if (old_value != current_value.ToString() && !Application.isPlaying)
             {
                 EditorUtility.SetDirty(input);
                 old_value = current_value.ToString();
