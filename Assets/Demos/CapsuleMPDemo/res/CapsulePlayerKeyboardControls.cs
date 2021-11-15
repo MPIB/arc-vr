@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 using AVR.Core;
 
@@ -10,16 +11,16 @@ public class CapsulePlayerKeyboardControls : AVR_Component
     {
         float speed = Time.deltaTime * 3.0f;
 
-        if(Input.GetKey(KeyCode.W)) {
+        if (Keyboard.current[Key.W].isPressed) {
             transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.forward, speed);
         }
-        else if(Input.GetKey(KeyCode.S)) {
+        else if (Keyboard.current[Key.S].isPressed) {
             transform.position = Vector3.MoveTowards(transform.position, transform.position - transform.forward, speed);
         }
-        if(Input.GetKey(KeyCode.A)) {
+        if (Keyboard.current[Key.A].isPressed) {
             transform.Rotate(0.0f, -speed*30.0f, 0.0f, Space.Self);
         }
-        if (Input.GetKey(KeyCode.D)) {
+        if (Keyboard.current[Key.D].isPressed) {
             transform.Rotate(0.0f, speed*30.0f, 0.0f, Space.Self);
         }
     }
