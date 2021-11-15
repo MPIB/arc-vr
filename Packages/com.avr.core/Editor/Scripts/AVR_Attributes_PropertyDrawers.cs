@@ -45,7 +45,7 @@ namespace AVR.Core.Attributes {
             // Begin foldout
             foldout = EditorGUILayout.Foldout(foldout, group_name);
             EditorGUI.indentLevel++;
-            if (foldout) EditorGUILayout.PropertyField(prop);
+            if (foldout) EditorGUILayout.PropertyField(prop, new GUIContent(prop.displayName));
             EditorGUI.indentLevel--;
 
             last_foldout = foldout;
@@ -55,7 +55,7 @@ namespace AVR.Core.Attributes {
             if (last_foldout)
             {
                 EditorGUI.indentLevel++;
-                EditorGUILayout.PropertyField(prop);
+                EditorGUILayout.PropertyField(prop, new GUIContent(prop.displayName));
                 EditorGUI.indentLevel--;
             }
             foldout = last_foldout;

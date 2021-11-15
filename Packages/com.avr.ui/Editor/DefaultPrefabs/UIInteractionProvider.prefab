@@ -56,9 +56,19 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
-  clickButton: 16
-  clickButton_down: 15
-  clickButton_up: 17
+  destroyOnRemote: 1
+  changeLayerOnRemote: 0
+  changeLayerOnRemote_IncludeChildren: 0
+  remoteLayer: 0
+  onRemoteStart:
+    m_PersistentCalls:
+      m_Calls: []
+  mouseButton0Click: 16
+  mouseButton0Down: 15
+  mouseButton0Up: 17
+  mouseButton1Click: 26
+  mouseButton1Down: 26
+  mouseButton1Up: 26
   show_ray_only_on_hover: 1
   UIRay: {fileID: 814982647035819496}
 --- !u!1001 &1725657038088423660

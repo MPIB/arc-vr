@@ -17,21 +17,18 @@ namespace AVR.UI {
         /// </summary>
         public static AVR_UIInteractionProvider currentActive;
 
-        [Header("Input")]
-        /// <summary>
-        /// Event that would normally be LMB.
-        /// </summary>
-        public AVR_ControllerInputManager.BoolEvent clickButton;
-
-        /// <summary>
-        /// Event that represents LMB buttondown
-        /// </summary>
-        public AVR_ControllerInputManager.BoolEvent clickButton_down;
-
-        /// <summary>
-        /// Event that represents LMB buttonup
-        /// </summary>
-        public AVR_ControllerInputManager.BoolEvent clickButton_up;
+        [AVR.Core.Attributes.FoldoutGroup("Events")]
+        public AVR_ControllerInputManager.BoolEvent mouseButton0Click;
+        [AVR.Core.Attributes.FoldoutGroup("Events")]
+        public AVR_ControllerInputManager.BoolEvent mouseButton0Down;
+        [AVR.Core.Attributes.FoldoutGroup("Events")]
+        public AVR_ControllerInputManager.BoolEvent mouseButton0Up;
+        [AVR.Core.Attributes.FoldoutGroup("Events")]
+        public AVR_ControllerInputManager.BoolEvent mouseButton1Click;
+        [AVR.Core.Attributes.FoldoutGroup("Events")]
+        public AVR_ControllerInputManager.BoolEvent mouseButton1Down;
+        [AVR.Core.Attributes.FoldoutGroup("Events")]
+        public AVR_ControllerInputManager.BoolEvent mouseButton1Up;
 
         [Header("Settings")]
         /// <summary>
@@ -95,9 +92,12 @@ namespace AVR.UI {
                 AVR_DevConsole.error("AVR_UIInteractionProvider can only be used with a VRInput component!");
                 return;
             }
-            VRInput.Instance.clickButton = clickButton;
-            VRInput.Instance.clickButton_down = clickButton_down;
-            VRInput.Instance.clickButton_up = clickButton_up;
+            VRInput.Instance.mouseButton0Click = mouseButton0Click;
+            VRInput.Instance.mouseButton0Down = mouseButton0Down;
+            VRInput.Instance.mouseButton0Up = mouseButton0Up;
+            VRInput.Instance.mouseButton1Click = mouseButton1Click;
+            VRInput.Instance.mouseButton1Down = mouseButton1Down;
+            VRInput.Instance.mouseButton1Up = mouseButton1Up;
             VRInput.Instance.inputManager = controller.inputManager;
             VRInput.Instance.setEventCamera(UIRay.UICamera);
             currentActive = this;

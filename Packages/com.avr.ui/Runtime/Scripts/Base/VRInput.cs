@@ -24,11 +24,17 @@ namespace AVR.UI {
         [HideInInspector]
         public AVR_ControllerInputManager inputManager;
         [HideInInspector]
-        public AVR_ControllerInputManager.BoolEvent clickButton;
+        public AVR_ControllerInputManager.BoolEvent mouseButton0Click;
         [HideInInspector]
-        public AVR_ControllerInputManager.BoolEvent clickButton_down;
+        public AVR_ControllerInputManager.BoolEvent mouseButton0Down;
         [HideInInspector]
-        public AVR_ControllerInputManager.BoolEvent clickButton_up;
+        public AVR_ControllerInputManager.BoolEvent mouseButton0Up;
+        [HideInInspector]
+        public AVR_ControllerInputManager.BoolEvent mouseButton1Click;
+        [HideInInspector]
+        public AVR_ControllerInputManager.BoolEvent mouseButton1Down;
+        [HideInInspector]
+        public AVR_ControllerInputManager.BoolEvent mouseButton1Up;
 
         /// <summary>
         /// Sets a given camera to the current eventcamera. Typically called from AVR_UIInteractionprovider.
@@ -41,7 +47,7 @@ namespace AVR.UI {
             }
         }
 
-        protected override void Awake() 
+        protected override void Awake()
         {
             if (Instance != null) GameObject.Destroy(Instance);
             Instance = this;
@@ -51,19 +57,33 @@ namespace AVR.UI {
             GetComponent<BaseInputModule>().inputOverride = this;
         }
 
+        public override bool mousePresent { get { return inputManager!=null; } }
+
         public override bool GetMouseButton(int button)
         {
-            return inputManager && inputManager.getEventStatus(clickButton);
+            return button == 1 ?
+                inputManager && inputManager.getEventStatus(mouseButton1Click)
+                :
+                inputManager && inputManager.getEventStatus(mouseButton0Click)
+            ;
         }
 
         public override bool GetMouseButtonDown(int button)
         {
-            return inputManager && inputManager.getEventStatus(clickButton_down);
+            return button == 1 ?
+                inputManager && inputManager.getEventStatus(mouseButton1Down)
+                :
+                inputManager && inputManager.getEventStatus(mouseButton0Down)
+            ;
         }
 
         public override bool GetMouseButtonUp(int button)
         {
-            return inputManager && inputManager.getEventStatus(clickButton_up);
+            return button == 1 ?
+                inputManager && inputManager.getEventStatus(mouseButton1Up)
+                :
+                inputManager && inputManager.getEventStatus(mouseButton0Up)
+            ;
         }
 
         public override Vector2 mousePosition
