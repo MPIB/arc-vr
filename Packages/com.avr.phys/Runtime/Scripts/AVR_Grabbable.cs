@@ -19,7 +19,7 @@ namespace AVR.Phys {
         /// List of GrabNodes that are attatched to this object
         /// </summary>
         public List<AVR_GrabNode> grabNodes => nodes;
-        private List<AVR_GrabNode> nodes = new List<AVR_GrabNode>();
+        private readonly List<AVR_GrabNode> nodes = new List<AVR_GrabNode>();
 
         /// <summary>
         /// Rigidbody of this grabbable object.
@@ -77,7 +77,7 @@ namespace AVR.Phys {
         {
             if (isGrabbed)
             {
-                UpdateVelocities();
+                UpdateRBVelocity();
             }
             else {
                 force = Vector3.zero;
@@ -129,19 +129,15 @@ namespace AVR.Phys {
         Vector3 lastVel = Vector3.zero;
         Vector3 wacc = Vector3.zero;
         Vector3 worldvel = Vector3.zero;
-        Vector3 vel = Vector3.zero;
 
         Vector3 force = Vector3.zero;
         Vector3 cvel = Vector3.zero;
 
-        void UpdateVelocities()
+        void UpdateRBVelocity()
         {
             #if AVR_NET
             if(IsOnline && !IsOwner) return;
             #endif
-
-            // NOTE: use rb.worldCenterofMass etc isntead of transform pos + rotation ?
-            // TODO: Break grab if the object is too far away from hand
 
             // Get pos-rot of hand and item
             Vector3 targetItemPosition = transform.position;
@@ -251,7 +247,7 @@ namespace AVR.Phys {
             if(!isGrabbed) {
                 return transform.position;
             }
-            else if(AttachedHands.Count==1) {
+            else if(AttachedHands.Count == 1) {
                 return AttachedHands[0].getTargetPosition();
             }
             else {
@@ -269,7 +265,8 @@ namespace AVR.Phys {
                 return AttachedHands[0].getTargetRotation();
             }
             else {
-                // This is the simples way to get the average of multiple quaternions:
+                // TODO: This sometimes leads to weird rotations.
+                // This is the simplest way to get the average of multiple quaternions:
                 float w = 1f / AttachedHands.Count;
                 Quaternion avg = Quaternion.identity;
                 for (int i = 0; i < AttachedHands.Count; i++)
