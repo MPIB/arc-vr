@@ -11,6 +11,7 @@ namespace AVR.Avatar
     /// Avatar component that doesn't require controllers.
     /// </summary>
     [RequireComponent(typeof(Animator))]
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_avatar_1_1_a_v_r___simple_avatar.html")]
     public class AVR_SimpleAvatar : AVR.Core.AVR_Component
     {
         private Animator animator;

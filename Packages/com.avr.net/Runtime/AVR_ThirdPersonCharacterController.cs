@@ -8,6 +8,7 @@ namespace AVR.Net {
     /// <summary>
     /// Simple 3rd person character controller script.
     /// </summary>
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_net_1_1_a_v_r___third_person_character_controller.html")]
     public class AVR_ThirdPersonCharacterController : AVR_Component
     {
         public Animator anim;

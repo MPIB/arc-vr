@@ -7,6 +7,7 @@ namespace AVR.Phys {
     /// <summary>
     /// Represents a grabbable object.
     /// </summary>
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_phys_1_1_a_v_r___grabbable.html")]
     public class AVR_Grabbable : AVR.Core.AVR_Component
     {
         /// <summary>

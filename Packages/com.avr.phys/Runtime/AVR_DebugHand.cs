@@ -7,6 +7,7 @@ namespace AVR.Phys
     /// <summary>
     /// In-editor drawn hand for setting up GrabNodes.
     /// </summary>
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand.html")]
     [ExecuteInEditMode]
     public class AVR_DebugHand : AVR.Core.AVR_Behaviour
     {

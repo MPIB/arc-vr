@@ -16,6 +16,7 @@ namespace AVR.Avatar {
     /// 
     /// The filter is based on a recorded point-cloud. The cloud consists of locations relative to the HMD that are "normal". The filter uses a simple weighted average (similar to the kNN algorithm) to produce a more natural result.
     /// </summary>
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter.html")]
     [CreateAssetMenu(fileName = "PoseNaturalizationFilter", menuName = "arc-vr/avatar/PoseNaturalizationFilter", order = 1)]
     public class AVR_PoseNaturalizationFilter : ScriptableObject
     {

@@ -6,6 +6,7 @@ namespace AVR.Phys {
     /// <summary>
     /// Interactive hand model that adapts itself to grabbed objects. Only works with Offset- or AdvancedOffset- GrabProviders.
     /// </summary>
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_phys_1_1_a_v_r___hand.html")]
     public class AVR_Hand : AVR.Core.AVR_ControllerComponent
     {
         // For fingers:

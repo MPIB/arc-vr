@@ -9,6 +9,7 @@ namespace AVR.Net {
     /// <summary>
     /// Used for convenient spawning of players with respective network prefabs.
     /// </summary>
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_net_1_1_a_v_r___player_spawn.html")]
     public class AVR_PlayerSpawn : AVR_Behaviour
     {
         public int max_players = 4;

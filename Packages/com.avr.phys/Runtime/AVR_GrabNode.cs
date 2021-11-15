@@ -10,6 +10,7 @@ namespace AVR.Phys {
     /// <summary>
     /// Represents a grabbable node on an AVR_Grabbable. Nodes have preset poses/constraints for the hand that are applied when grabbed.
     /// </summary>
+    [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_phys_1_1_a_v_r___grab_node.html")]
     [ExecuteInEditMode]
     public class AVR_GrabNode : AVR.Core.AVR_Behaviour
     {
