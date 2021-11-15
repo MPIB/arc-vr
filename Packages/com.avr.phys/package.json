@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "displayName": "arc-vr-phys",
   "description": "Phys package for the arc-vr development framework.",
-  "unity": "2020.2",
-  "unityRelease": "2f1",
+  "unity": "2020.3",
+  "unityRelease": "21f1",
   "dependencies": {
     "com.avr.core": "1.0.0"
- },
- "keywords": [
+  },
+  "keywords": [
     "vr",
     "VR",
     "xr",
@@ -19,5 +19,6 @@
     "email": "benjamin@kahl.fi",
     "url": "https://benjamin.kahl.fi"
   },
-  "type": "library"
+  "type": "library",
+  "hideInEditor": false
 }
