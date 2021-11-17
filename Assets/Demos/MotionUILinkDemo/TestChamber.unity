@@ -6716,6 +6716,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2639582551780798563, guid: cbe9001e38cbee84fb6592f74536a527, type: 3}
+      propertyPath: mouseButton0Up
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639582551780798563, guid: cbe9001e38cbee84fb6592f74536a527, type: 3}
+      propertyPath: mouseButton0Down
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639582551780798563, guid: cbe9001e38cbee84fb6592f74536a527, type: 3}
+      propertyPath: mouseButton0Click
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 2639582551780798565, guid: cbe9001e38cbee84fb6592f74536a527, type: 3}
       propertyPath: m_Name
       value: UIInteractionProvider
@@ -16406,6 +16418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2774936150412724988, guid: ad4cb468ff05bb143b35850afd155515, type: 3}
+    - {fileID: -7807892951890648367, guid: ad4cb468ff05bb143b35850afd155515, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ad4cb468ff05bb143b35850afd155515, type: 3}
 --- !u!1 &1775781648
 GameObject:
