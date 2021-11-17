@@ -17,9 +17,16 @@ namespace AVR.UI {
         /// </summary>
         public Camera UICamera;
 
+        /// <summary>
+        /// Retocule object to display at the end of our ray.
+        /// </summary>
         public GameObject reticule;
 
-        public Vector3 canvasNormal;
+        [HideInInspector]
+        /// <summary>
+        /// Normal vector of the canvas we are hovering over (if there is one). This is set automatically by UIInteractionProvider.
+        /// </summary>
+        public Vector3 canvasNormal = Vector3.forward;
 
         protected override void Awake() {
             if(!UICamera) {
@@ -45,7 +52,7 @@ namespace AVR.UI {
         protected override void Update()
         {
             base.Update();
-            if (reticule != null)
+            if (reticule != null && isVisible)
             {
                 reticule.SetActive(isVisible);
                 reticule.transform.position = lr.GetPosition(lr.positionCount - 1);

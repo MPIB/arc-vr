@@ -20,21 +20,14 @@ namespace AVR.UI {
 
         private Camera eventCamera = null;
 
-        // We hide these components because they are set by UIInteractionProvider
-        [HideInInspector]
-        public AVR_ControllerInputManager inputManager;
-        [HideInInspector]
-        public AVR_ControllerInputManager.BoolEvent mouseButton0Click;
-        [HideInInspector]
-        public AVR_ControllerInputManager.BoolEvent mouseButton0Down;
-        [HideInInspector]
-        public AVR_ControllerInputManager.BoolEvent mouseButton0Up;
-        [HideInInspector]
-        public AVR_ControllerInputManager.BoolEvent mouseButton1Click;
-        [HideInInspector]
-        public AVR_ControllerInputManager.BoolEvent mouseButton1Down;
-        [HideInInspector]
-        public AVR_ControllerInputManager.BoolEvent mouseButton1Up;
+        public AVR_ControllerInputManager inputManager => AVR_UIInteractionProvider.currentActive?.controller?.inputManager;
+
+        public AVR_ControllerInputManager.BoolEvent mouseButton0Click => AVR_UIInteractionProvider.currentActive ? AVR_UIInteractionProvider.currentActive.mouseButton0Click : AVR_ControllerInputManager.BoolEvent.ALWAYS_FALSE;
+        public AVR_ControllerInputManager.BoolEvent mouseButton0Down => AVR_UIInteractionProvider.currentActive ? AVR_UIInteractionProvider.currentActive.mouseButton0Down : AVR_ControllerInputManager.BoolEvent.ALWAYS_FALSE;
+        public AVR_ControllerInputManager.BoolEvent mouseButton0Up => AVR_UIInteractionProvider.currentActive ? AVR_UIInteractionProvider.currentActive.mouseButton0Up : AVR_ControllerInputManager.BoolEvent.ALWAYS_FALSE;
+        public AVR_ControllerInputManager.BoolEvent mouseButton1Click => AVR_UIInteractionProvider.currentActive ? AVR_UIInteractionProvider.currentActive.mouseButton1Click : AVR_ControllerInputManager.BoolEvent.ALWAYS_FALSE;
+        public AVR_ControllerInputManager.BoolEvent mouseButton1Down => AVR_UIInteractionProvider.currentActive ? AVR_UIInteractionProvider.currentActive.mouseButton1Down : AVR_ControllerInputManager.BoolEvent.ALWAYS_FALSE;
+        public AVR_ControllerInputManager.BoolEvent mouseButton1Up => AVR_UIInteractionProvider.currentActive ? AVR_UIInteractionProvider.currentActive.mouseButton1Up : AVR_ControllerInputManager.BoolEvent.ALWAYS_FALSE;
 
         /// <summary>
         /// Sets a given camera to the current eventcamera. Typically called from AVR_UIInteractionprovider.

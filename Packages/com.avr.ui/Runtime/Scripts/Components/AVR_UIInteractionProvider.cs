@@ -15,7 +15,15 @@ namespace AVR.UI {
         /// <summary>
         /// The currently active interactionprovider. NOTE: only one interactionprovider will be active at a time. 
         /// </summary>
-        public static AVR_UIInteractionProvider currentActive;
+        public static AVR_UIInteractionProvider currentActive
+        {
+            get { return _currentActive; }
+            set {
+                _currentActive = value;
+                VRInput.Instance.setEventCamera(value?.UIRay?.UICamera);
+            }
+        }
+        private static AVR_UIInteractionProvider _currentActive;
 
         [AVR.Core.Attributes.FoldoutGroup("Events")]
         public AVR_ControllerInputManager.BoolEvent mouseButton0Click;
@@ -92,14 +100,6 @@ namespace AVR.UI {
                 AVR_DevConsole.error("AVR_UIInteractionProvider can only be used with a VRInput component!");
                 return;
             }
-            VRInput.Instance.mouseButton0Click = mouseButton0Click;
-            VRInput.Instance.mouseButton0Down = mouseButton0Down;
-            VRInput.Instance.mouseButton0Up = mouseButton0Up;
-            VRInput.Instance.mouseButton1Click = mouseButton1Click;
-            VRInput.Instance.mouseButton1Down = mouseButton1Down;
-            VRInput.Instance.mouseButton1Up = mouseButton1Up;
-            VRInput.Instance.inputManager = controller.inputManager;
-            VRInput.Instance.setEventCamera(UIRay.UICamera);
             currentActive = this;
         }
 
@@ -109,8 +109,6 @@ namespace AVR.UI {
             if (IsOnline && !IsOwner) return;
 #endif
 
-            VRInput.Instance.inputManager = null;
-            VRInput.Instance.setEventCamera(null);
             currentActive = null;
         }
 
