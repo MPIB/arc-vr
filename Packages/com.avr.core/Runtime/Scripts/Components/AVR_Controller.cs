@@ -54,8 +54,8 @@ namespace AVR.Core {
 
         /// <summary>
         /// Performs a haptic pulse on this controller (if available)
-        /// <param name="amplitude"> Amplitude of the pulse. </param>
-        /// <param name="duration"> Duration of the pulse. </param>
+        /// <param name="amplitude"> Normalized amplitude of the pulse. Must be in [0, 1] </param>
+        /// <param name="duration"> Duration of the pulse in seconds. </param>
         /// </summary>
         public void HapticPulse(float amplitude, float duration) {
             if (GetHapticCapabilities().supportsImpulse)

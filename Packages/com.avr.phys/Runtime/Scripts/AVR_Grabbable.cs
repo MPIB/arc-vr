@@ -105,6 +105,8 @@ namespace AVR.Phys {
                 while(AttachedHands.Count>0) AttachedHands[0].makeRelease();
             }
             AttachedHands.Add(hand);
+            hand.controller.HapticPulse(0.3f, 0.05f);
+
 #if AVR_NET
             if (IsOnline)
             {
@@ -277,6 +279,16 @@ namespace AVR.Phys {
                 }
                 return avg;
             }
+        }
+        void OnCollisionEnter(Collision collision)
+        {
+            // Haptic feedback
+            foreach(AVR_BasicGrabProvider h in AttachedHands)
+            {
+                h.controller.HapticPulse(Mathf.Lerp(0, 0.5f, 0.2f * collision.relativeVelocity.magnitude), 0.05f);
+            }
+
+            // TODO: Play sounds
         }
     }
 }
