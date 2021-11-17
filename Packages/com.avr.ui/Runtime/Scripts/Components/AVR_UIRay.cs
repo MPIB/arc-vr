@@ -52,11 +52,14 @@ namespace AVR.UI {
         protected override void Update()
         {
             base.Update();
-            if (reticule != null && isVisible)
+            if (reticule != null)
             {
                 reticule.SetActive(isVisible);
-                reticule.transform.position = lr.GetPosition(lr.positionCount - 1);
-                reticule.transform.forward = -canvasNormal;
+                if (isVisible)
+                {
+                    reticule.transform.position = lr.GetPosition(lr.positionCount - 1);
+                    reticule.transform.forward = -canvasNormal;
+                }
             }
         }
     }
