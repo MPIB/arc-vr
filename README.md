@@ -17,6 +17,10 @@ Here's a brief demonstration of the systems capabilities:
 
 [![Video-Link](https://i.imgur.com/T46NQyA.jpg)](https://www.youtube.com/watch?v=NHDEzg9Detg)
 
+# Compatibility
+
+So far, this project has exclusively been built and tested for the HTC Vive on Windows under Unity 2020.3.21. Since we use OpenXR as an API, other VR hardware will likely work just fine as well. Using a different Unity version may likely lead to errors or malfunctioning features.
+
 # How to get started?
 
 Follow these simple steps to get started:
