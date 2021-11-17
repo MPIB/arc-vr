@@ -17,6 +17,10 @@ namespace AVR.UI {
         /// </summary>
         public Camera UICamera;
 
+        public GameObject reticule;
+
+        public Vector3 canvasNormal;
+
         protected override void Awake() {
             if(!UICamera) {
                 UICamera = lr.gameObject.AddComponent<Camera>();
@@ -36,6 +40,17 @@ namespace AVR.UI {
                 mode = RayMode.STRAIGHT;
             }
             base.Awake();
+        }
+
+        protected override void Update()
+        {
+            base.Update();
+            if (reticule != null)
+            {
+                reticule.SetActive(isVisible);
+                reticule.transform.position = lr.GetPosition(lr.positionCount - 1);
+                reticule.transform.forward = -canvasNormal;
+            }
         }
     }
 }

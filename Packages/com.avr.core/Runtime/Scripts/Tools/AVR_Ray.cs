@@ -77,7 +77,7 @@ namespace AVR.Core {
             UpdateRay();
         }
 
-        void Update() {
+        protected virtual void Update() {
             UpdateRay(); //This ray needs continous updating
         }
 

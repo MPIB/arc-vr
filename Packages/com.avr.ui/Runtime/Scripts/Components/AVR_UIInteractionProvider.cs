@@ -121,12 +121,16 @@ namespace AVR.UI {
             // Here we show/hide the UIRay if needed and also set the length of the ray to the distance to the canvas.
             if(AVR_Canvas.active_canvases.Count>0) {
                 float min_dist = float.PositiveInfinity;
+                AVR_Canvas closest_canv = AVR_Canvas.active_canvases[0];
+
                 foreach(AVR_Canvas canv in AVR_Canvas.active_canvases) {
                     if(canv.isInteractible && canv.GetPlane().Raycast(new Ray(UIRay.UICamera.transform.position, UIRay.UICamera.transform.forward), out float dist)) {
                         min_dist = Mathf.Min(dist, min_dist);
+                        closest_canv = canv;
                     }
                 }
                 UIRay.max_length = min_dist;
+                UIRay.canvasNormal = -closest_canv.transform.forward;
                 UIRay.show();
             }
             else {
