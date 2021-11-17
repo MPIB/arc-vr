@@ -1,5 +1,10 @@
 ![Logo](https://github.com/MPIB/arc-vr/blob/main/Packages/com.avr.core/Package_Resources/avr_logo_bw_wide.png?raw=true)
 
+[![DOCS](https://i.imgur.com/MzumbEx.png)](https://docs.vr-toolbox.org/docs/html/)
+[![WEBSITE](https://i.imgur.com/pizJwKE.png)](https://www.vr-toolbox.org/)
+[![VIDEOS](https://i.imgur.com/RsrtpHZ.png)](https://www.youtube.com/playlist?list=PLh6z44emfoZ3ztXtrFRipGGQKSisaUAyD)
+[![DOWNLOAD](https://i.imgur.com/RYPTimL.png)](https://github.com/MPIB/arc-vr/releases)
+
 ARC-VR is a Unity3D framework that aims to ameliorate the development process of VR applications or games by providing any and all basic VR features, such as movement, physics-interaction and UI. Thus ensuring the development process doesn't get congested at an early stage with the implementation of redundant, basic VR functionalities.
 
 Built in-house at the [Max Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en), the framework is primarily intended to simplify and streamline the building process of VR-based psychological experiments and studies.
@@ -10,7 +15,7 @@ The framework is still work-in-progress, largely untested and prone to bugs. Fee
 
 Here's a brief demonstration of the systems capabilities:
 
-[![Video-Link](https://img.youtube.com/vi/NHDEzg9Detg/0.jpg)](https://www.youtube.com/watch?v=NHDEzg9Detg)
+[![Video-Link](https://i.imgur.com/T46NQyA.jpg)](https://www.youtube.com/watch?v=NHDEzg9Detg)
 
 # How to get started?
 
