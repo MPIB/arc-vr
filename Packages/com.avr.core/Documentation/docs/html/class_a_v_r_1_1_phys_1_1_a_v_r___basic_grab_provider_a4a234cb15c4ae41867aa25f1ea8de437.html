@@ -89,6 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <td valign="top">
       <div class="navtab">
         <table>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a9bd472bb1f00c9f23661b3ecc0fe3ef1.html#a9bd472bb1f00c9f23661b3ecc0fe3ef1">getGrabbedObject</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a518ea31bd715efbbcb184c5f89459ed0.html#a518ea31bd715efbbcb184c5f89459ed0">getLocalGrabLocation</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_ab9019a835934f719d797330776f1ba32.html#ab9019a835934f719d797330776f1ba32">getTargetPosition</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_ad1514743b2e5bfe51a2d0fa96d851b1e.html#ad1514743b2e5bfe51a2d0fa96d851b1e">getTargetRotation</a></td></tr>
@@ -103,6 +104,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a72cc89ac0ede39b979978f113d92e5a7.html#a72cc89ac0ede39b979978f113d92e5a7">makeGrab</a></td></tr>
           <tr><td class="navtab"><a class="qindexHL" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a4a234cb15c4ae41867aa25f1ea8de437.html#a4a234cb15c4ae41867aa25f1ea8de437">makeGrab</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a53b9f4d9d9ea0e5959d4b62c88a97d6e.html#a53b9f4d9d9ea0e5959d4b62c88a97d6e">makeRelease</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a7a3c3345ca0f0b8c69348720fd97d7e0.html#a7a3c3345ca0f0b8c69348720fd97d7e0">OnGrab</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a2eb508dd7ab3e395fb1e00e36680b322.html#a2eb508dd7ab3e395fb1e00e36680b322">OnRelease</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_abd66a817d72a8ed767f7da3c7307ff28.html#abd66a817d72a8ed767f7da3c7307ff28">releaseEvent</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a0ac07b939fc4a4254f8062505030be9d.html#a0ac07b939fc4a4254f8062505030be9d">Start</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a524576fd1630b12e68c43199692a037f.html#a524576fd1630b12e68c43199692a037f">Update</a></td></tr>
@@ -136,12 +139,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Reimplemented in <a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___offset_grab_provider_a013106296926aef23c2f7c215e5e45d8.html#a013106296926aef23c2f7c215e5e45d8">AVR.Phys.AVR_OffsetGrabProvider</a>, and <a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___advanced_offset_grab_provider_a43530953ec31ea8b890d05ca6bf57f09.html#a43530953ec31ea8b890d05ca6bf57f09">AVR.Phys.AVR_AdvancedOffsetGrabProvider</a>.</p>
 
-<p>Definition at line <a class="el" href="_a_v_r___basic_grab_provider_8cs_source.html#l00113">113</a> of file <a class="el" href="_a_v_r___basic_grab_provider_8cs_source.html">AVR_BasicGrabProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                                            {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a38a99e11e4650bcb2a30c8ba9e97f05a.html#a38a99e11e4650bcb2a30c8ba9e97f05a">grabLocation</a> = location;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            grabbedObject.Grab(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a38a99e11e4650bcb2a30c8ba9e97f05a_html_a38a99e11e4650bcb2a30c8ba9e97f05a"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a38a99e11e4650bcb2a30c8ba9e97f05a.html#a38a99e11e4650bcb2a30c8ba9e97f05a">AVR.Phys.AVR_BasicGrabProvider.grabLocation</a></div><div class="ttdeci">GrabLocation grabLocation</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___basic_grab_provider_8cs_source.html#l00046">AVR_BasicGrabProvider.cs:46</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___basic_grab_provider_8cs_source.html#l00129">129</a> of file <a class="el" href="_a_v_r___basic_grab_provider_8cs_source.html">AVR_BasicGrabProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                                            {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            OnGrab.Invoke();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a38a99e11e4650bcb2a30c8ba9e97f05a.html#a38a99e11e4650bcb2a30c8ba9e97f05a">grabLocation</a> = location;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            grabbedObject.Grab(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a38a99e11e4650bcb2a30c8ba9e97f05a_html_a38a99e11e4650bcb2a30c8ba9e97f05a"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a38a99e11e4650bcb2a30c8ba9e97f05a.html#a38a99e11e4650bcb2a30c8ba9e97f05a">AVR.Phys.AVR_BasicGrabProvider.grabLocation</a></div><div class="ttdeci">GrabLocation grabLocation</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___basic_grab_provider_8cs_source.html#l00062">AVR_BasicGrabProvider.cs:62</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

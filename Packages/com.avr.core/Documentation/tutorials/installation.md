@@ -45,3 +45,7 @@ Under `Windows > Package Manager` click the plus sign and select 'Add package fr
 ![img](../../res/images/install_tarball.jpg)
 
 \note All arc-vr packages have arc-vr-core as a dependency. Install arc-vr-core first.
+
+\htmlonly\endhtmlonly
+
+\note At the moment arc-vr-ui uses the old Unity InputSystem, while OpenXR uses the new one. If you are using the ui-package, you will have to set `Project Settings > Player > Active Input Handling` to "Both", for it to work as intended. There are plans to migrate arc-vr-ui to the new InputSystem in the near future.

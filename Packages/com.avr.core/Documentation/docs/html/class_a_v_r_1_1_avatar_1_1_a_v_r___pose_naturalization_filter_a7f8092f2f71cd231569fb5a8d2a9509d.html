@@ -125,25 +125,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___pose_naturalization_filter_8cs_source.html#l00076">76</a> of file <a class="el" href="_a_v_r___pose_naturalization_filter_8cs_source.html">AVR_PoseNaturalizationFilter.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="comment">// TODO: we are sorting the whole list here but only want the first k items. -&gt; Needless performance cost.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            List&lt;Vector3&gt; kn = _refpoints.OrderBy(item =&gt; Vector3.Distance(item, p)).Take(Mathf.Min(<a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a5993851fa77f32afbd9a0c8fbbdb4bbd.html#a5993851fa77f32afbd9a0c8fbbdb4bbd">take_k</a>, _refpoints.Count)).ToList();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            Vector3 sum = Vector3.zero;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordtype">float</span> wsum = 0;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">foreach</span> (var v <span class="keywordflow">in</span> kn)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordtype">float</span> w = 1.0f / (0.0001f + Vector3.Distance(v, p));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                wsum += w;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                sum += w * v;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            sum /= wsum;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> sum;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a5993851fa77f32afbd9a0c8fbbdb4bbd_html_a5993851fa77f32afbd9a0c8fbbdb4bbd"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a5993851fa77f32afbd9a0c8fbbdb4bbd.html#a5993851fa77f32afbd9a0c8fbbdb4bbd">AVR.Avatar.AVR_PoseNaturalizationFilter.take_k</a></div><div class="ttdeci">int take_k</div><div class="ttdoc">How many points to incorporate into the weighted average. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___pose_naturalization_filter_8cs_source.html#l00030">AVR_PoseNaturalizationFilter.cs:30</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___pose_naturalization_filter_8cs_source.html#l00077">77</a> of file <a class="el" href="_a_v_r___pose_naturalization_filter_8cs_source.html">AVR_PoseNaturalizationFilter.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="comment">// TODO: we are sorting the whole list here but only want the first k items. -&gt; Needless performance cost.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            List&lt;Vector3&gt; kn = _refpoints.OrderBy(item =&gt; Vector3.Distance(item, p)).Take(Mathf.Min(<a class="code" href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a5993851fa77f32afbd9a0c8fbbdb4bbd.html#a5993851fa77f32afbd9a0c8fbbdb4bbd">take_k</a>, _refpoints.Count)).ToList();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            Vector3 sum = Vector3.zero;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordtype">float</span> wsum = 0;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">foreach</span> (var v <span class="keywordflow">in</span> kn)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordtype">float</span> w = 1.0f / (0.0001f + Vector3.Distance(v, p));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                wsum += w;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                sum += w * v;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            sum /= wsum;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a5993851fa77f32afbd9a0c8fbbdb4bbd_html_a5993851fa77f32afbd9a0c8fbbdb4bbd"><div class="ttname"><a href="class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a5993851fa77f32afbd9a0c8fbbdb4bbd.html#a5993851fa77f32afbd9a0c8fbbdb4bbd">AVR.Avatar.AVR_PoseNaturalizationFilter.take_k</a></div><div class="ttdeci">int take_k</div><div class="ttdoc">How many points to incorporate into the weighted average. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___pose_naturalization_filter_8cs_source.html#l00031">AVR_PoseNaturalizationFilter.cs:31</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

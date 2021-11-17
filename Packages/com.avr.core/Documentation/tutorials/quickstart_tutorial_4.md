@@ -12,6 +12,9 @@ If you now select the UIInteractionProvider, you might notice the warning it dis
 
 The selected controller is now fully functional as a UI pointer, which will work with any world-space unity canvas.
 
+\note If you replace the StandaloneInputModule on your EventSystem object with a InputSystemUIModule (as you might be prompted to do), the UIInteractionProvider might not work as intended. (It will take input bindings from the InputSystemUIModule as opposed to the UIInteractionProvider.)
+Reason: At the moment arc-vr-ui uses the old Unity InputSystem, while OpenXR uses the new one. If you are using the ui-package, you will have to set `Project Settings > Player > Active Input Handling` to "Both", for it to work as intended. There are plans to migrate arc-vr-ui to the new InputSystem in the near future.
+
 ## Adding UI elements
 
 The arc-vr-ui package comes with several pre-fabricated UI elements, which we'll make use of in the next steps. There are seveal options to find what we're looking for:

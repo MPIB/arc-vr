@@ -89,6 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <td valign="top">
       <div class="navtab">
         <table>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a9bd472bb1f00c9f23661b3ecc0fe3ef1.html#a9bd472bb1f00c9f23661b3ecc0fe3ef1">getGrabbedObject</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a518ea31bd715efbbcb184c5f89459ed0.html#a518ea31bd715efbbcb184c5f89459ed0">getLocalGrabLocation</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_ab9019a835934f719d797330776f1ba32.html#ab9019a835934f719d797330776f1ba32">getTargetPosition</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_ad1514743b2e5bfe51a2d0fa96d851b1e.html#ad1514743b2e5bfe51a2d0fa96d851b1e">getTargetRotation</a></td></tr>
@@ -103,6 +104,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a72cc89ac0ede39b979978f113d92e5a7.html#a72cc89ac0ede39b979978f113d92e5a7">makeGrab</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a4a234cb15c4ae41867aa25f1ea8de437.html#a4a234cb15c4ae41867aa25f1ea8de437">makeGrab</a></td></tr>
           <tr><td class="navtab"><a class="qindexHL" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a53b9f4d9d9ea0e5959d4b62c88a97d6e.html#a53b9f4d9d9ea0e5959d4b62c88a97d6e">makeRelease</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a7a3c3345ca0f0b8c69348720fd97d7e0.html#a7a3c3345ca0f0b8c69348720fd97d7e0">OnGrab</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a2eb508dd7ab3e395fb1e00e36680b322.html#a2eb508dd7ab3e395fb1e00e36680b322">OnRelease</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_abd66a817d72a8ed767f7da3c7307ff28.html#abd66a817d72a8ed767f7da3c7307ff28">releaseEvent</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a0ac07b939fc4a4254f8062505030be9d.html#a0ac07b939fc4a4254f8062505030be9d">Start</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a524576fd1630b12e68c43199692a037f.html#a524576fd1630b12e68c43199692a037f">Update</a></td></tr>
@@ -135,15 +138,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Reimplemented in <a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___advanced_offset_grab_provider_ae1a70374f69b1737e4ed63246097dc95.html#ae1a70374f69b1737e4ed63246097dc95">AVR.Phys.AVR_AdvancedOffsetGrabProvider</a>, and <a class="el" href="class_a_v_r_1_1_phys_1_1_a_v_r___offset_grab_provider_afe958ddc47a01867ce23409b29a21b8d.html#afe958ddc47a01867ce23409b29a21b8d">AVR.Phys.AVR_OffsetGrabProvider</a>.</p>
 
-<p>Definition at line <a class="el" href="_a_v_r___basic_grab_provider_8cs_source.html#l00121">121</a> of file <a class="el" href="_a_v_r___basic_grab_provider_8cs_source.html">AVR_BasicGrabProvider.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                                          {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a41a93e4dc89bf98b0e3188e08d46a9ab.html#a41a93e4dc89bf98b0e3188e08d46a9ab">grabbedObject</a> !=null) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                grabbedObject.Release(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a38a99e11e4650bcb2a30c8ba9e97f05a.html#a38a99e11e4650bcb2a30c8ba9e97f05a">grabLocation</a> = null;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a38a99e11e4650bcb2a30c8ba9e97f05a_html_a38a99e11e4650bcb2a30c8ba9e97f05a"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a38a99e11e4650bcb2a30c8ba9e97f05a.html#a38a99e11e4650bcb2a30c8ba9e97f05a">AVR.Phys.AVR_BasicGrabProvider.grabLocation</a></div><div class="ttdeci">GrabLocation grabLocation</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___basic_grab_provider_8cs_source.html#l00046">AVR_BasicGrabProvider.cs:46</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a41a93e4dc89bf98b0e3188e08d46a9ab_html_a41a93e4dc89bf98b0e3188e08d46a9ab"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a41a93e4dc89bf98b0e3188e08d46a9ab.html#a41a93e4dc89bf98b0e3188e08d46a9ab">AVR.Phys.AVR_BasicGrabProvider.grabbedObject</a></div><div class="ttdeci">AVR_Grabbable grabbedObject</div><div class="ttdoc">Object that is currently being grabbed. Null if no object is being grabbed </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___basic_grab_provider_8cs_source.html#l00044">AVR_BasicGrabProvider.cs:44</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___basic_grab_provider_8cs_source.html#l00138">138</a> of file <a class="el" href="_a_v_r___basic_grab_provider_8cs_source.html">AVR_BasicGrabProvider.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                                          {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a41a93e4dc89bf98b0e3188e08d46a9ab.html#a41a93e4dc89bf98b0e3188e08d46a9ab">grabbedObject</a> !=null) {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                OnRelease.Invoke();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                grabbedObject.Release(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a38a99e11e4650bcb2a30c8ba9e97f05a.html#a38a99e11e4650bcb2a30c8ba9e97f05a">grabLocation</a> = null;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a38a99e11e4650bcb2a30c8ba9e97f05a_html_a38a99e11e4650bcb2a30c8ba9e97f05a"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a38a99e11e4650bcb2a30c8ba9e97f05a.html#a38a99e11e4650bcb2a30c8ba9e97f05a">AVR.Phys.AVR_BasicGrabProvider.grabLocation</a></div><div class="ttdeci">GrabLocation grabLocation</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___basic_grab_provider_8cs_source.html#l00062">AVR_BasicGrabProvider.cs:62</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a41a93e4dc89bf98b0e3188e08d46a9ab_html_a41a93e4dc89bf98b0e3188e08d46a9ab"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a41a93e4dc89bf98b0e3188e08d46a9ab.html#a41a93e4dc89bf98b0e3188e08d46a9ab">AVR.Phys.AVR_BasicGrabProvider.grabbedObject</a></div><div class="ttdeci">AVR_Grabbable grabbedObject</div><div class="ttdoc">Object that is currently being grabbed. Null if no object is being grabbed </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___basic_grab_provider_8cs_source.html#l00055">AVR_BasicGrabProvider.cs:55</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

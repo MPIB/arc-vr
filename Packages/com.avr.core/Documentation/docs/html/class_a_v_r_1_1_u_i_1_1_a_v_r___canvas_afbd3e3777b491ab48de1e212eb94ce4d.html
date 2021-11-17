@@ -98,7 +98,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a621003874dbcbd66424880da10288054.html#a621003874dbcbd66424880da10288054">Awake</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a34246345c8b2ad1a2b34b24ce3ffac29.html#a34246345c8b2ad1a2b34b24ce3ffac29">canvas</a></td></tr>
           <tr><td class="navtab"><a class="qindexHL" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_afbd3e3777b491ab48de1e212eb94ce4d.html#afbd3e3777b491ab48de1e212eb94ce4d">GetPlane</a></td></tr>
-          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_aaa905c0844a3235548dc44a973c1a1dc.html#aaa905c0844a3235548dc44a973c1a1dc">OnDestroy</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_ae3d769d591f732a36d3a1035d25f9a8f.html#ae3d769d591f732a36d3a1035d25f9a8f">isInteractible</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_ae373711565ea68b29d3cc810f6243ebd.html#ae373711565ea68b29d3cc810f6243ebd">OnDestroy</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a83667ca803201d35e2e903c175a04e2d.html#a83667ca803201d35e2e903c175a04e2d">OnDisable</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a724cbbf0f01d8c1a862f50f594d94209.html#a724cbbf0f01d8c1a862f50f594d94209">OnPointerEnter</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a1f71d4a8aad30dc07ebdee49173d5ba6.html#a1f71d4a8aad30dc07ebdee49173d5ba6">OnPointerExit</a></td></tr>
@@ -130,16 +131,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Returns the 3d plane this canvas lies in </p>
 <dl class="section return"><dt>Returns</dt><dd>3d plane this canvas lies in</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_v_r___canvas_8cs_source.html#l00108">108</a> of file <a class="el" href="_a_v_r___canvas_8cs_source.html">AVR_Canvas.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            Plane canvasPlane = <span class="keyword">new</span> Plane();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            canvasPlane.Set3Points(</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                transform.position,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                transform.position + transform.right,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                transform.position + transform.up</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            );</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">return</span> canvasPlane;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
+<p>Definition at line <a class="el" href="_a_v_r___canvas_8cs_source.html#l00113">113</a> of file <a class="el" href="_a_v_r___canvas_8cs_source.html">AVR_Canvas.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            Plane canvasPlane = <span class="keyword">new</span> Plane();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            canvasPlane.Set3Points(</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                transform.position,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                transform.position + transform.right,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                transform.position + transform.up</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            );</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordflow">return</span> canvasPlane;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

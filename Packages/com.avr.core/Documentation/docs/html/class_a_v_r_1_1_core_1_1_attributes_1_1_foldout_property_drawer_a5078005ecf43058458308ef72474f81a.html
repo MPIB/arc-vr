@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_foldout_property_drawer_a6933170065a0def8a1cb7d3ae61539ad.html#a6933170065a0def8a1cb7d3ae61539ad">last_foldout</a>)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                EditorGUI.indentLevel++;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                EditorGUILayout.PropertyField(prop);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                EditorGUILayout.PropertyField(prop, <span class="keyword">new</span> GUIContent(prop.displayName));</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                EditorGUI.indentLevel--;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_foldout_property_drawer_a3e4bf2230e40827f192f031034fac1ad.html#a3e4bf2230e40827f192f031034fac1ad">foldout</a> = <a class="code" href="class_a_v_r_1_1_core_1_1_attributes_1_1_foldout_property_drawer_a6933170065a0def8a1cb7d3ae61539ad.html#a6933170065a0def8a1cb7d3ae61539ad">last_foldout</a>;</div>

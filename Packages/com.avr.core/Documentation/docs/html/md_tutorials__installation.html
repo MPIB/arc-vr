@@ -97,12 +97,12 @@ Installation</h1>
 <ul>
 <li>In addition, I highly recommend setting your fixed timestep to be 90Hz (standard refresh rate of most HMDs). To do this, head on over to <code>Edit &gt; Project Settings</code> and under <code>Time &gt; Fixed Timestep</code> set it to <code>0.01111111</code>.</li>
 </ul>
-<p>No further steps are required to make your project arc-vr compatible. However, if you are planning on using SteamVR (HTC Vive or Valve Index) you will have to make Unity's XR Plug-in Manager compatible with the SteamVR input system (see next step).</p>
+<p>No further steps are required to make your project arc-vr compatible. However, if you are planning on using SteamVR (HTC Vive or Valve Index) you will have to make <a class="el" href="namespace_unity.html">Unity</a>'s XR Plug-in Manager compatible with the SteamVR input system (see next step).</p>
 <h2>SteamVR/HTC Vive Compatibility</h2>
-<p>Arc-vr uses Unity's <a href="https://docs.unity3d.com/2020.2/Documentation/Manual/com.unity.xr.management.html">XR Plug-in Manager</a> as a general API. Unfortunately, the XR Manager does not include a default plug-in for the HTC Vive or Valve Index. If you plan on using either of these (or using SteamVR in general), you'll need to perform a couple of extra steps before everything is in place.</p>
+<p>Arc-vr uses <a class="el" href="namespace_unity.html">Unity</a>'s <a href="https://docs.unity3d.com/2020.2/Documentation/Manual/com.unity.xr.management.html">XR Plug-in Manager</a> as a general API. Unfortunately, the XR Manager does not include a default plug-in for the HTC Vive or Valve Index. If you plan on using either of these (or using SteamVR in general), you'll need to perform a couple of extra steps before everything is in place.</p>
 <p>You can try using Valve's own <a href="https://github.com/ValveSoftware/unity-xr-plugin">OpenVR plugin</a>, but I recommend to use Khronos' <a href="https://docs.unity3d.com/Packages/com.unity.xr.openxr@0.1/manual/index.html">OpenXR</a> instead, as it supports a wider range of devices and generally has more features. The following steps will describe how to set up a project intended for the HTC Vive with OpenXR:</p>
 <ol type="1">
-<li>Open <code>Windows &gt; Package Manager</code>. Display all packages from the 'Unity Registry', then find and select 'OpenXR Plugin'. Click 'Install'.</li>
+<li>Open <code>Windows &gt; Package Manager</code>. Display all packages from the '<a class="el" href="namespace_unity.html">Unity</a> Registry', then find and select 'OpenXR Plugin'. Click 'Install'.</li>
 <li>Open the <code>Edit &gt; Project Settings</code>, and select XR Plug-in Management. Enable the 'OpenXR' option.</li>
 <li>Under 'XR Plug-in Management' you should now be able to select 'OpenXR'.</li>
 <li>Select 'OpenXR &gt; Features' and tick 'HTC Vive Controller Profile' to enable compatibility with HTC Vive Controllers.</li>
@@ -118,7 +118,9 @@ Installation</h1>
 <div class="image">
 <img src="../../res/images/install_tarball.jpg"  alt="img"/>
 </div>
-<dl class="section note"><dt>Note</dt><dd>All arc-vr packages have arc-vr-core as a dependency. Install arc-vr-core first. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>All arc-vr packages have arc-vr-core as a dependency. Install arc-vr-core first.</dd></dl>
+<p></p>
+<dl class="section note"><dt>Note</dt><dd>At the moment arc-vr-ui uses the old <a class="el" href="namespace_unity.html">Unity</a> InputSystem, while OpenXR uses the new one. If you are using the ui-package, you will have to set <code>Project Settings &gt; Player &gt; Active Input Handling</code> to "Both", for it to work as intended. There are plans to migrate arc-vr-ui to the new InputSystem in the near future. </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

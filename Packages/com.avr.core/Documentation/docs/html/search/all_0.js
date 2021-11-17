@@ -1,6 +1,9 @@
 var searchData=
 [
+  ['_5fcameraposinworldspace',['_CameraPosInWorldSpace',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig_a1abde061e4602510edae749bfe73f5fb.html#a1abde061e4602510edae749bfe73f5fb',1,'AVR::Core::AVR_PlayerRig']]],
+  ['_5fcamerarotinworldspace',['_CameraRotInWorldSpace',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig_ac0bbf6ee52aa49051cb4744afeffda91.html#ac0bbf6ee52aa49051cb4744afeffda91',1,'AVR::Core::AVR_PlayerRig']]],
   ['_5fcharactercontroller',['_characterController',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig_ad0a3688a7579c077bbb419b0b98b2a51.html#ad0a3688a7579c077bbb419b0b98b2a51',1,'AVR::Core::AVR_PlayerRig']]],
+  ['_5fcurrentactive',['_currentActive',['../class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_a24851f21ea46a6c08caaacc4538640ad.html#a24851f21ea46a6c08caaacc4538640ad',1,'AVR::UI::AVR_UIInteractionProvider']]],
   ['_5ffa_5fcache',['_fa_cache',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___editor_utility_a233a5deb27fd5858ea2f8d3d24d1e95d.html#a233a5deb27fd5858ea2f8d3d24d1e95d',1,'AVR::UEditor::Core::AVR_EditorUtility']]],
   ['_5ffab_5fcache',['_fab_cache',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___editor_utility_abd7670b5fe8c445443a53974356c5530.html#abd7670b5fe8c445443a53974356c5530',1,'AVR::UEditor::Core::AVR_EditorUtility']]],
   ['_5fhidden',['_hidden',['../class_a_v_r_1_1_core_1_1_a_v_r___ray_a7d9fe1e9b98281e9e2622ca104bda4fe.html#a7d9fe1e9b98281e9e2622ca104bda4fe',1,'AVR::Core::AVR_Ray']]],
@@ -16,10 +19,11 @@ var searchData=
   ['_5fobjecthit',['_objectHit',['../class_a_v_r_1_1_core_1_1_a_v_r___solid_ray_abf1be357365e502aae5e7c4147fadb78.html#abf1be357365e502aae5e7c4147fadb78',1,'AVR::Core::AVR_SolidRay']]],
   ['_5fobjtype',['_objType',['../class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a4378d71929d6d415d500e60134a30bb2.html#a4378d71929d6d415d500e60134a30bb2',1,'AVR::Phys::AVR_Grabbable']]],
   ['_5fp',['_p',['../class_a_v_r_1_1_core_1_1_a_v_r___trial_experiment_aad41db8b2be57cb7e5deae320e1b99c0.html#aad41db8b2be57cb7e5deae320e1b99c0',1,'AVR::Core::AVR_TrialExperiment']]],
-  ['_5fprefabhashgenerator',['_prefabHashGenerator',['../class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_adfd1f5dfc5799fd00734caf494a3a49c.html#adfd1f5dfc5799fd00734caf494a3a49c',1,'AVR::Net::AVR_PlayerSpawn']]],
   ['_5fprevselected',['_prevselected',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___dropdown_choice_toggle_3_01_wiz_00_01_mod_01_4_a6fde29c7db2a81f9b3c5212f04888b4a.html#a6fde29c7db2a81f9b3c5212f04888b4a',1,'AVR::UEditor::Core::AVR_WizardHook_DropdownChoiceToggle&lt; Wiz, Mod &gt;']]],
   ['_5freenableatendofframe',['_ReEnableAtEndOfFrame',['../class_a_v_r_1_1_core_1_1_a_v_r___root_af03313d3bdebc3349ffd91d3281e2c1e.html#af03313d3bdebc3349ffd91d3281e2c1e',1,'AVR::Core::AVR_Root']]],
   ['_5frefpoints',['_refpoints',['../class_a_v_r_1_1_avatar_1_1_a_v_r___pose_naturalization_filter_a5344cfe7706447cfb6b271f74703f524.html#a5344cfe7706447cfb6b271f74703f524',1,'AVR::Avatar::AVR_PoseNaturalizationFilter']]],
+  ['_5frigposinworldspace',['_RigPosInWorldSpace',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig_acaa6534c59b78901d056434067691113.html#acaa6534c59b78901d056434067691113',1,'AVR::Core::AVR_PlayerRig']]],
+  ['_5frigrotinworldspace',['_RigRotInWorldSpace',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig_a48d43104271a94cc2bdf3825b9cc66c6.html#a48d43104271a94cc2bdf3825b9cc66c6',1,'AVR::Core::AVR_PlayerRig']]],
   ['_5fselected',['_selected',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___dropdown_choice_toggle_3_01_wiz_00_01_mod_01_4_ab282706d6aa2efeecd73767f4cd78dac.html#ab282706d6aa2efeecd73767f4cd78dac',1,'AVR::UEditor::Core::AVR_WizardHook_DropdownChoiceToggle&lt; Wiz, Mod &gt;']]],
   ['_5ftitlestyle',['_titleStyle',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___arc_v_r_window_a24984d7e6eaca0f143a1f422560e976a.html#a24984d7e6eaca0f143a1f422560e976a',1,'AVR::UEditor::Core::AVR_ArcVRWindow']]],
   ['_5ftoken',['_token',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller_wizard___hook___controller_visual_a4e799fcd33638b1c9cb5acd52180ca01.html#a4e799fcd33638b1c9cb5acd52180ca01',1,'AVR::UEditor::Core::AVR_ControllerWizard_Hook_ControllerVisual']]],

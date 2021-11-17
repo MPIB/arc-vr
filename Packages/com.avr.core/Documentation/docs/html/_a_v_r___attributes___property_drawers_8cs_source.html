@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="comment">// Begin foldout</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            foldout = EditorGUILayout.Foldout(foldout, group_name);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            EditorGUI.indentLevel++;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> (foldout) EditorGUILayout.PropertyField(prop);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> (foldout) EditorGUILayout.PropertyField(prop, <span class="keyword">new</span> GUIContent(prop.displayName));</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            EditorGUI.indentLevel--;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            last_foldout = foldout;</div>
@@ -145,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (last_foldout)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                EditorGUI.indentLevel++;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                EditorGUILayout.PropertyField(prop);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                EditorGUILayout.PropertyField(prop, <span class="keyword">new</span> GUIContent(prop.displayName));</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                EditorGUI.indentLevel--;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            foldout = last_foldout;</div>
@@ -273,7 +273,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            {</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <span class="comment">// draw</span></div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                propertyHeight = base.GetPropertyHeight(property, label);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                EditorGUI.PropertyField(position, property);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                EditorGUI.PropertyField(position, property, <span class="keyword">new</span> GUIContent(property.displayName));</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            }</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>

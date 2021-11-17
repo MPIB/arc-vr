@@ -94,6 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas-members.html">List of all members</a>  </div>
@@ -102,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Represents a canvas for VR interaction purposes. Allows for interaction with the <a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html" title="This class provides UI Interaction through a VR controller. NOTE: Often Enabling/Disabling this compo...">AVR_UIInteractionProvider</a>.  
+<p>Represents a canvas for VR interaction purposes. Allows for interaction with the <a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html" title="NOTE: If your EventSystem object has a InputSystemUIInputModule (new Unity input system) then any set...">AVR_UIInteractionProvider</a>.  
  <a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for AVR.UI.AVR_Canvas:</div>
@@ -116,8 +117,8 @@ Inheritance diagram for AVR.UI.AVR_Canvas:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aaa905c0844a3235548dc44a973c1a1dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_aaa905c0844a3235548dc44a973c1a1dc.html#aaa905c0844a3235548dc44a973c1a1dc">OnDestroy</a> ()</td></tr>
-<tr class="separator:aaa905c0844a3235548dc44a973c1a1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae373711565ea68b29d3cc810f6243ebd"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_ae373711565ea68b29d3cc810f6243ebd.html#ae373711565ea68b29d3cc810f6243ebd">OnDestroy</a> ()</td></tr>
+<tr class="separator:ae373711565ea68b29d3cc810f6243ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acecf9d5f6f71b9f0050f2a8a6f045988"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_acecf9d5f6f71b9f0050f2a8a6f045988.html#acecf9d5f6f71b9f0050f2a8a6f045988">anchor_to_world</a> ()</td></tr>
 <tr class="memdesc:acecf9d5f6f71b9f0050f2a8a6f045988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anchors this canvas to the world. (Sets parent to null)  <a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_acecf9d5f6f71b9f0050f2a8a6f045988.html#acecf9d5f6f71b9f0050f2a8a6f045988">More...</a><br /></td></tr>
 <tr class="separator:acecf9d5f6f71b9f0050f2a8a6f045988"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,6 +138,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a724cbbf0f01d8c1a862f50f594d94209"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f71d4a8aad30dc07ebdee49173d5ba6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a1f71d4a8aad30dc07ebdee49173d5ba6.html#a1f71d4a8aad30dc07ebdee49173d5ba6">OnPointerExit</a> (PointerEventData eventData)</td></tr>
 <tr class="separator:a1f71d4a8aad30dc07ebdee49173d5ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ae3d769d591f732a36d3a1035d25f9a8f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_ae3d769d591f732a36d3a1035d25f9a8f.html#ae3d769d591f732a36d3a1035d25f9a8f">isInteractible</a> = true</td></tr>
+<tr class="memdesc:ae3d769d591f732a36d3a1035d25f9a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">If set to false, the UIInteractionprovider will disregard this canvas entirely.  <a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_ae3d769d591f732a36d3a1035d25f9a8f.html#ae3d769d591f732a36d3a1035d25f9a8f">More...</a><br /></td></tr>
+<tr class="separator:ae3d769d591f732a36d3a1035d25f9a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -166,9 +173,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ac220dd0d5c474d92e2df47c1e90e0a81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___root.html">AVR_Root</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_ac220dd0d5c474d92e2df47c1e90e0a81.html#ac220dd0d5c474d92e2df47c1e90e0a81">root</a> =&gt; <a class="el" href="class_a_v_r_1_1_core_1_1_singleton_3_01_t_01_4_a811e99ebef5b2d1db0812955406c9824.html#a811e99ebef5b2d1db0812955406c9824">AVR_Root.Instance</a></td></tr>
 <tr class="memdesc:ac220dd0d5c474d92e2df47c1e90e0a81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current <a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___root.html" title="Root object of the arc-vr-core library. Functions as a Singleton. ">AVR_Root</a> instance in the scene  <a href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_ac220dd0d5c474d92e2df47c1e90e0a81.html#ac220dd0d5c474d92e2df47c1e90e0a81">More...</a><br /></td></tr>
 <tr class="separator:ac220dd0d5c474d92e2df47c1e90e0a81 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fc70b46640f45fe7667f48f36887471 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_a6fc70b46640f45fe7667f48f36887471.html#a6fc70b46640f45fe7667f48f36887471">vrEnabled</a> =&gt; UnityEngine.XR.XRSettings.enabled</td></tr>
+<tr class="memdesc:a6fc70b46640f45fe7667f48f36887471 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the application is running as a VR/XR application  <a href="class_a_v_r_1_1_core_1_1_a_v_r___behaviour_a6fc70b46640f45fe7667f48f36887471.html#a6fc70b46640f45fe7667f48f36887471">More...</a><br /></td></tr>
+<tr class="separator:a6fc70b46640f45fe7667f48f36887471 inherit pro_attribs_class_a_v_r_1_1_core_1_1_a_v_r___behaviour"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Represents a canvas for VR interaction purposes. Allows for interaction with the <a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html" title="This class provides UI Interaction through a VR controller. NOTE: Often Enabling/Disabling this compo...">AVR_UIInteractionProvider</a>. </p>
+<div class="textblock"><p>Represents a canvas for VR interaction purposes. Allows for interaction with the <a class="el" href="class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html" title="NOTE: If your EventSystem object has a InputSystemUIInputModule (new Unity input system) then any set...">AVR_UIInteractionProvider</a>. </p>
 
 <p>Definition at line <a class="el" href="_a_v_r___canvas_8cs_source.html#l00017">17</a> of file <a class="el" href="_a_v_r___canvas_8cs_source.html">AVR_Canvas.cs</a>.</p>
 </div></div><!-- contents -->

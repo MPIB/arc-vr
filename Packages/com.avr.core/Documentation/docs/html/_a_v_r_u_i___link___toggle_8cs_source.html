@@ -122,75 +122,77 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_aef3a874750c5267410fd96470cfc7575.html#aef3a874750c5267410fd96470cfc7575">   33</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_aef3a874750c5267410fd96470cfc7575.html#aef3a874750c5267410fd96470cfc7575">init</a>() {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">if</span>(!input) input = GetComponent&lt;Toggle&gt;();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a875a128e365d7a42a72047d76c49d298.html#a875a128e365d7a42a72047d76c49d298">   37</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a875a128e365d7a42a72047d76c49d298.html#a875a128e365d7a42a72047d76c49d298">updateValue</a>()</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordtype">bool</span> val = input.isOn;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="comment">// Update it to the target, if possible.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">switch</span> (memberType)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <span class="keywordflow">case</span> MemberType.FIELD:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                            target.GetType().GetField(field).SetValue(target,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                System.Convert.ChangeType(val, target.GetType().GetField(field).FieldType)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                            );</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    <span class="keywordflow">case</span> MemberType.PROPERTY:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                            target.GetType().GetProperty(field).SetValue(target,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                System.Convert.ChangeType(val, target.GetType().GetProperty(field).PropertyType)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                            );</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">catch</span>(System.Exception) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                AVR_DevConsole.cwarn(<span class="stringliteral">&quot;Could not update the given target value to &quot;</span>+val, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a7159843d9028fb68f45b621a277b270a.html#a7159843d9028fb68f45b621a277b270a">   66</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">string</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a7159843d9028fb68f45b621a277b270a.html#a7159843d9028fb68f45b621a277b270a">old_value</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">if</span> (input) old_value = input.isOn.ToString();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a875a128e365d7a42a72047d76c49d298.html#a875a128e365d7a42a72047d76c49d298">   39</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a875a128e365d7a42a72047d76c49d298.html#a875a128e365d7a42a72047d76c49d298">updateValue</a>()</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordtype">bool</span> val = input.isOn;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="comment">// Update it to the target, if possible.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">switch</span> (memberType)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    <span class="keywordflow">case</span> MemberType.FIELD:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                            target.GetType().GetField(field).SetValue(target,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                System.Convert.ChangeType(val, target.GetType().GetField(field).FieldType)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                            );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    <span class="keywordflow">case</span> MemberType.PROPERTY:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                            target.GetType().GetProperty(field).SetValue(target,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                System.Convert.ChangeType(val, target.GetType().GetProperty(field).PropertyType)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                            );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">catch</span>(System.Exception) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                AVR_DevConsole.cwarn(<span class="stringliteral">&quot;Could not update the given target value to &quot;</span>+val, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a2b401a4aa635063fc2f22df9524337e5.html#a2b401a4aa635063fc2f22df9524337e5">   68</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a2b401a4aa635063fc2f22df9524337e5.html#a2b401a4aa635063fc2f22df9524337e5">updateOutput</a>()</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordtype">bool</span> current_value = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">switch</span> (memberType)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">case</span> MemberType.FIELD:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        current_value = (bool)target.GetType().GetField(field).GetValue(target);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">case</span> MemberType.PROPERTY:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        current_value = (bool)target.GetType().GetProperty(field).GetValue(target);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            input.isOn = current_value;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a7159843d9028fb68f45b621a277b270a.html#a7159843d9028fb68f45b621a277b270a">   68</a></span>&#160;        <span class="keyword">private</span> <span class="keywordtype">string</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a7159843d9028fb68f45b621a277b270a.html#a7159843d9028fb68f45b621a277b270a">old_value</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a2b401a4aa635063fc2f22df9524337e5.html#a2b401a4aa635063fc2f22df9524337e5">   70</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a2b401a4aa635063fc2f22df9524337e5.html#a2b401a4aa635063fc2f22df9524337e5">updateOutput</a>()</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordtype">bool</span> current_value = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">switch</span> (memberType)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">case</span> MemberType.FIELD:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        current_value = (bool)target.GetType().GetField(field).GetValue(target);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">case</span> MemberType.PROPERTY:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        current_value = (bool)target.GetType().GetProperty(field).GetValue(target);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#if UNITY_EDITOR</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">if</span> (old_value != current_value.ToString())</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                EditorUtility.SetDirty(input);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                old_value = current_value.ToString();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            input.isOn = current_value;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#if UNITY_EDITOR</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">if</span> (old_value != current_value.ToString() &amp;&amp; !Application.isPlaying)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                EditorUtility.SetDirty(input);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                old_value = current_value.ToString();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
 <div class="ttc" id="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_aef3a874750c5267410fd96470cfc7575_html_aef3a874750c5267410fd96470cfc7575"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_aef3a874750c5267410fd96470cfc7575.html#aef3a874750c5267410fd96470cfc7575">AVR.UI.Link.AVRUI_Link_Toggle.init</a></div><div class="ttdeci">override void init()</div><div class="ttdoc">Method is run on program start </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___link___toggle_8cs_source.html#l00033">AVRUI_Link_Toggle.cs:33</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a2b401a4aa635063fc2f22df9524337e5_html_a2b401a4aa635063fc2f22df9524337e5"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a2b401a4aa635063fc2f22df9524337e5.html#a2b401a4aa635063fc2f22df9524337e5">AVR.UI.Link.AVRUI_Link_Toggle.updateOutput</a></div><div class="ttdeci">override void updateOutput()</div><div class="ttdoc">Method is run continously from OnGUI. This method should update the value displayed by the UI when th...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___link___toggle_8cs_source.html#l00068">AVRUI_Link_Toggle.cs:68</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a875a128e365d7a42a72047d76c49d298_html_a875a128e365d7a42a72047d76c49d298"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a875a128e365d7a42a72047d76c49d298.html#a875a128e365d7a42a72047d76c49d298">AVR.UI.Link.AVRUI_Link_Toggle.updateValue</a></div><div class="ttdeci">override void updateValue()</div><div class="ttdoc">This method is executed when the runtime user changes the value of the UI element. This method should change the field on the actual target respectively. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___link___toggle_8cs_source.html#l00037">AVRUI_Link_Toggle.cs:37</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a2b401a4aa635063fc2f22df9524337e5_html_a2b401a4aa635063fc2f22df9524337e5"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a2b401a4aa635063fc2f22df9524337e5.html#a2b401a4aa635063fc2f22df9524337e5">AVR.UI.Link.AVRUI_Link_Toggle.updateOutput</a></div><div class="ttdeci">override void updateOutput()</div><div class="ttdoc">Method is run continously from OnGUI. This method should update the value displayed by the UI when th...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___link___toggle_8cs_source.html#l00070">AVRUI_Link_Toggle.cs:70</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a875a128e365d7a42a72047d76c49d298_html_a875a128e365d7a42a72047d76c49d298"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a875a128e365d7a42a72047d76c49d298.html#a875a128e365d7a42a72047d76c49d298">AVR.UI.Link.AVRUI_Link_Toggle.updateValue</a></div><div class="ttdeci">override void updateValue()</div><div class="ttdoc">This method is executed when the runtime user changes the value of the UI element. This method should change the field on the actual target respectively. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___link___toggle_8cs_source.html#l00039">AVRUI_Link_Toggle.cs:39</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link_html"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link.html">AVR.UI.Link.AVRUI_Link</a></div><div class="ttdoc">Binds a given UI element (such as slider, toggle, dropdown or inputfield) with a given property or fi...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___link_8cs_source.html#l00017">AVRUI_Link.cs:17</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_html"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle.html">AVR.UI.Link.AVRUI_Link_Toggle</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___link___toggle_8cs_source.html#l00012">AVRUI_Link_Toggle.cs:12</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a7159843d9028fb68f45b621a277b270a_html_a7159843d9028fb68f45b621a277b270a"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a7159843d9028fb68f45b621a277b270a.html#a7159843d9028fb68f45b621a277b270a">AVR.UI.Link.AVRUI_Link_Toggle.old_value</a></div><div class="ttdeci">string old_value</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___link___toggle_8cs_source.html#l00066">AVRUI_Link_Toggle.cs:66</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a7159843d9028fb68f45b621a277b270a_html_a7159843d9028fb68f45b621a277b270a"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a7159843d9028fb68f45b621a277b270a.html#a7159843d9028fb68f45b621a277b270a">AVR.UI.Link.AVRUI_Link_Toggle.old_value</a></div><div class="ttdeci">string old_value</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___link___toggle_8cs_source.html#l00068">AVRUI_Link_Toggle.cs:68</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a2290d172e29ff51b1fb2046326c7bc00_html_a2290d172e29ff51b1fb2046326c7bc00"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a2290d172e29ff51b1fb2046326c7bc00.html#a2290d172e29ff51b1fb2046326c7bc00">AVR.UI.Link.AVRUI_Link_Toggle.input</a></div><div class="ttdeci">Toggle input</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___link___toggle_8cs_source.html#l00016">AVRUI_Link_Toggle.cs:16</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a5814fc8eee6398f04a31bac9a039bf19_html_a5814fc8eee6398f04a31bac9a039bf19"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_link_1_1_a_v_r_u_i___link___toggle_a5814fc8eee6398f04a31bac9a039bf19.html#a5814fc8eee6398f04a31bac9a039bf19">AVR.UI.Link.AVRUI_Link_Toggle.setup</a></div><div class="ttdeci">override void setup()</div><div class="ttdoc">Method is run when the user selects a field in the inspector. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___link___toggle_8cs_source.html#l00020">AVRUI_Link_Toggle.cs:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

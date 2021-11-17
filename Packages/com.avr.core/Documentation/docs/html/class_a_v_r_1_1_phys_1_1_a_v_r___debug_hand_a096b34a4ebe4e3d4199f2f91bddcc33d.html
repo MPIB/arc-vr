@@ -119,28 +119,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___debug_hand_8cs_source.html#l00018">18</a> of file <a class="el" href="_a_v_r___debug_hand_8cs_source.html">AVR_DebugHand.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">if</span>(Application.isPlaying) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                GameObject.DestroyImmediate(gameObject);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a637669e37a11b944fb04de078426968d.html#a637669e37a11b944fb04de078426968d">grab_point</a>) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a637669e37a11b944fb04de078426968d.html#a637669e37a11b944fb04de078426968d">grab_point</a> = AVR.Core.Utils.Misc.CreateEmptyGameObject(<span class="stringliteral">&quot;GrabPoint&quot;</span>, transform);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                AVR_BasicGrabProvider gp = FindObjectOfType&lt;AVR_BasicGrabProvider&gt;();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                grab_point.localPosition = gp.transform.InverseTransformPoint(gp.grabPoint.position);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            } <span class="keywordflow">catch</span>(System.Exception) { }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a03a09e6c89d15147e340e9fcfedd6fba.html#a03a09e6c89d15147e340e9fcfedd6fba">node</a> = GetComponentInParent&lt;AVR_GrabNode&gt;();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            transform.position = transform.parent.position - (grab_point.position - transform.position);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a03a09e6c89d15147e340e9fcfedd6fba_html_a03a09e6c89d15147e340e9fcfedd6fba"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a03a09e6c89d15147e340e9fcfedd6fba.html#a03a09e6c89d15147e340e9fcfedd6fba">AVR.Phys.AVR_DebugHand.node</a></div><div class="ttdeci">AVR_GrabNode node</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___debug_hand_8cs_source.html#l00014">AVR_DebugHand.cs:14</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a637669e37a11b944fb04de078426968d_html_a637669e37a11b944fb04de078426968d"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a637669e37a11b944fb04de078426968d.html#a637669e37a11b944fb04de078426968d">AVR.Phys.AVR_DebugHand.grab_point</a></div><div class="ttdeci">Transform grab_point</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___debug_hand_8cs_source.html#l00015">AVR_DebugHand.cs:15</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___debug_hand_8cs_source.html#l00019">19</a> of file <a class="el" href="_a_v_r___debug_hand_8cs_source.html">AVR_DebugHand.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">if</span>(Application.isPlaying) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                GameObject.DestroyImmediate(gameObject);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">if</span>(!<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a637669e37a11b944fb04de078426968d.html#a637669e37a11b944fb04de078426968d">grab_point</a>) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a637669e37a11b944fb04de078426968d.html#a637669e37a11b944fb04de078426968d">grab_point</a> = AVR.Core.Utils.Misc.CreateEmptyGameObject(<span class="stringliteral">&quot;GrabPoint&quot;</span>, transform);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                AVR_BasicGrabProvider gp = FindObjectOfType&lt;AVR_BasicGrabProvider&gt;();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                grab_point.localPosition = gp.transform.InverseTransformPoint(gp.grabPoint.position);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            } <span class="keywordflow">catch</span>(System.Exception) { }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a03a09e6c89d15147e340e9fcfedd6fba.html#a03a09e6c89d15147e340e9fcfedd6fba">node</a> = GetComponentInParent&lt;AVR_GrabNode&gt;();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            transform.position = transform.parent.position - (grab_point.position - transform.position);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a03a09e6c89d15147e340e9fcfedd6fba_html_a03a09e6c89d15147e340e9fcfedd6fba"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a03a09e6c89d15147e340e9fcfedd6fba.html#a03a09e6c89d15147e340e9fcfedd6fba">AVR.Phys.AVR_DebugHand.node</a></div><div class="ttdeci">AVR_GrabNode node</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___debug_hand_8cs_source.html#l00015">AVR_DebugHand.cs:15</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a637669e37a11b944fb04de078426968d_html_a637669e37a11b944fb04de078426968d"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a637669e37a11b944fb04de078426968d.html#a637669e37a11b944fb04de078426968d">AVR.Phys.AVR_DebugHand.grab_point</a></div><div class="ttdeci">Transform grab_point</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___debug_hand_8cs_source.html#l00016">AVR_DebugHand.cs:16</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

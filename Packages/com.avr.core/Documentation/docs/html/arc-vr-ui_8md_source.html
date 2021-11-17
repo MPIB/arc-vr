@@ -89,6 +89,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"># arc-vr-ui {#arc-vr-ui}</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;@youtube{HFI-RG5FEqw}</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;\note If you replace the StandaloneInputModule on your EventSystem <span class="keywordtype">object</span> with a InputSystemUIModule (as you might be prompted to <span class="keywordflow">do</span>), the UIInteractionProvider might not work as intended. (It will take input bindings from the InputSystemUIModule as opposed to the UIInteractionProvider.)</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;Reason: At the moment arc-vr-ui uses the old Unity InputSystem, <span class="keywordflow">while</span> OpenXR uses the <span class="keyword">new</span> one. If you are <span class="keyword">using</span> the ui-package, you will have to set `Project Settings &gt; Player &gt; Active Input Handling` to <span class="stringliteral">&quot;Both&quot;</span>, <span class="keywordflow">for</span> it to work as intended. There are plans to migrate arc-vr-ui to the <span class="keyword">new</span> InputSystem in the near future.</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

@@ -6,7 +6,9 @@ using AVR.Core;
 
 namespace AVR.UI {
     /// <summary>
-    /// This class provides UI Interaction through a VR controller. NOTE: Often Enabling/Disabling this component leads to poor performance! -> TODO: implement a custom function that "enables/disables" functionality without the OnEnable/Disable hassle
+    /// NOTE: If your EventSystem object has a InputSystemUIInputModule (new Unity input system) then any settings you set on the UIInteractionProvider will have *NO* effect. You will have to set them through the new Unity Input system.
+    /// Alternatively, simply use a regular StandaloneInputModule (you can ignore the red error message it display) instead of the InputSystemUIInputModule and make sure you have `Project Settings > Player > Active Input Handling` set to "Both".
+    /// This class provides UI Interaction through a VR controller.
     /// Requires a AVR_UIRay to be set.
     /// </summary>
     [AVR.Core.Attributes.DocumentationUrl("class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider.html")]

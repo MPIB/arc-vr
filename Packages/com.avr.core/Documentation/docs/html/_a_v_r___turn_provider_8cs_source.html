@@ -155,28 +155,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_ace9429f86d98159a7127b4b5f2a66dd5.html#ace9429f86d98159a7127b4b5f2a66dd5">   66</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_ace9429f86d98159a7127b4b5f2a66dd5.html#ace9429f86d98159a7127b4b5f2a66dd5">Update</a>()</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">// Snap turn triggered</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span>(mode==<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a8885921ebd2e0317bb9b46abb2e96ab6.html#a8885921ebd2e0317bb9b46abb2e96ab6">turnMode</a>.SNAP &amp;&amp; controller.inputManager.getEventStatus(turnEvent) &amp;&amp; (stime + snp_cooldown) &lt; Time.time) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                stime = Time.time; <span class="comment">// Restart cooldown timer</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="comment">// Turn left</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">if</span> (controller.inputManager.getEventStatus(turnDirection) &lt; -0.5)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    playerRig.transform.Rotate(Vector3.up, -snp_rotationAmount, Space.Self);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="comment">// Turn right</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (controller.inputManager.getEventStatus(turnDirection) &gt; 0.5)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    playerRig.transform.Rotate(Vector3.up, snp_rotationAmount, Space.Self);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(mode==<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a8885921ebd2e0317bb9b46abb2e96ab6.html#a8885921ebd2e0317bb9b46abb2e96ab6">turnMode</a>.SMOOTH &amp;&amp; controller.inputManager.getEventStatus(turnEvent)) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="comment">// Turn left</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">if</span> (controller.inputManager.getEventStatus(turnDirection) &lt; -0.5)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    playerRig.transform.Rotate(Vector3.up, -smt_rotationSpeed * Time.deltaTime, Space.Self);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="comment">// Turn right</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (controller.inputManager.getEventStatus(turnDirection) &gt; 0.5)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    playerRig.transform.Rotate(Vector3.up, smt_rotationSpeed * Time.deltaTime, Space.Self);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#if AVR_NET</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (IsOnline &amp;&amp; !IsOwner) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="comment">// Snap turn triggered</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">if</span>(mode==<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a8885921ebd2e0317bb9b46abb2e96ab6.html#a8885921ebd2e0317bb9b46abb2e96ab6">turnMode</a>.SNAP &amp;&amp; controller.inputManager.getEventStatus(turnEvent) &amp;&amp; (stime + snp_cooldown) &lt; Time.time) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                stime = Time.time; <span class="comment">// Restart cooldown timer</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="comment">// Turn left</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">if</span> (controller.inputManager.getEventStatus(turnDirection) &lt; -0.5)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    playerRig.transform.Rotate(Vector3.up, -snp_rotationAmount, Space.Self);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="comment">// Turn right</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (controller.inputManager.getEventStatus(turnDirection) &gt; 0.5)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    playerRig.transform.Rotate(Vector3.up, snp_rotationAmount, Space.Self);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(mode==<a class="code" href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_a8885921ebd2e0317bb9b46abb2e96ab6.html#a8885921ebd2e0317bb9b46abb2e96ab6">turnMode</a>.SMOOTH &amp;&amp; controller.inputManager.getEventStatus(turnEvent)) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="comment">// Turn left</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">if</span> (controller.inputManager.getEventStatus(turnDirection) &lt; -0.5)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    playerRig.transform.Rotate(Vector3.up, -smt_rotationSpeed * Time.deltaTime, Space.Self);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="comment">// Turn right</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (controller.inputManager.getEventStatus(turnDirection) &gt; 0.5)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    playerRig.transform.Rotate(Vector3.up, smt_rotationSpeed * Time.deltaTime, Space.Self);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager_a33a6a31da3de7a373deffcdc04fad274_html_a33a6a31da3de7a373deffcdc04fad274"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager_a33a6a31da3de7a373deffcdc04fad274.html#a33a6a31da3de7a373deffcdc04fad274">AVR.Core.AVR_ControllerInputManager.BoolEvent</a></div><div class="ttdeci">BoolEvent</div><div class="ttdoc">Boolean-returning events of a controller. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___controller_input_manager_8cs_source.html#l00016">AVR_ControllerInputManager.cs:16</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager_a865da584045d5f56094275977a622924_html_a865da584045d5f56094275977a622924"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___controller_input_manager_a865da584045d5f56094275977a622924.html#a865da584045d5f56094275977a622924">AVR.Core.AVR_ControllerInputManager.FloatEvent</a></div><div class="ttdeci">FloatEvent</div><div class="ttdoc">Floating-Point-number-returning events of a controller. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___controller_input_manager_8cs_source.html#l00050">AVR_ControllerInputManager.cs:50</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider_html"><div class="ttname"><a href="class_a_v_r_1_1_motion_1_1_a_v_r___turn_provider.html">AVR.Motion.AVR_TurnProvider</a></div><div class="ttdoc">Provides turning functionality to a controller. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___turn_provider_8cs_source.html#l00015">AVR_TurnProvider.cs:15</a></div></div>

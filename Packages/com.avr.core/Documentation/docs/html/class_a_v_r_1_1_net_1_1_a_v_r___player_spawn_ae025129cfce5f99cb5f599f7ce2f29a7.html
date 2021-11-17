@@ -89,14 +89,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <td valign="top">
       <div class="navtab">
         <table>
-          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_adfd1f5dfc5799fd00734caf494a3a49c.html#adfd1f5dfc5799fd00734caf494a3a49c">_prefabHashGenerator</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_a13f52b3b6456301c1bd8858282408f8d.html#a13f52b3b6456301c1bd8858282408f8d">disconnectClientIfFailed</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_a4ab8b6090e4a77081a82e06e593b7018.html#a4ab8b6090e4a77081a82e06e593b7018">getPrefab</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae886f29cb0c58d8b6421e71b3574623d.html#ae886f29cb0c58d8b6421e71b3574623d">max_players</a></td></tr>
-          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_a6ed04f6056b3b5ba696f2385d49931bf.html#a6ed04f6056b3b5ba696f2385d49931bf">NetworkStart</a></td></tr>
           <tr><td class="navtab"><a class="qindexHL" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae025129cfce5f99cb5f599f7ce2f29a7.html#ae025129cfce5f99cb5f599f7ce2f29a7">OnDrawGizmos</a></td></tr>
-          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_aa56e5b32b28c61dfab804d4fadbd3813.html#aa56e5b32b28c61dfab804d4fadbd3813">prefabHashGenerator</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_a58bcc650bec316c043a375c98e78d70b.html#a58bcc650bec316c043a375c98e78d70b">OnNetworkSpawn</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ab95061d3ffa964ce3d90ef5d5423b539.html#ab95061d3ffa964ce3d90ef5d5423b539">prefab</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f.html#ae9b52947352e36a8501575fc0d6c0d5f">spawnLocations</a></td></tr>
-          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_aa412028c4d5276589c5b549ce27ef06b.html#aa412028c4d5276589c5b549ce27ef06b">spawnServerRpc</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ab084bdd833534a5156d5a5d5139ac6ea.html#ab084bdd833534a5156d5a5d5139ac6ea">spawnServerRpc</a></td></tr>
         </table>
       </div>
    </td>
@@ -122,15 +122,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___player_spawn_8cs_source.html#l00039">39</a> of file <a class="el" href="_a_v_r___player_spawn_8cs_source.html">AVR_PlayerSpawn.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                            {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            Gizmos.color = Color.yellow;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">foreach</span>(var loc <span class="keywordflow">in</span> <a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f.html#ae9b52947352e36a8501575fc0d6c0d5f">spawnLocations</a>) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">if</span>(loc==null) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                Gizmos.DrawSphere(loc.position, 0.1f);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                Gizmos.DrawLine(loc.position, loc.position + loc.forward);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
+<p>Definition at line <a class="el" href="_a_v_r___player_spawn_8cs_source.html#l00031">31</a> of file <a class="el" href="_a_v_r___player_spawn_8cs_source.html">AVR_PlayerSpawn.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                            {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            Gizmos.color = Color.yellow;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">foreach</span>(var loc <span class="keywordflow">in</span> <a class="code" href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f.html#ae9b52947352e36a8501575fc0d6c0d5f">spawnLocations</a>) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">if</span>(loc==null) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                Gizmos.DrawSphere(loc.position, 0.1f);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                Gizmos.DrawLine(loc.position, loc.position + loc.forward);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
 <div class="ttc" id="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f_html_ae9b52947352e36a8501575fc0d6c0d5f"><div class="ttname"><a href="class_a_v_r_1_1_net_1_1_a_v_r___player_spawn_ae9b52947352e36a8501575fc0d6c0d5f.html#ae9b52947352e36a8501575fc0d6c0d5f">AVR.Net.AVR_PlayerSpawn.spawnLocations</a></div><div class="ttdeci">List&lt; Transform &gt; spawnLocations</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___player_spawn_8cs_source.html#l00017">AVR_PlayerSpawn.cs:17</a></div></div>
 </div><!-- fragment -->
 </div>

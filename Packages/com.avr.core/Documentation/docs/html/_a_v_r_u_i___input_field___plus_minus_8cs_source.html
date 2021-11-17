@@ -102,48 +102,61 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_a54d73c141f64a3341f1b005f349a93f4.html#a54d73c141f64a3341f1b005f349a93f4">   13</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> increase_amount = 0.1f;</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_af4cd2c81b83717019e61b7cd6c17578f.html#af4cd2c81b83717019e61b7cd6c17578f">   14</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">float</span> decrease_amount = 0.1f;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_aa41c44a452abeb13cc47d0451e7f5c3a.html#aa41c44a452abeb13cc47d0451e7f5c3a">   16</a></span>&#160;        <span class="keyword">private</span> InputField input;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_ac02fcb62ee474fc471c2b24aa51fc79a.html#ac02fcb62ee474fc471c2b24aa51fc79a">   17</a></span>&#160;        <span class="keyword">private</span> TMPro.TMP_InputField input_tmp;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_ade00dcaa8a423209d6ac490141abe58a.html#ade00dcaa8a423209d6ac490141abe58a">   19</a></span>&#160;        <span class="keywordtype">void</span> Awake() {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            input = GetComponent&lt;InputField&gt;();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            input_tmp = GetComponent&lt;TMPro.TMP_InputField&gt;();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">if</span>(!input &amp;&amp; !input_tmp) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                AVR.Core.AVR_DevConsole.cerror(<span class="stringliteral">&quot;Numeric Inputfield need either a InputField or a TMP_InputField component!&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                Destroy(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_af85d88f68c773e110e4b5829703e6a92.html#af85d88f68c773e110e4b5829703e6a92">   28</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_af85d88f68c773e110e4b5829703e6a92.html#af85d88f68c773e110e4b5829703e6a92">increase_value</a>() {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keywordflow">if</span>(input) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    input.text = (float.Parse(input.text) + increase_amount).ToString();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    input_tmp.text = (float.Parse(input_tmp.text) + increase_amount).ToString();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            } <span class="keywordflow">catch</span>(System.Exception) { }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_a1cec71f19c0a927e567246949ae7734e.html#a1cec71f19c0a927e567246949ae7734e">   39</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_a1cec71f19c0a927e567246949ae7734e.html#a1cec71f19c0a927e567246949ae7734e">decrease_value</a>() {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">if</span> (input)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    input.text = (float.Parse(input.text) - decrease_amount).ToString();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    input_tmp.text = (float.Parse(input_tmp.text) - decrease_amount).ToString();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            } <span class="keywordflow">catch</span>(System.Exception) { }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_a823f901557dd480234637d4bf991e874.html#a823f901557dd480234637d4bf991e874">   15</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> allowNegative = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_aa41c44a452abeb13cc47d0451e7f5c3a.html#aa41c44a452abeb13cc47d0451e7f5c3a">   17</a></span>&#160;        <span class="keyword">private</span> InputField input;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_ac02fcb62ee474fc471c2b24aa51fc79a.html#ac02fcb62ee474fc471c2b24aa51fc79a">   18</a></span>&#160;        <span class="keyword">private</span> TMPro.TMP_InputField input_tmp;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_ade00dcaa8a423209d6ac490141abe58a.html#ade00dcaa8a423209d6ac490141abe58a">   20</a></span>&#160;        <span class="keywordtype">void</span> Awake() {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            input = GetComponent&lt;InputField&gt;();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            input_tmp = GetComponent&lt;TMPro.TMP_InputField&gt;();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">if</span>(!input &amp;&amp; !input_tmp) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                AVR.Core.AVR_DevConsole.cerror(<span class="stringliteral">&quot;Numeric Inputfield need either a InputField or a TMP_InputField component!&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                Destroy(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_af85d88f68c773e110e4b5829703e6a92.html#af85d88f68c773e110e4b5829703e6a92">   29</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_af85d88f68c773e110e4b5829703e6a92.html#af85d88f68c773e110e4b5829703e6a92">increase_value</a>() {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">if</span>(input) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    input.text = allowNegative ? </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        (float.Parse(input.text) + increase_amount).ToString()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                        :</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                        (Mathf.Max(0, <span class="keywordtype">float</span>.Parse(input.text) + increase_amount)).ToString();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    input_tmp.text = allowNegative ?</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        (float.Parse(input_tmp.text) + increase_amount).ToString()</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        :</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        (Mathf.Max(0, <span class="keywordtype">float</span>.Parse(input_tmp.text) + increase_amount)).ToString();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            } <span class="keywordflow">catch</span>(System.Exception ) { }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_a1cec71f19c0a927e567246949ae7734e.html#a1cec71f19c0a927e567246949ae7734e">   46</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_a1cec71f19c0a927e567246949ae7734e.html#a1cec71f19c0a927e567246949ae7734e">decrease_value</a>() {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">if</span> (input)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    input.text = allowNegative ?</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        (float.Parse(input.text) - decrease_amount).ToString()</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        :</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                        (Mathf.Max(0, <span class="keywordtype">float</span>.Parse(input.text) - decrease_amount)).ToString();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    input_tmp.text = allowNegative ?</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                        (float.Parse(input_tmp.text) - decrease_amount).ToString()</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                        :</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        (Mathf.Max(0, <span class="keywordtype">float</span>.Parse(input_tmp.text) - decrease_amount)).ToString();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            } <span class="keywordflow">catch</span>(System.Exception) { }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_html"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus.html">AVR.UI.Utils.AVRUI_InputField_PlusMinus</a></div><div class="ttdoc">Inputfield that the value of which can be increased/decreased by function call. The value of the inpu...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___input_field___plus_minus_8cs_source.html#l00011">AVRUI_InputField_PlusMinus.cs:11</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_af85d88f68c773e110e4b5829703e6a92_html_af85d88f68c773e110e4b5829703e6a92"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_af85d88f68c773e110e4b5829703e6a92.html#af85d88f68c773e110e4b5829703e6a92">AVR.UI.Utils.AVRUI_InputField_PlusMinus.increase_value</a></div><div class="ttdeci">void increase_value()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___input_field___plus_minus_8cs_source.html#l00028">AVRUI_InputField_PlusMinus.cs:28</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_af85d88f68c773e110e4b5829703e6a92_html_af85d88f68c773e110e4b5829703e6a92"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_af85d88f68c773e110e4b5829703e6a92.html#af85d88f68c773e110e4b5829703e6a92">AVR.UI.Utils.AVRUI_InputField_PlusMinus.increase_value</a></div><div class="ttdeci">void increase_value()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___input_field___plus_minus_8cs_source.html#l00029">AVRUI_InputField_PlusMinus.cs:29</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_attributes_1_1_documentation_url.html">AVR.Core.Attributes.DocumentationUrl</a></div><div class="ttdoc">Sets the documentation html file inside of Packages/com.avr.core/Documentation/html of a given class...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___attributes_8cs_source.html#l00089">AVR_Attributes.cs:89</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_a1cec71f19c0a927e567246949ae7734e_html_a1cec71f19c0a927e567246949ae7734e"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_a1cec71f19c0a927e567246949ae7734e.html#a1cec71f19c0a927e567246949ae7734e">AVR.UI.Utils.AVRUI_InputField_PlusMinus.decrease_value</a></div><div class="ttdeci">void decrease_value()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___input_field___plus_minus_8cs_source.html#l00039">AVRUI_InputField_PlusMinus.cs:39</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_a1cec71f19c0a927e567246949ae7734e_html_a1cec71f19c0a927e567246949ae7734e"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_utils_1_1_a_v_r_u_i___input_field___plus_minus_a1cec71f19c0a927e567246949ae7734e.html#a1cec71f19c0a927e567246949ae7734e">AVR.UI.Utils.AVRUI_InputField_PlusMinus.decrease_value</a></div><div class="ttdeci">void decrease_value()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r_u_i___input_field___plus_minus_8cs_source.html#l00046">AVRUI_InputField_PlusMinus.cs:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

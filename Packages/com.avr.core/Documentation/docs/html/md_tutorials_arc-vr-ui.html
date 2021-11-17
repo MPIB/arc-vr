@@ -89,7 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <h1><a class="anchor" id="arc-vr-ui"></a>
 arc-vr-ui</h1>
-<p> <div style='text-align: center;'><iframe width='840' height='472' src='https://www.youtube.com/embed/HFI-RG5FEqw' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div> </p>
+<p> <div style='text-align: center;'><iframe width='840' height='472' src='https://www.youtube.com/embed/HFI-RG5FEqw' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div></p>
+<dl class="section note"><dt>Note</dt><dd>If you replace the StandaloneInputModule on your EventSystem object with a InputSystemUIModule (as you might be prompted to do), the UIInteractionProvider might not work as intended. (It will take input bindings from the InputSystemUIModule as opposed to the UIInteractionProvider.) Reason: At the moment arc-vr-ui uses the old <a class="el" href="namespace_unity.html">Unity</a> InputSystem, while OpenXR uses the new one. If you are using the ui-package, you will have to set <code>Project Settings &gt; Player &gt; Active Input Handling</code> to "Both", for it to work as intended. There are plans to migrate arc-vr-ui to the new InputSystem in the near future. </dd></dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder_ae3b92bdfc33ace8bbe3e577fa2453989.html#ae3b92bdfc33ace8bbe3e577fa2453989">GrabPoint</a></td></tr>
           <tr><td class="navtab"><a class="qindexHL" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder_a3ebfb5de240f16c28bba40a6207e4573.html#a3ebfb5de240f16c28bba40a6207e4573">OnTriggerEnter</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder_a6f04e98fea287b3b4b7403acb8ff8de7.html#a6f04e98fea287b3b4b7403acb8ff8de7">OnTriggerExit</a></td></tr>
-          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder_aefc6a22f9330ca29c1b25d65f0cadd6b.html#aefc6a22f9330ca29c1b25d65f0cadd6b">Start</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder_a63d04b38a65cfbda29555b7679aacdb4.html#a63d04b38a65cfbda29555b7679aacdb4">Start</a></td></tr>
         </table>
       </div>
    </td>
@@ -123,12 +123,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___grabbable_volume_finder_8cs_source.html#l00028">28</a> of file <a class="el" href="_a_v_r___grabbable_volume_finder_8cs_source.html">AVR_GrabbableVolumeFinder.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">if</span> (other.GetType() == typeof(MeshCollider) &amp;&amp; !((MeshCollider)other).convex) <span class="keywordflow">return</span>; <span class="comment">//Dont add non-convex colliders</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder_a0dd9df0352117c9d483f08f9b620c038.html#a0dd9df0352117c9d483f08f9b620c038">colliders</a>.Contains(other)) <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder_a0dd9df0352117c9d483f08f9b620c038.html#a0dd9df0352117c9d483f08f9b620c038">colliders</a>.Add(other);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder_a0dd9df0352117c9d483f08f9b620c038_html_a0dd9df0352117c9d483f08f9b620c038"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder_a0dd9df0352117c9d483f08f9b620c038.html#a0dd9df0352117c9d483f08f9b620c038">AVR.Phys.AVR_GrabbableVolumeFinder.colliders</a></div><div class="ttdeci">List&lt; Collider &gt; colliders</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___grabbable_volume_finder_8cs_source.html#l00013">AVR_GrabbableVolumeFinder.cs:13</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___grabbable_volume_finder_8cs_source.html#l00029">29</a> of file <a class="el" href="_a_v_r___grabbable_volume_finder_8cs_source.html">AVR_GrabbableVolumeFinder.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#if AVR_NET</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (IsOnline &amp;&amp; !IsOwner) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">if</span> (other.GetType() == typeof(MeshCollider) &amp;&amp; !((MeshCollider)other).convex) <span class="keywordflow">return</span>; <span class="comment">//Dont add non-convex colliders</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder_a0dd9df0352117c9d483f08f9b620c038.html#a0dd9df0352117c9d483f08f9b620c038">colliders</a>.Contains(other)) <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder_a0dd9df0352117c9d483f08f9b620c038.html#a0dd9df0352117c9d483f08f9b620c038">colliders</a>.Add(other);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder_a0dd9df0352117c9d483f08f9b620c038_html_a0dd9df0352117c9d483f08f9b620c038"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_volume_finder_a0dd9df0352117c9d483f08f9b620c038.html#a0dd9df0352117c9d483f08f9b620c038">AVR.Phys.AVR_GrabbableVolumeFinder.colliders</a></div><div class="ttdeci">List&lt; Collider &gt; colliders</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___grabbable_volume_finder_8cs_source.html#l00014">AVR_GrabbableVolumeFinder.cs:14</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

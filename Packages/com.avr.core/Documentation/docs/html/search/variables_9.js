@@ -14,5 +14,6 @@ var searchData=
   ['invalid_5freticule',['invalid_reticule',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_ray_a8110f6c3050f213e7f2fe857d8521203.html#a8110f6c3050f213e7f2fe857d8521203',1,'AVR::Motion::AVR_MovementRay']]],
   ['is_5fright_5fhand',['is_right_hand',['../class_a_v_r_1_1_u_editor_1_1_phys_1_1_a_v_r___controller_wizard___hook___hand_interactor_a9938fd4f5baea3b342ea7b56865dad55.html#a9938fd4f5baea3b342ea7b56865dad55',1,'AVR::UEditor::Phys::AVR_ControllerWizard_Hook_HandInteractor']]],
   ['isgrabbing',['isGrabbing',['../class_a_v_r_1_1_phys_1_1_a_v_r___basic_grab_provider_a6fd7f72065b84d8777e61110d17b1524.html#a6fd7f72065b84d8777e61110d17b1524',1,'AVR::Phys::AVR_BasicGrabProvider']]],
+  ['isinteractible',['isInteractible',['../class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_ae3d769d591f732a36d3a1035d25f9a8f.html#ae3d769d591f732a36d3a1035d25f9a8f',1,'AVR::UI::AVR_Canvas']]],
   ['isnode',['isNode',['../class_a_v_r_1_1_phys_1_1_grab_location_ac3d7390ccff64af55030b8369b36c6f2.html#ac3d7390ccff64af55030b8369b36c6f2',1,'AVR::Phys::GrabLocation']]]
 ];

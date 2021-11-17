@@ -1,16 +1,13 @@
 var searchData=
 [
   ['camerafadeeffect',['CameraFadeEffect',['../class_a_v_r_1_1_motion_1_1_a_v_r___movement_provider_a1b2a1c0d5a354164c3833eeedd05b7b1.html#a1b2a1c0d5a354164c3833eeedd05b7b1',1,'AVR::Motion::AVR_MovementProvider']]],
-  ['camsens',['camSens',['../class_a_v_r_1_1_net_1_1_a_v_r___fly_camera_a3620e22b749bfb596977c88640093c60.html#a3620e22b749bfb596977c88640093c60',1,'AVR::Net::AVR_FlyCamera']]],
   ['canvas',['canvas',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_window_handle_a298c372cc043bb3ddfd356b2632b1076.html#a298c372cc043bb3ddfd356b2632b1076',1,'AVR::UI::Utils::WindowHandle']]],
+  ['canvasnormal',['canvasNormal',['../class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_ray_aa8829b99ba7fb56db587340fd3548f9f.html#aa8829b99ba7fb56db587340fd3548f9f',1,'AVR::UI::AVR_UIRay']]],
   ['cc',['cc',['../class_a_v_r_1_1_net_1_1_a_v_r___third_person_character_controller_ac221e2bc426f038ddaa92c1687976923.html#ac221e2bc426f038ddaa92c1687976923',1,'AVR::Net::AVR_ThirdPersonCharacterController']]],
   ['ch',['ch',['../class_a_v_r_1_1_motion_1_1_a_v_r___locomotion_provider_a08571725a8df2e063c2f070da83526d1.html#a08571725a8df2e063c2f070da83526d1',1,'AVR::Motion::AVR_LocomotionProvider']]],
   ['changeobjecttypeontwohanded',['changeObjectTypeOnTwoHanded',['../class_a_v_r_1_1_phys_1_1_grabbable_object_type_aeed6502f9a44383cc13bbf2cddb15852.html#aeed6502f9a44383cc13bbf2cddb15852',1,'AVR::Phys::GrabbableObjectType']]],
   ['children',['children',['../class_a_v_r_1_1_core_1_1_settings_tree_node_a36455d5a2bc03013a897a8daa945cfdf.html#a36455d5a2bc03013a897a8daa945cfdf',1,'AVR::Core::SettingsTreeNode']]],
   ['choicename',['choiceName',['../struct_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___wizard_hook___dropdown_choice_toggle_3_01_wiz_00_01_mod_01_4_1_1_d_d_choice_ad66e747807ee507e6ce5fb4b0fd14cd5.html#ad66e747807ee507e6ce5fb4b0fd14cd5',1,'AVR::UEditor::Core::AVR_WizardHook_DropdownChoiceToggle&lt; Wiz, Mod &gt;::DDChoice']]],
-  ['clickbutton',['clickButton',['../class_a_v_r_1_1_u_i_1_1_v_r_input_a759f66ac88ae5c5e662f7c4ec2431e77.html#a759f66ac88ae5c5e662f7c4ec2431e77',1,'AVR.UI.VRInput.clickButton()'],['../class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_aa42ef4c23ebcce44689a735bc5e42704.html#aa42ef4c23ebcce44689a735bc5e42704',1,'AVR.UI.AVR_UIInteractionProvider.clickButton()']]],
-  ['clickbutton_5fdown',['clickButton_down',['../class_a_v_r_1_1_u_i_1_1_v_r_input_a5189b032780e346c42f2067f3739a6de.html#a5189b032780e346c42f2067f3739a6de',1,'AVR.UI.VRInput.clickButton_down()'],['../class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_ad9f6f28e751d61d9a7247b41f172b085.html#ad9f6f28e751d61d9a7247b41f172b085',1,'AVR.UI.AVR_UIInteractionProvider.clickButton_down()']]],
-  ['clickbutton_5fup',['clickButton_up',['../class_a_v_r_1_1_u_i_1_1_v_r_input_a73d108ea7e975cde5fe81c6d4d690f86.html#a73d108ea7e975cde5fe81c6d4d690f86',1,'AVR.UI.VRInput.clickButton_up()'],['../class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_aed76bf3c0df2c74c1064fc10cf1d1ca4.html#aed76bf3c0df2c74c1064fc10cf1d1ca4',1,'AVR.UI.AVR_UIInteractionProvider.clickButton_up()']]],
   ['clicked',['clicked',['../class_a_v_r_1_1_u_i_1_1_utils_1_1_window_handle_aa76124edccdf2afaead9a352092dfc9c.html#aa76124edccdf2afaead9a352092dfc9c',1,'AVR::UI::Utils::WindowHandle']]],
   ['cmd',['cmd',['../class_a_v_r_1_1_core_1_1_a_v_r___basic_dev_console_u_i_a06e1d33612abfe3fd959225f8504a984.html#a06e1d33612abfe3fd959225f8504a984',1,'AVR::Core::AVR_BasicDevConsoleUI']]],
   ['cmd_5fstring',['cmd_string',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___dev_console_window_a4cf3ba13477ff57cf89ba529236a096a.html#a4cf3ba13477ff57cf89ba529236a096a',1,'AVR::UEditor::Core::AVR_DevConsoleWindow']]],
@@ -25,6 +22,5 @@ var searchData=
   ['commands',['commands',['../class_a_v_r_1_1_core_1_1_a_v_r___dev_console_af69750e0fa6bc92b149d28219f8b86b9.html#af69750e0fa6bc92b149d28219f8b86b9',1,'AVR::Core::AVR_DevConsole']]],
   ['component',['component',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___component___events_wizard_a54f7bdf0b78f5b5c3491a44935433387.html#a54f7bdf0b78f5b5c3491a44935433387',1,'AVR::UEditor::Core::AVR_Component_EventsWizard']]],
   ['controllernode',['controllerNode',['../class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_af98b9a0ac03b69e7f6fedb2ab8062671.html#af98b9a0ac03b69e7f6fedb2ab8062671',1,'AVR::Core::AVR_GenericXRDevice']]],
-  ['currentactive',['currentActive',['../class_a_v_r_1_1_u_i_1_1_a_v_r___u_i_interaction_provider_aeeb25a957020169fcfd8b907ddfe098c.html#aeeb25a957020169fcfd8b907ddfe098c',1,'AVR::UI::AVR_UIInteractionProvider']]],
   ['cvel',['cvel',['../class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a624dfb5e7a7c8064b1e5548f6785624e.html#a624dfb5e7a7c8064b1e5548f6785624e',1,'AVR::Phys::AVR_Grabbable']]]
 ];

@@ -98,85 +98,88 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="stringliteral"></span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">The selected controller is now fully functional as a UI pointer, which will work with any world-space unity canvas.</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">## Adding UI elements</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral">The arc-vr-ui package comes with several pre-fabricated UI elements, which we&#39;</span>ll make use of in the next steps. There are seveal options to find what we<span class="stringliteral">&#39;re looking for:</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="stringliteral">- Use the Project explorer to navigate to `Packages &gt; arc-vr-ui &gt; Runtime &gt; Prefabs` and find &#39;</span>GenericWindow_Borderless<span class="stringliteral">&#39;.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="stringliteral">- Type &#39;</span>window<span class="stringliteral">&#39; into the project explorer search-bar, then filter only by prefabs and set the search to &#39;</span>In Packages<span class="stringliteral">&#39;, rather than &#39;</span>In Assets<span class="stringliteral">&#39;. Find the GenericWindow_Borderless prefab.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="stringliteral">- Run the command `prefabs ui window` in the developers console. This will set your project explorer search to look for the word &#39;</span>window<span class="stringliteral">&#39; inside the arc-vr-ui package. Find the GenericWindow_Borderless prefab.</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="stringliteral">Once you&#39;</span>ve found it, drag the <span class="stringliteral">&#39;GenericWindow_Borderless&#39;</span> into scene and place it in front of the table.</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;Next up we<span class="stringliteral">&#39;ll need some buttons. Use any of the methods above to search for button. You should find a simple &#39;</span>Button_large<span class="stringliteral">&#39; prefab. Drag three of them onto the GenericWindow, place them one above the other and change their text to &quot;Guess Blue&quot;, &quot;Guess Red&quot; and &quot;Start&quot; respectively.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="stringliteral">We now have all the elements of our scene ready. The buttons won&#39;</span>t actually <span class="keywordflow">do</span> anything as of right now, but they<span class="stringliteral">&#39;ll be clickable with a controller.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="stringliteral"># Step 10: Setting up a TrialExperiment</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="stringliteral">For this next step we&#39;</span>ll be <span class="keyword">using</span> the @ref AVR.Core.AVR_TrialExperiment <span class="stringliteral">&quot;TrialExperiment&quot;</span> <span class="keyword">class </span>to create a trial-based structure to our experiment.</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;A &#39;trial&#39; will follow the following procedure:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;- Hide the urn + balls, display the UI buttons</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;- If the player clicks one of the guess buttons, hide the UI and show the urn</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;- After a couple of seconds, return to step 1.</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;The implementation is simple. Create a new script (call it something like `UrnExperiment`) and make it inherit from AVR.Core.AVR_TrialExperiment. The TrialExperiment class is a simple one that models trials as Coroutines.</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;We&#39;ll simply override the `trial()` function with the above listed procedure. Add this code inside your class:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">\note If you replace the StandaloneInputModule on your EventSystem object with a InputSystemUIModule (as you might be prompted to do), the UIInteractionProvider might not work as intended. (It will take input bindings from the InputSystemUIModule as opposed to the UIInteractionProvider.)</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">Reason: At the moment arc-vr-ui uses the old Unity InputSystem, while OpenXR uses the new one. If you are using the ui-package, you will have to set `Project Settings &gt; Player &gt; Active Input Handling` to &quot;Both&quot;, for it to work as intended. There are plans to migrate arc-vr-ui to the new InputSystem in the near future.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="stringliteral">## Adding UI elements</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="stringliteral">The arc-vr-ui package comes with several pre-fabricated UI elements, which we&#39;</span>ll make use of in the next steps. There are seveal options to find what we<span class="stringliteral">&#39;re looking for:</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="stringliteral">- Use the Project explorer to navigate to `Packages &gt; arc-vr-ui &gt; Runtime &gt; Prefabs` and find &#39;</span>GenericWindow_Borderless<span class="stringliteral">&#39;.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="stringliteral">- Type &#39;</span>window<span class="stringliteral">&#39; into the project explorer search-bar, then filter only by prefabs and set the search to &#39;</span>In Packages<span class="stringliteral">&#39;, rather than &#39;</span>In Assets<span class="stringliteral">&#39;. Find the GenericWindow_Borderless prefab.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="stringliteral">- Run the command `prefabs ui window` in the developers console. This will set your project explorer search to look for the word &#39;</span>window<span class="stringliteral">&#39; inside the arc-vr-ui package. Find the GenericWindow_Borderless prefab.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="stringliteral">Once you&#39;</span>ve found it, drag the <span class="stringliteral">&#39;GenericWindow_Borderless&#39;</span> into scene and place it in front of the table.</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;Next up we<span class="stringliteral">&#39;ll need some buttons. Use any of the methods above to search for button. You should find a simple &#39;</span>Button_large<span class="stringliteral">&#39; prefab. Drag three of them onto the GenericWindow, place them one above the other and change their text to &quot;Guess Blue&quot;, &quot;Guess Red&quot; and &quot;Start&quot; respectively.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="stringliteral">We now have all the elements of our scene ready. The buttons won&#39;</span>t actually <span class="keywordflow">do</span> anything as of right now, but they<span class="stringliteral">&#39;ll be clickable with a controller.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="stringliteral"># Step 10: Setting up a TrialExperiment</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="stringliteral">For this next step we&#39;</span>ll be <span class="keyword">using</span> the @ref AVR.Core.AVR_TrialExperiment <span class="stringliteral">&quot;TrialExperiment&quot;</span> <span class="keyword">class </span>to create a trial-based structure to our experiment.</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;A &#39;trial&#39; will follow the following procedure:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;- Hide the urn + balls, display the UI buttons</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;- If the player clicks one of the guess buttons, hide the UI and show the urn</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;- After a couple of seconds, return to step 1.</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">public</span> GameObject urn;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">public</span> GameObject guess_ui;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;The implementation is simple. Create a new script (call it something like `UrnExperiment`) and make it inherit from AVR.Core.AVR_TrialExperiment. The TrialExperiment class is a simple one that models trials as Coroutines.</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;We&#39;ll simply override the `trial()` function with the above listed procedure. Add this code inside your class:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">public</span> override IEnumerator trial() {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">// Disable urn, enable UI</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        urn.SetActive(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        guess_ui.SetActive(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// Wait for next step</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitUntil(can_proceed);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">public</span> GameObject urn;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">public</span> GameObject guess_ui;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">public</span> override IEnumerator trial() {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// Disable urn, enable UI</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        urn.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        guess_ui.SetActive(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// Enable urn, disable UI</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        urn.SetActive(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        guess_ui.SetActive(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// Wait a couple of seconds</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(5);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;Now attach <span class="keyword">this</span> script to some fitting gameobject.</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;# Step 11: Finishing Up</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;As a last step, we<span class="stringliteral">&#39;ll just have to connect all the dots.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="stringliteral">If you haven&#39;</span>t already, parent the urn and all the balls under a single gameobject, so we can easily toggle them on and off.</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;Then select your <span class="stringliteral">&#39;UrnExperiment&#39;</span> script we created in the previous step and assign the <span class="stringliteral">&#39;urn&#39;</span> <span class="keyword">property</span> to be the parent <span class="keywordtype">object</span> of the urn and balls.</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;Assign the <span class="stringliteral">&#39;guess_ui&#39;</span> <span class="keyword">property</span> to the GenericWindow that includes the three buttons.</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// Wait for next step</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitUntil(can_proceed);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">// Enable urn, disable UI</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        urn.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        guess_ui.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// Wait a couple of seconds</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(5);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;Now attach <span class="keyword">this</span> script to some fitting gameobject.</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;# Step 11: Finishing Up</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;As a last step, we<span class="stringliteral">&#39;ll just have to connect all the dots.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="stringliteral">If you haven&#39;</span>t already, parent the urn and all the balls under a single gameobject, so we can easily toggle them on and off.</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;Select each of the buttons, and add an <span class="stringliteral">&#39;OnClick&#39;</span> <span class="keyword">event</span>. For the <span class="stringliteral">&#39;Guess Blue&#39;</span> / <span class="stringliteral">&#39;Guess Red&#39;</span> buttons set the OnClick <span class="keyword">event</span> to be `UrnExperiment.proceed()`.</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;For the <span class="stringliteral">&#39;Start&#39;</span> button, set it to `UrnExperiment.commence`, with the amount of trials as the argument (eg. 10).</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;Then select your <span class="stringliteral">&#39;UrnExperiment&#39;</span> script we created in the previous step and assign the <span class="stringliteral">&#39;urn&#39;</span> <span class="keyword">property</span> to be the parent <span class="keywordtype">object</span> of the urn and balls.</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;Assign the <span class="stringliteral">&#39;guess_ui&#39;</span> <span class="keyword">property</span> to the GenericWindow that includes the three buttons.</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;If you now click play, the project should be complete. Once you click the <span class="stringliteral">&#39;Start&#39;</span> button, the urn will be hidden. It will then only show once you<span class="stringliteral">&#39;ve guessed a color.</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="stringliteral">You will then have 5 seconds to draw a sphere before the process begins again.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="stringliteral"># Step 12: Data Collection</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="stringliteral">If we wish to record and collect data on the experiment, we can use the provided @ref AVR.Core.AVR_Logger &quot;AVR_Logger&quot; class.</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="stringliteral">Simply select any gameobject (for instance the same one that has the &#39;</span>UrnExperiment<span class="stringliteral">&#39; script) and add an AVR_Logger component to it.</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="stringliteral">We&#39;</span>re going to keep things simple, and create a basic csv-table with two columns: time and the corresponding <span class="keywordtype">object</span> the player is grabbing.</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;Add a <span class="keyword">new</span> entry to the <span class="stringliteral">&#39;Columns&#39;</span> property, set the label to <span class="stringliteral">&#39;time&#39;</span> and select the type as <span class="stringliteral">&#39;TIME&#39;</span>.</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;Add a second entry, set the label to something like <span class="stringliteral">&#39;object&#39;</span> and leave the type as <span class="stringliteral">&#39;CUSTOM&#39;</span>.</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;Select each of the buttons, and add an <span class="stringliteral">&#39;OnClick&#39;</span> <span class="keyword">event</span>. For the <span class="stringliteral">&#39;Guess Blue&#39;</span> / <span class="stringliteral">&#39;Guess Red&#39;</span> buttons set the OnClick <span class="keyword">event</span> to be `UrnExperiment.proceed()`.</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;For the <span class="stringliteral">&#39;Start&#39;</span> button, set it to `UrnExperiment.commence`, with the amount of trials as the argument (eg. 10).</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;If you now click play, the project should be complete. Once you click the <span class="stringliteral">&#39;Start&#39;</span> button, the urn will be hidden. It will then only show once you<span class="stringliteral">&#39;ve guessed a color.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="stringliteral">You will then have 5 seconds to draw a sphere before the process begins again.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="stringliteral"># Step 12: Data Collection</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="stringliteral">If we wish to record and collect data on the experiment, we can use the provided @ref AVR.Core.AVR_Logger &quot;AVR_Logger&quot; class.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="stringliteral">Simply select any gameobject (for instance the same one that has the &#39;</span>UrnExperiment<span class="stringliteral">&#39; script) and add an AVR_Logger component to it.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="stringliteral">We&#39;</span>re going to keep things simple, and create a basic csv-table with two columns: time and the corresponding <span class="keywordtype">object</span> the player is grabbing.</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;The AVR_Logger uses C# reflection to extract properties from certain objects, including <span class="keyword">private</span> or <span class="keyword">protected</span> ones. Any value exposed in a <span class="keyword">property</span> is thus simple to log with this.</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;In our <span class="keywordflow">case</span>, we want to know what the player is holding on to, so it seems logical to look <span class="keywordflow">for</span> an appropriate field in our BasicGrabProvider script. If you look at the docs <span class="keywordflow">for</span> @ref AVR.Phys.AVR_BasicGrabProvider <span class="stringliteral">&quot;BasicGrabProvider&quot;</span> you<span class="stringliteral">&#39;ll see it has a protected field called &#39;</span>grabbedObject<span class="stringliteral">&#39;, which corresponds to the AVR_Grabbable the player is holding.</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="stringliteral">To log this field, simply drag and drop the BasicGrabProvider into the &#39;</span>Target<span class="stringliteral">&#39; field of the newly created column and set &#39;</span>Field<span class="stringliteral">&#39; to be `grabbedObject`. Leave read type as &#39;</span>AUTO<span class="stringliteral">&#39;.</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="stringliteral">If you now launch the scene again, there&#39;</span>ll be a `logs/sample.log` file which includes a timestamp as well as the name of the <span class="keywordtype">object</span> the player is holding at that time.</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;Add a <span class="keyword">new</span> entry to the <span class="stringliteral">&#39;Columns&#39;</span> property, set the label to <span class="stringliteral">&#39;time&#39;</span> and select the type as <span class="stringliteral">&#39;TIME&#39;</span>.</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;Add a second entry, set the label to something like <span class="stringliteral">&#39;object&#39;</span> and leave the type as <span class="stringliteral">&#39;CUSTOM&#39;</span>.</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;The AVR_Logger uses C# reflection to extract properties from certain objects, including <span class="keyword">private</span> or <span class="keyword">protected</span> ones. Any value exposed in a <span class="keyword">property</span> is thus simple to log with this.</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;In our <span class="keywordflow">case</span>, we want to know what the player is holding on to, so it seems logical to look <span class="keywordflow">for</span> an appropriate field in our BasicGrabProvider script. If you look at the docs <span class="keywordflow">for</span> @ref AVR.Phys.AVR_BasicGrabProvider <span class="stringliteral">&quot;BasicGrabProvider&quot;</span> you<span class="stringliteral">&#39;ll see it has a protected field called &#39;</span>grabbedObject<span class="stringliteral">&#39;, which corresponds to the AVR_Grabbable the player is holding.</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="stringliteral">To log this field, simply drag and drop the BasicGrabProvider into the &#39;</span>Target<span class="stringliteral">&#39; field of the newly created column and set &#39;</span>Field<span class="stringliteral">&#39; to be `grabbedObject`. Leave read type as &#39;</span>AUTO<span class="stringliteral">&#39;.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="stringliteral">If you now launch the scene again, there&#39;</span>ll be a `logs/sample.log` file which includes a timestamp as well as the name of the <span class="keywordtype">object</span> the player is holding at that time.</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 		<script src="custom.js"></script>

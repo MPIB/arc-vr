@@ -119,29 +119,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___debug_hand_8cs_source.html#l00039">39</a> of file <a class="el" href="_a_v_r___debug_hand_8cs_source.html">AVR_DebugHand.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a03a09e6c89d15147e340e9fcfedd6fba.html#a03a09e6c89d15147e340e9fcfedd6fba">node</a> = GetComponentInParent&lt;AVR_GrabNode&gt;();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            transform.localRotation = Quaternion.identity * Quaternion.Euler(node.yaw_test * node.allowed_yaw, node.pitch_test * node.allowed_pitch, node.roll_test * node.allowed_roll);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            transform.position = node.transform.position - (grab_point.position - transform.position);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="comment">//foreach (AVR_Finger f in fingers) f.Update();</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            animator.SetLayerWeight(1, 1.0f);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            animator.SetLayerWeight(2, 1.0f);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            animator.SetLayerWeight(3, 1.0f);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            animator.SetLayerWeight(4, 1.0f);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            animator.SetLayerWeight(5, 1.0f);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            animator.Play(<span class="stringliteral">&quot;Proc_IndexFinger&quot;</span>, 1, node.index_pose);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            animator.Play(<span class="stringliteral">&quot;Proc_MiddleFinger&quot;</span>, 2, node.middle_pose);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            animator.Play(<span class="stringliteral">&quot;Proc_RingFinger&quot;</span>, 3, node.ring_pose);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            animator.Play(<span class="stringliteral">&quot;Proc_PinkyFinger&quot;</span>, 4, node.pinky_pose);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            animator.Play(<span class="stringliteral">&quot;Proc_ThumbFinger&quot;</span>, 5, node.thumb_pose);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            animator.Update(0.0f);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a03a09e6c89d15147e340e9fcfedd6fba_html_a03a09e6c89d15147e340e9fcfedd6fba"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a03a09e6c89d15147e340e9fcfedd6fba.html#a03a09e6c89d15147e340e9fcfedd6fba">AVR.Phys.AVR_DebugHand.node</a></div><div class="ttdeci">AVR_GrabNode node</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___debug_hand_8cs_source.html#l00014">AVR_DebugHand.cs:14</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___debug_hand_8cs_source.html#l00040">40</a> of file <a class="el" href="_a_v_r___debug_hand_8cs_source.html">AVR_DebugHand.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a03a09e6c89d15147e340e9fcfedd6fba.html#a03a09e6c89d15147e340e9fcfedd6fba">node</a> = GetComponentInParent&lt;AVR_GrabNode&gt;();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            transform.localRotation = Quaternion.identity * Quaternion.Euler(node.yaw_test * node.allowed_yaw, node.pitch_test * node.allowed_pitch, node.roll_test * node.allowed_roll);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            transform.position = node.transform.position - (grab_point.position - transform.position);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="comment">//foreach (AVR_Finger f in fingers) f.Update();</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            animator.SetLayerWeight(1, 1.0f);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            animator.SetLayerWeight(2, 1.0f);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            animator.SetLayerWeight(3, 1.0f);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            animator.SetLayerWeight(4, 1.0f);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            animator.SetLayerWeight(5, 1.0f);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            animator.Play(<span class="stringliteral">&quot;Proc_IndexFinger&quot;</span>, 1, node.index_pose);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            animator.Play(<span class="stringliteral">&quot;Proc_MiddleFinger&quot;</span>, 2, node.middle_pose);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            animator.Play(<span class="stringliteral">&quot;Proc_RingFinger&quot;</span>, 3, node.ring_pose);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            animator.Play(<span class="stringliteral">&quot;Proc_PinkyFinger&quot;</span>, 4, node.pinky_pose);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            animator.Play(<span class="stringliteral">&quot;Proc_ThumbFinger&quot;</span>, 5, node.thumb_pose);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            animator.Update(0.0f);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a03a09e6c89d15147e340e9fcfedd6fba_html_a03a09e6c89d15147e340e9fcfedd6fba"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___debug_hand_a03a09e6c89d15147e340e9fcfedd6fba.html#a03a09e6c89d15147e340e9fcfedd6fba">AVR.Phys.AVR_DebugHand.node</a></div><div class="ttdeci">AVR_GrabNode node</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___debug_hand_8cs_source.html#l00015">AVR_DebugHand.cs:15</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

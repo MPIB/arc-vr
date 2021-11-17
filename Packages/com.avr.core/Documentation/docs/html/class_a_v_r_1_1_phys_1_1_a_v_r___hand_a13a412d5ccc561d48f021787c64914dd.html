@@ -150,11 +150,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___hand_8cs_source.html#l00131">131</a> of file <a class="el" href="_a_v_r___hand_8cs_source.html">AVR_Hand.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                      {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordflow">foreach</span> (AVR_Finger f <span class="keywordflow">in</span> <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___hand_a00630c8849e83e4997ed99af2dcc244f.html#a00630c8849e83e4997ed99af2dcc244f">fingers</a>) f.Update();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___hand_a00630c8849e83e4997ed99af2dcc244f_html_a00630c8849e83e4997ed99af2dcc244f"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___hand_a00630c8849e83e4997ed99af2dcc244f.html#a00630c8849e83e4997ed99af2dcc244f">AVR.Phys.AVR_Hand.fingers</a></div><div class="ttdeci">List&lt; AVR_Finger &gt; fingers</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___hand_8cs_source.html#l00012">AVR_Hand.cs:12</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___hand_8cs_source.html#l00132">132</a> of file <a class="el" href="_a_v_r___hand_8cs_source.html">AVR_Hand.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                      {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#if AVR_NET</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">if</span> (IsOnline &amp;&amp; !IsOwner) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">foreach</span> (AVR_Finger f <span class="keywordflow">in</span> <a class="code" href="class_a_v_r_1_1_phys_1_1_a_v_r___hand_a00630c8849e83e4997ed99af2dcc244f.html#a00630c8849e83e4997ed99af2dcc244f">fingers</a>) f.Update();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_phys_1_1_a_v_r___hand_a00630c8849e83e4997ed99af2dcc244f_html_a00630c8849e83e4997ed99af2dcc244f"><div class="ttname"><a href="class_a_v_r_1_1_phys_1_1_a_v_r___hand_a00630c8849e83e4997ed99af2dcc244f.html#a00630c8849e83e4997ed99af2dcc244f">AVR.Phys.AVR_Hand.fingers</a></div><div class="ttdeci">List&lt; AVR_Finger &gt; fingers</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___hand_8cs_source.html#l00013">AVR_Hand.cs:13</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
