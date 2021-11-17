@@ -14,11 +14,15 @@ Here's a brief demonstration of the systems capabilities:
 
 # How to get started?
 
-Most of the docs and tutorials are accessible through the Unity Editor once the arc-vr-core package is installed. Follow these simple steps to get started:
+Follow these simple steps to get started:
 - Create a new project with Unity 2020.3.21
 - Download *com.avr.core-1.0.0.tgz* from the [github releases](https://github.com/MPIB/arc-vr/releases)
 - In your unity project open `Window > Package Manager`, click on the plus sign in the top left and select `Add package from tarball`. Browse to and select the file you downloaded in the previous step.
 - When the import is done, click on `AVR > Documentation` in the top menubar to open the docs in your browser.
+
+Alternatively, you can access the documentation and tutorials here: [docs.vr-toolbox.org](https://docs.vr-toolbox.org/docs/html/).
+
+You can also check out [this playlist](https://www.youtube.com/playlist?list=PLh6z44emfoZ3ztXtrFRipGGQKSisaUAyD) for tutorials and overviews.
 
 # Packages
 
