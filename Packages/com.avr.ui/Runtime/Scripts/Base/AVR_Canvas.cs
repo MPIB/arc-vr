@@ -25,13 +25,21 @@ namespace AVR.UI {
         /// A list of all AVR_Canvases that have at some point been active and not destroyed since
         /// </summary>
         /// <value></value>
-        public static List<AVR_Canvas> all_canvases { get; private set; }
+        public static List<AVR_Canvas> all_canvases {
+            get { return _all_canvases; }
+            private set { _all_canvases = value; }
+        }
+        private static List<AVR_Canvas> _all_canvases = new List<AVR_Canvas>();
 
         /// <summary>
         /// A list of all AVR_Canvases that the user is currently interacting with. NOTE: This is *not* the same as all canvases that are active in the scene.
         /// </summary>
         /// <value></value>
-        public static List<AVR_Canvas> active_canvases { get; private set; }
+        public static List<AVR_Canvas> active_canvases {
+            get { return _active_canvases; }
+            private set { _active_canvases = value; }
+        }
+        private static List<AVR_Canvas> _active_canvases = new List<AVR_Canvas>();
 
         /// <summary>
         /// The UnityEngine.Canvas Component this object is attatched to.

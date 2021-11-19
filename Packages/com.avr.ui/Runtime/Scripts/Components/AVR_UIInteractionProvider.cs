@@ -119,7 +119,7 @@ namespace AVR.UI {
             if (IsOnline && !IsOwner) return;
 #endif
             // Here we show/hide the UIRay if needed and also set the length of the ray to the distance to the canvas.
-            if(AVR_Canvas.active_canvases.Count>0) {
+            if(AVR_Canvas.active_canvases?.Count>0) {
                 float min_dist = float.PositiveInfinity;
                 AVR_Canvas closest_canv = AVR_Canvas.active_canvases[0];
 
