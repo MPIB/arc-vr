@@ -182,6 +182,7 @@ namespace AVR.Core
             {
                 InternalState state = new InternalState();
                 state.FromReference(this);
+                syncServerRpc(state);
             }
             else
             {
