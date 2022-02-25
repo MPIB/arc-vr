@@ -70,3 +70,9 @@ Here's an overview of what each package provides:
 - Multiplayer integration through MLAPI
 - Player-Spawning System
 - Basic 3rd-Person CharacterController
+
+# Screenshots
+
+Here are some screenshots of some of the projects/demos we've used arc-vr for:
+
+![Screenshots](https://media.githubusercontent.com/media/MPIB/arc-vr/main/Packages/com.avr.core/Package_Resources/arc-vr-screenshots.png)
