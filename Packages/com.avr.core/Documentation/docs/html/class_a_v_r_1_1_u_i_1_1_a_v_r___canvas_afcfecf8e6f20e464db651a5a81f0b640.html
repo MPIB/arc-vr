@@ -29,7 +29,7 @@
 							</a>
 						</td>
 						<td id="projectalign" style="padding-left: 0.5em;">
-							<div id="projectbrief">VR Devemopment Framework</div>
+							<div id="projectbrief">VR Development Framework</div>
 							<div id="projectnumber">v 1.0.0</div>
 						</td>
 					</tr>
@@ -89,6 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <td valign="top">
       <div class="navtab">
         <table>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_afc824dd8846813d9cfc15879ed7deb68.html#afc824dd8846813d9cfc15879ed7deb68">_active_canvases</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a2d3e1cb9dd3a89dda502c409e5eda3e9.html#a2d3e1cb9dd3a89dda502c409e5eda3e9">_all_canvases</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a878e6ab6d4354902ca768704fe36b44c.html#a878e6ab6d4354902ca768704fe36b44c">active_canvases</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a15f898fd680c8d74339186b1374eab28.html#a15f898fd680c8d74339186b1374eab28">all_canvases</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_ac216dba9372585e8002042afb2ad5808.html#ac216dba9372585e8002042afb2ad5808">anchor_to_controller</a></td></tr>
@@ -137,18 +139,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_a_v_r___canvas_8cs_source.html#l00096">96</a> of file <a class="el" href="_a_v_r___canvas_8cs_source.html">AVR_Canvas.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">if</span>(t==null) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="comment">// We need to do this circus each time we parent to world because something doesnt work. I seriously can&#39;t figure out what, but either way, performance impact should be close to nothing.</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                Vector3 tmp = this.transform.position;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                this.transform.SetParent(null, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                transform.position = tmp;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                this.transform.SetParent(t, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
+<p>Definition at line <a class="el" href="_a_v_r___canvas_8cs_source.html#l00104">104</a> of file <a class="el" href="_a_v_r___canvas_8cs_source.html">AVR_Canvas.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">if</span>(t==null) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="comment">// We need to do this circus each time we parent to world because something doesnt work. I seriously can&#39;t figure out what, but either way, performance impact should be close to nothing.</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                Vector3 tmp = this.transform.position;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                this.transform.SetParent(null, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                transform.position = tmp;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                this.transform.SetParent(t, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

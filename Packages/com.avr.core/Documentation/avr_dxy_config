@@ -8,7 +8,7 @@ DOXYFILE_ENCODING      = UTF-8
 
 PROJECT_NAME           = "ARC-VR"
 PROJECT_NUMBER         = 1.0.0
-PROJECT_BRIEF          = "VR Devemopment Framework"
+PROJECT_BRIEF          = "VR Development Framework"
 
 
 ALIASES += "unityversion = [Unity 2020.3.21f](https://unity3d.com/unity/whats-new/2020.3.21) \n"

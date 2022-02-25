@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['_5factive_5fcanvases',['_active_canvases',['../class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_afc824dd8846813d9cfc15879ed7deb68.html#afc824dd8846813d9cfc15879ed7deb68',1,'AVR::UI::AVR_Canvas']]],
+  ['_5fall_5fcanvases',['_all_canvases',['../class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a2d3e1cb9dd3a89dda502c409e5eda3e9.html#a2d3e1cb9dd3a89dda502c409e5eda3e9',1,'AVR::UI::AVR_Canvas']]],
   ['_5fcameraposinworldspace',['_CameraPosInWorldSpace',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig_a1abde061e4602510edae749bfe73f5fb.html#a1abde061e4602510edae749bfe73f5fb',1,'AVR::Core::AVR_PlayerRig']]],
   ['_5fcamerarotinworldspace',['_CameraRotInWorldSpace',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig_ac0bbf6ee52aa49051cb4744afeffda91.html#ac0bbf6ee52aa49051cb4744afeffda91',1,'AVR::Core::AVR_PlayerRig']]],
   ['_5fcharactercontroller',['_characterController',['../class_a_v_r_1_1_core_1_1_a_v_r___player_rig_ad0a3688a7579c077bbb419b0b98b2a51.html#ad0a3688a7579c077bbb419b0b98b2a51',1,'AVR::Core::AVR_PlayerRig']]],
