@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3938096090804365495}
   - component: {fileID: 3938096090804365492}
   - component: {fileID: 3827808369406449854}
+  - component: {fileID: 4570842109220475869}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -100,11 +101,27 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
+  destroyOnRemote: 1
+  changeLayerOnRemote: 0
+  changeLayerOnRemote_IncludeChildren: 0
+  remoteLayer: 0
+  onRemoteStart:
+    m_PersistentCalls:
+      m_Calls: []
   controllerNode: 2
   tracking: 1
   updateType: 2
   smoothing: 0
   smoothingFidelity: 0.3
+  synchronizeTransform: 0
+--- !u!81 &4570842109220475869
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3938096090804365491}
+  m_Enabled: 1
 --- !u!1 &3938096091124317167
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +178,15 @@ MonoBehaviour:
   onDisable:
     m_PersistentCalls:
       m_Calls: []
+  destroyOnRemote: 1
+  changeLayerOnRemote: 0
+  changeLayerOnRemote_IncludeChildren: 0
+  remoteLayer: 0
+  onRemoteStart:
+    m_PersistentCalls:
+      m_Calls: []
   MainCamera: {fileID: 3938096090804365492}
+  synchronizeRigPositions: 0
 --- !u!1 &3938096091130195902
 GameObject:
   m_ObjectHideFlags: 0

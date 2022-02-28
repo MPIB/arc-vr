@@ -28,6 +28,11 @@ namespace AVR.Phys {
         public Rigidbody rb;
 
         /// <summary>
+        /// Optional AudioSource to play sounds from GrabbableObjectType data
+        /// </summary>
+        public AudioSource source;
+
+        /// <summary>
         /// List of colliders that describe the outer/grabbable surface. All colliders must be convex.
         /// </summary>
         public List<Collider> colliders = new List<Collider>();
@@ -71,7 +76,18 @@ namespace AVR.Phys {
             if (rb == null) rb = GetComponent<Rigidbody>();
             if (colliders==null || colliders.Count<1) colliders.AddRange(GetComponentsInChildren<Collider>());
             if (nodes == null || nodes.Count < 1) nodes.AddRange(GetComponentsInChildren<AVR_GrabNode>());
-            if(objectType==null) objectType = GrabbableObjectType.defaultObjectType();
+            if (objectType == null) objectType = GrabbableObjectType.defaultObjectType();
+            if (source == null) source = GetComponent<AudioSource>();
+
+            //Throw warnings if audiosource isnt a 3D blending source
+            if (source != null)
+            {
+                if (source.spatialBlend == 0.0f)
+                {
+                    Debug.Log(this.name +
+                        "'s Audio Source has no spatial blend. 3D audio will not work. Consider setting spatial blend to 1");
+                }
+            }
         }
 
         void FixedUpdate()
@@ -107,6 +123,12 @@ namespace AVR.Phys {
             AttachedHands.Add(hand);
             hand.controller.HapticPulse(0.3f, 0.05f);
 
+            //Play pickup sound
+            if (source != null && objectType.soundData.pickupSound != null)
+            {
+                source.PlayOneShot(objectType.soundData.pickupSound, objectType.soundData.volumeMultiplier);
+            }
+
 #if AVR_NET
             if (IsOnline)
             {
@@ -126,6 +148,12 @@ namespace AVR.Phys {
                 transform.SetParent(old_parent);
                 if(velocities.Count>0) rb.velocity = new Vector3(velocities.Average(v => v.x), velocities.Average(v => v.y), velocities.Average(v => v.z));
                 velocities.Clear();
+
+                //Play release sound
+                if (source != null && objectType.soundData.releaseSound != null)
+                {
+                    source.PlayOneShot(objectType.soundData.releaseSound, objectType.soundData.volumeMultiplier);
+                }
             }
         }
 
@@ -280,6 +308,7 @@ namespace AVR.Phys {
                 return avg;
             }
         }
+
         void OnCollisionEnter(Collision collision)
         {
             // Haptic feedback
@@ -288,7 +317,37 @@ namespace AVR.Phys {
                 h.controller.HapticPulse(Mathf.Lerp(0, 0.5f, 0.2f * collision.relativeVelocity.magnitude), 0.05f);
             }
 
-            // TODO: Play sounds
+            //Play collision sound
+            if (source != null && objectType.soundData.collideSound != null && rb != null)
+            {
+                //Calculate a sound multiplier based off the velocity and mass of the collision
+                float soundMultiplier = objectType.soundData.volumeMultiplier;
+
+                float mass = rb.mass;
+                float speed = rb.velocity.magnitude;
+                float drag = rb.drag == 0.0f ? 0.5f : rb.drag; //If the rigidbody drag is 0, use 0.5. Otherwise, use that drag.
+
+                const float frontalArea = 0.5f;
+                const float airDrag = 1.1f;
+
+                //Equation adapted and modified from https://www.grc.nasa.gov/WWW/K-12/rocket/termvr.html
+                float terminalSpeed = Mathf.Sqrt(2.0f * mass * Physics.gravity.magnitude / airDrag * frontalArea * drag);
+
+                //When you grab an object, it teleports.
+                //This creates these wildly large speed values when grabbed. This will ignore them.
+                if (speed > terminalSpeed)
+                {
+                    return;
+                }
+
+                //Using the adapted terminal velocity, create a ratio from 0 - 1 of speed.
+                //Use this ratio as the sound multiplier. The faster the object moves, the louder the sound.
+                float physicsSoundMultiplier = speed / terminalSpeed;
+
+                soundMultiplier *= physicsSoundMultiplier;
+
+                source.PlayOneShot(objectType.soundData.collideSound, soundMultiplier);
+            }
         }
     }
 }
