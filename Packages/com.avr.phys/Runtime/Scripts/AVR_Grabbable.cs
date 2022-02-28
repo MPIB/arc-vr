@@ -77,6 +77,7 @@ namespace AVR.Phys {
             if (colliders==null || colliders.Count<1) colliders.AddRange(GetComponentsInChildren<Collider>());
             if (nodes == null || nodes.Count < 1) nodes.AddRange(GetComponentsInChildren<AVR_GrabNode>());
             if (objectType == null) objectType = GrabbableObjectType.defaultObjectType();
+            if (source == null) source = GetComponent<AudioSource>();
 
             //Throw warnings if audiosource isnt a 3D blending source
             if (source != null)
@@ -324,11 +325,13 @@ namespace AVR.Phys {
 
                 float mass = rb.mass;
                 float speed = rb.velocity.magnitude;
+                float drag = rb.drag == 0.0f ? 0.5f : rb.drag; //If the rigidbody drag is 0, use 0.5. Otherwise, use that drag.
+
+                const float frontalArea = 0.5f;
+                const float airDrag = 1.1f;
 
                 //Equation adapted and modified from https://www.grc.nasa.gov/WWW/K-12/rocket/termvr.html
-                //This doesnt account for frontal area or drag.
-                //The 2.2 is the air density (1.1) multiplied by 2.
-                float terminalSpeed = Mathf.Sqrt(2.0f * mass * Physics.gravity.magnitude / 2.2f);
+                float terminalSpeed = Mathf.Sqrt(2.0f * mass * Physics.gravity.magnitude / airDrag * frontalArea * drag);
 
                 //When you grab an object, it teleports.
                 //This creates these wildly large speed values when grabbed. This will ignore them.
