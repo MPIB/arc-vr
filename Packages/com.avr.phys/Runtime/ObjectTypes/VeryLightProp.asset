@@ -21,3 +21,8 @@ MonoBehaviour:
   Angular_Lightness: 1
   Break_grab_distance: 0.2
   Heavy_force_multiplier: 1
+  soundData:
+    pickupSound: {fileID: 8300000, guid: ebd82e6eb233a5745a116680b2e1c524, type: 3}
+    releaseSound: {fileID: 8300000, guid: 21feaeca1664dc64eaef3d3f41df90d2, type: 3}
+    collideSound: {fileID: 8300000, guid: 8aec3060caf20fe48a380270c14f442a, type: 3}
+    volumeMultiplier: 1

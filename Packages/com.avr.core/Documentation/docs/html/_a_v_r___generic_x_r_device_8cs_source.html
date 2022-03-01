@@ -29,7 +29,7 @@
 							</a>
 						</td>
 						<td id="projectalign" style="padding-left: 0.5em;">
-							<div id="projectbrief">VR Devemopment Framework</div>
+							<div id="projectbrief">VR Development Framework</div>
 							<div id="projectnumber">v 1.0.0</div>
 						</td>
 					</tr>
@@ -272,41 +272,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            {</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                InternalState state = <span class="keyword">new</span> InternalState();</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                state.FromReference(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            }</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                m_ReplicatedState.Value.ApplyState(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keyword">private</span> readonly Unity.Netcode.NetworkVariable&lt;InternalState&gt; m_ReplicatedState = <span class="keyword">new</span> Unity.Netcode.NetworkVariable&lt;InternalState&gt;(Unity.Netcode.NetworkVariableReadPermission.Everyone, <span class="keyword">new</span> InternalState());</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keyword">private</span> <span class="keyword">struct </span>InternalState : IInternalState&lt;AVR_GenericXRDevice&gt;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keyword">public</span> Vector3 trackingPos;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keyword">public</span> Quaternion trackingRot;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> FromReference(AVR_GenericXRDevice reference)</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                trackingPos = reference.transform.position;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                trackingRot = reference.transform.rotation;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> ApplyState(AVR_GenericXRDevice reference)</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                reference.transform.position = trackingPos;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                reference.transform.rotation = trackingRot;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            }</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> NetworkSerialize&lt;T&gt;(Unity.Netcode.BufferSerializer&lt;T&gt; serializer) where T : Unity.Netcode.IReaderWriter</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            {</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                serializer.SerializeValue(ref trackingPos);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                serializer.SerializeValue(ref trackingRot);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            }</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        }</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                syncServerRpc(state);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                m_ReplicatedState.Value.ApplyState(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keyword">private</span> readonly Unity.Netcode.NetworkVariable&lt;InternalState&gt; m_ReplicatedState = <span class="keyword">new</span> Unity.Netcode.NetworkVariable&lt;InternalState&gt;(Unity.Netcode.NetworkVariableReadPermission.Everyone, <span class="keyword">new</span> InternalState());</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keyword">private</span> <span class="keyword">struct </span>InternalState : IInternalState&lt;AVR_GenericXRDevice&gt;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keyword">public</span> Vector3 trackingPos;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keyword">public</span> Quaternion trackingRot;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> FromReference(AVR_GenericXRDevice reference)</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                trackingPos = reference.transform.position;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                trackingRot = reference.transform.rotation;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> ApplyState(AVR_GenericXRDevice reference)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                reference.transform.position = trackingPos;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                reference.transform.rotation = trackingRot;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> NetworkSerialize&lt;T&gt;(Unity.Netcode.BufferSerializer&lt;T&gt; serializer) where T : Unity.Netcode.IReaderWriter</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                serializer.SerializeValue(ref trackingPos);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                serializer.SerializeValue(ref trackingRot);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}</div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a5315d67e0026ac2e446a491efc242db2_html_a5315d67e0026ac2e446a491efc242db2"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a5315d67e0026ac2e446a491efc242db2.html#a5315d67e0026ac2e446a491efc242db2">AVR.Core.AVR_GenericXRDevice.OnBeforeRender</a></div><div class="ttdeci">void OnBeforeRender()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00122">AVR_GenericXRDevice.cs:122</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a596d538bf6c56442e378ac66af9f8ae4_html_a596d538bf6c56442e378ac66af9f8ae4"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_a_v_r___generic_x_r_device_a596d538bf6c56442e378ac66af9f8ae4.html#a596d538bf6c56442e378ac66af9f8ae4">AVR.Core.AVR_GenericXRDevice.Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___generic_x_r_device_8cs_source.html#l00137">AVR_GenericXRDevice.cs:137</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_core_1_1_attributes_1_1_show_in_net_prompt_html"><div class="ttname"><a href="class_a_v_r_1_1_core_1_1_attributes_1_1_show_in_net_prompt.html">AVR.Core.Attributes.ShowInNetPrompt</a></div><div class="ttdoc">Makes a property of an object only show in the Network-behaviour window. Also works for private/prote...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___attributes_8cs_source.html#l00213">AVR_Attributes.cs:213</a></div></div>

@@ -9,5 +9,6 @@ var searchData=
   ['velocities',['velocities',['../class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_a39632aaaa1e8d646bc98e57ab42518cb.html#a39632aaaa1e8d646bc98e57ab42518cb',1,'AVR::Phys::AVR_Grabbable']]],
   ['velocity_5fcount',['velocity_count',['../class_a_v_r_1_1_phys_1_1_a_v_r___grabbable_aa334b23eb8dae8d847c5be40095d5021.html#aa334b23eb8dae8d847c5be40095d5021',1,'AVR::Phys::AVR_Grabbable']]],
   ['virtualgrabpoint',['virtualGrabPoint',['../class_a_v_r_1_1_phys_1_1_a_v_r___advanced_offset_grab_provider_a487fa4e9bd8f63c216ecfa6b182caa52.html#a487fa4e9bd8f63c216ecfa6b182caa52',1,'AVR::Phys::AVR_AdvancedOffsetGrabProvider']]],
+  ['volumemultiplier',['volumeMultiplier',['../struct_a_v_r_1_1_phys_1_1_grabbable_object_sound_data_ac35ecb9deedc9c34784c5fb19bc8271d.html#ac35ecb9deedc9c34784c5fb19bc8271d',1,'AVR::Phys::GrabbableObjectSoundData']]],
   ['vrenabled',['vrEnabled',['../class_a_v_r_1_1_core_1_1_a_v_r___behaviour_a6fc70b46640f45fe7667f48f36887471.html#a6fc70b46640f45fe7667f48f36887471',1,'AVR::Core::AVR_Behaviour']]]
 ];

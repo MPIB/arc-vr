@@ -16,6 +16,7 @@ var searchData=
   ['virtualgrabpoint',['virtualGrabPoint',['../class_a_v_r_1_1_phys_1_1_a_v_r___advanced_offset_grab_provider_a487fa4e9bd8f63c216ecfa6b182caa52.html#a487fa4e9bd8f63c216ecfa6b182caa52',1,'AVR::Phys::AVR_AdvancedOffsetGrabProvider']]],
   ['visualtype',['visualType',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller_wizard___hook___controller_visual_a5ca4f70cec3264771eb5ade5d545b852.html#a5ca4f70cec3264771eb5ade5d545b852',1,'AVR::UEditor::Core::AVR_ControllerWizard_Hook_ControllerVisual']]],
   ['vivecontroller',['ViveController',['../class_a_v_r_1_1_u_editor_1_1_core_1_1_a_v_r___controller_wizard___hook___controller_visual_a5ca4f70cec3264771eb5ade5d545b852.html#a5ca4f70cec3264771eb5ade5d545b852afbb47b991114409ba7346deb9a1a650f',1,'AVR::UEditor::Core::AVR_ControllerWizard_Hook_ControllerVisual']]],
+  ['volumemultiplier',['volumeMultiplier',['../struct_a_v_r_1_1_phys_1_1_grabbable_object_sound_data_ac35ecb9deedc9c34784c5fb19bc8271d.html#ac35ecb9deedc9c34784c5fb19bc8271d',1,'AVR::Phys::GrabbableObjectSoundData']]],
   ['vrenabled',['vrEnabled',['../class_a_v_r_1_1_core_1_1_a_v_r___behaviour_a6fc70b46640f45fe7667f48f36887471.html#a6fc70b46640f45fe7667f48f36887471',1,'AVR::Core::AVR_Behaviour']]],
   ['vrinput',['VRInput',['../class_a_v_r_1_1_u_i_1_1_v_r_input.html',1,'AVR::UI']]]
 ];

@@ -29,7 +29,7 @@
 							</a>
 						</td>
 						<td id="projectalign" style="padding-left: 0.5em;">
-							<div id="projectbrief">VR Devemopment Framework</div>
+							<div id="projectbrief">VR Development Framework</div>
 							<div id="projectnumber">v 1.0.0</div>
 						</td>
 					</tr>
@@ -89,6 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <td valign="top">
       <div class="navtab">
         <table>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_afc824dd8846813d9cfc15879ed7deb68.html#afc824dd8846813d9cfc15879ed7deb68">_active_canvases</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a2d3e1cb9dd3a89dda502c409e5eda3e9.html#a2d3e1cb9dd3a89dda502c409e5eda3e9">_all_canvases</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a878e6ab6d4354902ca768704fe36b44c.html#a878e6ab6d4354902ca768704fe36b44c">active_canvases</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a15f898fd680c8d74339186b1374eab28.html#a15f898fd680c8d74339186b1374eab28">all_canvases</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_ac216dba9372585e8002042afb2ad5808.html#ac216dba9372585e8002042afb2ad5808">anchor_to_controller</a></td></tr>
@@ -128,22 +130,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_v_r___canvas_8cs_source.html#l00041">41</a> of file <a class="el" href="_a_v_r___canvas_8cs_source.html">AVR_Canvas.cs</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                     {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a15f898fd680c8d74339186b1374eab28.html#a15f898fd680c8d74339186b1374eab28">all_canvases</a>==null) <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a15f898fd680c8d74339186b1374eab28.html#a15f898fd680c8d74339186b1374eab28">all_canvases</a> = <span class="keyword">new</span> List&lt;AVR_Canvas&gt;();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a878e6ab6d4354902ca768704fe36b44c.html#a878e6ab6d4354902ca768704fe36b44c">active_canvases</a>==null) <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a878e6ab6d4354902ca768704fe36b44c.html#a878e6ab6d4354902ca768704fe36b44c">active_canvases</a> = <span class="keyword">new</span> List&lt;AVR_Canvas&gt;();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            all_canvases.Add(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a34246345c8b2ad1a2b34b24ce3ffac29.html#a34246345c8b2ad1a2b34b24ce3ffac29">canvas</a> = GetComponent&lt;Canvas&gt;();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span>(!canvas) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                AVR_DevConsole.cerror(<span class="stringliteral">&quot;AVR_Canvas does not have a Canvas component!&quot;</span>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                Destroy(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a878e6ab6d4354902ca768704fe36b44c_html_a878e6ab6d4354902ca768704fe36b44c"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a878e6ab6d4354902ca768704fe36b44c.html#a878e6ab6d4354902ca768704fe36b44c">AVR.UI.AVR_Canvas.active_canvases</a></div><div class="ttdeci">static List&lt; AVR_Canvas &gt; active_canvases</div><div class="ttdoc">A list of all AVR_Canvases that the user is currently interacting with. NOTE: This is not the same as...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00034">AVR_Canvas.cs:34</a></div></div>
-<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a34246345c8b2ad1a2b34b24ce3ffac29_html_a34246345c8b2ad1a2b34b24ce3ffac29"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a34246345c8b2ad1a2b34b24ce3ffac29.html#a34246345c8b2ad1a2b34b24ce3ffac29">AVR.UI.AVR_Canvas.canvas</a></div><div class="ttdeci">Canvas canvas</div><div class="ttdoc">The UnityEngine.Canvas Component this object is attatched to. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00039">AVR_Canvas.cs:39</a></div></div>
+<p>Definition at line <a class="el" href="_a_v_r___canvas_8cs_source.html#l00049">49</a> of file <a class="el" href="_a_v_r___canvas_8cs_source.html">AVR_Canvas.cs</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                     {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a15f898fd680c8d74339186b1374eab28.html#a15f898fd680c8d74339186b1374eab28">all_canvases</a>==null) <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a15f898fd680c8d74339186b1374eab28.html#a15f898fd680c8d74339186b1374eab28">all_canvases</a> = <span class="keyword">new</span> List&lt;AVR_Canvas&gt;();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a878e6ab6d4354902ca768704fe36b44c.html#a878e6ab6d4354902ca768704fe36b44c">active_canvases</a>==null) <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a878e6ab6d4354902ca768704fe36b44c.html#a878e6ab6d4354902ca768704fe36b44c">active_canvases</a> = <span class="keyword">new</span> List&lt;AVR_Canvas&gt;();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            all_canvases.Add(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a34246345c8b2ad1a2b34b24ce3ffac29.html#a34246345c8b2ad1a2b34b24ce3ffac29">canvas</a> = GetComponent&lt;Canvas&gt;();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">if</span>(!canvas) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                AVR_DevConsole.cerror(<span class="stringliteral">&quot;AVR_Canvas does not have a Canvas component!&quot;</span>, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                Destroy(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a878e6ab6d4354902ca768704fe36b44c_html_a878e6ab6d4354902ca768704fe36b44c"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a878e6ab6d4354902ca768704fe36b44c.html#a878e6ab6d4354902ca768704fe36b44c">AVR.UI.AVR_Canvas.active_canvases</a></div><div class="ttdeci">static List&lt; AVR_Canvas &gt; active_canvases</div><div class="ttdoc">A list of all AVR_Canvases that the user is currently interacting with. NOTE: This is not the same as...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00038">AVR_Canvas.cs:38</a></div></div>
+<div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a34246345c8b2ad1a2b34b24ce3ffac29_html_a34246345c8b2ad1a2b34b24ce3ffac29"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a34246345c8b2ad1a2b34b24ce3ffac29.html#a34246345c8b2ad1a2b34b24ce3ffac29">AVR.UI.AVR_Canvas.canvas</a></div><div class="ttdeci">Canvas canvas</div><div class="ttdoc">The UnityEngine.Canvas Component this object is attatched to. </div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00047">AVR_Canvas.cs:47</a></div></div>
 <div class="ttc" id="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a15f898fd680c8d74339186b1374eab28_html_a15f898fd680c8d74339186b1374eab28"><div class="ttname"><a href="class_a_v_r_1_1_u_i_1_1_a_v_r___canvas_a15f898fd680c8d74339186b1374eab28.html#a15f898fd680c8d74339186b1374eab28">AVR.UI.AVR_Canvas.all_canvases</a></div><div class="ttdeci">static List&lt; AVR_Canvas &gt; all_canvases</div><div class="ttdoc">A list of all AVR_Canvases that have at some point been active and not destroyed since ...</div><div class="ttdef"><b>Definition:</b> <a href="_a_v_r___canvas_8cs_source.html#l00028">AVR_Canvas.cs:28</a></div></div>
 </div><!-- fragment -->
 </div>
