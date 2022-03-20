@@ -318,7 +318,7 @@ namespace AVR.Phys {
             }
 
             //Play collision sound
-            if (source != null && objectType.soundData.collideSound != null && rb != null)
+            if (source != null && objectType.soundData.collideSounds != null && objectType.soundData.collideSounds.Count != 0 && rb != null)
             {
                 //Calculate a sound multiplier based off the velocity and mass of the collision
                 float soundMultiplier = objectType.soundData.volumeMultiplier;
@@ -346,7 +346,8 @@ namespace AVR.Phys {
 
                 soundMultiplier *= physicsSoundMultiplier;
 
-                source.PlayOneShot(objectType.soundData.collideSound, soundMultiplier);
+                AudioClip randomClip = objectType.soundData.collideSounds[Random.Range(0, objectType.soundData.collideSounds.Count)];
+                source.PlayOneShot(randomClip, soundMultiplier);
             }
         }
     }
