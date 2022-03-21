@@ -12,7 +12,7 @@ namespace AVR.Phys {
     {
         public AudioClip pickupSound;
         public AudioClip releaseSound;
-        public AudioClip collideSound;
+        public List<AudioClip> collideSounds;
 
         //Value from 0 - 1 that the AudioSource will use as a volume multiplier
         [Range(0, 1)] public float volumeMultiplier;
@@ -57,7 +57,7 @@ namespace AVR.Phys {
             o.Break_grab_distance = 0.5f;
             o.soundData.pickupSound = null;
             o.soundData.releaseSound = null;
-            o.soundData.collideSound = null;
+            o.soundData.collideSounds = new List<AudioClip>();
             o.soundData.volumeMultiplier = 1.0f;
             
             return o;
@@ -75,7 +75,7 @@ namespace AVR.Phys {
             Break_grab_distance = 0.5f;
             soundData.pickupSound = null;
             soundData.releaseSound = null;
-            soundData.collideSound = null;
+            soundData.collideSounds = new List<AudioClip>();
             soundData.volumeMultiplier = 1.0f;
         }
     }
