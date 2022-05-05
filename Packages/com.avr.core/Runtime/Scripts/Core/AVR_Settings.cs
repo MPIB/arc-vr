@@ -156,7 +156,7 @@ namespace AVR.Core {
         /// Set a setting with a specific token to a specific value.
         /// </summary>
         public static void set(string token, object value) {
-            settings[token] = value.ToString();
+            settings[token] = System.Convert.ToString(value, System.Globalization.CultureInfo.InvariantCulture);
         }
 
         /// <summary>
