@@ -67,7 +67,7 @@ namespace AVR.Core {
         {
             if (settings.TryGetValue(token, out string ret))
             {
-                return int.Parse(ret);
+                return int.Parse(ret, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
             }
             else if(!initialized) {
                 initialize();
@@ -109,7 +109,7 @@ namespace AVR.Core {
         /// <returns> Registered setting if a valid is found, otherwise 1.0. </returns>
         public static float get_float(string token) {
             if(settings.TryGetValue(token, out string ret)) {
-                return float.Parse(ret);
+                return float.Parse(ret, System.Globalization.CultureInfo.InvariantCulture.NumberFormat);
             }
             else if (!initialized)
             {
