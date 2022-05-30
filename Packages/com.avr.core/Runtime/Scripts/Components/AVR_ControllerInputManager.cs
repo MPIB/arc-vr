@@ -226,6 +226,7 @@ namespace AVR.Core {
             controller.inputDevice.TryGetFeatureValue(CommonUsages.triggerButton, out lastTrigger);
             controller.inputDevice.TryGetFeatureValue(CommonUsages.menuButton, out lastMenuButton);
             controller.inputDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out lastAxisClick);
+            controller.inputDevice.TryGetFeatureValue(CommonUsages.gripButton, out lastGrip);
         }
 
         /// <summary>
