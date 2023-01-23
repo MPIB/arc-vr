@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "com.unity.ide.visualstudio": "2.0.16",
-    "com.unity.netcode.gameobjects": "1.1.0",
     "com.unity.postprocessing": "3.2.2",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.toolchain.win-x86_64-linux-x86_64": "1.0.0",
