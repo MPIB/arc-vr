@@ -66,7 +66,7 @@ namespace AVR.UEditor.Core {
             GUI.contentColor = new Color(1f, 1f, 1f, 1f);
             GUI.backgroundColor = new Color(0.288f, 0.296f, 0.319f, 1f);
 
-            scrollPos = EditorGUILayout.BeginScrollView(scrollPos, false, true, GUILayout.Height(Screen.height - 85), GUILayout.Width(Screen.width - 10)); 
+            scrollPos = EditorGUILayout.BeginScrollView(scrollPos, false, true, GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true)); 
             EditorGUILayout.TextArea(AVR_DevConsole.get_text(), s0, GUILayout.ExpandHeight(true));
             EditorGUILayout.EndScrollView();
             
