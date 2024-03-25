@@ -40,7 +40,13 @@ namespace AVR.Core {
             GRIP_ONGRIPUP,                      // Grip released
             ANY_CANCEL,                         // Any event that might cancel something (triggerdown, menubuttondown, primaryaxis click)
             ALWAYS_TRUE,                        // Is always true
-            ALWAYS_FALSE                        // Is always false
+            ALWAYS_FALSE,                       // Is always false
+            PRIMARY_BUTTON,                     // Primary button (typically 'A')
+            SECONDARY_BUTTON,                   // Secondary button (typically 'B')
+            PRIMARY_BUTTON_DOWN,                // Primary button (typically 'A')
+            SECONDARY_BUTTON_DOWN,              // Secondary button (typically 'B')
+            PRIMARY_BUTTON_UP,                  // Primary button (typically 'A')
+            SECONDARY_BUTTON_UP                 // Secondary button (typically 'B')
             //TODO etc.
         }
 
@@ -216,10 +222,84 @@ namespace AVR.Core {
             }
         }
 
+        /// <summary>
+        /// True if the primary button is pressed
+        /// </summary>
+        public bool primaryButton
+        {
+            get
+            {
+                controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool o);
+                return o;
+            }
+        }
+
+        /// <summary>
+        /// True on the frame the primary button is pressed
+        /// </summary>
+        public bool primaryButtonDown
+        {
+            get
+            {
+                controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool o);
+                return o && !lastPrimaryButton;
+            }
+        }
+
+        /// <summary>
+        /// True omn the frame the primary button is released
+        /// </summary>
+        public bool primaryButtonUp
+        {
+            get
+            {
+                controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool o);
+                return !o && lastPrimaryButton;
+            }
+        }
+
+        /// <summary>
+        /// True if the primary button is pressed
+        /// </summary>
+        public bool secondaryButton
+        {
+            get
+            {
+                controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool o);
+                return o;
+            }
+        }
+
+        /// <summary>
+        /// True on the frame the primary button is pressed
+        /// </summary>
+        public bool secondaryButtonDown
+        {
+            get
+            {
+                controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool o);
+                return o && !lastSecondaryButton;
+            }
+        }
+
+        /// <summary>
+        /// True omn the frame the primary button is released
+        /// </summary>
+        public bool secondaryButtonUp
+        {
+            get
+            {
+                controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool o);
+                return !o && lastSecondaryButton;
+            }
+        }
+
         private bool lastTrigger = false;
         private bool lastMenuButton = false;
         private bool lastAxisClick = false;
         private bool lastGrip = false;
+        private bool lastPrimaryButton = false;
+        private bool lastSecondaryButton = false;
 
         protected void LateUpdate()
         {
@@ -227,6 +307,8 @@ namespace AVR.Core {
             controller.inputDevice.TryGetFeatureValue(CommonUsages.menuButton, out lastMenuButton);
             controller.inputDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out lastAxisClick);
             controller.inputDevice.TryGetFeatureValue(CommonUsages.gripButton, out lastGrip);
+            controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out lastPrimaryButton);
+            controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out lastSecondaryButton);
         }
 
         /// <summary>
@@ -266,6 +348,12 @@ namespace AVR.Core {
                 case BoolEvent.ANY_CANCEL: { return menuButtonDown || triggerDown || primary2DAxisClick; }
                 case BoolEvent.ALWAYS_TRUE: { return true; }
                 case BoolEvent.ALWAYS_FALSE: { return false; }
+                case BoolEvent.PRIMARY_BUTTON: { return primaryButton; }
+                case BoolEvent.SECONDARY_BUTTON: { return secondaryButton; }
+                case BoolEvent.PRIMARY_BUTTON_DOWN: { return primaryButtonDown; }
+                case BoolEvent.SECONDARY_BUTTON_DOWN: { return secondaryButtonDown; }
+                case BoolEvent.PRIMARY_BUTTON_UP: { return primaryButtonUp; }
+                case BoolEvent.SECONDARY_BUTTON_UP: { return secondaryButtonUp; }
                 default : { AVR_DevConsole.cwarn("getEventStatus does not recoginze value "+type, this); break; }
             }
             return false;
